@@ -17,3 +17,25 @@
 开发版本 `0.1.0-dev.1` 修复并行首次安装/复用时的安装锁竞争：等待最多 120 秒，再核验复用；超时不覆盖安装或重放编辑任务。
 
 开发版本 dev.2 的原生交付包含摘要绑定的 exchange-loss.json，区分格式损失、结构观察与未验证字体/效果保真；导出派生物不替代原生工程。
+
+## CLI 与场景技能体系
+
+[EffectCraft Skill Suite Architecture](docs/EffectCraft-Skill-Suite-Architecture.zh_CN.md)
+
+| 技能 | 用途 |
+| :--- | :--- |
+| `effectcraft-use` | 组合多个本工具能力并保留可编辑原生交付 |
+| `effectcraft-cli` | 查询实际命令参数和能力，调用公开 CLI、MCP 与诊断 |
+| `effectcraft-cli-setup` | 首次安装、摘要校验、版本检查与缺失运行时排障 |
+| `effectcraft-cli-project` | 建立、保存和重开 ecproj 工程，整理项目项目项 |
+| `effectcraft-cli-footage` | 导入图像、视频、矢量或 PSD 素材并登记依赖 |
+| `effectcraft-cli-composition` | 创建合成、设置画幅帧率时长和工作区 |
+| `effectcraft-cli-layers` | 组织文本、形状、素材图层和层级合成 |
+| `effectcraft-cli-animation` | 设置属性、关键帧、缓动和文字图形动画 |
+| `effectcraft-cli-effects` | 查询并应用当前版本支持的效果，调整效果顺序与参数 |
+| `effectcraft-cli-masks` | 创建和编辑蒙版路径、羽化及局部遮罩 |
+| `effectcraft-cli-expressions` | 在用户指定属性上检查、设置和诊断表达式 |
+| `effectcraft-cli-camera` | 设置已有合成中的摄像机、灯光和材质参数 |
+| `effectcraft-cli-export` | 预览关键帧、渲染序列或视频和透明交接片段 |
+
+`npx skills add full-aigc-skills/effectcraft-skills --skill <skill-name>`

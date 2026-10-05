@@ -17,3 +17,25 @@ The 15-test suite also verifies native media collection, moved-delivery revision
 Development version `0.1.0-dev.1` fixes concurrent first-use/reuse install-lock contention: wait up to 120 seconds, then verify and reuse; timeout preserves installations and never replays editing tasks.
 
 Development version dev.2 includes hash-bound exchange-loss.json with every native delivery. Reports distinguish format losses, observed structure and unknown font/effect fidelity; exported derivatives never replace the retained native project.
+
+## CLI and task skill suite
+
+[EffectCraft Skill Suite Architecture](docs/EffectCraft-Skill-Suite-Architecture.md)
+
+| Skill | Purpose |
+| :--- | :--- |
+| `effectcraft-use` | use |
+| `effectcraft-cli` | cli |
+| `effectcraft-cli-setup` | cli setup |
+| `effectcraft-cli-project` | cli project |
+| `effectcraft-cli-footage` | cli footage |
+| `effectcraft-cli-composition` | cli composition |
+| `effectcraft-cli-layers` | cli layers |
+| `effectcraft-cli-animation` | cli animation |
+| `effectcraft-cli-effects` | cli effects |
+| `effectcraft-cli-masks` | cli masks |
+| `effectcraft-cli-expressions` | cli expressions |
+| `effectcraft-cli-camera` | cli camera |
+| `effectcraft-cli-export` | cli export |
+
+`npx skills add full-aigc-skills/effectcraft-skills --skill <skill-name>`

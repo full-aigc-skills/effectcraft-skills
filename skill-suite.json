@@ -1,0 +1,153 @@
+{
+  "schema": "craft-skill-suite/v1",
+  "pluginId": "effectcraft",
+  "version": "0.1.0-dev.3",
+  "source": {
+    "repository": "https://github.com/storytold/effectcraft",
+    "commit": "24fcbdf3d2d6b928d3788d33f1722d8a21b9ad29",
+    "analysis": "CodeGraph CLI/engine or Tauri scene/task flow; current installed runtime checked separately"
+  },
+  "skills": [
+    {
+      "name": "effectcraft-use",
+      "title": "完整任务路由",
+      "description": "组合多个本工具能力并保留可编辑原生交付",
+      "kind": "router",
+      "commandCount": 640,
+      "commandPrefixes": []
+    },
+    {
+      "name": "effectcraft-cli",
+      "title": "CLI 公共操作",
+      "description": "查询实际命令参数和能力，调用公开 CLI、MCP 与诊断",
+      "kind": "cli",
+      "commandCount": 640,
+      "commandPrefixes": []
+    },
+    {
+      "name": "effectcraft-cli-setup",
+      "title": "CLI 安装诊断",
+      "description": "首次安装、摘要校验、版本检查与缺失运行时排障",
+      "kind": "setup",
+      "commandCount": 640,
+      "commandPrefixes": []
+    },
+    {
+      "name": "effectcraft-cli-project",
+      "title": "工程与素材管理",
+      "description": "建立、保存和重开 ecproj 工程，整理项目项目项",
+      "kind": "scenario",
+      "commandCount": 68,
+      "commandPrefixes": [
+        "file.",
+        "project."
+      ]
+    },
+    {
+      "name": "effectcraft-cli-footage",
+      "title": "素材与预合成输入",
+      "description": "导入图像、视频、矢量或 PSD 素材并登记依赖",
+      "kind": "scenario",
+      "commandCount": 16,
+      "commandPrefixes": [
+        "footage.",
+        "mediaBrowser."
+      ]
+    },
+    {
+      "name": "effectcraft-cli-composition",
+      "title": "合成与时间范围",
+      "description": "创建合成、设置画幅帧率时长和工作区",
+      "kind": "scenario",
+      "commandCount": 38,
+      "commandPrefixes": [
+        "comp.",
+        "time."
+      ]
+    },
+    {
+      "name": "effectcraft-cli-layers",
+      "title": "文字形状与图层",
+      "description": "组织文本、形状、素材图层和层级合成",
+      "kind": "scenario",
+      "commandCount": 122,
+      "commandPrefixes": [
+        "layer.",
+        "shape.",
+        "text."
+      ]
+    },
+    {
+      "name": "effectcraft-cli-animation",
+      "title": "属性与关键帧动画",
+      "description": "设置属性、关键帧、缓动和文字图形动画",
+      "kind": "scenario",
+      "commandCount": 57,
+      "commandPrefixes": [
+        "keys.",
+        "anim.",
+        "prop."
+      ]
+    },
+    {
+      "name": "effectcraft-cli-effects",
+      "title": "视觉效果",
+      "description": "查询并应用当前版本支持的效果，调整效果顺序与参数",
+      "kind": "scenario",
+      "commandCount": 16,
+      "commandPrefixes": [
+        "effect."
+      ]
+    },
+    {
+      "name": "effectcraft-cli-masks",
+      "title": "蒙版与路径动画",
+      "description": "创建和编辑蒙版路径、羽化及局部遮罩",
+      "kind": "scenario",
+      "commandCount": 32,
+      "commandPrefixes": [
+        "mask.",
+        "roto.",
+        "path."
+      ]
+    },
+    {
+      "name": "effectcraft-cli-expressions",
+      "title": "属性表达式",
+      "description": "在用户指定属性上检查、设置和诊断表达式",
+      "kind": "scenario",
+      "commandCount": 4,
+      "commandPrefixes": [
+        "expr.",
+        "prop.setExpression",
+        "prop.convertExpression"
+      ]
+    },
+    {
+      "name": "effectcraft-cli-camera",
+      "title": "三维图层与摄像机",
+      "description": "设置已有合成中的摄像机、灯光和材质参数",
+      "kind": "scenario",
+      "commandCount": 26,
+      "commandPrefixes": [
+        "camera.",
+        "light.",
+        "material."
+      ]
+    },
+    {
+      "name": "effectcraft-cli-export",
+      "title": "渲染与透明输出",
+      "description": "预览关键帧、渲染序列或视频和透明交接片段",
+      "kind": "scenario",
+      "commandCount": 26,
+      "commandPrefixes": [
+        "render.",
+        "renderQueue.",
+        "file.export"
+      ]
+    }
+  ],
+  "resourceSource": "effectcraft-use",
+  "runtimeVersion": "0.2.0"
+}

@@ -45,3 +45,22 @@ python3 -I -B /mnt/skills/user/effectcraft-use/scripts/bootstrap.py
 首次安装或复用遇到其他安装进程时有界等待，超时保持现状并报 runtime_install_busy。参见[安装并发合同](references/installation-concurrency.md)。
 
 开发版本 dev.2 随原生与导出交付[交换损失报告](references/exchange-loss.md)。阅读 lost/observed/unknown 和导出警告；不把扁平导出、SVG 结构或 PSD 图层计数称为无损原生替代。
+
+## 按任务选择独立技能
+
+| 技能 | 触发任务 |
+| :--- | :--- |
+| **effectcraft-cli** | 查询实际命令参数和能力，调用公开 CLI、MCP 与诊断 |
+| **effectcraft-cli-setup** | 首次安装、摘要校验、版本检查与缺失运行时排障 |
+| **effectcraft-cli-project** | 建立、保存和重开 ecproj 工程，整理项目项目项 |
+| **effectcraft-cli-footage** | 导入图像、视频、矢量或 PSD 素材并登记依赖 |
+| **effectcraft-cli-composition** | 创建合成、设置画幅帧率时长和工作区 |
+| **effectcraft-cli-layers** | 组织文本、形状、素材图层和层级合成 |
+| **effectcraft-cli-animation** | 设置属性、关键帧、缓动和文字图形动画 |
+| **effectcraft-cli-effects** | 查询并应用当前版本支持的效果，调整效果顺序与参数 |
+| **effectcraft-cli-masks** | 创建和编辑蒙版路径、羽化及局部遮罩 |
+| **effectcraft-cli-expressions** | 在用户指定属性上检查、设置和诊断表达式 |
+| **effectcraft-cli-camera** | 设置已有合成中的摄像机、灯光和材质参数 |
+| **effectcraft-cli-export** | 预览关键帧、渲染序列或视频和透明交接片段 |
+
+缺少技能：`npx skills add full-aigc-skills/effectcraft-skills --skill <skill-name>`。每项自带安装与执行资源；直接执行本技能 `scripts/cli.py` 也可查询当前 CLI，不依赖兄弟路径。

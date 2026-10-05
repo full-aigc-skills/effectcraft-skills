@@ -1,0 +1,23 @@
+{
+  "schema": "craft-upstream-research/v1",
+  "date": "2026-10-05",
+  "repository": "https://github.com/storytold/effectcraft",
+  "commit": "24fcbdf3d2d6b928d3788d33f1722d8a21b9ad29",
+  "codegraph": {
+    "files": 680,
+    "nodes": 21407,
+    "edges": 120688,
+    "queries": [
+      "apps/effectcraft-cli/src/main.rs CLI parser/save/headless/MCP",
+      "crates/engine/src/lib.rs Session execute command registry"
+    ]
+  },
+  "runtime": {
+    "version": "0.2.0",
+    "catalogueCount": 640,
+    "identity": "official native CLI"
+  },
+  "skillCount": 13,
+  "boundary": "CodeGraph/static source and runtime command discovery; not whole upstream or all commands accepted",
+  "referencePattern": "Dreamina use / cli / setup / mode skills; copied neither authorization policy nor vendor code"
+}
