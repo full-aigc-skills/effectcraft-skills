@@ -1,7 +1,7 @@
 {
   "schema": "craft-skill-suite/v1",
   "pluginId": "effectcraft",
-  "version": "0.1.0-dev.3",
+  "version": "0.1.0-dev.4",
   "source": {
     "repository": "https://github.com/storytold/effectcraft",
     "commit": "24fcbdf3d2d6b928d3788d33f1722d8a21b9ad29",
@@ -126,13 +126,22 @@
     {
       "name": "effectcraft-cli-camera",
       "title": "三维图层与摄像机",
-      "description": "设置已有合成中的摄像机、灯光和材质参数",
+      "description": "建立或修改已有合成中的摄像机、灯光和材质，核对图层三维开关及视角前置条件",
       "kind": "scenario",
-      "commandCount": 26,
+      "commandCount": 47,
       "commandPrefixes": [
         "camera.",
         "light.",
-        "material."
+        "material.",
+        "layer.newCamera",
+        "layer.cameraSettings",
+        "layer.newLight",
+        "layer.new3dPrimitive",
+        "layer.setSwitch",
+        "view.set3DView",
+        "view.get3D",
+        "view.3d.",
+        "view.reset3DView"
       ]
     },
     {

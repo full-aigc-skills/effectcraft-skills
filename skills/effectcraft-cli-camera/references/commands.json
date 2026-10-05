@@ -7,9 +7,123 @@
   "scope": "observed command catalogue, not capability or creative acceptance",
   "commands": [
     {
+      "id": "layer.setSwitch",
+      "label": "Layer Switch",
+      "params": "{layers?, switch: video|audio|solo|lock|shy|collapse|quality|fx|frameBlend|motionBlur|adjustment|threeD|guide|preserveTransparency, value?}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "layer.newLight",
+      "label": "Light...",
+      "params": "{kind?: Parallel|Spot|Point|Ambient (default Spot), name?, color?, intensity?, coneAngle?, coneFeather?, falloff?: None|Smooth|Inverse Square Clamped, radius?, falloffDistance?, castsShadows?, shadowDarkness?, shadowDiffusion?, position? [x,y,z], poi? [x,y,z]}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "layer.newCamera",
+      "label": "Camera...",
+      "params": "{name?, type?: oneNode|twoNode (default twoNode), preset?: 15mm|20mm|24mm|28mm|35mm|50mm|80mm|135mm|200mm, zoom?, focalLength? mm, angleOfView? deg, dof?, focusDistance?, aperture?, fStop?, blurLevel?, lockToZoom?, position? [x,y,z], poi? [x,y,z]}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "layer.cameraSettings",
+      "label": "Camera Settings...",
+      "params": "{layer?, name?, type?, preset?, zoom?, focalLength?, angleOfView?, dof?, focusDistance?, aperture?, fStop?, blurLevel?, position?, poi?}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "view.set3DView",
+      "label": "Switch 3D View",
+      "params": "{view: activeCamera|default|front|left|top|back|right|bottom|custom1|custom2|custom3, comp?}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "view.3d.activeCamera",
+      "label": "Active Camera",
+      "params": "{comp?}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "view.3d.default",
+      "label": "Default",
+      "params": "{comp?}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "view.3d.front",
+      "label": "Front",
+      "params": "{comp?}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "view.3d.left",
+      "label": "Left",
+      "params": "{comp?}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "view.3d.top",
+      "label": "Top",
+      "params": "{comp?}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "view.3d.back",
+      "label": "Back",
+      "params": "{comp?}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "view.3d.right",
+      "label": "Right",
+      "params": "{comp?}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "view.3d.bottom",
+      "label": "Bottom",
+      "params": "{comp?}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "view.3d.custom1",
+      "label": "Custom View 1",
+      "params": "{comp?}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "view.3d.custom2",
+      "label": "Custom View 2",
+      "params": "{comp?}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "view.3d.custom3",
+      "label": "Custom View 3",
+      "params": "{comp?}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "view.3d.last",
+      "label": "Switch to Last 3D View",
+      "params": "{comp?}",
+      "enabledAtEmptySession": false
+    },
+    {
       "id": "camera.fromView",
       "label": "Create Camera from 3D View",
       "params": "{comp?}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "view.reset3DView",
+      "label": "Reset 3D View",
+      "params": "{comp?}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "view.set3DViewCamera",
+      "label": "Set 3D View Camera",
+      "params": "{view, eye? [x,y,z], poi? [x,y,z], zoom?}",
       "enabledAtEmptySession": false
     },
     {
@@ -28,6 +142,18 @@
       "id": "camera.dolly",
       "label": "Dolly Camera",
       "params": "{amount (px, + = forward), layer?, merge?}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "view.get3D",
+      "label": "3D View State",
+      "params": "{comp?} → current 3D view, view camera, active camera layer, lights",
+      "enabledAtEmptySession": true
+    },
+    {
+      "id": "layer.new3dPrimitive",
+      "label": "3D Primitive",
+      "params": "{kind: cube|sphere|plane|torus|cone|cylinder, name?, width?, height?, depth?, radius?, tubeRadius?, segments?, rings?, position? [x,y,z], baseColor?, metallic?, roughness?, emissive?, castsShadows?, acceptsShadows?, acceptsLights?}",
       "enabledAtEmptySession": false
     },
     {

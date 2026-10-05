@@ -45,3 +45,5 @@ python3 -I -B /mnt/skills/user/effectcraft-cli-export/scripts/cli.py -- commands
 - 安装/诊断需要时交给 **effectcraft-cli-setup**，完整任务路由交给 **effectcraft-use**；缺少技能时使用 `npx skills add full-aigc-skills/effectcraft-skills --skill <skill-name>`。不通过相邻文件路径加载其他技能。
 
 本技能不提供虚构的登录接口；本地 headless 不要求云账户。完整 GUI、跨编辑器保真与创作质量按实际证据陈述。
+
+首次透明交付先阅读本技能 [场景操作说明](references/scenario.md)：0.2.0 的 render-frame 是 RGB 预览；使用 render 的合成名称与 RGBA PNG 序列路径保留透明通道。

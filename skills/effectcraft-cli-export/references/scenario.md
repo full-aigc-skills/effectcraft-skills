@@ -31,3 +31,18 @@
 4. 原生工程、素材清单、预览/导出及交换报告交付；技术核验和视觉审核分开记录。
 
 首次组合实例采用本技能 examples 与 references/workflow.md。此实例验证组合能力，不替代所有候选命令的逐项验收。失败保留检查点，不将无损原生交付替换成扁平结果。
+
+## 已验证的透明输出与目标合成选择
+
+官方 0.2.0 CLI 的 `render-frame` 写出 RGB 预览 PNG，没有 Alpha 通道。透明交付使用 `render --format png --channels rgba`；H.264 只作为不透明视频派生物，不代替透明素材。`render` 的 `--comp` 取实际合成名称，不能照搬 props/get/render-frame 支持的数字 ID。先用 info 读取目标合成名称、帧率、时长。
+
+以下示例针对名为 NOVA intro 的 12 fps 合成，导出第 6 帧的 RGBA PNG：
+
+```bash
+python3 /mnt/skills/user/effectcraft-cli-export/scripts/cli.py -- render \
+  --comp "NOVA intro" --out /absolute/path/frame.png \
+  --format png --channels rgba --start 0.5 --end 0.5833333333333334 --fps 12 \
+  --project /absolute/path/source.ecproj --json
+```
+
+实际文件带帧号，此示例为 frame_00006.png；使用回执的 rendered[].output，不猜测输出路径。解码文件确认 RGBA 和 Alpha 极值；仍交付原生 ecproj 与引用素材。合成名称、时间范围、帧率和工程路径必须替换成当前项目真实值。所有编码格式和通道组合尚未逐项验收。

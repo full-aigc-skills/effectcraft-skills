@@ -39,3 +39,11 @@ Development version dev.2 includes hash-bound exchange-loss.json with every nati
 | `effectcraft-cli-export` | cli export |
 
 `npx skills add full-aigc-skills/effectcraft-skills --skill <skill-name>`
+
+## Focused task skills: clean first use
+
+Version 0.1.0-dev.4 includes required camera creation/3D-view prerequisites and tested RGB-preview versus RGBA-export guidance. Ten focused task skills passed with only one skill copied and a fresh runtime per case; the full suite passed 35 tests with no skips. [Evidence](docs/evidence/task-skill-first-use.json). All commands, advanced 3D appearance, model dispatch and final creative acceptance remain unverified.
+
+```bash
+CRAFT_TASK_FIRST_USE=1 CRAFT_LIVE_TEST=1 CRAFT_LIVE_SUITE=1 python3 -B -m unittest discover -s tests -v
+```

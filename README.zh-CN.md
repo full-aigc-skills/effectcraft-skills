@@ -39,3 +39,11 @@
 | `effectcraft-cli-export` | 预览关键帧、渲染序列或视频和透明交接片段 |
 
 `npx skills add full-aigc-skills/effectcraft-skills --skill <skill-name>`
+
+## 场景技能的干净首次使用
+
+0.1.0-dev.4 补齐相机创建与三维视角前置命令，并明确 RGB 预览与 RGBA 透明导出的已测路径。十类场景均只复制当前技能、使用新运行时目录完成首次安装及真实操作；完整回归 35 项、零跳过。[证据](docs/evidence/task-skill-first-use.json)。全部命令、高级三维画面、模型派发和创作最终验收仍未完成。
+
+```bash
+CRAFT_TASK_FIRST_USE=1 CRAFT_LIVE_TEST=1 CRAFT_LIVE_SUITE=1 python3 -B -m unittest discover -s tests -v
+```

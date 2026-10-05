@@ -31,3 +31,20 @@
 4. 原生工程、素材清单、预览/导出及交换报告交付；技术核验和视觉审核分开记录。
 
 首次组合实例采用本技能 examples 与 references/workflow.md。此实例验证组合能力，不替代所有候选命令的逐项验收。失败保留检查点，不将无损原生交付替换成扁平结果。
+
+## 从默认二维视角开始的已验证操作
+
+`camera.fromView` 要求当前视角已是三维，默认二维视角会返回参数错误。已有普通合成需要先用 `layer.newCamera` 建立相机，再用 `view.set3DView` 切到 `activeCamera`，然后才执行 camera.orbit/pan/dolly；同一 `run` 会话保留新建对象和视角状态。修改普通图层的三维开关使用 `layer.setSwitch`，创建灯光使用 `layer.newLight`。这些前置命令已纳入本技能 commands.json。
+
+以下位置示例针对 320×180 合成；先读取真实尺寸、既有相机和图层，避免重复创建或覆盖已有设置。项目路径替换成用户授权的绝对路径，技能挂载路径替换成实际安装目录：
+
+```bash
+python3 /mnt/skills/user/effectcraft-cli-camera/scripts/cli.py -- run \
+  layer.newCamera '{"name":"Primary camera","position":[160,90,-400],"poi":[160,90,0]}' \
+  view.set3DView '{"view":"activeCamera"}' \
+  camera.dolly '{"amount":50}' \
+  --project /absolute/path/source.ecproj \
+  --save-as /absolute/path/revised.ecproj --json
+```
+
+用真实回执中的相机 layer ID，通过 `get <comp> <layer> transform/position --project <新工程> --json` 检查保存重开后的坐标。上述示例的 position 为 `[160,90,-350]`。保留源工程摘要；二维视角的失败操作不得产生成功工程。相机参数和原生保存通过不等于高级三维材质、阴影或最终画面均已验收。
