@@ -1,5 +1,9 @@
 """真实引擎往返、局部修改和解码验收；需要显式启用。"""
 import importlib.util
+import sys
+
+# 宿主技能快照必须保持不可变；动态导入也不写字节码。
+sys.dont_write_bytecode = True
 import json
 import os
 from pathlib import Path
@@ -8,7 +12,7 @@ import tempfile
 import unittest
 
 ROOT = Path(__file__).resolve().parents[1]
-SKILL = ROOT / 'skills/effectcraft-use'
+SKILL = Path(os.environ['CRAFT_INSTALLED_SKILL_ROOT']).resolve() if os.environ.get('CRAFT_INSTALLED_SKILL_ROOT') else ROOT / 'skills/effectcraft-use'
 spec = importlib.util.spec_from_file_location('workflow', SKILL / 'scripts/workflow.py')
 workflow = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(workflow)
