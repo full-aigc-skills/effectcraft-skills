@@ -38,8 +38,10 @@
 
 以下示例针对名为 NOVA intro 的 12 fps 合成，导出第 6 帧的 RGBA PNG：
 
+以下 `SKILL_DIR` 沿用本技能 `SKILL.md` 的实际加载目录，脚本和示例均来自同一技能。
+
 ```bash
-python3 /mnt/skills/user/effectcraft-cli-export/scripts/cli.py -- render \
+python3 "$SKILL_DIR/scripts/cli.py" -- render \
   --comp "NOVA intro" --out /absolute/path/frame.png \
   --format png --channels rgba --start 0.5 --end 0.5833333333333334 --fps 12 \
   --project /absolute/path/source.ecproj --json

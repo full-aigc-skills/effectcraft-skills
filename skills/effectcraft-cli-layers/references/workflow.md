@@ -4,9 +4,11 @@
 
 The helper bootstraps the pinned runtime, executes a bounded plan in a persistent MCP session, saves and reopens the native project, then renders transparent PNG frames and optional H.264 video. Runtime support currently covers macOS arm64 only.
 
+以下 `SKILL_DIR` 沿用本技能 `SKILL.md` 的实际加载目录，脚本和示例均来自同一技能。
+
 ```bash
-python3 /mnt/skills/user/effectcraft-cli-layers/scripts/workflow.py \
-  /mnt/skills/user/effectcraft-cli-layers/examples/brand-intro.json \
+python3 "$SKILL_DIR/scripts/workflow.py" \
+  "$SKILL_DIR/examples/brand-intro.json" \
   --output /absolute/path/intro-v1
 ```
 

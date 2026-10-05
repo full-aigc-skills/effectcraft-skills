@@ -38,8 +38,10 @@
 
 以下位置示例针对 320×180 合成；先读取真实尺寸、既有相机和图层，避免重复创建或覆盖已有设置。项目路径替换成用户授权的绝对路径，技能挂载路径替换成实际安装目录：
 
+以下 `SKILL_DIR` 沿用本技能 `SKILL.md` 的实际加载目录，脚本和示例均来自同一技能。
+
 ```bash
-python3 /mnt/skills/user/effectcraft-cli-camera/scripts/cli.py -- run \
+python3 "$SKILL_DIR/scripts/cli.py" -- run \
   layer.newCamera '{"name":"Primary camera","position":[160,90,-400],"poi":[160,90,0]}' \
   view.set3DView '{"view":"activeCamera"}' \
   camera.dolly '{"amount":50}' \
