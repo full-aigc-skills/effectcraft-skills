@@ -2,115 +2,56 @@
   "schema": "craft-task-skill-first-use/v1",
   "date": "2026-10-06",
   "pluginId": "effectcraft",
-  "platform": "darwin-arm64",
+  "sourceVersion": "0.1.0-dev.6",
   "runtimeVersion": "0.2.0",
-  "skillSourceRef": "v0.1.0-dev.4",
-  "result": "passed",
-  "taskSkills": [
-    {
-      "skill": "effectcraft-cli-project",
-      "skillSha256": "9a09e19d36ae666c921cca04ee4e488a2bd37f101257665c2329895a16ad69b3",
-      "result": "passed",
-      "oracle": "native composition create/reopen",
-      "installation": "only this skill copied; fresh runtime; public locked archive URL; no global CLI PATH"
-    },
-    {
-      "skill": "effectcraft-cli-footage",
-      "skillSha256": "388f3e3c61d33516317cda2d4c06ef8640c58207ca9fe997e3a4c6c0c553defe",
-      "result": "passed",
-      "oracle": "PNG footage import, placement and preserved prior layers",
-      "installation": "only this skill copied; fresh runtime; public locked archive URL; no global CLI PATH"
-    },
-    {
-      "skill": "effectcraft-cli-composition",
-      "skillSha256": "6c23e05ff5c090e4d27db2bbcdf10d2f839521dcd25ee543087df579122641d4",
-      "result": "passed",
-      "oracle": "composition dimensions, frame rate, duration and rendered size",
-      "installation": "only this skill copied; fresh runtime; public locked archive URL; no global CLI PATH"
-    },
-    {
-      "skill": "effectcraft-cli-layers",
-      "skillSha256": "ec9283ae45832273260dc45a2132d97ff773a1fd35e1690e9c764d11fc7b00f2",
-      "result": "passed",
-      "oracle": "editable solid and preserved text properties",
-      "installation": "only this skill copied; fresh runtime; public locked archive URL; no global CLI PATH"
-    },
-    {
-      "skill": "effectcraft-cli-animation",
-      "skillSha256": "b3196d7cf0d7f936c901d67974f9476f7a3dff50172169aa3b695bb7b6a22468",
-      "result": "passed",
-      "oracle": "two opacity keys and actual transparent frames",
-      "installation": "only this skill copied; fresh runtime; public locked archive URL; no global CLI PATH"
-    },
-    {
-      "skill": "effectcraft-cli-effects",
-      "skillSha256": "21fbe23645b89c87ec9017cd84c4d34d67c3507c0bb64ba417264f5b51fbd18e",
-      "result": "passed",
-      "oracle": "persisted blur parameter and changed preview pixels",
-      "installation": "only this skill copied; fresh runtime; public locked archive URL; no global CLI PATH"
-    },
-    {
-      "skill": "effectcraft-cli-masks",
-      "skillSha256": "688cc66002f6b4ee45eec80437c3db9ea01f7d246ffe12e01ebeff73814f7d99",
-      "result": "passed",
-      "oracle": "mask geometry, reduced alpha coverage, preserved text layer",
-      "installation": "only this skill copied; fresh runtime; public locked archive URL; no global CLI PATH"
-    },
-    {
-      "skill": "effectcraft-cli-expressions",
-      "skillSha256": "79d482af753226a2f9eb2b656187a9c06c8f684352c2b5a558842a52ed18b56c",
-      "result": "passed",
-      "oracle": "expression evaluation at two times and zero expression errors",
-      "installation": "only this skill copied; fresh runtime; public locked archive URL; no global CLI PATH"
-    },
-    {
-      "skill": "effectcraft-cli-camera",
-      "skillSha256": "6bf13f5b1ad9ad16666c62daf9236b21028e4787c61451f770636872c3f02220",
-      "result": "passed",
-      "oracle": "camera creation, activeCamera view, dolly, reopened position; default 2D view rejected",
-      "installation": "only this skill copied; fresh runtime; public locked archive URL; no global CLI PATH"
-    },
-    {
-      "skill": "effectcraft-cli-export",
-      "skillSha256": "cf7ea2b4872a13c7f6e59c2cd36279b0ca3e354d2d58c056dddb97a4d959300e",
-      "result": "passed",
-      "oracle": "RGBA PNG alpha decoded; native H.264 dimensions and 12 decoded frames",
-      "installation": "only this skill copied; fresh runtime; public locked archive URL; no global CLI PATH"
-    }
-  ],
+  "platform": "darwin-arm64",
+  "python": "3.13.5",
   "regression": {
-    "tests": 35,
-    "passed": 35,
+    "tests": 39,
+    "passed": 39,
     "skipped": 0,
-    "seconds": 115.97,
-    "flags": [
-      "CRAFT_TASK_FIRST_USE=1",
-      "CRAFT_LIVE_TEST=1",
-      "CRAFT_LIVE_SUITE=1"
-    ]
+    "seconds": 136.172,
+    "environment": {
+      "CRAFT_TASK_FIRST_USE": "1",
+      "CRAFT_LIVE_TEST": "1",
+      "CRAFT_LIVE_SUITE": "1"
+    },
+    "archiveOverride": false
   },
-  "testFile": "tests/test_task_skill_first_use.py",
-  "testFileSha256": "7b620e175c7483af26981dad215fa440d94558d656235d7735f25c60211dc6bb",
-  "cameraContractRed": {
-    "previousSkillOmitsRequiredCommands": true,
-    "required": [
-      "layer.newCamera",
-      "layer.newLight",
-      "layer.setSwitch",
-      "view.set3DView",
-      "view.get3D",
-      "camera.dolly"
-    ]
+  "installation": {
+    "layout": "isolated single skill",
+    "runtimeHome": "new empty directory per task",
+    "PATH": "/usr/bin:/bin for skill invocation",
+    "nativeDownload": "default public pinned archive URL"
   },
-  "verifiedCliDifferences": [
-    "render-frame writes an RGB preview",
-    "render --format png --channels rgba writes RGBA numbered frames",
-    "render --comp expects a composition name",
-    "exec without save returns native object directly; save wraps it in result/saved"
+  "redPhase": [
+    "Missing skill-owned layer-mask.json fails contract",
+    "Previous source workflow rejects mask.setVertex as unsupported_command"
   ],
-  "limits": [
-    "not all 640 commands or parameter combinations executed",
-    "not final creative, advanced 3D material/shadow or GUI acceptance",
-    "model dispatch unverified"
+  "checks": [
+    "All 13 skills independently discover pinned CLI commands",
+    "11 scene tests install independently and operate on native projects",
+    "Closed Add mask saved as native project and rendered to RGBA PNG",
+    "Skill-owned workflow example creates editable mask and revises two vertices",
+    "Source project SHA unchanged by revision",
+    "Public CLI removal restores actual visible pixels",
+    "Non-target title properties unchanged",
+    "Existing animation, footage, effects, expression, camera and native video checks pass"
+  ],
+  "files": {
+    "tests/test_task_skill_first_use.py": "3e92c11f5a1c78bbbe8b1fc61d4093445b1fce4b8ec90eec9a453d591322d68e",
+    "tests/test_native_workflow.py": "b3883e2196ca5a7757e2e9bbc0d07a5e5b466ebf562632a92020f211a31751b3",
+    "skills/effectcraft-use/scripts/workflow.py": "42b07403eecadf1e8f350030f274094c9459f5920d7525ea6d46f7cd4379361c",
+    "skills/effectcraft-use/examples/layer-mask.json": "61efc2abc7274b45224659ab4aae7e847486af3f3660161a03b83b978ec7a8bc",
+    "skills/effectcraft-cli-masks/references/scenario.md": "f1275b6532b06710b86a5ed6aa49d49515d8c78668c431c6ec44f90ad8b47c35",
+    "skill-suite.json": "db954b9e3ba1891e16ca03f841d1d2ede96915515174f57d67dcbe5f887c3fdf",
+    ".claude-plugin/plugin.json": "c2b2f887baa94ae109ad63610b9030940f7792e5ce3b2e59d52fa3a08f503531"
+  },
+  "unverified": [
+    "Model task dispatch and GUI",
+    "Automatic roto or arbitrary complex/feathered mask acceptance",
+    "Creative approval",
+    "Other platforms",
+    "Full cross-editor interchange fidelity"
   ]
 }

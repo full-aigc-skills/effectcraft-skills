@@ -31,3 +31,16 @@
 4. 原生工程、素材清单、预览/导出及交换报告交付；技术核验和视觉审核分开记录。
 
 首次组合实例采用本技能 examples 与 references/workflow.md。此实例验证组合能力，不替代所有候选命令的逐项验收。失败保留检查点，不将无损原生交付替换成扁平结果。
+
+
+## 单技能首次使用：创建与局部修改
+
+先使用本技能目录的 `examples/layer-mask.json`。闭合矩形顶点使用图层坐标（此例图层大小 320×180），不是未经转换的合成坐标。默认 Add 蒙版保留左半幅，透明交付看 RGBA PNG 帧；MP4 不保存 alpha。
+
+```bash
+python3 -I -B "$SKILL_DIR/scripts/workflow.py" "$SKILL_DIR/examples/layer-mask.json" --output mask-v1
+```
+
+保存回执中的 `bindings.product.layer` 与 `bindings.crop.mask`，以及 `files["project.ecproj"]`。局部修订计划使用 `expectedProjectSha256` 和两条 `mask.setVertex` 操作：顶点索引 1 移到 `[240,0]`，索引 2 移到 `[240,180]`；`layer` 用 `{"$ref":"product.layer"}`，`mask` 用 `{"$ref":"crop.mask"}`。通过本技能 workflow.py 的 `--source mask-v1 --output mask-v2` 另存，重开并比较 RGBA 实际边界。移除蒙版用 `mask.remove`，不删除原始图层。
+
+路径与顶点不是主体识别结果。只有当前版本真正执行并渲染通过的操作才可称已验证；自动抠像、羽化动画和任意复杂路径仍按具体任务验收。

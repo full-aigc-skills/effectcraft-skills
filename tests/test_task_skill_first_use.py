@@ -26,6 +26,13 @@ class CameraSkillContractTests(unittest.TestCase):
         self.assertTrue(required.issubset({command['id'] for command in catalog['commands']}))
 
 
+    def test_masks_skill_carries_editable_mask_commands_and_example(self):
+        catalog=json.loads((ROOT/'skills/effectcraft-cli-masks/references/commands.json').read_text())
+        self.assertTrue({'mask.new','mask.setVertex','mask.remove'}.issubset({entry['id'] for entry in catalog['commands']}))
+        plan=json.loads((ROOT/'skills/effectcraft-cli-masks/examples/layer-mask.json').read_text())
+        self.assertIn('mask.new',{entry['command'] for entry in plan['operations']})
+
+
 @unittest.skipUnless(os.environ.get('CRAFT_TASK_FIRST_USE') == '1',
                      'requires macOS arm64, public archives, ffprobe and Pillow')
 class TaskSkillFirstUseTests(unittest.TestCase):
@@ -235,6 +242,49 @@ class TaskSkillFirstUseTests(unittest.TestCase):
         self.cli('exec', 'camera.fromView', '--params', '{}', '--project', self.project,
                  '--save-as', rejected, success=False)
         self.assertFalse(rejected.exists())
+
+    def test_masks_remain_editable_and_change_actual_alpha(self):
+        from PIL import Image
+        self.install_only('masks')
+        sample=self.root/'sample';revision=self.root/'sample-revision'
+        def workflow(plan,output,source=None):
+            path=self.root/(output.name+'-plan.json');path.write_text(json.dumps(plan))
+            command=[sys.executable,'-I','-B',str(self.skill/'scripts/workflow.py'),str(path),'--output',str(output),'--runtime-home',str(self.runtime)]
+            if source:command+=['--source',str(source)]
+            result=subprocess.run(command,env=self.environment,capture_output=True,text=True,timeout=240)
+            self.assertEqual(result.returncode,0,result.stdout+result.stderr)
+            return json.loads(result.stdout)
+        delivered=workflow(json.loads((self.skill/'examples/layer-mask.json').read_text()),sample)
+        original_sha=digest(sample/'project.ecproj')
+        modified=workflow({'expectedProjectSha256':original_sha,'operations':[
+            {'command':'mask.setVertex','params':{'layer':{'$ref':'product.layer'},'mask':{'$ref':'crop.mask'},'index':1,'point':[240,0]}},
+            {'command':'mask.setVertex','params':{'layer':{'$ref':'product.layer'},'mask':{'$ref':'crop.mask'},'index':2,'point':[240,180]}}],
+            'frames':[.5]},revision,sample)
+        self.assertEqual(digest(sample/'project.ecproj'),original_sha)
+        with Image.open(sample/'frame-0001.png') as image:self.assertEqual(image.getpixel((220,90))[3],0)
+        with Image.open(revision/'frame-0000.png') as image:self.assertGreater(image.getpixel((220,90))[1],180)
+        self.assertEqual(delivered['bindings'],modified['bindings'])
+        original=self.props(self.project,self.title)
+        solid=self.root/'solid.ecproj';masked=self.root/'masked.ecproj'
+        layer=self.execute('layer.newSolid',{'name':'Masked product','color':'#20d030','width':320,'height':180},solid)['layer']
+        mask=self.execute('mask.new',{'layer':layer,'vertices':[[0,0],[160,0],[160,180],[0,180]],'closed':True,'mode':'add'},masked,solid)['mask']
+        self.assertEqual(self.props(masked,self.title),original)
+        with Image.open(self.render(masked,'masked.png',.5,transparent=True)) as image:
+            self.assertGreater(image.getpixel((80,90))[1],180)
+            self.assertEqual(image.getpixel((240,90))[3],0)
+        revised=self.root/'mask-revised.ecproj'
+        self.cli('run','mask.setVertex',json.dumps({'layer':layer,'mask':mask,'index':1,'point':[240,0]}),
+                 'mask.setVertex',json.dumps({'layer':layer,'mask':mask,'index':2,'point':[240,180]}),
+                 '--project',masked,'--save-as',revised)
+        self.assertEqual(self.props(revised,self.title),original)
+        with Image.open(self.render(revised,'expanded.png',.5,transparent=True)) as image:
+            self.assertGreater(image.getpixel((220,90))[1],180)
+            self.assertEqual(image.getpixel((280,90))[3],0)
+        unmasked=self.root/'unmasked.ecproj'
+        self.execute('mask.remove',{'layer':layer,'mask':mask},unmasked,revised)
+        with Image.open(self.render(unmasked,'unmasked.png',.5,transparent=True)) as image:
+            self.assertGreater(image.getpixel((280,90))[1],180)
+        self.assertEqual(self.props(unmasked,self.title),original)
 
     def test_export_transparent_frame_and_decoded_native_video(self):
         from PIL import Image

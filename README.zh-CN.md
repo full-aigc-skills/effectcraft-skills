@@ -49,3 +49,5 @@ CRAFT_TASK_FIRST_USE=1 CRAFT_LIVE_TEST=1 CRAFT_LIVE_SUITE=1 python3 -B -m unitte
 ```
 
 命令统一使用 `SKILL_DIR`，其值为宿主实际加载的 `SKILL.md` 所在绝对目录。支持用户级、项目级 `.agents/skills` 及插件内部或缓存目录；CLI 运行时另外安装到用户数据目录。每个技能单独复制到三种含空格的布局后，文档中的脚本入口均可运行 `--help`。[路径验证](docs/evidence/installed-skill-paths.json)。既有宿主缓存需更新后才会收到修正文档。
+
+技能套件 dev.6 增加自包含可编辑蒙版示例，接通公开蒙版顶点修改/移除工作流。默认公开下载的原生回归 39 项全部通过、无跳过；场景技能各自从空运行时安装，蒙版修订保留原工程与非目标文字，RGBA 实际像素验证边界变化。[证据](docs/evidence/task-skill-first-use.json)。运行时保持 0.2.0；模型/GUI、创作及任意复杂蒙版保真仍需验收。

@@ -20,7 +20,7 @@ def exchange_report(root,outputs,warnings):
 
 ALLOWED = {'asset.import', 'asset.replace', 'layer.addItem', 'layer.newText', 'layer.newShape', 'layer.newSolid', 'layer.setText',
            'layer.select', 'layer.setParent', 'prop.set', 'prop.addKey',
-           'keys.select', 'keys.easyEase', 'keys.interpolation', 'mask.new',
+           'keys.select', 'keys.easyEase', 'keys.interpolation', 'mask.new', 'mask.setVertex', 'mask.remove',
            'effect.apply', 'effect.remove', 'effect.toggle', 'comp.settings'}
 
 def sha(path):

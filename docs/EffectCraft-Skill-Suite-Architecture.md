@@ -1,6 +1,6 @@
 # EffectCraft Skill Suite Architecture
 
-> Updated: 2026-10-05. Skill/plugin development version: 0.1.0-dev.5; native/orchestration runtime: 0.2.0. Target behavior is owned by the existing OpenSpec change.
+> Updated: 2026-10-06. Skill development version: 0.1.0-dev.6; plugin snapshot: 0.1.0-dev.7; native/orchestration runtime: 0.2.0. Target behavior is owned by the existing OpenSpec change.
 
 ## 1. Why a suite
 
