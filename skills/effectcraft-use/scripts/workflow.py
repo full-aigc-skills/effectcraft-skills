@@ -13,6 +13,11 @@ import shutil
 import subprocess
 import tempfile
 
+def exchange_report(root,outputs,warnings):
+    spec=importlib.util.spec_from_file_location('craft_exchange_loss',Path(__file__).with_name('exchange_loss.py'))
+    module=importlib.util.module_from_spec(spec);spec.loader.exec_module(module)
+    module.write_report(root,outputs,warnings)
+
 ALLOWED = {'asset.import', 'asset.replace', 'layer.addItem', 'layer.newText', 'layer.newShape', 'layer.newSolid', 'layer.setText',
            'layer.select', 'layer.setParent', 'prop.set', 'prop.addKey',
            'keys.select', 'keys.easyEase', 'keys.interpolation', 'mask.new',
@@ -249,10 +254,11 @@ def _execute(plan, output, runtime_home, source, owned):
         (stage / 'operations.json').write_text(serialized + '\n')
         for name, value in [('native.json', {'composition': comp, 'layers': layers}), ('plan.json', plan)]:
             (stage / name).write_text(json.dumps(value, ensure_ascii=False, indent=2) + '\n')
+        exchange_report(stage,[frame['path'] for frame in frames]+(['intro.mp4'] if plan.get('exports') else []),{})
         manifest = {'schema': 'effectcraft-delivery/v1', 'sourceProjectSha256': source_hash,
                     'runtimeSha256': installed['binarySha256'], 'bindings': bindings, 'frames': frames, 'assets': assets,
                     'video': {'path': 'intro.mp4', 'alpha': False} if plan.get('exports') else None,
-                    'files': {str(f.relative_to(stage)): sha(f) for f in stage.rglob('*') if f.is_file()}, 'acceptance': 'requires-domain-and-visual-review'}
+                    'files': {str(f.relative_to(stage)): sha(f) for f in stage.rglob('*') if f.is_file()}, 'lossReport': {'path':'exchange-loss.json','sha256':sha(stage/'exchange-loss.json')}, 'acceptance': 'requires-domain-and-visual-review'}
         (stage / 'manifest.json').write_text(json.dumps(manifest, ensure_ascii=False, indent=2) + '\n')
         if stage != output:
             if output.exists() or output.is_symlink():

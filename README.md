@@ -15,3 +15,5 @@ The executable workflow now covers native project round trips, transparent PNG p
 The 15-test suite also verifies native media collection, moved-delivery revision and footage replacement while retaining layer animation. Collected native references are absolute; the workflow relinks verified media when revising a moved delivery.
 
 Development version `0.1.0-dev.1` fixes concurrent first-use/reuse install-lock contention: wait up to 120 seconds, then verify and reuse; timeout preserves installations and never replays editing tasks.
+
+Development version dev.2 includes hash-bound exchange-loss.json with every native delivery. Reports distinguish format losses, observed structure and unknown font/effect fidelity; exported derivatives never replace the retained native project.
