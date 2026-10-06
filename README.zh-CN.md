@@ -56,4 +56,6 @@ CRAFT_TASK_FIRST_USE=1 CRAFT_LIVE_TEST=1 CRAFT_LIVE_SUITE=1 python3 -B -m unitte
 
 安装后的动画技能时序首次使用通过：4 个原生 RGBA 时刻与 12 帧视频解码核对淡入；文字返工保留徽标、关键帧属性及原交付。[时序验收](docs/EffectCraft-Temporal-Animation-Acceptance.zh_CN.md)。完整创作及动画透明视频验收仍开放。
 
-EffectCraft 独立技能源 dev.7 对效果／蒙版计划参数校验错误返回 unsupported_mapping；原生 CLI 仍为 0.2.0。真实新建／修订拒绝保留原交付，完整原生技能源回归 44 项通过、零跳过（182.083 秒）。固定新版插件安装后复验尚待执行。[架构](docs/EffectCraft-Parameter-Errors-Architecture.zh_CN.md) · [证据](docs/evidence/parameter-mapping-repair-20261006.json)。
+EffectCraft 独立技能源 dev.7 对效果／蒙版计划参数校验错误返回 unsupported_mapping；原生 CLI 仍为 0.2.0。真实新建／修订拒绝保留原交付，完整原生技能源回归 44 项通过、零跳过（182.083 秒）。固定新版插件安装后的限定范围复验见下文。[架构](docs/EffectCraft-Parameter-Errors-Architecture.zh_CN.md) · [证据](docs/evidence/parameter-mapping-repair-20261006.json)。
+
+固定插件 dev.8／技能源 dev.7 的安装后验收通过：五插件 58 技能、零加载错误；独立效果／蒙版技能从空运行时核对有效创建及非法新建／修订 1 项通过（24.714 秒），13 技能分别公开冷启动全部通过，全部宿主安装摘要保留。[发行绑定证据](docs/evidence/codex-effectcraft8-parameter-first-use-20261006.json)。ArtCraft 的领域包升级及错误传播、完整首版等门禁仍开放。
