@@ -1,0 +1,1012 @@
+{
+  "schema": "craft-domain-protocol-fault-first-use/v1",
+  "domain": "effectcraft",
+  "result": "PASS",
+  "skills": 13,
+  "faultCases": 78,
+  "elapsedSeconds": 153.038,
+  "cases": [
+    {
+      "schema": "craft-native-protocol-fault-first-use/v1",
+      "domain": "effectcraft",
+      "result": "PASS",
+      "coldInstall": "PASS",
+      "cases": [
+        {
+          "fault": "malformed",
+          "nativeSaveCount": 1,
+          "result": "unknown",
+          "startedSteps": 10,
+          "reopen": "PASS",
+          "projectSha256": "df3c3adfb12c0e0a3f0373f80bb7ae02f571810e0940cc74dfa2170062bd59a0",
+          "runtimeSha256": "74d44fc90018ac381dc4516edff939ab26eb6d900ae5c3f49d1eba5ac14105fe"
+        },
+        {
+          "fault": "scalar",
+          "nativeSaveCount": 1,
+          "result": "unknown",
+          "startedSteps": 10,
+          "reopen": "PASS",
+          "projectSha256": "df3c3adfb12c0e0a3f0373f80bb7ae02f571810e0940cc74dfa2170062bd59a0",
+          "runtimeSha256": "74d44fc90018ac381dc4516edff939ab26eb6d900ae5c3f49d1eba5ac14105fe"
+        },
+        {
+          "fault": "missing",
+          "nativeSaveCount": 1,
+          "result": "unknown",
+          "startedSteps": 10,
+          "reopen": "PASS",
+          "projectSha256": "df3c3adfb12c0e0a3f0373f80bb7ae02f571810e0940cc74dfa2170062bd59a0",
+          "runtimeSha256": "74d44fc90018ac381dc4516edff939ab26eb6d900ae5c3f49d1eba5ac14105fe"
+        },
+        {
+          "fault": "ambiguous",
+          "nativeSaveCount": 1,
+          "result": "unknown",
+          "startedSteps": 10,
+          "reopen": "PASS",
+          "projectSha256": "df3c3adfb12c0e0a3f0373f80bb7ae02f571810e0940cc74dfa2170062bd59a0",
+          "runtimeSha256": "74d44fc90018ac381dc4516edff939ab26eb6d900ae5c3f49d1eba5ac14105fe"
+        },
+        {
+          "fault": "nonfinite",
+          "nativeSaveCount": 1,
+          "result": "unknown",
+          "startedSteps": 10,
+          "reopen": "PASS",
+          "projectSha256": "df3c3adfb12c0e0a3f0373f80bb7ae02f571810e0940cc74dfa2170062bd59a0",
+          "runtimeSha256": "74d44fc90018ac381dc4516edff939ab26eb6d900ae5c3f49d1eba5ac14105fe"
+        },
+        {
+          "fault": "tool-content",
+          "nativeSaveCount": 1,
+          "result": "unknown",
+          "startedSteps": 10,
+          "reopen": "PASS",
+          "projectSha256": "df3c3adfb12c0e0a3f0373f80bb7ae02f571810e0940cc74dfa2170062bd59a0",
+          "runtimeSha256": "74d44fc90018ac381dc4516edff939ab26eb6d900ae5c3f49d1eba5ac14105fe"
+        }
+      ],
+      "entrySha256": "d9b1fd19c18aaef7e51b5dd03b8e14e0802883f5e8d58f1094ea2fafc2f4adc4",
+      "transportSha256": "40f31e45cf21d237f0df2bdcf09cf5a880309616d44b9b7a1b58c952b181ec7d",
+      "testSha256": "db92ee754ed0a9884b9e74ccf6d30cb3a07cca768ceedbcfbee6ac4961739f95",
+      "checks": [
+        "single skill copy",
+        "fresh public locked runtime",
+        "native save before injected response fault",
+        "one save request",
+        "unknown journal and failure receipt",
+        "no later operations",
+        "saved native project reopened",
+        "original delivery and skills unchanged"
+      ],
+      "scope": "six injected response faults after real native save; not exhaustive commands or GUI acceptance",
+      "skill": "effectcraft-use"
+    },
+    {
+      "schema": "craft-native-protocol-fault-first-use/v1",
+      "domain": "effectcraft",
+      "result": "PASS",
+      "coldInstall": "PASS",
+      "cases": [
+        {
+          "fault": "malformed",
+          "nativeSaveCount": 1,
+          "result": "unknown",
+          "startedSteps": 10,
+          "reopen": "PASS",
+          "projectSha256": "df3c3adfb12c0e0a3f0373f80bb7ae02f571810e0940cc74dfa2170062bd59a0",
+          "runtimeSha256": "74d44fc90018ac381dc4516edff939ab26eb6d900ae5c3f49d1eba5ac14105fe"
+        },
+        {
+          "fault": "scalar",
+          "nativeSaveCount": 1,
+          "result": "unknown",
+          "startedSteps": 10,
+          "reopen": "PASS",
+          "projectSha256": "df3c3adfb12c0e0a3f0373f80bb7ae02f571810e0940cc74dfa2170062bd59a0",
+          "runtimeSha256": "74d44fc90018ac381dc4516edff939ab26eb6d900ae5c3f49d1eba5ac14105fe"
+        },
+        {
+          "fault": "missing",
+          "nativeSaveCount": 1,
+          "result": "unknown",
+          "startedSteps": 10,
+          "reopen": "PASS",
+          "projectSha256": "df3c3adfb12c0e0a3f0373f80bb7ae02f571810e0940cc74dfa2170062bd59a0",
+          "runtimeSha256": "74d44fc90018ac381dc4516edff939ab26eb6d900ae5c3f49d1eba5ac14105fe"
+        },
+        {
+          "fault": "ambiguous",
+          "nativeSaveCount": 1,
+          "result": "unknown",
+          "startedSteps": 10,
+          "reopen": "PASS",
+          "projectSha256": "df3c3adfb12c0e0a3f0373f80bb7ae02f571810e0940cc74dfa2170062bd59a0",
+          "runtimeSha256": "74d44fc90018ac381dc4516edff939ab26eb6d900ae5c3f49d1eba5ac14105fe"
+        },
+        {
+          "fault": "nonfinite",
+          "nativeSaveCount": 1,
+          "result": "unknown",
+          "startedSteps": 10,
+          "reopen": "PASS",
+          "projectSha256": "df3c3adfb12c0e0a3f0373f80bb7ae02f571810e0940cc74dfa2170062bd59a0",
+          "runtimeSha256": "74d44fc90018ac381dc4516edff939ab26eb6d900ae5c3f49d1eba5ac14105fe"
+        },
+        {
+          "fault": "tool-content",
+          "nativeSaveCount": 1,
+          "result": "unknown",
+          "startedSteps": 10,
+          "reopen": "PASS",
+          "projectSha256": "df3c3adfb12c0e0a3f0373f80bb7ae02f571810e0940cc74dfa2170062bd59a0",
+          "runtimeSha256": "74d44fc90018ac381dc4516edff939ab26eb6d900ae5c3f49d1eba5ac14105fe"
+        }
+      ],
+      "entrySha256": "d9b1fd19c18aaef7e51b5dd03b8e14e0802883f5e8d58f1094ea2fafc2f4adc4",
+      "transportSha256": "40f31e45cf21d237f0df2bdcf09cf5a880309616d44b9b7a1b58c952b181ec7d",
+      "testSha256": "db92ee754ed0a9884b9e74ccf6d30cb3a07cca768ceedbcfbee6ac4961739f95",
+      "checks": [
+        "single skill copy",
+        "fresh public locked runtime",
+        "native save before injected response fault",
+        "one save request",
+        "unknown journal and failure receipt",
+        "no later operations",
+        "saved native project reopened",
+        "original delivery and skills unchanged"
+      ],
+      "scope": "six injected response faults after real native save; not exhaustive commands or GUI acceptance",
+      "skill": "effectcraft-cli"
+    },
+    {
+      "schema": "craft-native-protocol-fault-first-use/v1",
+      "domain": "effectcraft",
+      "result": "PASS",
+      "coldInstall": "PASS",
+      "cases": [
+        {
+          "fault": "malformed",
+          "nativeSaveCount": 1,
+          "result": "unknown",
+          "startedSteps": 10,
+          "reopen": "PASS",
+          "projectSha256": "df3c3adfb12c0e0a3f0373f80bb7ae02f571810e0940cc74dfa2170062bd59a0",
+          "runtimeSha256": "74d44fc90018ac381dc4516edff939ab26eb6d900ae5c3f49d1eba5ac14105fe"
+        },
+        {
+          "fault": "scalar",
+          "nativeSaveCount": 1,
+          "result": "unknown",
+          "startedSteps": 10,
+          "reopen": "PASS",
+          "projectSha256": "df3c3adfb12c0e0a3f0373f80bb7ae02f571810e0940cc74dfa2170062bd59a0",
+          "runtimeSha256": "74d44fc90018ac381dc4516edff939ab26eb6d900ae5c3f49d1eba5ac14105fe"
+        },
+        {
+          "fault": "missing",
+          "nativeSaveCount": 1,
+          "result": "unknown",
+          "startedSteps": 10,
+          "reopen": "PASS",
+          "projectSha256": "df3c3adfb12c0e0a3f0373f80bb7ae02f571810e0940cc74dfa2170062bd59a0",
+          "runtimeSha256": "74d44fc90018ac381dc4516edff939ab26eb6d900ae5c3f49d1eba5ac14105fe"
+        },
+        {
+          "fault": "ambiguous",
+          "nativeSaveCount": 1,
+          "result": "unknown",
+          "startedSteps": 10,
+          "reopen": "PASS",
+          "projectSha256": "df3c3adfb12c0e0a3f0373f80bb7ae02f571810e0940cc74dfa2170062bd59a0",
+          "runtimeSha256": "74d44fc90018ac381dc4516edff939ab26eb6d900ae5c3f49d1eba5ac14105fe"
+        },
+        {
+          "fault": "nonfinite",
+          "nativeSaveCount": 1,
+          "result": "unknown",
+          "startedSteps": 10,
+          "reopen": "PASS",
+          "projectSha256": "df3c3adfb12c0e0a3f0373f80bb7ae02f571810e0940cc74dfa2170062bd59a0",
+          "runtimeSha256": "74d44fc90018ac381dc4516edff939ab26eb6d900ae5c3f49d1eba5ac14105fe"
+        },
+        {
+          "fault": "tool-content",
+          "nativeSaveCount": 1,
+          "result": "unknown",
+          "startedSteps": 10,
+          "reopen": "PASS",
+          "projectSha256": "df3c3adfb12c0e0a3f0373f80bb7ae02f571810e0940cc74dfa2170062bd59a0",
+          "runtimeSha256": "74d44fc90018ac381dc4516edff939ab26eb6d900ae5c3f49d1eba5ac14105fe"
+        }
+      ],
+      "entrySha256": "d9b1fd19c18aaef7e51b5dd03b8e14e0802883f5e8d58f1094ea2fafc2f4adc4",
+      "transportSha256": "40f31e45cf21d237f0df2bdcf09cf5a880309616d44b9b7a1b58c952b181ec7d",
+      "testSha256": "db92ee754ed0a9884b9e74ccf6d30cb3a07cca768ceedbcfbee6ac4961739f95",
+      "checks": [
+        "single skill copy",
+        "fresh public locked runtime",
+        "native save before injected response fault",
+        "one save request",
+        "unknown journal and failure receipt",
+        "no later operations",
+        "saved native project reopened",
+        "original delivery and skills unchanged"
+      ],
+      "scope": "six injected response faults after real native save; not exhaustive commands or GUI acceptance",
+      "skill": "effectcraft-cli-setup"
+    },
+    {
+      "schema": "craft-native-protocol-fault-first-use/v1",
+      "domain": "effectcraft",
+      "result": "PASS",
+      "coldInstall": "PASS",
+      "cases": [
+        {
+          "fault": "malformed",
+          "nativeSaveCount": 1,
+          "result": "unknown",
+          "startedSteps": 10,
+          "reopen": "PASS",
+          "projectSha256": "df3c3adfb12c0e0a3f0373f80bb7ae02f571810e0940cc74dfa2170062bd59a0",
+          "runtimeSha256": "74d44fc90018ac381dc4516edff939ab26eb6d900ae5c3f49d1eba5ac14105fe"
+        },
+        {
+          "fault": "scalar",
+          "nativeSaveCount": 1,
+          "result": "unknown",
+          "startedSteps": 10,
+          "reopen": "PASS",
+          "projectSha256": "df3c3adfb12c0e0a3f0373f80bb7ae02f571810e0940cc74dfa2170062bd59a0",
+          "runtimeSha256": "74d44fc90018ac381dc4516edff939ab26eb6d900ae5c3f49d1eba5ac14105fe"
+        },
+        {
+          "fault": "missing",
+          "nativeSaveCount": 1,
+          "result": "unknown",
+          "startedSteps": 10,
+          "reopen": "PASS",
+          "projectSha256": "df3c3adfb12c0e0a3f0373f80bb7ae02f571810e0940cc74dfa2170062bd59a0",
+          "runtimeSha256": "74d44fc90018ac381dc4516edff939ab26eb6d900ae5c3f49d1eba5ac14105fe"
+        },
+        {
+          "fault": "ambiguous",
+          "nativeSaveCount": 1,
+          "result": "unknown",
+          "startedSteps": 10,
+          "reopen": "PASS",
+          "projectSha256": "df3c3adfb12c0e0a3f0373f80bb7ae02f571810e0940cc74dfa2170062bd59a0",
+          "runtimeSha256": "74d44fc90018ac381dc4516edff939ab26eb6d900ae5c3f49d1eba5ac14105fe"
+        },
+        {
+          "fault": "nonfinite",
+          "nativeSaveCount": 1,
+          "result": "unknown",
+          "startedSteps": 10,
+          "reopen": "PASS",
+          "projectSha256": "df3c3adfb12c0e0a3f0373f80bb7ae02f571810e0940cc74dfa2170062bd59a0",
+          "runtimeSha256": "74d44fc90018ac381dc4516edff939ab26eb6d900ae5c3f49d1eba5ac14105fe"
+        },
+        {
+          "fault": "tool-content",
+          "nativeSaveCount": 1,
+          "result": "unknown",
+          "startedSteps": 10,
+          "reopen": "PASS",
+          "projectSha256": "df3c3adfb12c0e0a3f0373f80bb7ae02f571810e0940cc74dfa2170062bd59a0",
+          "runtimeSha256": "74d44fc90018ac381dc4516edff939ab26eb6d900ae5c3f49d1eba5ac14105fe"
+        }
+      ],
+      "entrySha256": "d9b1fd19c18aaef7e51b5dd03b8e14e0802883f5e8d58f1094ea2fafc2f4adc4",
+      "transportSha256": "40f31e45cf21d237f0df2bdcf09cf5a880309616d44b9b7a1b58c952b181ec7d",
+      "testSha256": "db92ee754ed0a9884b9e74ccf6d30cb3a07cca768ceedbcfbee6ac4961739f95",
+      "checks": [
+        "single skill copy",
+        "fresh public locked runtime",
+        "native save before injected response fault",
+        "one save request",
+        "unknown journal and failure receipt",
+        "no later operations",
+        "saved native project reopened",
+        "original delivery and skills unchanged"
+      ],
+      "scope": "six injected response faults after real native save; not exhaustive commands or GUI acceptance",
+      "skill": "effectcraft-cli-project"
+    },
+    {
+      "schema": "craft-native-protocol-fault-first-use/v1",
+      "domain": "effectcraft",
+      "result": "PASS",
+      "coldInstall": "PASS",
+      "cases": [
+        {
+          "fault": "malformed",
+          "nativeSaveCount": 1,
+          "result": "unknown",
+          "startedSteps": 10,
+          "reopen": "PASS",
+          "projectSha256": "df3c3adfb12c0e0a3f0373f80bb7ae02f571810e0940cc74dfa2170062bd59a0",
+          "runtimeSha256": "74d44fc90018ac381dc4516edff939ab26eb6d900ae5c3f49d1eba5ac14105fe"
+        },
+        {
+          "fault": "scalar",
+          "nativeSaveCount": 1,
+          "result": "unknown",
+          "startedSteps": 10,
+          "reopen": "PASS",
+          "projectSha256": "df3c3adfb12c0e0a3f0373f80bb7ae02f571810e0940cc74dfa2170062bd59a0",
+          "runtimeSha256": "74d44fc90018ac381dc4516edff939ab26eb6d900ae5c3f49d1eba5ac14105fe"
+        },
+        {
+          "fault": "missing",
+          "nativeSaveCount": 1,
+          "result": "unknown",
+          "startedSteps": 10,
+          "reopen": "PASS",
+          "projectSha256": "df3c3adfb12c0e0a3f0373f80bb7ae02f571810e0940cc74dfa2170062bd59a0",
+          "runtimeSha256": "74d44fc90018ac381dc4516edff939ab26eb6d900ae5c3f49d1eba5ac14105fe"
+        },
+        {
+          "fault": "ambiguous",
+          "nativeSaveCount": 1,
+          "result": "unknown",
+          "startedSteps": 10,
+          "reopen": "PASS",
+          "projectSha256": "df3c3adfb12c0e0a3f0373f80bb7ae02f571810e0940cc74dfa2170062bd59a0",
+          "runtimeSha256": "74d44fc90018ac381dc4516edff939ab26eb6d900ae5c3f49d1eba5ac14105fe"
+        },
+        {
+          "fault": "nonfinite",
+          "nativeSaveCount": 1,
+          "result": "unknown",
+          "startedSteps": 10,
+          "reopen": "PASS",
+          "projectSha256": "df3c3adfb12c0e0a3f0373f80bb7ae02f571810e0940cc74dfa2170062bd59a0",
+          "runtimeSha256": "74d44fc90018ac381dc4516edff939ab26eb6d900ae5c3f49d1eba5ac14105fe"
+        },
+        {
+          "fault": "tool-content",
+          "nativeSaveCount": 1,
+          "result": "unknown",
+          "startedSteps": 10,
+          "reopen": "PASS",
+          "projectSha256": "df3c3adfb12c0e0a3f0373f80bb7ae02f571810e0940cc74dfa2170062bd59a0",
+          "runtimeSha256": "74d44fc90018ac381dc4516edff939ab26eb6d900ae5c3f49d1eba5ac14105fe"
+        }
+      ],
+      "entrySha256": "d9b1fd19c18aaef7e51b5dd03b8e14e0802883f5e8d58f1094ea2fafc2f4adc4",
+      "transportSha256": "40f31e45cf21d237f0df2bdcf09cf5a880309616d44b9b7a1b58c952b181ec7d",
+      "testSha256": "db92ee754ed0a9884b9e74ccf6d30cb3a07cca768ceedbcfbee6ac4961739f95",
+      "checks": [
+        "single skill copy",
+        "fresh public locked runtime",
+        "native save before injected response fault",
+        "one save request",
+        "unknown journal and failure receipt",
+        "no later operations",
+        "saved native project reopened",
+        "original delivery and skills unchanged"
+      ],
+      "scope": "six injected response faults after real native save; not exhaustive commands or GUI acceptance",
+      "skill": "effectcraft-cli-footage"
+    },
+    {
+      "schema": "craft-native-protocol-fault-first-use/v1",
+      "domain": "effectcraft",
+      "result": "PASS",
+      "coldInstall": "PASS",
+      "cases": [
+        {
+          "fault": "malformed",
+          "nativeSaveCount": 1,
+          "result": "unknown",
+          "startedSteps": 10,
+          "reopen": "PASS",
+          "projectSha256": "df3c3adfb12c0e0a3f0373f80bb7ae02f571810e0940cc74dfa2170062bd59a0",
+          "runtimeSha256": "74d44fc90018ac381dc4516edff939ab26eb6d900ae5c3f49d1eba5ac14105fe"
+        },
+        {
+          "fault": "scalar",
+          "nativeSaveCount": 1,
+          "result": "unknown",
+          "startedSteps": 10,
+          "reopen": "PASS",
+          "projectSha256": "df3c3adfb12c0e0a3f0373f80bb7ae02f571810e0940cc74dfa2170062bd59a0",
+          "runtimeSha256": "74d44fc90018ac381dc4516edff939ab26eb6d900ae5c3f49d1eba5ac14105fe"
+        },
+        {
+          "fault": "missing",
+          "nativeSaveCount": 1,
+          "result": "unknown",
+          "startedSteps": 10,
+          "reopen": "PASS",
+          "projectSha256": "df3c3adfb12c0e0a3f0373f80bb7ae02f571810e0940cc74dfa2170062bd59a0",
+          "runtimeSha256": "74d44fc90018ac381dc4516edff939ab26eb6d900ae5c3f49d1eba5ac14105fe"
+        },
+        {
+          "fault": "ambiguous",
+          "nativeSaveCount": 1,
+          "result": "unknown",
+          "startedSteps": 10,
+          "reopen": "PASS",
+          "projectSha256": "df3c3adfb12c0e0a3f0373f80bb7ae02f571810e0940cc74dfa2170062bd59a0",
+          "runtimeSha256": "74d44fc90018ac381dc4516edff939ab26eb6d900ae5c3f49d1eba5ac14105fe"
+        },
+        {
+          "fault": "nonfinite",
+          "nativeSaveCount": 1,
+          "result": "unknown",
+          "startedSteps": 10,
+          "reopen": "PASS",
+          "projectSha256": "df3c3adfb12c0e0a3f0373f80bb7ae02f571810e0940cc74dfa2170062bd59a0",
+          "runtimeSha256": "74d44fc90018ac381dc4516edff939ab26eb6d900ae5c3f49d1eba5ac14105fe"
+        },
+        {
+          "fault": "tool-content",
+          "nativeSaveCount": 1,
+          "result": "unknown",
+          "startedSteps": 10,
+          "reopen": "PASS",
+          "projectSha256": "df3c3adfb12c0e0a3f0373f80bb7ae02f571810e0940cc74dfa2170062bd59a0",
+          "runtimeSha256": "74d44fc90018ac381dc4516edff939ab26eb6d900ae5c3f49d1eba5ac14105fe"
+        }
+      ],
+      "entrySha256": "d9b1fd19c18aaef7e51b5dd03b8e14e0802883f5e8d58f1094ea2fafc2f4adc4",
+      "transportSha256": "40f31e45cf21d237f0df2bdcf09cf5a880309616d44b9b7a1b58c952b181ec7d",
+      "testSha256": "db92ee754ed0a9884b9e74ccf6d30cb3a07cca768ceedbcfbee6ac4961739f95",
+      "checks": [
+        "single skill copy",
+        "fresh public locked runtime",
+        "native save before injected response fault",
+        "one save request",
+        "unknown journal and failure receipt",
+        "no later operations",
+        "saved native project reopened",
+        "original delivery and skills unchanged"
+      ],
+      "scope": "six injected response faults after real native save; not exhaustive commands or GUI acceptance",
+      "skill": "effectcraft-cli-composition"
+    },
+    {
+      "schema": "craft-native-protocol-fault-first-use/v1",
+      "domain": "effectcraft",
+      "result": "PASS",
+      "coldInstall": "PASS",
+      "cases": [
+        {
+          "fault": "malformed",
+          "nativeSaveCount": 1,
+          "result": "unknown",
+          "startedSteps": 10,
+          "reopen": "PASS",
+          "projectSha256": "df3c3adfb12c0e0a3f0373f80bb7ae02f571810e0940cc74dfa2170062bd59a0",
+          "runtimeSha256": "74d44fc90018ac381dc4516edff939ab26eb6d900ae5c3f49d1eba5ac14105fe"
+        },
+        {
+          "fault": "scalar",
+          "nativeSaveCount": 1,
+          "result": "unknown",
+          "startedSteps": 10,
+          "reopen": "PASS",
+          "projectSha256": "df3c3adfb12c0e0a3f0373f80bb7ae02f571810e0940cc74dfa2170062bd59a0",
+          "runtimeSha256": "74d44fc90018ac381dc4516edff939ab26eb6d900ae5c3f49d1eba5ac14105fe"
+        },
+        {
+          "fault": "missing",
+          "nativeSaveCount": 1,
+          "result": "unknown",
+          "startedSteps": 10,
+          "reopen": "PASS",
+          "projectSha256": "df3c3adfb12c0e0a3f0373f80bb7ae02f571810e0940cc74dfa2170062bd59a0",
+          "runtimeSha256": "74d44fc90018ac381dc4516edff939ab26eb6d900ae5c3f49d1eba5ac14105fe"
+        },
+        {
+          "fault": "ambiguous",
+          "nativeSaveCount": 1,
+          "result": "unknown",
+          "startedSteps": 10,
+          "reopen": "PASS",
+          "projectSha256": "df3c3adfb12c0e0a3f0373f80bb7ae02f571810e0940cc74dfa2170062bd59a0",
+          "runtimeSha256": "74d44fc90018ac381dc4516edff939ab26eb6d900ae5c3f49d1eba5ac14105fe"
+        },
+        {
+          "fault": "nonfinite",
+          "nativeSaveCount": 1,
+          "result": "unknown",
+          "startedSteps": 10,
+          "reopen": "PASS",
+          "projectSha256": "df3c3adfb12c0e0a3f0373f80bb7ae02f571810e0940cc74dfa2170062bd59a0",
+          "runtimeSha256": "74d44fc90018ac381dc4516edff939ab26eb6d900ae5c3f49d1eba5ac14105fe"
+        },
+        {
+          "fault": "tool-content",
+          "nativeSaveCount": 1,
+          "result": "unknown",
+          "startedSteps": 10,
+          "reopen": "PASS",
+          "projectSha256": "df3c3adfb12c0e0a3f0373f80bb7ae02f571810e0940cc74dfa2170062bd59a0",
+          "runtimeSha256": "74d44fc90018ac381dc4516edff939ab26eb6d900ae5c3f49d1eba5ac14105fe"
+        }
+      ],
+      "entrySha256": "d9b1fd19c18aaef7e51b5dd03b8e14e0802883f5e8d58f1094ea2fafc2f4adc4",
+      "transportSha256": "40f31e45cf21d237f0df2bdcf09cf5a880309616d44b9b7a1b58c952b181ec7d",
+      "testSha256": "db92ee754ed0a9884b9e74ccf6d30cb3a07cca768ceedbcfbee6ac4961739f95",
+      "checks": [
+        "single skill copy",
+        "fresh public locked runtime",
+        "native save before injected response fault",
+        "one save request",
+        "unknown journal and failure receipt",
+        "no later operations",
+        "saved native project reopened",
+        "original delivery and skills unchanged"
+      ],
+      "scope": "six injected response faults after real native save; not exhaustive commands or GUI acceptance",
+      "skill": "effectcraft-cli-layers"
+    },
+    {
+      "schema": "craft-native-protocol-fault-first-use/v1",
+      "domain": "effectcraft",
+      "result": "PASS",
+      "coldInstall": "PASS",
+      "cases": [
+        {
+          "fault": "malformed",
+          "nativeSaveCount": 1,
+          "result": "unknown",
+          "startedSteps": 10,
+          "reopen": "PASS",
+          "projectSha256": "df3c3adfb12c0e0a3f0373f80bb7ae02f571810e0940cc74dfa2170062bd59a0",
+          "runtimeSha256": "74d44fc90018ac381dc4516edff939ab26eb6d900ae5c3f49d1eba5ac14105fe"
+        },
+        {
+          "fault": "scalar",
+          "nativeSaveCount": 1,
+          "result": "unknown",
+          "startedSteps": 10,
+          "reopen": "PASS",
+          "projectSha256": "df3c3adfb12c0e0a3f0373f80bb7ae02f571810e0940cc74dfa2170062bd59a0",
+          "runtimeSha256": "74d44fc90018ac381dc4516edff939ab26eb6d900ae5c3f49d1eba5ac14105fe"
+        },
+        {
+          "fault": "missing",
+          "nativeSaveCount": 1,
+          "result": "unknown",
+          "startedSteps": 10,
+          "reopen": "PASS",
+          "projectSha256": "df3c3adfb12c0e0a3f0373f80bb7ae02f571810e0940cc74dfa2170062bd59a0",
+          "runtimeSha256": "74d44fc90018ac381dc4516edff939ab26eb6d900ae5c3f49d1eba5ac14105fe"
+        },
+        {
+          "fault": "ambiguous",
+          "nativeSaveCount": 1,
+          "result": "unknown",
+          "startedSteps": 10,
+          "reopen": "PASS",
+          "projectSha256": "df3c3adfb12c0e0a3f0373f80bb7ae02f571810e0940cc74dfa2170062bd59a0",
+          "runtimeSha256": "74d44fc90018ac381dc4516edff939ab26eb6d900ae5c3f49d1eba5ac14105fe"
+        },
+        {
+          "fault": "nonfinite",
+          "nativeSaveCount": 1,
+          "result": "unknown",
+          "startedSteps": 10,
+          "reopen": "PASS",
+          "projectSha256": "df3c3adfb12c0e0a3f0373f80bb7ae02f571810e0940cc74dfa2170062bd59a0",
+          "runtimeSha256": "74d44fc90018ac381dc4516edff939ab26eb6d900ae5c3f49d1eba5ac14105fe"
+        },
+        {
+          "fault": "tool-content",
+          "nativeSaveCount": 1,
+          "result": "unknown",
+          "startedSteps": 10,
+          "reopen": "PASS",
+          "projectSha256": "df3c3adfb12c0e0a3f0373f80bb7ae02f571810e0940cc74dfa2170062bd59a0",
+          "runtimeSha256": "74d44fc90018ac381dc4516edff939ab26eb6d900ae5c3f49d1eba5ac14105fe"
+        }
+      ],
+      "entrySha256": "d9b1fd19c18aaef7e51b5dd03b8e14e0802883f5e8d58f1094ea2fafc2f4adc4",
+      "transportSha256": "40f31e45cf21d237f0df2bdcf09cf5a880309616d44b9b7a1b58c952b181ec7d",
+      "testSha256": "db92ee754ed0a9884b9e74ccf6d30cb3a07cca768ceedbcfbee6ac4961739f95",
+      "checks": [
+        "single skill copy",
+        "fresh public locked runtime",
+        "native save before injected response fault",
+        "one save request",
+        "unknown journal and failure receipt",
+        "no later operations",
+        "saved native project reopened",
+        "original delivery and skills unchanged"
+      ],
+      "scope": "six injected response faults after real native save; not exhaustive commands or GUI acceptance",
+      "skill": "effectcraft-cli-animation"
+    },
+    {
+      "schema": "craft-native-protocol-fault-first-use/v1",
+      "domain": "effectcraft",
+      "result": "PASS",
+      "coldInstall": "PASS",
+      "cases": [
+        {
+          "fault": "malformed",
+          "nativeSaveCount": 1,
+          "result": "unknown",
+          "startedSteps": 10,
+          "reopen": "PASS",
+          "projectSha256": "df3c3adfb12c0e0a3f0373f80bb7ae02f571810e0940cc74dfa2170062bd59a0",
+          "runtimeSha256": "74d44fc90018ac381dc4516edff939ab26eb6d900ae5c3f49d1eba5ac14105fe"
+        },
+        {
+          "fault": "scalar",
+          "nativeSaveCount": 1,
+          "result": "unknown",
+          "startedSteps": 10,
+          "reopen": "PASS",
+          "projectSha256": "df3c3adfb12c0e0a3f0373f80bb7ae02f571810e0940cc74dfa2170062bd59a0",
+          "runtimeSha256": "74d44fc90018ac381dc4516edff939ab26eb6d900ae5c3f49d1eba5ac14105fe"
+        },
+        {
+          "fault": "missing",
+          "nativeSaveCount": 1,
+          "result": "unknown",
+          "startedSteps": 10,
+          "reopen": "PASS",
+          "projectSha256": "df3c3adfb12c0e0a3f0373f80bb7ae02f571810e0940cc74dfa2170062bd59a0",
+          "runtimeSha256": "74d44fc90018ac381dc4516edff939ab26eb6d900ae5c3f49d1eba5ac14105fe"
+        },
+        {
+          "fault": "ambiguous",
+          "nativeSaveCount": 1,
+          "result": "unknown",
+          "startedSteps": 10,
+          "reopen": "PASS",
+          "projectSha256": "df3c3adfb12c0e0a3f0373f80bb7ae02f571810e0940cc74dfa2170062bd59a0",
+          "runtimeSha256": "74d44fc90018ac381dc4516edff939ab26eb6d900ae5c3f49d1eba5ac14105fe"
+        },
+        {
+          "fault": "nonfinite",
+          "nativeSaveCount": 1,
+          "result": "unknown",
+          "startedSteps": 10,
+          "reopen": "PASS",
+          "projectSha256": "df3c3adfb12c0e0a3f0373f80bb7ae02f571810e0940cc74dfa2170062bd59a0",
+          "runtimeSha256": "74d44fc90018ac381dc4516edff939ab26eb6d900ae5c3f49d1eba5ac14105fe"
+        },
+        {
+          "fault": "tool-content",
+          "nativeSaveCount": 1,
+          "result": "unknown",
+          "startedSteps": 10,
+          "reopen": "PASS",
+          "projectSha256": "df3c3adfb12c0e0a3f0373f80bb7ae02f571810e0940cc74dfa2170062bd59a0",
+          "runtimeSha256": "74d44fc90018ac381dc4516edff939ab26eb6d900ae5c3f49d1eba5ac14105fe"
+        }
+      ],
+      "entrySha256": "d9b1fd19c18aaef7e51b5dd03b8e14e0802883f5e8d58f1094ea2fafc2f4adc4",
+      "transportSha256": "40f31e45cf21d237f0df2bdcf09cf5a880309616d44b9b7a1b58c952b181ec7d",
+      "testSha256": "db92ee754ed0a9884b9e74ccf6d30cb3a07cca768ceedbcfbee6ac4961739f95",
+      "checks": [
+        "single skill copy",
+        "fresh public locked runtime",
+        "native save before injected response fault",
+        "one save request",
+        "unknown journal and failure receipt",
+        "no later operations",
+        "saved native project reopened",
+        "original delivery and skills unchanged"
+      ],
+      "scope": "six injected response faults after real native save; not exhaustive commands or GUI acceptance",
+      "skill": "effectcraft-cli-effects"
+    },
+    {
+      "schema": "craft-native-protocol-fault-first-use/v1",
+      "domain": "effectcraft",
+      "result": "PASS",
+      "coldInstall": "PASS",
+      "cases": [
+        {
+          "fault": "malformed",
+          "nativeSaveCount": 1,
+          "result": "unknown",
+          "startedSteps": 10,
+          "reopen": "PASS",
+          "projectSha256": "df3c3adfb12c0e0a3f0373f80bb7ae02f571810e0940cc74dfa2170062bd59a0",
+          "runtimeSha256": "74d44fc90018ac381dc4516edff939ab26eb6d900ae5c3f49d1eba5ac14105fe"
+        },
+        {
+          "fault": "scalar",
+          "nativeSaveCount": 1,
+          "result": "unknown",
+          "startedSteps": 10,
+          "reopen": "PASS",
+          "projectSha256": "df3c3adfb12c0e0a3f0373f80bb7ae02f571810e0940cc74dfa2170062bd59a0",
+          "runtimeSha256": "74d44fc90018ac381dc4516edff939ab26eb6d900ae5c3f49d1eba5ac14105fe"
+        },
+        {
+          "fault": "missing",
+          "nativeSaveCount": 1,
+          "result": "unknown",
+          "startedSteps": 10,
+          "reopen": "PASS",
+          "projectSha256": "df3c3adfb12c0e0a3f0373f80bb7ae02f571810e0940cc74dfa2170062bd59a0",
+          "runtimeSha256": "74d44fc90018ac381dc4516edff939ab26eb6d900ae5c3f49d1eba5ac14105fe"
+        },
+        {
+          "fault": "ambiguous",
+          "nativeSaveCount": 1,
+          "result": "unknown",
+          "startedSteps": 10,
+          "reopen": "PASS",
+          "projectSha256": "df3c3adfb12c0e0a3f0373f80bb7ae02f571810e0940cc74dfa2170062bd59a0",
+          "runtimeSha256": "74d44fc90018ac381dc4516edff939ab26eb6d900ae5c3f49d1eba5ac14105fe"
+        },
+        {
+          "fault": "nonfinite",
+          "nativeSaveCount": 1,
+          "result": "unknown",
+          "startedSteps": 10,
+          "reopen": "PASS",
+          "projectSha256": "df3c3adfb12c0e0a3f0373f80bb7ae02f571810e0940cc74dfa2170062bd59a0",
+          "runtimeSha256": "74d44fc90018ac381dc4516edff939ab26eb6d900ae5c3f49d1eba5ac14105fe"
+        },
+        {
+          "fault": "tool-content",
+          "nativeSaveCount": 1,
+          "result": "unknown",
+          "startedSteps": 10,
+          "reopen": "PASS",
+          "projectSha256": "df3c3adfb12c0e0a3f0373f80bb7ae02f571810e0940cc74dfa2170062bd59a0",
+          "runtimeSha256": "74d44fc90018ac381dc4516edff939ab26eb6d900ae5c3f49d1eba5ac14105fe"
+        }
+      ],
+      "entrySha256": "d9b1fd19c18aaef7e51b5dd03b8e14e0802883f5e8d58f1094ea2fafc2f4adc4",
+      "transportSha256": "40f31e45cf21d237f0df2bdcf09cf5a880309616d44b9b7a1b58c952b181ec7d",
+      "testSha256": "db92ee754ed0a9884b9e74ccf6d30cb3a07cca768ceedbcfbee6ac4961739f95",
+      "checks": [
+        "single skill copy",
+        "fresh public locked runtime",
+        "native save before injected response fault",
+        "one save request",
+        "unknown journal and failure receipt",
+        "no later operations",
+        "saved native project reopened",
+        "original delivery and skills unchanged"
+      ],
+      "scope": "six injected response faults after real native save; not exhaustive commands or GUI acceptance",
+      "skill": "effectcraft-cli-masks"
+    },
+    {
+      "schema": "craft-native-protocol-fault-first-use/v1",
+      "domain": "effectcraft",
+      "result": "PASS",
+      "coldInstall": "PASS",
+      "cases": [
+        {
+          "fault": "malformed",
+          "nativeSaveCount": 1,
+          "result": "unknown",
+          "startedSteps": 10,
+          "reopen": "PASS",
+          "projectSha256": "df3c3adfb12c0e0a3f0373f80bb7ae02f571810e0940cc74dfa2170062bd59a0",
+          "runtimeSha256": "74d44fc90018ac381dc4516edff939ab26eb6d900ae5c3f49d1eba5ac14105fe"
+        },
+        {
+          "fault": "scalar",
+          "nativeSaveCount": 1,
+          "result": "unknown",
+          "startedSteps": 10,
+          "reopen": "PASS",
+          "projectSha256": "df3c3adfb12c0e0a3f0373f80bb7ae02f571810e0940cc74dfa2170062bd59a0",
+          "runtimeSha256": "74d44fc90018ac381dc4516edff939ab26eb6d900ae5c3f49d1eba5ac14105fe"
+        },
+        {
+          "fault": "missing",
+          "nativeSaveCount": 1,
+          "result": "unknown",
+          "startedSteps": 10,
+          "reopen": "PASS",
+          "projectSha256": "df3c3adfb12c0e0a3f0373f80bb7ae02f571810e0940cc74dfa2170062bd59a0",
+          "runtimeSha256": "74d44fc90018ac381dc4516edff939ab26eb6d900ae5c3f49d1eba5ac14105fe"
+        },
+        {
+          "fault": "ambiguous",
+          "nativeSaveCount": 1,
+          "result": "unknown",
+          "startedSteps": 10,
+          "reopen": "PASS",
+          "projectSha256": "df3c3adfb12c0e0a3f0373f80bb7ae02f571810e0940cc74dfa2170062bd59a0",
+          "runtimeSha256": "74d44fc90018ac381dc4516edff939ab26eb6d900ae5c3f49d1eba5ac14105fe"
+        },
+        {
+          "fault": "nonfinite",
+          "nativeSaveCount": 1,
+          "result": "unknown",
+          "startedSteps": 10,
+          "reopen": "PASS",
+          "projectSha256": "df3c3adfb12c0e0a3f0373f80bb7ae02f571810e0940cc74dfa2170062bd59a0",
+          "runtimeSha256": "74d44fc90018ac381dc4516edff939ab26eb6d900ae5c3f49d1eba5ac14105fe"
+        },
+        {
+          "fault": "tool-content",
+          "nativeSaveCount": 1,
+          "result": "unknown",
+          "startedSteps": 10,
+          "reopen": "PASS",
+          "projectSha256": "df3c3adfb12c0e0a3f0373f80bb7ae02f571810e0940cc74dfa2170062bd59a0",
+          "runtimeSha256": "74d44fc90018ac381dc4516edff939ab26eb6d900ae5c3f49d1eba5ac14105fe"
+        }
+      ],
+      "entrySha256": "d9b1fd19c18aaef7e51b5dd03b8e14e0802883f5e8d58f1094ea2fafc2f4adc4",
+      "transportSha256": "40f31e45cf21d237f0df2bdcf09cf5a880309616d44b9b7a1b58c952b181ec7d",
+      "testSha256": "db92ee754ed0a9884b9e74ccf6d30cb3a07cca768ceedbcfbee6ac4961739f95",
+      "checks": [
+        "single skill copy",
+        "fresh public locked runtime",
+        "native save before injected response fault",
+        "one save request",
+        "unknown journal and failure receipt",
+        "no later operations",
+        "saved native project reopened",
+        "original delivery and skills unchanged"
+      ],
+      "scope": "six injected response faults after real native save; not exhaustive commands or GUI acceptance",
+      "skill": "effectcraft-cli-expressions"
+    },
+    {
+      "schema": "craft-native-protocol-fault-first-use/v1",
+      "domain": "effectcraft",
+      "result": "PASS",
+      "coldInstall": "PASS",
+      "cases": [
+        {
+          "fault": "malformed",
+          "nativeSaveCount": 1,
+          "result": "unknown",
+          "startedSteps": 10,
+          "reopen": "PASS",
+          "projectSha256": "df3c3adfb12c0e0a3f0373f80bb7ae02f571810e0940cc74dfa2170062bd59a0",
+          "runtimeSha256": "74d44fc90018ac381dc4516edff939ab26eb6d900ae5c3f49d1eba5ac14105fe"
+        },
+        {
+          "fault": "scalar",
+          "nativeSaveCount": 1,
+          "result": "unknown",
+          "startedSteps": 10,
+          "reopen": "PASS",
+          "projectSha256": "df3c3adfb12c0e0a3f0373f80bb7ae02f571810e0940cc74dfa2170062bd59a0",
+          "runtimeSha256": "74d44fc90018ac381dc4516edff939ab26eb6d900ae5c3f49d1eba5ac14105fe"
+        },
+        {
+          "fault": "missing",
+          "nativeSaveCount": 1,
+          "result": "unknown",
+          "startedSteps": 10,
+          "reopen": "PASS",
+          "projectSha256": "df3c3adfb12c0e0a3f0373f80bb7ae02f571810e0940cc74dfa2170062bd59a0",
+          "runtimeSha256": "74d44fc90018ac381dc4516edff939ab26eb6d900ae5c3f49d1eba5ac14105fe"
+        },
+        {
+          "fault": "ambiguous",
+          "nativeSaveCount": 1,
+          "result": "unknown",
+          "startedSteps": 10,
+          "reopen": "PASS",
+          "projectSha256": "df3c3adfb12c0e0a3f0373f80bb7ae02f571810e0940cc74dfa2170062bd59a0",
+          "runtimeSha256": "74d44fc90018ac381dc4516edff939ab26eb6d900ae5c3f49d1eba5ac14105fe"
+        },
+        {
+          "fault": "nonfinite",
+          "nativeSaveCount": 1,
+          "result": "unknown",
+          "startedSteps": 10,
+          "reopen": "PASS",
+          "projectSha256": "df3c3adfb12c0e0a3f0373f80bb7ae02f571810e0940cc74dfa2170062bd59a0",
+          "runtimeSha256": "74d44fc90018ac381dc4516edff939ab26eb6d900ae5c3f49d1eba5ac14105fe"
+        },
+        {
+          "fault": "tool-content",
+          "nativeSaveCount": 1,
+          "result": "unknown",
+          "startedSteps": 10,
+          "reopen": "PASS",
+          "projectSha256": "df3c3adfb12c0e0a3f0373f80bb7ae02f571810e0940cc74dfa2170062bd59a0",
+          "runtimeSha256": "74d44fc90018ac381dc4516edff939ab26eb6d900ae5c3f49d1eba5ac14105fe"
+        }
+      ],
+      "entrySha256": "d9b1fd19c18aaef7e51b5dd03b8e14e0802883f5e8d58f1094ea2fafc2f4adc4",
+      "transportSha256": "40f31e45cf21d237f0df2bdcf09cf5a880309616d44b9b7a1b58c952b181ec7d",
+      "testSha256": "db92ee754ed0a9884b9e74ccf6d30cb3a07cca768ceedbcfbee6ac4961739f95",
+      "checks": [
+        "single skill copy",
+        "fresh public locked runtime",
+        "native save before injected response fault",
+        "one save request",
+        "unknown journal and failure receipt",
+        "no later operations",
+        "saved native project reopened",
+        "original delivery and skills unchanged"
+      ],
+      "scope": "six injected response faults after real native save; not exhaustive commands or GUI acceptance",
+      "skill": "effectcraft-cli-camera"
+    },
+    {
+      "schema": "craft-native-protocol-fault-first-use/v1",
+      "domain": "effectcraft",
+      "result": "PASS",
+      "coldInstall": "PASS",
+      "cases": [
+        {
+          "fault": "malformed",
+          "nativeSaveCount": 1,
+          "result": "unknown",
+          "startedSteps": 10,
+          "reopen": "PASS",
+          "projectSha256": "df3c3adfb12c0e0a3f0373f80bb7ae02f571810e0940cc74dfa2170062bd59a0",
+          "runtimeSha256": "74d44fc90018ac381dc4516edff939ab26eb6d900ae5c3f49d1eba5ac14105fe"
+        },
+        {
+          "fault": "scalar",
+          "nativeSaveCount": 1,
+          "result": "unknown",
+          "startedSteps": 10,
+          "reopen": "PASS",
+          "projectSha256": "df3c3adfb12c0e0a3f0373f80bb7ae02f571810e0940cc74dfa2170062bd59a0",
+          "runtimeSha256": "74d44fc90018ac381dc4516edff939ab26eb6d900ae5c3f49d1eba5ac14105fe"
+        },
+        {
+          "fault": "missing",
+          "nativeSaveCount": 1,
+          "result": "unknown",
+          "startedSteps": 10,
+          "reopen": "PASS",
+          "projectSha256": "df3c3adfb12c0e0a3f0373f80bb7ae02f571810e0940cc74dfa2170062bd59a0",
+          "runtimeSha256": "74d44fc90018ac381dc4516edff939ab26eb6d900ae5c3f49d1eba5ac14105fe"
+        },
+        {
+          "fault": "ambiguous",
+          "nativeSaveCount": 1,
+          "result": "unknown",
+          "startedSteps": 10,
+          "reopen": "PASS",
+          "projectSha256": "df3c3adfb12c0e0a3f0373f80bb7ae02f571810e0940cc74dfa2170062bd59a0",
+          "runtimeSha256": "74d44fc90018ac381dc4516edff939ab26eb6d900ae5c3f49d1eba5ac14105fe"
+        },
+        {
+          "fault": "nonfinite",
+          "nativeSaveCount": 1,
+          "result": "unknown",
+          "startedSteps": 10,
+          "reopen": "PASS",
+          "projectSha256": "df3c3adfb12c0e0a3f0373f80bb7ae02f571810e0940cc74dfa2170062bd59a0",
+          "runtimeSha256": "74d44fc90018ac381dc4516edff939ab26eb6d900ae5c3f49d1eba5ac14105fe"
+        },
+        {
+          "fault": "tool-content",
+          "nativeSaveCount": 1,
+          "result": "unknown",
+          "startedSteps": 10,
+          "reopen": "PASS",
+          "projectSha256": "df3c3adfb12c0e0a3f0373f80bb7ae02f571810e0940cc74dfa2170062bd59a0",
+          "runtimeSha256": "74d44fc90018ac381dc4516edff939ab26eb6d900ae5c3f49d1eba5ac14105fe"
+        }
+      ],
+      "entrySha256": "d9b1fd19c18aaef7e51b5dd03b8e14e0802883f5e8d58f1094ea2fafc2f4adc4",
+      "transportSha256": "40f31e45cf21d237f0df2bdcf09cf5a880309616d44b9b7a1b58c952b181ec7d",
+      "testSha256": "db92ee754ed0a9884b9e74ccf6d30cb3a07cca768ceedbcfbee6ac4961739f95",
+      "checks": [
+        "single skill copy",
+        "fresh public locked runtime",
+        "native save before injected response fault",
+        "one save request",
+        "unknown journal and failure receipt",
+        "no later operations",
+        "saved native project reopened",
+        "original delivery and skills unchanged"
+      ],
+      "scope": "six injected response faults after real native save; not exhaustive commands or GUI acceptance",
+      "skill": "effectcraft-cli-export"
+    }
+  ],
+  "scope": "Every standalone skill copied alone; one unique empty public runtime per skill; six injected faulty replies after successful native save, one save per case, unknown receipt, no subsequent operations, fresh-session reopening and original delivery/skill preservation. Fixed installed snapshot, Art bundles and exhaustive command/GUI acceptance remain separate."
+}
