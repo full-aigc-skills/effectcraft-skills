@@ -1,0 +1,216 @@
+{
+  "schema": "effectcraft-dynamic-sequence-first-use/v1",
+  "result": "PASS",
+  "runtimeSha256": "74d44fc90018ac381dc4516edff939ab26eb6d900ae5c3f49d1eba5ac14105fe",
+  "copiedSkillHashes": {
+    "SKILL.md": "5e38fae50374f586294a0a06e6c074e57b50ef681ee7a12fb8a0b415c2f50f34",
+    "references/scenario.md": "97cc12674477f067b622513dd89fc833f0ad7ecf1c763a69f46a8071ea68785c",
+    "references/workflow.md": "40fc259d70316f3472a0d5567f21a95775555b000b0be72ffe3e78090b7e838f",
+    "references/commands.json": "07066739391ebce2b6f03c8aa5e097bbce228748f759688b46d2fb35b0ba96cb",
+    "references/installation-concurrency.md": "69067acebcd47f1924a8d6aa9d8a4ce6f44ad0756d44888a21eb224bcdb1c215",
+    "references/exchange-loss.md": "eee665f62b77274ca8ce0efc4117012ade85978905cdfd40ab488af64297b8ae",
+    "examples/layer-mask.json": "61efc2abc7274b45224659ab4aae7e847486af3f3660161a03b83b978ec7a8bc",
+    "examples/brand-intro.json": "8d786356a69ba838cb9015175494e2d44c7ccd05e6cf6a7ced5d8395bba8c5f1",
+    "scripts/bootstrap.py": "73eadc05f3cbb61738a4720997c829c1de1dd82d356244627d38b37e2c696f00",
+    "scripts/exchange_loss.py": "07f0ea82b8bad5062cdfa72e9bdd1b9088e49fe8837b4c856d1cecb1df6d561d",
+    "scripts/image_sequence.py": "beed6c1450c5e1742a5d3a4ef77e195876870e0594dc3552b00e3329764a3c24",
+    "scripts/mcp_session.py": "2f1e6de76d1fe12917933f4967a40c827ba80994a8441e47cb68f212b00160a4",
+    "scripts/runtime.lock.json": "c3dc4d1443e9b74d0891904d7ec95167375cfb9a8457bfc4faa89208280d465d",
+    "scripts/cli.py": "14388135cb9054d411a805f194e9e68f355bd54dcc1202265cab4348afd45e65",
+    "scripts/png_inspection.py": "f5b55f58eb0f4d7d50664442eec75935cdebc3274e04b221acad54fed429bc02",
+    "scripts/workflow.py": "f7af11913660de335d8667e3314777c4b592a720efe6a83b957a526896843eec"
+  },
+  "frameCount": 12,
+  "frameRate": {
+    "num": 12,
+    "den": 1
+  },
+  "frames": [
+    {
+      "index": 0,
+      "location": "frame_00000.png",
+      "sha256": "94fa4e584df805a110371bd3ec1a0070d5dd05bfd5c28464a19fee1596025bae",
+      "bytes": 1829,
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "rgbaSha256": "1e528c6a45aad9be65884e8e191701f571bb1310a2dae0e93facb9597db62467"
+    },
+    {
+      "index": 1,
+      "location": "frame_00001.png",
+      "sha256": "9d6031abfe4ff11373502145babfbdf0109ecc40e7d8c9b1cea1478aeb6470b2",
+      "bytes": 4670,
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "rgbaSha256": "453f78a338a2930e907b9285f80f0dfa899d0f934fc3de1e493ccd6bdbecfa45"
+    },
+    {
+      "index": 2,
+      "location": "frame_00002.png",
+      "sha256": "03bc0ac9d58180253079d9e9db94edf3a81f22929b45661a91b979a11f24fc87",
+      "bytes": 4789,
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "rgbaSha256": "fa1d1b76f297d478b21ed25d4f4a7b0676e328120cf2318d5d4b5011793930ce"
+    },
+    {
+      "index": 3,
+      "location": "frame_00003.png",
+      "sha256": "c2a342f7fcc7136bc4c9b445a49dfbe4b93f836ba138100048eb29bc422ad9e0",
+      "bytes": 4823,
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "rgbaSha256": "fd06a2f6c7f0302600325de6b82c31e2720a95136467b06cdb26b37a3aeb012e"
+    },
+    {
+      "index": 4,
+      "location": "frame_00004.png",
+      "sha256": "1fb7e91b2465e8ef11f1fa0afa60d83b59ccebcc1495686072c6f8348ad3c47b",
+      "bytes": 4871,
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "rgbaSha256": "01f271461425b27bfa4c2a01bf6da6df9b75065da067aecbe8a76a296bfaccb0"
+    },
+    {
+      "index": 5,
+      "location": "frame_00005.png",
+      "sha256": "3ea0ebea0fa5327268add45bad4b874f63d59f69115e97be71674e4e22f870e3",
+      "bytes": 4859,
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "rgbaSha256": "421b21dacbfdd29d03f1785f996c8205651d68994085e1ab2d3d6586a4285cb5"
+    },
+    {
+      "index": 6,
+      "location": "frame_00006.png",
+      "sha256": "fe261dcba8df6a408c7a8dd90a33200bf3771e43eff5afe789866790c2b41ad6",
+      "bytes": 4807,
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "rgbaSha256": "31285125fc4e967ab63dc057b2b439645f563fc4456c9fd6e49cef8174ea8543"
+    },
+    {
+      "index": 7,
+      "location": "frame_00007.png",
+      "sha256": "fe261dcba8df6a408c7a8dd90a33200bf3771e43eff5afe789866790c2b41ad6",
+      "bytes": 4807,
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "rgbaSha256": "31285125fc4e967ab63dc057b2b439645f563fc4456c9fd6e49cef8174ea8543"
+    },
+    {
+      "index": 8,
+      "location": "frame_00008.png",
+      "sha256": "fe261dcba8df6a408c7a8dd90a33200bf3771e43eff5afe789866790c2b41ad6",
+      "bytes": 4807,
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "rgbaSha256": "31285125fc4e967ab63dc057b2b439645f563fc4456c9fd6e49cef8174ea8543"
+    },
+    {
+      "index": 9,
+      "location": "frame_00009.png",
+      "sha256": "fe261dcba8df6a408c7a8dd90a33200bf3771e43eff5afe789866790c2b41ad6",
+      "bytes": 4807,
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "rgbaSha256": "31285125fc4e967ab63dc057b2b439645f563fc4456c9fd6e49cef8174ea8543"
+    },
+    {
+      "index": 10,
+      "location": "frame_00010.png",
+      "sha256": "fe261dcba8df6a408c7a8dd90a33200bf3771e43eff5afe789866790c2b41ad6",
+      "bytes": 4807,
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "rgbaSha256": "31285125fc4e967ab63dc057b2b439645f563fc4456c9fd6e49cef8174ea8543"
+    },
+    {
+      "index": 11,
+      "location": "frame_00011.png",
+      "sha256": "fe261dcba8df6a408c7a8dd90a33200bf3771e43eff5afe789866790c2b41ad6",
+      "bytes": 4807,
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "rgbaSha256": "31285125fc4e967ab63dc057b2b439645f563fc4456c9fd6e49cef8174ea8543"
+    }
+  ],
+  "revisedSequence": {
+    "path": "rgba-sequence/sequence.json",
+    "sha256": "2d0928c85ea1301f8ace7bd8720d863d5ae6ce4ae3fe0e47c73511be354639ee",
+    "metadata": {
+      "schema": "craft-image-sequence/v1",
+      "encoding": "png",
+      "width": 320,
+      "height": 180,
+      "bitDepth": 8,
+      "channels": "rgba",
+      "alphaRepresentation": "straight-png",
+      "colorSpace": "unknown",
+      "frameRate": {
+        "num": 12,
+        "den": 1
+      },
+      "frameCount": 12,
+      "durationTicks": "12",
+      "timeBase": {
+        "num": 1,
+        "den": 12
+      }
+    }
+  },
+  "allFramesIndependentlyDecoded": true,
+  "actualTransparencyVerified": true,
+  "nonTargetLayerAndAnimationPreserved": true,
+  "sourceAndSkillHashesPreserved": true,
+  "scope": "single copied export skill; empty runtime; public native download; Effect sequence candidate",
+  "excluded": [
+    "Film dynamic import",
+    "Art mixed handoff",
+    "fixed new plugin installation",
+    "creative/color/model/GUI acceptance"
+  ],
+  "tests": {
+    "coldNative": {
+      "pass": 1,
+      "durationSeconds": 14.833
+    },
+    "default": {
+      "tests": 51,
+      "pass": 32,
+      "skipped": 19,
+      "durationSeconds": 8.153
+    },
+    "integrity": {
+      "pass": 4
+    },
+    "formatRed": {
+      "failure": "invalid_export for png-sequence",
+      "logSha256": "f1bbd2caff6add74b71148f0d6a3e7689ef176682a2425b11a4b9d1d15df462a"
+    }
+  }
+}

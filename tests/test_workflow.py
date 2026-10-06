@@ -11,6 +11,13 @@ class WorkflowTests(unittest.TestCase):
         self.module = importlib.util.module_from_spec(spec)
         spec.loader.exec_module(self.module)
 
+    def test_png_sequence_is_an_explicit_supported_export(self):
+        self.module.validate({'operations': [], 'exports': [{'format': 'png-sequence'}]})
+
+    def test_export_sequence_cannot_be_requested_twice(self):
+        with self.assertRaisesRegex(ValueError, 'invalid_export'):
+            self.module.validate({'operations': [], 'exports': [{'format': 'png-sequence'}, {'format': 'png-sequence'}]})
+
     def test_effect_mask_parameter_failures_have_domain_identity(self):
         for command in ('effect.apply','effect.remove','effect.toggle','mask.new','mask.setVertex','mask.remove'):
             text=f"invalid parameters for `{command}`: unknown parameter(s) `invented`"

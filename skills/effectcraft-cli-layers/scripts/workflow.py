@@ -80,7 +80,7 @@ def validate(plan):
             aliases.add(alias)
         if not isinstance(item.get('params', {}), dict):
             raise ValueError('invalid_params')
-    if any(set(x) != {'format'} or x['format'] != 'mp4' for x in plan.get('exports', [])) or len(plan.get('exports', [])) > 1:
+    if any(set(x) != {'format'} or x['format'] not in ('mp4', 'png-sequence') for x in plan.get('exports', [])) or len(plan.get('exports', [])) > 1:
         raise ValueError('invalid_export')
     for value in plan.get('frames', [0]):
         if type(value) not in (int, float) or not 0 <= value <= 3600:
@@ -250,7 +250,9 @@ def _execute(plan, output, runtime_home, source, owned):
                 if not (stage / filename).is_file():
                     raise ValueError('frame_missing')
                 frames.append({'path': filename, 'seconds': time, 'requestedAlpha': True})
-        if plan.get('exports'):
+        output_format = plan.get('exports', [{}])[0].get('format') if plan.get('exports') else None
+        sequence = load_module('image_sequence').export_sequence(cli, project, comp, stage) if output_format == 'png-sequence' else None
+        if output_format == 'mp4':
             # 0.2.0 CLI 将 --comp 字符串解释为名称，数字 ID 只用于 MCP。
             rendered = subprocess.run([cli, '--project', str(project), 'render', '--comp', comp['name'], '--out', str(stage / 'intro.mp4'), '--format', 'h264', '--start', '0', '--end', str(comp['duration']), '--fps', str(comp['frameRate']), '--audio', 'off'], capture_output=True, text=True, timeout=180)
             if rendered.returncode or not (stage / 'intro.mp4').is_file():
@@ -266,10 +268,11 @@ def _execute(plan, output, runtime_home, source, owned):
         (stage / 'operations.json').write_text(serialized + '\n')
         for name, value in [('native.json', {'composition': comp, 'layers': layers}), ('plan.json', plan)]:
             (stage / name).write_text(json.dumps(value, ensure_ascii=False, indent=2) + '\n')
-        exchange_report(stage,[frame['path'] for frame in frames]+(['intro.mp4'] if plan.get('exports') else []),{})
+        exchange_report(stage,[frame['path'] for frame in frames]+(['intro.mp4'] if output_format == 'mp4' else [])+([str(f.relative_to(stage)) for f in sorted((stage/'rgba-sequence').glob('*.png'))] if sequence else []),{})
         manifest = {'schema': 'effectcraft-delivery/v1', 'sourceProjectSha256': source_hash,
                     'runtimeSha256': installed['binarySha256'], 'bindings': bindings, 'frames': frames, 'assets': assets,
-                    'video': {'path': 'intro.mp4', 'alpha': False} if plan.get('exports') else None,
+                    'video': {'path': 'intro.mp4', 'alpha': False} if output_format == 'mp4' else None,
+                    'imageSequence': sequence,
                     'files': {str(f.relative_to(stage)): sha(f) for f in stage.rglob('*') if f.is_file()}, 'lossReport': {'path':'exchange-loss.json','sha256':sha(stage/'exchange-loss.json')}, 'acceptance': 'requires-domain-and-visual-review'}
         (stage / 'manifest.json').write_text(json.dumps(manifest, ensure_ascii=False, indent=2) + '\n')
         if stage != output:

@@ -66,3 +66,9 @@ All 15 tests passed, including native collection, moved-delivery revision, repla
 固定原生引擎拒绝未知命令字段，工作流将 effect.apply／remove／toggle 和 mask.new／setVertex／remove 的匹配参数校验错误归类为 unsupported_mapping，并保留命令与原生诊断。不会省略未知字段重试；失败新建不发布交付，失败源工程修订保留原文件。效果数值通过对应属性路径设置，例如 effects/#1/blurriness；不能把 blurriness 当作 effect.apply 参数。蒙版羽化需使用原生支持的属性或命令，不虚构 mask.new feather 字段。cli.py 原始调用仍由原生 CLI 明确校验。
 
 The pinned engine rejects unknown command fields. Matching validation failures for six effect/mask plan commands become unsupported_mapping, retaining the command and native diagnostic. No field-stripping retry occurs. Failed creation publishes no delivery; failed source revision preserves prior files. Use prop.set with the supported effect property path instead of invented effect.apply fields; use actual native mask properties/commands for feather controls. Raw cli.py calls retain native validation.
+
+## Dynamic transparent sequence candidate / 动态透明序列候选
+
+`exports: [{"format":"png-sequence"}]` requests the fixed native RGBA PNG renderer. The workflow retains `project.ecproj`, previews and a `rgba-sequence/sequence.json` manifest (`craft-image-sequence/v1`) with ordered frame paths, byte/pixel hashes, rational frame rate and duration, dimensions, bit depth and actual alpha extrema. No MP4 is produced for this export. Each frame must be RGBA8 with visible transparency, continuous numbering and identical dimensions. Requests are bounded to 10,000 frames and 512 MiB decoded RGBA pixels before native launch. Color space is recorded as unknown; encoding representation is straight PNG, not proof of cross-editor color fidelity.
+
+`png-sequence` 为动态透明序列候选导出。交付保留原生工程，逐帧清单记录摘要、实际通道、帧率与持续时间。缺帧、多余帧、损坏、尺寸不一致或全不透明帧拒绝；导出前限制帧数和总解码像素预算。导入端必须核验全部帧及显式帧率，不能当作静态首帧。Film 默认图片序列媒体时间基与合成帧率可能不同；当前固定 Film 运行时未完成显式帧率修复，因此端到端动态交接及新版固定插件验收仍开放。
