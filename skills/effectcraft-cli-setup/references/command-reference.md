@@ -805,6 +805,8 @@ Null Object
 {name?}
 ```
 
+场景 / Recipes: [examples/expression-parent-create.json](../examples/expression-parent-create.json)；前置条件见 [表达式父级](expression-parent.md)。
+
 ## layer.newShape
 
 Shape Layer
@@ -821,6 +823,8 @@ Shape Layer
 ```text
 {kind?: rect|rounded|ellipse|star|polygon|none, name?, size?, fill?, stroke?, strokeWidth?, position?}
 ```
+
+场景 / Recipes: [examples/expression-parent-create.json](../examples/expression-parent-create.json)；前置条件见 [表达式父级](expression-parent.md)。
 
 ## layer.newAdjustment
 
@@ -889,6 +893,8 @@ Select Layers
 ```text
 {layers: [id|name|#n], add?, toggle?}
 ```
+
+场景 / Recipes: [examples/expression-parent-create.json](../examples/expression-parent-create.json), [examples/expression-parent-revise.json](../examples/expression-parent-revise.json)；前置条件见 [表达式父级](expression-parent.md)。
 
 ## layer.selectNext
 
@@ -1025,6 +1031,8 @@ Parent
 ```text
 {layers?, parent: layer|null}
 ```
+
+场景 / Recipes: [examples/expression-parent-create.json](../examples/expression-parent-create.json)；前置条件见 [表达式父级](expression-parent.md)。
 
 ## layer.timing
 
@@ -2624,6 +2632,8 @@ Set Property Value
 {layer?, path|prop, value, time?, merge?}
 ```
 
+场景 / Recipes: [examples/expression-parent-create.json](../examples/expression-parent-create.json)；前置条件见 [表达式父级](expression-parent.md)。
+
 ## prop.toggleAnimation
 
 Toggle Stopwatch
@@ -2708,6 +2718,8 @@ Add Expression
 ```text
 {layer?, path|prop, expression?, enabled?}
 ```
+
+场景 / Recipes: [examples/expression-parent-create.json](../examples/expression-parent-create.json), [examples/expression-parent-revise.json](../examples/expression-parent-revise.json)；前置条件见 [表达式父级](expression-parent.md)。
 
 ## prop.reset
 
@@ -5207,6 +5219,8 @@ Enable/Disable Expressions
 ```text
 {layers?, enabled: bool}
 ```
+
+场景 / Recipes: [examples/expression-parent-create.json](../examples/expression-parent-create.json)；前置条件见 [表达式父级](expression-parent.md)。
 
 ## layer.setTransform
 

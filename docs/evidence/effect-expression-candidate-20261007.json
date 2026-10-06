@@ -1,0 +1,342 @@
+{
+  "schema": "effectcraft-expression-candidate/v1",
+  "result": "PASS",
+  "cases": 13,
+  "records": [
+    {
+      "schema": "effectcraft-expression-parent-first-use/v1",
+      "result": "PASS",
+      "skill": "effectcraft-cli-composition",
+      "nativeProjectSha256": "2ca2e82090ba7931b30cef8731cbb2e23d0c6ff536c1364e7ab464918bb1046a",
+      "revisionSha256": "5291e58ff3fc464e161e532046ebe5e59f1116b41af52f3e9039682a4f7c9c2f",
+      "timeSeconds": [
+        0,
+        0.5
+      ],
+      "initialAlpha": [
+        128,
+        191
+      ],
+      "revisedAlpha": [
+        64,
+        128
+      ],
+      "parentControlCompositionPreserved": true,
+      "controlPixelsUnchanged": true,
+      "originalDeliveryPreserved": true,
+      "cycleRejected": true,
+      "skillIdentityUnchanged": true,
+      "scope": "native parent/opacity expression sample, not exhaustive640 commands/GUI/fullV1"
+    },
+    {
+      "schema": "effectcraft-expression-parent-first-use/v1",
+      "result": "PASS",
+      "skill": "effectcraft-cli-layers",
+      "nativeProjectSha256": "2ca2e82090ba7931b30cef8731cbb2e23d0c6ff536c1364e7ab464918bb1046a",
+      "revisionSha256": "5291e58ff3fc464e161e532046ebe5e59f1116b41af52f3e9039682a4f7c9c2f",
+      "timeSeconds": [
+        0,
+        0.5
+      ],
+      "initialAlpha": [
+        128,
+        191
+      ],
+      "revisedAlpha": [
+        64,
+        128
+      ],
+      "parentControlCompositionPreserved": true,
+      "controlPixelsUnchanged": true,
+      "originalDeliveryPreserved": true,
+      "cycleRejected": true,
+      "skillIdentityUnchanged": true,
+      "scope": "native parent/opacity expression sample, not exhaustive640 commands/GUI/fullV1"
+    },
+    {
+      "schema": "effectcraft-expression-parent-first-use/v1",
+      "result": "PASS",
+      "skill": "effectcraft-cli-footage",
+      "nativeProjectSha256": "2ca2e82090ba7931b30cef8731cbb2e23d0c6ff536c1364e7ab464918bb1046a",
+      "revisionSha256": "5291e58ff3fc464e161e532046ebe5e59f1116b41af52f3e9039682a4f7c9c2f",
+      "timeSeconds": [
+        0,
+        0.5
+      ],
+      "initialAlpha": [
+        128,
+        191
+      ],
+      "revisedAlpha": [
+        64,
+        128
+      ],
+      "parentControlCompositionPreserved": true,
+      "controlPixelsUnchanged": true,
+      "originalDeliveryPreserved": true,
+      "cycleRejected": true,
+      "skillIdentityUnchanged": true,
+      "scope": "native parent/opacity expression sample, not exhaustive640 commands/GUI/fullV1"
+    },
+    {
+      "schema": "effectcraft-expression-parent-first-use/v1",
+      "result": "PASS",
+      "skill": "effectcraft-cli-project",
+      "nativeProjectSha256": "2ca2e82090ba7931b30cef8731cbb2e23d0c6ff536c1364e7ab464918bb1046a",
+      "revisionSha256": "5291e58ff3fc464e161e532046ebe5e59f1116b41af52f3e9039682a4f7c9c2f",
+      "timeSeconds": [
+        0,
+        0.5
+      ],
+      "initialAlpha": [
+        128,
+        191
+      ],
+      "revisedAlpha": [
+        64,
+        128
+      ],
+      "parentControlCompositionPreserved": true,
+      "controlPixelsUnchanged": true,
+      "originalDeliveryPreserved": true,
+      "cycleRejected": true,
+      "skillIdentityUnchanged": true,
+      "scope": "native parent/opacity expression sample, not exhaustive640 commands/GUI/fullV1"
+    },
+    {
+      "schema": "effectcraft-expression-parent-first-use/v1",
+      "result": "PASS",
+      "skill": "effectcraft-cli-animation",
+      "nativeProjectSha256": "2ca2e82090ba7931b30cef8731cbb2e23d0c6ff536c1364e7ab464918bb1046a",
+      "revisionSha256": "5291e58ff3fc464e161e532046ebe5e59f1116b41af52f3e9039682a4f7c9c2f",
+      "timeSeconds": [
+        0,
+        0.5
+      ],
+      "initialAlpha": [
+        128,
+        191
+      ],
+      "revisedAlpha": [
+        64,
+        128
+      ],
+      "parentControlCompositionPreserved": true,
+      "controlPixelsUnchanged": true,
+      "originalDeliveryPreserved": true,
+      "cycleRejected": true,
+      "skillIdentityUnchanged": true,
+      "scope": "native parent/opacity expression sample, not exhaustive640 commands/GUI/fullV1"
+    },
+    {
+      "schema": "effectcraft-expression-parent-first-use/v1",
+      "result": "PASS",
+      "skill": "effectcraft-cli-camera",
+      "nativeProjectSha256": "2ca2e82090ba7931b30cef8731cbb2e23d0c6ff536c1364e7ab464918bb1046a",
+      "revisionSha256": "5291e58ff3fc464e161e532046ebe5e59f1116b41af52f3e9039682a4f7c9c2f",
+      "timeSeconds": [
+        0,
+        0.5
+      ],
+      "initialAlpha": [
+        128,
+        191
+      ],
+      "revisedAlpha": [
+        64,
+        128
+      ],
+      "parentControlCompositionPreserved": true,
+      "controlPixelsUnchanged": true,
+      "originalDeliveryPreserved": true,
+      "cycleRejected": true,
+      "skillIdentityUnchanged": true,
+      "scope": "native parent/opacity expression sample, not exhaustive640 commands/GUI/fullV1"
+    },
+    {
+      "schema": "effectcraft-expression-parent-first-use/v1",
+      "result": "PASS",
+      "skill": "effectcraft-cli-effects",
+      "nativeProjectSha256": "2ca2e82090ba7931b30cef8731cbb2e23d0c6ff536c1364e7ab464918bb1046a",
+      "revisionSha256": "5291e58ff3fc464e161e532046ebe5e59f1116b41af52f3e9039682a4f7c9c2f",
+      "timeSeconds": [
+        0,
+        0.5
+      ],
+      "initialAlpha": [
+        128,
+        191
+      ],
+      "revisedAlpha": [
+        64,
+        128
+      ],
+      "parentControlCompositionPreserved": true,
+      "controlPixelsUnchanged": true,
+      "originalDeliveryPreserved": true,
+      "cycleRejected": true,
+      "skillIdentityUnchanged": true,
+      "scope": "native parent/opacity expression sample, not exhaustive640 commands/GUI/fullV1"
+    },
+    {
+      "schema": "effectcraft-expression-parent-first-use/v1",
+      "result": "PASS",
+      "skill": "effectcraft-cli-masks",
+      "nativeProjectSha256": "2ca2e82090ba7931b30cef8731cbb2e23d0c6ff536c1364e7ab464918bb1046a",
+      "revisionSha256": "5291e58ff3fc464e161e532046ebe5e59f1116b41af52f3e9039682a4f7c9c2f",
+      "timeSeconds": [
+        0,
+        0.5
+      ],
+      "initialAlpha": [
+        128,
+        191
+      ],
+      "revisedAlpha": [
+        64,
+        128
+      ],
+      "parentControlCompositionPreserved": true,
+      "controlPixelsUnchanged": true,
+      "originalDeliveryPreserved": true,
+      "cycleRejected": true,
+      "skillIdentityUnchanged": true,
+      "scope": "native parent/opacity expression sample, not exhaustive640 commands/GUI/fullV1"
+    },
+    {
+      "schema": "effectcraft-expression-parent-first-use/v1",
+      "result": "PASS",
+      "skill": "effectcraft-use",
+      "nativeProjectSha256": "2ca2e82090ba7931b30cef8731cbb2e23d0c6ff536c1364e7ab464918bb1046a",
+      "revisionSha256": "5291e58ff3fc464e161e532046ebe5e59f1116b41af52f3e9039682a4f7c9c2f",
+      "timeSeconds": [
+        0,
+        0.5
+      ],
+      "initialAlpha": [
+        128,
+        191
+      ],
+      "revisedAlpha": [
+        64,
+        128
+      ],
+      "parentControlCompositionPreserved": true,
+      "controlPixelsUnchanged": true,
+      "originalDeliveryPreserved": true,
+      "cycleRejected": true,
+      "skillIdentityUnchanged": true,
+      "scope": "native parent/opacity expression sample, not exhaustive640 commands/GUI/fullV1"
+    },
+    {
+      "schema": "effectcraft-expression-parent-first-use/v1",
+      "result": "PASS",
+      "skill": "effectcraft-cli",
+      "nativeProjectSha256": "2ca2e82090ba7931b30cef8731cbb2e23d0c6ff536c1364e7ab464918bb1046a",
+      "revisionSha256": "5291e58ff3fc464e161e532046ebe5e59f1116b41af52f3e9039682a4f7c9c2f",
+      "timeSeconds": [
+        0,
+        0.5
+      ],
+      "initialAlpha": [
+        128,
+        191
+      ],
+      "revisedAlpha": [
+        64,
+        128
+      ],
+      "parentControlCompositionPreserved": true,
+      "controlPixelsUnchanged": true,
+      "originalDeliveryPreserved": true,
+      "cycleRejected": true,
+      "skillIdentityUnchanged": true,
+      "scope": "native parent/opacity expression sample, not exhaustive640 commands/GUI/fullV1"
+    },
+    {
+      "schema": "effectcraft-expression-parent-first-use/v1",
+      "result": "PASS",
+      "skill": "effectcraft-cli-expressions",
+      "nativeProjectSha256": "2ca2e82090ba7931b30cef8731cbb2e23d0c6ff536c1364e7ab464918bb1046a",
+      "revisionSha256": "5291e58ff3fc464e161e532046ebe5e59f1116b41af52f3e9039682a4f7c9c2f",
+      "timeSeconds": [
+        0,
+        0.5
+      ],
+      "initialAlpha": [
+        128,
+        191
+      ],
+      "revisedAlpha": [
+        64,
+        128
+      ],
+      "parentControlCompositionPreserved": true,
+      "controlPixelsUnchanged": true,
+      "originalDeliveryPreserved": true,
+      "cycleRejected": true,
+      "skillIdentityUnchanged": true,
+      "scope": "native parent/opacity expression sample, not exhaustive640 commands/GUI/fullV1"
+    },
+    {
+      "schema": "effectcraft-expression-parent-first-use/v1",
+      "result": "PASS",
+      "skill": "effectcraft-cli-setup",
+      "nativeProjectSha256": "2ca2e82090ba7931b30cef8731cbb2e23d0c6ff536c1364e7ab464918bb1046a",
+      "revisionSha256": "5291e58ff3fc464e161e532046ebe5e59f1116b41af52f3e9039682a4f7c9c2f",
+      "timeSeconds": [
+        0,
+        0.5
+      ],
+      "initialAlpha": [
+        128,
+        191
+      ],
+      "revisedAlpha": [
+        64,
+        128
+      ],
+      "parentControlCompositionPreserved": true,
+      "controlPixelsUnchanged": true,
+      "originalDeliveryPreserved": true,
+      "cycleRejected": true,
+      "skillIdentityUnchanged": true,
+      "scope": "native parent/opacity expression sample, not exhaustive640 commands/GUI/fullV1"
+    },
+    {
+      "schema": "effectcraft-expression-parent-first-use/v1",
+      "result": "PASS",
+      "skill": "effectcraft-cli-export",
+      "nativeProjectSha256": "2ca2e82090ba7931b30cef8731cbb2e23d0c6ff536c1364e7ab464918bb1046a",
+      "revisionSha256": "5291e58ff3fc464e161e532046ebe5e59f1116b41af52f3e9039682a4f7c9c2f",
+      "timeSeconds": [
+        0,
+        0.5
+      ],
+      "initialAlpha": [
+        128,
+        191
+      ],
+      "revisedAlpha": [
+        64,
+        128
+      ],
+      "parentControlCompositionPreserved": true,
+      "controlPixelsUnchanged": true,
+      "originalDeliveryPreserved": true,
+      "cycleRejected": true,
+      "skillIdentityUnchanged": true,
+      "scope": "native parent/opacity expression sample, not exhaustive640 commands/GUI/fullV1"
+    }
+  ],
+  "seconds": 74.14,
+  "testSha256": "53e09e57f1b441b5b8fd5bf9ecf3f0f602972df4f55b82b42d5bb4fdfebf05ca",
+  "scope": "source candidate13 single-skill cold native expression/parent cases; fixed install and Art distribution pending",
+  "regression": {
+    "total": 115,
+    "passed": 88,
+    "skipped": 27
+  },
+  "fixedInstalledAcceptance": "PENDING",
+  "artDistribution": "PENDING"
+}
