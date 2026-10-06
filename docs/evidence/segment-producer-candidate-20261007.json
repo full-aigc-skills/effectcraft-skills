@@ -1,0 +1,83 @@
+{
+  "schema": "effectcraft-segment-producer-increment/v1",
+  "date": "2026-10-07",
+  "result": "PASS",
+  "scope": "working-tree independent source producer candidate; not fixed plugin delivery",
+  "red": {
+    "failed": 5,
+    "reason": "segmented producer module absent"
+  },
+  "unit": {
+    "passed": 8,
+    "skipped": 0
+  },
+  "defaultSuite": {
+    "tests": 66,
+    "passed": 46,
+    "skipped": 20,
+    "seconds": 8.464
+  },
+  "native": {
+    "passed": 1,
+    "skipped": 0,
+    "seconds": 24.177,
+    "evidence": {
+      "schema": "effectcraft-segment-producer-candidate/v1",
+      "result": "PASS",
+      "scope": "one copied export skill; empty runtime; public default download; three actual native render segments",
+      "runtimeSha256": "74d44fc90018ac381dc4516edff939ab26eb6d900ae5c3f49d1eba5ac14105fe",
+      "sourceProjectSha256": "d5ae9f6d1b3cf771f1532a3d8d8560a3b3e175f0a734dec92eb9a8777d356143",
+      "driverSha256": "22f3ad5bc6934ab981e3874f96871decc2f7620a7fedbd23e8beaebd34e6b9c2",
+      "publicCliEmptyRuntimeAndRepeatPassed": true,
+      "framesComparedIndependently": 12,
+      "nativeRenderFirstFrames": [
+        0,
+        4,
+        8,
+        4
+      ],
+      "allThreeCompletedSegmentsReused": true,
+      "onlyCorruptSegmentRebuilt": true,
+      "inputsAndSkillsPreserved": true,
+      "skillHashes": {
+        "SKILL.md": "5b666c1d67efb4f1a82043f6d4667eb16e376f87600fd6319f5eea73635357bf",
+        "references/scenario.md": "97cc12674477f067b622513dd89fc833f0ad7ecf1c763a69f46a8071ea68785c",
+        "references/workflow.md": "8a0c686746a02de1b8e9794d75744929ac075ad277c5098e54dd745aa15212a4",
+        "references/segmented-render.md": "983aa63835842d060ea767340bf261070b1b1d4fe09c4c8ca989d633fbdf948c",
+        "references/commands.json": "07066739391ebce2b6f03c8aa5e097bbce228748f759688b46d2fb35b0ba96cb",
+        "references/installation-concurrency.md": "69067acebcd47f1924a8d6aa9d8a4ce6f44ad0756d44888a21eb224bcdb1c215",
+        "references/exchange-loss.md": "eee665f62b77274ca8ce0efc4117012ade85978905cdfd40ab488af64297b8ae",
+        "examples/layer-mask.json": "61efc2abc7274b45224659ab4aae7e847486af3f3660161a03b83b978ec7a8bc",
+        "examples/brand-intro.json": "8d786356a69ba838cb9015175494e2d44c7ccd05e6cf6a7ced5d8395bba8c5f1",
+        "scripts/bootstrap.py": "73eadc05f3cbb61738a4720997c829c1de1dd82d356244627d38b37e2c696f00",
+        "scripts/exchange_loss.py": "07f0ea82b8bad5062cdfa72e9bdd1b9088e49fe8837b4c856d1cecb1df6d561d",
+        "scripts/image_sequence.py": "beed6c1450c5e1742a5d3a4ef77e195876870e0594dc3552b00e3329764a3c24",
+        "scripts/segmented_sequence.py": "9ad24b3202df84ec4d7d9c5c45b35fd472e8dd04570524e4d7fe206ce04ad7ed",
+        "scripts/mcp_session.py": "2f1e6de76d1fe12917933f4967a40c827ba80994a8441e47cb68f212b00160a4",
+        "scripts/runtime.lock.json": "c3dc4d1443e9b74d0891904d7ec95167375cfb9a8457bfc4faa89208280d465d",
+        "scripts/cli.py": "14388135cb9054d411a805f194e9e68f355bd54dcc1202265cab4348afd45e65",
+        "scripts/png_inspection.py": "f5b55f58eb0f4d7d50664442eec75935cdebc3274e04b221acad54fed429bc02",
+        "scripts/workflow.py": "73503658e908128807a18fd456e7e9bb5df2b7ee312d54f5c140e5ea713100ed",
+        "scripts/parameter-contract.json": "bd2355a8f76f25efa6bab0b6792a4bac377ca6be0ed922f0f1cb42a5dee825d9"
+      },
+      "excluded": [
+        "full HD native long render",
+        "Film and Art segment consumption",
+        "fixed new plugin installation",
+        "model/GUI/creative acceptance"
+      ]
+    }
+  },
+  "skillResourceSync": "PASS",
+  "sourceHashBinding": "PASS",
+  "excluded": [
+    "full HD long native sequence",
+    "public workflow artifact integration",
+    "Film and Art segment consumption",
+    "fixed new plugin installation",
+    "full V1 acceptance",
+    "model dispatch",
+    "GUI",
+    "creative acceptance"
+  ]
+}

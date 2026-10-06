@@ -50,3 +50,5 @@ CLI argv 在 `--` 后，原生子命令必须放首位。安装参数放分隔�
 本技能不提供虚构的登录接口；本地 headless 不要求云账户。完整 GUI、跨编辑器保真与创作质量按实际证据陈述。
 
 首次透明交付先阅读本技能 [场景操作说明](references/scenario.md)：0.2.0 的 render-frame 是 RGB 预览；使用 render 的合成名称与 RGBA PNG 序列路径保留透明通道。
+
+工作区分段生产候选见 [分段渲染](references/segmented-render.md)。尚未进入当前固定发布或 Film／Art 消费验收，不能用候选检查点代替完整素材交付。
