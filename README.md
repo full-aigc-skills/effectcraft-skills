@@ -71,3 +71,5 @@ Fixed plugin dev.10 / source dev.9 installed acceptance passes: Codex discovers 
 Working-tree segmented producer candidate: bounded native ranges, hash-bound recovery and per-frame checks; fixed plugin and Film/Art consumption remain pending. [Architecture](docs/EffectCraft-Segmented-Render-Architecture.md).
 
 Current-source HD segmented candidate passes 1080p / 24 fps / five seconds and animated-title checks; immutable installed releases and Art HD remain pending. [Architecture and evidence](docs/EffectCraft-HD-Sequence-Architecture.md).
+
+Skill source 0.1.0-dev.10 includes bounded segmented workflows and HD RGBA verification optimization. Native CLI identity is unchanged; corresponding immutable plugin and installed Art acceptance are recorded separately.

@@ -71,3 +71,5 @@ EffectCraft 独立技能源 dev.7 对效果／蒙版计划参数校验错误返�
 工作区分段生产器候选：有界原生帧范围、摘要绑定恢复及逐帧核验；固定插件与 Film／Art 消费仍待完成。[架构](docs/EffectCraft-Segmented-Render-Architecture.zh_CN.md)。
 
 当前源码 HD 分段候选通过 1080p／24 fps／五秒及动态标题核验；固定安装版与 Art HD 仍待完成。[架构与证据](docs/EffectCraft-HD-Sequence-Architecture.zh_CN.md)。
+
+技能源 0.1.0-dev.10 包含有界分段工作流与 HD RGBA 校验优化。原生 CLI 不变；对应固定插件及 Art 安装版验收另行记录。
