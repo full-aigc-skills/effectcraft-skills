@@ -61,3 +61,9 @@ python3 -I -B "$SKILL_DIR/scripts/segmented_sequence.py" \
 测试和实际结果记录在 [候选证据](evidence/segment-producer-candidate-20261007.json)。实际原生测试用 320×180、12 fps、12 帧，分成三个四帧段与一次性基准逐帧比对；这不能作为 1080p 长片头验收。
 
 任务 4.26 保持开放：还需接入公开工作流交付、定义由 Art 持有的共享消费合同、实现 Film 的连续帧导入和 Art 的段级故障／移动包处理，再发布不可变源与插件，执行完整长片头、文字返工和首次使用验收。GUI、模型派发、创作质量及跨软件色彩保真不由本候选证明。
+
+## 公开工作流联调候选
+
+当前源码工作流支持 `exports: [{"format":"png-segmented","chunkFrames":60}]`，先保存和收集原生工程，再输出 rgba-segments，并记录完整 imageSequence 及嵌套 PNG 交换记录。chunkFrames 可省略，不能越过单段预算；无效字段／范围和多个导出在安装前拒绝。有界原生 Film 收集和 Art 编排已通过候选联调；4.26 仍等待 HD 与固定发行安装后首次使用。Art 分段架构文档及证据说明候选范围，历史生产器证据保留原源码身份。
+
+[Art 候选联调证据](evidence/art-segment-adapter-candidate-20261007.json) 绑定真实公开分段导出、Film 连续收集和 Art 移动包返工／恢复；使用当前源码与已有核验原生执行器，固定安装后冷使用及 HD 保持开放。

@@ -78,3 +78,9 @@ The pinned engine rejects unknown command fields. Matching validation failures f
 六条效果／蒙版命令会在整份计划开始时检查未知和必填字段；错误返回 unsupported_mapping，不读取源工程、不安装 CLI、不发布目录。固定合同绑定本技能内 runtime.lock.json 的 0.2.0 版本及二进制摘要。安装后的 describe_command 必须与合同一致；parameter_schema_mismatch 阻止打开／创建工程。原生对象、效果名、属性路径和数值检查仍在会话内执行。
 
 All six effect/mask plan commands are checked for unknown and required fields before source reads, runtime installation or output creation. The local reflection contract binds the pinned binary/version. Live describe_command must match before opening/creating a project; drift blocks editing. Object existence, effect names, property paths and values remain native checks.
+
+## 分段导出候选 / Segmented export candidate
+
+当前源码公开工作流支持 `exports: [{"format":"png-segmented","chunkFrames":60}]`，省略 chunkFrames 时按预算分段；范围为整数 1–10000，每段仍受 512 MiB 上限约束。未知字段、其他格式携带 chunkFrames、无效范围或多个导出在安装／原生执行前拒绝。交付为原生工程、预览、`rgba-segments/segments.json`、全部子清单与帧、逐帧交换记录；具体边界见本技能 references/segmented-render.md。
+
+The current source workflow accepts the explicit png-segmented format and optional integer chunkFrames. It retains the native project, previews and complete segmented delivery. Candidate Film consumption and Art scheduling pass bounded native fixtures; released Effect source dev.9 / plugin dev.10 do not contain this change. HD long rendering, immutable publication and installed cold use remain open.

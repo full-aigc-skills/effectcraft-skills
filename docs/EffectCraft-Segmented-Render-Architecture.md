@@ -63,3 +63,9 @@ The entry installs and verifies the locked CLI without siblings or PATH dependen
 [Candidate evidence](evidence/segment-producer-candidate-20261007.json) separates unit, default-suite and native checks. The native fixture is 320×180, 12 fps and twelve frames: three four-frame segments compared independently against one-shot output. It does not prove a full HD long render.
 
 Task 4.26 remains open: integrate public workflow delivery, establish the Art-owned shared consumer contract, implement continuous Film import and Art recovery/moved packages, publish immutable skills/plugins, then verify long intros, text revisions and actual first use. GUI, model dispatch, creative approval and cross-editor color fidelity remain excluded.
+
+## Public workflow integration candidate
+
+The current source workflow accepts `exports: [{"format":"png-segmented","chunkFrames":60}]`; it saves and collects the native project before rendering into rgba-segments, then records the complete imageSequence and all nested PNG exchange records. chunkFrames is optional and cannot bypass per-segment budgets. Invalid fields, chunk values and multiple exports fail before runtime installation. Bounded actual Film collection and Art scheduling now pass candidate integration; task 4.26 remains open for HD and immutable installed first use. See ArtCraft plugin documentation ArtCraft-Segmented-Sequence-Architecture and its version-bound evidence. Historical producer evidence retains its original source fingerprint.
+
+[Art candidate integration evidence](evidence/art-segment-adapter-candidate-20261007.json) binds actual public workflow segment export, Film continuous collection and Art moved revision/recovery. It uses current source and existing verified local native executables; immutable installed cold use and HD remain open.

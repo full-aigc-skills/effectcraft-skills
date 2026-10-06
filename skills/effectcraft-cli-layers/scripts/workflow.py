@@ -123,8 +123,13 @@ def validate(plan):
             if missing:
                 raise ValueError('unsupported_mapping: ' + command + ': missing parameter(s) ' + ', '.join(missing))
             schemas[command] = schema
-    if any(set(x) != {'format'} or x['format'] not in ('mp4', 'png-sequence') for x in plan.get('exports', [])) or len(plan.get('exports', [])) > 1:
+    if not isinstance(plan.get('exports', []), list) or len(plan.get('exports', [])) > 1:
         raise ValueError('invalid_export')
+    for export in plan.get('exports', []):
+        if not isinstance(export, dict) or set(export)-{'format','chunkFrames'} or export.get('format') not in ('mp4','png-sequence','png-segmented'):
+            raise ValueError('invalid_export')
+        if 'chunkFrames' in export and (export['format']!='png-segmented' or type(export['chunkFrames']) is not int or not 1<=export['chunkFrames']<=10000):
+            raise ValueError('invalid_export')
     for value in plan.get('frames', [0]):
         if type(value) not in (int, float) or not 0 <= value <= 3600:
             raise ValueError('invalid_frame_time')
@@ -297,6 +302,14 @@ def _execute(plan, output, runtime_home, source, owned):
                 frames.append({'path': filename, 'seconds': time, 'requestedAlpha': True})
         output_format = plan.get('exports', [{}])[0].get('format') if plan.get('exports') else None
         sequence = load_module('image_sequence').export_sequence(cli, project, comp, stage) if output_format == 'png-sequence' else None
+        if output_format == 'png-segmented':
+            producer = load_module('segmented_sequence')
+            chunk_frames = plan['exports'][0].get('chunkFrames')
+            chunk_bytes = min(producer.CHUNK_BYTES, chunk_frames*comp['width']*comp['height']*4) if chunk_frames else producer.CHUNK_BYTES
+            segmented = producer.render_segments(cli, project.resolve(), comp, (stage/'rgba-segments').resolve(), chunk_bytes)
+            descriptor = stage/'rgba-segments/segments.json'
+            sequence = {'path':'rgba-segments/segments.json','sha256':sha(descriptor),
+                        'metadata':{'width':comp['width'],'height':comp['height'],'bitDepth':8,'channels':'rgba','alphaRepresentation':'straight-png','colorSpace':'unknown','frameRate':segmented['frameRate'],'frameCount':segmented['frameCount'],'durationTicks':str(segmented['frameCount']),'timeBase':{'num':segmented['frameRate']['den'],'den':segmented['frameRate']['num']}}}
         if output_format == 'mp4':
             # 0.2.0 CLI 将 --comp 字符串解释为名称，数字 ID 只用于 MCP。
             rendered = subprocess.run([cli, '--project', str(project), 'render', '--comp', comp['name'], '--out', str(stage / 'intro.mp4'), '--format', 'h264', '--start', '0', '--end', str(comp['duration']), '--fps', str(comp['frameRate']), '--audio', 'off'], capture_output=True, text=True, timeout=180)
@@ -313,7 +326,7 @@ def _execute(plan, output, runtime_home, source, owned):
         (stage / 'operations.json').write_text(serialized + '\n')
         for name, value in [('native.json', {'composition': comp, 'layers': layers}), ('plan.json', plan)]:
             (stage / name).write_text(json.dumps(value, ensure_ascii=False, indent=2) + '\n')
-        exchange_report(stage,[frame['path'] for frame in frames]+(['intro.mp4'] if output_format == 'mp4' else [])+([str(f.relative_to(stage)) for f in sorted((stage/'rgba-sequence').glob('*.png'))] if sequence else []),{})
+        exchange_report(stage,[frame['path'] for frame in frames]+(['intro.mp4'] if output_format == 'mp4' else [])+([str(f.relative_to(stage)) for f in sorted((stage/Path(sequence['path']).parent).rglob('*.png'))] if sequence else []),{})
         manifest = {'schema': 'effectcraft-delivery/v1', 'sourceProjectSha256': source_hash,
                     'runtimeSha256': installed['binarySha256'], 'bindings': bindings, 'frames': frames, 'assets': assets,
                     'video': {'path': 'intro.mp4', 'alpha': False} if output_format == 'mp4' else None,

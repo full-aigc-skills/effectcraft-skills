@@ -16,6 +16,27 @@ class WorkflowTests(unittest.TestCase):
     def test_png_sequence_is_an_explicit_supported_export(self):
         self.module.validate({'operations': [], 'exports': [{'format': 'png-sequence'}]})
 
+    def test_segmented_export_accepts_default_and_explicit_chunk_boundaries(self):
+        for output in [{'format':'png-segmented'}, {'format':'png-segmented','chunkFrames':1}, {'format':'png-segmented','chunkFrames':10000}]:
+            with self.subTest(output=output):
+                self.module.validate({'operations': [], 'exports':[output]})
+
+    def test_segmented_export_rejects_invalid_chunks_before_runtime_access(self):
+        outputs = [{'format':'png-segmented','chunkFrames':value} for value in (True,0,-1,10001,1.5,'4',None)]
+        outputs += [{'format':'mp4','chunkFrames':4}, {'format':'png-sequence','chunkFrames':4}, {'format':'png-segmented','path':'outside'}]
+        for output in outputs:
+            with self.subTest(output=output), tempfile.TemporaryDirectory() as temporary:
+                root=Path(temporary)
+                with patch.object(self.module,'load_module',side_effect=AssertionError('runtime must not start')):
+                    with self.assertRaisesRegex(ValueError,'invalid_export'):
+                        self.module.execute({'operations':[], 'exports':[output]},root/'output',runtime_home=root/'runtime')
+                self.assertEqual(list(root.iterdir()),[])
+
+    def test_exports_requires_a_list(self):
+        for value in (None,{},'png-segmented'):
+            with self.subTest(value=value), self.assertRaisesRegex(ValueError,'invalid_export'):
+                self.module.validate({'operations':[], 'exports':value})
+
     def test_export_sequence_cannot_be_requested_twice(self):
         with self.assertRaisesRegex(ValueError, 'invalid_export'):
             self.module.validate({'operations': [], 'exports': [{'format': 'png-sequence'}, {'format': 'png-sequence'}]})

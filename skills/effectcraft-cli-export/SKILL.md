@@ -51,4 +51,4 @@ CLI argv 在 `--` 后，原生子命令必须放首位。安装参数放分隔�
 
 首次透明交付先阅读本技能 [场景操作说明](references/scenario.md)：0.2.0 的 render-frame 是 RGB 预览；使用 render 的合成名称与 RGBA PNG 序列路径保留透明通道。
 
-工作区分段生产候选见 [分段渲染](references/segmented-render.md)。尚未进入当前固定发布或 Film／Art 消费验收，不能用候选检查点代替完整素材交付。
+工作区分段生产候选见 [分段渲染](references/segmented-render.md)。公开 png-segmented 工作流及有界 Film／Art 候选消费已接入；尚未进入当前固定发布，HD 长序列和固定安装验收开放，不能用不完整检查点代替完整素材交付。
