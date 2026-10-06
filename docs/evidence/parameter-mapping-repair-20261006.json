@@ -1,0 +1,84 @@
+{
+  "schema": "effectcraft-parameter-mapping-repair/v1",
+  "status": "source-full-native-passed-installed-release-pending",
+  "scope": "fixed original plugin parameter rejection, source helper classification, new/revision preservation; not all effect/feather/interpolation or model/GUI acceptance",
+  "nativeVersion": "0.2.0",
+  "baseline": {
+    "schema": "effectcraft-unknown-parameter-regression/v1",
+    "scope": "fixed installed dev.7 skill copied alone; empty public native runtime; unknown field passed through to actual native command",
+    "cases": [
+      {
+        "skill": "effectcraft-cli-effects",
+        "command": "effect.apply",
+        "unknownField": "blurriness",
+        "requestedValue": 12,
+        "errorType": "RuntimeError",
+        "message": "command_failed: execute_command: [{\"text\": \"invalid parameters for `effect.apply`: unknown parameter(s) `blurriness`; accepted: effect, layers (doc: {effect: id|name (e.g. Gaussian Blur), layers?})\", \"type\": \"text\"}]",
+        "outputCreated": false
+      },
+      {
+        "skill": "effectcraft-cli-masks",
+        "command": "mask.new",
+        "unknownField": "feather",
+        "requestedValue": 12,
+        "errorType": "RuntimeError",
+        "message": "command_failed: execute_command: [{\"text\": \"invalid parameters for `mask.new`: unknown parameter(s) `feather`; accepted: layer, vertices, inTangents, outTangents, closed, mode (doc: {layer?, vertices: [[x,y]\\u2026], inTangents?, outTangents?, closed?, mode?})\", \"type\": \"text\"}]",
+        "outputCreated": false
+      }
+    ]
+  },
+  "nativeSourceResult": {
+    "schema": "effectcraft-parameter-first-use/v1",
+    "result": "passed",
+    "scope": "single role skills copied independently, public empty native runtime, valid creation/reopen and invalid new/revision parameters",
+    "records": [
+      {
+        "skill": "effectcraft-cli-effects",
+        "command": "effect.apply",
+        "unknownField": "blurriness",
+        "newAndRevisionRejected": true,
+        "sourceFilesPreserved": true,
+        "skillFilesPreserved": true,
+        "nativeProjectSha256": "d5ae9f6d1b3cf771f1532a3d8d8560a3b3e175f0a734dec92eb9a8777d356143",
+        "runtimeSha256": "74d44fc90018ac381dc4516edff939ab26eb6d900ae5c3f49d1eba5ac14105fe"
+      },
+      {
+        "skill": "effectcraft-cli-masks",
+        "command": "mask.new",
+        "unknownField": "feather",
+        "newAndRevisionRejected": true,
+        "sourceFilesPreserved": true,
+        "skillFilesPreserved": true,
+        "nativeProjectSha256": "a078b038e6ec1c7869de2afd78e615e83c4abec8385ccb299734adf5da2bc43a",
+        "runtimeSha256": "74d44fc90018ac381dc4516edff939ab26eb6d900ae5c3f49d1eba5ac14105fe"
+      }
+    ]
+  },
+  "redTests": {
+    "liveRun": 1,
+    "subtestErrors": 2,
+    "seconds": 24.891,
+    "unitRun": 7,
+    "errors": 2
+  },
+  "greenUnit": {
+    "run": 7,
+    "passed": 7
+  },
+  "sourceNativeSeconds": 20.018,
+  "workflowSha256": "fb6073635af1d2bb937a8e753083dfd96409567990ad4466c50cd0df053bf33a",
+  "excluded": [
+    "fixed new plugin host first use until separately verified",
+    "ArtCraft bundled helper upgrade",
+    "full creative acceptance",
+    "model dispatch",
+    "GUI"
+  ],
+  "fullNativeSourceSuite": {
+    "run": 44,
+    "passed": 44,
+    "skipped": 0,
+    "seconds": 182.083,
+    "scope": "all source test live gates explicitly enabled, source role skills, public runtimes; Film alpha consumer from fixed installed Film plugin dev.9"
+  }
+}

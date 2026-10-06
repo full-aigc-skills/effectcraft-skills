@@ -11,6 +11,20 @@ class WorkflowTests(unittest.TestCase):
         self.module = importlib.util.module_from_spec(spec)
         spec.loader.exec_module(self.module)
 
+    def test_effect_mask_parameter_failures_have_domain_identity(self):
+        for command in ('effect.apply','effect.remove','effect.toggle','mask.new','mask.setVertex','mask.remove'):
+            text=f"invalid parameters for `{command}`: unknown parameter(s) `invented`"
+            error=self.module.command_error('execute_command',{'command':command},[{'type':'text','text':text}])
+            self.assertIsInstance(error,ValueError)
+            self.assertIn('unsupported_mapping: '+command,str(error))
+            self.assertIn('invented',str(error))
+
+    def test_other_native_failures_are_not_misclassified(self):
+        for name,args,text in [('render_frame',{},'invalid parameters for `mask.new`: unknown parameter(s)'),('execute_command',{'command':'mask.new'},'asset unavailable'),('execute_command',{'command':'mask.new'},'invalid parameters for `effect.apply`: unknown parameter(s)'),('execute_command',{'command':'layer.newShape'},'invalid parameters for `layer.newShape`: unknown parameter(s)')]:
+            error=self.module.command_error(name,args,[{'type':'text','text':text}])
+            self.assertIsInstance(error,RuntimeError)
+            self.assertIn('command_failed',str(error))
+
     def test_resolve_only_explicit_references(self):
         value = {'ids': [{'$ref': 'logo.id'}], 'text': 'logo.id'}
         self.assertEqual(self.module.resolve(value, {'logo': {'id': 12}}), {'ids': [12], 'text': 'logo.id'})

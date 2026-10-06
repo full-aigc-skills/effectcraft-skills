@@ -60,3 +60,9 @@ Import the replacement first, then use `asset.replace` with `{"asset":"logo","re
 15 项完整测试通过，其中素材用例检查原生收集、移动后修订、PNG 替换像素、图层与关键帧保持以及错误摘要拒绝。素材样本为程序生成的 PNG，不构成品牌视觉验收。
 
 All 15 tests passed, including native collection, moved-delivery revision, replacement PNG pixels, preserved layers and keyframes, and digest rejection. Procedural PNG fixtures do not establish brand-level visual acceptance.
+
+## 效果／蒙版参数错误 / Effect and mask parameter errors
+
+固定原生引擎拒绝未知命令字段，工作流将 effect.apply／remove／toggle 和 mask.new／setVertex／remove 的匹配参数校验错误归类为 unsupported_mapping，并保留命令与原生诊断。不会省略未知字段重试；失败新建不发布交付，失败源工程修订保留原文件。效果数值通过对应属性路径设置，例如 effects/#1/blurriness；不能把 blurriness 当作 effect.apply 参数。蒙版羽化需使用原生支持的属性或命令，不虚构 mask.new feather 字段。cli.py 原始调用仍由原生 CLI 明确校验。
+
+The pinned engine rejects unknown command fields. Matching validation failures for six effect/mask plan commands become unsupported_mapping, retaining the command and native diagnostic. No field-stripping retry occurs. Failed creation publishes no delivery; failed source revision preserves prior files. Use prop.set with the supported effect property path instead of invented effect.apply fields; use actual native mask properties/commands for feather controls. Raw cli.py calls retain native validation.

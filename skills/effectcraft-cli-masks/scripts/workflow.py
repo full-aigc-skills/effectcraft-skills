@@ -23,6 +23,18 @@ ALLOWED = {'asset.import', 'asset.replace', 'layer.addItem', 'layer.newText', 'l
            'keys.select', 'keys.easyEase', 'keys.interpolation', 'mask.new', 'mask.setVertex', 'mask.remove',
            'effect.apply', 'effect.remove', 'effect.toggle', 'comp.settings'}
 
+def command_error(name, args, content):
+    """只归类固定引擎在效果/蒙版命令执行前返回的参数校验错误。"""
+    command = args.get('command')
+    mapped = {'effect.apply', 'effect.remove', 'effect.toggle', 'mask.new', 'mask.setVertex', 'mask.remove'}
+    if name == 'execute_command' and command in mapped and len(content) == 1:
+        item = content[0]
+        text = item.get('text')
+        if item.get('type') == 'text' and isinstance(text, str) and text.startswith(f'invalid parameters for `{command}`:'):
+            return ValueError(f'unsupported_mapping: {command}: {text}')
+    return RuntimeError('command_failed: ' + name + ': ' + json.dumps(content))
+
+
 def sha(path):
     with Path(path).open('rb') as stream:
         return hashlib.file_digest(stream, 'sha256').hexdigest()
@@ -156,7 +168,7 @@ def _execute(plan, output, runtime_home, source, owned):
             def call(name, args):
                 result = session.request('tools/call', {'name': name, 'arguments': args})
                 if result.get('isError'):
-                    raise RuntimeError('command_failed: ' + name + ': ' + json.dumps(result['content']))
+                    raise command_error(name, args, result['content'])
                 text = [x['text'] for x in result.get('content', []) if x.get('type') == 'text']
                 if len(text) != 1:
                     raise RuntimeError('unexpected_result')
