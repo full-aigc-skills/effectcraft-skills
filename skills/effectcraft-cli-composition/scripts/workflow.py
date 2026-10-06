@@ -147,14 +147,7 @@ def validate(plan):
 
 
 def execute(plan, output, runtime_home=None, source=None):
-    owned = {'output': False}
-    try:
-        return _execute(plan, output, runtime_home, source, owned)
-    except BaseException as error:
-        directory = Path(output).absolute()
-        if owned['output'] and directory.is_dir():
-            (directory / 'failure.json').write_text(json.dumps({'status': 'failed', 'error': str(error)}, ensure_ascii=False) + '\n')
-        raise
+    return _execute(plan, output, runtime_home, source, {'output': False})
 
 
 def _execute(plan, output, runtime_home, source, owned):
@@ -184,7 +177,7 @@ def _execute(plan, output, runtime_home, source, owned):
         runtime_home or os.environ.get('CRAFT_RUNTIME_HOME', str(Path.home() / '.local/share/craft-runtimes')))
     cli = installed['executable']
     output.parent.mkdir(parents=True, exist_ok=True)
-    with tempfile.TemporaryDirectory(prefix='.effectcraft-', dir=output.parent) as temporary:
+    with load_module('preserved_stage').preserved_stage(output, '.effectcraft-', owned) as temporary:
         stage = Path(temporary)
         project = stage / 'project.ecproj'
         working = stage
@@ -213,9 +206,12 @@ def _execute(plan, output, runtime_home, source, owned):
                 raise ValueError('asset_alias_exists')
             assets[alias] = {'sha256': asset['sha256'], 'staging': str(copy_asset(alias, asset['path'], asset['sha256']))}
         receipts = []
+        owned['operations'] = receipts
         with load_module('mcp_session').Session([cli, '--empty', 'mcp']) as session:
             def call(name, args):
+                owned['lastAttempt'] = {'tool': name, 'arguments': args, 'phase': 'submitted'}
                 result = session.request('tools/call', {'name': name, 'arguments': args})
+                owned['lastAttempt']['phase'] = 'reply_received'
                 if result.get('isError'):
                     raise command_error(name, args, result['content'])
                 text = [x['text'] for x in result.get('content', []) if x.get('type') == 'text']
@@ -276,8 +272,7 @@ def _execute(plan, output, runtime_home, source, owned):
             if assets:
                 if any('item' not in asset for asset in assets.values()):
                     raise ValueError('asset_not_imported')
-                output.mkdir(mode=0o700)
-                owned['output'] = True
+                load_module('preserved_stage').claim_output(output, owned)
                 collected = call('execute_command', {'command': 'file.collectFiles', 'params': {'folder': str(output)}})
                 if collected['errors']:
                     raise ValueError('asset_collection_failed')

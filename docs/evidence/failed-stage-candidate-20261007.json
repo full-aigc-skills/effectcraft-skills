@@ -1,0 +1,125 @@
+{
+  "schema": "craft-failed-stage-candidate/v1",
+  "date": "2026-10-07",
+  "domain": "effectcraft",
+  "result": "PASS",
+  "scope": "candidate canonical standalone skills; locked native CLI; actual original-stage preservation/reopen; healthy native creation/revision regression",
+  "nativeIdentity": {
+    "pluginId": "effectcraft",
+    "pluginVersion": "0.1.0-dev.14",
+    "cliVersion": "0.2.0",
+    "sha256": "74d44fc90018ac381dc4516edff939ab26eb6d900ae5c3f49d1eba5ac14105fe",
+    "mode": "headless",
+    "capabilitySnapshotSha256": "188369caee117eca4aeefb264edd24b0b2c82b2c0928dec2d60b95a7114cf817"
+  },
+  "sourceBase": "5ca28c2aa52c8ad1743da628ed42e32b4871260e",
+  "nativeFaults": {
+    "schema": "craft-native-failed-stage/v1",
+    "domain": "effectcraft",
+    "result": "PASS",
+    "cases": [
+      {
+        "fault": "malformed",
+        "result": "PASS",
+        "originalStagePreserved": true,
+        "nativeReopened": true,
+        "noReplay": true,
+        "nativeSaveCount": 1,
+        "partialFiles": 2
+      },
+      {
+        "fault": "scalar",
+        "result": "PASS",
+        "originalStagePreserved": true,
+        "nativeReopened": true,
+        "noReplay": true,
+        "nativeSaveCount": 1,
+        "partialFiles": 2
+      },
+      {
+        "fault": "missing",
+        "result": "PASS",
+        "originalStagePreserved": true,
+        "nativeReopened": true,
+        "noReplay": true,
+        "nativeSaveCount": 1,
+        "partialFiles": 2
+      },
+      {
+        "fault": "ambiguous",
+        "result": "PASS",
+        "originalStagePreserved": true,
+        "nativeReopened": true,
+        "noReplay": true,
+        "nativeSaveCount": 1,
+        "partialFiles": 2
+      },
+      {
+        "fault": "nonfinite",
+        "result": "PASS",
+        "originalStagePreserved": true,
+        "nativeReopened": true,
+        "noReplay": true,
+        "nativeSaveCount": 1,
+        "partialFiles": 2
+      },
+      {
+        "fault": "tool-content",
+        "result": "PASS",
+        "originalStagePreserved": true,
+        "nativeReopened": true,
+        "noReplay": true,
+        "nativeSaveCount": 1,
+        "partialFiles": 2
+      }
+    ],
+    "scope": "candidate source with locked installed native CLI; original retained stage inspected and reopened; proxy capture is not recovery input"
+  },
+  "redBaseline": {
+    "faults": 6,
+    "reason": "actual native save succeeded once; public workflow removed stage and produced no recovery record",
+    "result": "FAILED_AS_EXPECTED"
+  },
+  "regression": {
+    "tests": 104,
+    "passed": 79,
+    "optionalSkipped": 25,
+    "lifecycleTests": 8,
+    "healthyNativeWorkflowTests": 1,
+    "healthyNativeWorkflowResult": "PASS"
+  },
+  "sourceHashes": {
+    "skills/effectcraft-cli/scripts/preserved_stage.py": "64199df3ee6af2901a859a5aac401fd27ca2f0c6ba9238e6f72c3563f681ad63",
+    "skills/effectcraft-cli/scripts/workflow.py": "365dacd4ac1f09181828739289458bade5e96d15eab217ea5cb3c3eedb7d8f6b",
+    "skills/effectcraft-cli-animation/scripts/preserved_stage.py": "64199df3ee6af2901a859a5aac401fd27ca2f0c6ba9238e6f72c3563f681ad63",
+    "skills/effectcraft-cli-animation/scripts/workflow.py": "365dacd4ac1f09181828739289458bade5e96d15eab217ea5cb3c3eedb7d8f6b",
+    "skills/effectcraft-cli-camera/scripts/preserved_stage.py": "64199df3ee6af2901a859a5aac401fd27ca2f0c6ba9238e6f72c3563f681ad63",
+    "skills/effectcraft-cli-camera/scripts/workflow.py": "365dacd4ac1f09181828739289458bade5e96d15eab217ea5cb3c3eedb7d8f6b",
+    "skills/effectcraft-cli-composition/scripts/preserved_stage.py": "64199df3ee6af2901a859a5aac401fd27ca2f0c6ba9238e6f72c3563f681ad63",
+    "skills/effectcraft-cli-composition/scripts/workflow.py": "365dacd4ac1f09181828739289458bade5e96d15eab217ea5cb3c3eedb7d8f6b",
+    "skills/effectcraft-cli-effects/scripts/preserved_stage.py": "64199df3ee6af2901a859a5aac401fd27ca2f0c6ba9238e6f72c3563f681ad63",
+    "skills/effectcraft-cli-effects/scripts/workflow.py": "365dacd4ac1f09181828739289458bade5e96d15eab217ea5cb3c3eedb7d8f6b",
+    "skills/effectcraft-cli-export/scripts/preserved_stage.py": "64199df3ee6af2901a859a5aac401fd27ca2f0c6ba9238e6f72c3563f681ad63",
+    "skills/effectcraft-cli-export/scripts/workflow.py": "365dacd4ac1f09181828739289458bade5e96d15eab217ea5cb3c3eedb7d8f6b",
+    "skills/effectcraft-cli-expressions/scripts/preserved_stage.py": "64199df3ee6af2901a859a5aac401fd27ca2f0c6ba9238e6f72c3563f681ad63",
+    "skills/effectcraft-cli-expressions/scripts/workflow.py": "365dacd4ac1f09181828739289458bade5e96d15eab217ea5cb3c3eedb7d8f6b",
+    "skills/effectcraft-cli-footage/scripts/preserved_stage.py": "64199df3ee6af2901a859a5aac401fd27ca2f0c6ba9238e6f72c3563f681ad63",
+    "skills/effectcraft-cli-footage/scripts/workflow.py": "365dacd4ac1f09181828739289458bade5e96d15eab217ea5cb3c3eedb7d8f6b",
+    "skills/effectcraft-cli-layers/scripts/preserved_stage.py": "64199df3ee6af2901a859a5aac401fd27ca2f0c6ba9238e6f72c3563f681ad63",
+    "skills/effectcraft-cli-layers/scripts/workflow.py": "365dacd4ac1f09181828739289458bade5e96d15eab217ea5cb3c3eedb7d8f6b",
+    "skills/effectcraft-cli-masks/scripts/preserved_stage.py": "64199df3ee6af2901a859a5aac401fd27ca2f0c6ba9238e6f72c3563f681ad63",
+    "skills/effectcraft-cli-masks/scripts/workflow.py": "365dacd4ac1f09181828739289458bade5e96d15eab217ea5cb3c3eedb7d8f6b",
+    "skills/effectcraft-cli-project/scripts/preserved_stage.py": "64199df3ee6af2901a859a5aac401fd27ca2f0c6ba9238e6f72c3563f681ad63",
+    "skills/effectcraft-cli-project/scripts/workflow.py": "365dacd4ac1f09181828739289458bade5e96d15eab217ea5cb3c3eedb7d8f6b",
+    "skills/effectcraft-cli-setup/scripts/preserved_stage.py": "64199df3ee6af2901a859a5aac401fd27ca2f0c6ba9238e6f72c3563f681ad63",
+    "skills/effectcraft-cli-setup/scripts/workflow.py": "365dacd4ac1f09181828739289458bade5e96d15eab217ea5cb3c3eedb7d8f6b",
+    "skills/effectcraft-use/scripts/preserved_stage.py": "64199df3ee6af2901a859a5aac401fd27ca2f0c6ba9238e6f72c3563f681ad63",
+    "skills/effectcraft-use/scripts/workflow.py": "365dacd4ac1f09181828739289458bade5e96d15eab217ea5cb3c3eedb7d8f6b"
+  },
+  "excluded": [
+    "immutable candidate release and actual installed new source",
+    "Art fixed bundled upgrade",
+    "force-killed process and filesystem crash persistence",
+    "complete2639-command/GUI/model/fullV1 acceptance"
+  ]
+}
