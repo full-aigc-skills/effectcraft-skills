@@ -56,3 +56,5 @@ sequenceDiagram
 本增量候选回归与固定发行验收分别记录；不改变 ArtCraft 已锁定的旧领域包或完整首版状态。
 
 [Preflight candidate evidence / 预检候选证据](evidence/effect-preflight-source-candidate-20261006.json): default 38 passed / 19 gated skips; source native regression 53 passed / 3 skips; focused native first use 1 passed (17.994s); all 13 isolated public plan entry points reject without installing or editing. Fixed release host acceptance remains pending.
+
+[Fixed released preflight acceptance / 固定发行预检验收](evidence/codex-effectcraft10-preflight-first-use-20261006.json): plugin dev.10 / source dev.9; 13 isolated cold CLI starts, 13 invalid-plan public entry points, four native regressions and 13 domain tests pass. All 58 installed identities remain unchanged. Art bundle update and full V1 remain open.

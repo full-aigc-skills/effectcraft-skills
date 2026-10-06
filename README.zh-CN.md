@@ -65,3 +65,5 @@ EffectCraft 独立技能源 dev.7 对效果／蒙版计划参数校验错误返�
 固定 Effect dev.9 与 Film dev.10 安装后的动态交接已通过：三项真实原生测试、58 技能发现零错误、逐项执行后全部安装摘要保全。[证据](docs/evidence/codex-effectcraft9-filmcraft10-dynamic-first-use-20261006.json)。Art 动态集成仍待完成。
 
 技能源 dev.9 增加整份效果／蒙版计划字段预检：读取源工程和安装原生 CLI 之前拒绝未知／缺失字段；反射合同绑定固定二进制，任何工程编辑前核对实际 schema。对象／属性／数值仍由原生检查。不可变发行与安装后验收分别记录。
+
+固定插件 dev.10／技能源 dev.9 安装后验收通过：Codex 发现全部 58 技能且零加载错误；13 项 Effect 技能分别从空目录公开安装 CLI，非法计划在安装／编辑前拒绝；4 项动画／序列／Film 交接回归与 13 项领域矩阵通过，零跳过。全部安装技能摘要保持不变。[版本绑定证据](docs/evidence/codex-effectcraft10-preflight-first-use-20261006.json)。Art 领域包升级、真实 Skills CLI 安装及完整首版仍开放。
