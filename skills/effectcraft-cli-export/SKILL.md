@@ -52,3 +52,15 @@ CLI argv 在 `--` 后，原生子命令必须放首位。安装参数放分隔�
 首次透明交付先阅读本技能 [场景操作说明](references/scenario.md)：0.2.0 的 render-frame 是 RGB 预览；使用 render 的合成名称与 RGBA PNG 序列路径保留透明通道。
 
 工作区分段生产候选见 [分段渲染](references/segmented-render.md)。公开 png-segmented 工作流及有界 Film／Art 候选消费已接入；尚未进入当前固定发布，HD 长序列和固定安装验收开放，不能用不完整检查点代替完整素材交付。
+
+## 完整原生命令使用
+
+当前技能自带完整目录的参数说明与同会话入口，不受创作模板白名单限制。读取 [完整使用指南](references/command-usage.md)，按需查询 [命令参考](references/command-reference.md)；每条指令有技能路由、前置观察及验收状态。
+
+```bash
+python3 -I -B "$SKILL_DIR/scripts/commands.py" list --filter QUERY
+python3 -I -B "$SKILL_DIR/scripts/commands.py" describe COMMAND_ID
+python3 -I -B "$SKILL_DIR/scripts/commands.py" run "$SKILL_DIR/examples/commands-advanced.json" --output /absolute/new-command-result
+```
+
+新入口执行前检查真实注册表与当前可执行状态，保留返回值引用和逐步回执；语义错误或超时不冒充成功。目录覆盖与直接原生使用不等于所有指令、GUI、交付或 Art 编排已验收。
