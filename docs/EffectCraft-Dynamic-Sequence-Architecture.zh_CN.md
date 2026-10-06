@@ -36,3 +36,7 @@ flowchart LR
 当前十三项源码技能包含完整序列实现，计划发布技能源 dev.8 和插件 dev.9，原生 CLI 继续锁定公开 0.2.0。重新执行[源码单技能冷安装](evidence/dynamic-sequence-source-first-use-20261006.json)：一项通过，实际十二帧 RGBA 及文字修订保全；原有 MP4 原生保存／重开／文字修订一项通过；默认 32 项通过、19 项环境门禁跳过。序列完整性和资源四项通过。
 
 [真实 Effect→Film 交接](evidence/effect-film-sequence-handoff-20261006.json)已经消费当前 Effect 源码技能和公开 Film craft.2：十二帧保持一秒长度，成片独立解码核验背景透出及图形颜色；移动 Film 工程并删除旧片头目录后定向更新文字成功。该项仍使用 Effect 源码副本，固定 Effect 新快照安装和 Art 动态依赖仍须验收。
+
+## 固定发行安装后的结果
+
+[固定组合验收](evidence/codex-effectcraft9-filmcraft10-dynamic-first-use-20261006.json)：Effect 插件 dev.9／技能源 dev.8 与 Film 插件 dev.10／技能源 dev.9，由 Codex 0.153.4 隔离安装。五插件全部 58 技能发现、零加载错误。从实际安装快照运行三个真实测试：单 Effect 导出技能空运行时公开下载、十二帧 RGBA 独立解码及文字修订；两个实际安装技能完成动态 Effect→Film 交接、独立 MP4 解码、移动工程并删除旧片头后定向替换；原 MP4 原生工作流回归。三项通过，每项执行后全部 58 安装摘要保持不变。Art 仍是旧领域包的 dev.63；动态混合联调、实际 Skills CLI 安装、模型分发与完整首版仍未完成，任务 4.22 保持开放。

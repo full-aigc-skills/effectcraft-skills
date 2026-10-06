@@ -61,3 +61,5 @@ EffectCraft 独立技能源 dev.7 对效果／蒙版计划参数校验错误返�
 固定插件 dev.8／技能源 dev.7 的安装后验收通过：五插件 58 技能、零加载错误；独立效果／蒙版技能从空运行时核对有效创建及非法新建／修订 1 项通过（24.714 秒），13 技能分别公开冷启动全部通过，全部宿主安装摘要保留。[发行绑定证据](docs/evidence/codex-effectcraft8-parameter-first-use-20261006.json)。ArtCraft 的领域包升级及错误传播、完整首版等门禁仍开放。
 
 动态 RGBA PNG 序列保留可编辑 ecproj，并通过 craft-image-sequence/v1 交付全部帧摘要、帧率和时长。源码冷安装及实际 Film 交接通过；新固定插件和 Art 验收仍待完成。[架构](docs/EffectCraft-Dynamic-Sequence-Architecture.zh_CN.md)。
+
+固定 Effect dev.9 与 Film dev.10 安装后的动态交接已通过：三项真实原生测试、58 技能发现零错误、逐项执行后全部安装摘要保全。[证据](docs/evidence/codex-effectcraft9-filmcraft10-dynamic-first-use-20261006.json)。Art 动态集成仍待完成。
