@@ -4,7 +4,7 @@
   "runtimeSha256": "74d44fc90018ac381dc4516edff939ab26eb6d900ae5c3f49d1eba5ac14105fe",
   "upstreamCommit": "24fcbdf3d2d6b928d3788d33f1722d8a21b9ad29",
   "scope": "complete documentation and native-session route; not complete native acceptance",
-  "workflowOperationCount": 21,
+  "workflowOperationCount": 22,
   "workflowNativeCommandCount": 19,
   "nativeTools": [
     "list_commands",

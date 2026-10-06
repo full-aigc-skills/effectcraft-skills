@@ -18,7 +18,7 @@ def exchange_report(root,outputs,warnings):
     module=importlib.util.module_from_spec(spec);spec.loader.exec_module(module)
     module.write_report(root,outputs,warnings)
 
-ALLOWED = {'asset.import', 'asset.replace', 'layer.addItem', 'layer.newText', 'layer.newShape', 'layer.newSolid', 'layer.setText',
+ALLOWED = {'native.command', 'asset.import', 'asset.replace', 'layer.addItem', 'layer.newText', 'layer.newShape', 'layer.newSolid', 'layer.setText',
            'layer.select', 'layer.setParent', 'prop.set', 'prop.addKey',
            'keys.select', 'keys.easyEase', 'keys.interpolation', 'mask.new', 'mask.setVertex', 'mask.remove',
            'effect.apply', 'effect.remove', 'effect.toggle', 'comp.settings'}
@@ -87,6 +87,12 @@ def load_module(name):
     return module
 
 
+def native_module():
+    spec = importlib.util.spec_from_file_location('craft_native_workflow', Path(__file__).with_name('native_workflow.py'))
+    module = importlib.util.module_from_spec(spec); spec.loader.exec_module(module)
+    return module
+
+
 def validate(plan):
     if not isinstance(plan, dict) or not isinstance(plan.get('operations'), list):
         raise ValueError('operations_required')
@@ -96,6 +102,8 @@ def validate(plan):
     for item in plan['operations']:
         if not isinstance(item, dict):
             raise ValueError('invalid_operation')
+        if item.get('command') == 'native.command':
+            native_module().validate(item.get('params'))
         if item.get('command') not in ALLOWED:
             raise ValueError('unsupported_command')
         alias = item.get('as')
@@ -230,7 +238,9 @@ def _execute(plan, output, runtime_home, source, owned):
                 bindings['composition'] = call('execute_command', {'command': 'comp.new', 'params': plan['document']})
             for operation in plan['operations']:
                 params = resolve(operation.get('params', {}), bindings)
-                if operation['command'] == 'asset.import':
+                if operation['command'] == 'native.command':
+                    result = native_module().execute(session, params, owned, receipts, stage)
+                elif operation['command'] == 'asset.import':
                     asset = assets[params['asset']]
                     if 'item' in asset:
                         raise ValueError('asset_already_imported')
