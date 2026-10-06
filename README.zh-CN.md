@@ -1,5 +1,6 @@
 # EffectCraft 独立技能
 
+独立技能源元数据：`0.1.0-dev.14`。公开工作流 Session 结构检查已纳入此源码；固定插件／Art 分发及实际安装验收另行记录。
 当前固定版本协议故障首用复验通过：48个独立技能源共288例，实际安装副本24例及四领域健康返工通过；58项安装摘要保持一致。验收范围与固定标签见 [协议故障验收记录](docs/evidence/codex-protocol-fault-first-use-20261007.json)。全量逐命令／GUI验收以及Art领域包升级仍开放。
 
 协议故障修复候选：本领域13项技能逐个单独复制、空运行时公开安装后，原生保存成功再注入六种坏回复全部通过（78例，零跳过）。不重放、未知回执、工程重开与交付／技能保全均已检查。[证据](docs/evidence/protocol-fault-first-use-20261007.json)。固定安装副本与Art领域包升级仍为独立门禁。
@@ -95,3 +96,5 @@ EffectCraft 独立技能源 dev.7 对效果／蒙版计划参数校验错误返�
 当前源码 HD 分段候选通过 1080p／24 fps／五秒及动态标题核验；固定安装版与 Art HD 仍待完成。[架构与证据](docs/EffectCraft-HD-Sequence-Architecture.zh_CN.md)。
 
 技能源 0.1.0-dev.10 包含有界分段工作流与 HD RGBA 校验优化。原生 CLI 不变；对应固定插件及 Art 安装版验收另行记录。
+
+公开工作流回复检查已同步领域技能源候选，并通过有界原生／Art 协议验证。新的固定领域和 Art 分发包仍待发行与实际安装验收。[候选架构](docs/EffectCraft-Complete-Commands-Architecture.zh_CN.md) · [证据](docs/evidence/public-workflow-session-candidate-20261007.json)。

@@ -1,5 +1,6 @@
 # EffectCraft Skills
 
+Independent source metadata: `0.1.0-dev.14`. This source includes public-workflow Session reply validation; fixed plugin/Art distribution and installed-copy acceptance are tracked separately.
 Fixed-release protocol recovery acceptance passed: 288 cases across 48 standalone source skills, 24 cases in actual installed copies, four healthy revision cases, and 58 unchanged installed skill identities. See [fixed evidence](docs/evidence/codex-protocol-fault-first-use-20261007.json). Exhaustive command/GUI acceptance and the Art domain-bundle upgrade remain open.
 
 Protocol fault repair candidate: all 13 independently copied skills pass separate empty public-runtime installation and six faulty replies after real native save (78 cases; zero skips). Requests are not replayed; unknown receipts, saved-project reopening and delivery/skill preservation are checked. [Evidence](docs/evidence/protocol-fault-first-use-20261007.json). Fixed installed release and Art bundle upgrade remain separate gates.
@@ -95,3 +96,5 @@ Working-tree segmented producer candidate: bounded native ranges, hash-bound rec
 Current-source HD segmented candidate passes 1080p / 24 fps / five seconds and animated-title checks; immutable installed releases and Art HD remain pending. [Architecture and evidence](docs/EffectCraft-HD-Sequence-Architecture.md).
 
 Skill source 0.1.0-dev.10 includes bounded segmented workflows and HD RGBA verification optimization. Native CLI identity is unchanged; corresponding immutable plugin and installed Art acceptance are recorded separately.
+
+Public-workflow reply validation is synchronized in the domain source candidates and has bounded native/Art protocol evidence. Fixed updated domain and Art distributions are still pending. [Candidate architecture](docs/EffectCraft-Complete-Commands-Architecture.md) · [Evidence](docs/evidence/public-workflow-session-candidate-20261007.json).
