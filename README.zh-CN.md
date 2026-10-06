@@ -53,3 +53,5 @@ CRAFT_TASK_FIRST_USE=1 CRAFT_LIVE_TEST=1 CRAFT_LIVE_SUITE=1 python3 -B -m unitte
 技能套件 dev.6 增加自包含可编辑蒙版示例，接通公开蒙版顶点修改/移除工作流。默认公开下载的原生回归 39 项全部通过、无跳过；场景技能各自从空运行时安装，蒙版修订保留原工程与非目标文字，RGBA 实际像素验证边界变化。[证据](docs/evidence/task-skill-first-use.json)。运行时保持 0.2.0；模型/GUI、创作及任意复杂蒙版保真仍需验收。
 
 [透明素材到 FilmCraft 的实际交接](docs/EffectCraft-FilmCraft-Alpha-Handoff-Acceptance.zh_CN.md)：安装后双领域空运行时 1 项通过；修改片头文字保留动画，原生 RGBA PNG 在 FilmCraft 中露出底层并保留不透明前景像素。完整色彩／动画透明视频验收仍开放。
+
+安装后的动画技能时序首次使用通过：4 个原生 RGBA 时刻与 12 帧视频解码核对淡入；文字返工保留徽标、关键帧属性及原交付。[时序验收](docs/EffectCraft-Temporal-Animation-Acceptance.zh_CN.md)。完整创作及动画透明视频验收仍开放。

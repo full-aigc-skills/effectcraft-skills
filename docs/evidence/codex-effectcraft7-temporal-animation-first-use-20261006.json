@@ -1,0 +1,228 @@
+{
+  "schema": "craft-effect-temporal-first-use/v1",
+  "result": "passed",
+  "nativeVersion": "0.2.0",
+  "skillSha256": "e8da6beade05ebe04747aff4b435db8051ec7b2317a5707ff531a84bfb033041",
+  "runtimeMode": "single installed skill copied alone; empty runtime; default public installation",
+  "rgbaAlpha": [
+    0,
+    128,
+    255,
+    255
+  ],
+  "videoBadgeRgb": [
+    [
+      0,
+      0,
+      0
+    ],
+    [
+      39,
+      15,
+      9
+    ],
+    [
+      79,
+      30,
+      18
+    ],
+    [
+      120,
+      46,
+      27
+    ],
+    [
+      159,
+      61,
+      36
+    ],
+    [
+      199,
+      76,
+      45
+    ],
+    [
+      238,
+      91,
+      54
+    ],
+    [
+      238,
+      91,
+      54
+    ],
+    [
+      238,
+      91,
+      54
+    ],
+    [
+      238,
+      91,
+      54
+    ],
+    [
+      238,
+      91,
+      54
+    ],
+    [
+      238,
+      91,
+      54
+    ]
+  ],
+  "revisedVideoBadgeRgb": [
+    [
+      0,
+      0,
+      0
+    ],
+    [
+      39,
+      15,
+      9
+    ],
+    [
+      79,
+      30,
+      18
+    ],
+    [
+      120,
+      46,
+      27
+    ],
+    [
+      159,
+      61,
+      36
+    ],
+    [
+      199,
+      76,
+      45
+    ],
+    [
+      238,
+      91,
+      54
+    ],
+    [
+      238,
+      91,
+      54
+    ],
+    [
+      238,
+      91,
+      54
+    ],
+    [
+      238,
+      91,
+      54
+    ],
+    [
+      238,
+      91,
+      54
+    ],
+    [
+      238,
+      91,
+      54
+    ]
+  ],
+  "firstFiles": {
+    "project.ecproj": "6258ef29189e6d4ea792dec4c43f6a0c04e59c60586e092d360e7e7229ff7aa4",
+    "plan.json": "7c67e24ac0523d68d9d8956e6ac3bc8576e19484d711b4dea6489e0ef8d3c77e",
+    "exchange-loss.json": "c1bf738888521c960f188e3917f79c4a072d3266f6223e7bce673f3be87f8667",
+    "native.json": "b53ef7d48bc6924afc02b6b0acf4337bdfa6cdeb1ba224131960f79c03e0887e",
+    "frame-0003.png": "fe261dcba8df6a408c7a8dd90a33200bf3771e43eff5afe789866790c2b41ad6",
+    "frame-0002.png": "fe261dcba8df6a408c7a8dd90a33200bf3771e43eff5afe789866790c2b41ad6",
+    "frame-0000.png": "b86fd4be541ec836d1c12dced54e51f2d6a1704b56ee637c5709e7f2a0c9811c",
+    "frame-0001.png": "c6e650fceee8d8286af2ccfc627162da9e77cbf06baa637c93010caa3ac42ea4",
+    "intro.mp4": "a83cd1034f11820ab15f34ddba158ec7f4e9fb52d8edf565ab394ef39a39ddf4",
+    "operations.json": "2c8a0be670f82b4a296271a47289a248381fe351b18064fffa12afe8b93d2cc1"
+  },
+  "revisedFiles": {
+    "project.ecproj": "df54796781769c38daefeb25b668e85e130a1f6e7d84a23370bb86d421b4d611",
+    "plan.json": "14cf64e419b1ab12227a5661f329637b1e5aeac28c70d633c0c04decabd69ab7",
+    "exchange-loss.json": "0bb38133c863d4e674358d42f456127365bde85a993c64d8f750a37d304e2fcb",
+    "native.json": "2dc3ad454af794a54e5f597484be0313f5bfd9c1fd5dd53d2462d6ba148ef4eb",
+    "frame-0003.png": "bff7d4a8d361da40ad2b942c1d591409cbaa0f38a92c01bdf9eaa9e5bd174f06",
+    "frame-0002.png": "bff7d4a8d361da40ad2b942c1d591409cbaa0f38a92c01bdf9eaa9e5bd174f06",
+    "frame-0000.png": "b86fd4be541ec836d1c12dced54e51f2d6a1704b56ee637c5709e7f2a0c9811c",
+    "frame-0001.png": "254388a5e732c53003a8df2157507ef3c3fe2986c01c5a6ea495384fc825c3fa",
+    "intro.mp4": "3468518e2f5d3ebbc1e6977005826f6742543caa1612e8de6da84e3a30bfc57b",
+    "operations.json": "f996ad0c1fc4547b99218d9f9283975ddc80a8ab811518b0ac91cc229dd6613c"
+  },
+  "preserved": [
+    "badge layer and keys",
+    "title opacity keys",
+    "all first delivery files",
+    "installed skill bytes"
+  ],
+  "unverified": [
+    "animated transparent video",
+    "all interpolation modes",
+    "model dispatch",
+    "GUI",
+    "creative acceptance"
+  ],
+  "testSha256": "1418353bf8f8fcbd0064c1f448f5293d18f8ee85e42f137d57ec31a77050e5f2",
+  "pluginVersion": "0.1.0-dev.7",
+  "pluginSha": "5fc03b48e6852a1c5ff964647e1dd6fc3ec3467a",
+  "skillSourceRef": "v0.1.0-dev.6",
+  "skillSourceSha": "ed0abc27ed2179e85942d977ee143db89cff4ce3",
+  "samplePixel": [
+    45,
+    75
+  ],
+  "sampleTimesSeconds": [
+    0,
+    0.25,
+    0.5,
+    0.75
+  ],
+  "planChanges": {
+    "badgeOpacityKeys": [
+      [
+        0,
+        0
+      ],
+      [
+        0.5,
+        100
+      ]
+    ],
+    "textRevision": "NOVA PLUS"
+  },
+  "inputExampleSha256": "8d786356a69ba838cb9015175494e2d44c7ccd05e6cf6a7ced5d8395bba8c5f1",
+  "liveTests": {
+    "passed": 1,
+    "seconds": 9.398
+  },
+  "regression": {
+    "source": {
+      "tests": 41,
+      "passed": 24,
+      "skipped": 17,
+      "seconds": 6.648
+    },
+    "plugin": {
+      "passed": 4,
+      "seconds": 0.131
+    }
+  },
+  "afterUseInstalledSkills": {
+    "checked": 13,
+    "unchanged": 13
+  },
+  "environment": {
+    "python": "3.13.5",
+    "offlineOverridesPresent": false
+  },
+  "initialTestCorrection": "Longer text overlaps the original center pixel; preservation compares a badge pixel outside both text extents."
+}
