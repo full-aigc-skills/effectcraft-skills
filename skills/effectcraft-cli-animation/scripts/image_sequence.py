@@ -26,19 +26,11 @@ def rgba_facts(path):
     # inspect_png 已约束解压尺寸及文件结构；这里还原滤波后像素以核验实际 alpha。
     decoder = zlib.decompressobj()
     scan = decoder.decompress(b''.join(compressed), (facts['width']*4+1)*facts['height']+1)
-    stride, previous, offset = facts['width']*4, bytearray(facts['width']*4), 0
     pixels = hashlib.sha256(); minimum, maximum = 255, 0
-    for _ in range(facts['height']):
-        filtering = scan[offset]; row = bytearray(scan[offset+1:offset+1+stride]); offset += stride+1
-        for x in range(stride):
-            left = row[x-4] if x >= 4 else 0; above = previous[x]; corner = previous[x-4] if x >= 4 else 0
-            predictor = left+above-corner
-            distances = [abs(predictor-left), abs(predictor-above), abs(predictor-corner)]
-            paeth = (left, above, corner)[distances.index(min(distances))]
-            value = (0, left, above, (left+above)//2, paeth)[filtering]
-            row[x] = (row[x]+value) & 255
-        minimum = min(minimum, min(row[3::4])); maximum = max(maximum, max(row[3::4]))
-        pixels.update(row); previous = row
+    for row in module.rgba8_rows(scan, facts['width'], facts['height']):
+        alpha=row[3::4]
+        minimum=min(minimum,min(alpha));maximum=max(maximum,max(alpha))
+        pixels.update(row)
     return dict(facts, alphaExtrema=[minimum, maximum], rgbaSha256=pixels.hexdigest())
 
 
