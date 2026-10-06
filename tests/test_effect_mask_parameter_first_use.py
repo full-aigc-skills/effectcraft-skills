@@ -29,7 +29,13 @@ class EffectMaskParameterFirstUseTests(unittest.TestCase):
     bad=json.loads(json.dumps(plan));next(op for op in bad['operations'] if op['command']==command)['params'][field]=12
     with self.assertRaisesRegex(ValueError,'unsupported_mapping: '+command):w.execute(bad,root/'rejected-new',runtime_home=runtime)
     self.assertFalse((root/'rejected-new').exists())
+    self.assertFalse(runtime.exists(), 'invalid plan must not install or start the native runtime')
     first=root/'v1';receipt=w.execute(plan,first,runtime_home=runtime);original=hashes(first)
+    journal=json.loads((first/'operations.json').read_text())
+    reflection=[entry for entry in journal if entry['tool']=='describe_command']
+    self.assertTrue(any(entry['arguments']['command']==command for entry in reflection))
+    first_edit=next(index for index,entry in enumerate(journal) if entry['tool']=='execute_command')
+    self.assertTrue(all(journal.index(entry)<first_edit for entry in reflection))
     operation=next(op for op in bad['operations'] if op['command']==command)
     bad_revision={'expectedProjectSha256':receipt['files']['project.ecproj'],'operations':[operation],'frames':[0],'exports':[]}
     with self.assertRaisesRegex(ValueError,'unsupported_mapping: '+command):w.execute(bad_revision,root/'rejected-revision',runtime_home=runtime,source=first)
@@ -37,7 +43,7 @@ class EffectMaskParameterFirstUseTests(unittest.TestCase):
     # 字段未被省略：合法参数对应的图层/效果或蒙版能保存在重开的原生工程中。
     native=json.loads((first/'native.json').read_text());self.assertTrue(native['layers'])
     self.assertEqual(hashes(skill),before);self.assertFalse(list(skill.rglob('*.pyc')))
-    records.append({'skill':name,'command':command,'unknownField':field,'newAndRevisionRejected':True,'sourceFilesPreserved':True,'skillFilesPreserved':True,'nativeProjectSha256':receipt['files']['project.ecproj'],'runtimeSha256':receipt['runtimeSha256']})
+    records.append({'skill':name,'command':command,'unknownField':field,'newAndRevisionRejected':True,'invalidPlanDoesNotInstallRuntime':True,'liveReflectionBeforeFirstEdit':True,'sourceFilesPreserved':True,'skillFilesPreserved':True,'nativeProjectSha256':receipt['files']['project.ecproj'],'runtimeSha256':receipt['runtimeSha256']})
   if os.environ.get('CRAFT_EFFECT_PARAMETER_EVIDENCE'):
    with Path(os.environ['CRAFT_EFFECT_PARAMETER_EVIDENCE']).open('x') as stream:json.dump({'schema':'effectcraft-parameter-first-use/v1','result':'passed','scope':'single role skills copied independently, public empty native runtime, valid creation/reopen and invalid new/revision parameters','records':records},stream,indent=2)
 

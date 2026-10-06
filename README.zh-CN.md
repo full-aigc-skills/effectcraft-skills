@@ -63,3 +63,5 @@ EffectCraft 独立技能源 dev.7 对效果／蒙版计划参数校验错误返�
 动态 RGBA PNG 序列保留可编辑 ecproj，并通过 craft-image-sequence/v1 交付全部帧摘要、帧率和时长。源码冷安装及实际 Film 交接通过；新固定插件和 Art 验收仍待完成。[架构](docs/EffectCraft-Dynamic-Sequence-Architecture.zh_CN.md)。
 
 固定 Effect dev.9 与 Film dev.10 安装后的动态交接已通过：三项真实原生测试、58 技能发现零错误、逐项执行后全部安装摘要保全。[证据](docs/evidence/codex-effectcraft9-filmcraft10-dynamic-first-use-20261006.json)。Art 动态集成仍待完成。
+
+技能源 dev.9 增加整份效果／蒙版计划字段预检：读取源工程和安装原生 CLI 之前拒绝未知／缺失字段；反射合同绑定固定二进制，任何工程编辑前核对实际 schema。对象／属性／数值仍由原生检查。不可变发行与安装后验收分别记录。

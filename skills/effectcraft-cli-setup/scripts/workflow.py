@@ -23,6 +23,29 @@ ALLOWED = {'asset.import', 'asset.replace', 'layer.addItem', 'layer.newText', 'l
            'keys.select', 'keys.easyEase', 'keys.interpolation', 'mask.new', 'mask.setVertex', 'mask.remove',
            'effect.apply', 'effect.remove', 'effect.toggle', 'comp.settings'}
 
+PARAMETER_COMMANDS = {'effect.apply', 'effect.remove', 'effect.toggle', 'mask.new', 'mask.setVertex', 'mask.remove'}
+
+
+def parameter_contract():
+    """读取本技能内由固定 CLI 反射得到的字段合同，并绑定已校验制品身份。"""
+    folder = Path(__file__).parent
+    contract = json.loads((folder / 'parameter-contract.json').read_text())
+    lock = json.loads((folder / 'runtime.lock.json').read_text())
+    if (contract.get('schema') != 'effectcraft-parameter-contract/v1'
+            or contract.get('runtimeVersion') != lock['resolvedVersion']
+            or contract.get('binarySha256') != lock['artifacts']['darwin-arm64']['binarySha256']
+            or set(contract.get('commands', {})) != PARAMETER_COMMANDS):
+        raise ValueError('parameter_contract_identity_mismatch')
+    return contract['commands']
+
+
+def verify_parameter_contracts(call, schemas):
+    """只读反射在工程打开或创建之前执行；能力漂移不得继续编辑。"""
+    for command, schema in schemas.items():
+        observed = call('describe_command', {'command': command})
+        if observed.get('id') != command or observed.get('schema') != schema:
+            raise ValueError('parameter_schema_mismatch: ' + command)
+
 def command_error(name, args, content):
     """只归类固定引擎在效果/蒙版命令执行前返回的参数校验错误。"""
     command = args.get('command')
@@ -68,7 +91,11 @@ def validate(plan):
     if not isinstance(plan, dict) or not isinstance(plan.get('operations'), list):
         raise ValueError('operations_required')
     aliases = set()
+    schemas = {}
+    contract = parameter_contract() if any(isinstance(item, dict) and item.get('command') in PARAMETER_COMMANDS for item in plan['operations']) else {}
     for item in plan['operations']:
+        if not isinstance(item, dict):
+            raise ValueError('invalid_operation')
         if item.get('command') not in ALLOWED:
             raise ValueError('unsupported_command')
         alias = item.get('as')
@@ -80,6 +107,22 @@ def validate(plan):
             aliases.add(alias)
         if not isinstance(item.get('params', {}), dict):
             raise ValueError('invalid_params')
+        command = item['command']
+        if command in contract:
+            schema = contract[command]
+            params = item.get('params', {})
+            # 原生 check_params 允许 comp/merge 及 layer/layers 互为别名；字段值中的
+            # $ref 保留到会话绑定阶段，不凭静态字段检查推断实际图层或属性存在。
+            accepted = set(schema['properties']) | {'comp', 'merge'}
+            if accepted & {'layer', 'layers'}:
+                accepted |= {'layer', 'layers'}
+            unknown = sorted(set(params) - accepted)
+            if unknown:
+                raise ValueError('unsupported_mapping: ' + command + ': unknown parameter(s) ' + ', '.join(unknown))
+            missing = sorted(set(schema['required']) - set(params))
+            if missing:
+                raise ValueError('unsupported_mapping: ' + command + ': missing parameter(s) ' + ', '.join(missing))
+            schemas[command] = schema
     if any(set(x) != {'format'} or x['format'] not in ('mp4', 'png-sequence') for x in plan.get('exports', [])) or len(plan.get('exports', [])) > 1:
         raise ValueError('invalid_export')
     for value in plan.get('frames', [0]):
@@ -95,6 +138,7 @@ def validate(plan):
         for field, limit in [('frameRate', 240), ('duration', 3600)]:
             if type(doc.get(field)) not in (int, float) or not 0 < doc[field] <= limit:
                 raise ValueError('invalid_document_timing')
+    return schemas
 
 
 def execute(plan, output, runtime_home=None, source=None):
@@ -109,7 +153,7 @@ def execute(plan, output, runtime_home=None, source=None):
 
 
 def _execute(plan, output, runtime_home, source, owned):
-    validate(plan)
+    schemas = validate(plan)
     output = Path(output).absolute()
     if output.exists() or output.is_symlink():
         raise ValueError('output_exists')
@@ -175,6 +219,7 @@ def _execute(plan, output, runtime_home, source, owned):
                 value = json.loads(text[0])
                 receipts.append({'tool': name, 'arguments': args, 'result': value})
                 return value
+            verify_parameter_contracts(call, schemas)
             if source_project:
                 call('open_project', {'path': str(source_project)})
                 for asset in assets.values():

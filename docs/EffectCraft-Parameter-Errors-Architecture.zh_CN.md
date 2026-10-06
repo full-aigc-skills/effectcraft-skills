@@ -29,3 +29,30 @@ sequenceDiagram
 十三项技能从独立技能源同步该助手。本源码阶段尚待完整回归、不可变技能源／插件发布及安装后复验。不据此宣布所有效果、羽化动画、模型、GUI 或创作质量完成；ArtCraft 的锁定包需要其自身的后续更新。
 
 固定发布后验收已通过：dev.8 插件携带 dev.7 技能源，安装后实际领域测试和 13 个独立冷启动通过，全部 58 个安装摘要保留。[最新证据](evidence/codex-effectcraft8-parameter-first-use-20261006.json)。以上源码阶段的待验收状态由该限定范围的结果替代，ArtCraft 传播与完整首版仍未完成。
+
+## 整份计划预检增量
+
+工作流在读取源工程、安装运行时或创建交付目录之前，检查六条效果／蒙版命令的未知顶层字段与必填字段。`scripts/parameter-contract.json` 来自固定 0.2.0 原生 CLI 的 `describe_command`，并绑定锁定版本与二进制摘要；保留原生 comp／merge 通用字段、layer／layers 别名，以及稍后解析的 `$ref`。
+
+有效计划安装并启动原生会话后，再只读核对所用命令的真实 schema；差异返回 `parameter_schema_mismatch`，不打开或创建工程。命令是否启用、引用对象是否存在、属性路径及参数数值仍由原生会话检查，不能把字段预检写成任意效果保真验收。
+
+```mermaid
+sequenceDiagram
+ participant S as 独立技能
+ participant W as 计划预检
+ participant E as 固定原生 CLI
+ S->>W: 完整计划
+ W->>W: 校验字段及固定制品身份
+ alt 未知或缺失字段
+ W-->>S: unsupported_mapping（不安装或编辑）
+ else 字段有效
+ W->>E: 安装校验后只读 describe_command
+ E-->>W: 实际 schema
+ W->>W: 与固定合同比较
+ W->>E: 匹配后打开或创建工程并执行
+ end
+```
+
+本增量候选回归与固定发行验收分别记录；不改变 ArtCraft 已锁定的旧领域包或完整首版状态。
+
+[Preflight candidate evidence / 预检候选证据](evidence/effect-preflight-source-candidate-20261006.json): default 38 passed / 19 gated skips; source native regression 53 passed / 3 skips; focused native first use 1 passed (17.994s); all 13 isolated public plan entry points reject without installing or editing. Fixed release host acceptance remains pending.

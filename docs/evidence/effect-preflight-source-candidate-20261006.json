@@ -1,0 +1,84 @@
+{
+  "schema": "effectcraft-plan-preflight-candidate/v1",
+  "date": "2026-10-06",
+  "result": "passed",
+  "requirement": "EC-DM-004-PREFLIGHT",
+  "scope": "independent source candidate; not immutable installed release acceptance",
+  "runtimeVersion": "0.2.0",
+  "binarySha256": "74d44fc90018ac381dc4516edff939ab26eb6d900ae5c3f49d1eba5ac14105fe",
+  "redPhase": {
+    "tests": 12,
+    "failures": 4,
+    "errors": 6,
+    "reason": "missing required fields accepted; six later invalid fields reach source reads before validation"
+  },
+  "defaultRegression": {
+    "tests": 57,
+    "passed": 38,
+    "skipped": 19
+  },
+  "nativeSourceRegression": {
+    "tests": 56,
+    "passed": 53,
+    "skipped": 3,
+    "seconds": 157.98,
+    "excludedCases": [
+      "installed temporal animation",
+      "installed Film alpha handoff",
+      "cold sequence export"
+    ]
+  },
+  "focusedNativeFirstUse": {
+    "schema": "effectcraft-parameter-first-use/v1",
+    "result": "passed",
+    "scope": "single role skills copied independently, public empty native runtime, valid creation/reopen and invalid new/revision parameters",
+    "records": [
+      {
+        "skill": "effectcraft-cli-effects",
+        "command": "effect.apply",
+        "unknownField": "blurriness",
+        "newAndRevisionRejected": true,
+        "invalidPlanDoesNotInstallRuntime": true,
+        "liveReflectionBeforeFirstEdit": true,
+        "sourceFilesPreserved": true,
+        "skillFilesPreserved": true,
+        "nativeProjectSha256": "d5ae9f6d1b3cf771f1532a3d8d8560a3b3e175f0a734dec92eb9a8777d356143",
+        "runtimeSha256": "74d44fc90018ac381dc4516edff939ab26eb6d900ae5c3f49d1eba5ac14105fe"
+      },
+      {
+        "skill": "effectcraft-cli-masks",
+        "command": "mask.new",
+        "unknownField": "feather",
+        "newAndRevisionRejected": true,
+        "invalidPlanDoesNotInstallRuntime": true,
+        "liveReflectionBeforeFirstEdit": true,
+        "sourceFilesPreserved": true,
+        "skillFilesPreserved": true,
+        "nativeProjectSha256": "a078b038e6ec1c7869de2afd78e615e83c4abec8385ccb299734adf5da2bc43a",
+        "runtimeSha256": "74d44fc90018ac381dc4516edff939ab26eb6d900ae5c3f49d1eba5ac14105fe"
+      }
+    ]
+  },
+  "all13PublicPreflight": {
+    "passed": 13,
+    "noRuntimeOrOutputCreated": true,
+    "isolatedSingleSkillBytesUnchanged": true
+  },
+  "sourceFingerprints": {
+    "skills/effectcraft-use/scripts/workflow.py": "73503658e908128807a18fd456e7e9bb5df2b7ee312d54f5c140e5ea713100ed",
+    "skills/effectcraft-use/scripts/parameter-contract.json": "bd2355a8f76f25efa6bab0b6792a4bac377ca6be0ed922f0f1cb42a5dee825d9",
+    "tests/test_effect_mask_parameter_first_use.py": "6ddb10d6e4db37fd996d52ef66a5b4271506eb71d58c4862a5e88e5cda42d406",
+    "tests/test_workflow.py": "fb2a86e30d4f4a588157b8725557c660102266670d5fa8e384552f0b1ce27bba",
+    "tests/test_skill_suite.py": "f8c80af0c5683c9fc1b803d49c86d557a596ef3ce344ac3b135e8cdc4022be1d"
+  },
+  "excluded": [
+    "immutable release host acceptance",
+    "Art domain bundle upgrade",
+    "arbitrary nested value validation",
+    "all effects",
+    "GUI",
+    "creative approval",
+    "generic Skills CLI install",
+    "full V1"
+  ]
+}

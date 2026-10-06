@@ -2,6 +2,8 @@
 import importlib.util
 from pathlib import Path
 import unittest
+from unittest.mock import patch
+import tempfile
 
 SOURCE = Path(__file__).resolve().parents[1] / 'skills/effectcraft-use/scripts/workflow.py'
 
@@ -31,6 +33,44 @@ class WorkflowTests(unittest.TestCase):
             error=self.module.command_error(name,args,[{'type':'text','text':text}])
             self.assertIsInstance(error,RuntimeError)
             self.assertIn('command_failed',str(error))
+
+    def test_entire_effect_mask_plan_is_preflighted_before_runtime_or_source_access(self):
+        for command in ('effect.apply', 'effect.remove', 'effect.toggle', 'mask.new', 'mask.setVertex', 'mask.remove'):
+            with self.subTest(command=command), tempfile.TemporaryDirectory() as temporary:
+                root = Path(temporary)
+                plan = {'operations': [{'command': 'layer.newSolid', 'params': {}},
+                    {'command': command, 'params': {'invented': 12}}]}
+                with patch.object(self.module, 'load_module', side_effect=AssertionError('runtime must not start')):
+                    with self.assertRaisesRegex(ValueError, 'unsupported_mapping: ' + command + '.*invented'):
+                        self.module.execute(plan, root/'output', runtime_home=root/'runtime', source=root/'absent-source')
+                self.assertEqual(list(root.iterdir()), [])
+
+    def test_native_required_keys_are_checked_before_execution(self):
+        for command in ('effect.apply', 'mask.new', 'mask.setVertex', 'mask.remove'):
+            with self.subTest(command=command), self.assertRaisesRegex(ValueError, 'unsupported_mapping: ' + command + '.*missing'):
+                self.module.validate({'operations': [{'command': command, 'params': {}}]})
+
+    def test_native_target_aliases_and_unresolved_value_references_are_allowed(self):
+        operations = [
+            {'command': 'effect.apply', 'params': {'effect': 'Gaussian Blur', 'layer': {'$ref': 'title.layer'}, 'comp': {'$ref': 'composition.comp'}}},
+            {'command': 'mask.new', 'params': {'layers': {'$ref': 'title.layer'}, 'vertices': [[0,0],[20,0],[20,20]], 'closed': True, 'merge': 'gesture'}},
+            {'command': 'mask.setVertex', 'params': {'mask': {'$ref': 'mask.mask'}, 'index': 0, 'in': [0,0], 'out': [1,0]}}
+        ]
+        self.module.validate({'operations': operations})
+
+    def test_runtime_reflection_drift_is_rejected(self):
+        schemas = self.module.validate({'operations': [{'command': 'effect.apply', 'params': {'effect': 'Gaussian Blur'}}]})
+        calls = []
+        def call(name, args):
+            calls.append((name, args))
+            return {'id': args['command'], 'schema': {'additionalProperties': True}}
+        with self.assertRaisesRegex(ValueError, 'parameter_schema_mismatch: effect.apply'):
+            self.module.verify_parameter_contracts(call, schemas)
+        self.assertEqual(calls, [('describe_command', {'command': 'effect.apply'})])
+
+    def test_unrelated_operation_does_not_require_a_parameter_contract(self):
+        with patch.object(self.module, 'parameter_contract', side_effect=AssertionError('unneeded contract')):
+            self.module.validate({'operations': [{'command': 'layer.newText', 'params': {'text': 'Brand'}}]})
 
     def test_resolve_only_explicit_references(self):
         value = {'ids': [{'$ref': 'logo.id'}], 'text': 'logo.id'}

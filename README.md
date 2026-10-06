@@ -63,3 +63,5 @@ Fixed plugin dev.8 / source dev.7 installed acceptance passes: five plugins, 58 
 Dynamic RGBA PNG sequences now retain the editable ecproj and every frame digest, rate and duration in craft-image-sequence/v1. Source cold installation and actual Film handoff pass; fixed new-plugin and Art acceptance remain pending. [Architecture](docs/EffectCraft-Dynamic-Sequence-Architecture.md).
 
 Fixed Effect dev.9 and Film dev.10 installed-first-use dynamic handoff now passes: three native tests, all 58 skills discovered without loading errors, and all installed hashes unchanged after each execution. [Evidence](docs/evidence/codex-effectcraft9-filmcraft10-dynamic-first-use-20261006.json). Art dynamic integration remains pending.
+
+Source dev.9 adds whole-plan effect/mask field preflight before source reads or native installation, with pinned binary-bound reflection and a live schema match before any project edit. Unknown/missing fields retain unsupported_mapping; object/property/value checks remain native. Immutable publication and installed acceptance are recorded separately.

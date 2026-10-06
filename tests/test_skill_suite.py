@@ -32,6 +32,23 @@ class SkillSuiteTests(unittest.TestCase):
     self.assertNotEqual(result.returncode,0)
     self.assertFalse(runtime.exists())
 
+ def test_every_single_skill_rejects_later_invalid_effect_field_before_installation(self):
+  suite=json.loads((ROOT/'skill-suite.json').read_text())
+  for entry in suite['skills']:
+   with self.subTest(skill=entry['name']),tempfile.TemporaryDirectory() as temporary:
+    root=Path(temporary);isolated=root/'only-skill'
+    shutil.copytree(ROOT/'skills'/entry['name'],isolated,ignore=shutil.ignore_patterns('__pycache__'))
+    before={p.relative_to(isolated):p.read_bytes() for p in isolated.rglob('*') if p.is_file()}
+    plan=root/'plan.json';plan.write_text(json.dumps({'operations':[
+     {'command':'layer.newSolid','params':{}},
+     {'command':'effect.apply','params':{'effect':'Gaussian Blur','blurriness':12}}]}))
+    result=subprocess.run([sys.executable,'-I','-B',str(isolated/'scripts/workflow.py'),str(plan),
+     '--output',str(root/'output'),'--runtime-home',str(root/'runtime')],capture_output=True,text=True,timeout=30)
+    self.assertEqual(result.returncode,1,result.stdout+result.stderr)
+    self.assertIn('unsupported_mapping: effect.apply',json.loads(result.stdout)['error'])
+    self.assertFalse((root/'runtime').exists());self.assertFalse((root/'output').exists())
+    self.assertEqual({p.relative_to(isolated):p.read_bytes() for p in isolated.rglob('*') if p.is_file()},before)
+
 @unittest.skipUnless(os.environ.get('CRAFT_LIVE_SUITE')=='1','requires declared native CLI platform and live runtime')
 class LiveSkillSuiteTests(unittest.TestCase):
  def test_every_single_skill_discovers_pinned_runtime_and_commands(self):
