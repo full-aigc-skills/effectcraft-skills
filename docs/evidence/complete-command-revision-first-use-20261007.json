@@ -1,0 +1,413 @@
+{
+  "schema": "craft-domain-command-revision-first-use/v1",
+  "domain": "effectcraft",
+  "result": "PASS",
+  "count": 13,
+  "elapsedSeconds": 145.856,
+  "cases": [
+    {
+      "schema": "craft-native-command-revision/v1",
+      "domain": "effectcraft",
+      "result": "PASS",
+      "entrySha256": "d247ab81b6d28478bbb3da4d958c0a96052067e483ac79fbbb9781bd291f1350",
+      "catalogSha256": "af489e1a8ccb22bd09ff32853c78d3559d33cef03b4a70f11395109f823963c9",
+      "runtimeSha256": "74d44fc90018ac381dc4516edff939ab26eb6d900ae5c3f49d1eba5ac14105fe",
+      "testSha256": "547b6ce97e8b2453770b3ccd7a007c4b707e942eb77cb644be4ea19de4634300",
+      "exampleSha256": {
+        "commands-revision-create.json": "03d3d7796210dfd4ff27f6cde0e1ba10b4376b0243dc4938d87103ca991f5f61",
+        "commands-revision.json": "d54bfa78c48b674136b56a8e0c7e36e4c1c475a5907ba46ae450b2ac86e17d1e"
+      },
+      "revisionCommand": "prop.setExpression",
+      "targetIdSource": "actual native results",
+      "projectSha256": "772038e982cc63be9ef8a12a24a68107c3e094e406faab7613354de73107f671",
+      "revisedProjectSha256": "328136f76c95ffda273932d600ff699d9e2889d68bd71fe9cc694b649f4f415e",
+      "operations": 22,
+      "checks": [
+        "single skill copy",
+        "actual target identity",
+        "save and reopen revision",
+        "non-target objects preserved",
+        "native persisted target settings",
+        "rendered output and non-target pixel preservation",
+        "original delivery and skills unchanged"
+      ],
+      "coldInstall": "PASS",
+      "guiAcceptance": "NOT_RUN",
+      "fullPerCommandAcceptance": "NOT_RUN",
+      "skill": "effectcraft-use"
+    },
+    {
+      "schema": "craft-native-command-revision/v1",
+      "domain": "effectcraft",
+      "result": "PASS",
+      "entrySha256": "d247ab81b6d28478bbb3da4d958c0a96052067e483ac79fbbb9781bd291f1350",
+      "catalogSha256": "af489e1a8ccb22bd09ff32853c78d3559d33cef03b4a70f11395109f823963c9",
+      "runtimeSha256": "74d44fc90018ac381dc4516edff939ab26eb6d900ae5c3f49d1eba5ac14105fe",
+      "testSha256": "547b6ce97e8b2453770b3ccd7a007c4b707e942eb77cb644be4ea19de4634300",
+      "exampleSha256": {
+        "commands-revision-create.json": "03d3d7796210dfd4ff27f6cde0e1ba10b4376b0243dc4938d87103ca991f5f61",
+        "commands-revision.json": "d54bfa78c48b674136b56a8e0c7e36e4c1c475a5907ba46ae450b2ac86e17d1e"
+      },
+      "revisionCommand": "prop.setExpression",
+      "targetIdSource": "actual native results",
+      "projectSha256": "772038e982cc63be9ef8a12a24a68107c3e094e406faab7613354de73107f671",
+      "revisedProjectSha256": "328136f76c95ffda273932d600ff699d9e2889d68bd71fe9cc694b649f4f415e",
+      "operations": 22,
+      "checks": [
+        "single skill copy",
+        "actual target identity",
+        "save and reopen revision",
+        "non-target objects preserved",
+        "native persisted target settings",
+        "rendered output and non-target pixel preservation",
+        "original delivery and skills unchanged"
+      ],
+      "coldInstall": "PASS",
+      "guiAcceptance": "NOT_RUN",
+      "fullPerCommandAcceptance": "NOT_RUN",
+      "skill": "effectcraft-cli"
+    },
+    {
+      "schema": "craft-native-command-revision/v1",
+      "domain": "effectcraft",
+      "result": "PASS",
+      "entrySha256": "d247ab81b6d28478bbb3da4d958c0a96052067e483ac79fbbb9781bd291f1350",
+      "catalogSha256": "af489e1a8ccb22bd09ff32853c78d3559d33cef03b4a70f11395109f823963c9",
+      "runtimeSha256": "74d44fc90018ac381dc4516edff939ab26eb6d900ae5c3f49d1eba5ac14105fe",
+      "testSha256": "547b6ce97e8b2453770b3ccd7a007c4b707e942eb77cb644be4ea19de4634300",
+      "exampleSha256": {
+        "commands-revision-create.json": "03d3d7796210dfd4ff27f6cde0e1ba10b4376b0243dc4938d87103ca991f5f61",
+        "commands-revision.json": "d54bfa78c48b674136b56a8e0c7e36e4c1c475a5907ba46ae450b2ac86e17d1e"
+      },
+      "revisionCommand": "prop.setExpression",
+      "targetIdSource": "actual native results",
+      "projectSha256": "772038e982cc63be9ef8a12a24a68107c3e094e406faab7613354de73107f671",
+      "revisedProjectSha256": "328136f76c95ffda273932d600ff699d9e2889d68bd71fe9cc694b649f4f415e",
+      "operations": 22,
+      "checks": [
+        "single skill copy",
+        "actual target identity",
+        "save and reopen revision",
+        "non-target objects preserved",
+        "native persisted target settings",
+        "rendered output and non-target pixel preservation",
+        "original delivery and skills unchanged"
+      ],
+      "coldInstall": "PASS",
+      "guiAcceptance": "NOT_RUN",
+      "fullPerCommandAcceptance": "NOT_RUN",
+      "skill": "effectcraft-cli-setup"
+    },
+    {
+      "schema": "craft-native-command-revision/v1",
+      "domain": "effectcraft",
+      "result": "PASS",
+      "entrySha256": "d247ab81b6d28478bbb3da4d958c0a96052067e483ac79fbbb9781bd291f1350",
+      "catalogSha256": "af489e1a8ccb22bd09ff32853c78d3559d33cef03b4a70f11395109f823963c9",
+      "runtimeSha256": "74d44fc90018ac381dc4516edff939ab26eb6d900ae5c3f49d1eba5ac14105fe",
+      "testSha256": "547b6ce97e8b2453770b3ccd7a007c4b707e942eb77cb644be4ea19de4634300",
+      "exampleSha256": {
+        "commands-revision-create.json": "03d3d7796210dfd4ff27f6cde0e1ba10b4376b0243dc4938d87103ca991f5f61",
+        "commands-revision.json": "d54bfa78c48b674136b56a8e0c7e36e4c1c475a5907ba46ae450b2ac86e17d1e"
+      },
+      "revisionCommand": "prop.setExpression",
+      "targetIdSource": "actual native results",
+      "projectSha256": "772038e982cc63be9ef8a12a24a68107c3e094e406faab7613354de73107f671",
+      "revisedProjectSha256": "328136f76c95ffda273932d600ff699d9e2889d68bd71fe9cc694b649f4f415e",
+      "operations": 22,
+      "checks": [
+        "single skill copy",
+        "actual target identity",
+        "save and reopen revision",
+        "non-target objects preserved",
+        "native persisted target settings",
+        "rendered output and non-target pixel preservation",
+        "original delivery and skills unchanged"
+      ],
+      "coldInstall": "PASS",
+      "guiAcceptance": "NOT_RUN",
+      "fullPerCommandAcceptance": "NOT_RUN",
+      "skill": "effectcraft-cli-project"
+    },
+    {
+      "schema": "craft-native-command-revision/v1",
+      "domain": "effectcraft",
+      "result": "PASS",
+      "entrySha256": "d247ab81b6d28478bbb3da4d958c0a96052067e483ac79fbbb9781bd291f1350",
+      "catalogSha256": "af489e1a8ccb22bd09ff32853c78d3559d33cef03b4a70f11395109f823963c9",
+      "runtimeSha256": "74d44fc90018ac381dc4516edff939ab26eb6d900ae5c3f49d1eba5ac14105fe",
+      "testSha256": "547b6ce97e8b2453770b3ccd7a007c4b707e942eb77cb644be4ea19de4634300",
+      "exampleSha256": {
+        "commands-revision-create.json": "03d3d7796210dfd4ff27f6cde0e1ba10b4376b0243dc4938d87103ca991f5f61",
+        "commands-revision.json": "d54bfa78c48b674136b56a8e0c7e36e4c1c475a5907ba46ae450b2ac86e17d1e"
+      },
+      "revisionCommand": "prop.setExpression",
+      "targetIdSource": "actual native results",
+      "projectSha256": "772038e982cc63be9ef8a12a24a68107c3e094e406faab7613354de73107f671",
+      "revisedProjectSha256": "328136f76c95ffda273932d600ff699d9e2889d68bd71fe9cc694b649f4f415e",
+      "operations": 22,
+      "checks": [
+        "single skill copy",
+        "actual target identity",
+        "save and reopen revision",
+        "non-target objects preserved",
+        "native persisted target settings",
+        "rendered output and non-target pixel preservation",
+        "original delivery and skills unchanged"
+      ],
+      "coldInstall": "PASS",
+      "guiAcceptance": "NOT_RUN",
+      "fullPerCommandAcceptance": "NOT_RUN",
+      "skill": "effectcraft-cli-footage"
+    },
+    {
+      "schema": "craft-native-command-revision/v1",
+      "domain": "effectcraft",
+      "result": "PASS",
+      "entrySha256": "d247ab81b6d28478bbb3da4d958c0a96052067e483ac79fbbb9781bd291f1350",
+      "catalogSha256": "af489e1a8ccb22bd09ff32853c78d3559d33cef03b4a70f11395109f823963c9",
+      "runtimeSha256": "74d44fc90018ac381dc4516edff939ab26eb6d900ae5c3f49d1eba5ac14105fe",
+      "testSha256": "547b6ce97e8b2453770b3ccd7a007c4b707e942eb77cb644be4ea19de4634300",
+      "exampleSha256": {
+        "commands-revision-create.json": "03d3d7796210dfd4ff27f6cde0e1ba10b4376b0243dc4938d87103ca991f5f61",
+        "commands-revision.json": "d54bfa78c48b674136b56a8e0c7e36e4c1c475a5907ba46ae450b2ac86e17d1e"
+      },
+      "revisionCommand": "prop.setExpression",
+      "targetIdSource": "actual native results",
+      "projectSha256": "772038e982cc63be9ef8a12a24a68107c3e094e406faab7613354de73107f671",
+      "revisedProjectSha256": "328136f76c95ffda273932d600ff699d9e2889d68bd71fe9cc694b649f4f415e",
+      "operations": 22,
+      "checks": [
+        "single skill copy",
+        "actual target identity",
+        "save and reopen revision",
+        "non-target objects preserved",
+        "native persisted target settings",
+        "rendered output and non-target pixel preservation",
+        "original delivery and skills unchanged"
+      ],
+      "coldInstall": "PASS",
+      "guiAcceptance": "NOT_RUN",
+      "fullPerCommandAcceptance": "NOT_RUN",
+      "skill": "effectcraft-cli-composition"
+    },
+    {
+      "schema": "craft-native-command-revision/v1",
+      "domain": "effectcraft",
+      "result": "PASS",
+      "entrySha256": "d247ab81b6d28478bbb3da4d958c0a96052067e483ac79fbbb9781bd291f1350",
+      "catalogSha256": "af489e1a8ccb22bd09ff32853c78d3559d33cef03b4a70f11395109f823963c9",
+      "runtimeSha256": "74d44fc90018ac381dc4516edff939ab26eb6d900ae5c3f49d1eba5ac14105fe",
+      "testSha256": "547b6ce97e8b2453770b3ccd7a007c4b707e942eb77cb644be4ea19de4634300",
+      "exampleSha256": {
+        "commands-revision-create.json": "03d3d7796210dfd4ff27f6cde0e1ba10b4376b0243dc4938d87103ca991f5f61",
+        "commands-revision.json": "d54bfa78c48b674136b56a8e0c7e36e4c1c475a5907ba46ae450b2ac86e17d1e"
+      },
+      "revisionCommand": "prop.setExpression",
+      "targetIdSource": "actual native results",
+      "projectSha256": "772038e982cc63be9ef8a12a24a68107c3e094e406faab7613354de73107f671",
+      "revisedProjectSha256": "328136f76c95ffda273932d600ff699d9e2889d68bd71fe9cc694b649f4f415e",
+      "operations": 22,
+      "checks": [
+        "single skill copy",
+        "actual target identity",
+        "save and reopen revision",
+        "non-target objects preserved",
+        "native persisted target settings",
+        "rendered output and non-target pixel preservation",
+        "original delivery and skills unchanged"
+      ],
+      "coldInstall": "PASS",
+      "guiAcceptance": "NOT_RUN",
+      "fullPerCommandAcceptance": "NOT_RUN",
+      "skill": "effectcraft-cli-layers"
+    },
+    {
+      "schema": "craft-native-command-revision/v1",
+      "domain": "effectcraft",
+      "result": "PASS",
+      "entrySha256": "d247ab81b6d28478bbb3da4d958c0a96052067e483ac79fbbb9781bd291f1350",
+      "catalogSha256": "af489e1a8ccb22bd09ff32853c78d3559d33cef03b4a70f11395109f823963c9",
+      "runtimeSha256": "74d44fc90018ac381dc4516edff939ab26eb6d900ae5c3f49d1eba5ac14105fe",
+      "testSha256": "547b6ce97e8b2453770b3ccd7a007c4b707e942eb77cb644be4ea19de4634300",
+      "exampleSha256": {
+        "commands-revision-create.json": "03d3d7796210dfd4ff27f6cde0e1ba10b4376b0243dc4938d87103ca991f5f61",
+        "commands-revision.json": "d54bfa78c48b674136b56a8e0c7e36e4c1c475a5907ba46ae450b2ac86e17d1e"
+      },
+      "revisionCommand": "prop.setExpression",
+      "targetIdSource": "actual native results",
+      "projectSha256": "772038e982cc63be9ef8a12a24a68107c3e094e406faab7613354de73107f671",
+      "revisedProjectSha256": "328136f76c95ffda273932d600ff699d9e2889d68bd71fe9cc694b649f4f415e",
+      "operations": 22,
+      "checks": [
+        "single skill copy",
+        "actual target identity",
+        "save and reopen revision",
+        "non-target objects preserved",
+        "native persisted target settings",
+        "rendered output and non-target pixel preservation",
+        "original delivery and skills unchanged"
+      ],
+      "coldInstall": "PASS",
+      "guiAcceptance": "NOT_RUN",
+      "fullPerCommandAcceptance": "NOT_RUN",
+      "skill": "effectcraft-cli-animation"
+    },
+    {
+      "schema": "craft-native-command-revision/v1",
+      "domain": "effectcraft",
+      "result": "PASS",
+      "entrySha256": "d247ab81b6d28478bbb3da4d958c0a96052067e483ac79fbbb9781bd291f1350",
+      "catalogSha256": "af489e1a8ccb22bd09ff32853c78d3559d33cef03b4a70f11395109f823963c9",
+      "runtimeSha256": "74d44fc90018ac381dc4516edff939ab26eb6d900ae5c3f49d1eba5ac14105fe",
+      "testSha256": "547b6ce97e8b2453770b3ccd7a007c4b707e942eb77cb644be4ea19de4634300",
+      "exampleSha256": {
+        "commands-revision-create.json": "03d3d7796210dfd4ff27f6cde0e1ba10b4376b0243dc4938d87103ca991f5f61",
+        "commands-revision.json": "d54bfa78c48b674136b56a8e0c7e36e4c1c475a5907ba46ae450b2ac86e17d1e"
+      },
+      "revisionCommand": "prop.setExpression",
+      "targetIdSource": "actual native results",
+      "projectSha256": "772038e982cc63be9ef8a12a24a68107c3e094e406faab7613354de73107f671",
+      "revisedProjectSha256": "328136f76c95ffda273932d600ff699d9e2889d68bd71fe9cc694b649f4f415e",
+      "operations": 22,
+      "checks": [
+        "single skill copy",
+        "actual target identity",
+        "save and reopen revision",
+        "non-target objects preserved",
+        "native persisted target settings",
+        "rendered output and non-target pixel preservation",
+        "original delivery and skills unchanged"
+      ],
+      "coldInstall": "PASS",
+      "guiAcceptance": "NOT_RUN",
+      "fullPerCommandAcceptance": "NOT_RUN",
+      "skill": "effectcraft-cli-effects"
+    },
+    {
+      "schema": "craft-native-command-revision/v1",
+      "domain": "effectcraft",
+      "result": "PASS",
+      "entrySha256": "d247ab81b6d28478bbb3da4d958c0a96052067e483ac79fbbb9781bd291f1350",
+      "catalogSha256": "af489e1a8ccb22bd09ff32853c78d3559d33cef03b4a70f11395109f823963c9",
+      "runtimeSha256": "74d44fc90018ac381dc4516edff939ab26eb6d900ae5c3f49d1eba5ac14105fe",
+      "testSha256": "547b6ce97e8b2453770b3ccd7a007c4b707e942eb77cb644be4ea19de4634300",
+      "exampleSha256": {
+        "commands-revision-create.json": "03d3d7796210dfd4ff27f6cde0e1ba10b4376b0243dc4938d87103ca991f5f61",
+        "commands-revision.json": "d54bfa78c48b674136b56a8e0c7e36e4c1c475a5907ba46ae450b2ac86e17d1e"
+      },
+      "revisionCommand": "prop.setExpression",
+      "targetIdSource": "actual native results",
+      "projectSha256": "772038e982cc63be9ef8a12a24a68107c3e094e406faab7613354de73107f671",
+      "revisedProjectSha256": "328136f76c95ffda273932d600ff699d9e2889d68bd71fe9cc694b649f4f415e",
+      "operations": 22,
+      "checks": [
+        "single skill copy",
+        "actual target identity",
+        "save and reopen revision",
+        "non-target objects preserved",
+        "native persisted target settings",
+        "rendered output and non-target pixel preservation",
+        "original delivery and skills unchanged"
+      ],
+      "coldInstall": "PASS",
+      "guiAcceptance": "NOT_RUN",
+      "fullPerCommandAcceptance": "NOT_RUN",
+      "skill": "effectcraft-cli-masks"
+    },
+    {
+      "schema": "craft-native-command-revision/v1",
+      "domain": "effectcraft",
+      "result": "PASS",
+      "entrySha256": "d247ab81b6d28478bbb3da4d958c0a96052067e483ac79fbbb9781bd291f1350",
+      "catalogSha256": "af489e1a8ccb22bd09ff32853c78d3559d33cef03b4a70f11395109f823963c9",
+      "runtimeSha256": "74d44fc90018ac381dc4516edff939ab26eb6d900ae5c3f49d1eba5ac14105fe",
+      "testSha256": "547b6ce97e8b2453770b3ccd7a007c4b707e942eb77cb644be4ea19de4634300",
+      "exampleSha256": {
+        "commands-revision-create.json": "03d3d7796210dfd4ff27f6cde0e1ba10b4376b0243dc4938d87103ca991f5f61",
+        "commands-revision.json": "d54bfa78c48b674136b56a8e0c7e36e4c1c475a5907ba46ae450b2ac86e17d1e"
+      },
+      "revisionCommand": "prop.setExpression",
+      "targetIdSource": "actual native results",
+      "projectSha256": "772038e982cc63be9ef8a12a24a68107c3e094e406faab7613354de73107f671",
+      "revisedProjectSha256": "328136f76c95ffda273932d600ff699d9e2889d68bd71fe9cc694b649f4f415e",
+      "operations": 22,
+      "checks": [
+        "single skill copy",
+        "actual target identity",
+        "save and reopen revision",
+        "non-target objects preserved",
+        "native persisted target settings",
+        "rendered output and non-target pixel preservation",
+        "original delivery and skills unchanged"
+      ],
+      "coldInstall": "PASS",
+      "guiAcceptance": "NOT_RUN",
+      "fullPerCommandAcceptance": "NOT_RUN",
+      "skill": "effectcraft-cli-expressions"
+    },
+    {
+      "schema": "craft-native-command-revision/v1",
+      "domain": "effectcraft",
+      "result": "PASS",
+      "entrySha256": "d247ab81b6d28478bbb3da4d958c0a96052067e483ac79fbbb9781bd291f1350",
+      "catalogSha256": "af489e1a8ccb22bd09ff32853c78d3559d33cef03b4a70f11395109f823963c9",
+      "runtimeSha256": "74d44fc90018ac381dc4516edff939ab26eb6d900ae5c3f49d1eba5ac14105fe",
+      "testSha256": "547b6ce97e8b2453770b3ccd7a007c4b707e942eb77cb644be4ea19de4634300",
+      "exampleSha256": {
+        "commands-revision-create.json": "03d3d7796210dfd4ff27f6cde0e1ba10b4376b0243dc4938d87103ca991f5f61",
+        "commands-revision.json": "d54bfa78c48b674136b56a8e0c7e36e4c1c475a5907ba46ae450b2ac86e17d1e"
+      },
+      "revisionCommand": "prop.setExpression",
+      "targetIdSource": "actual native results",
+      "projectSha256": "772038e982cc63be9ef8a12a24a68107c3e094e406faab7613354de73107f671",
+      "revisedProjectSha256": "328136f76c95ffda273932d600ff699d9e2889d68bd71fe9cc694b649f4f415e",
+      "operations": 22,
+      "checks": [
+        "single skill copy",
+        "actual target identity",
+        "save and reopen revision",
+        "non-target objects preserved",
+        "native persisted target settings",
+        "rendered output and non-target pixel preservation",
+        "original delivery and skills unchanged"
+      ],
+      "coldInstall": "PASS",
+      "guiAcceptance": "NOT_RUN",
+      "fullPerCommandAcceptance": "NOT_RUN",
+      "skill": "effectcraft-cli-camera"
+    },
+    {
+      "schema": "craft-native-command-revision/v1",
+      "domain": "effectcraft",
+      "result": "PASS",
+      "entrySha256": "d247ab81b6d28478bbb3da4d958c0a96052067e483ac79fbbb9781bd291f1350",
+      "catalogSha256": "af489e1a8ccb22bd09ff32853c78d3559d33cef03b4a70f11395109f823963c9",
+      "runtimeSha256": "74d44fc90018ac381dc4516edff939ab26eb6d900ae5c3f49d1eba5ac14105fe",
+      "testSha256": "547b6ce97e8b2453770b3ccd7a007c4b707e942eb77cb644be4ea19de4634300",
+      "exampleSha256": {
+        "commands-revision-create.json": "03d3d7796210dfd4ff27f6cde0e1ba10b4376b0243dc4938d87103ca991f5f61",
+        "commands-revision.json": "d54bfa78c48b674136b56a8e0c7e36e4c1c475a5907ba46ae450b2ac86e17d1e"
+      },
+      "revisionCommand": "prop.setExpression",
+      "targetIdSource": "actual native results",
+      "projectSha256": "772038e982cc63be9ef8a12a24a68107c3e094e406faab7613354de73107f671",
+      "revisedProjectSha256": "328136f76c95ffda273932d600ff699d9e2889d68bd71fe9cc694b649f4f415e",
+      "operations": 22,
+      "checks": [
+        "single skill copy",
+        "actual target identity",
+        "save and reopen revision",
+        "non-target objects preserved",
+        "native persisted target settings",
+        "rendered output and non-target pixel preservation",
+        "original delivery and skills unchanged"
+      ],
+      "coldInstall": "PASS",
+      "guiAcceptance": "NOT_RUN",
+      "fullPerCommandAcceptance": "NOT_RUN",
+      "skill": "effectcraft-cli-export"
+    }
+  ],
+  "scope": "Each skill copied alone; unique empty runtime; public locked native install; paired revision examples; saved/reopened target state and non-target objects/pixels; original delivery and skill hashes unchanged. Full registry/GUI/model dispatch acceptance remains open."
+}
