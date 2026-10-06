@@ -8,7 +8,7 @@ Historical source-candidate note: Source candidate: complete native workflow gat
 
 固定发布前的候选记录：原生下载恢复候选：最多三次只读重试并丢弃半包；此前固定版本冷安装遇到SSL EOF失败，修复后的固定安装验收仍开放。
 
-当前独立技能源：`0.1.0-dev.19`；包含父级／表达式计划，固定安装待验收，完整 V1 仍开放。
+当前独立技能源：`0.1.0-dev.19`；包含父级／表达式计划，十三项固定安装父级／表达式冷启动通过；Art领域包待更新，完整V1仍开放。
 
 当前固定失败暂存验收：插件 dev.17、独立技能源 dev.15。全部58项独立CLI冷启动、24个原暂存原生故障案例及37原生场景＋6合同检查通过；Art77领域包升级仍开放。[证据](docs/evidence/codex-failed-stage-first-use-20261007.json)。
 
@@ -122,3 +122,5 @@ EffectCraft 独立技能源 dev.7 对效果／蒙版计划参数校验错误返�
 完整命令内层JSON修复候选：非有限值、溢出和重复键在绑定返回值前记录unknown，真实保存后九类故障与原工程重开通过。这是候选技能源证据，固定发布与实际安装复验尚未完成；逐命令／GUI门禁仍开放。
 
 父级与表达式：十三项独立技能源候选冷安装、原生保存重开、动态Alpha和源返工保全通过；固定安装及Art分发待验证。 [Architecture](docs/EffectCraft-Expression-Parent-Architecture.zh_CN.md).
+
+固定父级／表达式首用：十三项实际安装技能通过动态Alpha与源返工，58安装身份保持不变；Art新分发仍待验收。 [Evidence](docs/evidence/codex-effectcraft-expression-first-use-20261007.json).

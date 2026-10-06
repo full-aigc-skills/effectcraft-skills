@@ -29,3 +29,5 @@ flowchart LR
 返工从用户复制的计划填写源manifest.files[project.ecproj]，通过--source绑定可信源、--output输出新目录。保留可编辑.ecproj、依赖清单、native.json、操作参数、两帧预览及交换损失，安装资源不改写。
 
 十三项独立技能源候选分别空运行时公开安装并通过上述实际原生创建、返工和拒绝路径；115项回归中88通过、27明确可选跳过。[候选证据](evidence/effect-expression-candidate-20261007.json)。固定安装与Art新领域分发仍待验证；全部表达式语言、640命令、GUI、模型和完整V1没有由此样例验收。
+
+固定发行验证：插件21／技能源19的十三项实际安装技能均再次从空运行时公开安装并通过父级／透明度表达式创建、原生保存重开、两个时间点Alpha、源返工、控制对象保全及循环拒绝；全部58安装身份不变。四项标签CI与两个公开ZIP精确标签归档核验通过。Art86仍锁定Effect18，新领域包由8.15追踪。 [Evidence](evidence/codex-effectcraft-expression-first-use-20261007.json).
