@@ -1,0 +1,135 @@
+{
+  "schema": "effectcraft-filmcraft-alpha-handoff/v1",
+  "result": "passed",
+  "effectRuntimeSha256": "74d44fc90018ac381dc4516edff939ab26eb6d900ae5c3f49d1eba5ac14105fe",
+  "filmRuntimeSha256": "4bd79931912c591d1cb1b47690949512ffb4361c3ec4f57664024f9a4847ae38",
+  "effectProjectSha256": "e283a149b8c42ed22f6f0ed90db3757e23e14732dedaae1364b4c36d28cfe075",
+  "overlaySha256": "bff7d4a8d361da40ad2b942c1d591409cbaa0f38a92c01bdf9eaa9e5bd174f06",
+  "filmProjectSha256": "28b0341a2cae379726f108aa2c49361697eeb3827c23bfd2c2fb1811ad2271c1",
+  "filmVideoSha256": "b77c2c1dd976e730829f1d74ff20c497bf5f16ea4d3eb4e5899bb9a7d32c09fd",
+  "overlayProbe": {
+    "audio": null,
+    "container": "Image",
+    "duration": "1270080000000",
+    "file_size": 6974,
+    "kind": "Still",
+    "name": "overlay.png",
+    "start_timecode": null,
+    "video": {
+      "bitrate": null,
+      "codec": "PNG",
+      "color": {
+        "matrix": "Bt709",
+        "primaries": "Bt709",
+        "range": "Full",
+        "transfer": "Srgb"
+      },
+      "frame_rate": {
+        "den": 1001,
+        "num": 30000
+      },
+      "has_alpha": true,
+      "height": 180,
+      "par": [
+        1,
+        1
+      ],
+      "pixel_format": "RGBA 8-bit",
+      "width": 320
+    }
+  },
+  "previewCorner": [
+    1,
+    128,
+    1
+  ],
+  "previewBadge": [
+    239,
+    91,
+    54
+  ],
+  "decodedCorner": [
+    0,
+    128,
+    1
+  ],
+  "opaquePixelsVerified": 2423,
+  "animationPreserved": true,
+  "badgeLayerPreserved": true,
+  "sourceProjectPreserved": true,
+  "scope": "one installed skill per domain; each empty runtime; static transparent PNG handoff, not animated alpha video or all color pipelines",
+  "tests": 1,
+  "passed": 1,
+  "skipped": 0,
+  "seconds": 13.898,
+  "testDriverSha256": "118cd0a80a6900c6141fd53c9e706c68049e65a57f096936b47a2b395518b635",
+  "logSha256": "767569519b0a00dcc38d5264566b5acf1d939446bcf83d9bfe25241257458207",
+  "fixedPlugins": {
+    "effectcraft": {
+      "repository": "https://github.com/full-aigc-plugins/effectcraft-plugin.git",
+      "version": "0.1.0-dev.7",
+      "ref": "v0.1.0-dev.7",
+      "sha": "5fc03b48e6852a1c5ff964647e1dd6fc3ec3467a",
+      "skillSourceSha": "ed0abc27ed2179e85942d977ee143db89cff4ce3",
+      "skillSourceRef": "v0.1.0-dev.6",
+      "skillSha256": "61e7e20236f95363a0e1abf2ab648fe054865d719835aa256eeec5be482bfa67",
+      "pluginManifestSha256": "99b7343c393d2c843862e9965220e88e0cd9648bcd5d00cd9a22611b73893773",
+      "skills": {
+        "effectcraft-cli": "1f458d3e37fc28a468a3f7e7f77752d48f96b860a0f8328a6c5723df6fce3953",
+        "effectcraft-cli-animation": "e8da6beade05ebe04747aff4b435db8051ec7b2317a5707ff531a84bfb033041",
+        "effectcraft-cli-camera": "7585fde560a0d4fa7bf704a2f7529d57be4f3e527044d7fa86143ff4a948bdef",
+        "effectcraft-cli-composition": "8126890cab543c08aa5e317b777fac464c6a4fed55bfde3484a91d636ecac7ea",
+        "effectcraft-cli-effects": "2689edb7fc0f38ec454eb4e0400b09e145ff799e64c02657c854ef3cddbd9ca7",
+        "effectcraft-cli-export": "86f56aa9517405421b9c675882293732cc13e1a15a22fbcd6ac465dd2b8a1de6",
+        "effectcraft-cli-expressions": "e37297c276dc26d932e500ddf8c2c95a72ad53d27c1fa3a94544908bbf042fb2",
+        "effectcraft-cli-footage": "6a453ed03ebe5a8bc8fb9d8f4d1c79bb52ea52ff6c5ffc149b086f684c1a4500",
+        "effectcraft-cli-layers": "4799cd12a5db21a49c5f5888727610058f73d4e6a34c1a2d83136f9558ba6461",
+        "effectcraft-cli-masks": "74b102d31a10f4bcfd65889d2a691b92e39431230514b081b79db64d5261b5db",
+        "effectcraft-cli-project": "4f6fbda91e42a9c63b1ca674cb8436eb03d3f55a6782bdb4bcd1f0c2f1520240",
+        "effectcraft-cli-setup": "9417ef9f6fd156b0f3b350f2ac88ef83dc8ac63c8ab75f0d1c528750ed27ca8b",
+        "effectcraft-use": "61e7e20236f95363a0e1abf2ab648fe054865d719835aa256eeec5be482bfa67"
+      }
+    },
+    "filmcraft": {
+      "repository": "https://github.com/full-aigc-plugins/filmcraft-plugin.git",
+      "version": "0.1.0-dev.7",
+      "ref": "v0.1.0-dev.7",
+      "sha": "bb847883f5203096a1d113faba067bf8bb4da301",
+      "skillSourceSha": "85866c064c7d91abd8da63b0570d78bee3202bf5",
+      "skillSourceRef": "v0.1.0-dev.6",
+      "skillSha256": "2d0a56a23188c7daa17761973178865f2c41bd5129c385ff451ac6dbf636f5df",
+      "pluginManifestSha256": "cf51ae23c021aa69aaf5f0a553eb8749ecd29a2b8ead9397eb2e36de94102d19",
+      "skills": {
+        "filmcraft-cli": "b72f86e33586ec4536cd5452e231f559e1e5ef8711ad927e13ee5f23d347ccea",
+        "filmcraft-cli-audio": "43fecdc65f9358ff3b2966ba277002ca3c7ea479c12550142bc09f43fcfcf2f5",
+        "filmcraft-cli-color": "433b6423338b84cad7523f3beb292a13bbbd58ff7a63d031c2f826a0df78f6b5",
+        "filmcraft-cli-export": "dd3471adca737d95b5855622537eb6ee6108bebe187bb0edbb2bbf70af7b7939",
+        "filmcraft-cli-media": "953ceed5f982f4e7079e076c04a9b348d91e862aae993ff8cb01c0206d658f95",
+        "filmcraft-cli-motion": "897b500b7a43a974304283cbd02a8ce51def5fcaf3e35985a19062069c80cfdc",
+        "filmcraft-cli-project": "e421ba2eb1dd72352347a443ff9c0b99866854538e1136346d9fb5e4b769a17a",
+        "filmcraft-cli-setup": "0e818dd7d55c56bfc6150fc8e7558968b51a8616a00960de239e83cecb7a0a03",
+        "filmcraft-cli-subtitles": "26156a70cf92ff4109c128215b4dfd92978c89eba7136738625c7c311d70831b",
+        "filmcraft-cli-timeline": "e28c2ec4928d23fd5358667974de1fbdb3d70e1dcb3246ec575a85b4c61d2918",
+        "filmcraft-use": "2d0a56a23188c7daa17761973178865f2c41bd5129c385ff451ac6dbf636f5df"
+      }
+    }
+  },
+  "unchangedInstalledSkillsAfterCalls": 24,
+  "oracle": {
+    "python": "3.13.5",
+    "Pillow": "12.3",
+    "ffmpeg": "existing test oracle"
+  },
+  "regression": {
+    "total": 40,
+    "passed": 24,
+    "skipped": 16,
+    "seconds": 6.877
+  },
+  "limits": [
+    "static native transparent PNG handoff, not animated alpha video",
+    "one default RGB/8-bit pipeline; arbitrary profiles and premultiplied alpha conversion unverified",
+    "same font and synthetic brand fixture; not all fonts or creative acceptance",
+    "no model dispatch, GUI or production"
+  ]
+}
