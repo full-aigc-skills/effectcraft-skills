@@ -128,3 +128,7 @@ Candidate complete-command inner JSON fix: nonfinite values, overflow and duplic
 Parenting/expression:13 independent source-candidate cold native runs pass dynamic alpha, save/reopen and source revision; fixed install and Art distribution pending. [Architecture](docs/EffectCraft-Expression-Parent-Architecture.md).
 
 Fixed parent/expression first use:13 independently installed skills pass dynamic alpha and source revision; all58 installed identities unchanged. Updated Art distribution remains pending. [Evidence](docs/evidence/codex-effectcraft-expression-first-use-20261007.json).
+
+## Desktop installation component (source candidate)
+
+The 48 standalone domain skills now have their own pinned official desktop installers. See the [installation architecture](docs/Craft-Desktop-First-Use-Architecture.md) and [48-skill installation evidence](docs/evidence/craft-desktop-source48-first-use-20261007.json). Existing release-tag skill copies do not yet contain this candidate component. Desktop startup, GUI edits/save/reopen and complete command execution remain open acceptance gates.

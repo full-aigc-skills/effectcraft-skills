@@ -1,0 +1,13 @@
+{
+  "schema": "craft-desktop-lock/v1",
+  "domain": "effectcraft",
+  "version": "0.2.0",
+  "url": "https://github.com/storytold/effectcraft/releases/download/v0.2.0/effectcraft-0.2.0-macos-universal.dmg",
+  "filename": "effectcraft-0.2.0-macos-universal.dmg",
+  "bytes": 57079613,
+  "archiveSha256": "a5d0fbe9e24d1c2f89dbb34c692751195bf50f3a62ad4b7a8283b0ed8a7f7046",
+  "binarySha256": "e7db491a0b7af0a12977e32fa1da23490df8087f38a56c60a9ae2a7d914a22de",
+  "app": "EffectCraft.app",
+  "executable": "EffectCraft",
+  "bundleIdentifier": "ai.storyteller.effectcraft"
+}
