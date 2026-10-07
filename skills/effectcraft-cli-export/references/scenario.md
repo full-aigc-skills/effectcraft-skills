@@ -48,3 +48,60 @@ python3 "$SKILL_DIR/scripts/cli.py" -- render \
 ```
 
 实际文件带帧号，此示例为 frame_00006.png；使用回执的 rendered[].output，不猜测输出路径。解码文件确认 RGBA 和 Alpha 极值；仍交付原生 ecproj 与引用素材。合成名称、时间范围、帧率和工程路径必须替换成当前项目真实值。所有编码格式和通道组合尚未逐项验收。
+
+<!-- COMPLETE_SCENARIO_COMMANDS_START -->
+
+## 完整归属清单 / Complete assigned command list
+
+本技能归属 26 条命令。下面按命令族分组；上述短表若存在，仅是示例。归属按最长前缀确定，实际任务可组合其他能力的命令。
+
+Each command below has a parameter contract in this skill’s `command-reference.md`. Assignment uses the most specific prefix; a task can combine commands from multiple capabilities.
+
+执行顺序：检查工程和选中对象 → `commands.py describe COMMAND_ID` → 根据参数说明构造计划 → `commands.py check PLAN.json` → `commands.py run PLAN.json --output NEW_DIRECTORY` → 保存并重开原生工程、核验目标修改和非目标内容。涉及 GUI 时按 `command-usage.md` 选择 bridge 模式。
+
+Order: inspect project and selection, describe parameters, construct and check the plan, run it, save and reopen the native project, then verify requested and unaffected content. Follow `command-usage.md` for bridge mode.
+
+这些是命令使用入口，不能把分类或计划校验当作实际执行成功；禁用项必须重新查询上下文，超时不得直接重放。 / Classification and preflight do not prove execution acceptance. Re-query disabled commands and reconcile timed-out operations before retry.
+
+### `file` — 2
+
+| 命令 / Command | 用途 / Label | 参数入口 / Parameters |
+| --- | --- | --- |
+| `file.exportLottie` | Lottie JSON... | `describe file.exportLottie` |
+| `file.exportTimeline` | Adobe Premiere Pro Project... | `describe file.exportTimeline` |
+
+### `render` — 4
+
+| 命令 / Command | 用途 / Label | 参数入口 / Parameters |
+| --- | --- | --- |
+| `render.backend` | Video Rendering and Effects | `describe render.backend` |
+| `render.addOutputModule` | Add Output Module | `describe render.addOutputModule` |
+| `render.preRender` | Pre-render... | `describe render.preRender` |
+| `render.saveCurrentPreview` | Save Current Preview... | `describe render.saveCurrentPreview` |
+
+### `renderQueue` — 20
+
+| 命令 / Command | 用途 / Label | 参数入口 / Parameters |
+| --- | --- | --- |
+| `renderQueue.add` | Add to Render Queue | `describe renderQueue.add` |
+| `renderQueue.remove` | Remove from Render Queue | `describe renderQueue.remove` |
+| `renderQueue.setRender` | Render Queue: Render Checkbox | `describe renderQueue.setRender` |
+| `renderQueue.setRenderSettings` | Render Settings... | `describe renderQueue.setRenderSettings` |
+| `renderQueue.setOutputModule` | Output Module Settings... | `describe renderQueue.setOutputModule` |
+| `renderQueue.setOutput` | Output To... | `describe renderQueue.setOutput` |
+| `renderQueue.move` | Move in Render Queue | `describe renderQueue.move` |
+| `renderQueue.duplicate` | Duplicate Render Item | `describe renderQueue.duplicate` |
+| `renderQueue.render` | Render | `describe renderQueue.render` |
+| `renderQueue.stop` | Stop Rendering | `describe renderQueue.stop` |
+| `renderQueue.list` | Render Queue Items | `describe renderQueue.list` |
+| `renderQueue.templates` | Render Templates | `describe renderQueue.templates` |
+| `renderQueue.saveTemplate` | Save Template... | `describe renderQueue.saveTemplate` |
+| `renderQueue.deleteTemplate` | Delete Template | `describe renderQueue.deleteTemplate` |
+| `renderQueue.setTemplateDefault` | Set Template Default | `describe renderQueue.setTemplateDefault` |
+| `renderQueue.applyTemplate` | Apply Template | `describe renderQueue.applyTemplate` |
+| `renderQueue.setLog` | Render Queue: Log | `describe renderQueue.setLog` |
+| `renderQueue.setNotify` | Notify When Done | `describe renderQueue.setNotify` |
+| `renderQueue.setOverflowFolders` | Storage Overflow Folders | `describe renderQueue.setOverflowFolders` |
+| `renderQueue.formats` | Output Formats | `describe renderQueue.formats` |
+
+<!-- COMPLETE_SCENARIO_COMMANDS_END -->

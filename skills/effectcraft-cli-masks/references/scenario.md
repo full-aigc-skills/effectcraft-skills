@@ -44,3 +44,66 @@ python3 -I -B "$SKILL_DIR/scripts/workflow.py" "$SKILL_DIR/examples/layer-mask.j
 保存回执中的 `bindings.product.layer` 与 `bindings.crop.mask`，以及 `files["project.ecproj"]`。局部修订计划使用 `expectedProjectSha256` 和两条 `mask.setVertex` 操作：顶点索引 1 移到 `[240,0]`，索引 2 移到 `[240,180]`；`layer` 用 `{"$ref":"product.layer"}`，`mask` 用 `{"$ref":"crop.mask"}`。通过本技能 workflow.py 的 `--source mask-v1 --output mask-v2` 另存，重开并比较 RGBA 实际边界。移除蒙版用 `mask.remove`，不删除原始图层。
 
 路径与顶点不是主体识别结果。只有当前版本真正执行并渲染通过的操作才可称已验证；自动抠像、羽化动画和任意复杂路径仍按具体任务验收。
+
+<!-- COMPLETE_SCENARIO_COMMANDS_START -->
+
+## 完整归属清单 / Complete assigned command list
+
+本技能归属 32 条命令。下面按命令族分组；上述短表若存在，仅是示例。归属按最长前缀确定，实际任务可组合其他能力的命令。
+
+Each command below has a parameter contract in this skill’s `command-reference.md`. Assignment uses the most specific prefix; a task can combine commands from multiple capabilities.
+
+执行顺序：检查工程和选中对象 → `commands.py describe COMMAND_ID` → 根据参数说明构造计划 → `commands.py check PLAN.json` → `commands.py run PLAN.json --output NEW_DIRECTORY` → 保存并重开原生工程、核验目标修改和非目标内容。涉及 GUI 时按 `command-usage.md` 选择 bridge 模式。
+
+Order: inspect project and selection, describe parameters, construct and check the plan, run it, save and reopen the native project, then verify requested and unaffected content. Follow `command-usage.md` for bridge mode.
+
+这些是命令使用入口，不能把分类或计划校验当作实际执行成功；禁用项必须重新查询上下文，超时不得直接重放。 / Classification and preflight do not prove execution acceptance. Re-query disabled commands and reconcile timed-out operations before retry.
+
+### `mask` — 17
+
+| 命令 / Command | 用途 / Label | 参数入口 / Parameters |
+| --- | --- | --- |
+| `mask.new` | New Mask from Points | `describe mask.new` |
+| `mask.addVertex` | Add Mask Vertex | `describe mask.addVertex` |
+| `mask.setVertex` | Set Mask Vertex | `describe mask.setVertex` |
+| `mask.setClosed` | Closed | `describe mask.setClosed` |
+| `mask.selectVertices` | Select Mask Vertices | `describe mask.selectVertices` |
+| `mask.moveVertices` | Move Mask Vertices | `describe mask.moveVertices` |
+| `mask.deleteVertices` | Delete Mask Vertices | `describe mask.deleteVertices` |
+| `mask.convertVertex` | Convert Vertex | `describe mask.convertVertex` |
+| `mask.insertVertex` | Add Vertex | `describe mask.insertVertex` |
+| `mask.featherPoint.add` | Add Mask Feather Point | `describe mask.featherPoint.add` |
+| `mask.featherPoint.set` | Move Mask Feather Point | `describe mask.featherPoint.set` |
+| `mask.featherPoint.remove` | Delete Mask Feather Point | `describe mask.featherPoint.remove` |
+| `mask.featherPoint.list` | Mask Feather Points | `describe mask.featherPoint.list` |
+| `mask.remove` | Remove Mask | `describe mask.remove` |
+| `mask.removeAll` | Remove All Masks | `describe mask.removeAll` |
+| `mask.interpolate` | Apply Mask Interpolation | `describe mask.interpolate` |
+| `mask.interpolationOptions` | Mask Interpolation Options | `describe mask.interpolationOptions` |
+
+### `path` — 6
+
+| 命令 / Command | 用途 / Label | 参数入口 / Parameters |
+| --- | --- | --- |
+| `path.rotoBezier` | RotoBezier | `describe path.rotoBezier` |
+| `path.convertToBezier` | Convert To Bezier Path | `describe path.convertToBezier` |
+| `path.groupShapes` | Group Shapes | `describe path.groupShapes` |
+| `path.ungroupShapes` | Ungroup Shapes | `describe path.ungroupShapes` |
+| `path.setFirstVertex` | Set First Vertex | `describe path.setFirstVertex` |
+| `path.freeTransform` | Free Transform Points | `describe path.freeTransform` |
+
+### `roto` — 9
+
+| 命令 / Command | 用途 / Label | 参数入口 / Parameters |
+| --- | --- | --- |
+| `roto.stroke` | Roto Brush Stroke | `describe roto.stroke` |
+| `roto.propagate` | Propagate Roto Brush | `describe roto.propagate` |
+| `roto.span` | Set Segmentation Span | `describe roto.span` |
+| `roto.freeze` | Freeze | `describe roto.freeze` |
+| `roto.unfreeze` | Unfreeze | `describe roto.unfreeze` |
+| `roto.clearStrokes` | Remove Roto Brush Strokes | `describe roto.clearStrokes` |
+| `roto.cancel` | Stop Roto Brush | `describe roto.cancel` |
+| `roto.options` | Roto Brush Options | `describe roto.options` |
+| `roto.status` | Roto Brush Status | `describe roto.status` |
+
+<!-- COMPLETE_SCENARIO_COMMANDS_END -->

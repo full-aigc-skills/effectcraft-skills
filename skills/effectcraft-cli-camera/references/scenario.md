@@ -50,3 +50,91 @@ python3 "$SKILL_DIR/scripts/cli.py" -- run \
 ```
 
 用真实回执中的相机 layer ID，通过 `get <comp> <layer> transform/position --project <新工程> --json` 检查保存重开后的坐标。上述示例的 position 为 `[160,90,-350]`。保留源工程摘要；二维视角的失败操作不得产生成功工程。相机参数和原生保存通过不等于高级三维材质、阴影或最终画面均已验收。
+
+<!-- COMPLETE_SCENARIO_COMMANDS_START -->
+
+## 完整归属清单 / Complete assigned command list
+
+本技能归属 47 条命令。下面按命令族分组；上述短表若存在，仅是示例。归属按最长前缀确定，实际任务可组合其他能力的命令。
+
+Each command below has a parameter contract in this skill’s `command-reference.md`. Assignment uses the most specific prefix; a task can combine commands from multiple capabilities.
+
+执行顺序：检查工程和选中对象 → `commands.py describe COMMAND_ID` → 根据参数说明构造计划 → `commands.py check PLAN.json` → `commands.py run PLAN.json --output NEW_DIRECTORY` → 保存并重开原生工程、核验目标修改和非目标内容。涉及 GUI 时按 `command-usage.md` 选择 bridge 模式。
+
+Order: inspect project and selection, describe parameters, construct and check the plan, run it, save and reopen the native project, then verify requested and unaffected content. Follow `command-usage.md` for bridge mode.
+
+这些是命令使用入口，不能把分类或计划校验当作实际执行成功；禁用项必须重新查询上下文，超时不得直接重放。 / Classification and preflight do not prove execution acceptance. Re-query disabled commands and reconcile timed-out operations before retry.
+
+### `camera` — 19
+
+| 命令 / Command | 用途 / Label | 参数入口 / Parameters |
+| --- | --- | --- |
+| `camera.fromView` | Create Camera from 3D View | `describe camera.fromView` |
+| `camera.orbit` | Orbit Camera | `describe camera.orbit` |
+| `camera.pan` | Pan Camera | `describe camera.pan` |
+| `camera.dolly` | Dolly Camera | `describe camera.dolly` |
+| `camera.stereoRig` | Create Stereo 3D Rig | `describe camera.stereoRig` |
+| `camera.orbitNull` | Create Orbit Null | `describe camera.orbitNull` |
+| `camera.fromModel` | Create Cameras from 3D Model | `describe camera.fromModel` |
+| `camera.linkFocusToPoi` | Link Focus Distance to Point of Interest | `describe camera.linkFocusToPoi` |
+| `camera.linkFocusToLayer` | Link Focus Distance to Layer | `describe camera.linkFocusToLayer` |
+| `camera.setFocusToLayer` | Set Focus Distance to Layer | `describe camera.setFocusToLayer` |
+| `camera.analyze` | Analyze | `describe camera.analyze` |
+| `camera.cancel` | Cancel | `describe camera.cancel` |
+| `camera.solveStatus` | 3D Camera Tracker Status | `describe camera.solveStatus` |
+| `camera.points` | 3D Camera Tracker Points | `describe camera.points` |
+| `camera.selectPoints` | Select Track Points | `describe camera.selectPoints` |
+| `camera.createFromSolve` | Create from Camera Solve | `describe camera.createFromSolve` |
+| `camera.create` | Create Camera | `describe camera.create` |
+| `camera.setGroundPlane` | Set Ground Plane and Origin | `describe camera.setGroundPlane` |
+| `camera.deletePoints` | Delete Selected Points | `describe camera.deletePoints` |
+
+### `layer` — 5
+
+| 命令 / Command | 用途 / Label | 参数入口 / Parameters |
+| --- | --- | --- |
+| `layer.setSwitch` | Layer Switch | `describe layer.setSwitch` |
+| `layer.newLight` | Light... | `describe layer.newLight` |
+| `layer.newCamera` | Camera... | `describe layer.newCamera` |
+| `layer.cameraSettings` | Camera Settings... | `describe layer.cameraSettings` |
+| `layer.new3dPrimitive` | 3D Primitive | `describe layer.new3dPrimitive` |
+
+### `light` — 3
+
+| 命令 / Command | 用途 / Label | 参数入口 / Parameters |
+| --- | --- | --- |
+| `light.fromModel` | Create Lights from 3D Model | `describe light.fromModel` |
+| `light.controlWithCamera` | Control Light with Camera | `describe light.controlWithCamera` |
+| `light.environmentBackground` | Create Environment Light Background Layer | `describe light.environmentBackground` |
+
+### `material` — 4
+
+| 命令 / Command | 用途 / Label | 参数入口 / Parameters |
+| --- | --- | --- |
+| `material.set` | Material Options | `describe material.set` |
+| `material.revealSource` | Reveal Material Source in Project | `describe material.revealSource` |
+| `material.reset` | Reset Material | `describe material.reset` |
+| `material.duplicateAssign` | Duplicate and Assign Material | `describe material.duplicateAssign` |
+
+### `view` — 16
+
+| 命令 / Command | 用途 / Label | 参数入口 / Parameters |
+| --- | --- | --- |
+| `view.set3DView` | Switch 3D View | `describe view.set3DView` |
+| `view.3d.activeCamera` | Active Camera | `describe view.3d.activeCamera` |
+| `view.3d.default` | Default | `describe view.3d.default` |
+| `view.3d.front` | Front | `describe view.3d.front` |
+| `view.3d.left` | Left | `describe view.3d.left` |
+| `view.3d.top` | Top | `describe view.3d.top` |
+| `view.3d.back` | Back | `describe view.3d.back` |
+| `view.3d.right` | Right | `describe view.3d.right` |
+| `view.3d.bottom` | Bottom | `describe view.3d.bottom` |
+| `view.3d.custom1` | Custom View 1 | `describe view.3d.custom1` |
+| `view.3d.custom2` | Custom View 2 | `describe view.3d.custom2` |
+| `view.3d.custom3` | Custom View 3 | `describe view.3d.custom3` |
+| `view.3d.last` | Switch to Last 3D View | `describe view.3d.last` |
+| `view.reset3DView` | Reset 3D View | `describe view.reset3DView` |
+| `view.set3DViewCamera` | Set 3D View Camera | `describe view.set3DViewCamera` |
+| `view.get3D` | 3D View State | `describe view.get3D` |
+
+<!-- COMPLETE_SCENARIO_COMMANDS_END -->
