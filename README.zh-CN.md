@@ -1,3 +1,7 @@
+技能源dev.29补充本地跟踪解码与实际结果指南，模板应用前记录track.status。单技能候选冷启动命令计划创建和重开通过，产生12个关键帧；固定插件分发另行验收。[候选证据](docs/evidence/effect-tracking-guide-candidate-20261007.json)。
+
+领域场景验收现为 **43项原生测试通过／全部42个不同场景技能**。固定安装跟踪用例使用受支持H.264 High通过；此前无损输入不受原生解码器支持，失败证据保留。Art角色专项、实际Skills CLI及完整V1仍开放。 [Evidence / 证据](docs/evidence/craft-fixed-tracking-supported-input-20261007.json).
+
 追加专项验收：**累计42项原生测试通过，覆盖41／42个领域场景技能**。多机位、带时间文本转录、滤镜及Puppet补验通过；Effect跟踪视频纹理未出现在预期像素，分析实际关键帧为0，尚未验收。64个安装摘要保持。Art角色专项、自动ASR、实际Skills CLI和完整V1继续开放。[证据](docs/evidence/craft-fixed-additional-task-scenes-20261007.json)。
 
 已安装专项技能首用：**38项原生测试／37个不同领域场景技能通过**，各自使用独立空运行时。Film多机位／转录、Photo滤镜、Effect Puppet／跟踪五项尚未纳入本业务门禁；Art角色专项任务与通用Skills CLI另行验收。全部64安装摘要不变。[证据](docs/evidence/craft-fixed-installed-task-scenes-first-use-20261007.json)。
@@ -6,7 +10,7 @@
 
 逐技能独立冷启动：**64／64通过**（macOS arm64、Python3.13.5，620.155秒）。每个单技能分别使用独立空运行时与默认公开下载；锁定原生版本和命令发现通过，安装技能摘要不变。通用Skills CLI安装及完整首版仍开放。[证据](docs/evidence/craft-fixed64-every-skill-cold-first-use-20261007.json)。
 
-当前独立技能源：`0.1.0-dev.28`。严格命令计划 JSON 在安装或编辑前拒绝重复键；本领域全部独立技能的隔离副本计划测试通过。固定领域插件安装、计划拒绝及原生代表场景复验通过；逐命令原生与完整首版验收仍开放。
+当前独立技能源：`0.1.0-dev.29`。严格命令计划 JSON 在安装或编辑前拒绝重复键；本领域全部独立技能的隔离副本计划测试通过。固定领域插件安装、计划拒绝及原生代表场景复验通过；逐命令原生与完整首版验收仍开放。
 
 发行前候选记录：未发布候选新增 `effectcraft-cli-puppet`，负责10条木偶命令。两个位置针脚的原生变形、保存重开状态与渲染像素一致性通过；全部针脚类型、录制、跟随及创作质量验收仍开放。固定插件28／技能源26仍包含14技能。[候选证据](docs/evidence/effect-puppet-candidate-20261007.json)。
 

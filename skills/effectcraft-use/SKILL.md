@@ -97,3 +97,5 @@ GUI任务可先使用本技能自带的 [固定桌面安装](references/desktop-
 相关创作任务读取 [镜头跟踪场景](references/tracking-scene.md)，核对原生参数、对象上下文、局部返工与交付边界。
 
 木偶图层与局部变形任务交给 **effectcraft-cli-puppet**。安装：`npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-puppet`。步骤见本技能自带 [木偶指南](references/puppet-scene.md)。
+
+镜头跟踪前先读取本技能[跟踪首用与解码核验](references/motion-tracking.md)：核对源像素和实际关键帧，区分计划帧数与完成结果。

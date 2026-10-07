@@ -1,0 +1,22 @@
+{
+  "schema": "effect-tracking-guide-candidate/v1",
+  "result": "PASS",
+  "scope": "source candidate standalone-copy public command plan, cold runtime, save and independent reopen; not fixed plugin",
+  "nativeVersion": "0.2.0",
+  "keys": 12,
+  "start": [
+    20,
+    40
+  ],
+  "end": [
+    53,
+    40
+  ],
+  "createPlanSha256": "58a4c9ee5789135854163f00a4d1a1a4275a12e005537ebbd21993d64d9facb4",
+  "reopenPlanSha256": "af579bb469ce5ff7466227c8bebc8b8e9bcbc3bdfc3bec03cca14b874a65c8e0",
+  "runtimeSha256": "74d44fc90018ac381dc4516edff939ab26eb6d900ae5c3f49d1eba5ac14105fe",
+  "inputSha256": "ec86baab12daa0c0e48bedcb526c25d8d066d52c278b3d20ca6bbb961eb4a93f",
+  "projectSha256": "962557aac36792f905ab25184c242920aa12c3ca0bac39fb56311a819f7430b4",
+  "previewSha256": "b81eb2edccf4e530e05bf0b651ccf0b339916e1cd7a8f1e94af4d1ddba591670",
+  "createSeconds": 16.345
+}

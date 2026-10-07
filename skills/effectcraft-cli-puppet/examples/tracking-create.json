@@ -98,6 +98,15 @@
       "as": "analysis"
     },
     {
+      "command": "track.status",
+      "params": {
+        "layer": {
+          "$ref": "source.layer"
+        }
+      },
+      "as": "trackedStatus"
+    },
+    {
       "command": "track.apply",
       "params": {
         "layer": {

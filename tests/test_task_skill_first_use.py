@@ -303,7 +303,10 @@ class TaskSkillFirstUseTests(unittest.TestCase):
         video = self.root / 'tracking.mp4'
         subprocess.run(['ffmpeg', '-v', 'error', '-framerate', '12', '-i',
                         str(frames / 'frame-%02d.png'), '-c:v', 'libx264',
-                        '-crf', '0', '-pix_fmt', 'yuv420p', str(video)], check=True)
+                        '-profile:v', 'high', '-crf', '18', '-pix_fmt', 'yuv420p', str(video)], check=True)
+        decoded = self.root / 'decoded-first.png'
+        subprocess.run(['ffmpeg', '-v', 'error', '-i', str(video), '-frames:v', '1',
+                        str(decoded)], check=True)
         imported, placed, targeted = [self.root / name for name in
                                       ['track-imported.ecproj', 'track-placed.ecproj', 'track-target.ecproj']]
         item = self.execute('file.import', {'paths': [str(video)]}, imported)['items'][0]
@@ -311,7 +314,8 @@ class TaskSkillFirstUseTests(unittest.TestCase):
                               placed, imported)['layer']
         with Image.open(self.render(placed, 'tracking-source.png', 0)) as image:
             actual = image.convert('RGB').getpixel((80, 80))
-            expected = texture.getpixel((16, 16))
+            with Image.open(decoded) as reference:
+                expected = reference.convert('RGB').getpixel((80, 80))
             self.assertTrue(all(abs(a - e) <= 5 for a, e in zip(actual, expected)),
                             'imported tracking texture must render before analysis: '
                             + str({'expected': expected, 'actual': actual}))

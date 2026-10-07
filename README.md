@@ -1,3 +1,7 @@
+Source dev.29 adds a local tracking decoding/result guide and records actual status before applying the tracking example. Source candidate cold command-plan creation/reopen passed with12 keys. Fixed-plugin distribution acceptance remains separate. [Candidate evidence](docs/evidence/effect-tracking-guide-candidate-20261007.json).
+
+Domain scene acceptance now has **43 passed native tests / all 42 distinct domain scene skills**. The fixed-installed tracking case passed with supported H.264 High; the earlier lossless input is unsupported by the native decoder and its failed evidence remains historical. Art role-specific tasks, generic Skills CLI and complete V1 remain open. [Evidence / 证据](docs/evidence/craft-fixed-tracking-supported-input-20261007.json).
+
 Additional scene acceptance: **42 native tests passed / 41 of 42 domain scene skills**. Multicam, timed transcript import, filters and Puppet passed. Effect tracking video texture is absent from its expected preview pixels, and analysis produced zero actual keys and remains unaccepted. All64 installed identities remain unchanged. Art role-specific tasks, automatic ASR, generic Skills CLI installation and complete V1 remain open. [Evidence](docs/evidence/craft-fixed-additional-task-scenes-20261007.json).
 
 Installed task-scene first use: **38 native tests / 37 distinct domain scene skills pass** from independent cold runtime directories. Five domain scene skills (Film multicam/transcript, Photo filters, Effect puppet/tracking) remain outside this business gate; Art role-specific tasks and generic Skills CLI are separately open. All64 installed hashes remain unchanged. [Evidence](docs/evidence/craft-fixed-installed-task-scenes-first-use-20261007.json).
@@ -6,7 +10,7 @@ Current fixed V1 representative native baseline: four installed domain workflows
 
 Every-skill cold first use: **64/64 passed** on macOS arm64 / Python3.13.5 (620.155s). Each single skill used its own empty runtime and default public downloads; locked native version and command discovery passed, installed hashes unchanged. Generic Skills CLI installation and complete V1 remain open. [Evidence](docs/evidence/craft-fixed64-every-skill-cold-first-use-20261007.json).
 
-Current standalone source: `0.1.0-dev.28`. Strict command-plan JSON rejects duplicate keys before installation or edits. All standalone domain skills pass isolated-copy plan tests. Fixed domain-plugin installation, plan guards and representative native checks pass; complete native command and V1 acceptance remain open.
+Current standalone source: `0.1.0-dev.29`. Strict command-plan JSON rejects duplicate keys before installation or edits. All standalone domain skills pass isolated-copy plan tests. Fixed domain-plugin installation, plan guards and representative native checks pass; complete native command and V1 acceptance remain open.
 
 Pre-release candidate record: Unreleased source candidate adds `effectcraft-cli-puppet` for10 puppet commands. Two-pin native deformation, save/reopen state and rendered pixel identity passed; full pin-kind, recording/follow and creative-quality acceptance remain open. Fixed plugin28/source26 still contains14 skills. [Candidate evidence](docs/evidence/effect-puppet-candidate-20261007.json).
 
