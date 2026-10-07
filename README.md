@@ -1,3 +1,5 @@
+Every-skill cold first use: **64/64 passed** on macOS arm64 / Python3.13.5 (620.155s). Each single skill used its own empty runtime and default public downloads; locked native version and command discovery passed, installed hashes unchanged. Generic Skills CLI installation and complete V1 remain open. [Evidence](docs/evidence/craft-fixed64-every-skill-cold-first-use-20261007.json).
+
 Current standalone source: `0.1.0-dev.28`. Strict command-plan JSON rejects duplicate keys before installation or edits. All standalone domain skills pass isolated-copy plan tests. Fixed domain-plugin installation, plan guards and representative native checks pass; complete native command and V1 acceptance remain open.
 
 Pre-release candidate record: Unreleased source candidate adds `effectcraft-cli-puppet` for10 puppet commands. Two-pin native deformation, save/reopen state and rendered pixel identity passed; full pin-kind, recording/follow and creative-quality acceptance remain open. Fixed plugin28/source26 still contains14 skills. [Candidate evidence](docs/evidence/effect-puppet-candidate-20261007.json).
