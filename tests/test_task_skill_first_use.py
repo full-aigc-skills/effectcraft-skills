@@ -286,6 +286,90 @@ class TaskSkillFirstUseTests(unittest.TestCase):
             self.assertGreater(image.getpixel((280,90))[1],180)
         self.assertEqual(self.props(unmasked,self.title),original)
 
+    def test_tracking_analyzes_moving_texture_and_reopens_applied_keys(self):
+        from PIL import Image
+        import random
+        self.install_only('tracking')
+        frames = self.root / 'frames'
+        frames.mkdir()
+        randomizer = random.Random(17)
+        texture = Image.new('RGB', (32, 32))
+        texture.putdata([(v, v, v) for v in
+                         [randomizer.randrange(40, 256) for _ in range(32 * 32)]])
+        for i in range(12):
+            frame = Image.new('RGB', (320, 180), (0, 0, 0))
+            frame.paste(texture, (64 + i * 3, 64))
+            frame.save(frames / ('frame-%02d.png' % i))
+        video = self.root / 'tracking.mp4'
+        subprocess.run(['ffmpeg', '-v', 'error', '-framerate', '12', '-i',
+                        str(frames / 'frame-%02d.png'), '-c:v', 'libx264',
+                        '-crf', '0', '-pix_fmt', 'yuv420p', str(video)], check=True)
+        imported, placed, targeted = [self.root / name for name in
+                                      ['track-imported.ecproj', 'track-placed.ecproj', 'track-target.ecproj']]
+        item = self.execute('file.import', {'paths': [str(video)]}, imported)['items'][0]
+        source = self.execute('layer.addItem', {'item': item, 'time': 0, 'duration': 1},
+                              placed, imported)['layer']
+        with Image.open(self.render(placed, 'tracking-source.png', 0)) as image:
+            self.assertGreater(max(image.convert('RGB').getpixel((80, 80))), 30,
+                               'imported tracking texture must render before analysis')
+        target = self.execute('layer.newNull', {'name': 'Tracked target'}, targeted, placed)['layer']
+        configured = self.root / 'track-configured.ecproj'
+        self.execute('track.new', {'layer': source, 'kind': 'transform',
+                     'position': True, 'target': target}, configured, targeted)
+        points = self.root / 'track-points.ecproj'
+        self.execute('track.setPoint', {'layer': source, 'point': 1, 'center': [80, 80],
+                     'featureSize': [24, 24], 'searchSize': [56, 56]}, points, configured)
+        applied = self.root / 'track-applied.ecproj'
+        analyzed = self.root / 'track-analyzed.ecproj'
+        results = json.loads(self.cli('run', 'track.analyze',
+                             json.dumps({'layer': source, 'start': 0, 'end': 11 / 12, 'wait': True}),
+                             'track.status', json.dumps({'layer': source}),
+                             '--project', points, '--save-as', analyzed).stdout)['result']
+        self.assertGreaterEqual(results[0]['result']['frames'], 10)
+        self.assertGreaterEqual(results[1]['result']['tracker']['points'][0]['keys'], 11, results)
+        self.execute('track.apply', {'layer': source}, applied, analyzed)
+        for time, expected in [(0, [80, 80]), (11 / 12, [113, 80])]:
+            position = self.prop(applied, target, 'transform/position', time=time)
+            for actual, wanted in zip(position['value'], expected):
+                self.assertLess(abs(actual - wanted), 1.5)
+        self.assertGreaterEqual(len(self.prop(applied, target, 'transform/position')['keys']), 11)
+        for layer, path in [(self.title, 'text/sourceText'),
+                            (self.title, 'transform/opacity'),
+                            (self.badge, 'transform/position')]:
+            self.assertEqual(self.prop(applied, layer, path), self.prop(self.project, layer, path))
+
+    def test_puppet_pin_animation_reopens_and_preserves_other_layers(self):
+        from PIL import Image, ImageChops
+        self.install_only('puppet')
+        original_title = self.props(self.project, self.title)
+        original_badge = self.props(self.project, self.badge)
+        created = self.root / 'rig-created.ecproj'
+        layer = self.execute('layer.newSolid', {'name': 'Rig', 'width': 100,
+                             'height': 60, 'color': '#3060c0'}, created)['layer']
+        previous = created
+        lead = None
+        for i, position in enumerate([[10, 30], [50, 30], [90, 30]]):
+            target = self.root / ('rig-pin-' + str(i) + '.ecproj')
+            pin = self.execute('puppet.addPin', {'layer': layer, 'position': position},
+                               target, previous)['pin']
+            if i == 0:
+                lead = pin
+            previous = target
+        moved = self.root / 'rig-moved.ecproj'
+        self.execute('puppet.movePin', {'layer': layer, 'pin': lead,
+                     'position': [10, 50], 'time': .5}, moved, previous)
+        for time, expected in [(0, [10, 30]), (.5, [10, 50])]:
+            info = self.execute('puppet.info', {'layer': layer, 'time': time},
+                                self.root / ('inspected-' + str(time) + '.ecproj'), moved)
+            self.assertEqual(len(info['meshes'][0]['pins']), 3)
+            self.assertEqual(info['meshes'][0]['pins'][0]['position'], expected)
+        self.assertEqual(self.props(moved, self.title), original_title)
+        self.assertEqual(self.props(moved, self.badge), original_badge)
+        with Image.open(self.render(previous, 'rig-before.png', time=.5)) as before, \
+                Image.open(self.render(moved, 'rig-after.png', time=.5)) as after:
+            self.assertIsNotNone(ImageChops.difference(before.convert('RGB'),
+                                                      after.convert('RGB')).getbbox())
+
     def test_export_transparent_frame_and_decoded_native_video(self):
         from PIL import Image
         self.install_only('export')
