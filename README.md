@@ -170,3 +170,5 @@ Fixed EffectCraft plugin dev.35 / source dev.33 acceptance passes: 64 installed 
 Camera scene source candidate passes native Advanced 3D rendering, projection growth, reopen identity, camera-only revision and three rejection paths. [Architecture](docs/EffectCraft-Camera-Scene-Architecture.md). Fixed installed-release acceptance remains separate; full V1 stays open.
 
 Fixed EffectCraft plugin dev.36 / source dev.34 passes 64 installed skill identities/discovery, 15 fresh standalone Effect CLI cold installs, and the native camera render/reopen/targeted revision plus three rejection paths. The other 49 cold records are retained byte-identical historical runs. Full V1 remains open. [Fixed camera evidence](docs/evidence/effectcraft-camera-scene-fixed-first-use-20261008.json).
+
+Independent-install dependency boundary: current byte-identical cold-install records and 128 new fixed-copy bootstrap/CLI failure checks qualify four domain SK-002 requirements. Art and generic Skills CLI installation stay open. [Design and evidence](docs/Craft-Independent-Setup-Boundary-Architecture.md).
