@@ -1,7 +1,7 @@
 {
   "schema": "craft-skill-suite/v1",
   "pluginId": "effectcraft",
-  "version": "0.1.0-dev.33",
+  "version": "0.1.0-dev.34",
   "source": {
     "repository": "https://github.com/storytold/effectcraft",
     "commit": "24fcbdf3d2d6b928d3788d33f1722d8a21b9ad29",

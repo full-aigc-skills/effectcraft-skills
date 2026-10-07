@@ -1,0 +1,66 @@
+{
+  "schema": "craft-camera-scene-first-use/v1",
+  "result": "PASS",
+  "skill": "effectcraft-cli-camera",
+  "runtimeSha256": "74d44fc90018ac381dc4516edff939ab26eb6d900ae5c3f49d1eba5ac14105fe",
+  "createPlanSha256": "bdced8cc3a735793852bf67140ff62ec79544c938c61d733c372f6f4a61d0946",
+  "commands": [
+    "camera.dolly",
+    "camera.linkFocusToPoi",
+    "camera.orbit",
+    "camera.pan",
+    "comp.new",
+    "comp.renderer",
+    "layer.cameraSettings",
+    "layer.new3dPrimitive",
+    "layer.newCamera",
+    "layer.newLight",
+    "layer.newSolid",
+    "layer.select",
+    "material.set",
+    "view.get3D",
+    "view.set3DView"
+  ],
+  "redPixelCounts": {
+    "before": 1600,
+    "dolly": 2500,
+    "revised": 1936
+  },
+  "originalProjectSha256": "74fda091df8f75d42ebc58695333de15e235c16b32131cc33d581eeb393df8d4",
+  "revisedProjectSha256": "fc7822aa4cfc318a3eed068ef95ad84fdaa5824ab55d8bdd956afa499c3180a1",
+  "failures": [
+    {
+      "case": "empty",
+      "result": "FAIL",
+      "error": "precondition_failed: camera.dolly: no composition is open"
+    },
+    {
+      "case": "wrongCamera",
+      "result": "FAIL",
+      "error": "command_failed: [{\"text\": \"invalid parameters for `camera.dolly`: the comp has no active camera layer (Layer \u25b8 New \u25b8 Camera), or switch to a custom 3D view\", \"type\": \"text\"}]"
+    },
+    {
+      "case": "wrongSettings",
+      "result": "FAIL",
+      "error": "command_failed: [{\"text\": \"invalid parameters for `layer.cameraSettings`: layer `Control` is not a camera\", \"type\": \"text\"}]"
+    }
+  ],
+  "checks": [
+    "single skill public cold install",
+    "native Advanced 3D renderer",
+    "returned camera and light identities",
+    "actual dolly projection growth",
+    "native reopen properties and pixel identity",
+    "targeted camera revision and unchanged material/light/control",
+    "preserved original project and skill files"
+  ],
+  "unverified": [
+    "all 46 command contexts",
+    "camera solving and stereo/model rigs",
+    "GUI",
+    "DOF/shadows/creative quality"
+  ],
+  "scope": "bounded self-contained static 3D camera scene, not full CM-001",
+  "stage": "source-candidate",
+  "immutableInstalledAcceptance": "NOT_RUN"
+}

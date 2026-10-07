@@ -2,7 +2,7 @@
 
 文字、图形与镜头需求进入，交付可编辑 `.ecproj`、依赖素材和渲染结果。
 
-当前技能源：`0.1.0-dev.33`；目标插件：`0.1.0-dev.35`；15 个独立技能。
+当前技能源：`0.1.0-dev.34`；目标插件：`0.1.0-dev.36`；15 个独立技能。
 
 已验证首次使用平台：macOS arm64、Python 3.11+。固定运行时安装在用户数据目录，技能文件保留在宿主加载目录。当前为开发版本；完整首版验收及通用 Skills CLI 实际安装仍未完成。
 
@@ -160,3 +160,5 @@ EffectCraft 独立技能源 dev.7 对效果／蒙版计划参数校验错误返�
 木偶录制／跟随源码候选通过：10 条代表命令、逐帧关键帧、原生重开、局部返工和三类错误路径。固定发行安装复验另行记录。[架构](docs/EffectCraft-Puppet-Record-Follow-Architecture.zh_CN.md)。
 
 固定 EffectCraft 插件 dev.35／技能源 dev.33 验收通过：64 项安装身份与发现、15 项独立 Effect CLI 空缓存安装，以及原生木偶录制／跟随／重开／局部返工和三类失败路径。另 49 项冷安装记录复用摘要一致的历史证据。完整首版仍开放。[固定证据](docs/evidence/effectcraft-puppet-record-follow-fixed-first-use-20261008.json)。
+
+摄像机场景源码候选通过 Advanced 3D 实际渲染、投影变化、重开一致、仅镜头返工与三类失败路径。[架构](docs/EffectCraft-Camera-Scene-Architecture.zh_CN.md)。固定发行安装复验另行记录，完整首版仍开放。

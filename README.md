@@ -2,7 +2,7 @@
 
 Turn text, graphics and footage into an editable `.ecproj`, dependencies and rendered media.
 
-Current source: `0.1.0-dev.33`; target plugin: `0.1.0-dev.35`; 15 independent skills.
+Current source: `0.1.0-dev.34`; target plugin: `0.1.0-dev.36`; 15 independent skills.
 
 Verified first-use platform: macOS arm64 and Python 3.11+. Pinned runtimes install into the user data directory; skill files stay in their host-loaded directory. These are development releases; complete V1 acceptance and generic Skills CLI installation remain open.
 
@@ -166,3 +166,5 @@ Fixed installed own-directory acceptance passes for the updated scenario skills;
 Puppet recording/follow source candidate: ten representative commands, frame-aligned keys, native reopen, targeted revision and three rejection paths pass. Immutable installed-release acceptance remains separate. [Architecture](docs/EffectCraft-Puppet-Record-Follow-Architecture.md).
 
 Fixed EffectCraft plugin dev.35 / source dev.33 acceptance passes: 64 installed skill identities/discovery, 15 fresh standalone Effect CLI installs, and native puppet recording/follow/reopen/targeted revision plus three failure paths. The other 49 cold records are historical and byte-identical. Full V1 stays open. [Fixed evidence](docs/evidence/effectcraft-puppet-record-follow-fixed-first-use-20261008.json).
+
+Camera scene source candidate passes native Advanced 3D rendering, projection growth, reopen identity, camera-only revision and three rejection paths. [Architecture](docs/EffectCraft-Camera-Scene-Architecture.md). Fixed installed-release acceptance remains separate; full V1 stays open.

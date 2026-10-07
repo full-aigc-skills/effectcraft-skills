@@ -29,6 +29,8 @@ CLI argv 在 `--` 后，原生子命令必须放首位。安装参数放分隔�
 
 ## 场景操作
 
+先读取本技能的 [摄像机场景指南](references/camera-scene.md)，按命令分类选择镜头、灯光、材质与视角；自包含计划在本技能 examples 内。
+
 核对本场景输入、原生工程、目标对象、版本和输出边界。按 [场景指南](references/scenario.md) 选择当前命令，保存独立检查点后执行；完成后重开原生工程并检查实际输出与非目标内容。
 
 `commands --filter <关键词> --json` 核对参数；属性读写用 props/get/set，命令用 `exec <id> --params <JSON>` 或成对的 `run <id> <JSON> ...`；用 --save-as 保留新工程。
