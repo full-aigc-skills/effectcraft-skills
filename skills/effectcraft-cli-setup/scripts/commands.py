@@ -53,14 +53,40 @@ def references(value, aliases):
         for child in value:
             references(child, aliases)
 
-def validate(plan, input_names=()):
+def bridge_tools():
+    data = reply_json((ROOT / "references/bridge-tools.json").read_text())
+    native = reply_json((ROOT / "references/native-command-snapshot.json").read_text())
+    desktop = reply_json((ROOT / "scripts/desktop.lock.json").read_text())
+    if (data.get("schema") != "craft-bridge-tools/v1" or data.get("pluginId") != DOMAIN
+            or data.get("runtimeSha256") != native["runtimeSha256"]
+            or data.get("desktopBinarySha256") != desktop["binarySha256"]
+            or not isinstance(data.get("tools"), list)
+            or any(not isinstance(t, dict) or not isinstance(t.get("name"), str)
+                   or not isinstance(t.get("inputSchema"), dict) for t in data["tools"])
+            or len({t["name"] for t in data["tools"]}) != len(data["tools"])
+            or {t["name"] for t in data["tools"]} & set(catalog()["nativeTools"])):
+        raise ValueError("bridge_tools_identity")
+    return data["tools"]
+
+def tool_schemas(mode="headless"):
+    rows = reply_json((ROOT / "references/native-command-snapshot.json").read_text())["tools"]
+    return rows + (bridge_tools() if mode == "bridge" else [])
+
+def verify_bridge_tools(rows, required):
+    expected = {t["name"]: t["inputSchema"] for t in bridge_tools() if t["name"] in required}
+    for name, schema in expected.items():
+        matches = [t for t in rows if t.get("name") == name]
+        if len(matches) != 1 or matches[0].get("inputSchema") != schema:
+            raise RuntimeError("bridge_tool_schema_drift: " + name)
+
+def validate(plan, input_names=(), mode="headless"):
     if (not isinstance(plan, dict) or set(plan) != {"schema", "operations"}
             or plan["schema"] != "craft-command-plan/v1"
             or not isinstance(plan["operations"], list)
             or not 1 <= len(plan["operations"]) <= 1000):
         raise ValueError("invalid_command_plan")
     rows = {r["id"]: r for r in catalog()["commands"]}
-    tools = set(catalog()["nativeTools"])
+    tools = {t["name"] for t in tool_schemas(mode)}
     aliases = {"output", *input_names}
     for index, step in enumerate(plan["operations"]):
         if not isinstance(step, dict) or set(step) - {"command", "tool", "params", "as"}:
@@ -68,6 +94,8 @@ def validate(plan, input_names=()):
         if ("command" in step) == ("tool" in step) or not isinstance(step.get("params"), dict):
             raise ValueError("command_or_tool_and_params_required: " + str(index))
         key = "command" if "command" in step else "tool"
+        if key == "tool" and mode != "bridge" and isinstance(step[key], str) and step[key] in {t["name"] for t in bridge_tools()}:
+            raise ValueError("bridge_tool_requires_bridge: " + step[key])
         if not isinstance(step[key], str) or step[key] not in (rows if key == "command" else tools):
             raise ValueError("unknown_" + key + ": " + str(step[key]))
         try:
@@ -235,7 +263,7 @@ def execute(plan, output, runtime_home=None, mode="headless", connect=None, toke
             raise ValueError("invalid_input_file: " + name)
         with source.open("rb") as stream:
             sources[name] = (source, hashlib.file_digest(stream, "sha256").hexdigest())
-    validate(plan, sources)
+    validate(plan, sources, mode)
     output = Path(output)
     if output.exists() or output.is_symlink():
         raise ValueError("output_exists")
@@ -287,6 +315,8 @@ def execute(plan, output, runtime_home=None, mode="headless", connect=None, toke
             # 目录查询也是原生能力合同；旧服务不能冒充新入口。
             if not required.issubset(available) or ROUTES[DOMAIN][0] not in available:
                 raise RuntimeError("native_tool_missing")
+            if mode == "bridge":
+                verify_bridge_tools(discovery["tools"], required)
             current = {r["id"]: r for r in runtime_rows(session)}
             expected = {r["id"] for r in catalog()["commands"]}
             if not expected.issubset(current):
@@ -332,30 +362,30 @@ def execute(plan, output, runtime_home=None, mode="headless", connect=None, toke
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     sub = parser.add_subparsers(dest="action", required=True)
-    listing = sub.add_parser("list"); listing.add_argument("--filter", default="")
-    detail = sub.add_parser("describe"); detail.add_argument("command")
-    check = sub.add_parser("check"); check.add_argument("plan", type=Path); check.add_argument("--input", action="append", default=[])
+    listing = sub.add_parser("list"); listing.add_argument("--filter", default=""); listing.add_argument("--tools", action="store_true"); listing.add_argument("--mode", choices=["headless", "bridge"], default="headless")
+    detail = sub.add_parser("describe"); detail.add_argument("command"); detail.add_argument("--tool", action="store_true"); detail.add_argument("--mode", choices=["headless", "bridge"], default="headless")
+    check = sub.add_parser("check"); check.add_argument("plan", type=Path); check.add_argument("--input", action="append", default=[]); check.add_argument("--mode", choices=["headless", "bridge"], default="headless")
     run = sub.add_parser("run"); run.add_argument("plan", type=Path); run.add_argument("--output", type=Path, required=True)
     run.add_argument("--input", action="append", default=[]); run.add_argument("--runtime-home"); run.add_argument("--mode", choices=["headless", "bridge"], default="headless")
     run.add_argument("--connect"); run.add_argument("--control-token-file")
     args = parser.parse_args()
     try:
         if args.action == "list":
-            result = [row for row in catalog()["commands"] if args.filter.lower() in
-                      (row["id"] + " " + row["label"]).lower()]
+            result = [row for row in (tool_schemas(args.mode) if args.tools else catalog()["commands"]) if args.filter.lower() in
+                      ((row["name"] + " " + row.get("description", "")) if args.tools else row["id"] + " " + row["label"]).lower()]
         elif args.action == "describe":
-            result = next((row for row in catalog()["commands"] if row["id"] == args.command), None)
+            result = next((row for row in (tool_schemas(args.mode) if args.tool else catalog()["commands"]) if row["name" if args.tool else "id"] == args.command), None)
             if result is None:
                 raise ValueError("unknown_command: " + args.command)
         else:
-            plan = json.loads(args.plan.read_text(), parse_constant=lambda v: (_ for _ in ()).throw(ValueError("invalid_json_number")))
+            plan = reply_json(args.plan.read_text())
             inputs = {}
             for item in args.input:
                 name, separator, path = item.partition("=")
                 if not separator or name in inputs:
                     raise ValueError("invalid_or_duplicate_input")
                 inputs[name] = path
-            validate(plan, inputs)
+            validate(plan, inputs, args.mode)
             if args.action == "check":
                 result = {"result": "PASS", "scope": "plan structure and catalog membership only",
                           "nativeExecution": "NOT_RUN", "operations": len(plan["operations"])}

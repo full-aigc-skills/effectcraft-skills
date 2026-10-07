@@ -48,7 +48,7 @@ def read_plan(path):
  return load("commands").reply_json(Path(path).read_text())
 
 def run(plan,output,runtime_home=None,inputs=None):
- commands=load('commands');inputs=inputs or {};commands.validate(plan,inputs)
+ commands=load('commands');inputs=inputs or {};commands.validate(plan,inputs,mode="bridge")
  if any(not isinstance(k,str) or not re.fullmatch(r'[a-zA-Z][\w-]*',k) or k=='output' for k in inputs):raise ValueError('invalid_input_name')
  for name,path in inputs.items():
   p=Path(path)

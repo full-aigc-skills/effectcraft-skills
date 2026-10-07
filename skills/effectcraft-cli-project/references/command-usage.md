@@ -114,3 +114,17 @@ python3 -I -B "$SKILL_DIR/scripts/desktop.py" run "$SKILL_DIR/examples/desktop-f
 该入口采用相同 craft-command-plan/v1 格式；先用 commands.py describe 查阅命令及前置状态，再组织真实计划。desktop-session.json 记录桌面身份、监听进程身份和会话退出结果，逐步命令结果仍在 journal.json、success.json 或 failure.json。固定桌面安装不等于所有 GUI 指令可在空工程运行；禁用项须根据原生原因建立所需文档、对象、选择或界面状态，不能绕过检查。
 
 For GUI prerequisites, use the skill-owned desktop.py entry and its pinned installation guide. It executes the same command-plan protocol, verifies the owned listener process, preserves command receipts, and closes the processes it started. Establish native prerequisites explicitly; installation or representative execution does not establish acceptance of every GUI command.
+
+## Bridge 专属 GUI 工具 / Bridge-only GUI tools
+
+固定 Effect CLI 的 headless 目录为21个MCP工具；实际bridge目录为30个，额外9项的真实参数schema在本技能自带 [bridge-tools.json](bridge-tools.json)。这些工具需要运行中的桌面，不能作为headless能力。
+
+```bash
+python3 -I -B "$SKILL_DIR/scripts/commands.py" list --tools --mode bridge
+python3 -I -B "$SKILL_DIR/scripts/commands.py" describe ui_inspect --tool --mode bridge
+python3 -I -B "$SKILL_DIR/scripts/commands.py" check /absolute/plan.json --mode bridge
+```
+
+使用desktop.py run自动拥有桌面会话，或明确使用commands.py run --mode bridge --connect连接已授权会话。计划以tool字段调用ui_inspect、ui_elements等实际工具；先查询真实元素ID和几何位置再组织点击或输入，不能猜测ID。执行前核对被使用的bridge工具实时参数schema，漂移则拒绝UI调用。screenshot只证明界面截图；render_frame输出才用于合成渲染检查。control为原生控制透传，必须限定到用户授权操作；入口不宣称把所有原生副作用沙箱化。
+
+The additional nine bridge-only tools preserve actual pinned input schemas. Headless preflight rejects them before setup. In bridge mode, the gateway checks the live schema of each used GUI tool before calling it. Inspect actual elements before UI interaction; screenshots and composition renders have distinct acceptance scopes.
