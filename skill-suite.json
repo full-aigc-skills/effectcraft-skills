@@ -165,6 +165,16 @@
       "commandPrefixes": [
         "track."
       ]
+    },
+    {
+      "name": "effectcraft-cli-puppet",
+      "title": "木偶与局部变形动画",
+      "description": "木偶网格、针脚、录制及跟随动画",
+      "kind": "scenario",
+      "commandCount": 10,
+      "commandPrefixes": [
+        "puppet."
+      ]
     }
   ],
   "resourceSource": "effectcraft-use",

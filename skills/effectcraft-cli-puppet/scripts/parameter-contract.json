@@ -1,0 +1,134 @@
+{
+  "schema": "effectcraft-parameter-contract/v1",
+  "runtimeVersion": "0.2.0",
+  "binarySha256": "74d44fc90018ac381dc4516edff939ab26eb6d900ae5c3f49d1eba5ac14105fe",
+  "commands": {
+    "effect.apply": {
+      "additionalProperties": false,
+      "description": "{effect: id|name (e.g. Gaussian Blur), layers?}",
+      "properties": {
+        "effect": {
+          "description": "effect: id|name (e.g. Gaussian Blur)"
+        },
+        "layers": {
+          "description": "layers?"
+        }
+      },
+      "required": [
+        "effect"
+      ],
+      "type": "object"
+    },
+    "effect.remove": {
+      "additionalProperties": false,
+      "description": "{layer?, effect: index|uid|name}",
+      "properties": {
+        "effect": {
+          "description": "effect: index|uid|name"
+        },
+        "layer": {
+          "description": "layer?"
+        }
+      },
+      "required": [
+        "effect"
+      ],
+      "type": "object"
+    },
+    "effect.toggle": {
+      "additionalProperties": false,
+      "description": "{layer?, effect, value?}",
+      "properties": {
+        "effect": {
+          "description": "effect"
+        },
+        "layer": {
+          "description": "layer?"
+        },
+        "value": {
+          "description": "value?"
+        }
+      },
+      "required": [
+        "effect"
+      ],
+      "type": "object"
+    },
+    "mask.new": {
+      "additionalProperties": false,
+      "description": "{layer?, vertices: [[x,y]…], inTangents?, outTangents?, closed?, mode?}",
+      "properties": {
+        "closed": {
+          "description": "closed?"
+        },
+        "inTangents": {
+          "description": "inTangents?"
+        },
+        "layer": {
+          "description": "layer?"
+        },
+        "mode": {
+          "description": "mode?"
+        },
+        "outTangents": {
+          "description": "outTangents?"
+        },
+        "vertices": {
+          "description": "vertices: [[x,y]…]"
+        }
+      },
+      "required": [
+        "vertices"
+      ],
+      "type": "object"
+    },
+    "mask.setVertex": {
+      "additionalProperties": false,
+      "description": "{layer?, mask, index, point?, in?, out?, merge?}",
+      "properties": {
+        "in": {
+          "description": "in?"
+        },
+        "index": {
+          "description": "index"
+        },
+        "layer": {
+          "description": "layer?"
+        },
+        "mask": {
+          "description": "mask"
+        },
+        "merge": {
+          "description": "merge?"
+        },
+        "out": {
+          "description": "out?"
+        },
+        "point": {
+          "description": "point?"
+        }
+      },
+      "required": [
+        "mask",
+        "index"
+      ],
+      "type": "object"
+    },
+    "mask.remove": {
+      "additionalProperties": false,
+      "description": "{layer?, mask}",
+      "properties": {
+        "layer": {
+          "description": "layer?"
+        },
+        "mask": {
+          "description": "mask"
+        }
+      },
+      "required": [
+        "mask"
+      ],
+      "type": "object"
+    }
+  }
+}

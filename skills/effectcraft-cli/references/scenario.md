@@ -4,7 +4,7 @@
 
 ## 完整归属清单 / Complete assigned command list
 
-本技能归属 201 条命令。下面按命令族分组；上述短表若存在，仅是示例。归属按最长前缀确定，实际任务可组合其他能力的命令。
+本技能归属 191 条命令。下面按命令族分组；上述短表若存在，仅是示例。归属按最长前缀确定，实际任务可组合其他能力的命令。
 
 Each command below has a parameter contract in this skill’s `command-reference.md`. Assignment uses the most specific prefix; a task can combine commands from multiple capabilities.
 
@@ -223,21 +223,6 @@ Order: inspect project and selection, describe parameters, construct and check t
 | `prefs.reset` | Reset Settings | `describe prefs.reset` |
 | `prefs.open` | Open Settings | `describe prefs.open` |
 | `prefs.pages` | Settings Pages | `describe prefs.pages` |
-
-### `puppet` — 10
-
-| 命令 / Command | 用途 / Label | 参数入口 / Parameters |
-| --- | --- | --- |
-| `puppet.addPin` | Add Puppet Pin | `describe puppet.addPin` |
-| `puppet.movePin` | Move Puppet Pin | `describe puppet.movePin` |
-| `puppet.setPin` | Edit Puppet Pin | `describe puppet.setPin` |
-| `puppet.removePin` | Delete Puppet Pin | `describe puppet.removePin` |
-| `puppet.selectPins` | Select Puppet Pins | `describe puppet.selectPins` |
-| `puppet.mesh` | Puppet Mesh Options | `describe puppet.mesh` |
-| `puppet.info` | Puppet Mesh Info | `describe puppet.info` |
-| `puppet.recordPin` | Record Puppet Pin | `describe puppet.recordPin` |
-| `puppet.follow` | Follow-Through... | `describe puppet.follow` |
-| `puppet.recordOptions` | Record Options... | `describe puppet.recordOptions` |
 
 ### `scopes` — 1
 

@@ -1,0 +1,35 @@
+{
+  "result": "PASS",
+  "scope": "source candidate solid layer, two position pins, one animated movement; native save/reopen mesh and pin equality, visible frame change and exact reopened pixels; not all10 commands or deformation quality acceptance",
+  "runtimeSha256": "74d44fc90018ac381dc4516edff939ab26eb6d900ae5c3f49d1eba5ac14105fe",
+  "meshCount": 1,
+  "pinCount": 2,
+  "changedPixels": 1195,
+  "reopenedRgbaSha256": "b474e79878ed9fc1c29e3f291662ac8f840cfe9793dbd147ce86f00ff19215f2",
+  "examples": {
+    "puppet-create.json": "405a5b98b410d2db642eec0a9d0ec8cf48c622c9f1632f36e2c2be3f01ff8560",
+    "puppet-reopen.json": "bd05b66c9480cedaf60cbfe2fb6352dff8a6e573cd27a1fb1be43097bda58b62"
+  },
+  "coldInstall": {
+    "result": "PASS",
+    "skills": 1,
+    "records": [
+      {
+        "domain": "effectcraft",
+        "skill": "effectcraft-cli-puppet",
+        "result": "PASS",
+        "version": "effectcraft-cli 0.2.0",
+        "commands": 640,
+        "skillSha256": "0ed4882e638703b8fc67195b9700ac665b2b5188f5478a2693079299d0931a71",
+        "scope": "single source candidate skill copy; initially absent runtime; public download/bootstrap/version/query; no native creative claim"
+      }
+    ]
+  },
+  "regression": {
+    "tests": 140,
+    "passed": 110,
+    "skipped": 30,
+    "exitCode": 0
+  },
+  "skillValidation": "PASS"
+}

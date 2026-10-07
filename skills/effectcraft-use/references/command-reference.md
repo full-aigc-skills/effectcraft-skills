@@ -8660,8 +8660,8 @@ Brush Presets
 
 Add Puppet Pin
 
-- 技能 / Owner: `effectcraft-cli`。
-- 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli`。
+- 技能 / Owner: `effectcraft-cli-puppet`。
+- 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-puppet`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe puppet.addPin`；按原生参数构造计划后执行 run。
@@ -8677,8 +8677,8 @@ Add Puppet Pin
 
 Move Puppet Pin
 
-- 技能 / Owner: `effectcraft-cli`。
-- 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli`。
+- 技能 / Owner: `effectcraft-cli-puppet`。
+- 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-puppet`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe puppet.movePin`；按原生参数构造计划后执行 run。
@@ -8694,8 +8694,8 @@ Move Puppet Pin
 
 Edit Puppet Pin
 
-- 技能 / Owner: `effectcraft-cli`。
-- 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli`。
+- 技能 / Owner: `effectcraft-cli-puppet`。
+- 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-puppet`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe puppet.setPin`；按原生参数构造计划后执行 run。
@@ -8711,8 +8711,8 @@ Edit Puppet Pin
 
 Delete Puppet Pin
 
-- 技能 / Owner: `effectcraft-cli`。
-- 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli`。
+- 技能 / Owner: `effectcraft-cli-puppet`。
+- 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-puppet`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe puppet.removePin`；按原生参数构造计划后执行 run。
@@ -8728,8 +8728,8 @@ Delete Puppet Pin
 
 Select Puppet Pins
 
-- 技能 / Owner: `effectcraft-cli`。
-- 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli`。
+- 技能 / Owner: `effectcraft-cli-puppet`。
+- 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-puppet`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe puppet.selectPins`；按原生参数构造计划后执行 run。
@@ -8745,8 +8745,8 @@ Select Puppet Pins
 
 Puppet Mesh Options
 
-- 技能 / Owner: `effectcraft-cli`。
-- 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli`。
+- 技能 / Owner: `effectcraft-cli-puppet`。
+- 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-puppet`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe puppet.mesh`；按原生参数构造计划后执行 run。
@@ -8762,8 +8762,8 @@ Puppet Mesh Options
 
 Puppet Mesh Info
 
-- 技能 / Owner: `effectcraft-cli`。
-- 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli`。
+- 技能 / Owner: `effectcraft-cli-puppet`。
+- 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-puppet`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe puppet.info`；按原生参数构造计划后执行 run。
@@ -8779,8 +8779,8 @@ Puppet Mesh Info
 
 Record Puppet Pin
 
-- 技能 / Owner: `effectcraft-cli`。
-- 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli`。
+- 技能 / Owner: `effectcraft-cli-puppet`。
+- 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-puppet`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe puppet.recordPin`；按原生参数构造计划后执行 run。
@@ -8796,8 +8796,8 @@ Record Puppet Pin
 
 Follow-Through...
 
-- 技能 / Owner: `effectcraft-cli`。
-- 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli`。
+- 技能 / Owner: `effectcraft-cli-puppet`。
+- 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-puppet`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe puppet.follow`；按原生参数构造计划后执行 run。
@@ -8813,8 +8813,8 @@ Follow-Through...
 
 Record Options...
 
-- 技能 / Owner: `effectcraft-cli`。
-- 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli`。
+- 技能 / Owner: `effectcraft-cli-puppet`。
+- 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-puppet`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe puppet.recordOptions`；按原生参数构造计划后执行 run。
