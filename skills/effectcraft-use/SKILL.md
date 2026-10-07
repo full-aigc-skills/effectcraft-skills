@@ -53,7 +53,7 @@ python3 -I -B "$SKILL_DIR/scripts/bootstrap.py"
 
 | 技能 | 触发任务 |
 | :--- | :--- |
-| **effectcraft-cli** | 查询实际命令参数和能力，调用公开 CLI、MCP 与诊断 |
+| **effectcraft-cli** | 查询 EffectCraft 原生命令和参数，或处理镜头跟踪、稳定与图形附着；首次使用安装固定 CLI。 |
 | **effectcraft-cli-setup** | 首次安装、摘要校验、版本检查与缺失运行时排障 |
 | **effectcraft-cli-project** | 建立、保存和重开 ecproj 工程，整理项目项目项 |
 | **effectcraft-cli-footage** | 导入图像、视频、矢量或 PSD 素材并登记依赖 |
@@ -65,6 +65,8 @@ python3 -I -B "$SKILL_DIR/scripts/bootstrap.py"
 | **effectcraft-cli-expressions** | 在用户指定属性上检查、设置和诊断表达式 |
 | **effectcraft-cli-camera** | 设置已有合成中的摄像机、灯光和材质参数 |
 | **effectcraft-cli-export** | 预览关键帧、渲染序列或视频和透明交接片段 |
+
+| **effectcraft-cli-tracking** | 使用 EffectCraft 跟踪、稳定镜头或将标题与图形附着到运动主体；首次使用安装固定 CLI。 |
 
 缺少技能：`npx skills add full-aigc-skills/effectcraft-skills --skill <skill-name>`。每项自带安装与执行资源；直接执行本技能 `scripts/cli.py` 也可查询当前 CLI，不依赖兄弟路径。
 
@@ -82,7 +84,7 @@ python3 -I -B "$SKILL_DIR/scripts/commands.py" run "$SKILL_DIR/examples/commands
 
 新入口执行前检查真实注册表与当前可执行状态，保留返回值引用和逐步回执；语义错误或超时不冒充成功。目录覆盖与直接原生使用不等于所有指令、GUI、交付或 Art 编排已验收。
 
-完整工作流命令网关见 [使用说明](references/native-workflow.md)。领域分发固定版本为 0.1.0-dev.21；该版本的独立安装复验与全量逐命令验收分别记录，不以发布替代验收。
+完整工作流命令网关见 [使用说明](references/native-workflow.md)。固定 CLI 的版本与制品摘要以本技能自带 `scripts/runtime.lock.json` 为准；技能包版本以对应发布标签为准。独立安装复验与全量逐命令验收分别记录，不以发布替代验收。
 
 父子图层、属性表达式、动态预览与源工程返工：使用当前技能的 [表达式父级指南](references/expression-parent.md)。
 

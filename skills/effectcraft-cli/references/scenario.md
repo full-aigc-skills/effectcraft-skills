@@ -4,7 +4,7 @@
 
 ## 完整归属清单 / Complete assigned command list
 
-本技能归属 223 条命令。下面按命令族分组；上述短表若存在，仅是示例。归属按最长前缀确定，实际任务可组合其他能力的命令。
+本技能归属 201 条命令。下面按命令族分组；上述短表若存在，仅是示例。归属按最长前缀确定，实际任务可组合其他能力的命令。
 
 Each command below has a parameter contract in this skill’s `command-reference.md`. Assignment uses the most specific prefix; a task can combine commands from multiple capabilities.
 
@@ -290,33 +290,6 @@ Order: inspect project and selection, describe parameters, construct and check t
 | `templates.create` | New Project from Template | `describe templates.create` |
 | `templates.saveAs` | Save as Template... | `describe templates.saveAs` |
 | `templates.delete` | Delete Template | `describe templates.delete` |
-
-### `track` — 22
-
-| 命令 / Command | 用途 / Label | 参数入口 / Parameters |
-| --- | --- | --- |
-| `track.motion` | Track Motion | `describe track.motion` |
-| `track.stabilize` | Stabilize Motion | `describe track.stabilize` |
-| `track.new` | New Tracker | `describe track.new` |
-| `track.property` | Track this Property | `describe track.property` |
-| `track.select` | Current Track | `describe track.select` |
-| `track.setType` | Track Type | `describe track.setType` |
-| `track.setTarget` | Edit Target | `describe track.setTarget` |
-| `track.options` | Motion Tracker Options | `describe track.options` |
-| `track.setPoint` | Move Track Point | `describe track.setPoint` |
-| `track.analyze` | Analyze | `describe track.analyze` |
-| `track.stop` | Stop Analysis | `describe track.stop` |
-| `track.apply` | Apply | `describe track.apply` |
-| `track.reset` | Reset | `describe track.reset` |
-| `track.delete` | Delete Tracker | `describe track.delete` |
-| `track.editTargetDialog` | Edit Target... | `describe track.editTargetDialog` |
-| `track.optionsDialog` | Options... | `describe track.optionsDialog` |
-| `track.status` | Tracker Status | `describe track.status` |
-| `track.mask` | Track Mask | `describe track.mask` |
-| `track.maskMethod` | Mask Tracking Method | `describe track.maskMethod` |
-| `track.extractFaceMeasurements` | Extract & Copy Face Measurements | `describe track.extractFaceMeasurements` |
-| `track.warpStabilizer` | Warp Stabilizer VFX | `describe track.warpStabilizer` |
-| `track.camera` | Track Camera | `describe track.camera` |
 
 ### `view` — 43
 

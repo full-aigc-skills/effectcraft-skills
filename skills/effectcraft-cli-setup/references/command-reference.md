@@ -7793,8 +7793,8 @@ Browse Presets...
 
 Track Motion
 
-- 技能 / Owner: `effectcraft-cli`。
-- 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli`。
+- 技能 / Owner: `effectcraft-cli-tracking`。
+- 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-tracking`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe track.motion`；按原生参数构造计划后执行 run。
@@ -7810,8 +7810,8 @@ Track Motion
 
 Stabilize Motion
 
-- 技能 / Owner: `effectcraft-cli`。
-- 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli`。
+- 技能 / Owner: `effectcraft-cli-tracking`。
+- 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-tracking`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe track.stabilize`；按原生参数构造计划后执行 run。
@@ -7827,8 +7827,8 @@ Stabilize Motion
 
 New Tracker
 
-- 技能 / Owner: `effectcraft-cli`。
-- 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli`。
+- 技能 / Owner: `effectcraft-cli-tracking`。
+- 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-tracking`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe track.new`；按原生参数构造计划后执行 run。
@@ -7844,8 +7844,8 @@ New Tracker
 
 Track this Property
 
-- 技能 / Owner: `effectcraft-cli`。
-- 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli`。
+- 技能 / Owner: `effectcraft-cli-tracking`。
+- 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-tracking`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe track.property`；按原生参数构造计划后执行 run。
@@ -7861,8 +7861,8 @@ Track this Property
 
 Current Track
 
-- 技能 / Owner: `effectcraft-cli`。
-- 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli`。
+- 技能 / Owner: `effectcraft-cli-tracking`。
+- 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-tracking`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe track.select`；按原生参数构造计划后执行 run。
@@ -7878,8 +7878,8 @@ Current Track
 
 Track Type
 
-- 技能 / Owner: `effectcraft-cli`。
-- 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli`。
+- 技能 / Owner: `effectcraft-cli-tracking`。
+- 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-tracking`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no active composition。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe track.setType`；按原生参数构造计划后执行 run。
@@ -7895,8 +7895,8 @@ Track Type
 
 Edit Target
 
-- 技能 / Owner: `effectcraft-cli`。
-- 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli`。
+- 技能 / Owner: `effectcraft-cli-tracking`。
+- 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-tracking`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no active composition。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe track.setTarget`；按原生参数构造计划后执行 run。
@@ -7912,8 +7912,8 @@ Edit Target
 
 Motion Tracker Options
 
-- 技能 / Owner: `effectcraft-cli`。
-- 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli`。
+- 技能 / Owner: `effectcraft-cli-tracking`。
+- 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-tracking`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no active composition。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe track.options`；按原生参数构造计划后执行 run。
@@ -7929,8 +7929,8 @@ Motion Tracker Options
 
 Move Track Point
 
-- 技能 / Owner: `effectcraft-cli`。
-- 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli`。
+- 技能 / Owner: `effectcraft-cli-tracking`。
+- 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-tracking`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no active composition。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe track.setPoint`；按原生参数构造计划后执行 run。
@@ -7946,8 +7946,8 @@ Move Track Point
 
 Analyze
 
-- 技能 / Owner: `effectcraft-cli`。
-- 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli`。
+- 技能 / Owner: `effectcraft-cli-tracking`。
+- 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-tracking`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no active composition。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe track.analyze`；按原生参数构造计划后执行 run。
@@ -7963,8 +7963,8 @@ Analyze
 
 Stop Analysis
 
-- 技能 / Owner: `effectcraft-cli`。
-- 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli`。
+- 技能 / Owner: `effectcraft-cli-tracking`。
+- 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-tracking`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no track analysis is running。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe track.stop`；按原生参数构造计划后执行 run。
@@ -7980,8 +7980,8 @@ Stop Analysis
 
 Apply
 
-- 技能 / Owner: `effectcraft-cli`。
-- 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli`。
+- 技能 / Owner: `effectcraft-cli-tracking`。
+- 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-tracking`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no active composition。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe track.apply`；按原生参数构造计划后执行 run。
@@ -7997,8 +7997,8 @@ Apply
 
 Reset
 
-- 技能 / Owner: `effectcraft-cli`。
-- 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli`。
+- 技能 / Owner: `effectcraft-cli-tracking`。
+- 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-tracking`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no active composition。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe track.reset`；按原生参数构造计划后执行 run。
@@ -8014,8 +8014,8 @@ Reset
 
 Delete Tracker
 
-- 技能 / Owner: `effectcraft-cli`。
-- 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli`。
+- 技能 / Owner: `effectcraft-cli-tracking`。
+- 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-tracking`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no active composition。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe track.delete`；按原生参数构造计划后执行 run。
@@ -8031,8 +8031,8 @@ Delete Tracker
 
 Edit Target...
 
-- 技能 / Owner: `effectcraft-cli`。
-- 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli`。
+- 技能 / Owner: `effectcraft-cli-tracking`。
+- 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-tracking`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no active composition。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe track.editTargetDialog`；按原生参数构造计划后执行 run。
@@ -8048,8 +8048,8 @@ Edit Target...
 
 Options...
 
-- 技能 / Owner: `effectcraft-cli`。
-- 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli`。
+- 技能 / Owner: `effectcraft-cli-tracking`。
+- 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-tracking`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no active composition。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe track.optionsDialog`；按原生参数构造计划后执行 run。
@@ -8065,8 +8065,8 @@ Options...
 
 Tracker Status
 
-- 技能 / Owner: `effectcraft-cli`。
-- 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli`。
+- 技能 / Owner: `effectcraft-cli-tracking`。
+- 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-tracking`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe track.status`；按原生参数构造计划后执行 run。
@@ -8082,8 +8082,8 @@ Tracker Status
 
 Track Mask
 
-- 技能 / Owner: `effectcraft-cli`。
-- 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli`。
+- 技能 / Owner: `effectcraft-cli-tracking`。
+- 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-tracking`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe track.mask`；按原生参数构造计划后执行 run。
@@ -8099,8 +8099,8 @@ Track Mask
 
 Mask Tracking Method
 
-- 技能 / Owner: `effectcraft-cli`。
-- 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli`。
+- 技能 / Owner: `effectcraft-cli-tracking`。
+- 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-tracking`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe track.maskMethod`；按原生参数构造计划后执行 run。
@@ -8116,8 +8116,8 @@ Mask Tracking Method
 
 Extract & Copy Face Measurements
 
-- 技能 / Owner: `effectcraft-cli`。
-- 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli`。
+- 技能 / Owner: `effectcraft-cli-tracking`。
+- 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-tracking`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe track.extractFaceMeasurements`；按原生参数构造计划后执行 run。
@@ -8167,8 +8167,8 @@ Mask Interpolation Options
 
 Warp Stabilizer VFX
 
-- 技能 / Owner: `effectcraft-cli`。
-- 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli`。
+- 技能 / Owner: `effectcraft-cli-tracking`。
+- 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-tracking`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe track.warpStabilizer`；按原生参数构造计划后执行 run。
@@ -8235,8 +8235,8 @@ Warp Stabilizer Status
 
 Track Camera
 
-- 技能 / Owner: `effectcraft-cli`。
-- 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli`。
+- 技能 / Owner: `effectcraft-cli-tracking`。
+- 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-tracking`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe track.camera`；按原生参数构造计划后执行 run。

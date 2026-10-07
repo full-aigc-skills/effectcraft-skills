@@ -1,0 +1,7 @@
+{
+  "result": "PASS",
+  "scope": "source candidate tracking: 11 analyzed frames,12 applied keys preserved on native reopen; current-time evaluated values differ as expected; not all tracking commands",
+  "keyframes": 12,
+  "maxPositionErrorPixels": 0.004803189158479881,
+  "runtimeSha256": "74d44fc90018ac381dc4516edff939ab26eb6d900ae5c3f49d1eba5ac14105fe"
+}

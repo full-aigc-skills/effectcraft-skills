@@ -31,3 +31,9 @@ Open the correct composition, preserve a checkpoint, inspect live availability a
 修改文字内容时保留已确认的跟踪关键帧；修改跟踪区间或特征点时重新核验受影响帧。交付 `.ecproj`、源视频/图形依赖、参数记录和渲染结果；检查开始、中间、遮挡及结尾帧的附着误差，确认非目标图层与动画未变。透明输出需另核验 alpha，不用黑底预览替代透明验收。
 
 Preserve tracking keys when changing text. Revalidate affected frames when changing tracking settings. Deliver the native project, dependencies, parameter records and render; inspect attachment at occlusion and interval boundaries. Full tracking-command execution acceptance remains open.
+
+## 已执行实例 / Executed example
+
+`examples/tracking-create.json` 通过 `--input shot=/absolute/shot.mp4` 导入源视频。创建目标空对象后必须显式 layer.select 选择源视频，再建立跟踪器；传 layer 参数不能替代当前选择前置。样例是128×96、12fps、一秒，需要适配真实素材。`examples/tracking-reopen.json` 使用 `--input project=/absolute/project.ecproj` 重开并渲染，通过本技能 commands.py run 执行，使用新输出目录。已核验11个分析帧、12个应用关键帧及重开关键帧一致；播放头不同会改变属性当前求值，不应误报关键帧损坏。
+
+Explicitly select source footage after creating the target. Adapt the local create/reopen fixtures and input paths. Compare saved keyframes separately from properties evaluated at different playhead times.

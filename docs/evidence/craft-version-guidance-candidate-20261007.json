@@ -1,0 +1,27 @@
+{
+  "scope": "source candidate version guidance; not fixed-release acceptance",
+  "result": "PASS",
+  "skillCount": 14,
+  "versionSource": "each skill scripts/runtime.lock.json; skill package release tag",
+  "skills": {
+    "skills/effectcraft-cli/SKILL.md": "9b05be44f6c6443bf75653df95e0326c64268f3ff96a9aad63ec96f492548312",
+    "skills/effectcraft-cli-animation/SKILL.md": "5695648714489bcb76e093c73d4f1f5613a0b5369811ab348c2db825cc79ba16",
+    "skills/effectcraft-cli-camera/SKILL.md": "4c9bc9f8c3aefa484e20e70637860a6c50e8c62306450e71e7203723ba15274f",
+    "skills/effectcraft-cli-composition/SKILL.md": "8fc9bae3f2838356d43363b85d0804b4dddaac5740129ee6bd7eb74147b6b1d6",
+    "skills/effectcraft-cli-effects/SKILL.md": "5feb92f820f56f653f7b8d16f298686e3bcf04815bc1b6c7d5c5e9c77eef9f42",
+    "skills/effectcraft-cli-export/SKILL.md": "e5499507dc31d014ca52b566b68746c217f79b891d82994b9ade1c7cded10d7c",
+    "skills/effectcraft-cli-expressions/SKILL.md": "e512064fb771c381e1731813e2ba948d6706213c5c829ec14879220e69fb93be",
+    "skills/effectcraft-cli-footage/SKILL.md": "404b5b9b8b67f4ae373d23e1a3949cc623a7f99b67b8d4c079b0cdba4e372d3b",
+    "skills/effectcraft-cli-layers/SKILL.md": "4982c0bbe8cf3c41727fda137ffba2dd13bbc5f92c747d640ba6f3d300ee87de",
+    "skills/effectcraft-cli-masks/SKILL.md": "77722cc53fd0f2900af0962e8d2dc6a7117ab8a9df6aac2a4976aee4d6ccb42e",
+    "skills/effectcraft-cli-project/SKILL.md": "3f020cbcd4385cedbd7e731ccd0f4c6765429c194542c53f6eb7d1486e6d0a4e",
+    "skills/effectcraft-cli-setup/SKILL.md": "00a0685bd80458204f55ffc5631e1884d9c5ca7f1f3df9443389c7aa0cb55eba",
+    "skills/effectcraft-cli-tracking/SKILL.md": "74052969c361be052eaa6afa5c6bce5d09b73ed1e8e8debbf6d0d8b739d28a77",
+    "skills/effectcraft-use/SKILL.md": "a4fb7f16c44303409e7db8f5524409a7c720bd946f2a4dbf10395b7470f305ab"
+  },
+  "regression": {
+    "tests": 139,
+    "skipped": 30,
+    "exitCode": 0
+  }
+}

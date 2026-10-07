@@ -1,7 +1,7 @@
 {
   "schema": "craft-skill-suite/v1",
   "pluginId": "effectcraft",
-  "version": "0.1.0-dev.25",
+  "version": "0.1.0-dev.26",
   "source": {
     "repository": "https://github.com/storytold/effectcraft",
     "commit": "24fcbdf3d2d6b928d3788d33f1722d8a21b9ad29",
@@ -19,7 +19,7 @@
     {
       "name": "effectcraft-cli",
       "title": "CLI 公共操作",
-      "description": "查询实际命令参数和能力，调用公开 CLI、MCP 与诊断",
+      "description": "查询 EffectCraft 原生命令和参数，或处理镜头跟踪、稳定与图形附着；首次使用安装固定 CLI。",
       "kind": "cli",
       "commandCount": 640,
       "commandPrefixes": []
@@ -154,6 +154,16 @@
         "render.",
         "renderQueue.",
         "file.export"
+      ]
+    },
+    {
+      "name": "effectcraft-cli-tracking",
+      "title": "镜头跟踪",
+      "description": "使用 EffectCraft 跟踪、稳定镜头或将标题与图形附着到运动主体；首次使用安装固定 CLI。",
+      "kind": "scenario",
+      "commandCount": 22,
+      "commandPrefixes": [
+        "track."
       ]
     }
   ],
