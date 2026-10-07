@@ -1,0 +1,83 @@
+{
+  "schema": "effectcraft-output-execution-candidate/v1",
+  "result": "PASS",
+  "sourceVersion": "0.1.0-dev.30",
+  "sourceBaseline": "3963c1dd6b89e186d2e74f594c5f3d8a5ada56c7",
+  "red": "public workflow starts native session before claiming a competing output; RuntimeError(native_started_without_claim) reproduced before implementation",
+  "guards": {
+    "passed": 7,
+    "cases": [
+      "public conflict blocks session",
+      "different targets independent",
+      "owned subprocess SIGKILL blocks replay",
+      "exception reconciling",
+      "invalid record preserved",
+      "symlink preserved",
+      "user output preserved"
+    ]
+  },
+  "sourceRegression": {
+    "total": 152,
+    "passed": 120,
+    "skipped": 32
+  },
+  "coldNative": {
+    "passed": 1,
+    "seconds": 18.826,
+    "scope": "source candidate with default public runtime downloads; create/reopen/revise/export and record effective-plan/source/runtime binding",
+    "evidence": {
+      "domain": "effectcraft",
+      "result": "PASS",
+      "guardRecords": [
+        {
+          "identity": {
+            "inputHashes": {},
+            "planHash": "e2b64e9024c4429639f14ca10e51daa897030f5ba3a1a43c0c77a9e1fc055c30",
+            "projectRevision": "bceb9cecb28d9ce8ce07c520ea78169653c950040a47596cde7c28f126281a6b",
+            "runtimeSha256": "74d44fc90018ac381dc4516edff939ab26eb6d900ae5c3f49d1eba5ac14105fe"
+          },
+          "ownerPid": 11417,
+          "replayAllowed": false,
+          "schema": "effectcraft-output-execution/v1",
+          "state": "finished",
+          "targetHash": "2bd3e3d8895b9cd3a838fbe467fbb45b3e0a1e089bf51a777acf363fdd09aac4"
+        },
+        {
+          "identity": {
+            "inputHashes": {},
+            "planHash": "2327bf3ecd27137b88bf22783212e0f805bf32c080e8ec0dd888be957d5161c4",
+            "projectRevision": null,
+            "runtimeSha256": "74d44fc90018ac381dc4516edff939ab26eb6d900ae5c3f49d1eba5ac14105fe"
+          },
+          "ownerPid": 10885,
+          "replayAllowed": false,
+          "schema": "effectcraft-output-execution/v1",
+          "state": "finished",
+          "targetHash": "567f89e04b7690e3397cad257605bb443bb142d3ff1270904bb64828618fe023"
+        }
+      ],
+      "workflowSha256": "83f4ab99332b0e8b5a5eaf45728efb0620814e6002aa6dae28646930f7c4a0e9",
+      "guardSha256": "0ea957e7a0c8fb2b6f2c28461046bb3754ad794b647242472dbddd66630aa5d1",
+      "entrySha256": "290108267b948b6ddda6f0865e20f1bdfadd7558442fb1d617125a1ed25eb116",
+      "projectSha256": "bceb9cecb28d9ce8ce07c520ea78169653c950040a47596cde7c28f126281a6b",
+      "revisionSha256": "47349d3978c51928d2d0859d33942c8f961a18b0c621f05377440fbe434ec8a5",
+      "scope": "source candidate single-skill cold native workflow delivery/revision; no full DAG acceptance"
+    }
+  },
+  "sourceFingerprints": {
+    "workflow.py": "83f4ab99332b0e8b5a5eaf45728efb0620814e6002aa6dae28646930f7c4a0e9",
+    "output_guard.py": "0ea957e7a0c8fb2b6f2c28461046bb3754ad794b647242472dbddd66630aa5d1"
+  },
+  "testFingerprints": {
+    "test_output_execution_guard.py": "0bd33e13c873d2cac9266047269be835cecddcc6807ff8e54fe9541c52b75133",
+    "test_native_workflow_first_use.py": "054e7878c34ab8a17de3dcb23fb2e9b12933ec69058b461c369957e97ea45c77"
+  },
+  "mirroredSkills": 15,
+  "unverified": [
+    "fixed plugin publication and installation",
+    "Art pinned domain bundle upgrade",
+    "raw CLI execution leases",
+    "complete authorization/idempotency/cancellation/budget contracts",
+    "creative acceptance and full V1"
+  ]
+}

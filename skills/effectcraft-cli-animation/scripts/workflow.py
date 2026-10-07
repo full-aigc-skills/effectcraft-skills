@@ -161,6 +161,7 @@ def execute(plan, output, runtime_home=None, source=None):
 def _execute(plan, output, runtime_home, source, owned):
     schemas = validate(plan)
     output = Path(output).absolute()
+    output = output.parent.resolve()/output.name
     if output.exists() or output.is_symlink():
         raise ValueError('output_exists')
     source_project, source_hash = None, None
@@ -185,7 +186,10 @@ def _execute(plan, output, runtime_home, source, owned):
         runtime_home or os.environ.get('CRAFT_RUNTIME_HOME', str(Path.home() / '.local/share/craft-runtimes')))
     cli = installed['executable']
     output.parent.mkdir(parents=True, exist_ok=True)
-    with load_module('preserved_stage').preserved_stage(output, '.effectcraft-', owned) as temporary:
+    execution_identity = {'planHash': hashlib.sha256(json.dumps(plan, sort_keys=True, separators=(',', ':'), allow_nan=False).encode()).hexdigest(),
+                         'inputHashes': {name: asset['sha256'] for name, asset in {**inherited, **plan.get('assets', {})}.items()},
+                         'projectRevision': source_hash, 'runtimeSha256': installed['binarySha256']}
+    with load_module('output_guard').claim(output, execution_identity), load_module('preserved_stage').preserved_stage(output, '.effectcraft-', owned) as temporary:
         stage = Path(temporary)
         project = stage / 'project.ecproj'
         working = stage

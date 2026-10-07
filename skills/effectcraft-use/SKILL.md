@@ -99,3 +99,7 @@ GUI任务可先使用本技能自带的 [固定桌面安装](references/desktop-
 木偶图层与局部变形任务交给 **effectcraft-cli-puppet**。安装：`npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-puppet`。步骤见本技能自带 [木偶指南](references/puppet-scene.md)。
 
 镜头跟踪前先读取本技能[跟踪首用与解码核验](references/motion-tracking.md)：核对源像素和实际关键帧，区分计划帧数与完成结果。
+
+## 同目标执行保护
+
+调用公开工作流前阅读本技能的 [执行登记与中断处理](references/output-execution.md)。竞争或未知状态不得删除登记、自动重放或换目标绕过核对。
