@@ -166,3 +166,5 @@ EffectCraft 独立技能源 dev.7 对效果／蒙版计划参数校验错误返�
 固定 EffectCraft 插件 dev.36／技能源 dev.34 通过 64 项安装身份与发现、15 项独立 Effect CLI 空缓存安装，以及原生摄像机渲染／重开／局部返工和三类失败路径。其余 49 项冷安装记录仅复用摘要一致的历史运行。完整首版仍开放。[固定摄像机证据](docs/evidence/effectcraft-camera-scene-fixed-first-use-20261008.json)。
 
 独立安装依赖边界：当前摘要一致的冷安装记录与 128 项新固定副本安装器／CLI 失败检查验收四领域 SK-002。Art 与通用 Skills CLI 安装继续开放。[设计与证据](docs/Craft-Independent-Setup-Boundary-Architecture.zh_CN.md)。
+
+当前固定协议引用发行矩阵（Film／Effect dev.37、Photo dev.36、Vector dev.34、Art dev.107）已通过隔离 Codex 安装／发现 64 项技能、16 项实际安装所有者文件摘要核对，以及五个全新领域缓存下的 64 项独立公开 CLI 探测。原生场景证据仅对字节一致的技能复用，完整首版仍开放。[固定发行证据](docs/evidence/craft-protocol-authority-fixed-first-use-20261008.json)。
