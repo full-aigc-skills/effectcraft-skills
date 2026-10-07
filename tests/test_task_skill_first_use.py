@@ -310,8 +310,11 @@ class TaskSkillFirstUseTests(unittest.TestCase):
         source = self.execute('layer.addItem', {'item': item, 'time': 0, 'duration': 1},
                               placed, imported)['layer']
         with Image.open(self.render(placed, 'tracking-source.png', 0)) as image:
-            self.assertGreater(max(image.convert('RGB').getpixel((80, 80))), 30,
-                               'imported tracking texture must render before analysis')
+            actual = image.convert('RGB').getpixel((80, 80))
+            expected = texture.getpixel((16, 16))
+            self.assertTrue(all(abs(a - e) <= 5 for a, e in zip(actual, expected)),
+                            'imported tracking texture must render before analysis: '
+                            + str({'expected': expected, 'actual': actual}))
         target = self.execute('layer.newNull', {'name': 'Tracked target'}, targeted, placed)['layer']
         configured = self.root / 'track-configured.ecproj'
         self.execute('track.new', {'layer': source, 'kind': 'transform',
