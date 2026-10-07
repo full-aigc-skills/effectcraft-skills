@@ -1,4 +1,6 @@
-Source dev.29 adds a local tracking decoding/result guide and records actual status before applying the tracking example. Source candidate cold command-plan creation/reopen passed with12 keys. Fixed-plugin distribution acceptance remains separate. [Candidate evidence](docs/evidence/effect-tracking-guide-candidate-20261007.json).
+Fixed plugin31/source29 tracking acceptance passed:15 skills discovered without errors, native cold task plus public-plan cold create/reopen,12 keys preserved, all15 installed hashes unchanged and both public archives verified. [Evidence / 证据](docs/evidence/effectcraft31-fixed-tracking-first-use-20261007.json).
+
+Source dev.29 adds a local tracking decoding/result guide and records actual status before applying the tracking example. Source candidate cold command-plan creation/reopen passed with12 keys. Fixed plugin31/source29 distribution and tracking acceptance passed. [Candidate evidence](docs/evidence/effect-tracking-guide-candidate-20261007.json).
 
 Domain scene acceptance now has **43 passed native tests / all 42 distinct domain scene skills**. The fixed-installed tracking case passed with supported H.264 High; the earlier lossless input is unsupported by the native decoder and its failed evidence remains historical. Art role-specific tasks, generic Skills CLI and complete V1 remain open. [Evidence / 证据](docs/evidence/craft-fixed-tracking-supported-input-20261007.json).
 

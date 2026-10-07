@@ -1,4 +1,6 @@
-技能源dev.29补充本地跟踪解码与实际结果指南，模板应用前记录track.status。单技能候选冷启动命令计划创建和重开通过，产生12个关键帧；固定插件分发另行验收。[候选证据](docs/evidence/effect-tracking-guide-candidate-20261007.json)。
+固定插件31／源29跟踪验收通过：15技能发现零错误，原生冷任务与公开计划冷创建／重开通过，12关键帧保全，15安装摘要不变，两公开附件核验通过。 [Evidence / 证据](docs/evidence/effectcraft31-fixed-tracking-first-use-20261007.json).
+
+技能源dev.29补充本地跟踪解码与实际结果指南，模板应用前记录track.status。单技能候选冷启动命令计划创建和重开通过，产生12个关键帧；固定插件31／源29分发及跟踪验收通过。[候选证据](docs/evidence/effect-tracking-guide-candidate-20261007.json)。
 
 领域场景验收现为 **43项原生测试通过／全部42个不同场景技能**。固定安装跟踪用例使用受支持H.264 High通过；此前无损输入不受原生解码器支持，失败证据保留。Art角色专项、实际Skills CLI及完整V1仍开放。 [Evidence / 证据](docs/evidence/craft-fixed-tracking-supported-input-20261007.json).
 

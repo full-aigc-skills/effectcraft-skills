@@ -1,0 +1,100 @@
+{
+  "schema": "effect31-fixed-tracking-distribution/v1",
+  "result": "PASS",
+  "host": {
+    "schema": "effectcraft-fixed-host/v1",
+    "result": "PASS",
+    "plugin": "0.1.0-dev.31",
+    "pluginTagSha": "04959d1eae718ef83571ea7880655665ddfa65dd",
+    "source": "0.1.0-dev.29",
+    "sourceSha": "444ed7fda07a7ea212010458a04502c2a52fb1f6",
+    "skills": 15,
+    "loadingErrors": 0,
+    "expected": {
+      "version": "0.1.0-dev.31",
+      "pluginManifestSha256": "adc2cc81f7781b498959f0739cf069be97eff31ba1b601526b87e8513d6cfa01",
+      "skillSourceRef": "v0.1.0-dev.29",
+      "skillSourceSha": "444ed7fda07a7ea212010458a04502c2a52fb1f6",
+      "skillSha256": "83fc4f19f13eab4be07f3313e00f26e670278bde88207f481c627dd25240450f",
+      "skills": {
+        "effectcraft-use": "83fc4f19f13eab4be07f3313e00f26e670278bde88207f481c627dd25240450f",
+        "effectcraft-cli": "94eefb247d3151a4709a7cedd2b78b8fc0277c15c92dfe35cb46f0f4a26a0110",
+        "effectcraft-cli-setup": "7cdb681ed747cb3dfa99f017d7f3f8d3d5ff6847222fae571074b5fc5b39fd35",
+        "effectcraft-cli-project": "bcae080bcf46acb9db58b411a03f554281bc489be34d6d90ff075ee9d1014767",
+        "effectcraft-cli-footage": "3f330b59084faa069a08c09fc168377973b2dc2fb43ba4f3c3d813066eede485",
+        "effectcraft-cli-composition": "d08070408e83e2d9a52ab7048c3ade7e69c056b4eaa420b85f8f9cd8611c5a79",
+        "effectcraft-cli-layers": "72821d32d936fc8091dc689c5028aca3d9786b6773768b920550d4c41fca66fa",
+        "effectcraft-cli-animation": "8a168c550cc79ddb278baf1d6934552fa40584603dd1999f44d836ef16607267",
+        "effectcraft-cli-effects": "376a30fe1fdd79a397dd762905f658a4c96ac5df8ef95c0f44791d69beb6a48c",
+        "effectcraft-cli-masks": "8d031ebafd30919f0b5c18890c938fd2e4052ab5a17fbdd7b319aa7bb2a6b5cc",
+        "effectcraft-cli-expressions": "d85e765db614d981c4fbe9c6011292f6e8d6445a7271c98ecc2eb2fb687200f4",
+        "effectcraft-cli-camera": "50ab4f97186a385fc2260a5cdf19bab983e6366971b1035303ad8190bbfb214b",
+        "effectcraft-cli-export": "38a60c38d994be8ff033e6c95549da0d7f3fc4ee9ae6a0ed8efad5340e100523",
+        "effectcraft-cli-tracking": "00f45a6971f9987d56dab860517c61bad10291230b1cf0601a86dde4946d1090",
+        "effectcraft-cli-puppet": "27e9840058c45439f6bec35786283b34313a4bccba2adcbc6dad9b276f323a65"
+      }
+    },
+    "scope": "isolated Codex public-tag install, exact content and discovery; native business execution separate"
+  },
+  "business": {
+    "schema": "effect31-fixed-tracking-first-use/v1",
+    "pluginTagSha": "04959d1eae718ef83571ea7880655665ddfa65dd",
+    "sourceSha": "444ed7fda07a7ea212010458a04502c2a52fb1f6",
+    "nativeTest": {
+      "passed": true,
+      "tests": 1,
+      "skips": [],
+      "seconds": 32.857,
+      "driverSha256": "e580c993649c65d22239b5203a186a8bfb6f27037bc9d23d291f399f62a2a6dd",
+      "failures": [],
+      "errors": []
+    },
+    "publicPlan": {
+      "passed": true,
+      "seconds": 14.983,
+      "actualKeys": 12,
+      "start": [
+        20,
+        40
+      ],
+      "end": [
+        53,
+        40
+      ],
+      "inputSha256": "ec86baab12daa0c0e48bedcb526c25d8d066d52c278b3d20ca6bbb961eb4a93f",
+      "projectSha256": "4710aa0bd26d691f31036658d30db591c40abe3f5c96843cf79b3214628a20fa",
+      "runtimeSha256": "74d44fc90018ac381dc4516edff939ab26eb6d900ae5c3f49d1eba5ac14105fe",
+      "createPlanSha256": "58a4c9ee5789135854163f00a4d1a1a4275a12e005537ebbd21993d64d9facb4",
+      "reopenPlanSha256": "af579bb469ce5ff7466227c8bebc8b8e9bcbc3bdfc3bec03cca14b874a65c8e0",
+      "previewSha256": "b81eb2edccf4e530e05bf0b651ccf0b339916e1cd7a8f1e94af4d1ddba591670"
+    }
+  },
+  "publicSourceAssets": [
+    {
+      "name": "effectcraft-skills-0.1.0-dev.29.zip",
+      "sha256": "f1e7040db932a32b3d9df4cefc30279d4c08c5450db1a7b276647c15adaaad2e",
+      "publicBytesEqualGitArchive": true
+    },
+    {
+      "name": "effectcraft-skills-v0.1.0-dev.29.zip",
+      "sha256": "9d10aef1cf1fab7eb509e4ec72bbcd15416e111fc360a9ee1598400cc81c53c3",
+      "publicBytesEqualGitArchive": true
+    }
+  ],
+  "installedSkillIdentitiesUnchanged": 15,
+  "scope": [
+    "fixed public plugin31/source29 Codex installation and15 skill discovery",
+    "single skill independent cold native tracking and preservation",
+    "single skill public command plan cold creation, saved keys and independent reopen",
+    "both public source archives byte-equal immutable Git archives"
+  ],
+  "excluded": [
+    "automatic conversion of unsupported lossless input",
+    "all input profiles",
+    "all22 tracking commands",
+    "all native command contexts",
+    "Art distribution upgrade",
+    "generic Skills CLI",
+    "fullV1"
+  ]
+}
