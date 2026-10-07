@@ -26,3 +26,5 @@ The guide classifies all 46 owned commands across geometry, materials, views, ca
 The source candidate uses one copied skill, system-only PATH and an empty cache with the default public archive. Native creation, reopen, revision and reopen again preserve properties and rendered pixels. No-composition, solid-as-camera and cameraSettings-on-solid failures prevent later saves. Source projects and skill trees remain unchanged. The test requires the actual DOF property to exist, avoiding a vacuous missing-property comparison.
 
 Immutable installed-release acceptance is recorded separately. All 46 command contexts, model/stereo rigs, camera solving, GUI, DOF/shadows and creative quality remain open. Only the bounded camera-scene task may close.
+
+Fixed plugin dev.36 / source dev.34 installed acceptance passed: 15 independent cold installs, 64 host identities/discovery and preservation, plus native camera rendering, reopen, revision and three rejection paths. Only the bounded camera scene closes; full domain acceptance stays open.
