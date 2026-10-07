@@ -1,0 +1,16 @@
+{
+  "result": "PASS",
+  "scope": "source candidate; documented paths and argument-parser entry help only; fixed installed runtime acceptance pending",
+  "record": {
+    "domain": "effectcraft",
+    "skills": 15,
+    "layoutCopies": 45,
+    "helpInvocations": 132,
+    "greenLogSha256": "e49989492ac62495e8d5541952b4b0d033495957331adabfa4e4d3c900a77bba",
+    "redFailures": 2,
+    "regressionTests": 153,
+    "seconds": 21.209,
+    "skipped": 32,
+    "regressionLogSha256": "6aaaa2e9c8c3816d3a191d619ba43ceae0d03f0f9b3c33e6431618fc302ad0fe"
+  }
+}
