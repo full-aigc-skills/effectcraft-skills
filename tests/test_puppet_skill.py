@@ -8,4 +8,16 @@ class PuppetSkillTests(unittest.TestCase):
   rows=json.loads((ROOT/'skills/effectcraft-use/references/command-coverage.json').read_text())['commands'];family=[x for x in rows if x['id'].startswith('puppet.')];self.assertEqual(len(family),10);self.assertTrue(all(x['ownerSkill']==name for x in family))
   for item in ['SKILL.md','scripts/bootstrap.py','scripts/commands.py','scripts/runtime.lock.json','references/puppet-scene.md']:
    self.assertTrue((ROOT/'skills'/name/item).is_file(),item)
+ def test_record_follow_recipe_covers_each_puppet_command_and_revision(self):
+  base=ROOT/'skills/effectcraft-use'
+  create=json.loads((base/'examples/puppet-record-follow-create.json').read_text())
+  family={row['id'] for row in json.loads((base/'references/command-coverage.json').read_text())['commands'] if row['id'].startswith('puppet.')}
+  self.assertTrue(family.issubset({step.get('command') for step in create['operations']}))
+  for name in ['puppet-record-follow-reopen.json','puppet-record-follow-revise.json']:
+   plan=json.loads((base/'examples'/name).read_text())
+   self.assertEqual(plan['operations'][0]['tool'],'open_project')
+   self.assertEqual(plan['operations'][0]['params']['path'],{'$ref':'project.path'})
+  revise=json.loads((base/'examples/puppet-record-follow-revise.json').read_text())
+  self.assertTrue(any(step.get('command')=='puppet.recordOptions' for step in revise['operations']))
+  self.assertTrue(any(step.get('command')=='puppet.recordPin' for step in revise['operations']))
 if __name__=='__main__':unittest.main()

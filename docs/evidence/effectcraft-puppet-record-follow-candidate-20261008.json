@@ -1,0 +1,69 @@
+{
+  "schema": "craft-puppet-record-follow-first-use/v1",
+  "result": "PASS",
+  "skill": "effectcraft-cli-puppet",
+  "runtimeSha256": "74d44fc90018ac381dc4516edff939ab26eb6d900ae5c3f49d1eba5ac14105fe",
+  "commands": [
+    "puppet.addPin",
+    "puppet.follow",
+    "puppet.info",
+    "puppet.mesh",
+    "puppet.movePin",
+    "puppet.recordOptions",
+    "puppet.recordPin",
+    "puppet.removePin",
+    "puppet.selectPins",
+    "puppet.setPin"
+  ],
+  "recordedFrames": 7,
+  "frameRate": 12,
+  "followDelaySeconds": 0.08333333333333333,
+  "followAmountPercent": 50,
+  "followerAtOneThird": [
+    32,
+    18
+  ],
+  "revisedFollowerAtOneThird": [
+    32,
+    21
+  ],
+  "originalProjectSha256": "e292a1ba30675108f0041868ca2683037fe0d2f9366abf869e47b7b99c7ec34d",
+  "revisedProjectSha256": "ee37e7d6ce5cbf5f9685f534d60bc1060dd3bbc63c731734dbe1bcdc04c06404",
+  "createPlanSha256": "ac59e9682a32efbe12a6bdeacb5136508c120413b3ae3bdf5efda4b6602e7ed9",
+  "failures": [
+    {
+      "case": "empty",
+      "result": "FAIL",
+      "error": "precondition_failed: puppet.recordPin: no composition is open"
+    },
+    {
+      "case": "nonmoving",
+      "result": "FAIL",
+      "error": "command_failed: [{\"text\": \"invalid parameters for `puppet.recordPin`: only Position and Advanced pins record motion\", \"type\": \"text\"}]"
+    },
+    {
+      "case": "missing",
+      "result": "FAIL",
+      "error": "command_failed: [{\"text\": \"invalid parameters for `puppet.removePin`: no puppet pin 999999\", \"type\": \"text\"}]"
+    }
+  ],
+  "checks": [
+    "single skill, public cold runtime install",
+    "returned pin and mesh identities",
+    "ten representative puppet commands",
+    "seven frame-aligned recording keys",
+    "follow expression evaluated by native renderer",
+    "native reopen and identical rendered pixels",
+    "targeted amplitude revision",
+    "anchor, follower expression and control layer preserved",
+    "source projects and skill trees preserved"
+  ],
+  "unverified": [
+    "all pin kinds and parameter contexts",
+    "GUI pointer gestures",
+    "creative quality"
+  ],
+  "scope": "headless position/advanced recording and follow fixture; not full CM-001",
+  "stage": "source-candidate",
+  "immutableInstalledAcceptance": "NOT_RUN"
+}

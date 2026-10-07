@@ -2,7 +2,7 @@
 
 文字、图形与镜头需求进入，交付可编辑 `.ecproj`、依赖素材和渲染结果。
 
-当前技能源：`0.1.0-dev.31`；目标插件：`0.1.0-dev.33`；15 个独立技能。
+当前技能源：`0.1.0-dev.33`；目标插件：`0.1.0-dev.35`；15 个独立技能。
 
 已验证首次使用平台：macOS arm64、Python 3.11+。固定运行时安装在用户数据目录，技能文件保留在宿主加载目录。当前为开发版本；完整首版验收及通用 Skills CLI 实际安装仍未完成。
 
@@ -156,3 +156,5 @@ EffectCraft 独立技能源 dev.7 对效果／蒙版计划参数校验错误返�
 四域共六个场景目录示例已修正；本包运行时身份与每个随附运行时锁一致。原生CLI制品保持原摘要。
 
 新场景自身目录已通过固定安装复验；64项宿主身份匹配。完整V1仍开放。 [Evidence / 证据](https://github.com/full-aigc-plugins/effectcraft-plugin/blob/main/docs/evidence/craft-scenario-paths-fixed-first-use-20261008.json).
+
+木偶录制／跟随源码候选通过：10 条代表命令、逐帧关键帧、原生重开、局部返工和三类错误路径。固定发行安装复验另行记录。[架构](docs/EffectCraft-Puppet-Record-Follow-Architecture.zh_CN.md)。

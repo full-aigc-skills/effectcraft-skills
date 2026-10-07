@@ -35,9 +35,9 @@ python3 -I -B "$SKILL_DIR/scripts/commands.py" run /absolute/puppet-plan.json --
 
 ## 验收边界 / Acceptance boundary
 
-本指南将10条命令组织为场景操作；原生实现参考commands/puppet.rs的图层验证、网格和针脚属性变更。目录与计划检查不等于网格质量或全部针脚类型、录制、跟随及交付验收。
+本指南将10条命令组织为场景操作；原生实现参考commands/puppet.rs的图层验证、网格和针脚属性变更。目录与计划检查不等于网格质量或全部针脚类型及交付验收。
 
-All10 commands have task guidance; full deformation quality, pin kinds, recording and follow acceptance remain separate runtime checks.
+All10 commands have task guidance; full deformation quality, pin kinds and delivery acceptance remain separate runtime checks.
 
 ## 已执行代表实例 / Executed representative example
 
@@ -46,3 +46,25 @@ All10 commands have task guidance; full deformation quality, pin kinds, recordin
 实例已核验一网格两针脚、帧像素变化、原生重开后木偶状态相同且渲染像素一致；不代表变形质量、全部针脚类型、录制和跟随命令已验收。
 
 This self-contained fixture proves a rendered change and native reopening identity for two position pins. Adapt layer geometry and anchors for real artwork; production deformation quality remains a separate review.
+
+
+## 录制、跟随与局部返工 / Recording, follow and revision
+
+本技能自带三个无需外部素材的命令计划。创建实例建立 96×64、12 fps、2 秒合成，蓝色可变形主体和绿色非目标控制图层；建立 Position 锚点与运动针、Advanced 跟随针和临时 Starch 针。所有创建后操作用实际返回的 layer、mesh、pin ID。删除临时针前保存 rigged.ecproj；位置编辑后保存 moved.ecproj。
+
+```bash
+python3 -I -B "$SKILL_DIR/scripts/commands.py" check "$SKILL_DIR/examples/puppet-record-follow-create.json"
+python3 -I -B "$SKILL_DIR/scripts/commands.py" run "$SKILL_DIR/examples/puppet-record-follow-create.json" --output /absolute/new-puppet-create
+python3 -I -B "$SKILL_DIR/scripts/commands.py" run "$SKILL_DIR/examples/puppet-record-follow-reopen.json" --input project=/absolute/new-puppet-create/project.ecproj --output /absolute/new-puppet-reopen
+python3 -I -B "$SKILL_DIR/scripts/commands.py" run "$SKILL_DIR/examples/puppet-record-follow-revise.json" --input project=/absolute/new-puppet-create/project.ecproj --output /absolute/new-puppet-revision
+```
+
+创建实例的 samples 为 [[0,48,24],[0.25,48,12],[0.5,48,24]]；时间为录制相对秒，start=0 为合成起点。speed=100%、smoothing=0，0.5 秒按 12 fps 生成含两端的 7 个关键帧，间隔 1/12 秒。跟随配置 delay=1/12 秒、amount=50%、cascade=false。在 1/3 秒，运动针位于 [48,16]，跟随针位于 [32,18]，锚点保持 [16,24]。验收原生 info 的表达式求值、属性关键帧和实际渲染，不能只看回执成功。
+
+选择与 recordOptions 是会话状态；原生工程保存动画和跟随表达式，并不保存这些录制会话选项。每次新录制会话显式设置选项。修订计划只降低运动针幅度，将中间样本改为 [0.25,48,18]；跟随针在 1/3 秒变为 [32,21]，其自身属性与表达式、锚点和控制图层保持。另存新工程，保留输入摘要，随后用 reopen 计划核验新工程。
+
+修订实例依赖该实例的唯一图层名 Deform subject，以及 puppet.info 返回的一网格三针脚布局；original.meshes.0.pins.1.pin 只适用于此固定实例。真实工程先查询并确认目标身份，将引用改为目标实际 ID，不能将数组下标视作通用对象契约。尺寸、图层空间坐标、时间范围、运动样本与跟随参数须按素材调整。
+
+禁用命令先核对合成与目标状态。无合成、对 Starch 针录制、删除不存在的针会失败并停止后续保存；原输入保持。超时或 unknown 时检查原任务回执，禁止自动重放编辑。PNG 预览用于像素变化与重开一致性；本实例不验证透明导出、视频编码或创作质量。
+
+The three bundled plans create, reopen and revise a self-contained rig. Samples use relative seconds; start is composition time. Seven frame-aligned keys span 0–0.5 s at 12 fps. Follow uses a 1/12 s delay and 50% displacement. Recording options and selection are transient: set options explicitly in each session. Revision preserves the anchor, follower properties/expression and control layer. Adapt returned identities and geometry for real projects; the fixed fixture's array index is not a general identity contract. Rendered pixel identity after reopening is checked separately from parameter receipts. The candidate test exercises ten representative puppet commands and three real rejection paths; exhaustive pin/context, GUI and creative acceptance remain open.
