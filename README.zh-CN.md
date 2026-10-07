@@ -154,3 +154,5 @@ EffectCraft 独立技能源 dev.7 对效果／蒙版计划参数校验错误返�
 父级与表达式：十三项独立技能源候选冷安装、原生保存重开、动态Alpha和源返工保全通过；固定安装及Art分发待验证。 [Architecture](docs/EffectCraft-Expression-Parent-Architecture.zh_CN.md).
 
 固定父级／表达式首用：十三项实际安装技能通过动态Alpha与源返工，58安装身份保持不变；Art新分发仍待验收。 [Evidence](docs/evidence/codex-effectcraft-expression-first-use-20261007.json).
+
+命令计划 JSON 源候选：重复键在安装和创建输出前被拒绝，全部 15 个领域技能的独立副本拒绝测试与有效计划校验通过，3 项专项测试通过。固定插件发布和安装后复验仍为 NOT_RUN。[证据](docs/evidence/command-plan-json-candidate-20261007.json)。

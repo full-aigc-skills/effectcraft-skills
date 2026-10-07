@@ -128,3 +128,9 @@ python3 -I -B "$SKILL_DIR/scripts/commands.py" check /absolute/plan.json --mode 
 使用desktop.py run自动拥有桌面会话，或明确使用commands.py run --mode bridge --connect连接已授权会话。计划以tool字段调用ui_inspect、ui_elements等实际工具；先查询真实元素ID和几何位置再组织点击或输入，不能猜测ID。执行前核对被使用的bridge工具实时参数schema，漂移则拒绝UI调用。screenshot只证明界面截图；render_frame输出才用于合成渲染检查。control为原生控制透传，必须限定到用户授权操作；入口不宣称把所有原生副作用沙箱化。
 
 The additional nine bridge-only tools preserve actual pinned input schemas. Headless preflight rejects them before setup. In bridge mode, the gateway checks the live schema of each used GUI tool before calling it. Inspect actual elements before UI interaction; screenshots and composition renders have distinct acceptance scopes.
+
+## 计划 JSON 的唯一键 / Unique keys in plan JSON
+
+每个 JSON 对象中的键必须唯一，包括顶层、操作及嵌套参数。重复 `command`、`params` 或任何参数键会在公开 `check` / `run` 入口被拒绝，错误为 `duplicate_json_key`；不创建运行时缓存或输出目录，不进行原生调用。先修正计划，再重新校验。严格 JSON 校验还拒绝非有限数值。`check` 成功仍只证明计划结构与目录成员关系，不能证明原生参数、上下文或创作结果通过。
+
+Every object must use unique JSON keys, including the root, operations and nested parameters. Duplicate keys fail with `duplicate_json_key` before runtime installation, output creation or native execution. Correct the plan and check it again. Nonfinite values are also rejected. A successful `check` establishes structure and catalog membership only; native parameters, context and creative results require execution evidence.
