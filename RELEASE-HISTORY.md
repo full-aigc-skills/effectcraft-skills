@@ -1,5 +1,10 @@
 # Version-bound release records
 
+## Development release dev.45 — 2026-10-08
+
+Fixes the Windows recovery-argv test to compare file identity across equivalent short/long paths. Skill payload is unchanged from dev.44; the original tag remains immutable.
+
+
 ## Development release dev.44 — 2026-10-08
 
 Adds readonly doctor with verified native capability discovery, actionable recovery arguments, and offline command/schema diffs to all 15 independent skills. Runtime-binding drafts are excluded. Full V1, other target platforms and installed host acceptance remain open.

@@ -109,7 +109,7 @@ class ManagedDoctorTests(unittest.TestCase):
         self.assertEqual(action['id'],'prepare_pinned_python');self.assertFalse(action['automatic'])
         self.assertEqual(action['argv'][-1],'--python-version')
         entry=skill/'scripts'/('launch.ps1' if os.name=='nt' else 'launch.sh')
-        self.assertIn(str(entry),action['argv'])
+        self.assertTrue(Path(action['argv'][-2]).samefile(entry),action['argv'])
         self.assertFalse(Path(env['CRAFT_PYTHON_HOME']).exists());self.assertFalse(self.home.exists())
 
     def test_powershell_cold_recovery_json_preserves_unicode_under_non_utf8_console(self):

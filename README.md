@@ -1,15 +1,15 @@
 # EffectCraft Skills
 
-Development source44 completes readonly doctor/catalog task9.2.1: explicit verified native discovery, executable recovery argv and offline differences.420 regression passes/38 conditional skips;15 readonly single-skill probes and15 no-Python diagnostics pass. Development source44/plugin46 includes this increment;74 implementation tasks and full V1 remain open. [Evidence](docs/evidence/doctor-capabilities-candidate-20261008.json).
+Development source45 completes readonly doctor/catalog task9.2.1: explicit verified native discovery, executable recovery argv and offline differences.420 regression passes/38 conditional skips;15 readonly single-skill probes and15 no-Python diagnostics pass. Development source45/plugin47 includes this increment;74 implementation tasks and full V1 remain open. [Evidence](docs/evidence/doctor-capabilities-candidate-20261008.json).
 
 Segmented first-use guidance now matches native acceptance of fixed Film40 / Effect38 / Art117, including HD full frames, revision, recovery and relocation. Installation qualification of this new guide snapshot is recorded separately. [Evidence](docs/evidence/craft-fixed-segmented-hd-refresh-20261008.json).
 
-> **Development release dev.44 (2026-10-08):** pinned isolated Python 3.13.16 and EffectCraft 0.4.0; managed execution, owned segment recovery and shared retry accounting. Local macOS evidence does not establish all platforms or hosts. See [implementation and open gates](docs/managed-optimization-20261008.md) and the [platform matrix](docs/current-capabilities.json).
+> **Development release dev.45 (2026-10-08):** pinned isolated Python 3.13.16 and EffectCraft 0.4.0; managed execution, owned segment recovery and shared retry accounting. Local macOS evidence does not establish all platforms or hosts. See [implementation and open gates](docs/managed-optimization-20261008.md) and the [platform matrix](docs/current-capabilities.json).
 
 
 Turn text, graphics and footage into an editable `.ecproj`, dependencies and rendered media.
 
-Current source: `0.1.0-dev.44`; consuming plugin: `0.1.0-dev.46`; 15 independent skills.
+Current source: `0.1.0-dev.45`; consuming plugin: `0.1.0-dev.47`; 15 independent skills.
 
 Verified first-use platform: macOS arm64 and Python 3.11+. Pinned runtimes install into the user data directory; skill files stay in their host-loaded directory. These are development releases; complete V1 acceptance and generic Skills CLI installation remain open.
 
