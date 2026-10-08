@@ -11,6 +11,19 @@ def load(name):
     module=importlib.util.module_from_spec(spec);spec.loader.exec_module(module);return module
 
 
+def quality_adapter(store,state):
+    """同一账本按任务模式读取现有交付，不生成平行公共协议。"""
+    if state['identity']['mode']=='workflow':return load('quality_review')
+    return load('command_judge').Quality(store,state['taskId'])
+
+
+def temporal_required(quality,state,report):
+    if state['identity']['mode']!='workflow':return quality.temporal(state['output'],report)
+    managed=load('managed');root=Path(state['output'])
+    native=managed.read(root/'native.json')
+    return bool(managed.read(root/'manifest.json').get('video') or native['composition'].get('duration',0)>0)
+
+
 def immutable(path, value):
     """重复写入只接受规范化内容一致；不覆盖既有回执。"""
     tasks=load('task_store')
@@ -61,9 +74,10 @@ def validate(store, root, criteria_hash):
                 or report['creative']['status'] not in ('PASS','FAIL')
                 or report['creative']['receipt']!=response or response['score']!=entry['score']):
             raise ValueError('review_receipt_changed')
-        if load('quality_review').binding(state['output'])!=entry['binding']:
+        quality=quality_adapter(store,state)
+        if quality.binding(state['output'])!=entry['binding']:
             raise ValueError('artifact_changed')
-        if load('quality_review').accept_judge(state['output'],report,request,response)['creative']!=report['creative']:
+        if quality.accept_judge(state['output'],report,request,response)['creative']!=report['creative']:
             raise ValueError('review_receipt_changed')
         if entry['score']>best_score:best_task=task;best_score=entry['score'];stagnant=0
         else:stagnant+=1
@@ -87,13 +101,14 @@ def review(store, task, criteria, judge=None, runtime_home=None):
 
 def _review(store, task, criteria, judge, report, runtime_home):
     """只在当前任务族约束内写入评估；根账本是已结算版本的事实源。"""
-    managed=load('managed');quality=load('quality_review');tasks=load('task_store')
+    managed=load('managed');tasks=load('task_store')
     state=store.read(task)
     if state['schema']!='effectcraft-managed-task/v2':raise ValueError('legacy_task_read_only')
     if state['state']!='review_ready':raise ValueError('review_state_conflict')
-    report.update(quality.inspect_delivery(state['output']))
+    quality=quality_adapter(store,state)
+    report.update(quality.inspect_delivery(state['output'],runtime_home) if state['identity']['mode']!='workflow' else quality.inspect_delivery(state['output']))
     with store.lock():store.allowed(store.read(task))
-    if report.get('binding'):
+    if report.get('binding') and state['identity']['mode']=='workflow':
         report['engineering']=load('engineering_review').verify(state['output'],runtime_home,
             state['identity']['runtimeSha256'],timeout=max(.1,min(120,state['deadline']-time.time())))
     response=managed.read(judge) if judge else None
@@ -135,16 +150,15 @@ def _review(store, task, criteria, judge, report, runtime_home):
         else:
             if report['engineering']['status']!='PASS':
                 return {'report':report,'judgeRequest':None,'requiredAction':'engineering_verification'}
-            if report['binding']['manifestSha256']!=state.get('delivery',{}).get('manifestSha256'):
+            proof_key='manifestSha256' if state['identity']['mode']=='workflow' else 'commandDeliverySha256'
+            if report['binding'][proof_key]!=state.get('delivery',{}).get(proof_key):
                 raise ValueError('artifact_changed')
-            native=managed.read(Path(state['output'])/'native.json')
-            temporal=bool(managed.read(Path(state['output'])/'manifest.json').get('video') or native['composition'].get('duration',0)>0)
+            temporal=temporal_required(quality,state,report)
             request=quality.judge_request(task,state['output'],report,criteria,temporal)
             immutable(request_path,request)
         if not isinstance(request.get('requestId'),str) or not re.fullmatch('[a-f0-9]{32}',request['requestId']):
             raise ValueError('judge_request_changed')
-        native=managed.read(Path(state['output'])/'native.json')
-        temporal=bool(managed.read(Path(state['output'])/'manifest.json').get('video') or native['composition'].get('duration',0)>0)
+        temporal=temporal_required(quality,state,report)
         expected=quality.judge_request(task,state['output'],report,criteria,temporal)
         expected['requestId']=request['requestId']
         if request!=expected:raise ValueError('judge_request_changed')

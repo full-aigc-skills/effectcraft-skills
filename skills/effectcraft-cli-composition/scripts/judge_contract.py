@@ -64,11 +64,16 @@ def not_run(report, response, reason):
 
 def accept(root, report, expected, response):
     """回执身份错误拒绝；宿主能力或样本不足保留NOT_RUN，不猜测评分。"""
-    if not isinstance(response,dict) or response.get('schema')!='effectcraft-judge-receipt/v2':
-        raise ValueError('judge_schema_mismatch')
     refreshed=request(expected['taskId'],root,report,expected['criteria'],expected['temporalRequired'])
     refreshed['requestId']=expected['requestId']
     if refreshed!=expected:raise ValueError('judge_request_changed')
+    return accept_response(report,expected,response)
+
+
+def accept_response(report,expected,response):
+    """已核对请求来源后共用v2回执校验；按各上下文独立计算覆盖。"""
+    if not isinstance(response,dict) or response.get('schema')!='effectcraft-judge-receipt/v2':
+        raise ValueError('judge_schema_mismatch')
     for key in ('requestId','taskId','binding','criteriaHash','scopeHash'):
         if response.get(key)!=expected[key]:raise ValueError('judge_binding_mismatch: '+key)
     if response.get('status') not in ('PASS','FAIL','NOT_RUN'):
@@ -81,23 +86,33 @@ def accept(root, report, expected, response):
     observations=response.get('observations',[])
     if not isinstance(observations,list):raise ValueError('judge_observation_invalid')
     media={row['path']:row for row in expected['scope']['media']};observed=set()
-    count=expected['scope']['frameRange']['endExclusive']
+    contexts={row['id']:row for row in expected['scope'].get('contexts',[])}
+    covered={key:set() for key in contexts};paths=set()
+    count=expected['scope'].get('frameRange',{}).get('endExclusive')
     for row in observations:
         if not isinstance(row,dict) or row.get('path') not in media:raise ValueError('judge_observation_invalid')
         bound=media[row['path']]
+        limit=contexts[bound['context']]['frameRange']['endExclusive'] if contexts else count
         frames=row.get('frameIndices')
         if (row.get('sha256')!=bound['sha256'] or not isinstance(frames,list) or not frames
-                or any(type(frame) is not int or not 0<=frame<count for frame in frames)
+                or any(type(frame) is not int or not 0<=frame<limit for frame in frames)
                 or len(frames)!=len(set(frames))
                 or not isinstance(row.get('method'),str) or not row['method'].strip()
                 or not isinstance(row.get('description'),str) or not row['description'].strip()):
             raise ValueError('judge_observation_invalid')
         if bound['kind']=='preview' and frames!=bound['frameIndices']:
             raise ValueError('judge_observation_invalid')
-        observed.update(frames)
+        observed.update(frames);paths.add(row['path'])
+        if contexts:covered[bound['context']].update(frames)
     if response['status']=='NOT_RUN':return not_run(report,response,'host_review_not_run')
-    required=expected['scope']['requiredFrameIndices'] if expected['temporalRequired'] else [0]
-    if not set(required).issubset(observed):return not_run(report,response,'sample_coverage_missing')
+    if contexts:
+        if any(not set(context['requiredFrameIndices']).issubset(covered[key]) for key,context in contexts.items()):
+            return not_run(report,response,'sample_coverage_missing')
+        if not set(expected['scope']['requiredMediaPaths']).issubset(paths):
+            return not_run(report,response,'media_coverage_missing')
+    else:
+        required=expected['scope']['requiredFrameIndices'] if expected['temporalRequired'] else [0]
+        if not set(required).issubset(observed):return not_run(report,response,'sample_coverage_missing')
     issues=response.get('issues')
     if (type(response.get('score')) not in (float,int) or not math.isfinite(response['score'])
             or not 0<=response['score']<=1 or type(response.get('passed')) is not bool

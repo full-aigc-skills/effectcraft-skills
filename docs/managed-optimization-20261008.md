@@ -207,3 +207,27 @@ flowchart TD
 ```
 
 28 targeted tests and353 regressions pass with315 passes/38 conditional skips. The current standalone skill runs both public launch modes with two saved projects, two transparent PNGs and imported footage. Fourteen public-review negative cases preserve original task/output bytes; restoring test originals recovers engineering/technical PASS. Owned listener and process exit are verified. Prepared caches are reused; this is not cold-install or model-dispatch evidence. Video/sequence, Judge and automatic command revision, tasks9.3.6/9.4.1 and fullV1 remain open; creative/user acceptance remain NOT_RUN. This distribution is source dev.40/plugin dev.42; new installed-host dispatch remains unaccepted. [Candidate evidence](evidence/command-delivery-candidate-20261008.json).
+
+## 命令与桌面Judge候选
+
+受管理commands/desktop复用既有Judge v2及不可覆盖任务族账本，内部观察适配保持公开命令计划/回执和用户输出兼容。`scope.contexts`分别绑定合成、原生修订、素材身份、时间基准与所需帧；每个媒体声明context，必须分别覆盖各作品样本并实际观察全部请求媒体，不混合帧覆盖。缺能力/覆盖保留NOT_RUN而不结算评分，重复回执幂等、冲突或过期拒绝；历史PASS不能覆盖当前工程/技术失败，用户接受独立。
+
+10项目标和363项回归（325通过/38条件跳过）通过。当前单技能公开命令及自有桌面原生创建/保存/重开两个运动合成，Codex实际查看8张绑定PNG并比较各合成的两个时刻，随后公开导入评价；两模式各7项拒绝/幂等/当前门禁验证通过，原件/评分保全。只证明具体样本，不声明全帧或插值质量。限定9.22完成；局部revise、视频/序列、固定宿主派发和完整V1保持开放。已发布source40/plugin42快照不变。[证据](evidence/command-judge-candidate-20261008.json)。
+
+## Command and desktop Judge candidate
+
+Managed commands/desktop reuse Judge v2 and the immutable task-family ledger, preserving public plans/receipts and original outputs. `scope.contexts` independently binds each composition/native revision/dependency identity, timebase and required samples. Media references its context; every requested path must be observed and each context must meet its own frame coverage. Missing capability/coverage stays NOT_RUN without settlement. Identical imports are idempotent; conflicting/stale receipts are rejected. Historical PASS does not replace failed current engineering/technical checks; user acceptance stays independent.
+
+10 targeted tests and363 regressions pass:325 passes/38 conditional skips. A current standalone skill creates/saves/reopens two moving compositions through public commands and owned desktop; Codex actually views all8 bound PNGs and compares both declared times per composition, then imports the receipts publicly. Seven rejection/idempotency/current-gate checks per mode preserve originals and settled scores. Only these samples are accepted; no all-frame/interpolation claim. Scoped9.22 closes; local revise, video/sequence, fixed-host dispatch and full V1 stay open. Published source40/plugin42 snapshots are unchanged. [Evidence](evidence/command-judge-candidate-20261008.json).
+
+```mermaid
+flowchart TD
+  A[Current command or desktop delivery] --> B[Native reopen and actual PNG checks]
+  B -->|PASS| C[Judge v2 separate context scopes]
+  C --> D[Codex views exact media samples]
+  D --> E[Validate identity and per-context coverage]
+  E -->|Missing capability or samples| F[NOT_RUN attempt no score]
+  E -->|Valid receipt| G[Immutable family ledger]
+  G --> H[Best version reference user acceptance independent]
+  B -->|FAIL or NOT_RUN| I[Preserve original no creative acceptance]
+```

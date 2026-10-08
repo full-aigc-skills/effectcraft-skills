@@ -2,7 +2,7 @@
 
 此适配由当前宿主智能体执行，不调用独立付费模型，不以脚本生成随机评分。技术解码和模型实际观察是两类证据。
 
-1. 通过当前技能公开 `review` 获取v2请求，检查任务、标准、工程/媒体摘要及`scope.requiredFrameIndices`。
+1. 通过当前技能公开 `review` 获取v2请求，检查任务、标准、工程/媒体摘要及`scope.requiredFrameIndices`；命令/桌面请求使用`scope.contexts[*].requiredFrameIndices`和`scope.requiredMediaPaths`，逐context分别核验，不混合帧覆盖。
 2. 使用当前Codex实际可用的本地图像查看工具打开绑定预览。视频先用宿主已安装的媒体解码器提取请求的具体帧；序列按其描述找到相应全局编号的PNG。提取文件留在任务私有评估目录，不能写进技能或改动原交付。提取前后核对原媒体摘要；衍生帧应保留原媒体路径/摘要和对应帧索引。
 3. 实际查看每个声明观察的样本，再根据请求标准记录可见对象、问题、时间/属性定位和理由。多帧观察只能证明声明样本；需要全片或更密集判断时，单独记录未解决问题，不宣称所有帧通过。
 4. 写v2回执：`schema: effectcraft-judge-receipt/v2`；复制请求的`taskId/requestId/binding/criteriaHash/scopeHash`。`status`为PASS/FAIL/NOT_RUN；`capabilities`中的visual/temporal只能反映实际宿主能力。`observations`每项包括请求媒体`path/sha256`、实际查看的`frameIndices`、非空`method/description`。PASS/FAIL才提供0–1的score、布尔passed及定位issues；PASS不能含未解决issues。`temporalReviewed`只在确实比较对应样本后为true。

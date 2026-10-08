@@ -1,5 +1,7 @@
 # Version-bound release records
 
+Source dev.41: managed command/desktop Judge v2 and immutable review ledger integration (task9.22). 10 targeted tests; 325 regression passes / 38 conditional skips. Native sampled multi-composition review and rejection gates passed on macOS arm64. Task9.23 local revision remains unfinished and excluded from this release; full V1 and fixed-host acceptance remain open.
+
 Source dev.40: managed commands/owned desktop native observations, readonly saved-project and PNG review, native revision/actual-footage source binding. 28 targeted tests; 315 regression passes / 38 conditional skips. Full V1 and fixed-host acceptance stay open.
 
 Source dev.38: Judge v2, immutable version review ledgers, ordinary/segmented sequence checks and public rejection diagnostics. Regression: 260 passed / 38 conditional skips. Historical native visual loops and current entry verification retain separate hashes; other platforms, fixed host acceptance and complete V1 stay open.

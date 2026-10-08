@@ -307,12 +307,4 @@ def inspect(store,task,runtime_home):
 
 
 def review(store,task,criteria,judge=None,runtime_home=None):
-    state=store.read(task)
-    if state['state']!='review_ready':raise ValueError('review_state_conflict')
-    with store.lock():store.allowed(store.read(task))
-    report=inspect(store,task,runtime_home)
-    with store.lock():store.allowed(store.read(task))
-    if judge is not None:
-        error=ValueError('command_judge_integration_pending');error.review_report=report;raise error
-    action='technical_verification' if report['technical']['status']!='PASS' else 'engineering_verification' if report['engineering']['status']!='PASS' else 'command_judge_integration_pending'
-    return {'report':report,'judgeRequest':None,'requiredAction':action}
+    return load('review_ledger').review(store,task,criteria,judge,runtime_home)

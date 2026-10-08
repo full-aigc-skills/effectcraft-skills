@@ -1,0 +1,2291 @@
+{
+  "schema": "effectcraft-command-judge-candidate/v1",
+  "result": "PASS",
+  "sourceFiles": {
+    "skills/effectcraft-use/scripts/command_delivery.py": "9006f5f36e87fe41024012732ce3a33c47c85e1dc42ba16cc67543c3e76a3791",
+    "skills/effectcraft-use/scripts/command_judge.py": "1d9617f42edcd4dd730b0781fc55b330c40f8774db0063ff7cb53fa7af4e83f0",
+    "skills/effectcraft-use/scripts/review_ledger.py": "4931523dd1c76eb15037faaf28aaa7c85b7c85c6dfd447455925dd5a3ae9c512",
+    "skills/effectcraft-use/scripts/judge_contract.py": "58e1e4fad0e296cbf185a4e6e5cf5bd3f2db6482b34dbfcb622b814639469480",
+    "skills/effectcraft-use/references/managed-execution.md": "446d6d8bb394810fae3c3f5582556b412eaf98f7e6fe6ed2d9d164ad7de65007",
+    "skills/effectcraft-use/references/codex-judge.md": "32a0a27363e899d5bf30df7a74f0695d8e1213e1503a2009710d8cda3b7e1c56",
+    "tests/test_managed_command_judge.py": "04cfdd7022da626da40ac4df94401f9ea0868a91c48312f84ab9c5614626bcbe"
+  },
+  "tests": {
+    "red": {
+      "total": 10,
+      "failures": 9
+    },
+    "target": {
+      "total": 10,
+      "passed": 10
+    },
+    "regression": {
+      "total": 363,
+      "passed": 325,
+      "conditionalSkips": 38
+    }
+  },
+  "logs": {
+    "judge-red.log": "7f3b3b3fad79273de6cff2e828eaad57539cbf0ddcb624b857d8c9f6527d4eb3",
+    "judge-green.log": "0555a60cfd3c47634578c7f563ec4b31106443daa9ad6fa8ec4439c17d615c73",
+    "judge-regression.log": "26ebd2712524c32bbda65b35cee217d2804b0cc9652ecf8bf0debb800079c486",
+    "judge-native.log": "dc0f84450a8e8a170ae8d2fe73f06ae2437ca4de1ea241e8faf72d455bf061ab",
+    "judge-import-commands.log": "c0d3e699b360445edbae309124a5bdf5e55899d820ff0c786cce9f1f9cfe10e5",
+    "judge-import-desktop.log": "0275ff05ea4130acd7b3d4527ad9d26e6080476820ddbb13c68434c3b318aec2"
+  },
+  "native": {
+    "result": "PASS",
+    "skillFiles": {
+      "SKILL.md": "d48614435cbb1a065ae4825ba98705baf100f57c6ffa793d597f8b1d0e0f3648",
+      "references/output-execution.md": "1e185e63d8e20fdc54537feacdfb6e7a140474f5e61e2932747699d751671b36",
+      "references/expression-parent.md": "c67e09b82b9740bbbc603b2ec48c0aeba42c3703f775b7c234473935a355080c",
+      "references/command-reference.md": "0a54e772d6d4dc85d9c5cf4820caa81c56709c1b843fbe27366e28467535ca64",
+      "references/tracking-scene.md": "2e699e1ab62f47a1c40405fc6dd48e15474f130295f33fdcd4e80efcad3e4be9",
+      "references/command-usage.md": "b3f3714a615d229bf96476158206910ed43be18f30838b02c37e5e46db853b30",
+      "references/bridge-tools.json": "1a9c5431674b0e563e83ae3e5aebf9e4c25a95c4a55c53125dccb6dc3ae60859",
+      "references/business-scenes.md": "fa6dde18bb5ea19d15de3c6be5d0fc2cdbf4f4e2cf3170a624600b2d3c4e556b",
+      "references/workflow.md": "09a885345734d8d13cd36466841c28441125caa4863472d2a5b9ed4278cc5cdc",
+      "references/segmented-render.md": "d4a500643465eafad7b96f4491086f203e121bd782d69e208095de36717a71b7",
+      "references/commands.json": "f4a4bd1bb063ffe89b0ab0f71dca12d0b1a92eec3e73306756ebf0a93bb3eeb7",
+      "references/capability-diff.json": "201b27776325f0b49a3e93c7fcfb8651bfbdf53843a9083ec2bdfc875c5c8959",
+      "references/native-command-snapshot.json": "043d3e4bcc4e03fd15df178cfcf8cfd2e81679308a48da8ff289d802b4204b74",
+      "references/codex-judge.md": "32a0a27363e899d5bf30df7a74f0695d8e1213e1503a2009710d8cda3b7e1c56",
+      "references/desktop-install.md": "db2db151b0eff30a3381a03ae377fb23ac09b2b4a919859740bd9343e7f14887",
+      "references/puppet-scene.md": "ce185ef007e86e1189210330049b80cc3a4418015826686ff3b143d81810e55f",
+      "references/camera-scene.md": "19bcbf1dce86e32974f59bfd5785ab0c7664df69ce75fd3130f6e4ec5a1e30c9",
+      "references/motion-tracking.md": "dcb4d2ea69f503e45692bbd3f2d2383546f892bd2cb5d163b7811a310af5d194",
+      "references/managed-execution.md": "446d6d8bb394810fae3c3f5582556b412eaf98f7e6fe6ed2d9d164ad7de65007",
+      "references/installation-concurrency.md": "69067acebcd47f1924a8d6aa9d8a4ce6f44ad0756d44888a21eb224bcdb1c215",
+      "references/exchange-loss.md": "eee665f62b77274ca8ce0efc4117012ade85978905cdfd40ab488af64297b8ae",
+      "references/first-use-failures.md": "ce2a8d1a8ca6b8a29a084d52d105d510476de88d40b439d6c2ff79212581d61d",
+      "references/native-workflow.md": "42fee416c66a69f6f3802abe1be6f002963cf109e7e22a4d6297b6dcaf62b8e9",
+      "references/command-coverage.json": "a58a899ed84841acaf17108e53b6dd118f3490139668e65baf1edb5045fcc548",
+      "agents/openai.yaml": "8fe0093ba521c032e6b243bf5c2e3d9d2303cf1ae78f76fe8365e414b7da57b7",
+      "examples/tracking-create.json": "14d6c8654cb81c1b2b578eea021039b38c5179bd9459b7ec41528999d7f53d0d",
+      "examples/camera-scene-reopen.json": "7f1ade6f23c628045941d7168c822d0372e79a63c4ff05cfbd375a03c376b4ee",
+      "examples/puppet-record-follow-create.json": "ac59e9682a32efbe12a6bdeacb5136508c120413b3ae3bdf5efda4b6602e7ed9",
+      "examples/camera-scene-create.json": "bdced8cc3a735793852bf67140ff62ec79544c938c61d733c372f6f4a61d0946",
+      "examples/tracking-reopen.json": "0b393fda8bd68c6819e25ac8f8101381dc175220ca3c8c1c3b8c35637e49ce7b",
+      "examples/layer-mask.json": "61efc2abc7274b45224659ab4aae7e847486af3f3660161a03b83b978ec7a8bc",
+      "examples/puppet-record-follow-reopen.json": "b722ee0ea4681556ae42eb58da21b293180081add09f23bb416d23ff368ae611",
+      "examples/commands-advanced.json": "e2def610996d594575136e357cab0d9ee355ce51cf782817d323b37e8227941b",
+      "examples/puppet-reopen.json": "bd05b66c9480cedaf60cbfe2fb6352dff8a6e573cd27a1fb1be43097bda58b62",
+      "examples/puppet-create.json": "405a5b98b410d2db642eec0a9d0ec8cf48c622c9f1632f36e2c2be3f01ff8560",
+      "examples/commands-revision-create.json": "03d3d7796210dfd4ff27f6cde0e1ba10b4376b0243dc4938d87103ca991f5f61",
+      "examples/expression-parent-create.json": "fca2b95312130f735c884e354ce4fede48bc67ca0a3c740b4b17a79967c20d4d",
+      "examples/native-workflow.json": "0ba62e8bd042dacb028b14c84c18cb2ee10c77e54dbd13efcd7090c8fa9fae16",
+      "examples/desktop-first-use.json": "0d1dbf9c43e8d5ce790443577b5398c2aa7af317fc15a328dc85c62813527d84",
+      "examples/commands-revision.json": "d54bfa78c48b674136b56a8e0c7e36e4c1c475a5907ba46ae450b2ac86e17d1e",
+      "examples/puppet-record-follow-revise.json": "448b635cf49567dc359a3d9ff385fe73afe4b4a32ec280ba5f8cab93ceb00a76",
+      "examples/brand-intro.json": "430aa74e69a3195f70fdfe53ae9b8939fc888df1b58e01d76fd76ccdfe3edd80",
+      "examples/camera-scene-revise.json": "2cca564a10133b56d2d8d20b0feb5cafb627a3e082ce2303fe073567af8bd00f",
+      "examples/expression-parent-revise.json": "8076203648de8834c0681149e557ea4ffed35e0863c2e7a2dec2b4001e3ca22f",
+      "scripts/bootstrap.py": "d5a77de7766e1d634bc903d9d6918b343bc7f87472d0225a52f3bd0fff882965",
+      "scripts/desktop-platforms.lock.json": "3b4b56b144ef102f1ab2e5fbf4f374b22292dbce6a51a01e9bea466f9ed09b92",
+      "scripts/exchange_loss.py": "8871bc2d4e2e6bedd0b1d2852a06ccdbd43b0339d67afc53e6029fb3539c8c4f",
+      "scripts/launch.sh": "c050a7e218e3ccdb9c264284091fac509ece094602646e5ec24e8fac2bdebfa8",
+      "scripts/image_sequence.py": "f67d0e565d8c99abd519bfaabe44599d25606450ca4f98df1ea227619ab2fff0",
+      "scripts/additional-platforms.lock.json": "d72653f778b07bb61eed795d49ffc3e7214ad39e74c64e76959818187567dce6",
+      "scripts/review_ledger.py": "4931523dd1c76eb15037faaf28aaa7c85b7c85c6dfd447455925dd5a3ae9c512",
+      "scripts/task_store.py": "1726f122ad3ce5dba073e2d959d367d4f9a4314486fd24ef512e4b8e5385fe78",
+      "scripts/web_adapter.mjs": "081a816b285a512ebed8cc47dc87e5a16aa0502344c83b25036d3cee8b5c6f78",
+      "scripts/segmented_sequence.py": "f0b078e72211c245267c22514a7b4202099a47cc42a5e9c8243bdd7b0dc473e9",
+      "scripts/platform_support.py": "d6a133dc25b81570f585f473f2fe290e181e78bc24032a05ae83be6f0a45aed8",
+      "scripts/command_judge.py": "1d9617f42edcd4dd730b0781fc55b330c40f8774db0063ff7cb53fa7af4e83f0",
+      "scripts/launch.ps1": "762c1f6149132bb82a2fb057ed8397b3f1846f944890dac6a05870e7091403d0",
+      "scripts/judge_contract.py": "58e1e4fad0e296cbf185a4e6e5cf5bd3f2db6482b34dbfcb622b814639469480",
+      "scripts/mcp_session.py": "dd6df96dc1734cd7e43c4b820661d2e2c8c713dc8849fc89ab06a3720d99619b",
+      "scripts/resource_budget.py": "501cb33b348cab13cace063dbdb2158d8bdd196419aee7978197a8fc40e27e89",
+      "scripts/render_recovery.py": "6baf8f315f20d5e6b9115423502d66e9e51e33dc2398adc6bbff85b6b68b1e31",
+      "scripts/output_guard.py": "018c5c27217c11ec7b45ded52a1e13d7c42b34a3a53df21566e26f192143302b",
+      "scripts/runtime.lock.json": "b427c71c77e1a217c72f7c19ac872b19df28e07150f4e7f6319defe7f5d9acc0",
+      "scripts/python-platforms.tsv": "3836b670271e8f8327ea386510b18dea6a867ece27be5e74f4165eaa38ad8c65",
+      "scripts/cli.py": "9303ae8ae30009fa706d5d56603032485ad81416aee1d0af523ce902e3f28165",
+      "scripts/desktop_session.py": "1fd05fd25b1f1a0f9a076472a448cbe0cbca6fba6aa449d835bbf98173db2464",
+      "scripts/native_workflow.py": "0db0471f8d849db9c3ffaeaac1c7bc40bf0cd500a638f7b681ecdeb934960bdd",
+      "scripts/desktop.lock.json": "d2af78ee474b8e19ff3c26c792bb27ad180622ffe6dbed5a402bcb7aa7167311",
+      "scripts/quality_review.py": "e0ddc78bb8bdc9b2e1dfca2e8ae7c1915ad9008ced0b3d3a242ccc45086e77e9",
+      "scripts/command_delivery.py": "9006f5f36e87fe41024012732ce3a33c47c85e1dc42ba16cc67543c3e76a3791",
+      "scripts/managed.py": "0fe555059be7adcce9f03ec11d5b45a998a893dd04b646af3e2444c1a74658ca",
+      "scripts/png_inspection.py": "0e3c50907c66c6dcc45256d045920da346ad77892e47401de3103c8f6232938d",
+      "scripts/additional_platforms.py": "1a4ffc9f04e240374269a9869d0383f9f833082cf066203fddba117f247f48d9",
+      "scripts/revision.py": "97ddd415f6edcac419f19327e0f1ea0a2d4ed9492231ef9e4d4c253a0aa94b76",
+      "scripts/python.lock.json": "e877b3fe406a2a210ebe5d7f660aa1d0483def44454a54dbe7429bfdba1c9f3f",
+      "scripts/workflow.py": "52eb0ccd9942b83588155ddb851c63c6fbea0f3122a0aa2a3029a2640cb6ce14",
+      "scripts/parameter-contract.json": "dd1bde23fb12e26774f412f0aacc93e8102eaed79d4255709b5717c112daa762",
+      "scripts/orphan_segments.py": "244059948ca6b783c64cdd5942e91f3e6268dfd71f3c48c300595ccbcb2584b9",
+      "scripts/process_guard.py": "914127933d528388cff33db36e92f8ed62263737e985c65b1f7e200ee14d50a4",
+      "scripts/engineering_review.py": "cd85935fe5a4b4d5285c46896cd50d5b9defd3516eb9d96fcd31e8966bacab07",
+      "scripts/preserved_stage.py": "64199df3ee6af2901a859a5aac401fd27ca2f0c6ba9238e6f72c3563f681ad63",
+      "scripts/commands.py": "da65937aef566fcd59f4d5315230de64a05334cf63441bcfa3abead987aa15c5",
+      "scripts/resource_meter.py": "7c89e528b2851a190b5ca849f29ec03d26b4d827ff12aeef7d4c7c01c1cd6dcf",
+      "scripts/desktop.py": "802de3eef9ed9fca3ad09a2f5f6f204f6bbba5a09450efe6ae062e7159409553",
+      "scripts/python-integrity/windows-arm64.tsv": "625a22a5086fd7d312bc156cde8e3f4443ceb2079e2ff91457c6de0cadd5df4d",
+      "scripts/python-integrity/darwin-x86_64.tsv": "53196035ea5ca246ef60da5b248d02a91964a269c6ec7397eedc0f28a72694ca",
+      "scripts/python-integrity/windows-x86.tsv": "551536440722a4fc82e578f4af5a11ef72a9736b3be4b08621982f0f767cc981",
+      "scripts/python-integrity/linux-aarch64.tsv": "6b639cbaa8c4e691d226447b747fde28fb0f9e337fe828d46b2ceba80ad325f7",
+      "scripts/python-integrity/darwin-arm64.tsv": "8f9c3aaf79cd0ff1867ac5d3c937d6ca0c60ccf1ab2b321a2b7a8454209d6fdd",
+      "scripts/python-integrity/linux-x86_64.tsv": "f81e6ac6a770f895b5b1a89838da856f21e9c827f4fc320ed1562645783c0c55",
+      "scripts/python-integrity/windows-x86_64.tsv": "e1e98775d10bcb9fbf55e482a31d9efdb91a8d61d80718998f66f7c9b195e5f3",
+      "scripts/runtime-integrity/darwin-arm64.json": "c7eb5424dbb14940624e3ae6a494078a41dfa0c6738b7779d5d9ceb40f7e2220",
+      "scripts/runtime-integrity/linux-x86_64.json": "0700c5bcadaa68ec96ac723504c6ffd3212999bfc1c4f7ec1e27ab47e6a564a8",
+      "scripts/runtime-integrity/windows-x86_64.json": "33e0714f70aee024ec182148933a536d721c5321f0b7efa1470a21e4d85c21a0",
+      "scripts/runtime-integrity/windows-x86.json": "ebe596ae6de96e0ddebbe5ca171b3b65337cf33e2c40c5f99631aff6b71d02c4",
+      "scripts/runtime-integrity/windows-arm64.json": "edb91da2b4bb474de49cbb705d5c1ff3c6700eb84eea8efc2ec65c208df40572",
+      "scripts/runtime-integrity/linux-aarch64.json": "b1c0b809c03fbf7d3d018f7418250fce3e56bd7e816781df5242c2cea08370fb",
+      "scripts/runtime-integrity/darwin-x86_64.json": "c7eb5424dbb14940624e3ae6a494078a41dfa0c6738b7779d5d9ceb40f7e2220"
+    },
+    "skillUnchanged": true,
+    "platform": "darwin-arm64",
+    "nativeCachesReused": true,
+    "modes": [
+      "commands",
+      "desktop"
+    ],
+    "contextsPerMode": 2,
+    "mediaPerMode": 4
+  },
+  "cases": [
+    {
+      "mode": "commands",
+      "result": "PASS",
+      "report": {
+        "schema": "effectcraft-quality/v1",
+        "engineering": {
+          "status": "PASS",
+          "fresh": true,
+          "projects": [
+            {
+              "path": "1.ecproj",
+              "sha256": "f4d3e732ea6aebf4bcbbde7d88e24bf435236c5ac85a3038a4258839b1073e12",
+              "compositions": 1,
+              "verifiedAssets": 0
+            },
+            {
+              "path": "2.ecproj",
+              "sha256": "1055dfc99d659c9cb66a6db4c0a3ad4a017da54e7fb9633e51188ffaa79c0eef",
+              "compositions": 2,
+              "verifiedAssets": 0
+            }
+          ]
+        },
+        "technical": {
+          "status": "PASS",
+          "media": [
+            {
+              "path": "1-0.png",
+              "facts": {
+                "width": 160,
+                "height": 96,
+                "bitDepth": 8,
+                "alpha": true,
+                "alphaExtrema": [
+                  0,
+                  255
+                ],
+                "rgbaSha256": "0a4fd787e6a71130486395d547ab83a03bd31139f3c75bbf6782ddd9aab12625"
+              },
+              "composition": {
+                "background": [
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                "duration": 1.0,
+                "frameRate": 2.0,
+                "height": 96,
+                "id": 1,
+                "layers": [
+                  {
+                    "blendMode": "Normal",
+                    "id": 2,
+                    "in": 0.0,
+                    "index": 1,
+                    "label": "Blue",
+                    "name": "Moving subject 1",
+                    "out": 1.0,
+                    "parent": null,
+                    "start": 0.0,
+                    "stretch": 100.0,
+                    "switches": {
+                      "adjustment": false,
+                      "audio": true,
+                      "collapse": false,
+                      "effects": true,
+                      "frame_blend": "Off",
+                      "guide": false,
+                      "locked": false,
+                      "motion_blur": false,
+                      "quality": "Best",
+                      "sampling": "Bilinear",
+                      "shy": false,
+                      "solo": false,
+                      "three_d": false,
+                      "video": true
+                    },
+                    "trackMatte": null,
+                    "type": "Shape"
+                  }
+                ],
+                "name": "Sample context 1",
+                "preserveFrameRate": false,
+                "preserveResolution": false,
+                "width": 160,
+                "workArea": [
+                  0.0,
+                  1.0
+                ]
+              },
+              "sourceProjects": [
+                "1.ecproj"
+              ],
+              "seconds": 0,
+              "sourceSnapshotHash": "505c0186a489d634c05154c273626816aafa5a61df74051f032670a8511b9ebf"
+            },
+            {
+              "path": "1-1.png",
+              "facts": {
+                "width": 160,
+                "height": 96,
+                "bitDepth": 8,
+                "alpha": true,
+                "alphaExtrema": [
+                  0,
+                  255
+                ],
+                "rgbaSha256": "156183fbfc69e857c0369ead9a95cf3df549694b4d089aeac97ec3442cab0b72"
+              },
+              "composition": {
+                "background": [
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                "duration": 1.0,
+                "frameRate": 2.0,
+                "height": 96,
+                "id": 1,
+                "layers": [
+                  {
+                    "blendMode": "Normal",
+                    "id": 2,
+                    "in": 0.0,
+                    "index": 1,
+                    "label": "Blue",
+                    "name": "Moving subject 1",
+                    "out": 1.0,
+                    "parent": null,
+                    "start": 0.0,
+                    "stretch": 100.0,
+                    "switches": {
+                      "adjustment": false,
+                      "audio": true,
+                      "collapse": false,
+                      "effects": true,
+                      "frame_blend": "Off",
+                      "guide": false,
+                      "locked": false,
+                      "motion_blur": false,
+                      "quality": "Best",
+                      "sampling": "Bilinear",
+                      "shy": false,
+                      "solo": false,
+                      "three_d": false,
+                      "video": true
+                    },
+                    "trackMatte": null,
+                    "type": "Shape"
+                  }
+                ],
+                "name": "Sample context 1",
+                "preserveFrameRate": false,
+                "preserveResolution": false,
+                "width": 160,
+                "workArea": [
+                  0.0,
+                  1.0
+                ]
+              },
+              "sourceProjects": [
+                "1.ecproj"
+              ],
+              "seconds": 0.5,
+              "sourceSnapshotHash": "505c0186a489d634c05154c273626816aafa5a61df74051f032670a8511b9ebf"
+            },
+            {
+              "path": "2-0.png",
+              "facts": {
+                "width": 160,
+                "height": 96,
+                "bitDepth": 8,
+                "alpha": true,
+                "alphaExtrema": [
+                  0,
+                  255
+                ],
+                "rgbaSha256": "63ad2f6cf11ba91a97ebf1e0033f1097d29a362c0407800832e63170d4a87d16"
+              },
+              "composition": {
+                "background": [
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                "duration": 1.0,
+                "frameRate": 2.0,
+                "height": 96,
+                "id": 48,
+                "layers": [
+                  {
+                    "blendMode": "Normal",
+                    "id": 49,
+                    "in": 0.0,
+                    "index": 1,
+                    "label": "Blue",
+                    "name": "Moving subject 2",
+                    "out": 1.0,
+                    "parent": null,
+                    "start": 0.0,
+                    "stretch": 100.0,
+                    "switches": {
+                      "adjustment": false,
+                      "audio": true,
+                      "collapse": false,
+                      "effects": true,
+                      "frame_blend": "Off",
+                      "guide": false,
+                      "locked": false,
+                      "motion_blur": false,
+                      "quality": "Best",
+                      "sampling": "Bilinear",
+                      "shy": false,
+                      "solo": false,
+                      "three_d": false,
+                      "video": true
+                    },
+                    "trackMatte": null,
+                    "type": "Shape"
+                  }
+                ],
+                "name": "Sample context 2",
+                "preserveFrameRate": false,
+                "preserveResolution": false,
+                "width": 160,
+                "workArea": [
+                  0.0,
+                  1.0
+                ]
+              },
+              "sourceProjects": [
+                "2.ecproj"
+              ],
+              "seconds": 0,
+              "sourceSnapshotHash": "2c758f8f3eb58bfae7e3767b70d224d154ca4c27511d2cc62a0a82d554814304"
+            },
+            {
+              "path": "2-1.png",
+              "facts": {
+                "width": 160,
+                "height": 96,
+                "bitDepth": 8,
+                "alpha": true,
+                "alphaExtrema": [
+                  0,
+                  255
+                ],
+                "rgbaSha256": "719eeadbb215b1abed1c2464bfcbd626349aa04d4792c5c10be34b0356c0e2bc"
+              },
+              "composition": {
+                "background": [
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                "duration": 1.0,
+                "frameRate": 2.0,
+                "height": 96,
+                "id": 48,
+                "layers": [
+                  {
+                    "blendMode": "Normal",
+                    "id": 49,
+                    "in": 0.0,
+                    "index": 1,
+                    "label": "Blue",
+                    "name": "Moving subject 2",
+                    "out": 1.0,
+                    "parent": null,
+                    "start": 0.0,
+                    "stretch": 100.0,
+                    "switches": {
+                      "adjustment": false,
+                      "audio": true,
+                      "collapse": false,
+                      "effects": true,
+                      "frame_blend": "Off",
+                      "guide": false,
+                      "locked": false,
+                      "motion_blur": false,
+                      "quality": "Best",
+                      "sampling": "Bilinear",
+                      "shy": false,
+                      "solo": false,
+                      "three_d": false,
+                      "video": true
+                    },
+                    "trackMatte": null,
+                    "type": "Shape"
+                  }
+                ],
+                "name": "Sample context 2",
+                "preserveFrameRate": false,
+                "preserveResolution": false,
+                "width": 160,
+                "workArea": [
+                  0.0,
+                  1.0
+                ]
+              },
+              "sourceProjects": [
+                "2.ecproj"
+              ],
+              "seconds": 0.5,
+              "sourceSnapshotHash": "2c758f8f3eb58bfae7e3767b70d224d154ca4c27511d2cc62a0a82d554814304"
+            }
+          ],
+          "unreviewed": [],
+          "unmatchedFrames": [],
+          "verifiedAssets": 0
+        },
+        "creative": {
+          "status": "PASS",
+          "receipt": {
+            "requestId": "078a684fbbeb4ef3a9ac5cc0da6a001f",
+            "taskId": "commands",
+            "binding": {
+              "commandDeliverySha256": "1cb95c16ca93d7ac62828c76908c34638e9765ea03d80fc147a5770ba8194b1b",
+              "receiptSha256": "ebdb2ab31d8ae57b3907668f7584298eb5bd6b3684a65700a526da9a1ad4f4c7",
+              "filesHash": "e23a7ab77e6fe10279b8260ae9c3fa563f20f43634ebe5277933af7d72d80845"
+            },
+            "criteriaHash": "88c4ef4b69f8b2cdfb619acdc2d3765726b055c858116819ef0f762ac1e2378c",
+            "scopeHash": "dafcdb9f7a0be459abd10e8c1b78ceb47c7d330748ebcbd8c7cb8018cd3d8090",
+            "schema": "effectcraft-judge-receipt/v2",
+            "status": "PASS",
+            "score": 0.95,
+            "passed": true,
+            "issues": [],
+            "capabilities": {
+              "visual": true,
+              "temporal": true
+            },
+            "temporalReviewed": true,
+            "observations": [
+              {
+                "path": "1-0.png",
+                "sha256": "44f0109f5dc7fcbdcbfe18a3bdbca7fb6e063f95f21e37cd95768ffa0170099e",
+                "frameIndices": [
+                  0
+                ],
+                "method": "Codex view_image on the exact bound PNG; compared both requested times for each composition",
+                "description": "Orange rectangle fully visible on the left at time 0, with ample margin."
+              },
+              {
+                "path": "1-1.png",
+                "sha256": "2efe53283628e93e9456ef690ae709c062059cea9e67241579a9276b2ca00842",
+                "frameIndices": [
+                  1
+                ],
+                "method": "Codex view_image on the exact bound PNG; compared both requested times for each composition",
+                "description": "Orange rectangle fully visible on the right at time 0.5; same size and color, consistent with left-to-right movement."
+              },
+              {
+                "path": "2-0.png",
+                "sha256": "d40e351bfb67990650a28b5ac31d04e878caad31a3bdcd1ced69a51359f97869",
+                "frameIndices": [
+                  0
+                ],
+                "method": "Codex view_image on the exact bound PNG; compared both requested times for each composition",
+                "description": "Blue circle fully visible on the right at time 0."
+              },
+              {
+                "path": "2-1.png",
+                "sha256": "f61e68d35dc1afd2243b94df5b7301a1ee74b684a9fa9c91126d794d85995dc6",
+                "frameIndices": [
+                  1
+                ],
+                "method": "Codex view_image on the exact bound PNG; compared both requested times for each composition",
+                "description": "Blue circle fully visible on the left at time 0.5; consistent with right-to-left movement and no clipping."
+              }
+            ]
+          },
+          "scope": {
+            "schema": "effectcraft-evaluation-scope/v1",
+            "coverage": "sampled",
+            "contexts": [
+              {
+                "id": "03592068775889e41569155f6171fb0166023f185a08bef78025339d7a392be7",
+                "compositionId": 48,
+                "nativeVersion": 8,
+                "snapshotHash": "2c758f8f3eb58bfae7e3767b70d224d154ca4c27511d2cc62a0a82d554814304",
+                "dependenciesHash": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+                "sourceProjects": [
+                  "2.ecproj"
+                ],
+                "frameRate": {
+                  "num": 2,
+                  "den": 1
+                },
+                "frameRange": {
+                  "start": 0,
+                  "endExclusive": 2
+                },
+                "timeRange": {
+                  "start": {
+                    "num": 0,
+                    "den": 1
+                  },
+                  "end": {
+                    "num": 1,
+                    "den": 1
+                  }
+                },
+                "requiredFrameIndices": [
+                  0,
+                  1
+                ]
+              },
+              {
+                "id": "3cf5863c01f261a57b3df6d0df7df403c29df52bbbdfeb224424710783b10186",
+                "compositionId": 1,
+                "nativeVersion": 4,
+                "snapshotHash": "505c0186a489d634c05154c273626816aafa5a61df74051f032670a8511b9ebf",
+                "dependenciesHash": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+                "sourceProjects": [
+                  "1.ecproj"
+                ],
+                "frameRate": {
+                  "num": 2,
+                  "den": 1
+                },
+                "frameRange": {
+                  "start": 0,
+                  "endExclusive": 2
+                },
+                "timeRange": {
+                  "start": {
+                    "num": 0,
+                    "den": 1
+                  },
+                  "end": {
+                    "num": 1,
+                    "den": 1
+                  }
+                },
+                "requiredFrameIndices": [
+                  0,
+                  1
+                ]
+              }
+            ],
+            "media": [
+              {
+                "path": "1-0.png",
+                "sha256": "44f0109f5dc7fcbdcbfe18a3bdbca7fb6e063f95f21e37cd95768ffa0170099e",
+                "context": "3cf5863c01f261a57b3df6d0df7df403c29df52bbbdfeb224424710783b10186",
+                "kind": "preview",
+                "frameIndices": [
+                  0
+                ],
+                "seconds": {
+                  "num": 0,
+                  "den": 1
+                }
+              },
+              {
+                "path": "1-1.png",
+                "sha256": "2efe53283628e93e9456ef690ae709c062059cea9e67241579a9276b2ca00842",
+                "context": "3cf5863c01f261a57b3df6d0df7df403c29df52bbbdfeb224424710783b10186",
+                "kind": "preview",
+                "frameIndices": [
+                  1
+                ],
+                "seconds": {
+                  "num": 1,
+                  "den": 2
+                }
+              },
+              {
+                "path": "2-0.png",
+                "sha256": "d40e351bfb67990650a28b5ac31d04e878caad31a3bdcd1ced69a51359f97869",
+                "context": "03592068775889e41569155f6171fb0166023f185a08bef78025339d7a392be7",
+                "kind": "preview",
+                "frameIndices": [
+                  0
+                ],
+                "seconds": {
+                  "num": 0,
+                  "den": 1
+                }
+              },
+              {
+                "path": "2-1.png",
+                "sha256": "f61e68d35dc1afd2243b94df5b7301a1ee74b684a9fa9c91126d794d85995dc6",
+                "context": "03592068775889e41569155f6171fb0166023f185a08bef78025339d7a392be7",
+                "kind": "preview",
+                "frameIndices": [
+                  1
+                ],
+                "seconds": {
+                  "num": 1,
+                  "den": 2
+                }
+              }
+            ],
+            "requiredMediaPaths": [
+              "1-0.png",
+              "1-1.png",
+              "2-0.png",
+              "2-1.png"
+            ]
+          }
+        },
+        "userAcceptance": {
+          "status": "NOT_RUN",
+          "source": "explicit user decision required"
+        },
+        "readyForAcceptance": true,
+        "accepted": false,
+        "binding": {
+          "commandDeliverySha256": "1cb95c16ca93d7ac62828c76908c34638e9765ea03d80fc147a5770ba8194b1b",
+          "receiptSha256": "ebdb2ab31d8ae57b3907668f7584298eb5bd6b3684a65700a526da9a1ad4f4c7",
+          "filesHash": "e23a7ab77e6fe10279b8260ae9c3fa563f20f43634ebe5277933af7d72d80845"
+        }
+      },
+      "request": {
+        "schema": "effectcraft-judge-request/v2",
+        "requestId": "078a684fbbeb4ef3a9ac5cc0da6a001f",
+        "taskId": "commands",
+        "binding": {
+          "commandDeliverySha256": "1cb95c16ca93d7ac62828c76908c34638e9765ea03d80fc147a5770ba8194b1b",
+          "receiptSha256": "ebdb2ab31d8ae57b3907668f7584298eb5bd6b3684a65700a526da9a1ad4f4c7",
+          "filesHash": "e23a7ab77e6fe10279b8260ae9c3fa563f20f43634ebe5277933af7d72d80845"
+        },
+        "criteria": {
+          "goal": "Two distinct transparent compositions: orange rectangle moves left to right; blue circle moves right to left. Subjects stay fully visible at both requested times. Judge only bound samples; no full-frame interpolation claim."
+        },
+        "criteriaHash": "88c4ef4b69f8b2cdfb619acdc2d3765726b055c858116819ef0f762ac1e2378c",
+        "temporalRequired": true,
+        "scope": {
+          "schema": "effectcraft-evaluation-scope/v1",
+          "coverage": "sampled",
+          "contexts": [
+            {
+              "id": "03592068775889e41569155f6171fb0166023f185a08bef78025339d7a392be7",
+              "compositionId": 48,
+              "nativeVersion": 8,
+              "snapshotHash": "2c758f8f3eb58bfae7e3767b70d224d154ca4c27511d2cc62a0a82d554814304",
+              "dependenciesHash": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+              "sourceProjects": [
+                "2.ecproj"
+              ],
+              "frameRate": {
+                "num": 2,
+                "den": 1
+              },
+              "frameRange": {
+                "start": 0,
+                "endExclusive": 2
+              },
+              "timeRange": {
+                "start": {
+                  "num": 0,
+                  "den": 1
+                },
+                "end": {
+                  "num": 1,
+                  "den": 1
+                }
+              },
+              "requiredFrameIndices": [
+                0,
+                1
+              ]
+            },
+            {
+              "id": "3cf5863c01f261a57b3df6d0df7df403c29df52bbbdfeb224424710783b10186",
+              "compositionId": 1,
+              "nativeVersion": 4,
+              "snapshotHash": "505c0186a489d634c05154c273626816aafa5a61df74051f032670a8511b9ebf",
+              "dependenciesHash": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+              "sourceProjects": [
+                "1.ecproj"
+              ],
+              "frameRate": {
+                "num": 2,
+                "den": 1
+              },
+              "frameRange": {
+                "start": 0,
+                "endExclusive": 2
+              },
+              "timeRange": {
+                "start": {
+                  "num": 0,
+                  "den": 1
+                },
+                "end": {
+                  "num": 1,
+                  "den": 1
+                }
+              },
+              "requiredFrameIndices": [
+                0,
+                1
+              ]
+            }
+          ],
+          "media": [
+            {
+              "path": "1-0.png",
+              "sha256": "44f0109f5dc7fcbdcbfe18a3bdbca7fb6e063f95f21e37cd95768ffa0170099e",
+              "context": "3cf5863c01f261a57b3df6d0df7df403c29df52bbbdfeb224424710783b10186",
+              "kind": "preview",
+              "frameIndices": [
+                0
+              ],
+              "seconds": {
+                "num": 0,
+                "den": 1
+              }
+            },
+            {
+              "path": "1-1.png",
+              "sha256": "2efe53283628e93e9456ef690ae709c062059cea9e67241579a9276b2ca00842",
+              "context": "3cf5863c01f261a57b3df6d0df7df403c29df52bbbdfeb224424710783b10186",
+              "kind": "preview",
+              "frameIndices": [
+                1
+              ],
+              "seconds": {
+                "num": 1,
+                "den": 2
+              }
+            },
+            {
+              "path": "2-0.png",
+              "sha256": "d40e351bfb67990650a28b5ac31d04e878caad31a3bdcd1ced69a51359f97869",
+              "context": "03592068775889e41569155f6171fb0166023f185a08bef78025339d7a392be7",
+              "kind": "preview",
+              "frameIndices": [
+                0
+              ],
+              "seconds": {
+                "num": 0,
+                "den": 1
+              }
+            },
+            {
+              "path": "2-1.png",
+              "sha256": "f61e68d35dc1afd2243b94df5b7301a1ee74b684a9fa9c91126d794d85995dc6",
+              "context": "03592068775889e41569155f6171fb0166023f185a08bef78025339d7a392be7",
+              "kind": "preview",
+              "frameIndices": [
+                1
+              ],
+              "seconds": {
+                "num": 1,
+                "den": 2
+              }
+            }
+          ],
+          "requiredMediaPaths": [
+            "1-0.png",
+            "1-1.png",
+            "2-0.png",
+            "2-1.png"
+          ]
+        },
+        "scopeHash": "dafcdb9f7a0be459abd10e8c1b78ceb47c7d330748ebcbd8c7cb8018cd3d8090",
+        "media": [
+          {
+            "path": "1-0.png",
+            "facts": {
+              "width": 160,
+              "height": 96,
+              "bitDepth": 8,
+              "alpha": true,
+              "alphaExtrema": [
+                0,
+                255
+              ],
+              "rgbaSha256": "0a4fd787e6a71130486395d547ab83a03bd31139f3c75bbf6782ddd9aab12625"
+            },
+            "composition": {
+              "background": [
+                0.0,
+                0.0,
+                0.0
+              ],
+              "duration": 1.0,
+              "frameRate": 2.0,
+              "height": 96,
+              "id": 1,
+              "layers": [
+                {
+                  "blendMode": "Normal",
+                  "id": 2,
+                  "in": 0.0,
+                  "index": 1,
+                  "label": "Blue",
+                  "name": "Moving subject 1",
+                  "out": 1.0,
+                  "parent": null,
+                  "start": 0.0,
+                  "stretch": 100.0,
+                  "switches": {
+                    "adjustment": false,
+                    "audio": true,
+                    "collapse": false,
+                    "effects": true,
+                    "frame_blend": "Off",
+                    "guide": false,
+                    "locked": false,
+                    "motion_blur": false,
+                    "quality": "Best",
+                    "sampling": "Bilinear",
+                    "shy": false,
+                    "solo": false,
+                    "three_d": false,
+                    "video": true
+                  },
+                  "trackMatte": null,
+                  "type": "Shape"
+                }
+              ],
+              "name": "Sample context 1",
+              "preserveFrameRate": false,
+              "preserveResolution": false,
+              "width": 160,
+              "workArea": [
+                0.0,
+                1.0
+              ]
+            },
+            "sourceProjects": [
+              "1.ecproj"
+            ],
+            "seconds": 0,
+            "sourceSnapshotHash": "505c0186a489d634c05154c273626816aafa5a61df74051f032670a8511b9ebf"
+          },
+          {
+            "path": "1-1.png",
+            "facts": {
+              "width": 160,
+              "height": 96,
+              "bitDepth": 8,
+              "alpha": true,
+              "alphaExtrema": [
+                0,
+                255
+              ],
+              "rgbaSha256": "156183fbfc69e857c0369ead9a95cf3df549694b4d089aeac97ec3442cab0b72"
+            },
+            "composition": {
+              "background": [
+                0.0,
+                0.0,
+                0.0
+              ],
+              "duration": 1.0,
+              "frameRate": 2.0,
+              "height": 96,
+              "id": 1,
+              "layers": [
+                {
+                  "blendMode": "Normal",
+                  "id": 2,
+                  "in": 0.0,
+                  "index": 1,
+                  "label": "Blue",
+                  "name": "Moving subject 1",
+                  "out": 1.0,
+                  "parent": null,
+                  "start": 0.0,
+                  "stretch": 100.0,
+                  "switches": {
+                    "adjustment": false,
+                    "audio": true,
+                    "collapse": false,
+                    "effects": true,
+                    "frame_blend": "Off",
+                    "guide": false,
+                    "locked": false,
+                    "motion_blur": false,
+                    "quality": "Best",
+                    "sampling": "Bilinear",
+                    "shy": false,
+                    "solo": false,
+                    "three_d": false,
+                    "video": true
+                  },
+                  "trackMatte": null,
+                  "type": "Shape"
+                }
+              ],
+              "name": "Sample context 1",
+              "preserveFrameRate": false,
+              "preserveResolution": false,
+              "width": 160,
+              "workArea": [
+                0.0,
+                1.0
+              ]
+            },
+            "sourceProjects": [
+              "1.ecproj"
+            ],
+            "seconds": 0.5,
+            "sourceSnapshotHash": "505c0186a489d634c05154c273626816aafa5a61df74051f032670a8511b9ebf"
+          },
+          {
+            "path": "2-0.png",
+            "facts": {
+              "width": 160,
+              "height": 96,
+              "bitDepth": 8,
+              "alpha": true,
+              "alphaExtrema": [
+                0,
+                255
+              ],
+              "rgbaSha256": "63ad2f6cf11ba91a97ebf1e0033f1097d29a362c0407800832e63170d4a87d16"
+            },
+            "composition": {
+              "background": [
+                0.0,
+                0.0,
+                0.0
+              ],
+              "duration": 1.0,
+              "frameRate": 2.0,
+              "height": 96,
+              "id": 48,
+              "layers": [
+                {
+                  "blendMode": "Normal",
+                  "id": 49,
+                  "in": 0.0,
+                  "index": 1,
+                  "label": "Blue",
+                  "name": "Moving subject 2",
+                  "out": 1.0,
+                  "parent": null,
+                  "start": 0.0,
+                  "stretch": 100.0,
+                  "switches": {
+                    "adjustment": false,
+                    "audio": true,
+                    "collapse": false,
+                    "effects": true,
+                    "frame_blend": "Off",
+                    "guide": false,
+                    "locked": false,
+                    "motion_blur": false,
+                    "quality": "Best",
+                    "sampling": "Bilinear",
+                    "shy": false,
+                    "solo": false,
+                    "three_d": false,
+                    "video": true
+                  },
+                  "trackMatte": null,
+                  "type": "Shape"
+                }
+              ],
+              "name": "Sample context 2",
+              "preserveFrameRate": false,
+              "preserveResolution": false,
+              "width": 160,
+              "workArea": [
+                0.0,
+                1.0
+              ]
+            },
+            "sourceProjects": [
+              "2.ecproj"
+            ],
+            "seconds": 0,
+            "sourceSnapshotHash": "2c758f8f3eb58bfae7e3767b70d224d154ca4c27511d2cc62a0a82d554814304"
+          },
+          {
+            "path": "2-1.png",
+            "facts": {
+              "width": 160,
+              "height": 96,
+              "bitDepth": 8,
+              "alpha": true,
+              "alphaExtrema": [
+                0,
+                255
+              ],
+              "rgbaSha256": "719eeadbb215b1abed1c2464bfcbd626349aa04d4792c5c10be34b0356c0e2bc"
+            },
+            "composition": {
+              "background": [
+                0.0,
+                0.0,
+                0.0
+              ],
+              "duration": 1.0,
+              "frameRate": 2.0,
+              "height": 96,
+              "id": 48,
+              "layers": [
+                {
+                  "blendMode": "Normal",
+                  "id": 49,
+                  "in": 0.0,
+                  "index": 1,
+                  "label": "Blue",
+                  "name": "Moving subject 2",
+                  "out": 1.0,
+                  "parent": null,
+                  "start": 0.0,
+                  "stretch": 100.0,
+                  "switches": {
+                    "adjustment": false,
+                    "audio": true,
+                    "collapse": false,
+                    "effects": true,
+                    "frame_blend": "Off",
+                    "guide": false,
+                    "locked": false,
+                    "motion_blur": false,
+                    "quality": "Best",
+                    "sampling": "Bilinear",
+                    "shy": false,
+                    "solo": false,
+                    "three_d": false,
+                    "video": true
+                  },
+                  "trackMatte": null,
+                  "type": "Shape"
+                }
+              ],
+              "name": "Sample context 2",
+              "preserveFrameRate": false,
+              "preserveResolution": false,
+              "width": 160,
+              "workArea": [
+                0.0,
+                1.0
+              ]
+            },
+            "sourceProjects": [
+              "2.ecproj"
+            ],
+            "seconds": 0.5,
+            "sourceSnapshotHash": "2c758f8f3eb58bfae7e3767b70d224d154ca4c27511d2cc62a0a82d554814304"
+          }
+        ],
+        "requiredResponse": [
+          "schema",
+          "requestId",
+          "taskId",
+          "binding",
+          "criteriaHash",
+          "scopeHash",
+          "status",
+          "capabilities",
+          "observations",
+          "score",
+          "passed",
+          "issues",
+          "temporalReviewed"
+        ],
+        "instruction": "Observe every bound media path and requested frames separately for each native composition/version context. Missing capability or context coverage is NOT_RUN. Sampled PASS does not assert all-frame acceptance."
+      },
+      "receipt": {
+        "requestId": "078a684fbbeb4ef3a9ac5cc0da6a001f",
+        "taskId": "commands",
+        "binding": {
+          "commandDeliverySha256": "1cb95c16ca93d7ac62828c76908c34638e9765ea03d80fc147a5770ba8194b1b",
+          "receiptSha256": "ebdb2ab31d8ae57b3907668f7584298eb5bd6b3684a65700a526da9a1ad4f4c7",
+          "filesHash": "e23a7ab77e6fe10279b8260ae9c3fa563f20f43634ebe5277933af7d72d80845"
+        },
+        "criteriaHash": "88c4ef4b69f8b2cdfb619acdc2d3765726b055c858116819ef0f762ac1e2378c",
+        "scopeHash": "dafcdb9f7a0be459abd10e8c1b78ceb47c7d330748ebcbd8c7cb8018cd3d8090",
+        "schema": "effectcraft-judge-receipt/v2",
+        "status": "PASS",
+        "score": 0.95,
+        "passed": true,
+        "issues": [],
+        "capabilities": {
+          "visual": true,
+          "temporal": true
+        },
+        "temporalReviewed": true,
+        "observations": [
+          {
+            "path": "1-0.png",
+            "sha256": "44f0109f5dc7fcbdcbfe18a3bdbca7fb6e063f95f21e37cd95768ffa0170099e",
+            "frameIndices": [
+              0
+            ],
+            "method": "Codex view_image on the exact bound PNG; compared both requested times for each composition",
+            "description": "Orange rectangle fully visible on the left at time 0, with ample margin."
+          },
+          {
+            "path": "1-1.png",
+            "sha256": "2efe53283628e93e9456ef690ae709c062059cea9e67241579a9276b2ca00842",
+            "frameIndices": [
+              1
+            ],
+            "method": "Codex view_image on the exact bound PNG; compared both requested times for each composition",
+            "description": "Orange rectangle fully visible on the right at time 0.5; same size and color, consistent with left-to-right movement."
+          },
+          {
+            "path": "2-0.png",
+            "sha256": "d40e351bfb67990650a28b5ac31d04e878caad31a3bdcd1ced69a51359f97869",
+            "frameIndices": [
+              0
+            ],
+            "method": "Codex view_image on the exact bound PNG; compared both requested times for each composition",
+            "description": "Blue circle fully visible on the right at time 0."
+          },
+          {
+            "path": "2-1.png",
+            "sha256": "f61e68d35dc1afd2243b94df5b7301a1ee74b684a9fa9c91126d794d85995dc6",
+            "frameIndices": [
+              1
+            ],
+            "method": "Codex view_image on the exact bound PNG; compared both requested times for each composition",
+            "description": "Blue circle fully visible on the left at time 0.5; consistent with right-to-left movement and no clipping."
+          }
+        ]
+      },
+      "negativeCases": [
+        {
+          "case": "missing-temporal",
+          "creative": "NOT_RUN",
+          "settled": false
+        },
+        {
+          "case": "missing-context",
+          "creative": "NOT_RUN",
+          "settled": false
+        },
+        {
+          "case": "stale-scope",
+          "rejected": true,
+          "statePreserved": true
+        },
+        {
+          "case": "identical-repeat",
+          "idempotent": true
+        },
+        {
+          "case": "conflict",
+          "rejected": true,
+          "statePreserved": true
+        },
+        {
+          "case": "corrupt-after-pass",
+          "technical": "FAIL",
+          "creative": "NOT_RUN",
+          "originalStatePreserved": true
+        },
+        {
+          "case": "missing-runtime-after-pass",
+          "engineering": "NOT_RUN",
+          "creative": "NOT_RUN",
+          "cacheNotCreated": true
+        }
+      ],
+      "identicalImportStateUnchanged": true,
+      "originalsRestored": true,
+      "restoredEngineering": "PASS",
+      "visualScope": "Codex actually viewed all four bound images and compared the two declared sample times per composition; no all-frame interpolation claim"
+    },
+    {
+      "mode": "desktop",
+      "result": "PASS",
+      "report": {
+        "schema": "effectcraft-quality/v1",
+        "engineering": {
+          "status": "PASS",
+          "fresh": true,
+          "projects": [
+            {
+              "path": "1.ecproj",
+              "sha256": "f4d3e732ea6aebf4bcbbde7d88e24bf435236c5ac85a3038a4258839b1073e12",
+              "compositions": 1,
+              "verifiedAssets": 0
+            },
+            {
+              "path": "2.ecproj",
+              "sha256": "1055dfc99d659c9cb66a6db4c0a3ad4a017da54e7fb9633e51188ffaa79c0eef",
+              "compositions": 2,
+              "verifiedAssets": 0
+            }
+          ]
+        },
+        "technical": {
+          "status": "PASS",
+          "media": [
+            {
+              "path": "1-0.png",
+              "facts": {
+                "width": 160,
+                "height": 96,
+                "bitDepth": 8,
+                "alpha": true,
+                "alphaExtrema": [
+                  0,
+                  255
+                ],
+                "rgbaSha256": "0a4fd787e6a71130486395d547ab83a03bd31139f3c75bbf6782ddd9aab12625"
+              },
+              "composition": {
+                "background": [
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                "duration": 1.0,
+                "frameRate": 2.0,
+                "height": 96,
+                "id": 1,
+                "layers": [
+                  {
+                    "blendMode": "Normal",
+                    "id": 2,
+                    "in": 0.0,
+                    "index": 1,
+                    "label": "Blue",
+                    "name": "Moving subject 1",
+                    "out": 1.0,
+                    "parent": null,
+                    "start": 0.0,
+                    "stretch": 100.0,
+                    "switches": {
+                      "adjustment": false,
+                      "audio": true,
+                      "collapse": false,
+                      "effects": true,
+                      "frame_blend": "Off",
+                      "guide": false,
+                      "locked": false,
+                      "motion_blur": false,
+                      "quality": "Best",
+                      "sampling": "Bilinear",
+                      "shy": false,
+                      "solo": false,
+                      "three_d": false,
+                      "video": true
+                    },
+                    "trackMatte": null,
+                    "type": "Shape"
+                  }
+                ],
+                "name": "Sample context 1",
+                "preserveFrameRate": false,
+                "preserveResolution": false,
+                "width": 160,
+                "workArea": [
+                  0.0,
+                  1.0
+                ]
+              },
+              "sourceProjects": [
+                "1.ecproj"
+              ],
+              "seconds": 0,
+              "sourceSnapshotHash": "505c0186a489d634c05154c273626816aafa5a61df74051f032670a8511b9ebf"
+            },
+            {
+              "path": "1-1.png",
+              "facts": {
+                "width": 160,
+                "height": 96,
+                "bitDepth": 8,
+                "alpha": true,
+                "alphaExtrema": [
+                  0,
+                  255
+                ],
+                "rgbaSha256": "156183fbfc69e857c0369ead9a95cf3df549694b4d089aeac97ec3442cab0b72"
+              },
+              "composition": {
+                "background": [
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                "duration": 1.0,
+                "frameRate": 2.0,
+                "height": 96,
+                "id": 1,
+                "layers": [
+                  {
+                    "blendMode": "Normal",
+                    "id": 2,
+                    "in": 0.0,
+                    "index": 1,
+                    "label": "Blue",
+                    "name": "Moving subject 1",
+                    "out": 1.0,
+                    "parent": null,
+                    "start": 0.0,
+                    "stretch": 100.0,
+                    "switches": {
+                      "adjustment": false,
+                      "audio": true,
+                      "collapse": false,
+                      "effects": true,
+                      "frame_blend": "Off",
+                      "guide": false,
+                      "locked": false,
+                      "motion_blur": false,
+                      "quality": "Best",
+                      "sampling": "Bilinear",
+                      "shy": false,
+                      "solo": false,
+                      "three_d": false,
+                      "video": true
+                    },
+                    "trackMatte": null,
+                    "type": "Shape"
+                  }
+                ],
+                "name": "Sample context 1",
+                "preserveFrameRate": false,
+                "preserveResolution": false,
+                "width": 160,
+                "workArea": [
+                  0.0,
+                  1.0
+                ]
+              },
+              "sourceProjects": [
+                "1.ecproj"
+              ],
+              "seconds": 0.5,
+              "sourceSnapshotHash": "505c0186a489d634c05154c273626816aafa5a61df74051f032670a8511b9ebf"
+            },
+            {
+              "path": "2-0.png",
+              "facts": {
+                "width": 160,
+                "height": 96,
+                "bitDepth": 8,
+                "alpha": true,
+                "alphaExtrema": [
+                  0,
+                  255
+                ],
+                "rgbaSha256": "63ad2f6cf11ba91a97ebf1e0033f1097d29a362c0407800832e63170d4a87d16"
+              },
+              "composition": {
+                "background": [
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                "duration": 1.0,
+                "frameRate": 2.0,
+                "height": 96,
+                "id": 48,
+                "layers": [
+                  {
+                    "blendMode": "Normal",
+                    "id": 49,
+                    "in": 0.0,
+                    "index": 1,
+                    "label": "Blue",
+                    "name": "Moving subject 2",
+                    "out": 1.0,
+                    "parent": null,
+                    "start": 0.0,
+                    "stretch": 100.0,
+                    "switches": {
+                      "adjustment": false,
+                      "audio": true,
+                      "collapse": false,
+                      "effects": true,
+                      "frame_blend": "Off",
+                      "guide": false,
+                      "locked": false,
+                      "motion_blur": false,
+                      "quality": "Best",
+                      "sampling": "Bilinear",
+                      "shy": false,
+                      "solo": false,
+                      "three_d": false,
+                      "video": true
+                    },
+                    "trackMatte": null,
+                    "type": "Shape"
+                  }
+                ],
+                "name": "Sample context 2",
+                "preserveFrameRate": false,
+                "preserveResolution": false,
+                "width": 160,
+                "workArea": [
+                  0.0,
+                  1.0
+                ]
+              },
+              "sourceProjects": [
+                "2.ecproj"
+              ],
+              "seconds": 0,
+              "sourceSnapshotHash": "2c758f8f3eb58bfae7e3767b70d224d154ca4c27511d2cc62a0a82d554814304"
+            },
+            {
+              "path": "2-1.png",
+              "facts": {
+                "width": 160,
+                "height": 96,
+                "bitDepth": 8,
+                "alpha": true,
+                "alphaExtrema": [
+                  0,
+                  255
+                ],
+                "rgbaSha256": "719eeadbb215b1abed1c2464bfcbd626349aa04d4792c5c10be34b0356c0e2bc"
+              },
+              "composition": {
+                "background": [
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                "duration": 1.0,
+                "frameRate": 2.0,
+                "height": 96,
+                "id": 48,
+                "layers": [
+                  {
+                    "blendMode": "Normal",
+                    "id": 49,
+                    "in": 0.0,
+                    "index": 1,
+                    "label": "Blue",
+                    "name": "Moving subject 2",
+                    "out": 1.0,
+                    "parent": null,
+                    "start": 0.0,
+                    "stretch": 100.0,
+                    "switches": {
+                      "adjustment": false,
+                      "audio": true,
+                      "collapse": false,
+                      "effects": true,
+                      "frame_blend": "Off",
+                      "guide": false,
+                      "locked": false,
+                      "motion_blur": false,
+                      "quality": "Best",
+                      "sampling": "Bilinear",
+                      "shy": false,
+                      "solo": false,
+                      "three_d": false,
+                      "video": true
+                    },
+                    "trackMatte": null,
+                    "type": "Shape"
+                  }
+                ],
+                "name": "Sample context 2",
+                "preserveFrameRate": false,
+                "preserveResolution": false,
+                "width": 160,
+                "workArea": [
+                  0.0,
+                  1.0
+                ]
+              },
+              "sourceProjects": [
+                "2.ecproj"
+              ],
+              "seconds": 0.5,
+              "sourceSnapshotHash": "2c758f8f3eb58bfae7e3767b70d224d154ca4c27511d2cc62a0a82d554814304"
+            }
+          ],
+          "unreviewed": [],
+          "unmatchedFrames": [],
+          "verifiedAssets": 0
+        },
+        "creative": {
+          "status": "PASS",
+          "receipt": {
+            "requestId": "1a0faf4ee2424d7fb47229873fb6e50b",
+            "taskId": "desktop",
+            "binding": {
+              "commandDeliverySha256": "dada06f75e7457026dc211d8986d9f028f481f3ab2955101d4905a13ae060d85",
+              "receiptSha256": "f1789e74fdb01d30e8e5931f135307000e83e721e1bda3df5026ff5ab2e8d95d",
+              "filesHash": "e23a7ab77e6fe10279b8260ae9c3fa563f20f43634ebe5277933af7d72d80845"
+            },
+            "criteriaHash": "88c4ef4b69f8b2cdfb619acdc2d3765726b055c858116819ef0f762ac1e2378c",
+            "scopeHash": "dafcdb9f7a0be459abd10e8c1b78ceb47c7d330748ebcbd8c7cb8018cd3d8090",
+            "schema": "effectcraft-judge-receipt/v2",
+            "status": "PASS",
+            "score": 0.95,
+            "passed": true,
+            "issues": [],
+            "capabilities": {
+              "visual": true,
+              "temporal": true
+            },
+            "temporalReviewed": true,
+            "observations": [
+              {
+                "path": "1-0.png",
+                "sha256": "44f0109f5dc7fcbdcbfe18a3bdbca7fb6e063f95f21e37cd95768ffa0170099e",
+                "frameIndices": [
+                  0
+                ],
+                "method": "Codex view_image on the exact bound PNG; compared both requested times for each composition",
+                "description": "Orange rectangle fully visible on the left at time 0, with ample margin."
+              },
+              {
+                "path": "1-1.png",
+                "sha256": "2efe53283628e93e9456ef690ae709c062059cea9e67241579a9276b2ca00842",
+                "frameIndices": [
+                  1
+                ],
+                "method": "Codex view_image on the exact bound PNG; compared both requested times for each composition",
+                "description": "Orange rectangle fully visible on the right at time 0.5; same size and color, consistent with left-to-right movement."
+              },
+              {
+                "path": "2-0.png",
+                "sha256": "d40e351bfb67990650a28b5ac31d04e878caad31a3bdcd1ced69a51359f97869",
+                "frameIndices": [
+                  0
+                ],
+                "method": "Codex view_image on the exact bound PNG; compared both requested times for each composition",
+                "description": "Blue circle fully visible on the right at time 0."
+              },
+              {
+                "path": "2-1.png",
+                "sha256": "f61e68d35dc1afd2243b94df5b7301a1ee74b684a9fa9c91126d794d85995dc6",
+                "frameIndices": [
+                  1
+                ],
+                "method": "Codex view_image on the exact bound PNG; compared both requested times for each composition",
+                "description": "Blue circle fully visible on the left at time 0.5; consistent with right-to-left movement and no clipping."
+              }
+            ]
+          },
+          "scope": {
+            "schema": "effectcraft-evaluation-scope/v1",
+            "coverage": "sampled",
+            "contexts": [
+              {
+                "id": "03592068775889e41569155f6171fb0166023f185a08bef78025339d7a392be7",
+                "compositionId": 48,
+                "nativeVersion": 8,
+                "snapshotHash": "2c758f8f3eb58bfae7e3767b70d224d154ca4c27511d2cc62a0a82d554814304",
+                "dependenciesHash": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+                "sourceProjects": [
+                  "2.ecproj"
+                ],
+                "frameRate": {
+                  "num": 2,
+                  "den": 1
+                },
+                "frameRange": {
+                  "start": 0,
+                  "endExclusive": 2
+                },
+                "timeRange": {
+                  "start": {
+                    "num": 0,
+                    "den": 1
+                  },
+                  "end": {
+                    "num": 1,
+                    "den": 1
+                  }
+                },
+                "requiredFrameIndices": [
+                  0,
+                  1
+                ]
+              },
+              {
+                "id": "3cf5863c01f261a57b3df6d0df7df403c29df52bbbdfeb224424710783b10186",
+                "compositionId": 1,
+                "nativeVersion": 4,
+                "snapshotHash": "505c0186a489d634c05154c273626816aafa5a61df74051f032670a8511b9ebf",
+                "dependenciesHash": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+                "sourceProjects": [
+                  "1.ecproj"
+                ],
+                "frameRate": {
+                  "num": 2,
+                  "den": 1
+                },
+                "frameRange": {
+                  "start": 0,
+                  "endExclusive": 2
+                },
+                "timeRange": {
+                  "start": {
+                    "num": 0,
+                    "den": 1
+                  },
+                  "end": {
+                    "num": 1,
+                    "den": 1
+                  }
+                },
+                "requiredFrameIndices": [
+                  0,
+                  1
+                ]
+              }
+            ],
+            "media": [
+              {
+                "path": "1-0.png",
+                "sha256": "44f0109f5dc7fcbdcbfe18a3bdbca7fb6e063f95f21e37cd95768ffa0170099e",
+                "context": "3cf5863c01f261a57b3df6d0df7df403c29df52bbbdfeb224424710783b10186",
+                "kind": "preview",
+                "frameIndices": [
+                  0
+                ],
+                "seconds": {
+                  "num": 0,
+                  "den": 1
+                }
+              },
+              {
+                "path": "1-1.png",
+                "sha256": "2efe53283628e93e9456ef690ae709c062059cea9e67241579a9276b2ca00842",
+                "context": "3cf5863c01f261a57b3df6d0df7df403c29df52bbbdfeb224424710783b10186",
+                "kind": "preview",
+                "frameIndices": [
+                  1
+                ],
+                "seconds": {
+                  "num": 1,
+                  "den": 2
+                }
+              },
+              {
+                "path": "2-0.png",
+                "sha256": "d40e351bfb67990650a28b5ac31d04e878caad31a3bdcd1ced69a51359f97869",
+                "context": "03592068775889e41569155f6171fb0166023f185a08bef78025339d7a392be7",
+                "kind": "preview",
+                "frameIndices": [
+                  0
+                ],
+                "seconds": {
+                  "num": 0,
+                  "den": 1
+                }
+              },
+              {
+                "path": "2-1.png",
+                "sha256": "f61e68d35dc1afd2243b94df5b7301a1ee74b684a9fa9c91126d794d85995dc6",
+                "context": "03592068775889e41569155f6171fb0166023f185a08bef78025339d7a392be7",
+                "kind": "preview",
+                "frameIndices": [
+                  1
+                ],
+                "seconds": {
+                  "num": 1,
+                  "den": 2
+                }
+              }
+            ],
+            "requiredMediaPaths": [
+              "1-0.png",
+              "1-1.png",
+              "2-0.png",
+              "2-1.png"
+            ]
+          }
+        },
+        "userAcceptance": {
+          "status": "NOT_RUN",
+          "source": "explicit user decision required"
+        },
+        "readyForAcceptance": true,
+        "accepted": false,
+        "binding": {
+          "commandDeliverySha256": "dada06f75e7457026dc211d8986d9f028f481f3ab2955101d4905a13ae060d85",
+          "receiptSha256": "f1789e74fdb01d30e8e5931f135307000e83e721e1bda3df5026ff5ab2e8d95d",
+          "filesHash": "e23a7ab77e6fe10279b8260ae9c3fa563f20f43634ebe5277933af7d72d80845"
+        }
+      },
+      "request": {
+        "schema": "effectcraft-judge-request/v2",
+        "requestId": "1a0faf4ee2424d7fb47229873fb6e50b",
+        "taskId": "desktop",
+        "binding": {
+          "commandDeliverySha256": "dada06f75e7457026dc211d8986d9f028f481f3ab2955101d4905a13ae060d85",
+          "receiptSha256": "f1789e74fdb01d30e8e5931f135307000e83e721e1bda3df5026ff5ab2e8d95d",
+          "filesHash": "e23a7ab77e6fe10279b8260ae9c3fa563f20f43634ebe5277933af7d72d80845"
+        },
+        "criteria": {
+          "goal": "Two distinct transparent compositions: orange rectangle moves left to right; blue circle moves right to left. Subjects stay fully visible at both requested times. Judge only bound samples; no full-frame interpolation claim."
+        },
+        "criteriaHash": "88c4ef4b69f8b2cdfb619acdc2d3765726b055c858116819ef0f762ac1e2378c",
+        "temporalRequired": true,
+        "scope": {
+          "schema": "effectcraft-evaluation-scope/v1",
+          "coverage": "sampled",
+          "contexts": [
+            {
+              "id": "03592068775889e41569155f6171fb0166023f185a08bef78025339d7a392be7",
+              "compositionId": 48,
+              "nativeVersion": 8,
+              "snapshotHash": "2c758f8f3eb58bfae7e3767b70d224d154ca4c27511d2cc62a0a82d554814304",
+              "dependenciesHash": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+              "sourceProjects": [
+                "2.ecproj"
+              ],
+              "frameRate": {
+                "num": 2,
+                "den": 1
+              },
+              "frameRange": {
+                "start": 0,
+                "endExclusive": 2
+              },
+              "timeRange": {
+                "start": {
+                  "num": 0,
+                  "den": 1
+                },
+                "end": {
+                  "num": 1,
+                  "den": 1
+                }
+              },
+              "requiredFrameIndices": [
+                0,
+                1
+              ]
+            },
+            {
+              "id": "3cf5863c01f261a57b3df6d0df7df403c29df52bbbdfeb224424710783b10186",
+              "compositionId": 1,
+              "nativeVersion": 4,
+              "snapshotHash": "505c0186a489d634c05154c273626816aafa5a61df74051f032670a8511b9ebf",
+              "dependenciesHash": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+              "sourceProjects": [
+                "1.ecproj"
+              ],
+              "frameRate": {
+                "num": 2,
+                "den": 1
+              },
+              "frameRange": {
+                "start": 0,
+                "endExclusive": 2
+              },
+              "timeRange": {
+                "start": {
+                  "num": 0,
+                  "den": 1
+                },
+                "end": {
+                  "num": 1,
+                  "den": 1
+                }
+              },
+              "requiredFrameIndices": [
+                0,
+                1
+              ]
+            }
+          ],
+          "media": [
+            {
+              "path": "1-0.png",
+              "sha256": "44f0109f5dc7fcbdcbfe18a3bdbca7fb6e063f95f21e37cd95768ffa0170099e",
+              "context": "3cf5863c01f261a57b3df6d0df7df403c29df52bbbdfeb224424710783b10186",
+              "kind": "preview",
+              "frameIndices": [
+                0
+              ],
+              "seconds": {
+                "num": 0,
+                "den": 1
+              }
+            },
+            {
+              "path": "1-1.png",
+              "sha256": "2efe53283628e93e9456ef690ae709c062059cea9e67241579a9276b2ca00842",
+              "context": "3cf5863c01f261a57b3df6d0df7df403c29df52bbbdfeb224424710783b10186",
+              "kind": "preview",
+              "frameIndices": [
+                1
+              ],
+              "seconds": {
+                "num": 1,
+                "den": 2
+              }
+            },
+            {
+              "path": "2-0.png",
+              "sha256": "d40e351bfb67990650a28b5ac31d04e878caad31a3bdcd1ced69a51359f97869",
+              "context": "03592068775889e41569155f6171fb0166023f185a08bef78025339d7a392be7",
+              "kind": "preview",
+              "frameIndices": [
+                0
+              ],
+              "seconds": {
+                "num": 0,
+                "den": 1
+              }
+            },
+            {
+              "path": "2-1.png",
+              "sha256": "f61e68d35dc1afd2243b94df5b7301a1ee74b684a9fa9c91126d794d85995dc6",
+              "context": "03592068775889e41569155f6171fb0166023f185a08bef78025339d7a392be7",
+              "kind": "preview",
+              "frameIndices": [
+                1
+              ],
+              "seconds": {
+                "num": 1,
+                "den": 2
+              }
+            }
+          ],
+          "requiredMediaPaths": [
+            "1-0.png",
+            "1-1.png",
+            "2-0.png",
+            "2-1.png"
+          ]
+        },
+        "scopeHash": "dafcdb9f7a0be459abd10e8c1b78ceb47c7d330748ebcbd8c7cb8018cd3d8090",
+        "media": [
+          {
+            "path": "1-0.png",
+            "facts": {
+              "width": 160,
+              "height": 96,
+              "bitDepth": 8,
+              "alpha": true,
+              "alphaExtrema": [
+                0,
+                255
+              ],
+              "rgbaSha256": "0a4fd787e6a71130486395d547ab83a03bd31139f3c75bbf6782ddd9aab12625"
+            },
+            "composition": {
+              "background": [
+                0.0,
+                0.0,
+                0.0
+              ],
+              "duration": 1.0,
+              "frameRate": 2.0,
+              "height": 96,
+              "id": 1,
+              "layers": [
+                {
+                  "blendMode": "Normal",
+                  "id": 2,
+                  "in": 0.0,
+                  "index": 1,
+                  "label": "Blue",
+                  "name": "Moving subject 1",
+                  "out": 1.0,
+                  "parent": null,
+                  "start": 0.0,
+                  "stretch": 100.0,
+                  "switches": {
+                    "adjustment": false,
+                    "audio": true,
+                    "collapse": false,
+                    "effects": true,
+                    "frame_blend": "Off",
+                    "guide": false,
+                    "locked": false,
+                    "motion_blur": false,
+                    "quality": "Best",
+                    "sampling": "Bilinear",
+                    "shy": false,
+                    "solo": false,
+                    "three_d": false,
+                    "video": true
+                  },
+                  "trackMatte": null,
+                  "type": "Shape"
+                }
+              ],
+              "name": "Sample context 1",
+              "preserveFrameRate": false,
+              "preserveResolution": false,
+              "width": 160,
+              "workArea": [
+                0.0,
+                1.0
+              ]
+            },
+            "sourceProjects": [
+              "1.ecproj"
+            ],
+            "seconds": 0,
+            "sourceSnapshotHash": "505c0186a489d634c05154c273626816aafa5a61df74051f032670a8511b9ebf"
+          },
+          {
+            "path": "1-1.png",
+            "facts": {
+              "width": 160,
+              "height": 96,
+              "bitDepth": 8,
+              "alpha": true,
+              "alphaExtrema": [
+                0,
+                255
+              ],
+              "rgbaSha256": "156183fbfc69e857c0369ead9a95cf3df549694b4d089aeac97ec3442cab0b72"
+            },
+            "composition": {
+              "background": [
+                0.0,
+                0.0,
+                0.0
+              ],
+              "duration": 1.0,
+              "frameRate": 2.0,
+              "height": 96,
+              "id": 1,
+              "layers": [
+                {
+                  "blendMode": "Normal",
+                  "id": 2,
+                  "in": 0.0,
+                  "index": 1,
+                  "label": "Blue",
+                  "name": "Moving subject 1",
+                  "out": 1.0,
+                  "parent": null,
+                  "start": 0.0,
+                  "stretch": 100.0,
+                  "switches": {
+                    "adjustment": false,
+                    "audio": true,
+                    "collapse": false,
+                    "effects": true,
+                    "frame_blend": "Off",
+                    "guide": false,
+                    "locked": false,
+                    "motion_blur": false,
+                    "quality": "Best",
+                    "sampling": "Bilinear",
+                    "shy": false,
+                    "solo": false,
+                    "three_d": false,
+                    "video": true
+                  },
+                  "trackMatte": null,
+                  "type": "Shape"
+                }
+              ],
+              "name": "Sample context 1",
+              "preserveFrameRate": false,
+              "preserveResolution": false,
+              "width": 160,
+              "workArea": [
+                0.0,
+                1.0
+              ]
+            },
+            "sourceProjects": [
+              "1.ecproj"
+            ],
+            "seconds": 0.5,
+            "sourceSnapshotHash": "505c0186a489d634c05154c273626816aafa5a61df74051f032670a8511b9ebf"
+          },
+          {
+            "path": "2-0.png",
+            "facts": {
+              "width": 160,
+              "height": 96,
+              "bitDepth": 8,
+              "alpha": true,
+              "alphaExtrema": [
+                0,
+                255
+              ],
+              "rgbaSha256": "63ad2f6cf11ba91a97ebf1e0033f1097d29a362c0407800832e63170d4a87d16"
+            },
+            "composition": {
+              "background": [
+                0.0,
+                0.0,
+                0.0
+              ],
+              "duration": 1.0,
+              "frameRate": 2.0,
+              "height": 96,
+              "id": 48,
+              "layers": [
+                {
+                  "blendMode": "Normal",
+                  "id": 49,
+                  "in": 0.0,
+                  "index": 1,
+                  "label": "Blue",
+                  "name": "Moving subject 2",
+                  "out": 1.0,
+                  "parent": null,
+                  "start": 0.0,
+                  "stretch": 100.0,
+                  "switches": {
+                    "adjustment": false,
+                    "audio": true,
+                    "collapse": false,
+                    "effects": true,
+                    "frame_blend": "Off",
+                    "guide": false,
+                    "locked": false,
+                    "motion_blur": false,
+                    "quality": "Best",
+                    "sampling": "Bilinear",
+                    "shy": false,
+                    "solo": false,
+                    "three_d": false,
+                    "video": true
+                  },
+                  "trackMatte": null,
+                  "type": "Shape"
+                }
+              ],
+              "name": "Sample context 2",
+              "preserveFrameRate": false,
+              "preserveResolution": false,
+              "width": 160,
+              "workArea": [
+                0.0,
+                1.0
+              ]
+            },
+            "sourceProjects": [
+              "2.ecproj"
+            ],
+            "seconds": 0,
+            "sourceSnapshotHash": "2c758f8f3eb58bfae7e3767b70d224d154ca4c27511d2cc62a0a82d554814304"
+          },
+          {
+            "path": "2-1.png",
+            "facts": {
+              "width": 160,
+              "height": 96,
+              "bitDepth": 8,
+              "alpha": true,
+              "alphaExtrema": [
+                0,
+                255
+              ],
+              "rgbaSha256": "719eeadbb215b1abed1c2464bfcbd626349aa04d4792c5c10be34b0356c0e2bc"
+            },
+            "composition": {
+              "background": [
+                0.0,
+                0.0,
+                0.0
+              ],
+              "duration": 1.0,
+              "frameRate": 2.0,
+              "height": 96,
+              "id": 48,
+              "layers": [
+                {
+                  "blendMode": "Normal",
+                  "id": 49,
+                  "in": 0.0,
+                  "index": 1,
+                  "label": "Blue",
+                  "name": "Moving subject 2",
+                  "out": 1.0,
+                  "parent": null,
+                  "start": 0.0,
+                  "stretch": 100.0,
+                  "switches": {
+                    "adjustment": false,
+                    "audio": true,
+                    "collapse": false,
+                    "effects": true,
+                    "frame_blend": "Off",
+                    "guide": false,
+                    "locked": false,
+                    "motion_blur": false,
+                    "quality": "Best",
+                    "sampling": "Bilinear",
+                    "shy": false,
+                    "solo": false,
+                    "three_d": false,
+                    "video": true
+                  },
+                  "trackMatte": null,
+                  "type": "Shape"
+                }
+              ],
+              "name": "Sample context 2",
+              "preserveFrameRate": false,
+              "preserveResolution": false,
+              "width": 160,
+              "workArea": [
+                0.0,
+                1.0
+              ]
+            },
+            "sourceProjects": [
+              "2.ecproj"
+            ],
+            "seconds": 0.5,
+            "sourceSnapshotHash": "2c758f8f3eb58bfae7e3767b70d224d154ca4c27511d2cc62a0a82d554814304"
+          }
+        ],
+        "requiredResponse": [
+          "schema",
+          "requestId",
+          "taskId",
+          "binding",
+          "criteriaHash",
+          "scopeHash",
+          "status",
+          "capabilities",
+          "observations",
+          "score",
+          "passed",
+          "issues",
+          "temporalReviewed"
+        ],
+        "instruction": "Observe every bound media path and requested frames separately for each native composition/version context. Missing capability or context coverage is NOT_RUN. Sampled PASS does not assert all-frame acceptance."
+      },
+      "receipt": {
+        "requestId": "1a0faf4ee2424d7fb47229873fb6e50b",
+        "taskId": "desktop",
+        "binding": {
+          "commandDeliverySha256": "dada06f75e7457026dc211d8986d9f028f481f3ab2955101d4905a13ae060d85",
+          "receiptSha256": "f1789e74fdb01d30e8e5931f135307000e83e721e1bda3df5026ff5ab2e8d95d",
+          "filesHash": "e23a7ab77e6fe10279b8260ae9c3fa563f20f43634ebe5277933af7d72d80845"
+        },
+        "criteriaHash": "88c4ef4b69f8b2cdfb619acdc2d3765726b055c858116819ef0f762ac1e2378c",
+        "scopeHash": "dafcdb9f7a0be459abd10e8c1b78ceb47c7d330748ebcbd8c7cb8018cd3d8090",
+        "schema": "effectcraft-judge-receipt/v2",
+        "status": "PASS",
+        "score": 0.95,
+        "passed": true,
+        "issues": [],
+        "capabilities": {
+          "visual": true,
+          "temporal": true
+        },
+        "temporalReviewed": true,
+        "observations": [
+          {
+            "path": "1-0.png",
+            "sha256": "44f0109f5dc7fcbdcbfe18a3bdbca7fb6e063f95f21e37cd95768ffa0170099e",
+            "frameIndices": [
+              0
+            ],
+            "method": "Codex view_image on the exact bound PNG; compared both requested times for each composition",
+            "description": "Orange rectangle fully visible on the left at time 0, with ample margin."
+          },
+          {
+            "path": "1-1.png",
+            "sha256": "2efe53283628e93e9456ef690ae709c062059cea9e67241579a9276b2ca00842",
+            "frameIndices": [
+              1
+            ],
+            "method": "Codex view_image on the exact bound PNG; compared both requested times for each composition",
+            "description": "Orange rectangle fully visible on the right at time 0.5; same size and color, consistent with left-to-right movement."
+          },
+          {
+            "path": "2-0.png",
+            "sha256": "d40e351bfb67990650a28b5ac31d04e878caad31a3bdcd1ced69a51359f97869",
+            "frameIndices": [
+              0
+            ],
+            "method": "Codex view_image on the exact bound PNG; compared both requested times for each composition",
+            "description": "Blue circle fully visible on the right at time 0."
+          },
+          {
+            "path": "2-1.png",
+            "sha256": "f61e68d35dc1afd2243b94df5b7301a1ee74b684a9fa9c91126d794d85995dc6",
+            "frameIndices": [
+              1
+            ],
+            "method": "Codex view_image on the exact bound PNG; compared both requested times for each composition",
+            "description": "Blue circle fully visible on the left at time 0.5; consistent with right-to-left movement and no clipping."
+          }
+        ]
+      },
+      "negativeCases": [
+        {
+          "case": "missing-temporal",
+          "creative": "NOT_RUN",
+          "settled": false
+        },
+        {
+          "case": "missing-context",
+          "creative": "NOT_RUN",
+          "settled": false
+        },
+        {
+          "case": "stale-scope",
+          "rejected": true,
+          "statePreserved": true
+        },
+        {
+          "case": "identical-repeat",
+          "idempotent": true
+        },
+        {
+          "case": "conflict",
+          "rejected": true,
+          "statePreserved": true
+        },
+        {
+          "case": "corrupt-after-pass",
+          "technical": "FAIL",
+          "creative": "NOT_RUN",
+          "originalStatePreserved": true
+        },
+        {
+          "case": "missing-runtime-after-pass",
+          "engineering": "NOT_RUN",
+          "creative": "NOT_RUN",
+          "cacheNotCreated": true
+        }
+      ],
+      "identicalImportStateUnchanged": true,
+      "originalsRestored": true,
+      "restoredEngineering": "PASS",
+      "visualScope": "Codex actually viewed all four bound images and compared the two declared sample times per composition; no all-frame interpolation claim"
+    }
+  ],
+  "ownedDesktop": {
+    "ownedProcessesStopped": true,
+    "listenerOwnedByPID": true,
+    "sessionsStarted": 1
+  },
+  "compatibility": {
+    "judge": "effectcraft-judge-request/v2 and receipt/v2",
+    "scope": "effectcraft-evaluation-scope/v1 contexts extension; workflow single-context unchanged",
+    "ledger": "effectcraft-review-ledger/v1",
+    "privateRecordsOnly": true,
+    "sharedSkillCopies": 15
+  },
+  "limitations": [
+    "current standalone source copy on macOS arm64; prepared caches reused",
+    "only actual named PNG samples at two requested times per composition; no all-frame interpolation acceptance",
+    "command/desktop revise and video/sequence integration remain open",
+    "fixed installed host dispatch, other platforms and complete V1 remain open",
+    "published source dev.40 / plugin dev.42 unchanged; candidate not committed or released; candidate CI NOT_RUN"
+  ]
+}
