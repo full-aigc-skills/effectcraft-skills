@@ -1,0 +1,30 @@
+{
+  "schema": "effectcraft-release-verification/v1",
+  "version": "0.1.0-dev.44",
+  "platform": "darwin-arm64",
+  "pythonVersion": "3.13.5",
+  "regression": {
+    "total": 458,
+    "passed": 420,
+    "skipped": 38,
+    "status": "PASS",
+    "logSha256": "e4d651cbc4ebf158aa08f91153e0510c0c3c2e283ad56bd3aec715455b5fd05b"
+  },
+  "targetedDoctor": 17,
+  "targetedCatalog": 15,
+  "nativeReadonly": {
+    "version": "effectcraft-cli 0.4.0",
+    "commandCount": 655,
+    "toolCount": 22,
+    "status": "PASS",
+    "executionAcceptance": "NOT_RUN"
+  },
+  "excludedDrafts": [
+    "runtime_binding.py",
+    "runtime_binding Store integration",
+    "test_runtime_binding.py"
+  ],
+  "remainingImplementationTasks": 74,
+  "marketplaceEligible": false,
+  "fullV1": "OPEN"
+}

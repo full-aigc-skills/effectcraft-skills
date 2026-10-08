@@ -374,13 +374,16 @@ def main():
     sub = parser.add_subparsers(dest="action", required=True)
     listing = sub.add_parser("list"); listing.add_argument("--filter", default=""); listing.add_argument("--tools", action="store_true"); listing.add_argument("--mode", choices=["headless", "bridge"], default="headless")
     detail = sub.add_parser("describe"); detail.add_argument("command"); detail.add_argument("--tool", action="store_true"); detail.add_argument("--mode", choices=["headless", "bridge"], default="headless")
+    diff = sub.add_parser("diff"); diff.add_argument("baseline", type=Path)
     check = sub.add_parser("check"); check.add_argument("plan", type=Path); check.add_argument("--input", action="append", default=[]); check.add_argument("--mode", choices=["headless", "bridge"], default="headless")
     run = sub.add_parser("run"); run.add_argument("plan", type=Path); run.add_argument("--output", type=Path, required=True)
     run.add_argument("--input", action="append", default=[]); run.add_argument("--runtime-home"); run.add_argument("--mode", choices=["headless", "bridge"], default="headless")
     run.add_argument("--connect"); run.add_argument("--control-token-file")
     args = parser.parse_args()
     try:
-        if args.action == "list":
+        if args.action == "diff":
+            result = load("command_catalog").compare(reply_json(args.baseline.read_text(encoding="utf-8")), catalog())
+        elif args.action == "list":
             result = [row for row in (tool_schemas(args.mode) if args.tools else catalog()["commands"]) if args.filter.lower() in
                       ((row["name"] + " " + row.get("description", "")) if args.tools else row["id"] + " " + row["label"]).lower()]
         elif args.action == "describe":

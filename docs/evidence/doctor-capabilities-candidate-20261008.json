@@ -1,0 +1,214 @@
+{
+  "schema": "effectcraft-doctor-component-evidence/v1",
+  "platform": "darwin-arm64",
+  "pythonVersion": "3.13.16",
+  "actualVersionOutput": "effectcraft-cli 0.4.0",
+  "actualCommandCount": 655,
+  "actualToolSchemaCount": 22,
+  "singleSkillReadonlySpacePath": [
+    {
+      "skill": "effectcraft-use",
+      "status": "PASS",
+      "actualVersionOutput": "effectcraft-cli 0.4.0",
+      "actualCommands": 655,
+      "actualTools": 22,
+      "skillFilesUnchanged": true,
+      "nativeAndCreativeAcceptance": "NOT_RUN"
+    },
+    {
+      "skill": "effectcraft-cli",
+      "status": "PASS",
+      "actualVersionOutput": "effectcraft-cli 0.4.0",
+      "actualCommands": 655,
+      "actualTools": 22,
+      "skillFilesUnchanged": true,
+      "nativeAndCreativeAcceptance": "NOT_RUN"
+    },
+    {
+      "skill": "effectcraft-cli-setup",
+      "status": "PASS",
+      "actualVersionOutput": "effectcraft-cli 0.4.0",
+      "actualCommands": 655,
+      "actualTools": 22,
+      "skillFilesUnchanged": true,
+      "nativeAndCreativeAcceptance": "NOT_RUN"
+    },
+    {
+      "skill": "effectcraft-cli-project",
+      "status": "PASS",
+      "actualVersionOutput": "effectcraft-cli 0.4.0",
+      "actualCommands": 655,
+      "actualTools": 22,
+      "skillFilesUnchanged": true,
+      "nativeAndCreativeAcceptance": "NOT_RUN"
+    },
+    {
+      "skill": "effectcraft-cli-footage",
+      "status": "PASS",
+      "actualVersionOutput": "effectcraft-cli 0.4.0",
+      "actualCommands": 655,
+      "actualTools": 22,
+      "skillFilesUnchanged": true,
+      "nativeAndCreativeAcceptance": "NOT_RUN"
+    },
+    {
+      "skill": "effectcraft-cli-composition",
+      "status": "PASS",
+      "actualVersionOutput": "effectcraft-cli 0.4.0",
+      "actualCommands": 655,
+      "actualTools": 22,
+      "skillFilesUnchanged": true,
+      "nativeAndCreativeAcceptance": "NOT_RUN"
+    },
+    {
+      "skill": "effectcraft-cli-layers",
+      "status": "PASS",
+      "actualVersionOutput": "effectcraft-cli 0.4.0",
+      "actualCommands": 655,
+      "actualTools": 22,
+      "skillFilesUnchanged": true,
+      "nativeAndCreativeAcceptance": "NOT_RUN"
+    },
+    {
+      "skill": "effectcraft-cli-animation",
+      "status": "PASS",
+      "actualVersionOutput": "effectcraft-cli 0.4.0",
+      "actualCommands": 655,
+      "actualTools": 22,
+      "skillFilesUnchanged": true,
+      "nativeAndCreativeAcceptance": "NOT_RUN"
+    },
+    {
+      "skill": "effectcraft-cli-effects",
+      "status": "PASS",
+      "actualVersionOutput": "effectcraft-cli 0.4.0",
+      "actualCommands": 655,
+      "actualTools": 22,
+      "skillFilesUnchanged": true,
+      "nativeAndCreativeAcceptance": "NOT_RUN"
+    },
+    {
+      "skill": "effectcraft-cli-masks",
+      "status": "PASS",
+      "actualVersionOutput": "effectcraft-cli 0.4.0",
+      "actualCommands": 655,
+      "actualTools": 22,
+      "skillFilesUnchanged": true,
+      "nativeAndCreativeAcceptance": "NOT_RUN"
+    },
+    {
+      "skill": "effectcraft-cli-expressions",
+      "status": "PASS",
+      "actualVersionOutput": "effectcraft-cli 0.4.0",
+      "actualCommands": 655,
+      "actualTools": 22,
+      "skillFilesUnchanged": true,
+      "nativeAndCreativeAcceptance": "NOT_RUN"
+    },
+    {
+      "skill": "effectcraft-cli-camera",
+      "status": "PASS",
+      "actualVersionOutput": "effectcraft-cli 0.4.0",
+      "actualCommands": 655,
+      "actualTools": 22,
+      "skillFilesUnchanged": true,
+      "nativeAndCreativeAcceptance": "NOT_RUN"
+    },
+    {
+      "skill": "effectcraft-cli-export",
+      "status": "PASS",
+      "actualVersionOutput": "effectcraft-cli 0.4.0",
+      "actualCommands": 655,
+      "actualTools": 22,
+      "skillFilesUnchanged": true,
+      "nativeAndCreativeAcceptance": "NOT_RUN"
+    },
+    {
+      "skill": "effectcraft-cli-tracking",
+      "status": "PASS",
+      "actualVersionOutput": "effectcraft-cli 0.4.0",
+      "actualCommands": 655,
+      "actualTools": 22,
+      "skillFilesUnchanged": true,
+      "nativeAndCreativeAcceptance": "NOT_RUN"
+    },
+    {
+      "skill": "effectcraft-cli-puppet",
+      "status": "PASS",
+      "actualVersionOutput": "effectcraft-cli 0.4.0",
+      "actualCommands": 655,
+      "actualTools": 22,
+      "skillFilesUnchanged": true,
+      "nativeAndCreativeAcceptance": "NOT_RUN"
+    }
+  ],
+  "missingPythonReadonly": 15,
+  "publicShellWithVerifiedPython": "PASS",
+  "runtimePayloadUnchanged": true,
+  "unknownStateUnchanged": true,
+  "nativeBinaryHandlesRestored": true,
+  "creativeAcceptance": "NOT_RUN",
+  "desktopAcceptance": "NOT_RUN",
+  "fixedHostDispatch": "NOT_RUN",
+  "status": "doctor-and-catalog-requirements-verified",
+  "task": "9.2.1",
+  "sourceBaseCommit": "6c3e64342e6db1b6bf7aae0cc9a78b9c20608def",
+  "workingTreeCandidate": true,
+  "publishedSourceContainsIncrement": false,
+  "publishedPluginContainsIncrement": false,
+  "tests": {
+    "targeted": {
+      "total": 17,
+      "passed": 17
+    },
+    "regression": {
+      "total": 458,
+      "passed": 420,
+      "skipped": 38,
+      "seconds": 142.609
+    },
+    "tdd": {
+      "red": "13 tests failed: 7 failures and 6 errors for missing diagnostics behavior",
+      "green": "17 targeted tests passed",
+      "coldRecovery": "expected missing recoveryActions error, then usable argv PASS with quoted POSIX path",
+      "powershellUnicode": "actual JSON return branch under cp1252 corrupted Chinese path; explicit UTF-8 produced correct path"
+    }
+  },
+  "catalogEvidence": "docs/evidence/command-catalog-diff-candidate-20261008.json",
+  "requirementEvidence": {
+    "readonly": "15 readonly skill copies;15 no-Python calls; native payload, unknown state and skill hashes unchanged",
+    "actualVersionCapabilities": "explicit public --probe-native on integrity-verified CLI; version and tools/list/list_commands actual reply types",
+    "parameterOwnerModeAndAcceptance": "generated 655-command coverage; every command carries params, ownerSkill, headless/desktop routes and NOT_RUN",
+    "newAndChangedDefaultNotRun": "source43 fixed baseline comparison and command_catalog targeted contract drift tests",
+    "failureRecovery": "cache corruption, minimum-system failure, timeout, version/schema drift, bad baseline and dangling-link tests; recovery argv never executed"
+  },
+  "implementationSha256": {
+    "skills/effectcraft-use/scripts/managed.py": "118d01382ec2ce8fa136b8b90d8170aea42d3d3b4449b84195521b49192dd814",
+    "skills/effectcraft-use/scripts/native_diagnostics.py": "0c352d047edde58a35151ba2b03c001b2a6b591bb8032307e80573d115912389",
+    "skills/effectcraft-use/scripts/command_catalog.py": "ee88018a7139455125009f8d6a31f97b7e0f062a994f7d4377d910ba2001b7f7",
+    "skills/effectcraft-use/scripts/commands.py": "7a7bf479698a48d9f4c5e6e94577108dbd230da312c21e04c168ae7e7491f610",
+    "skills/effectcraft-use/references/command-coverage.json": "613f7a5fceff44bf5d7ac9f4a3521b849617ae5420be243d80ea21f1f7be7e76",
+    "tests/test_managed_doctor.py": "83009ecde921013a2f956db934c659a070d6097c2355d0c2f9304e45b21d2c25",
+    "skills/effectcraft-use/scripts/launch.sh": "1d8d3c41500abf4cc337188a573297a7f2e1f56e4d20df829175589638ce20ad",
+    "skills/effectcraft-use/scripts/launch.ps1": "7ffd541758dbe89cd32218c238f315eed593e79c74bc0f2110d1e2afbaf42db0"
+  },
+  "remaining": [
+    "Web/FreeBSD adapter acceptance (9.2.2)",
+    "other target-platform native creative tasks (9.1.2)",
+    "every-command creative acceptance (8.3)",
+    "fixed-host natural-language dispatch",
+    "published immutable candidate snapshot",
+    "full V1"
+  ],
+  "powershellEvidence": {
+    "syntax": "PASS on local PowerShell engine",
+    "unicodeJsonBranch": "PASS on local PowerShell engine; isolated actual return branch only",
+    "nativeWindowsHost": "NOT_RUN"
+  },
+  "coldRecoveryArgv": {
+    "count": 15,
+    "status": "PASS",
+    "entry": "current skill launch.sh --python-version",
+    "automatic": false
+  }
+}

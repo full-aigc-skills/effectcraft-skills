@@ -27,24 +27,46 @@ def read(path):
     return load('commands').reply_json(Path(path).read_text(encoding='utf-8'))
 
 
-def doctor(runtime_home):
+def doctor(runtime_home,probe_native=False,compare_catalog=None):
     key=load('platform_support').platform_key(); lock=read(HERE/'runtime.lock.json')
-    expected=lock['artifacts'].get(key)
-    result={'platform':key,'python':sys.version.split()[0],
-            'runtime':{'version':lock['resolvedVersion'],'supported':bool(expected),'installed':False},
+    expected=lock['artifacts'].get(key);home=Path(runtime_home).expanduser().absolute()
+    catalog=load('command_catalog').validate(load('commands').catalog())
+    python_lock=read(HERE/'python.lock.json');actual_python=sys.version.split()[0]
+    argv=[sys.executable,'-I','-B',str(HERE/'managed.py'),'--runtime-home',str(home),'doctor']
+    result={'platform':key,'python':actual_python,
+            'pythonRuntime':{'lockedVersion':python_lock['version'],'actualVersion':actual_python,'matchesLock':actual_python==python_lock['version']},
+            'runtime':{'version':lock['resolvedVersion'],'supported':bool(expected),'installed':False,'actualVersionOutput':None},
             'managedCommands':['doctor','plan','run','inspect','reconcile','resume','cancel','review','revise'],
+            'catalog':{'commandCount':len(catalog['commands']),'toolCount':len(catalog['nativeTools']),
+                       'runtimeSha256':catalog['runtimeSha256'],'runModes':['headless','desktop'],'executionAcceptance':'NOT_RUN'},
+            'nativeCapabilities':{'status':'NOT_RUN','scope':'static diagnostics only; use --probe-native for verified readonly discovery','executionAcceptance':'NOT_RUN'},
             'acceptance':{'nativePlatform':'NOT_RUN','hostDispatch':'NOT_RUN'},
-            'recovery':'run a validated plan to install pinned dependencies'}
-    directory=Path(runtime_home)/'effectcraft'/lock['resolvedVersion']
-    if expected and directory.exists():
-        try:
-            result['runtime'].update(load('bootstrap').inspect_install(directory,lock['artifact'],expected),installed=True)
-        except (ValueError,OSError) as error:
-            result['runtime']['error']=str(error)
+            'recovery':'run a validated plan to install pinned dependencies','recoveryActions':[]}
+    # 旧目录有问题时先失败，不借诊断启动原生进程。
+    if compare_catalog is not None:result['commandDiff']=load('command_catalog').compare(read(compare_catalog),catalog)
+    directory=home/'effectcraft'/lock['resolvedVersion']
     if expected:
         result['runtime']['minimumSystem']=expected.get('minimumSystem',{})
         try:load('platform_support').check_minimum(expected.get('minimumSystem',{}))
         except ValueError as error:result['runtime']['platformError']=str(error)
+    if expected and (directory.exists() or directory.is_symlink()):
+        try:
+            result['runtime'].update(load('bootstrap').inspect_install(directory,lock['artifact'],expected),installed=True)
+        except (ValueError,OSError) as error:result['runtime']['error']=str(error)
+    if probe_native and result['runtime']['installed'] and 'platformError' not in result['runtime']:
+        result['nativeCapabilities']=load('native_diagnostics').observe(result['runtime']['executable'],catalog,
+                                   expected.get('versionOutput',lock['artifact']+' '+lock['resolvedVersion']))
+        result['runtime']['actualVersionOutput']=result['nativeCapabilities'].get('actualVersionOutput')
+    if result['runtime'].get('error'):
+        result['recoveryActions'].append({'id':'inspect_preserved_runtime','argv':argv,'automatic':False,
+                                         'note':'Preserve the installation and task records; diagnostics never delete, reinstall or replay.'})
+    elif expected and not result['runtime']['installed'] and 'platformError' not in result['runtime']:
+        result['recoveryActions'].append({'id':'install_pinned_cli','argv':[sys.executable,'-I','-B',str(HERE/'bootstrap.py'),'--runtime-home',str(home)],
+                                         'automatic':False,'note':'Explicit installation action; not executed by doctor.'})
+    elif result['runtime']['installed'] and 'platformError' not in result['runtime']:
+        result['recoveryActions'].append({'id':'probe_native','argv':argv+['--probe-native'],'automatic':False})
+    else:result['recoveryActions'].append({'id':'inspect_platform_requirements','argv':argv,'automatic':False,
+                                         'note':'No compatible native execution is authorized by this diagnostic.'})
     return result
 
 
@@ -340,7 +362,7 @@ def main():
     parser.add_argument('--runtime-home',type=Path,default=Path(os.environ.get('CRAFT_RUNTIME_HOME',str(Path.home()/'.local/share/craft-runtimes'))))
     parser.add_argument('--state-root',type=Path,default=Path(os.environ.get('CRAFT_STATE_HOME',str(Path.home()/'.local/share/craft-tasks/effectcraft'))))
     sub=parser.add_subparsers(dest='action',required=True)
-    sub.add_parser('doctor')
+    diagnostic=sub.add_parser('doctor');diagnostic.add_argument('--probe-native',action='store_true');diagnostic.add_argument('--compare-catalog',type=Path)
     for name in ('plan','run','revise'):
         p=sub.add_parser(name);p.add_argument('--plan',type=Path,required=True);p.add_argument('--output',type=Path,required=True)
         p.add_argument('--mode',choices=['workflow','commands','desktop'],default='workflow');p.add_argument('--input',action='append',default=[])
@@ -351,7 +373,7 @@ def main():
         if name=='review':p.add_argument('--criteria',type=Path,required=True);p.add_argument('--judge',type=Path)
     args=parser.parse_args();store=load('task_store').Store(args.state_root)
     try:
-        if args.action=='doctor':result=doctor(args.runtime_home)
+        if args.action=='doctor':result=doctor(args.runtime_home,args.probe_native,args.compare_catalog)
         elif args.action=='inspect':result=store.read(args.task)
         elif args.action=='cancel':result=store.cancel(args.task)
         elif args.action=='reconcile':result=reconcile(store,args.task)

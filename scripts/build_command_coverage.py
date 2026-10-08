@@ -39,6 +39,11 @@ def build(check=False):
     suite = json.loads((ROOT / "skill-suite.json").read_text(encoding='utf-8'))
     reflection = json.loads((BASE / "references/commands.json").read_text(encoding='utf-8'))
     snapshot = json.loads((BASE / "references/native-command-snapshot.json").read_text(encoding='utf-8'))
+    reflected_ids = [row["id"] for row in reflection["commands"]]
+    native_ids = [row["id"] for row in snapshot["commands"]]
+    if (len(set(reflected_ids)) != len(reflected_ids) or len(set(native_ids)) != len(native_ids)
+            or set(reflected_ids) != set(native_ids)):
+        raise ValueError("native_registry_drift: missing, added or duplicate command identities")
     current = {r["id"]:r for r in snapshot["commands"]}
     node = ast.parse((BASE / "scripts/workflow.py").read_text(encoding='utf-8'))
     mapped = set()
@@ -70,13 +75,16 @@ def build(check=False):
                      "nativeUsage":"commands.py describe " + identifier + "; commands.py run PLAN.json --output NEW_DIRECTORY",
                      "workflowMapped":identifier in mapped, "usageRecipes":sorted(recipes.get(identifier, [])),
                      "observedEmptySession":native,
+                     "runModes": {mode: {"route":"execute_command", "availability":"QUERY_LIVE",
+                                         "acceptance":"NOT_RUN"} for mode in ("headless", "desktop")},
                      "executionAcceptance":"NOT_RUN",
                      "acceptanceScope":"full per-command contexts and outputs in this coverage audit"})
     coverage = {"schema":"craft-command-coverage/v1", "pluginId":DOMAIN,
                 "runtimeSha256":snapshot["runtimeSha256"], "upstreamCommit":reflection.get("upstreamCommit"),
                 "scope":"complete documentation and native-session route; not complete native acceptance",
                 "workflowOperationCount":len(mapped), "workflowNativeCommandCount":sum(r["workflowMapped"] for r in rows),
-                "nativeTools":[t["name"] for t in snapshot["tools"]], "commands":rows}
+                "nativeTools":[t["name"] for t in snapshot["tools"]],
+                "nativeToolSchemas":{t["name"]:t["inputSchema"] for t in snapshot["tools"]}, "commands":rows}
     outputs = {"command-coverage.json":json.dumps(coverage, ensure_ascii=False, indent=2) + "\n"}
     parts = ["# 完整原生命令参考 / Complete native command reference", "",
              "本参考逐项保留锁定参数原文与技能路由。命令执行必须满足当前工程、选择对象、素材或 GUI 前置状态。",
@@ -92,6 +100,7 @@ def build(check=False):
                   "- 空会话观察 / Empty-session observation: " + str(native.get("enabled")).lower()
                   + "；禁用原因 / reason: " + str(native.get("why", "目录未提供具体原因；执行时重新查询 / query live state")) + "。",
                   "- 调用 / Invocation: `python3 -I -B \"$SKILL_DIR/scripts/commands.py\" describe " + row["id"] + "`；按原生参数构造计划后执行 run。",
+                  "- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。",
                   "- 完整逐命令验收 / Full command acceptance: NOT_RUN。", "",
                   "原生参数原文 / Verbatim native parameters:", "", "```text", row["params"] or "{} (no parameter documentation in snapshot)", "```", ""]
         if row['usageRecipes']:

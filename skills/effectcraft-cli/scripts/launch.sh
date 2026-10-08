@@ -35,7 +35,14 @@ case "$base/" in "$HERE/"*) fail python_home_inside_skill;; esac
 read_only=0
 for argument in "$@"; do [ "$argument" != doctor ] || read_only=1; done
 if [ "$read_only" = 1 ] && [ ! -d "$base/$version-$key" ]; then
-  printf '{"platform":"%s","python":{"version":"%s","installed":false},"runtimeAcceptance":"NOT_RUN","recovery":"launch run prepares the pinned isolated Python"}\n' "$key" "$version"
+  # 不依赖Python转义实际入口路径，避免空格、引号或控制字符破坏JSON。
+  entry_json=$(printf '%s\n' "$HERE/launch.sh" | awk '
+    BEGIN { printf "\""; for (n=1;n<32;n++) esc[sprintf("%c",n)]=sprintf("\\u%04x",n) }
+    { if(NR>1) printf "\\n"; for(i=1;i<=length($0);i++) {
+        c=substr($0,i,1); if(c=="\\" || c=="\"") printf "\\%s",c;
+        else if(c in esc) printf "%s",esc[c]; else printf "%s",c
+    }} END { printf "\"" }')
+  printf '{"platform":"%s","python":{"version":"%s","installed":false},"runtimeAcceptance":"NOT_RUN","recovery":"launch run prepares the pinned isolated Python","recoveryActions":[{"id":"prepare_pinned_python","argv":["sh",%s,"--python-version"],"automatic":false}]}\n' "$key" "$version" "$entry_json"
   exit 0
 fi
 destination="$base/$version-$key"

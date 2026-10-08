@@ -281,3 +281,73 @@ flowchart TD
 每模式8项公开拒绝验证通过：绑定、范围、参数、缺运行时、资源、两轮、取消及期限；自有QA故障注入逐项恢复原字节。新增过期／取消只读结算测试通过；对先前过期桌面部分编辑的当前公开reconcile明确返回UNKNOWN，保留原输出、两轮预算与占用，不重放。最后的损坏路径诊断修复仅改变resource_meter.validate，使用当前源码副本再次原生／技术复检既有交付通过；历史执行副本保留，证据记录差异。
 
 仅关闭9.23命名的本机静态PNG修订组件；9.3、9.3.6完整资源模式、CPU／内存、视频／序列、动画目标时间范围、逐命令／GUI、固定宿主派发、其他目标平台和V1继续开放。已发布plugin44/source42不变，本增量尚未提交发布。[当前证据](evidence/command-revision-resource-candidate-20261008.json)。
+
+## 命令目录升级差异候选（2026-10-08）
+
+技能源新增离线 `commands.py diff BASELINE.json`；每个独立技能都携带本地实现及固定目录，不读取兄弟技能，不触发下载、安装、任务登记或原生编辑。目录保存655条参数合同／归属／模式路由，以及22个原生工具inputSchema。运行模式字段描述网关路由，实际enabled仍须执行前查询，所有模式验收保持NOT_RUN。
+
+```mermaid
+flowchart LR
+  Old[旧固定覆盖目录] --> Validate[严格JSON与身份核对]
+  New[当前单技能固定目录] --> Validate
+  Validate --> Diff[命令合同与工具schema差异]
+  Diff --> Unknown[新增变化与历史缺证据保持NOT_RUN]
+  Diff --> Recheck[运行时或工具变化列出重验命令]
+  Reflection[固定反射身份集合] --> Guard[生成前完整集合核对]
+  Native[固定原生身份集合] --> Guard
+  Guard -->|一致| New
+  Guard -->|新增遗漏重复| Reject[拒绝写出过期目录]
+```
+
+原生只读查询核对锁定EffectCraft0.4.0的655条命令及22个工具schema。对旧source43覆盖目录比较时，655项变化均是本候选新增的模式合同字段，不表示原生新增655种能力；旧目录缺少工具schema，差异输出明确NOT_RUN。15个技能各以单独副本在含空格只读路径通过公开入口，使用隔离Python3.13.16、运行时目录不存在，全部技能文件摘要保持不变。
+
+15项目标测试先红后绿；完整441项回归403通过、38条件跳过。完成组件任务9.24；9.2／9.2.1完整doctor和Web／FreeBSD、逐命令创作、其他平台及固定宿主验收仍开放。新增实现仅在技能源工作区，插件skills/继续保持已发布source43快照，未提交／发布本候选，未改变市场资格。证据：[命令差异候选](evidence/command-catalog-diff-candidate-20261008.json)。
+
+
+## Command catalog upgrade diff candidate (2026-10-08)
+
+The source candidate adds offline `commands.py diff BASELINE.json` to all15 independent skills. It compares command parameters, owners, workflow mappings, mode routes and native tool input schemas without installation, task registration or native editing. Added/changed contracts never inherit PASS; missing historical schemas remain NOT_RUN. Runtime/gateway changes list commands requiring revalidation. The generator rejects added, missing or duplicate reflected/native identities before writing stale documentation.
+
+Readonly discovery of locked EffectCraft0.4.0 confirms655 commands and22 tool schemas. Comparing the published source43 catalog yields655 mode-metadata additions, not655 new native capabilities; that historical catalog lacks tool schemas. Each single-skill copy passes the public entry under a space-containing readonly path with isolated Python3.13.16 and no runtime directory; installed file hashes remain unchanged.
+
+15 targeted tests pass after expected failures; regression441 total,403 passed/38 conditional skips. Component task9.24 is complete. Full doctor, Web/FreeBSD, every-command creative acceptance, other target platforms and fixed-host dispatch remain open. Plugin skills/ remains the released source43 snapshot; this source candidate is uncommitted/unpublished and does not change marketplace eligibility. [Evidence](evidence/command-catalog-diff-candidate-20261008.json).
+
+## Doctor实际能力诊断候选（2026-10-08）
+
+任务9.2.1的只读诊断与命令目录合同现已验证完成。默认doctor报告平台、锁定／实际Python版本、已安装CLI完整性、655命令目录及可执行恢复argv；它不启动原生进程、不执行恢复。显式`doctor --probe-native`在完整性与最低系统检查通过后，以限时自有空headless会话只查询版本、tools/list及list_commands；坏旧目录优先拒绝，缓存损坏、缺失或条件不满足时不启动CLI。超时不重试，未知任务不恢复。
+
+15个独立技能副本在含空格只读目录实际探测到CLI0.4.0、655命令／22工具schema；15次无Python启动均只读返回缺失。公开Shell入口复验通过，CLI载荷、未知任务记录及技能文件摘要保持不变，原生二进制打开句柄恢复原状。17项目标测试通过；458项完整回归420通过／38条件跳过。结合9.24差异组件关闭9.2.1，当前74项实施任务仍开放。
+
+探测PASS仅证明版本／注册身份／工具schema符合固定合同；创作、desktop、目标平台整体和宿主验收独立保持NOT_RUN。Web／FreeBSD、其他平台原生创作及固定宿主自然语言派发仍开放；插件skills/保持已发布source43快照，候选未提交／发布。前一目录组件章节中doctor开放状态属于该阶段，当前以本节和tasks为准。[证据](evidence/doctor-capabilities-candidate-20261008.json)。
+
+```mermaid
+flowchart TD
+  Request[doctor] --> Static[Read locks platform and cache integrity]
+  Static --> Default[Default: report facts and recovery argv]
+  Static --> Opt[Explicit --probe-native]
+  Opt --> Guard{Verified cache and minimum system?}
+  Guard -->|No| Keep[Preserve cache and tasks; NOT_RUN]
+  Guard -->|Yes| Version[Bounded --version query]
+  Version --> Match{Version matches?}
+  Match -->|No| Fail[FAIL: no MCP launch]
+  Match -->|Yes| MCP[Owned empty session: tools/list and list_commands]
+  MCP --> Close[Close owned session]
+  Close --> Report[Discovery PASS / FAIL / NOT_RUN]
+  Report --> Limits[Creative desktop and host acceptance unchanged]
+```
+
+## Actual readonly doctor capability candidate (2026-10-08)
+
+Task9.2.1 is now verified: default doctor reports platform, locked/actual Python, cached CLI integrity, catalog and executable recovery argv without starting native processes or executing recovery. Explicit `doctor --probe-native` checks integrity and minimum system requirements before bounded version/tools/list/list_commands queries in its own empty headless session. Invalid baseline fails before launch; missing/corrupt/incompatible installations are preserved and never started. Timeouts are not retried and unknown tasks are not resumed.
+
+All15 isolated skill copies pass actual readonly probing under space-containing readonly paths (CLI0.4.0,655 commands,22 tool schemas);15 no-Python calls remain readonly. Public Shell entry passes; runtime payload, unknown task records and skill hashes remain unchanged and native binary handles return to their original set.17 targeted tests and regression458 total/420 passes/38 conditional skips pass. Together with9.24 catalog evidence, task9.2.1 is checked;74 implementation tasks remain open.
+
+Discovery PASS is limited to native version/registry/schema identity. Creative, desktop, overall target-platform and host acceptance remain NOT_RUN. Web/FreeBSD, other-platform creative tasks and fixed-host natural-language dispatch remain open. Plugin skills/ still pins released source43; the candidate is uncommitted/unpublished. The previous catalog-component doctor status describes its earlier checkpoint; this section and tasks hold the current state. [Evidence](evidence/doctor-capabilities-candidate-20261008.json).
+
+冷启动恢复补充 / Cold recovery completion: Shell及PowerShell在无Python时也报告准备隔离Python的实际入口argv，不自动执行；POSIX引号路径实测通过。PowerShell显式UTF-8避免恢复路径中文损坏，语法与实际JSON返回分支在本地PowerShell引擎通过；真实Windows主机验收仍NOT_RUN。最终证据绑定两种启动脚本及最终源码；早期456项回归是中间记录，当前有效回归为458项、420通过／38条件跳过。
+
+## 开发分发 dev.44 / Development distribution dev.44
+
+本版纳入已验证的 doctor 和命令差异增量（9.2.1、9.24）；此前候选段落保留阶段记录。未完成运行时绑定草稿不纳入本版；74 项实施任务、固定宿主与其他目标平台验收仍开放。
+
+This release includes the verified doctor/catalog increments (9.2.1 and 9.24). Earlier candidate paragraphs retain checkpoint scope. Runtime-binding drafts are excluded; 74 implementation tasks, fixed-host and other target-platform qualification remain open.

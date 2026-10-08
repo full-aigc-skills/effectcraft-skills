@@ -1,6 +1,8 @@
 # 使用 Windows 内置 PowerShell/.NET 准备隔离 Python，不依赖 PATH 中的解释器。
 param([Parameter(ValueFromRemainingArguments=$true)][string[]]$Arguments)
 $ErrorActionPreference = 'Stop'
+[Console]::OutputEncoding = [System.Text.UTF8Encoding]::new($false)
+$OutputEncoding = [Console]::OutputEncoding
 $scriptRoot = $PSScriptRoot
 $arch = [System.Runtime.InteropServices.RuntimeInformation]::OSArchitecture.ToString().ToLowerInvariant()
 $arch = @{x64='x86_64'; x86='x86'; arm64='arm64'}[$arch]
@@ -16,7 +18,7 @@ $base = [IO.Path]::GetFullPath($base)
 if ($base.StartsWith($scriptRoot, [StringComparison]::OrdinalIgnoreCase)) { throw 'python_home_inside_skill' }
 $readOnly = $Arguments -contains 'doctor'
 if ($readOnly -and -not (Test-Path -LiteralPath (Join-Path $base "$($lockData.version)-$key"))) {
-    @{platform=$key; python=@{version=$lockData.version; installed=$false}; runtimeAcceptance='NOT_RUN'; recovery='launch run prepares the pinned isolated Python'} | ConvertTo-Json -Compress
+    @{platform=$key; python=@{version=$lockData.version; installed=$false}; runtimeAcceptance='NOT_RUN'; recovery='launch run prepares the pinned isolated Python'; recoveryActions=@(@{id='prepare_pinned_python'; argv=@('powershell.exe','-NoProfile','-NonInteractive','-File',(Join-Path $scriptRoot 'launch.ps1'),'--python-version'); automatic=$false})} | ConvertTo-Json -Depth 8 -Compress
     exit 0
 }
 if (-not $readOnly) { [IO.Directory]::CreateDirectory($base) | Out-Null }

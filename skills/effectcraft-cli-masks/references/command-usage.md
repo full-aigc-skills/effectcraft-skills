@@ -17,6 +17,18 @@ python3 -I -B "$SKILL_DIR/scripts/commands.py" describe COMMAND_ID
 
 Queries require no installation. Parameter documentation is native syntax, not executable JSON or a fabricated JSON Schema. Establish the project, object IDs, selection, assets, units and current context before editing.
 
+### 固定目录升级差异 / Pinned catalog upgrade diff
+
+```bash
+python3 -I -B "$SKILL_DIR/scripts/commands.py" diff /absolute/previous-command-coverage.json
+```
+
+离线比较旧版覆盖目录与本技能的固定目录：报告新增、移除、参数／技能归属／映射／运行模式变化，以及原生工具schema变化。输出为内部版本化诊断 `effectcraft-command-diff/v1`，不改变公共craft协议，不安装、不启动原生进程、不写任务或工程。重复身份、不同领域、未知schema及歧义JSON直接拒绝。
+
+运行模式字段记录 headless 与自有 desktop 的网关路由；实际可用性仍须查询当前原生状态，逐模式验收保持 NOT_RUN。旧目录缺少模式字段会记录合同新增；缺少工具schema时 `schemaComparison=NOT_RUN`，不能解释为“未变化”。运行时或工具合同变化保守列出需要重新验收的命令；即使合同相同也不复制历史PASS。维护者生成器遇到反射与原生目录新增／遗漏／重复身份时拒绝写出过期文档，应先核对并更新固定输入。
+
+Compare the old pinned catalog offline. Added or changed contracts never inherit acceptance. Missing historical tool schemas remain NOT_RUN; runtime or gateway changes require revalidation. Mode routes are dispatch contracts, not proof that a native command is enabled or accepted in either mode.
+
 ## 2. 同会话计划 / Persistent-session plans
 
 计划只包含 schema 和 operations，schema 为 craft-command-plan/v1；每步必须提供 params 对象，并且恰好有 command 或 tool。command 使用完整命令目录中的 ID；tool 使用实际 MCP 快照中的工具名，可创建／打开／检查／保存／导出文档。

@@ -1,0 +1,159 @@
+{
+  "schema": "effectcraft-catalog-component-evidence/v1",
+  "runtimeVersion": "0.4.0",
+  "runtimeSha256": "c1717eb87e5b57b3ed88c6a78047268a5afa566beb36104fdcc05dc8634a01c1",
+  "actualNativeCommands": 655,
+  "actualNativeToolSchemas": 22,
+  "nativeEditing": "NOT_RUN",
+  "hostDispatch": "NOT_RUN",
+  "platform": "darwin-arm64",
+  "pythonVersion": "3.13.16",
+  "singleSkillReadonlySpacePath": [
+    {
+      "skill": "effectcraft-use",
+      "result": "PASS",
+      "filesUnchanged": true,
+      "changedContractCount": 655
+    },
+    {
+      "skill": "effectcraft-cli",
+      "result": "PASS",
+      "filesUnchanged": true,
+      "changedContractCount": 655
+    },
+    {
+      "skill": "effectcraft-cli-setup",
+      "result": "PASS",
+      "filesUnchanged": true,
+      "changedContractCount": 655
+    },
+    {
+      "skill": "effectcraft-cli-project",
+      "result": "PASS",
+      "filesUnchanged": true,
+      "changedContractCount": 655
+    },
+    {
+      "skill": "effectcraft-cli-footage",
+      "result": "PASS",
+      "filesUnchanged": true,
+      "changedContractCount": 655
+    },
+    {
+      "skill": "effectcraft-cli-composition",
+      "result": "PASS",
+      "filesUnchanged": true,
+      "changedContractCount": 655
+    },
+    {
+      "skill": "effectcraft-cli-layers",
+      "result": "PASS",
+      "filesUnchanged": true,
+      "changedContractCount": 655
+    },
+    {
+      "skill": "effectcraft-cli-animation",
+      "result": "PASS",
+      "filesUnchanged": true,
+      "changedContractCount": 655
+    },
+    {
+      "skill": "effectcraft-cli-effects",
+      "result": "PASS",
+      "filesUnchanged": true,
+      "changedContractCount": 655
+    },
+    {
+      "skill": "effectcraft-cli-masks",
+      "result": "PASS",
+      "filesUnchanged": true,
+      "changedContractCount": 655
+    },
+    {
+      "skill": "effectcraft-cli-expressions",
+      "result": "PASS",
+      "filesUnchanged": true,
+      "changedContractCount": 655
+    },
+    {
+      "skill": "effectcraft-cli-camera",
+      "result": "PASS",
+      "filesUnchanged": true,
+      "changedContractCount": 655
+    },
+    {
+      "skill": "effectcraft-cli-export",
+      "result": "PASS",
+      "filesUnchanged": true,
+      "changedContractCount": 655
+    },
+    {
+      "skill": "effectcraft-cli-tracking",
+      "result": "PASS",
+      "filesUnchanged": true,
+      "changedContractCount": 655
+    },
+    {
+      "skill": "effectcraft-cli-puppet",
+      "result": "PASS",
+      "filesUnchanged": true,
+      "changedContractCount": 655
+    }
+  ],
+  "scope": "offline catalog diff and actual readonly native discovery; not execution acceptance",
+  "status": "component-verified",
+  "sourceBaseCommit": "6c3e64342e6db1b6bf7aae0cc9a78b9c20608def",
+  "workingTreeCandidate": true,
+  "publishedSourceContainsIncrement": false,
+  "publishedPluginContainsIncrement": false,
+  "tests": {
+    "targeted": {
+      "total": 15,
+      "passed": 15
+    },
+    "regression": {
+      "total": 441,
+      "passed": 403,
+      "skipped": 38,
+      "seconds": 138.101
+    },
+    "tdd": {
+      "initial": "13 expected failures: missing command_catalog implementation",
+      "hardening": "expected failures: mode PASS inheritance and silent native directory addition"
+    }
+  },
+  "changedBehavior": [
+    "offline public commands.py diff BASELINE",
+    "per-command mode routes with NOT_RUN acceptance",
+    "native tool input schemas in generated catalog",
+    "generator refuses added, removed or duplicate reflected/native identities before writing",
+    "missing legacy tool schemas reported NOT_RUN; changed gateway/runtime invalidates validation"
+  ],
+  "implementationSha256": {
+    "skills/effectcraft-use/scripts/command_catalog.py": "ee88018a7139455125009f8d6a31f97b7e0f062a994f7d4377d910ba2001b7f7",
+    "skills/effectcraft-use/scripts/commands.py": "7a7bf479698a48d9f4c5e6e94577108dbd230da312c21e04c168ae7e7491f610",
+    "skills/effectcraft-use/references/command-coverage.json": "613f7a5fceff44bf5d7ac9f4a3521b849617ae5420be243d80ea21f1f7be7e76",
+    "scripts/build_command_coverage.py": "b8eff0e4b5e7e9124cd8ebac28cd76773e7ebd4910d656e303aa27698ad5e0c8",
+    "tests/test_command_catalog_diff.py": "d1ee9b42401c859246dc0261ce20ab4b8ea51fbb4dba4529bee259b88c429939"
+  },
+  "baseline": {
+    "tag": "v0.1.0-dev.43",
+    "sha256": "a58a899ed84841acaf17108e53b6dd118f3490139668e65baf1edb5045fcc548",
+    "observedChanges": {
+      "commandsAdded": 0,
+      "commandsRemoved": 0,
+      "modeContractAdditions": 655,
+      "nativeToolSchemaComparison": "NOT_RUN"
+    },
+    "note": "Mode metadata added by this candidate; not 655 new native capabilities. Historical catalog has no nativeToolSchemas."
+  },
+  "remaining": [
+    "full doctor capabilities and recovery diagnostics",
+    "Web/FreeBSD adapters",
+    "native execution per-command and per-mode acceptance",
+    "other target-platform creative tasks",
+    "fixed-host natural-language dispatch",
+    "published immutable candidate snapshot",
+    "full V1"
+  ]
+}

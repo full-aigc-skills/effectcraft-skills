@@ -115,3 +115,18 @@ Interrupted not-executed settlement requires public reconcile to verify the exis
 当前候选命名PNG模式已把根计划帧数和逐帧原生尺寸计入共享账本；对子版本预占取覆盖上界，编码字节高水位跨重启／删除保持。旧根任务缺少帧计量时拒绝自动revise，仍可检查诊断。reconcile核对既有完成／未执行证明时可在过期或取消后结算占用，但不能恢复执行权限、退款或重放。其他导出模式、CPU／内存、动画目标时间范围及跨平台／固定宿主仍独立开放。
 
 Current candidate named-PNG modes account for original and child frames/native decoded sizes without double billing, and retain encoded high water. Roots lacking original frame evidence refuse automatic revise. Reconcile may settle existing completed/not-executed proof after expiry/cancel without authorizing more work, refunding or replaying. Other export modes,CPU/memory,animated-target scope and platform/fixed-host gates remain open.
+
+
+### 只读诊断与实际能力 / Readonly diagnostic and actual capability discovery
+
+```bash
+sh "$SKILL_DIR/scripts/launch.sh" doctor
+sh "$SKILL_DIR/scripts/launch.sh" doctor --probe-native
+sh "$SKILL_DIR/scripts/launch.sh" doctor --compare-catalog /absolute/previous-command-coverage.json
+```
+
+默认doctor只核验平台、锁、当前Python、已安装CLI完整性及固定目录，返回实际可调用的恢复argv，不执行恢复动作。没有Python时Shell／PowerShell入口仍只读返回缺失信息，不自动下载；直接Python入口也不创建运行时或任务目录。显式`--probe-native`仅在CLI完整性、最低系统条件均通过后查询`--version`及自有`--empty mcp`的`tools/list`／`list_commands`，限时、不重试，不连接已有桌面，不编辑／渲染，也不恢复未知任务。探测PASS仅表示版本／注册身份／工具schema一致，创作、原生平台整体和宿主验收仍NOT_RUN。
+
+目录／schema漂移或版本不符报告FAIL；查询失败／超时保持NOT_RUN。损坏安装保留原样，探测不启动。`--compare-catalog`复用离线差异合同，坏旧目录先失败，不借诊断启动原生进程。恢复argv是可选动作，不是新安装或扩大编辑授权。
+
+Default doctor is static and readonly. Explicit --probe-native checks only a previously integrity-verified CLI in its own empty headless session; discovery PASS never establishes creative, desktop or host acceptance. Version/schema drift is FAIL, unavailable discovery remains NOT_RUN. Recovery argv is reported and never executed automatically; corrupted runtime and unknown task records are preserved.

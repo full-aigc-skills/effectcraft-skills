@@ -15,6 +15,7 @@ New Project
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe file.newProject`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -32,6 +33,7 @@ Open Demo Project
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe file.openDemoProject`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -49,6 +51,7 @@ Open Project...
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe file.open`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -66,6 +69,7 @@ Save
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe file.save`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -83,6 +87,7 @@ Save As...
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe file.saveAs`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -100,6 +105,7 @@ Increment and Save
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: the project has not been saved yet。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe file.incrementAndSave`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -117,6 +123,7 @@ Revert
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: the project has not been saved yet。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe file.revert`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -134,6 +141,7 @@ File...
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe file.import`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -151,6 +159,7 @@ Project Settings...
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe file.projectSettings`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -168,6 +177,7 @@ Cycle Project Bit Depth
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe file.cycleBitDepth`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -185,6 +195,7 @@ Video Rendering and Effects
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe render.backend`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -202,6 +213,7 @@ Roto Brush Models
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe roto.models`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -219,6 +231,7 @@ Use Roto Brush Model
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe roto.model.select`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -236,6 +249,7 @@ Install Roto Brush Model
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe roto.model.install`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -253,6 +267,7 @@ Download Roto Brush Model
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe roto.model.download`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -270,6 +285,7 @@ Remove Roto Brush Model
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe roto.model.remove`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -287,6 +303,7 @@ Face Tracking Models
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe face.models`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -304,6 +321,7 @@ Use Face Tracking Model
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe face.model.select`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -321,6 +339,7 @@ Install Face Tracking Model
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe face.model.install`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -338,6 +357,7 @@ Download Face Tracking Model
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe face.model.download`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -355,6 +375,7 @@ Remove Face Tracking Model
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe face.model.remove`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -372,6 +393,7 @@ Undo
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: nothing to undo。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe edit.undo`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -389,6 +411,7 @@ Redo
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: nothing to redo。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe edit.redo`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -406,6 +429,7 @@ Cut
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe edit.cut`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -423,6 +447,7 @@ Copy
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe edit.copy`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -440,6 +465,7 @@ Copy with Property Links
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe edit.copyWithPropertyLinks`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -457,6 +483,7 @@ Copy with Relative Property Links
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe edit.copyWithRelativePropertyLinks`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -474,6 +501,7 @@ Copy Expression Only
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe edit.copyExpressionOnly`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -491,6 +519,7 @@ Paste
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe edit.paste`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -508,6 +537,7 @@ Paste Reversed Keyframes
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe edit.pasteReversedKeyframes`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -525,6 +555,7 @@ Clear
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe edit.clear`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -542,6 +573,7 @@ Duplicate
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe edit.duplicate`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -559,6 +591,7 @@ Split Layer
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe edit.splitLayer`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -576,6 +609,7 @@ Lift Work Area
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe edit.liftWorkArea`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -593,6 +627,7 @@ Extract Work Area
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe edit.extractWorkArea`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -610,6 +645,7 @@ Select All
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe edit.selectAll`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -627,6 +663,7 @@ Deselect All
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe edit.deselectAll`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -644,6 +681,7 @@ Label
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe edit.label`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -661,6 +699,7 @@ Select Label Group
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: select layers or project items first。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe edit.selectLabelGroup`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -678,6 +717,7 @@ Undo
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe edit.purgeUndo`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -695,6 +735,7 @@ Purge
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe edit.purge`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -712,6 +753,7 @@ Disk Cache Statistics
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe cache.diskStats`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -729,6 +771,7 @@ Edit Original...
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: select a footage item or layer。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe edit.editOriginal`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -746,6 +789,7 @@ History
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe edit.history.list`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -763,6 +807,7 @@ Go to History State
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe edit.history.goto`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -780,6 +825,7 @@ New Composition...
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe comp.new`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -797,6 +843,7 @@ Composition Settings...
 - 当前工作流映射 / Workflow mapped: true。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe comp.settings`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -814,6 +861,7 @@ Set Poster Time
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe comp.setPosterTime`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -831,6 +879,7 @@ Trim Comp to Work Area
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe comp.trimToWorkArea`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -848,6 +897,7 @@ Open Composition
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe comp.open`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -865,6 +915,7 @@ Close Composition
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe comp.close`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -882,6 +933,7 @@ Set Work Area
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe comp.workArea`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -899,6 +951,7 @@ Composition Switch
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe comp.setSwitch`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -916,6 +969,7 @@ Add Marker
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe comp.addMarker`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -933,6 +987,7 @@ Text
 - 当前工作流映射 / Workflow mapped: true。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.newText`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -950,6 +1005,7 @@ Solid...
 - 当前工作流映射 / Workflow mapped: true。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.newSolid`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -967,6 +1023,7 @@ Null Object
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.newNull`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -986,6 +1043,7 @@ Shape Layer
 - 当前工作流映射 / Workflow mapped: true。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.newShape`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -1005,6 +1063,7 @@ Adjustment Layer
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.newAdjustment`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -1022,6 +1081,7 @@ Layer Settings...
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.settings`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -1039,6 +1099,7 @@ Add Footage to Comp
 - 当前工作流映射 / Workflow mapped: true。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.addItem`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -1056,6 +1117,7 @@ Select Layers
 - 当前工作流映射 / Workflow mapped: true。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.select`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -1075,6 +1137,7 @@ Select Next Layer
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.selectNext`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -1092,6 +1155,7 @@ Select Previous Layer
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.selectPrevious`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -1109,6 +1173,7 @@ Layer Switch
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.setSwitch`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -1126,6 +1191,7 @@ Rename
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.rename`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -1143,6 +1209,7 @@ Layer Comment
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.setComment`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -1160,6 +1227,7 @@ Blending Mode
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.setBlendMode`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -1177,6 +1245,7 @@ Track Matte
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.setTrackMatte`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -1194,6 +1263,7 @@ Parent
 - 当前工作流映射 / Workflow mapped: true。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.setParent`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -1213,6 +1283,7 @@ Layer Timing
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.timing`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -1230,6 +1301,7 @@ Slip Edit
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.slip`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -1247,6 +1319,7 @@ Slip Edit 1 Frame Earlier
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.slipBack`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -1264,6 +1337,7 @@ Slip Edit 1 Frame Later
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.slipForward`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -1281,6 +1355,7 @@ Arrange
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.arrange`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -1298,6 +1373,7 @@ Pre-compose...
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.precompose`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -1315,6 +1391,7 @@ New Mask
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.addMask`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -1332,6 +1409,7 @@ Mask Mode
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.setMask`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -1349,6 +1427,7 @@ Add (Shape)
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.addShapeItem`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -1366,6 +1445,7 @@ Edit Text
 - 当前工作流映射 / Workflow mapped: true。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.setText`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -1383,6 +1463,7 @@ Transform
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.transform`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -1400,6 +1481,7 @@ Convert to Editable Styles
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.style.convertToEditable`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -1417,6 +1499,7 @@ Show All
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.style.showAll`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -1434,6 +1517,7 @@ Remove All
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.style.removeAll`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -1451,6 +1535,7 @@ Drop Shadow
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.style.dropShadow`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -1468,6 +1553,7 @@ Inner Shadow
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.style.innerShadow`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -1485,6 +1571,7 @@ Outer Glow
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.style.outerGlow`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -1502,6 +1589,7 @@ Inner Glow
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.style.innerGlow`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -1519,6 +1607,7 @@ Bevel and Emboss
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.style.bevelEmboss`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -1536,6 +1625,7 @@ Satin
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.style.satin`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -1553,6 +1643,7 @@ Color Overlay
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.style.colorOverlay`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -1570,6 +1661,7 @@ Gradient Overlay
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.style.gradientOverlay`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -1587,6 +1679,7 @@ Stroke
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.style.stroke`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -1604,6 +1697,7 @@ Add Layer Style
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.style.add`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -1621,6 +1715,7 @@ Remove Layer Style
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.style.remove`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -1638,6 +1733,7 @@ Toggle Layer Style
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.style.toggle`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -1655,6 +1751,7 @@ Global Light
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.style.globalLight`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -1672,6 +1769,7 @@ List Layer Styles
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.style.list`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -1689,6 +1787,7 @@ Auto-Orient...
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.autoOrient`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -1706,6 +1805,7 @@ Light...
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.newLight`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -1723,6 +1823,7 @@ Camera...
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.newCamera`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -1740,6 +1841,7 @@ Camera Settings...
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.cameraSettings`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -1757,6 +1859,7 @@ Light Settings...
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.lightSettings`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -1774,6 +1877,7 @@ Switch 3D View
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe view.set3DView`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -1791,6 +1895,7 @@ Active Camera
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe view.3d.activeCamera`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -1808,6 +1913,7 @@ Default
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe view.3d.default`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -1825,6 +1931,7 @@ Front
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe view.3d.front`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -1842,6 +1949,7 @@ Left
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe view.3d.left`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -1859,6 +1967,7 @@ Top
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe view.3d.top`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -1876,6 +1985,7 @@ Back
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe view.3d.back`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -1893,6 +2003,7 @@ Right
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe view.3d.right`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -1910,6 +2021,7 @@ Bottom
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe view.3d.bottom`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -1927,6 +2039,7 @@ Custom View 1
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe view.3d.custom1`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -1944,6 +2057,7 @@ Custom View 2
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe view.3d.custom2`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -1961,6 +2075,7 @@ Custom View 3
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe view.3d.custom3`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -1978,6 +2093,7 @@ Switch to Last 3D View
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe view.3d.last`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -1995,6 +2111,7 @@ Look at Selected Layers
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe view.lookAtSelected`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -2012,6 +2129,7 @@ Look at All Layers
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe view.lookAtAll`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -2029,6 +2147,7 @@ Create Camera from 3D View
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe camera.fromView`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -2046,6 +2165,7 @@ Reset 3D View
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe view.reset3DView`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -2063,6 +2183,7 @@ Set 3D View Camera
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe view.set3DViewCamera`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -2080,6 +2201,7 @@ Orbit Camera
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe camera.orbit`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -2097,6 +2219,7 @@ Pan Camera
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe camera.pan`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -2114,6 +2237,7 @@ Dolly Camera
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe camera.dolly`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -2131,6 +2255,7 @@ Dolly Camera
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe view.get3D`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -2148,6 +2273,7 @@ Dolly Camera
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.newModel`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -2165,6 +2291,7 @@ Dolly Camera
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.new3dPrimitive`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -2182,6 +2309,7 @@ New 3D Primitive
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.newPrimitive`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -2199,6 +2327,7 @@ Renderer
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe comp.renderer`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -2216,6 +2345,7 @@ Environment Layer
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.environment`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -2233,6 +2363,7 @@ Material Options
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe material.set`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -2250,6 +2381,7 @@ Reveal Material Source in Project
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe material.revealSource`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -2267,6 +2399,7 @@ Reset Material
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe material.reset`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -2284,6 +2417,7 @@ Duplicate and Assign Material
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe material.duplicateAssign`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -2301,6 +2435,7 @@ Create Stereo 3D Rig
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe camera.stereoRig`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -2318,6 +2453,7 @@ Create Orbit Null
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe camera.orbitNull`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -2335,6 +2471,7 @@ Create Cameras from 3D Model
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe camera.fromModel`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -2352,6 +2489,7 @@ Create Lights from 3D Model
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe light.fromModel`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -2369,6 +2507,7 @@ Control Light with Camera
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe light.controlWithCamera`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -2386,6 +2525,7 @@ Create Environment Light Background Layer
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe light.environmentBackground`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -2403,6 +2543,7 @@ Animate Text
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.addTextAnimator`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -2420,6 +2561,7 @@ Add Property
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.addTextAnimatorProperty`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -2437,6 +2579,7 @@ Add Text Selector
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.addTextSelector`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -2454,6 +2597,7 @@ Enable Per-character 3D
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.enablePerChar3D`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -2471,6 +2615,7 @@ Apply Text Animation Preset
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.applyTextPreset`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -2488,6 +2633,7 @@ Variable Font Axes
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe text.animatorFontAxes`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -2505,6 +2651,7 @@ Text Animation Presets
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe text.presets`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -2522,6 +2669,7 @@ Text Animator Properties
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe text.animatorProperties`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -2539,6 +2687,7 @@ Edit Text
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe text.edit`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -2556,6 +2705,7 @@ Exit Text Editing
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe text.endEdit`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -2573,6 +2723,7 @@ OpenType Features
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe text.fontFeatures`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -2590,6 +2741,7 @@ List Fonts
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe text.fonts`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -2607,6 +2759,7 @@ Set Text Selection
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe text.setSelection`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -2624,6 +2777,7 @@ Move Text Caret
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: not editing text。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe text.moveCaret`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -2641,6 +2795,7 @@ Type Text
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe text.insert`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -2658,6 +2813,7 @@ Delete Text
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe text.delete`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -2675,6 +2831,7 @@ Paste Text and Match Formatting
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe edit.pasteTextMatchFormatting`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -2692,6 +2849,7 @@ Paste Text Formatting Only
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe edit.pasteTextFormattingOnly`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -2709,6 +2867,7 @@ Time Stretch...
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.timeStretch`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -2726,6 +2885,7 @@ Time-Reverse Layer
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.timeReverse`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -2743,6 +2903,7 @@ Enable Time Remapping
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.enableTimeRemap`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -2760,6 +2921,7 @@ Freeze Frame
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.freezeFrame`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -2777,6 +2939,7 @@ Freeze On Last Frame
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.freezeOnLastFrame`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -2794,6 +2957,7 @@ Get Property
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe prop.get`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -2811,6 +2975,7 @@ Set Property Value
 - 当前工作流映射 / Workflow mapped: true。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe prop.set`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -2830,6 +2995,7 @@ Toggle Stopwatch
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe prop.toggleAnimation`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -2847,6 +3013,7 @@ Add Keyframe
 - 当前工作流映射 / Workflow mapped: true。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe prop.addKey`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -2864,6 +3031,7 @@ Add or Remove Keyframe at Current Time
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe prop.toggleKey`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -2881,6 +3049,7 @@ Add or Remove Transform Keyframe
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe keys.toggleTransform`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -2898,6 +3067,7 @@ Add Expression
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe prop.setExpression`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -2917,6 +3087,7 @@ Reset Property
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe prop.reset`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -2934,6 +3105,7 @@ Select Property
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe prop.select`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -2951,6 +3123,7 @@ Convert Expression to Keyframes
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe prop.convertExpressionToKeyframes`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -2968,6 +3141,7 @@ Select Keyframes
 - 当前工作流映射 / Workflow mapped: true。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe keys.select`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -2985,6 +3159,7 @@ Move Keyframes
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe keys.move`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -3002,6 +3177,7 @@ Delete Keyframes
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe keys.delete`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -3019,6 +3195,7 @@ Easy Ease
 - 当前工作流映射 / Workflow mapped: true。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe keys.easyEase`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -3036,6 +3213,7 @@ Easy Ease In
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe keys.easyEaseIn`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -3053,6 +3231,7 @@ Easy Ease Out
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe keys.easyEaseOut`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -3070,6 +3249,7 @@ Toggle Hold Keyframe
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe keys.toggleHold`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -3087,6 +3267,7 @@ Keyframe Interpolation...
 - 当前工作流映射 / Workflow mapped: true。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe keys.interpolation`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -3104,6 +3285,7 @@ Keyframe Velocity...
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe keys.velocity`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -3121,6 +3303,7 @@ Rename Property Group
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe prop.renameGroup`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -3138,6 +3321,7 @@ Enable Property Group
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe prop.setGroupEnabled`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -3155,6 +3339,7 @@ Delete Property Group
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe prop.removeGroup`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -3172,6 +3357,7 @@ Duplicate Property Group
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe prop.duplicateGroup`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -3189,6 +3375,7 @@ Reorder Property Group
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe prop.moveGroup`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -3206,6 +3393,7 @@ Select Project Items
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe project.select`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -3223,6 +3411,7 @@ Rename Item
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe project.rename`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -3240,6 +3429,7 @@ Move to Folder
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe project.move`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -3257,6 +3447,7 @@ Item Label
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe project.setLabel`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -3274,6 +3465,7 @@ Item Comment
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe project.setComment`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -3291,6 +3483,7 @@ Delete Project Items
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe project.delete`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -3308,6 +3501,7 @@ Project Item Usage
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe project.usage`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -3325,6 +3519,7 @@ Duplicate Project Items
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe project.duplicate`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -3342,6 +3537,7 @@ Copy Keyframes
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe keys.copy`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -3359,6 +3555,7 @@ Paste Keyframes
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe keys.paste`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -3376,6 +3573,7 @@ Select All Keyframes
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe keys.selectAll`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -3393,6 +3591,7 @@ Nudge Keyframes
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe keys.nudge`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -3410,6 +3609,7 @@ Move Keyframes 1 Frame Later
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe keys.nudgeForward`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -3427,6 +3627,7 @@ Move Keyframes 1 Frame Earlier
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe keys.nudgeBackward`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -3444,6 +3645,7 @@ Move Keyframes 10 Frames Later
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe keys.nudgeForward10`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -3461,6 +3663,7 @@ Move Keyframes 10 Frames Earlier
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe keys.nudgeBackward10`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -3478,6 +3681,7 @@ Edit Keyframe
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe keys.set`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -3495,6 +3699,7 @@ Select Equal Keyframes
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe keys.selectEqual`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -3512,6 +3717,7 @@ Select Previous Keyframes
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe keys.selectPrevious`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -3529,6 +3735,7 @@ Select Following Keyframes
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe keys.selectFollowing`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -3546,6 +3753,7 @@ Set Keyframe Ease
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe keys.setEase`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -3563,6 +3771,7 @@ Time-Reverse Keyframes
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe keys.timeReverse`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -3580,6 +3789,7 @@ Keyframe Info
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe keys.info`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -3597,6 +3807,7 @@ Wiggler
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe keys.wiggle`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -3614,6 +3825,7 @@ Smoother
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe keys.smooth`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -3631,6 +3843,7 @@ Motion Sketch
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe motion.sketch`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -3648,6 +3861,7 @@ Separate Dimensions
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe prop.separateDimensions`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -3665,6 +3879,7 @@ Pick Whip (Link Property)
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe prop.pickWhip`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -3682,6 +3897,7 @@ List Markers
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe markers.list`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -3699,6 +3915,7 @@ Nested Comp Markers
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe markers.nested`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -3716,6 +3933,7 @@ Marker Settings
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe markers.set`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -3733,6 +3951,7 @@ Delete Marker
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe markers.delete`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -3750,6 +3969,7 @@ Convert Marker
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe markers.convert`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -3767,6 +3987,7 @@ Update Markers From Source
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.updateMarkersFromSource`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -3784,6 +4005,7 @@ New Mask from Points
 - 当前工作流映射 / Workflow mapped: true。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe mask.new`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -3801,6 +4023,7 @@ Add Mask Vertex
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe mask.addVertex`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -3818,6 +4041,7 @@ Set Mask Vertex
 - 当前工作流映射 / Workflow mapped: true。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe mask.setVertex`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -3835,6 +4059,7 @@ Closed
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe mask.setClosed`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -3852,6 +4077,7 @@ Select Mask Vertices
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe mask.selectVertices`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -3869,6 +4095,7 @@ Move Mask Vertices
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe mask.moveVertices`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -3886,6 +4113,7 @@ Delete Mask Vertices
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe mask.deleteVertices`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -3903,6 +4131,7 @@ Convert Vertex
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe mask.convertVertex`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -3920,6 +4149,7 @@ Add Vertex
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe mask.insertVertex`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -3937,6 +4167,7 @@ Add Mask Feather Point
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe mask.featherPoint.add`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -3954,6 +4185,7 @@ Move Mask Feather Point
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe mask.featherPoint.set`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -3971,6 +4203,7 @@ Delete Mask Feather Point
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe mask.featherPoint.remove`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -3988,6 +4221,7 @@ Mask Feather Points
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe mask.featherPoint.list`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -4005,6 +4239,7 @@ Remove Mask
 - 当前工作流映射 / Workflow mapped: true。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe mask.remove`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -4022,6 +4257,7 @@ Remove All Masks
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe mask.removeAll`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -4039,6 +4275,7 @@ RotoBezier
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe path.rotoBezier`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -4056,6 +4293,7 @@ Convert To Bezier Path
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe path.convertToBezier`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -4073,6 +4311,7 @@ Group Shapes
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe path.groupShapes`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -4090,6 +4329,7 @@ Ungroup Shapes
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe path.ungroupShapes`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -4107,6 +4347,7 @@ Set First Vertex
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe path.setFirstVertex`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -4124,6 +4365,7 @@ Free Transform Points
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe path.freeTransform`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -4141,6 +4383,7 @@ Motion Blur
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.mask.motionBlur`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -4158,6 +4401,7 @@ Feather Falloff
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.mask.featherFalloff`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -4175,6 +4419,7 @@ Hide Locked Masks
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.mask.hideLocked`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -4192,6 +4437,7 @@ Apply Effect
 - 当前工作流映射 / Workflow mapped: true。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe effect.apply`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -4209,6 +4455,7 @@ Pick Effect Colour
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe effect.pickColor`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -4226,6 +4473,7 @@ Last Effect
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe effect.applyLast`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -4243,6 +4491,7 @@ Remove All
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe effect.removeAll`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -4260,6 +4509,7 @@ Remove Effect
 - 当前工作流映射 / Workflow mapped: true。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe effect.remove`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -4277,6 +4527,7 @@ Toggle Effect
 - 当前工作流映射 / Workflow mapped: true。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe effect.toggle`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -4294,6 +4545,7 @@ Reorder Effect
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe effect.reorder`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -4311,6 +4563,7 @@ Duplicate Effect
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe effect.duplicate`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -4328,6 +4581,7 @@ Copy Effects
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe effect.copy`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -4345,6 +4599,7 @@ Paste Effects
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe effect.paste`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -4362,6 +4617,7 @@ Reset Effect
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe effect.reset`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -4379,6 +4635,7 @@ List Effects
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe effect.list`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -4396,6 +4653,7 @@ List Effect Plug-ins
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe effect.plugins.list`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -4413,6 +4671,7 @@ Load Effect Plug-in...
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe effect.plugins.load`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -4430,6 +4689,7 @@ Go to Time...
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe time.set`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -4447,6 +4707,7 @@ Next Frame
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe time.nextFrame`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -4464,6 +4725,7 @@ Previous Frame
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe time.previousFrame`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -4481,6 +4743,7 @@ Forward 10 Frames
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe time.forward10`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -4498,6 +4761,7 @@ Back 10 Frames
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe time.back10`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -4515,6 +4779,7 @@ Step Frames
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe time.step`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -4532,6 +4797,7 @@ Go to Start
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe time.start`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -4549,6 +4815,7 @@ Go to End
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe time.end`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -4566,6 +4833,7 @@ Go to Layer In Point
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe time.layerIn`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -4583,6 +4851,7 @@ Go to Layer Out Point
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe time.layerOut`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -4600,6 +4869,7 @@ Go to Next Keyframe or Marker
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe time.nextKey`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -4617,6 +4887,7 @@ Go to Previous Keyframe or Marker
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe time.previousKey`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -4634,6 +4905,7 @@ Go To
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe time.go`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -4651,6 +4923,7 @@ Add to Render Queue
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: select or open a composition。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe renderQueue.add`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -4668,6 +4941,7 @@ Remove from Render Queue
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: the render queue is empty。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe renderQueue.remove`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -4685,6 +4959,7 @@ Render Queue: Render Checkbox
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: the render queue is empty。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe renderQueue.setRender`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -4702,6 +4977,7 @@ Render Settings...
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: the render queue is empty。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe renderQueue.setRenderSettings`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -4719,6 +4995,7 @@ Output Module Settings...
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: the render queue is empty。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe renderQueue.setOutputModule`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -4736,6 +5013,7 @@ Output To...
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: the render queue is empty。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe renderQueue.setOutput`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -4753,6 +5031,7 @@ Add Output Module
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: the render queue is empty。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe render.addOutputModule`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -4770,6 +5049,7 @@ Pre-render...
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: select or open a composition。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe render.preRender`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -4787,6 +5067,7 @@ Save Current Preview...
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe render.saveCurrentPreview`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -4804,6 +5085,7 @@ Move in Render Queue
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: the render queue is empty。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe renderQueue.move`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -4821,6 +5103,7 @@ Duplicate Render Item
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: the render queue is empty。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe renderQueue.duplicate`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -4838,6 +5121,7 @@ Render
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: nothing is queued。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe renderQueue.render`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -4855,6 +5139,7 @@ Stop Rendering
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: not rendering。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe renderQueue.stop`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -4872,6 +5157,7 @@ Render Queue Items
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe renderQueue.list`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -4889,6 +5175,7 @@ Render Templates
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe renderQueue.templates`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -4906,6 +5193,7 @@ Save Template...
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe renderQueue.saveTemplate`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -4923,6 +5211,7 @@ Delete Template
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe renderQueue.deleteTemplate`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -4940,6 +5229,7 @@ Set Template Default
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe renderQueue.setTemplateDefault`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -4957,6 +5247,7 @@ Apply Template
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: the render queue is empty。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe renderQueue.applyTemplate`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -4974,6 +5265,7 @@ Render Queue: Log
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: the render queue is empty。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe renderQueue.setLog`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -4991,6 +5283,7 @@ Notify When Done
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe renderQueue.setNotify`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -5008,6 +5301,7 @@ Storage Overflow Folders
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe renderQueue.setOverflowFolders`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -5025,6 +5319,7 @@ Output Formats
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe renderQueue.formats`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -5042,6 +5337,7 @@ EffectCraft Help...
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe help.docs`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -5059,6 +5355,7 @@ Join the ArtCraft Discord...
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe help.discord`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -5076,6 +5373,7 @@ ArtCraft Website
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe help.website`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -5093,6 +5391,7 @@ EffectCraft Home Page
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe help.appPage`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -5110,6 +5409,7 @@ EffectCraft on GitHub
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe help.github`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -5127,6 +5427,7 @@ Online Tutorials...
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe help.onlineTutorials`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -5144,6 +5445,7 @@ In-App Tutorials...
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe help.inAppTutorials`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -5161,6 +5463,7 @@ Provide Feedback...
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe help.reportIssue`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -5178,6 +5481,7 @@ Other ArtCraft Apps
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe help.sibling`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -5195,6 +5499,7 @@ List Commands
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe command.list`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -5212,6 +5517,7 @@ Describe Command
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe command.describe`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -5229,6 +5535,7 @@ App Capabilities
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe app.capabilities`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -5246,6 +5553,7 @@ Project Summary
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe project.summary`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -5263,6 +5571,7 @@ Composition Info
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe comp.info`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -5280,6 +5589,7 @@ Layer Property Tree
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.tree`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -5297,6 +5607,7 @@ Editor State
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe editor.state`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -5314,6 +5625,7 @@ Run Commands (Batch)
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe engine.batch`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -5331,6 +5643,7 @@ Quality
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.quality`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -5348,6 +5661,7 @@ Sampling
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.sampling`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -5365,6 +5679,7 @@ Frame Blending
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.frameBlending`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -5382,6 +5697,7 @@ Hide Other Video
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.hideOtherVideo`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -5399,6 +5715,7 @@ Show All Video
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.showAllVideo`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -5416,6 +5733,7 @@ Unlock All Layers
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.unlockAll`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -5433,6 +5751,7 @@ Enable/Disable Expressions
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.expressions`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -5452,6 +5771,7 @@ Transform Value
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.setTransform`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -5469,6 +5789,7 @@ Center Anchor Point in Layer Content
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.centerAnchor`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -5486,6 +5807,7 @@ Mask Shape...
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.mask.shape`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -5503,6 +5825,7 @@ Mask Settings
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.mask.set`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -5520,6 +5843,7 @@ Reset Mask
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.mask.reset`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -5537,6 +5861,7 @@ Remove Mask
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.mask.remove`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -5554,6 +5879,7 @@ Remove All Masks
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.mask.removeAll`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -5571,6 +5897,7 @@ Mask Mode
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.mask.mode`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -5588,6 +5915,7 @@ Inverted
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.mask.invert`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -5605,6 +5933,7 @@ Locked
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.mask.lock`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -5622,6 +5951,7 @@ Unlock All Masks
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.mask.unlockAll`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -5639,6 +5969,7 @@ Lock Other Masks
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.mask.lockOthers`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -5656,6 +5987,7 @@ Add Marker
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.addMarker`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -5673,6 +6005,7 @@ Lock Markers
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.markersLock`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -5690,6 +6023,7 @@ Delete All Markers
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.deleteAllMarkers`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -5707,6 +6041,7 @@ Track Matte
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.trackMatte`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -5724,6 +6059,7 @@ Open Layer Source
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.openSource`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -5741,6 +6077,7 @@ Reveal in Finder
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.revealInFinder`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -5758,6 +6095,7 @@ Reveal Layer Source in Project
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.revealSource`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -5775,6 +6113,7 @@ Reveal Composition in Project
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe comp.revealInProject`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -5792,6 +6131,7 @@ Reveal Expression Errors
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.revealExpressionErrors`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -5809,6 +6149,7 @@ Sequence Layers...
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.sequence`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -5826,6 +6167,7 @@ Create
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.create`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -5843,6 +6185,7 @@ Save Animation Preset...
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe anim.savePreset`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -5860,6 +6203,7 @@ Apply Animation Preset...
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe anim.applyPreset`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -5877,6 +6221,7 @@ Add Keyframe
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe anim.addKeyframe`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -5894,6 +6239,7 @@ Exponential Scale
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe keys.exponentialScale`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -5911,6 +6257,7 @@ Add Text Selector
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe text.addSelector`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -5928,6 +6275,7 @@ Remove All Text Animators
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe text.removeAllAnimators`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -5945,6 +6293,7 @@ Reveal Properties
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe anim.reveal`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -5962,6 +6311,7 @@ Add Guide...
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe view.addGuide`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -5979,6 +6329,7 @@ Clear Guides
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe view.clearGuides`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -5996,6 +6347,7 @@ Import Guides...
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe view.importGuides`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -6013,6 +6365,7 @@ Export Guides...
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe view.exportGuides`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -6030,6 +6383,7 @@ Switch View Layout
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe view.layout`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -6047,6 +6401,7 @@ Share View Options
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe view.shareViewOptions`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -6064,6 +6419,7 @@ Extended Viewer
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe view.extendedViewer`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -6081,6 +6437,7 @@ Region of Interest
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe view.setRegionOfInterest`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -6098,6 +6455,7 @@ Snapping
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe view.snapping`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -6115,6 +6473,7 @@ Use Display Color Management
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe view.displayColorManagement`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -6132,6 +6491,7 @@ Simulate Output
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe view.simulateOutput`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -6149,6 +6509,7 @@ My Custom RGB...
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe view.customRgb`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -6166,6 +6527,7 @@ Split with New Locked Viewer
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe view.splitLockedViewer`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -6183,6 +6545,7 @@ Close Locked Viewer
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no locked viewer。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe view.closeLockedViewer`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -6200,6 +6563,7 @@ Viewer Color State
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe view.displayColor`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -6217,6 +6581,7 @@ Show Channel
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe view.channel`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -6234,6 +6599,7 @@ Adjust Exposure
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe view.exposure`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -6251,6 +6617,7 @@ Reset Exposure
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe view.resetExposure`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -6268,6 +6635,7 @@ Take Snapshot
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe view.takeSnapshot`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -6285,6 +6653,7 @@ Show Snapshot
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: take a snapshot first (Shift+F5)。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe view.showSnapshot`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -6302,6 +6671,7 @@ Fast Previews
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe view.fastPreviewMode`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -6319,6 +6689,7 @@ Move Guide
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe view.moveGuide`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -6336,6 +6707,7 @@ Remove Guide
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe view.removeGuide`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -6353,6 +6725,7 @@ Pen Tool (Shape Path)
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe shape.newPath`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -6370,6 +6743,7 @@ Add Dash or Gap
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe shape.dashes.add`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -6387,6 +6761,7 @@ Remove Dash or Gap
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe shape.dashes.remove`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -6404,6 +6779,7 @@ Stroke Taper
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe shape.stroke.taper`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -6421,6 +6797,7 @@ Stroke Wave
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe shape.stroke.wave`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -6438,6 +6815,7 @@ Link Focus Distance to Point of Interest
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe camera.linkFocusToPoi`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -6455,6 +6833,7 @@ Link Focus Distance to Layer
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe camera.linkFocusToLayer`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -6472,6 +6851,7 @@ Set Focus Distance to Layer
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe camera.setFocusToLayer`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -6489,6 +6869,7 @@ Keyframe Label
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe keys.setLabel`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -6506,6 +6887,7 @@ Select Keyframe Label Group
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe keys.selectLabelGroup`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -6523,6 +6905,7 @@ Transform Keyframes
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe keys.transform`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -6540,6 +6923,7 @@ Edit Spatial Tangents
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe keys.setSpatialTangents`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -6557,6 +6941,7 @@ New Folder
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe project.newFolder`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -6574,6 +6959,7 @@ Close
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe file.close`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -6591,6 +6977,7 @@ Close Project
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe file.closeProject`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -6608,6 +6995,7 @@ Save a Copy...
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe file.saveCopy`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -6625,6 +7013,7 @@ Multiple Files...
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe file.importMultiple`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -6642,6 +7031,7 @@ Placeholder...
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe file.importPlaceholder`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -6659,6 +7049,7 @@ Solid...
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe file.importSolid`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -6676,6 +7067,7 @@ New Comp from Selection...
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: select an item in the Project panel first。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe file.newCompFromSelection`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -6693,6 +7085,7 @@ Collect Files...
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: the project is empty。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe file.collectFiles`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -6710,6 +7103,7 @@ Consolidate All Footage
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: the project is empty。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe file.consolidateFootage`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -6727,6 +7121,7 @@ Remove Unused Footage
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: the project is empty。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe file.removeUnusedFootage`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -6744,6 +7139,7 @@ Reduce Project
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: select compositions in the Project panel。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe file.reduceProject`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -6761,6 +7157,7 @@ Find Missing
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: the project is empty。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe file.findMissing`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -6778,6 +7175,7 @@ Check Footage
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: the project is empty。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe footage.check`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -6795,6 +7193,7 @@ Run Script File...
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe file.runScript`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -6812,6 +7211,7 @@ Run Script
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe script.run`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -6829,6 +7229,7 @@ Main...
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: select footage in the Project panel。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe file.interpretFootage`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -6846,6 +7247,7 @@ Remember Interpretation
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: select footage in the Project panel。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe file.rememberInterpretation`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -6863,6 +7265,7 @@ Apply Interpretation
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: select footage in the Project panel。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe file.applyInterpretation`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -6880,6 +7283,7 @@ File...
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: select footage in the Project panel。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe file.replaceFootage`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -6897,6 +7301,7 @@ Placeholder...
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: select footage in the Project panel。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe file.replaceWithPlaceholder`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -6914,6 +7319,7 @@ Solid...
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: select footage in the Project panel。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe file.replaceWithSolid`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -6931,6 +7337,7 @@ Reload Footage
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: select footage in the Project panel。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe file.reloadFootage`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -6948,6 +7355,7 @@ Reveal in Finder
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: select footage in the Project panel。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe file.revealInFinder`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -6965,6 +7373,7 @@ Lottie JSON...
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe file.exportLottie`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -6982,6 +7391,7 @@ Lottie...
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe file.importLottie`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -6999,6 +7409,7 @@ Adobe Premiere Pro Project...
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe file.importTimeline`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -7016,6 +7427,7 @@ Adobe Premiere Pro Project...
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe file.exportTimeline`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -7033,6 +7445,7 @@ Timeline Interchange Formats
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe file.timelineFormats`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -7050,6 +7463,7 @@ Crop Comp to Region of Interest
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe comp.cropToRegionOfInterest`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -7067,6 +7481,7 @@ Crop Comp to Selected Layer(s) Bounds
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe comp.cropToLayerBounds`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -7084,6 +7499,7 @@ File...
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe comp.saveFrameAs`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -7101,6 +7517,7 @@ Responsive Design — Time
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe comp.responsiveTime`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -7118,6 +7535,7 @@ Photoshop Layers...
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe comp.saveFrameAsPsd`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -7135,6 +7553,7 @@ ProEXR...
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe comp.saveFrameAsExr`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -7152,6 +7571,7 @@ Watch Folder...
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe file.watchFolder`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -7169,6 +7589,7 @@ Poll Watch Folder
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no folder is being watched。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe file.watchFolder.poll`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -7186,6 +7607,7 @@ Vanishing Point (.vpe)...
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: Vanishing Point Exchange (.vpe) files can't be imported: the format has no public specification, and EffectCraft only implements documented formats。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe file.importVanishingPoint`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -7203,6 +7625,7 @@ Points Follow Nulls
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe paths.pointsFollowNulls`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -7220,6 +7643,7 @@ Nulls Follow Points
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe paths.nullsFollowPoints`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -7237,6 +7661,7 @@ Trace Path
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe paths.tracePath`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -7254,6 +7679,7 @@ VR Environments
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe comp.vr.environments`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -7271,6 +7697,7 @@ VR View Orientation
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe comp.vr.setView`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -7288,6 +7715,7 @@ About EffectCraft...
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe app.about`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -7305,6 +7733,7 @@ Layer Style Options...
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.style.options`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -7322,6 +7751,7 @@ Settings...
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe app.settings`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -7339,6 +7769,7 @@ GPU Information...
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe app.gpuInfo`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -7356,6 +7787,7 @@ Hide EffectCraft
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe app.hide`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -7373,6 +7805,7 @@ Hide Others
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe app.hideOthers`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -7390,6 +7823,7 @@ Show All
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe app.showAll`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -7407,6 +7841,7 @@ Quit EffectCraft
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe app.quit`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -7424,6 +7859,7 @@ Quick Apply...
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe app.commandPalette`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -7441,6 +7877,7 @@ Keyboard Shortcuts
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe app.keyboardShortcuts`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -7458,6 +7895,7 @@ Templates
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe app.templates`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -7475,6 +7913,7 @@ Find
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe app.find`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -7492,6 +7931,7 @@ Play Current Preview
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe playback.toggle`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -7509,6 +7949,7 @@ Cache Frames When Idle
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe playback.cacheWhenIdle`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -7526,6 +7967,7 @@ Audio
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe playback.audio`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -7543,6 +7985,7 @@ Scrub Audio
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe playback.scrubAudio`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -7560,6 +8003,7 @@ Zoom In
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe view.zoomIn`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -7577,6 +8021,7 @@ Zoom Out
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe view.zoomOut`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -7594,6 +8039,7 @@ Full
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe view.res.full`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -7611,6 +8057,7 @@ Half
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe view.res.half`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -7628,6 +8075,7 @@ Third
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe view.res.third`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -7645,6 +8093,7 @@ Quarter
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe view.res.quarter`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -7662,6 +8111,7 @@ Custom...
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe view.res.custom`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -7679,6 +8129,7 @@ Show Rulers
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe view.rulers`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -7696,6 +8147,7 @@ Panel Background Color
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe view.panelBackground`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -7713,6 +8165,7 @@ Show Guides
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe view.guides`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -7730,6 +8183,7 @@ Snap to Guides
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe view.snapToGuides`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -7747,6 +8201,7 @@ Lock Guides
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe view.lockGuides`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -7764,6 +8219,7 @@ Show Grid
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe view.grid`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -7781,6 +8237,7 @@ Snap to Grid
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe view.snapToGrid`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -7798,6 +8255,7 @@ View Options...
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe view.options`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -7815,6 +8273,7 @@ Show Layer Controls
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe view.layerControls`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -7832,6 +8291,7 @@ Enter Full Screen
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe view.fullScreen`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -7849,6 +8309,7 @@ New Viewer
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe view.newViewer`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -7866,6 +8327,7 @@ Show Panel
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe window.panel`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -7883,6 +8345,7 @@ Workspace
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe window.workspace`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -7900,6 +8363,7 @@ Save Changes to this Workspace
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe window.saveWorkspace`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -7917,6 +8381,7 @@ Save as New Workspace...
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe window.saveWorkspaceAs`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -7934,6 +8399,7 @@ Edit Workspaces...
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe window.editWorkspaces`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -7951,6 +8417,7 @@ Reset to Saved Layout
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe window.resetWorkspace`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -7968,6 +8435,7 @@ Composition Flowchart
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe comp.flowchart`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -7985,6 +8453,7 @@ Composition Mini-Flowchart
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe comp.miniFlowchart`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -8002,6 +8471,7 @@ Open Layer
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.openLayer`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -8019,6 +8489,7 @@ Manage Effects...
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe effect.manage`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -8036,6 +8507,7 @@ Browse Presets...
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe anim.browsePresets`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -8053,6 +8525,7 @@ Track Motion
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe track.motion`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -8070,6 +8543,7 @@ Stabilize Motion
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe track.stabilize`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -8087,6 +8561,7 @@ New Tracker
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe track.new`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -8104,6 +8579,7 @@ Track this Property
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe track.property`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -8121,6 +8597,7 @@ Current Track
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe track.select`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -8138,6 +8615,7 @@ Track Type
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no active composition。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe track.setType`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -8155,6 +8633,7 @@ Edit Target
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no active composition。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe track.setTarget`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -8172,6 +8651,7 @@ Motion Tracker Options
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no active composition。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe track.options`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -8189,6 +8669,7 @@ Move Track Point
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no active composition。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe track.setPoint`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -8206,6 +8687,7 @@ Analyze
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no active composition。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe track.analyze`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -8223,6 +8705,7 @@ Stop Analysis
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no track analysis is running。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe track.stop`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -8240,6 +8723,7 @@ Apply
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no active composition。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe track.apply`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -8257,6 +8741,7 @@ Reset
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no active composition。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe track.reset`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -8274,6 +8759,7 @@ Delete Tracker
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no active composition。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe track.delete`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -8291,6 +8777,7 @@ Edit Target...
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no active composition。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe track.editTargetDialog`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -8308,6 +8795,7 @@ Options...
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no active composition。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe track.optionsDialog`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -8325,6 +8813,7 @@ Tracker Status
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe track.status`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -8342,6 +8831,7 @@ Track Mask
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe track.mask`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -8359,6 +8849,7 @@ Mask Tracking Method
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe track.maskMethod`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -8376,6 +8867,7 @@ Extract & Copy Face Measurements
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe track.extractFaceMeasurements`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -8393,6 +8885,7 @@ Apply Mask Interpolation
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe mask.interpolate`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -8410,6 +8903,7 @@ Mask Interpolation Options
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe mask.interpolationOptions`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -8427,6 +8921,7 @@ Warp Stabilizer VFX
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe track.warpStabilizer`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -8444,6 +8939,7 @@ Analyze
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe warp.analyze`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -8461,6 +8957,7 @@ Cancel
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no Warp Stabilizer analysis is running。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe warp.cancel`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -8478,6 +8975,7 @@ Warp Stabilizer Status
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe warp.status`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -8495,6 +8993,7 @@ Track Camera
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe track.camera`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -8512,6 +9011,7 @@ Analyze
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe camera.analyze`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -8529,6 +9029,7 @@ Cancel
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no 3D Camera Tracker analysis is running。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe camera.cancel`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -8546,6 +9047,7 @@ Cancel
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe camera.solveStatus`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -8563,6 +9065,7 @@ Cancel
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe camera.points`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -8580,6 +9083,7 @@ Select Track Points
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe camera.selectPoints`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -8597,6 +9101,7 @@ Create from Camera Solve
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe camera.createFromSolve`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -8614,6 +9119,7 @@ Create Camera
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe camera.create`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -8631,6 +9137,7 @@ Set Ground Plane and Origin
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe camera.setGroundPlane`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -8648,6 +9155,7 @@ Delete Selected Points
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe camera.deletePoints`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -8665,6 +9173,7 @@ Roto Brush Stroke
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe roto.stroke`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -8682,6 +9191,7 @@ Propagate Roto Brush
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe roto.propagate`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -8699,6 +9209,7 @@ Set Segmentation Span
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe roto.span`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -8716,6 +9227,7 @@ Freeze
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe roto.freeze`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -8733,6 +9245,7 @@ Unfreeze
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe roto.unfreeze`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -8750,6 +9263,7 @@ Remove Roto Brush Strokes
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe roto.clearStrokes`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -8767,6 +9281,7 @@ Stop Roto Brush
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no Roto Brush job is running。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe roto.cancel`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -8784,6 +9299,7 @@ Roto Brush Options
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe roto.options`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -8801,6 +9317,7 @@ Roto Brush Status
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe roto.status`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -8818,6 +9335,7 @@ Paint Stroke
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe paint.stroke`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -8835,6 +9353,7 @@ Paint Options
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe paint.options`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -8852,6 +9371,7 @@ Brush Preset
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe paint.brushPreset`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -8869,6 +9389,7 @@ Set Clone Source
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe paint.setCloneSource`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -8886,6 +9407,7 @@ Delete Paint Stroke
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe paint.removeStroke`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -8903,6 +9425,7 @@ Brush Presets
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe paint.presets`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -8920,6 +9443,7 @@ Add Puppet Pin
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe puppet.addPin`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -8937,6 +9461,7 @@ Move Puppet Pin
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe puppet.movePin`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -8954,6 +9479,7 @@ Edit Puppet Pin
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe puppet.setPin`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -8971,6 +9497,7 @@ Delete Puppet Pin
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe puppet.removePin`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -8988,6 +9515,7 @@ Select Puppet Pins
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe puppet.selectPins`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -9005,6 +9533,7 @@ Puppet Mesh Options
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe puppet.mesh`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -9022,6 +9551,7 @@ Puppet Mesh Info
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe puppet.info`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -9039,6 +9569,7 @@ Record Puppet Pin
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe puppet.recordPin`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -9056,6 +9587,7 @@ Follow-Through...
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe puppet.follow`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -9073,6 +9605,7 @@ Record Options...
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe puppet.recordOptions`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -9090,6 +9623,7 @@ Liquify Stroke
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe liquify.stroke`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -9107,6 +9641,7 @@ Clear Liquify Mesh
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe liquify.clear`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -9124,6 +9659,7 @@ Get Setting
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe prefs.get`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -9141,6 +9677,7 @@ Change Setting
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe prefs.set`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -9158,6 +9695,7 @@ Reset Settings
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe prefs.reset`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -9175,6 +9713,7 @@ Open Settings
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe prefs.open`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -9192,6 +9731,7 @@ Settings Pages
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe prefs.pages`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -9209,6 +9749,7 @@ List Keyboard Shortcuts
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe shortcuts.list`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -9226,6 +9767,7 @@ Set Keyboard Shortcut
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe shortcuts.set`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -9243,6 +9785,7 @@ Reset Keyboard Shortcuts
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe shortcuts.reset`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -9260,6 +9803,7 @@ Keyboard Shortcut Preset
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe shortcuts.preset`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -9277,6 +9821,7 @@ Export Keyboard Shortcuts
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe shortcuts.export`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -9294,6 +9839,7 @@ Import Keyboard Shortcuts
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe shortcuts.import`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -9311,6 +9857,7 @@ Keyboard Shortcut Conflicts
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe shortcuts.conflicts`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -9328,6 +9875,7 @@ Open Recent
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no recent projects。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe file.openRecent`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -9345,6 +9893,7 @@ Clear Recent Projects
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no recent projects。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe file.clearRecent`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -9362,6 +9911,7 @@ Auto-Save Now
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe file.autoSave`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -9379,6 +9929,7 @@ Auto-Save Status
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe file.recoveryInfo`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -9396,6 +9947,7 @@ History
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: nothing to undo。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe edit.history`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -9413,6 +9965,7 @@ Import Recent Footage
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no recent footage。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe file.importRecent`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -9430,6 +9983,7 @@ Clear Recent Footage
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no recent footage。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe file.clearRecentFootage`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -9447,6 +10001,7 @@ Recent Animation Presets
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe anim.applyRecentPreset`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -9464,6 +10019,7 @@ Clear Recent Presets
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no recent animation presets。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe anim.clearRecentPresets`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -9481,6 +10037,7 @@ Save a Copy As XML...
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe file.saveCopyAsXml`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -9498,6 +10055,7 @@ With Layered Comp
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: select an item in the Project panel first。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe file.replaceWithLayeredComp`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -9515,6 +10073,7 @@ Execute File
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe file.executeFile`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -9532,6 +10091,7 @@ Assign Shortcut to 3D View
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe view.assign3dShortcut`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -9549,6 +10109,7 @@ Assign Shortcut to Workspace
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe window.assignWorkspaceShortcut`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -9566,6 +10127,7 @@ Enable Logging
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe help.enableLogging`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -9583,6 +10145,7 @@ Reveal Logging File
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe help.revealLogFile`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -9600,6 +10163,7 @@ System Compatibility Report...
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe help.systemReport`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -9617,6 +10181,7 @@ Create VR Environment...
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe comp.vr.createEnvironment`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -9634,6 +10199,7 @@ Extract Cubemap...
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe comp.vr.extractCubemap`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -9651,6 +10217,7 @@ System Information
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe help.systemInfo`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -9668,6 +10235,7 @@ Convert Audio to Keyframes
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe keys.audioToKeyframes`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -9685,6 +10253,7 @@ RPF Camera Import
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe keys.rpfCameraImport`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -9702,6 +10271,7 @@ Primary Composition
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe essential.setPrimary`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -9719,6 +10289,7 @@ Essential Graphics Name
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe essential.setName`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -9736,6 +10307,7 @@ Add Property to Essential Graphics
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe essential.addProperty`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -9753,6 +10325,7 @@ Add Mirror
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe essential.addMirror`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -9770,6 +10343,7 @@ Link Property to Control
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe essential.linkProperty`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -9787,6 +10361,7 @@ Unlink Property
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe essential.unlinkProperty`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -9804,6 +10379,7 @@ Add Media Replacement
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe essential.addMedia`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -9821,6 +10397,7 @@ Add Group
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe essential.addGroup`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -9838,6 +10415,7 @@ Add Comment
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe essential.addComment`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -9855,6 +10433,7 @@ Rename Control
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe essential.rename`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -9872,6 +10451,7 @@ Remove Control
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe essential.remove`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -9889,6 +10469,7 @@ Move Control
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe essential.move`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -9906,6 +10487,7 @@ Solo Supported Properties
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe essential.soloSupported`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -9923,6 +10505,7 @@ Essential Graphics Template...
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe essential.exportTemplate`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -9940,6 +10523,7 @@ Essential Graphics Template...
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe essential.importTemplate`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -9957,6 +10541,7 @@ Set Essential Property
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe essential.set`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -9974,6 +10559,7 @@ Push Override Values to Source
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe essential.pushToComp`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -9991,6 +10577,7 @@ Revert
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe essential.revert`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -10008,6 +10595,7 @@ Edit Dropdown Menu
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe effect.editDropdown`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -10025,6 +10613,7 @@ Essential Graphics controls
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe essential.list`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -10042,6 +10631,7 @@ Can Add Property to Essential Graphics
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe essential.canAdd`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -10059,6 +10649,7 @@ Open in Essential Graphics
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe comp.openInEssentialGraphics`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -10076,6 +10667,7 @@ Essential Properties of a precomp layer
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe essential.instance`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -10093,6 +10685,7 @@ Read a template's manifest
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe essential.templateInfo`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -10110,6 +10703,7 @@ Expression errors (the error bar)
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe expr.errors`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -10127,6 +10721,7 @@ Expression Language menu
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe expr.languageMenu`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -10144,6 +10739,7 @@ Create Proxy
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: select a composition。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe file.createProxy`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -10161,6 +10757,7 @@ File...
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: select an item in the Project panel first。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe file.setProxy`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -10178,6 +10775,7 @@ None
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: select an item in the Project panel first。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe file.setProxyNone`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -10195,6 +10793,7 @@ Use Proxy
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: select an item in the Project panel first。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe file.useProxy`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -10212,6 +10811,7 @@ Proxy...
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: select an item in the Project panel first。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe file.interpretProxy`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -10229,6 +10829,7 @@ Install Script File...
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe file.installScript`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -10246,6 +10847,7 @@ Install ScriptUI Panel...
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe file.installScriptUIPanel`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -10263,6 +10865,7 @@ Uninstall Script
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe file.uninstallScript`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -10280,6 +10883,7 @@ List Scripts
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe file.scripts.list`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -10297,6 +10901,7 @@ ScriptUI Panel
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe window.scriptPanel`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -10314,6 +10919,7 @@ List Script Windows
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe scriptui.list`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -10331,6 +10937,7 @@ Script Window Controls
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe scriptui.get`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -10348,6 +10955,7 @@ Click Script Window Control
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe scriptui.click`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -10365,6 +10973,7 @@ Set Script Window Control
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe scriptui.set`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -10382,6 +10991,7 @@ Close Script Window
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe scriptui.close`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -10399,6 +11009,7 @@ Background Jobs
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe jobs.list`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -10416,6 +11027,7 @@ Cancel Job
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe jobs.cancel`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -10433,6 +11045,7 @@ Wait for Background Jobs
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe jobs.wait`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -10450,6 +11063,7 @@ List Folder
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe mediaBrowser.list`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -10467,6 +11081,7 @@ Go to Folder
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe mediaBrowser.go`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -10484,6 +11099,7 @@ Add to Favorites
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe mediaBrowser.addFavorite`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -10501,6 +11117,7 @@ Remove from Favorites
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe mediaBrowser.removeFavorite`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -10518,6 +11135,7 @@ Import
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe mediaBrowser.import`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -10535,6 +11153,7 @@ Media Browser Action
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe mediaBrowser.action`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -10552,6 +11171,7 @@ File Info
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe mediaBrowser.fileInfo`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -10569,6 +11189,7 @@ Metadata
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe item.metadata`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -10586,6 +11207,7 @@ Project Comment
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe project.setProjectComment`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -10603,6 +11225,7 @@ Lumetri Scopes
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe scopes.analyze`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -10620,6 +11243,7 @@ Open in Footage Panel
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe footage.open`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -10637,6 +11261,7 @@ Footage Panel State
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe footage.info`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -10654,6 +11279,7 @@ Footage Panel Time
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: open footage in the Footage panel first。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe footage.setTime`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -10671,6 +11297,7 @@ Set In Point
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: open footage in the Footage panel first。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe footage.setIn`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -10688,6 +11315,7 @@ Set Out Point
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: open footage in the Footage panel first。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe footage.setOut`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -10705,6 +11333,7 @@ Clear In and Out
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: open footage in the Footage panel first。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe footage.clearInOut`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -10722,6 +11351,7 @@ Overlay Edit
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: open footage in the Footage panel first。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe footage.overlayEdit`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -10739,6 +11369,7 @@ Ripple Insert Edit
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: open footage in the Footage panel first。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe footage.rippleInsertEdit`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -10756,6 +11387,7 @@ Auto-trace...
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.autoTrace`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -10773,6 +11405,7 @@ Scene Edit Detection...
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.sceneEditDetection`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -10790,6 +11423,7 @@ Align Video to Data
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.alignVideoToData`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -10807,6 +11441,7 @@ Align Layers
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.align`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -10824,6 +11459,7 @@ Distribute Layers
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.distribute`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -10841,6 +11477,7 @@ Content-Aware Fill Settings
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe contentFill.set`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -10858,6 +11495,7 @@ Generate Fill Layer
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe contentFill.generate`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -10875,6 +11513,7 @@ Content-Aware Fill Layer...
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.newContentAwareFill`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -10892,6 +11531,7 @@ Browser Storage
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe storage.info`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -10909,6 +11549,7 @@ Request Persistent Storage
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: browser storage is only managed in the web app。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe storage.persist`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -10926,6 +11567,7 @@ Clear Browser Storage
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: browser storage is only managed in the web app。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe storage.clear`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -10943,6 +11585,7 @@ Learn Tutorials
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe learn.list`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -10960,6 +11603,7 @@ Tutorial State
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe learn.state`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -10977,6 +11621,7 @@ Start Tutorial
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe learn.start`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -10994,6 +11639,7 @@ Tutorial Step
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe learn.step`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -11011,6 +11657,7 @@ Close Tutorial
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe learn.stop`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -11028,6 +11675,7 @@ Project Templates
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe templates.list`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -11045,6 +11693,7 @@ Template Thumbnail
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe templates.thumbnail`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -11062,6 +11711,7 @@ New Project from Template
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe templates.create`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -11079,6 +11729,7 @@ Save as Template...
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: the project has no compositions。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe templates.saveAs`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -11096,6 +11747,7 @@ Delete Template
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe templates.delete`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -11113,6 +11765,7 @@ New Project from Template...
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe file.newFromTemplate`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -11130,6 +11783,7 @@ Preview Settings
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe playback.settings.get`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -11147,6 +11801,7 @@ Change Preview Settings
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe playback.settings.set`；按原生参数构造计划后执行 run。
+- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
