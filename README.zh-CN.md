@@ -2,12 +2,12 @@
 
 从文字、图形和素材创建可编辑 `.ecproj` 工程、依赖和媒体。当前为开发版，完整 V1 未完成；已发布版本与本地文档候选分别记录。
 
-当前技能源：`0.1.0-dev.53`；消费插件：`0.1.0-dev.55`；15 个独立技能。
+当前技能源：`0.1.0-dev.54`；消费插件：`0.1.0-dev.56`；15 个独立技能。
 
 | Field | Value |
 | --- | --- |
-| Metadata version | 0.1.0-dev.53 |
-| Skills source | effectcraft-skills / v0.1.0-dev.53 |
+| Metadata version | 0.1.0-dev.54 |
+| Skills source | effectcraft-skills / v0.1.0-dev.54 |
 | Acceptance | Development; full V1 OPEN |
 
 
@@ -33,7 +33,7 @@ $env:SKILL_DIR = "<actual loaded skill directory>"
 
 ## 当前能力与证据
 
-维护者生成的[当前矩阵](docs/current-capabilities.json)绑定完整技能载荷、Python／原生制品和原始报告摘要。当前仅 macOS arm64 原生技术样例通过；其他架构、Web 浏览器、FreeBSD、创作评价和完整宿主验收未通过的格子保持 NOT_RUN。CI 的平台合同测试不替代目标平台创作。
+维护者生成的[当前矩阵](docs/current-capabilities.json)绑定完整技能载荷、Python／原生制品和原始报告摘要。已发布 source53 的 macOS arm64 技术样例通过。dev.54回执身份修复改变执行载荷，旧报告不再证明当前载荷，生成矩阵保持 NOT_RUN，直至绑定本次证据；其他架构、Web 浏览器、FreeBSD、创作评价和完整宿主验收未通过的格子继续保持 NOT_RUN。CI 的平台合同测试不替代目标平台创作。
 
 source53／plugin55 的[15 技能报告](docs/evidence/native-smoke-source53-20261009.json)通过工程重开和每例 12 帧完整解码，全部使用已验证缓存（0 次冷安装），不是 15 个领域场景或模型派发验收。[取消恢复与父子屏障](docs/evidence/cancel-family-candidate-20261009.json)保留未知编辑，完整崩溃／GUI矩阵仍开放。
 
@@ -74,4 +74,4 @@ source53／plugin55 的[15 技能报告](docs/evidence/native-smoke-source53-202
 
 [版本记录及整理前 README](RELEASE-HISTORY.zh-CN.md) · [Plugin specifications](https://github.com/full-aigc-plugins/effectcraft-plugin/tree/main/openspec/changes/establish-v1-plugin)
 
-当前[管理入口保护证据](docs/evidence/managed-interface-increment-20261009.json)覆盖历史只读和原控制器取消；9.3.5 的完整接口／模式矩阵继续开放。[source52 报告](docs/evidence/native-smoke-source52-20261009.json)保留为历史证据。
+dev.54 的[统一管理接口验收](docs/evidence/managed-public-interface-candidate-20261009.json)完成9.3.5：严格回执身份／孤立材料保护及九个管理角色，含真实原生恢复与Codex实际观察后的局部修订。source54／plugin56分发本增量，source53／plugin55保留为历史版本；三模式完整适配器组合、其他原生平台和固定宿主派发继续开放。[source52报告](docs/evidence/native-smoke-source52-20261009.json)保留为历史证据。

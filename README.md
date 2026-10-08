@@ -2,12 +2,12 @@
 
 Create editable `.ecproj` projects, dependencies and media from text, graphics and footage. This is a development release; full V1 remains open. Published releases and local documentation candidates have separate evidence.
 
-Current source: `0.1.0-dev.53`; consuming plugin: `0.1.0-dev.55`; 15 independent skills.
+Current source: `0.1.0-dev.54`; consuming plugin: `0.1.0-dev.56`; 15 independent skills.
 
 | Field | Value |
 | --- | --- |
-| Metadata version | 0.1.0-dev.53 |
-| Skills source | effectcraft-skills / v0.1.0-dev.53 |
+| Metadata version | 0.1.0-dev.54 |
+| Skills source | effectcraft-skills / v0.1.0-dev.54 |
 | Acceptance | Development; full V1 OPEN |
 
 
@@ -33,7 +33,7 @@ $env:SKILL_DIR = "<actual loaded skill directory>"
 
 ## Current capabilities and evidence
 
-The maintainer-generated [current matrix](docs/current-capabilities.json) binds the complete skill payload, Python/native artifacts and original report digest. Current macOS arm64 native technical samples pass; other architecture, browser, FreeBSD, creative and host gates stay NOT_RUN until verified. Portable CI contracts do not establish native creative acceptance.
+The maintainer-generated [current matrix](docs/current-capabilities.json) binds the complete skill payload, Python/native artifacts and original report digest. Published source53 macOS arm64 technical samples passed. The dev.54 receipt-identity changes invalidate that report for the current payload; its generated matrix stays NOT_RUN until rebound to current evidence. Other architecture, browser, FreeBSD, creative and host gates stay NOT_RUN until verified. Portable CI contracts do not establish native creative acceptance.
 
 The source53/plugin55 [15-skill report](docs/evidence/native-smoke-source53-20261009.json) passes native reopen and 12 decoded frames per case, using verified caches (zero cold installs). It does not prove 15 domain scenarios or model dispatch. [Cancellation recovery and family barriers](docs/evidence/cancel-family-candidate-20261009.json) preserve unknown edits; the full crash/GUI matrix remains open.
 
@@ -74,4 +74,4 @@ The skill source owns execution code; the plugin consumes pinned tags, commits a
 
 [Version records and complete prior README](RELEASE-HISTORY.md) · [Plugin specifications](https://github.com/full-aigc-plugins/effectcraft-plugin/tree/main/openspec/changes/establish-v1-plugin)
 
-Current [management guard evidence](docs/evidence/managed-interface-increment-20261009.json) covers readonly historical records and original-controller cancellation; task 9.3.5 stays open for the complete interface/mode matrix. The [source52 report](docs/evidence/native-smoke-source52-20261009.json) is retained as historical evidence.
+The dev.54 [public interface acceptance](docs/evidence/managed-public-interface-candidate-20261009.json) completes task 9.3.5: receipt identity/orphan guards and nine management roles, with actual native recovery and Codex-observed local revision. Source54/plugin56 distribute this increment; source53/plugin55 remain historical releases. Full three-mode adapter composition, other native platforms and fixed-host dispatch remain open. The [source52 report](docs/evidence/native-smoke-source52-20261009.json) is historical evidence.

@@ -34,9 +34,11 @@ class ManagedSegmentNativeTests(unittest.TestCase):
             plan=json.loads((skill/'examples/brand-intro.json').read_text());plan['exports']=[{'format':'png-segmented','chunkFrames':4}]
             key=managed.load('platform_support').platform_key();lock=managed.read(skill/'scripts/runtime.lock.json')
             request={'inputs':{},'source':None}
+            execution,execution_manifest=managed.load('runtime_binding').prepare(skill,runtime)
             initial=store.create('segment-task',plan=plan,output=str(output),runtime_sha=lock['artifacts'][key]['binarySha256'],
-                inputs={},source=None,mode='workflow',authorization={'requestHash':tasks.digest(request)})
+                inputs={},source=None,mode='workflow',authorization={'requestHash':tasks.digest(request)},runtime_binding=execution)
             tasks.atomic_json(store.path('segment-task').parent/'request.json',request)
+            managed.load('runtime_binding').freeze(store,'segment-task',skill,execution_manifest)
             # 故障注入仅在验收驱动中；实际每一成功段仍由锁定原生 CLI 产生。
             driver=root/'interrupt_export.py'
             driver.write_text('import importlib.util,sys\nfrom pathlib import Path\n'
@@ -64,7 +66,7 @@ class ManagedSegmentNativeTests(unittest.TestCase):
                 guard.stdin.close()
                 logs=guard.stdout.read()+guard.stderr.read();guard.stdout.close();guard.stderr.close()
             self.assertNotEqual(guard.returncode,0,logs.decode())
-            interrupted=store.read('segment-task');self.assertIn(interrupted['state'],('running','reconciling'))
+            interrupted=store.read('segment-task');self.assertIn(interrupted['state'],('running','reconciling'),logs.decode(errors='replace'))
             self.assertIn('renderRecovery',interrupted,'workflow did not persist export-only recovery context')
             orphan=next(output.glob('.effect-segment-*'),None)
             orphan_hashes=hashes(orphan) if orphan else None

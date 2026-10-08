@@ -3,10 +3,8 @@
   "evidenceBinding": {
     "file": "docs/evidence/current-capability-evidence.json",
     "sha256": "e61020769f65f105bf601c23aa76980e2adb7cec1964f452ee4efe1675cbdec3",
-    "current": true,
-    "reason": "current_native_technical_sample",
-    "reportFile": "docs/evidence/native-smoke-source53-20261009.json",
-    "reportSha256": "54764145db9f16d10b8886ac44f1ff60107797406f1aca92604e6c50869490ee"
+    "current": false,
+    "reason": "skill_payload_changed"
   },
   "platforms": [
     {
@@ -21,7 +19,7 @@
         "macOS": "11.0",
         "evidence": "pinned app Info.plist LSMinimumSystemVersion; CLI architecture validated at execution"
       },
-      "nativeRepresentative": "PASS",
+      "nativeRepresentative": "NOT_RUN",
       "scope": "native technical sample only; not domain, cold-install, creative or host acceptance",
       "completePlatformAcceptance": "NOT_RUN"
     },

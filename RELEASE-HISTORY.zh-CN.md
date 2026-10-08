@@ -1,5 +1,11 @@
 # 版本绑定的历史发行记录
 
+## dev.54 — 2026-10-09
+
+严格绑定操作回执的版本、任务、操作与参数身份，拒绝孤立材料和冲突覆盖。9.3.5管理入口验收完成：583项源码测试中545通过、38条件跳过；真实原生分段恢复及Codex观察后局部修订通过。完整V1剩余72项；其他平台原生、固定宿主派发及三模式完整组合仍开放。
+
+Strict operation receipt binding and orphan/conflict protection. Management-interface task9.3.5 is verified with public entry tests and scoped native recovery/revision evidence. Full V1, native platform and fixed-host gates remain open. [Evidence](docs/evidence/managed-public-interface-candidate-20261009.json).
+
 ## dev.53 — 2026-10-09
 
 完整载荷能力证据绑定与历史任务只读管理保护；直接取消使用原冻结控制器。技能源 dev.53／插件 dev.55 为预发行版，完整 V1 与平台／宿主门禁保持开放。

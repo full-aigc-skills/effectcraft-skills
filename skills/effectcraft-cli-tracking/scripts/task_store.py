@@ -149,15 +149,36 @@ class Store:
                     raise ValueError('invalid operation digest')
                 if step['state']=='succeeded' and not re.fullmatch('[a-f0-9]{64}',step['resultHash']):
                     raise ValueError('invalid receipt digest')
-                if step['state']=='succeeded' and value['schema']=='effectcraft-managed-task/v2':
-                    receipt_path=path.parent/'receipts'/(step['id']+'.json')
-                    if receipt_path.is_symlink() or receipt_path.parent.is_symlink():raise ValueError('receipt_symlink')
-                    receipt=load('commands').reply_json(receipt_path.read_text(encoding='utf-8'))
-                    if receipt['operationId']!=step['id'] or receipt['taskId']!=task or digest(receipt['result'])!=step['resultHash']:
-                        raise ValueError('receipt_mismatch')
+                if value['schema']=='effectcraft-managed-task/v2' and not re.fullmatch('[a-f0-9]{32}',step['id']):
+                    raise ValueError('invalid_operation_id')
+            if value['schema']=='effectcraft-managed-task/v2':self._validate_receipts(task,value['steps'],path.parent/'receipts')
             return value
         except (OSError, KeyError, TypeError, ValueError) as error:
             raise ValueError('state_invalid: ' + str(error)) from error
+
+    def _validate_receipts(self, task, steps, directory):
+        """保全未结算回执，但拒绝无归属、版本或原调用不匹配的材料。"""
+        if directory.is_symlink():raise ValueError('receipt_symlink')
+        receipts={}
+        if directory.exists():
+            if not directory.is_dir():raise ValueError('receipt_directory_invalid')
+            expected={step['id']+'.json' for step in steps}
+            for path in directory.iterdir():
+                if path.is_symlink() or not path.is_file():raise ValueError('receipt_entry_invalid')
+                if path.name not in expected:raise ValueError('orphan_receipt')
+                receipts[path.name]=path
+        for step in steps:
+            path=receipts.get(step['id']+'.json')
+            if path is None:
+                if step['state']=='succeeded':raise ValueError('receipt_missing')
+                continue
+            receipt=load('commands').reply_json(path.read_text(encoding='utf-8'))
+            if (receipt['schema']!='effectcraft-step-result/v1' or receipt['operationId']!=step['id']
+                    or receipt['taskId']!=task or receipt['argumentsHash']!=step['argumentsHash']
+                    or 'result' not in receipt):raise ValueError('receipt_mismatch')
+            if step['state']=='succeeded' and digest(receipt['result'])!=step['resultHash']:
+                raise ValueError('receipt_mismatch')
+            # attempted 的真实回执不自动结算；未知编辑仍由原任务显式核对。
 
     def save(self, state):
         state['updatedAt'] = time.time()
@@ -286,9 +307,13 @@ class Store:
             step = next(s for s in state['steps'] if s['id'] == operation_id)
             if step['state'] != 'attempted':
                 raise ValueError('operation_already_settled')
-            atomic_json(self.path(task).parent/'receipts'/(operation_id+'.json'),{
-                'schema':'effectcraft-step-result/v1','taskId':task,'operationId':operation_id,
-                'argumentsHash':step['argumentsHash'],'result':result})
+            receipt_path=self.path(task).parent/'receipts'/(operation_id+'.json')
+            receipt={'schema':'effectcraft-step-result/v1','taskId':task,'operationId':operation_id,
+                     'argumentsHash':step['argumentsHash'],'result':result}
+            if receipt_path.exists():
+                existing=load('commands').reply_json(receipt_path.read_text(encoding='utf-8'))
+                if canonical(existing)!=canonical(receipt):raise ValueError('operation_receipt_conflict')
+            else:atomic_json(receipt_path,receipt)
             step.update(state='succeeded', resultHash=digest(result), completedAt=time.time())
             return self.save(state)
 

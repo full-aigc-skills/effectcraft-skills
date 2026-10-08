@@ -1,0 +1,325 @@
+{
+  "schema": "effectcraft-public-interface-native/v1",
+  "status": "PASS",
+  "platform": "darwin-arm64",
+  "rootTask": "interface-root",
+  "installedFiles": {
+    "SKILL.md": "d48614435cbb1a065ae4825ba98705baf100f57c6ffa793d597f8b1d0e0f3648",
+    "references/output-execution.md": "1e185e63d8e20fdc54537feacdfb6e7a140474f5e61e2932747699d751671b36",
+    "references/expression-parent.md": "c67e09b82b9740bbbc603b2ec48c0aeba42c3703f775b7c234473935a355080c",
+    "references/command-reference.md": "aa978528c9b9c490d9390d79928d2258d62f87b83ace02823b7a76a349c233ba",
+    "references/tracking-scene.md": "2e699e1ab62f47a1c40405fc6dd48e15474f130295f33fdcd4e80efcad3e4be9",
+    "references/command-usage.md": "f6668cd5a7b7066c0abefa1f38534ba5e16e3227ca5cd06d05196377013964b6",
+    "references/bridge-tools.json": "1a9c5431674b0e563e83ae3e5aebf9e4c25a95c4a55c53125dccb6dc3ae60859",
+    "references/business-scenes.md": "fa6dde18bb5ea19d15de3c6be5d0fc2cdbf4f4e2cf3170a624600b2d3c4e556b",
+    "references/workflow.md": "09a885345734d8d13cd36466841c28441125caa4863472d2a5b9ed4278cc5cdc",
+    "references/segmented-render.md": "d4a500643465eafad7b96f4491086f203e121bd782d69e208095de36717a71b7",
+    "references/commands.json": "f4a4bd1bb063ffe89b0ab0f71dca12d0b1a92eec3e73306756ebf0a93bb3eeb7",
+    "references/capability-diff.json": "201b27776325f0b49a3e93c7fcfb8651bfbdf53843a9083ec2bdfc875c5c8959",
+    "references/native-command-snapshot.json": "043d3e4bcc4e03fd15df178cfcf8cfd2e81679308a48da8ff289d802b4204b74",
+    "references/codex-judge.md": "e4cd12c1942fdf49d4186c8e1552e83a6b7191e66b8d1ee4e2e156180dd3cfea",
+    "references/desktop-install.md": "db2db151b0eff30a3381a03ae377fb23ac09b2b4a919859740bd9343e7f14887",
+    "references/puppet-scene.md": "ce185ef007e86e1189210330049b80cc3a4418015826686ff3b143d81810e55f",
+    "references/camera-scene.md": "19bcbf1dce86e32974f59bfd5785ab0c7664df69ce75fd3130f6e4ec5a1e30c9",
+    "references/motion-tracking.md": "dcb4d2ea69f503e45692bbd3f2d2383546f892bd2cb5d163b7811a310af5d194",
+    "references/managed-execution.md": "bb8ac2aa692e40b9e7e0a9fe9a1444c2de41f3c4d4fa38cc467b023e852baea9",
+    "references/installation-concurrency.md": "69067acebcd47f1924a8d6aa9d8a4ce6f44ad0756d44888a21eb224bcdb1c215",
+    "references/exchange-loss.md": "eee665f62b77274ca8ce0efc4117012ade85978905cdfd40ab488af64297b8ae",
+    "references/first-use-failures.md": "ce2a8d1a8ca6b8a29a084d52d105d510476de88d40b439d6c2ff79212581d61d",
+    "references/native-workflow.md": "42fee416c66a69f6f3802abe1be6f002963cf109e7e22a4d6297b6dcaf62b8e9",
+    "references/command-coverage.json": "613f7a5fceff44bf5d7ac9f4a3521b849617ae5420be243d80ea21f1f7be7e76",
+    "agents/openai.yaml": "8fe0093ba521c032e6b243bf5c2e3d9d2303cf1ae78f76fe8365e414b7da57b7",
+    "examples/tracking-create.json": "14d6c8654cb81c1b2b578eea021039b38c5179bd9459b7ec41528999d7f53d0d",
+    "examples/camera-scene-reopen.json": "7f1ade6f23c628045941d7168c822d0372e79a63c4ff05cfbd375a03c376b4ee",
+    "examples/puppet-record-follow-create.json": "ac59e9682a32efbe12a6bdeacb5136508c120413b3ae3bdf5efda4b6602e7ed9",
+    "examples/camera-scene-create.json": "bdced8cc3a735793852bf67140ff62ec79544c938c61d733c372f6f4a61d0946",
+    "examples/tracking-reopen.json": "0b393fda8bd68c6819e25ac8f8101381dc175220ca3c8c1c3b8c35637e49ce7b",
+    "examples/layer-mask.json": "61efc2abc7274b45224659ab4aae7e847486af3f3660161a03b83b978ec7a8bc",
+    "examples/puppet-record-follow-reopen.json": "b722ee0ea4681556ae42eb58da21b293180081add09f23bb416d23ff368ae611",
+    "examples/commands-advanced.json": "e2def610996d594575136e357cab0d9ee355ce51cf782817d323b37e8227941b",
+    "examples/puppet-reopen.json": "bd05b66c9480cedaf60cbfe2fb6352dff8a6e573cd27a1fb1be43097bda58b62",
+    "examples/puppet-create.json": "405a5b98b410d2db642eec0a9d0ec8cf48c622c9f1632f36e2c2be3f01ff8560",
+    "examples/commands-revision-create.json": "03d3d7796210dfd4ff27f6cde0e1ba10b4376b0243dc4938d87103ca991f5f61",
+    "examples/expression-parent-create.json": "fca2b95312130f735c884e354ce4fede48bc67ca0a3c740b4b17a79967c20d4d",
+    "examples/native-workflow.json": "0ba62e8bd042dacb028b14c84c18cb2ee10c77e54dbd13efcd7090c8fa9fae16",
+    "examples/desktop-first-use.json": "0d1dbf9c43e8d5ce790443577b5398c2aa7af317fc15a328dc85c62813527d84",
+    "examples/commands-revision.json": "d54bfa78c48b674136b56a8e0c7e36e4c1c475a5907ba46ae450b2ac86e17d1e",
+    "examples/puppet-record-follow-revise.json": "448b635cf49567dc359a3d9ff385fe73afe4b4a32ec280ba5f8cab93ceb00a76",
+    "examples/brand-intro.json": "430aa74e69a3195f70fdfe53ae9b8939fc888df1b58e01d76fd76ccdfe3edd80",
+    "examples/camera-scene-revise.json": "2cca564a10133b56d2d8d20b0feb5cafb627a3e082ce2303fe073567af8bd00f",
+    "examples/expression-parent-revise.json": "8076203648de8834c0681149e557ea4ffed35e0863c2e7a2dec2b4001e3ca22f",
+    "scripts/bootstrap.py": "1eca0f59586609ae4314c77b4d5adb3886fe5443178fb2b300abb25cb75ae99b",
+    "scripts/desktop-platforms.lock.json": "3b4b56b144ef102f1ab2e5fbf4f374b22292dbce6a51a01e9bea466f9ed09b92",
+    "scripts/exchange_loss.py": "8871bc2d4e2e6bedd0b1d2852a06ccdbd43b0339d67afc53e6029fb3539c8c4f",
+    "scripts/launch.sh": "31bf2cef53d4d1b6a229d74389729cf24572209c48125c1dec8800df99c6431f",
+    "scripts/command_catalog.py": "ee88018a7139455125009f8d6a31f97b7e0f062a994f7d4377d910ba2001b7f7",
+    "scripts/command_revision.py": "0bf2629997ab92ce8454cde14b0033753b431f53e25139537850d1cf5c6a58c1",
+    "scripts/runtime_binding.py": "06799b6f1004052c02efc73d238c38b0f27d626c087a010cef74e3440dc5186a",
+    "scripts/image_sequence.py": "f67d0e565d8c99abd519bfaabe44599d25606450ca4f98df1ea227619ab2fff0",
+    "scripts/additional-platforms.lock.json": "d72653f778b07bb61eed795d49ffc3e7214ad39e74c64e76959818187567dce6",
+    "scripts/task_entry.sh": "efd4e8903592721a1ca63c6967c08e82d06474cc097dd614fa089d0763670779",
+    "scripts/review_ledger.py": "4931523dd1c76eb15037faaf28aaa7c85b7c85c6dfd447455925dd5a3ae9c512",
+    "scripts/task_store.py": "cee2e43d47f3db749de2383ed7034b111bb2099309f8d2d656d6e573f82c30d6",
+    "scripts/web_adapter.mjs": "081a816b285a512ebed8cc47dc87e5a16aa0502344c83b25036d3cee8b5c6f78",
+    "scripts/cancellation.py": "db22d93fe4a9eafc06460c62de9f2be3193bd1750a707c2a352ebb09502a971c",
+    "scripts/segmented_sequence.py": "f0b078e72211c245267c22514a7b4202099a47cc42a5e9c8243bdd7b0dc473e9",
+    "scripts/platform_support.py": "d6a133dc25b81570f585f473f2fe290e181e78bc24032a05ae83be6f0a45aed8",
+    "scripts/task_entry.ps1": "530d74a89c51f0ea55df332d11f9df92c9b545de56ca562b777181b959f8092f",
+    "scripts/command_judge.py": "1d9617f42edcd4dd730b0781fc55b330c40f8774db0063ff7cb53fa7af4e83f0",
+    "scripts/launch.ps1": "eaed943345d51f44b2490bdcd6d92b5f85121d4b4f47576c19ad56512c81b9b6",
+    "scripts/judge_contract.py": "58e1e4fad0e296cbf185a4e6e5cf5bd3f2db6482b34dbfcb622b814639469480",
+    "scripts/native_diagnostics.py": "0c352d047edde58a35151ba2b03c001b2a6b591bb8032307e80573d115912389",
+    "scripts/mcp_session.py": "dd6df96dc1734cd7e43c4b820661d2e2c8c713dc8849fc89ab06a3720d99619b",
+    "scripts/resource_budget.py": "97b4f4b4ac77b65df113c7eccf2ad2d4559cb849a9fe2c20d5eb8c4e7121be30",
+    "scripts/render_recovery.py": "6baf8f315f20d5e6b9115423502d66e9e51e33dc2398adc6bbff85b6b68b1e31",
+    "scripts/output_guard.py": "018c5c27217c11ec7b45ded52a1e13d7c42b34a3a53df21566e26f192143302b",
+    "scripts/runtime.lock.json": "b427c71c77e1a217c72f7c19ac872b19df28e07150f4e7f6319defe7f5d9acc0",
+    "scripts/task_entry.py": "a45fe452696b53d95e58142bd94bff50627034522f490c9241da5b9f39dcbff2",
+    "scripts/python-platforms.tsv": "3836b670271e8f8327ea386510b18dea6a867ece27be5e74f4165eaa38ad8c65",
+    "scripts/cli.py": "9303ae8ae30009fa706d5d56603032485ad81416aee1d0af523ce902e3f28165",
+    "scripts/desktop_session.py": "a4441b65603b73ad350aff4348553c9681c77cb5c030e97bc5630a7d88251a8e",
+    "scripts/native_workflow.py": "0db0471f8d849db9c3ffaeaac1c7bc40bf0cd500a638f7b681ecdeb934960bdd",
+    "scripts/desktop.lock.json": "d2af78ee474b8e19ff3c26c792bb27ad180622ffe6dbed5a402bcb7aa7167311",
+    "scripts/quality_review.py": "e0ddc78bb8bdc9b2e1dfca2e8ae7c1915ad9008ced0b3d3a242ccc45086e77e9",
+    "scripts/command_delivery.py": "77e05cf2c24c3ac7fefaa68512fb47a4852406741949d26b339c46fe262f4d5c",
+    "scripts/managed.py": "9acd35c7f1e5cb703c725e537519b02a334ba83cf0da227c1ab91023a100b24e",
+    "scripts/png_inspection.py": "0e3c50907c66c6dcc45256d045920da346ad77892e47401de3103c8f6232938d",
+    "scripts/additional_platforms.py": "1a4ffc9f04e240374269a9869d0383f9f833082cf066203fddba117f247f48d9",
+    "scripts/entry_identity.awk": "5d4b4432e043568509d05303e34357e8e8fa056f0fc5394b80f6f4d8a20cbcbe",
+    "scripts/revision.py": "546214f38430c14f354b6c0aa8feff8928d3267b9dee1b7ea708933bc3633590",
+    "scripts/python.lock.json": "e877b3fe406a2a210ebe5d7f660aa1d0483def44454a54dbe7429bfdba1c9f3f",
+    "scripts/workflow.py": "52eb0ccd9942b83588155ddb851c63c6fbea0f3122a0aa2a3029a2640cb6ce14",
+    "scripts/parameter-contract.json": "dd1bde23fb12e26774f412f0aacc93e8102eaed79d4255709b5717c112daa762",
+    "scripts/posix_group_lease.py": "23593ea54ff78457eb7d873a979aa1e1d4da601ea459dc288a4b7a8b975c6155",
+    "scripts/orphan_segments.py": "244059948ca6b783c64cdd5942e91f3e6268dfd71f3c48c300595ccbcb2584b9",
+    "scripts/process_guard.py": "8ddf5881adeec3d224ef57821d3c83bd4319cf2d1f9efb5ed0f1dab846446f4f",
+    "scripts/engineering_review.py": "8a06516198de09b49d43cec4bff51aeded085bec9d352567055ef9edca29ec53",
+    "scripts/preserved_stage.py": "64199df3ee6af2901a859a5aac401fd27ca2f0c6ba9238e6f72c3563f681ad63",
+    "scripts/commands.py": "7a7bf479698a48d9f4c5e6e94577108dbd230da312c21e04c168ae7e7491f610",
+    "scripts/resource_meter.py": "a62257919fd22cfa6eb616be285122978a6732c0b888893fd8b4440396b8993f",
+    "scripts/desktop.py": "802de3eef9ed9fca3ad09a2f5f6f204f6bbba5a09450efe6ae062e7159409553",
+    "scripts/python-integrity/windows-arm64.tsv": "625a22a5086fd7d312bc156cde8e3f4443ceb2079e2ff91457c6de0cadd5df4d",
+    "scripts/python-integrity/darwin-x86_64.tsv": "53196035ea5ca246ef60da5b248d02a91964a269c6ec7397eedc0f28a72694ca",
+    "scripts/python-integrity/windows-x86.tsv": "551536440722a4fc82e578f4af5a11ef72a9736b3be4b08621982f0f767cc981",
+    "scripts/python-integrity/linux-aarch64.tsv": "6b639cbaa8c4e691d226447b747fde28fb0f9e337fe828d46b2ceba80ad325f7",
+    "scripts/python-integrity/darwin-arm64.tsv": "8f9c3aaf79cd0ff1867ac5d3c937d6ca0c60ccf1ab2b321a2b7a8454209d6fdd",
+    "scripts/python-integrity/linux-x86_64.tsv": "f81e6ac6a770f895b5b1a89838da856f21e9c827f4fc320ed1562645783c0c55",
+    "scripts/python-integrity/windows-x86_64.tsv": "e1e98775d10bcb9fbf55e482a31d9efdb91a8d61d80718998f66f7c9b195e5f3",
+    "scripts/runtime-integrity/darwin-arm64.json": "c7eb5424dbb14940624e3ae6a494078a41dfa0c6738b7779d5d9ceb40f7e2220",
+    "scripts/runtime-integrity/linux-x86_64.json": "0700c5bcadaa68ec96ac723504c6ffd3212999bfc1c4f7ec1e27ab47e6a564a8",
+    "scripts/runtime-integrity/windows-x86_64.json": "33e0714f70aee024ec182148933a536d721c5321f0b7efa1470a21e4d85c21a0",
+    "scripts/runtime-integrity/windows-x86.json": "ebe596ae6de96e0ddebbe5ca171b3b65337cf33e2c40c5f99631aff6b71d02c4",
+    "scripts/runtime-integrity/windows-arm64.json": "edb91da2b4bb474de49cbb705d5c1ff3c6700eb84eea8efc2ec65c208df40572",
+    "scripts/runtime-integrity/linux-aarch64.json": "b1c0b809c03fbf7d3d018f7418250fce3e56bd7e816781df5242c2cea08370fb",
+    "scripts/runtime-integrity/darwin-x86_64.json": "c7eb5424dbb14940624e3ae6a494078a41dfa0c6738b7779d5d9ceb40f7e2220"
+  },
+  "operations": [
+    "doctor",
+    "plan",
+    "run",
+    "inspect",
+    "reconcile",
+    "resume",
+    "cancel",
+    "review",
+    "revise"
+  ],
+  "criteria": {
+    "goal": "NOVA must be fully inside the 320x180 composition once opacity reaches 100 percent (0.5s onward); preserve badge, title opacity animation and other objects. Review requested samples only."
+  },
+  "reconcileAndResumeDidNotReplay": true,
+  "planAndDoctorReadOnly": true,
+  "coldInstalls": 0,
+  "scope": "public shell launch in independently installed readonly skill; cached pinned Python/native runtime; no natural-language dispatch claim",
+  "cancelEvidence": "docs/evidence/native-cancel-receipt-identity-20261009.json",
+  "beforeCreative": "FAIL",
+  "afterCreative": "PASS",
+  "initialScore": 0.35,
+  "finalScore": 0.95,
+  "revisionRounds": 1,
+  "sourceDeliveryBytesPreserved": true,
+  "nonTargetNativeFieldsPreserved": true,
+  "onlyNativeDifference": [
+    {
+      "path": [
+        "layers",
+        "52",
+        "properties",
+        "children",
+        "3",
+        "children",
+        "1",
+        "value",
+        "0"
+      ],
+      "before": 300.0,
+      "after": 140.0
+    }
+  ],
+  "badgePreviewPixelsCompared": 54000,
+  "badgePreviewPixelsUnchanged": true,
+  "deadlineAndIdentityPreserved": true,
+  "userAcceptance": "NOT_RUN",
+  "childTask": "ce9952ec437d4ab19c9a112dce206d86",
+  "bestTask": "ce9952ec437d4ab19c9a112dce206d86",
+  "logsSha256": {
+    "resume.stdout": "9243cab4637826b115753abfa1c9908a426b224b6f3a28fa3357bbc90aebd737",
+    "revise.stdout": "8f9175023d9794fb5b739347d6c1704d5cb86ba5d2a275763b378a35b5cda4db",
+    "review.stdout": "2e4a40a6feff7ce7532d5772e056153b41797803a4afcd6925d8820f4928a8cb",
+    "plan.stdout": "60536f67f725b69f945ec32570fe72e52d28f233cee8abcd935feb69215e4924",
+    "doctor.stdout": "1194c8a597a98934065086389da776fa34af38b277963879bb2049a4de2fce6f",
+    "run.stdout": "ebe1b5c257ed9788caeba787112e7b7826d27c772db98e9f6107f0283a5a0638",
+    "inspect.stdout": "9243cab4637826b115753abfa1c9908a426b224b6f3a28fa3357bbc90aebd737",
+    "reconcile.stdout": "9243cab4637826b115753abfa1c9908a426b224b6f3a28fa3357bbc90aebd737",
+    "review-root-fail.stdout": "59007bd7bd15a40a9b915c68b29300777e5e1b6a57ac74d6806a55855bc94c7d",
+    "inspect-final.stdout": "1151f1a201482edcf7ed0a6e3da31309c2e89bfdd64350bd5ee3c73bb8440ff9",
+    "review-child-pass.stdout": "ac96d9c4d4ec0d4b02191b23ba2aafd2355dd898627c3141db48f88a58950b84",
+    "review-child.stdout": "261f303eb342bf7b486ede9c6c42e79c014f1b6a87ec748d6bcf74f0dc4e9a27"
+  },
+  "judgeReceipts": {
+    "original": {
+      "requestId": "d5ed57da5f844b2e9da12f37f9c0f45c",
+      "taskId": "interface-root",
+      "binding": {
+        "manifestSha256": "b8a3ed1991daeb50658b5c745a1dc41c6126eaa529aaec6431bc6e19e382f072",
+        "projectSha256": "7ed76fd3c632287898d69dfaadf9ed3f3b42197adbd57ebe9cda0de8b4ed968d",
+        "filesHash": "759d459f3fff1041c386be4c81323c40910a9eb9a9c990b077b5ea8f9257006d"
+      },
+      "criteriaHash": "7238dfabaf2ac15af391f473d55f75e8aa384a267cf5a22172e81529384f3cdc",
+      "scopeHash": "4cbd665cd6db3d501105c37063c2306cd2ea523a89112bd017d7a968da1e2f36",
+      "schema": "effectcraft-judge-receipt/v2",
+      "status": "FAIL",
+      "capabilities": {
+        "visual": true,
+        "temporal": true
+      },
+      "score": 0.35,
+      "passed": false,
+      "temporalReviewed": true,
+      "issues": [
+        {
+          "description": "NOVA 标题在 0.5s 后仍超出右侧边界，A 不完整；只将标题位置移回画面内。",
+          "layer": 52,
+          "property": "transform/position",
+          "timeRange": [
+            0.5,
+            1
+          ],
+          "region": [
+            256,
+            64,
+            64,
+            36
+          ]
+        }
+      ],
+      "observations": [
+        {
+          "path": "frame-0000.png",
+          "sha256": "94fa4e584df805a110371bd3ec1a0070d5dd05bfd5c28464a19fee1596025bae",
+          "frameIndices": [
+            0
+          ],
+          "method": "Codex functions.view_image actual observation; ffmpeg exact indexed video samples",
+          "description": "实际查看原始PNG：0帧标题尚未显示，仅徽标。"
+        },
+        {
+          "path": "frame-0001.png",
+          "sha256": "6d6665c293ac4c85a8a4cfebb3e1dfb1e346b8b21d9dde52b8b2c3e5d01bd14c",
+          "frameIndices": [
+            6
+          ],
+          "method": "Codex functions.view_image actual observation; ffmpeg exact indexed video samples",
+          "description": "实际查看原始PNG：NOVA右端被320像素边界裁切，徽标仍完整。"
+        },
+        {
+          "path": "frame-0002.png",
+          "sha256": "6d6665c293ac4c85a8a4cfebb3e1dfb1e346b8b21d9dde52b8b2c3e5d01bd14c",
+          "frameIndices": [
+            11
+          ],
+          "method": "Codex functions.view_image actual observation; ffmpeg exact indexed video samples",
+          "description": "实际查看原始PNG：NOVA右端被320像素边界裁切，徽标仍完整。"
+        },
+        {
+          "path": "intro.mp4",
+          "sha256": "abaaebc974203986c8737f08f6936f16c6e7d91a0ad728e9e906eafcfc2873ab",
+          "frameIndices": [
+            0,
+            3,
+            6,
+            9,
+            11
+          ],
+          "method": "Codex functions.view_image actual observation; ffmpeg exact indexed video samples",
+          "description": "实际查看五个视频解码样本：0帧仅徽标，3帧标题淡入且裁切，6/9/11帧标题全亮但右边界仍裁切；徽标位置稳定。"
+        }
+      ]
+    },
+    "revised": {
+      "requestId": "c2201704d8b54ac48822e02d1de8c281",
+      "taskId": "ce9952ec437d4ab19c9a112dce206d86",
+      "binding": {
+        "manifestSha256": "bfad686a231b58b46edf2818b9ee8f74381216148251b0760e6f900d40fc6367",
+        "projectSha256": "2a358e94f437343af31900119328949b5422dbc7da3599434f528644292a3c07",
+        "filesHash": "9c8d49496cf3957dbb965a562e0039909e1f355cba45aa92ce55152db6760e5c"
+      },
+      "criteriaHash": "7238dfabaf2ac15af391f473d55f75e8aa384a267cf5a22172e81529384f3cdc",
+      "scopeHash": "d3a3cfddcc420fe61abe7e7993bc18ae223a642026e618a84067ef1a5e78abee",
+      "schema": "effectcraft-judge-receipt/v2",
+      "status": "PASS",
+      "capabilities": {
+        "visual": true,
+        "temporal": true
+      },
+      "score": 0.95,
+      "passed": true,
+      "temporalReviewed": true,
+      "issues": [],
+      "observations": [
+        {
+          "path": "frame-0000.png",
+          "sha256": "94fa4e584df805a110371bd3ec1a0070d5dd05bfd5c28464a19fee1596025bae",
+          "frameIndices": [
+            0
+          ],
+          "method": "Codex functions.view_image actual observation; ffmpeg exact indexed video samples",
+          "description": "实际查看原始PNG：0帧标题尚未显示，徽标保留。"
+        },
+        {
+          "path": "frame-0001.png",
+          "sha256": "4b5ebf10839297f76f64dabe01e0a0b29e5ec3bcfb7efae23fad37dfb8e7f220",
+          "frameIndices": [
+            6
+          ],
+          "method": "Codex functions.view_image actual observation; ffmpeg exact indexed video samples",
+          "description": "实际查看原始PNG：NOVA完整，右端留有安全空间，徽标和标题基线位置关系正常。"
+        },
+        {
+          "path": "frame-0002.png",
+          "sha256": "4b5ebf10839297f76f64dabe01e0a0b29e5ec3bcfb7efae23fad37dfb8e7f220",
+          "frameIndices": [
+            11
+          ],
+          "method": "Codex functions.view_image actual observation; ffmpeg exact indexed video samples",
+          "description": "实际查看原始PNG：NOVA完整，右端留有安全空间，徽标和标题基线位置关系正常。"
+        },
+        {
+          "path": "intro.mp4",
+          "sha256": "91e8bb85c879e78317a30470510dd5e7f844bb4a02aa36b60d12442c73d7b9e9",
+          "frameIndices": [
+            0,
+            3,
+            6,
+            9,
+            11
+          ],
+          "method": "Codex functions.view_image actual observation; ffmpeg exact indexed video samples",
+          "description": "实际查看五个视频解码样本：0帧仅徽标，3帧NOVA淡入但已完整进入画面，6/9/11帧标题全亮且完整；徽标位置及形状保持。"
+        }
+      ]
+    }
+  },
+  "observationCoverage": "five decoded video samples plus three bound PNG previews for each version; no all-frame creative acceptance",
+  "installedFilesUnchanged": true
+}
