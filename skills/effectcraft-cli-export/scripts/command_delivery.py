@@ -261,15 +261,16 @@ def verify_projects(output,projects,executable,timeout=120,session_factory=None)
     return report
 
 
-def inspect(store,task,runtime_home):
+def inspect(store,task,runtime_home,proof=None):
     """复用真实PNG解码器；缺覆盖、缺运行时与未知创作保持独立NOT_RUN。"""
     report={'schema':'effectcraft-quality/v1','engineering':{'status':'NOT_RUN'},'technical':{'status':'NOT_RUN','media':[]},
             'creative':{'status':'NOT_RUN'},'userAcceptance':{'status':'NOT_RUN','source':'explicit user decision required'},
             'readyForAcceptance':False,'accepted':False}
     state=store.read(task);output=Path(state['output'])
     try:
-        data=document(store,task)
-        report['binding']={'commandDeliverySha256':state['delivery']['commandDeliverySha256'],
+        proof=proof if proof is not None else state.get('delivery') or {}
+        data=document(store,task,proof)
+        report['binding']={'commandDeliverySha256':proof['commandDeliverySha256'],
                            'receiptSha256':data['receiptSha256'],'filesHash':load('task_store').digest(data['files'])}
         known={p['path'] for p in data['projects']}
         for project in data['projects']:known.update(asset['path'] for asset in project['dependencies'].values())
@@ -305,7 +306,7 @@ def inspect(store,task,runtime_home):
     except (ValueError,OSError,KeyError,TypeError) as error:
         report['engineering']['reason']=str(error);return report
     report['engineering']=verify_projects(output,data['projects'],installed['executable'],timeout=max(.1,min(120,state['deadline']-time.time())))
-    try:document(store,task)
+    try:document(store,task,proof)
     except (ValueError,OSError,KeyError,TypeError) as error:
         report['technical'].update(status='FAIL',reason=str(error));report['engineering'].update(status='FAIL',fresh=False,reason=str(error))
     return report

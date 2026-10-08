@@ -2,12 +2,12 @@
 
 Create editable `.ecproj` projects, dependencies and media from text, graphics and footage. This is a development release; full V1 remains open. Published releases and local documentation candidates have separate evidence.
 
-Current source: `0.1.0-dev.58`; consuming plugin: `0.1.0-dev.60`; 15 independent skills.
+Current source: `0.1.0-dev.59`; consuming plugin: `0.1.0-dev.61`; 15 independent skills.
 
 | Field | Value |
 | --- | --- |
-| Metadata version | 0.1.0-dev.58 |
-| Skills source | effectcraft-skills / v0.1.0-dev.58 |
+| Metadata version | 0.1.0-dev.59 |
+| Skills source | effectcraft-skills / v0.1.0-dev.59 |
 | Acceptance | Development; full V1 OPEN |
 
 
@@ -93,3 +93,7 @@ Unpublished [cross-store project claims](docs/evidence/shared-project-claims-can
 Local inode-generation repair candidate: project claims bind creation time in addition to device/inode, distinguish recycled file numbers, preserve legacy unknown claims, and fail closed when creation identity is unavailable. [Candidate evidence](docs/evidence/project-creation-generation-candidate-20261009.json) records the exact source and validation scope. Published source57/plugin59 remain unchanged; task9.3.2, desktop in-memory conflict and full V1 remain open.
 
 Local desktop revision candidate: owned managed sessions persist project/editor context and atomically guard execute_command, batch, open/save and run_script. Unmapped helpers are refused before sending; confirmed read tools are checked again afterward. [Evidence](docs/evidence/desktop-native-revision-candidate-20261009.json) separates native mapping, owned desktop control edits and installed public-entry checks from model dispatch and physical GUI input. Old published snapshots remain unchanged; full9.3.2 and V1 remain open.
+
+Desktop atomic-conflict reconciliation candidate: `docs/evidence/desktop-conflict-reconcile-candidate-20261009.json`. Versioned proofs bind the task, operation arguments, original session baseline and stopped owned desktop. Public reconcile/resume can identify an individual operation as not executed while preserving attempted intents and successful receipts. Legacy proofs, non-atomic changes and missing stop evidence remain unknown; unresolved tasks block replacement task IDs. This increment is unpublished; full 9.3.3/9.3.4 and V1 remain open.
+
+Source59 / plugin61 development release includes atomic desktop conflict reconciliation and versioned command completion seals. Recovery verifies original results before registering delivery; missing or changed evidence refuses recovery, and cancellation prevents late delivery. Earlier candidate reports retain their historical scope; see `docs/evidence/release59-validation-20261009.json` for this release. Full fault/recovery, other native platforms, host acceptance and V1 remain open.

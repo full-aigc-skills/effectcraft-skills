@@ -209,10 +209,12 @@ def worker(store, task, runtime_home):
             elif state['identity']['mode']=='commands':
                 result=load('commands').execute(plan,output,runtime_home,session_factory=hooks.session,inputs=request['inputs'],observer=hooks.command_observation,prepare_output=hooks.prepare_command_output)
                 if result['result']!='PASS':raise RuntimeError(result.get('error','native_command_failed'))
+                load('command_completion').capture(store,task)
                 proof=load('command_delivery').finalize(store,task)
             else:
                 result=load('desktop_session').run(plan,output,runtime_home,request['inputs'],task_hooks=hooks)
                 if result['result']!='PASS':raise RuntimeError(result.get('error','desktop_command_failed'))
+                load('command_completion').capture(store,task)
                 proof=load('command_delivery').finalize(store,task)
             if request.get('commandRevision'):
                 load('command_revision').validate_result(store,task,proof,runtime_home)
@@ -311,7 +313,8 @@ def run(store, plan, output, runtime_home, mode='workflow', inputs=None, source=
 
 
 def reconcile(store, task):
-    state=_reconcile(store,task)
+    current=store.read(task)
+    state=load('command_completion').recover(store,task) if 'commandCompletion' in current and current['state'] in ('running','reconciling') else _reconcile(store,task)
     if state['identity']['mode']!='workflow' and state.get('parent') and state['state']=='review_ready':
         return load('command_revision').settle_completed(store,task)
     if state['identity']['mode']!='workflow' and state.get('parent') and (state['state']=='reconciling' or state['state']=='failed' and state.get('reconciliation',{}).get('result')=='revision_not_executed'):
@@ -339,12 +342,14 @@ def _reconcile(store, task):
                 raise ValueError('process_termination_unconfirmed: cancellation lifecycle missing')
             elif state.get('worker'):
                 raise ValueError('legacy_process_ownership_unknown')
+            desktop_operations=load('desktop_revision').inspect_conflicts(store,state)
             if cancelling and not never_started:exit_result=load('task_store').exit_evidence(lifecycle['returncode'],lifecycle.get('ownership'))
             state=load('orphan_segments').settle_locked(store,task)
             state=load('resource_meter').sample_locked(store,task)
             state['state']='reconciling'
             state['reconciliation']={'result':'unknown','automaticReplay':False,
                 'requiredAction':'inspect original project, native process and receipts; partial edits cannot be resent'}
+            if desktop_operations:state['reconciliation']['desktopOperations']=desktop_operations
             if cancelling:
                 # 控制器已重启；原回执及执行租约分别证明停止，未知编辑保持原身份。
                 state['termination']={'status':'confirmed','reason':'not started at cancellation' if never_started else 'cancel reconciliation verified owned process stop','at':time.time()}

@@ -99,8 +99,12 @@ class Guard:
 
     def conflict(self,identifier,result,reason):
         """原调用已登记后出现冲突，保全实际回执，不把拒绝或未知伪装成功。"""
-        load('task_store').atomic_json(self.path.parent/('desktop-conflict-'+identifier+'.json'),{
-            'schema':'effectcraft-desktop-conflict/v1','taskId':self.hooks.task,'operationId':identifier,
+        tasks=load('task_store');state=self.hooks.store.read(self.hooks.task)
+        step=next(item for item in state['steps'] if item['id']==identifier)
+        tasks.atomic_json(self.path.parent/('desktop-conflict-'+identifier+'.json'),{
+            'schema':'effectcraft-desktop-conflict/v2','taskId':self.hooks.task,'operationId':identifier,
+            'identityHash':state['identityHash'],'operation':step['operation'],'argumentsHash':step['argumentsHash'],
+            'guardSha256':tasks.file_sha(self.path),
             'sessionNonce':self.record['sessionNonce'],'expected':self.record['token'],'result':result,'reason':reason})
         raise ValueError(reason)
 
@@ -130,3 +134,67 @@ class Guard:
         self.record=dict(self.record,token=after,operationId=identifier);self.persist()
         self.hooks.after(identifier,load('commands').parse_reply(reply,receipt_only=True))
         return reply
+
+
+def inspect_conflicts(store,state):
+    """停止核对后只读解释原证明；不修改操作状态或恢复旧原生会话。"""
+    if state['identity']['mode']!='desktop':return []
+    directory=store.path(state['taskId']).parent
+    paths=sorted(path for path in directory.iterdir() if path.name.startswith('desktop-conflict-'))
+    if not paths:return []
+    tasks=load('task_store');rows=[];steps={step['id']:step for step in state['steps']}
+    def document(path):
+        load('segmented_sequence').regular_path(path)
+        if path.is_symlink() or not path.is_file() or path.stat().st_size>2*1024*1024:raise ValueError('shape')
+        value=load('commands').reply_json(path.read_text(encoding='utf-8'))
+        if not isinstance(value,dict):raise ValueError('shape')
+        return value
+    try:
+        stopped=False;stop_path=Path(state['output'])/'desktop-session.json';stop_sha=None
+        if stop_path.exists() or stop_path.is_symlink():
+            stop=document(stop_path)
+            if (stop.get('schema')!='craft-owned-desktop-session/v1' or stop.get('domain')!='effectcraft'
+                    or type(stop.get('ownedProcessesStopped')) is not bool or type(stop.get('listenerOwnedByPID')) is not bool
+                    or type(stop.get('sessionsStarted')) is not int or stop['sessionsStarted']<0):raise ValueError('desktop_stop')
+            stopped=stop['ownedProcessesStopped'] and stop['listenerOwnedByPID'] and stop['sessionsStarted']>0
+            stop_sha=tasks.file_sha(stop_path)
+        for path in paths:
+            proof=document(path);identifier=proof['operationId'];step=steps[identifier]
+            if (path.name!='desktop-conflict-'+identifier+'.json' or proof['taskId']!=state['taskId']
+                    or step['state']!='attempted'):raise ValueError('identity')
+            outcome='unknown'
+            if proof.get('schema')=='effectcraft-desktop-conflict/v2':
+                required={'schema','taskId','operationId','identityHash','operation','argumentsHash','guardSha256','sessionNonce','expected','result','reason'}
+                if set(proof)!=required:raise ValueError('shape')
+                baseline=directory/'desktop-revision.json';guard=document(baseline)
+                if (set(guard)!={'schema','taskId','identityHash','sessionNonce','token','operationId'}
+                        or guard['schema']!='effectcraft-desktop-revision/v1'
+                        or proof['identityHash']!=state['identityHash'] or guard['identityHash']!=state['identityHash']
+                        or guard['taskId']!=state['taskId'] or guard['sessionNonce']!=proof['sessionNonce']
+                        or proof['guardSha256']!=tasks.file_sha(baseline) or guard['token']!=proof['expected']
+                        or proof['operation']!=step['operation'] or proof['argumentsHash']!=step['argumentsHash']):raise ValueError('binding')
+                validate_token(guard['token'])
+                previous=guard['operationId']
+                if previous is not None and (previous not in steps or steps[previous]['state']!='succeeded'
+                        or state['steps'].index(steps[previous])>=state['steps'].index(step)):raise ValueError('baseline_operation')
+                receipt=directory/'receipts'/(identifier+'.json')
+                if receipt.exists() or receipt.is_symlink():raise ValueError('contradictory_operation_receipt')
+                result=proof['result']
+                if proof['reason']=='native_revision_conflict':
+                    if (step['operation'] not in ('execute_command','open_project','save_project','batch','run_script')
+                            or not isinstance(result,dict) or set(result)!={'schema','status','current'}
+                            or result['schema']!='effectcraft-native-guard-result/v1' or result['status']!='conflict'
+                            or validate_token(result['current'])==guard['token']):raise ValueError('atomic_result')
+                    if stopped:outcome='not_executed'
+                elif proof['reason']=='native_revision_unverified':
+                    if (step['operation'] not in READ_ONLY_TOOLS or not isinstance(result,dict)
+                            or set(result)!={'actualResult','current'}
+                            or validate_token(result['current'])==guard['token']):raise ValueError('observation')
+                else:raise ValueError('reason')
+            elif (proof.get('schema')!='effectcraft-desktop-conflict/v1'
+                    or set(proof)!={'schema','taskId','operationId','sessionNonce','expected','result','reason'}):raise ValueError('schema')
+            rows.append({'operationId':identifier,'outcome':outcome,'proof':path.name,'proofSha256':tasks.file_sha(path),
+                         'ownedDesktopStopped':stopped,'desktopStopSha256':stop_sha,'automaticReplay':False})
+        return rows
+    except (OSError,KeyError,TypeError,ValueError,StopIteration) as error:
+        raise ValueError('desktop_conflict_proof_invalid: '+str(error)) from error
