@@ -1,5 +1,11 @@
 # 版本绑定的历史发行记录
 
+## dev.47 — 2026-10-09
+
+修正新增绑定测试读取中文JSON时的Windows默认编码问题，显式使用UTF-8。执行技能载荷与dev.46相同，保留其标签和失败CI记录；dev.46草稿由本版替代。
+
+Fix Windows JSON test decoding with explicit UTF-8. Runtime payload is unchanged from dev.46; supersedes its draft without rewriting tags.
+
 ## 开发版 dev.46 — 2026-10-09
 
 15 个独立技能新增任务私有执行快照及原 Python／控制器／运行时绑定。24 项绑定测试及482项回归（444通过／38条件跳过），含本机 macOS 限定原生恢复证据。任务9.25组件完成；74项任务、跨版本清理、目标平台与固定宿主验收及完整V1仍开放。

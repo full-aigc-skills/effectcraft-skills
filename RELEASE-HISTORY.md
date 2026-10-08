@@ -1,5 +1,11 @@
 # Version-bound release records
 
+## dev.47 — 2026-10-09
+
+修正新增绑定测试读取中文JSON时的Windows默认编码问题，显式使用UTF-8。执行技能载荷与dev.46相同，保留其标签和失败CI记录；dev.46草稿由本版替代。
+
+Fix Windows JSON test decoding with explicit UTF-8. Runtime payload is unchanged from dev.46; supersedes its draft without rewriting tags.
+
 ## Development release dev.46 — 2026-10-09
 
 Adds task-private execution snapshots and original Python/controller/runtime binding to all 15 independent skills. 24 targeted tests and 482 regressions (444 passed / 38 conditional skips); bounded macOS native recovery evidence. Task9.25 component complete; 74 tasks, cross-version cleanup, target-platform and fixed-host acceptance, and full V1 remain open.

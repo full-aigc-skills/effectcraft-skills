@@ -25,7 +25,7 @@ class RuntimeBindingTests(unittest.TestCase):
 
     def create(self,task='task',plan=None,binding=None):
         binding=binding or self.binding
-        lock=json.loads((self.source/'scripts/runtime.lock.json').read_text())
+        lock=json.loads((self.source/'scripts/runtime.lock.json').read_text(encoding='utf-8'))
         return self.store.create(task,plan=plan or {'name':'task'},output=str(self.root/task),runtime_sha=lock['artifacts'][binding['platform']]['binarySha256'],
             inputs={},source=None,mode='workflow',authorization={},runtime_binding=binding)
 
@@ -96,13 +96,13 @@ class RuntimeBindingTests(unittest.TestCase):
         self.assertEqual(self.store.path('task').read_bytes(),before);self.assertTrue(partial[0].exists())
 
     def test_all_independent_skill_entries_freeze_before_any_native_call(self):
-        suite=json.loads((ROOT/'skill-suite.json').read_text())
+        suite=json.loads((ROOT/'skill-suite.json').read_text(encoding='utf-8'))
         for row in suite['skills']:
             name=row['name'];path=ROOT/'skills'/name/'scripts/managed.py'
             with self.subTest(skill=name):
                 spec=importlib.util.spec_from_file_location('independent_'+name,path);managed=importlib.util.module_from_spec(spec);spec.loader.exec_module(managed)
                 store=managed.load('task_store').Store(self.root/'standalone state'/name)
-                plan=json.loads((BASE/'examples/brand-intro.json').read_text())
+                plan=json.loads((BASE/'examples/brand-intro.json').read_text(encoding='utf-8'))
                 with patch.object(managed,'supervise',side_effect=lambda s,t,h:s.read(t)):
                     state=managed.run(store,plan,self.root/'outputs'/name,self.home,task='registered')
                 self.m.resolve(store,'registered');self.assertEqual(state['state'],'planned')
@@ -181,7 +181,7 @@ class RuntimeBindingTests(unittest.TestCase):
             self.m.handoff(self.store,args,frozen/'scripts/managed.py');execute.assert_not_called();bridge.assert_not_called()
 
     def test_public_run_registers_complete_snapshot_before_supervision(self):
-        managed=load('managed');plan=json.loads((BASE/'examples/brand-intro.json').read_text())
+        managed=load('managed');plan=json.loads((BASE/'examples/brand-intro.json').read_text(encoding='utf-8'))
         with patch.object(managed,'HERE',self.source/'scripts'),patch.object(managed,'supervise',side_effect=lambda s,t,h:s.read(t)):
             state=managed.run(self.store,plan,self.root/'delivery',self.home,task='registered')
         self.assertEqual(state['state'],'planned');bound=self.m.resolve(self.store,'registered')
