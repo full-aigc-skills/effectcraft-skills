@@ -47,7 +47,9 @@ class CommandDeliveryTests(unittest.TestCase):
         spec=importlib.util.spec_from_file_location('command_delivery_test',SCRIPT);self.module=importlib.util.module_from_spec(spec);spec.loader.exec_module(self.module)
         self.tmp=tempfile.TemporaryDirectory();self.addCleanup(self.tmp.cleanup);self.root=Path(self.tmp.name);self.output=self.root/'output';self.output.mkdir()
         self.tasks=self.module.load('task_store');self.store=self.tasks.Store(self.root/'state')
-        self.store.create('case',plan={'schema':'craft-command-plan/v1','operations':[{'tool':'save_project','params':{}}]},output=str(self.output),runtime_sha='a'*64,inputs={},source=None,mode='commands',authorization={})
+        platform=self.module.load('platform_support').platform_key()
+        runtime=json.loads((SCRIPT.parent/'runtime.lock.json').read_text())['artifacts'][platform]['binarySha256']
+        self.store.create('case',plan={'schema':'craft-command-plan/v1','operations':[{'tool':'save_project','params':{}}]},output=str(self.output),runtime_sha=runtime,inputs={},source=None,mode='commands',authorization={})
         self.store.start('case')
         self.store.reserve_resources('case',{'frames':0,'decodedBytes':0},self.store.read('case')['identity']['planHash'])
         self.module.load('resource_meter').watch(self.store,'case',self.output,self.output,'commands')
@@ -68,7 +70,7 @@ class CommandDeliveryTests(unittest.TestCase):
         self.observer(self.session,record,'after');self.steps.append(record)
 
     def finish(self,mode='headless'):
-        receipt={'schema':'craft-command-receipt/v1','pluginId':'effectcraft','mode':mode,'result':'PASS','runtimeSha256':'a'*64,'steps':self.steps,'planSha256':hashlib.sha256(json.dumps(self.store.read('case')['plan'],ensure_ascii=False,sort_keys=True,allow_nan=False).encode()).hexdigest()}
+        receipt={'schema':'craft-command-receipt/v1','pluginId':'effectcraft','mode':mode,'result':'PASS','runtimeSha256':self.store.read('case')['identity']['runtimeSha256'],'steps':self.steps,'planSha256':hashlib.sha256(json.dumps(self.store.read('case')['plan'],ensure_ascii=False,sort_keys=True,allow_nan=False).encode()).hexdigest()}
         self.tasks.atomic_json(self.output/'success.json',receipt)
         proof=self.module.finalize(self.store,'case');self.store.delivered('case',proof);return proof
 

@@ -170,6 +170,7 @@ class Hooks:
 
 def worker(store, task, runtime_home):
     state=store.read(task)
+    load('runtime_binding').resolve(store,task)
     with load('platform_support').exclusive_lock(store.root/'leases'/(task+'.lock'),timeout=0):
         recovering=state['state']=='resuming'
         store.start(task); hooks=Hooks(store,task)
@@ -227,6 +228,8 @@ def supervise(store, task, runtime_home, recover=False):
     with platform.exclusive_lock(store.root/'leases'/(task+'.supervisor.lock'),timeout=0):
         with platform.exclusive_lock(store.root/'leases'/(task+'.lifecycle.lock'),timeout=0):
             state=store.read(task)
+            store.allowed(state)
+            bound=load('runtime_binding').resolve(store,task)
             if recover:
                 with store.lock():
                     state=store.read(task);store.allowed(state)
@@ -246,10 +249,10 @@ def supervise(store, task, runtime_home, recover=False):
             elif state['state']!='planned' or state['steps']:
                 raise ValueError('reconciliation_required')
         receipt=store.lifecycle_path(state)
-        args=[sys.executable,'-I','-B',str(HERE/'process_guard.py'),'--receipt',str(receipt),
+        args=[bound['python'],'-I','-B',bound['guard'],'--receipt',str(receipt),
               '--lease',str(store.root/'leases'/(task+'.lifecycle.lock')),'--',
-              sys.executable,'-I','-B',str(Path(__file__).resolve()),'--state-root',str(store.root),
-              '--runtime-home',str(runtime_home),'_worker','--task',task]
+              bound['python'],'-I','-B',bound['script'],'--state-root',str(store.root),
+              '--runtime-home',bound['runtimeHome'],'_worker','--task',task]
         options={'start_new_session':True} if os.name!='nt' else {'creationflags':subprocess.CREATE_NEW_PROCESS_GROUP}
         with (store.path(task).parent/'worker.log').open('ab') as log:
             child=subprocess.Popen(args,stdin=subprocess.PIPE,stdout=log,stderr=log,**options)
@@ -296,10 +299,12 @@ def run(store, plan, output, runtime_home, mode='workflow', inputs=None, source=
     if revision_scope is not None:
         request['revisionScope']=revision_scope;authorization['revisionScope']=revision_scope
     authorization['requestHash']=load('task_store').digest(request)
+    execution,manifest=load('runtime_binding').prepare(HERE.parent,runtime_home)
     store.create(task,plan=plan,output=str(output),runtime_sha=lock['artifacts'][key]['binarySha256'],
                  inputs=check['inputHashes'],source=str(Path(source)/'project.ecproj') if source else None,
-                 mode=mode,authorization=authorization,parent=parent)
+                 mode=mode,authorization=authorization,parent=parent,runtime_binding=execution)
     load('task_store').atomic_json(store.path(task).parent/'request.json',request)
+    load('runtime_binding').freeze(store,task,HERE.parent,manifest)
     return supervise(store,task,runtime_home)
 
 
@@ -373,6 +378,8 @@ def main():
         if name=='review':p.add_argument('--criteria',type=Path,required=True);p.add_argument('--judge',type=Path)
     args=parser.parse_args();store=load('task_store').Store(args.state_root)
     try:
+        if args.action in ('resume','revise','reconcile','review','_worker'):
+            load('runtime_binding').handoff(store,args,Path(__file__))
         if args.action=='doctor':result=doctor(args.runtime_home,args.probe_native,args.compare_catalog)
         elif args.action=='inspect':result=store.read(args.task)
         elif args.action=='cancel':result=store.cancel(args.task)

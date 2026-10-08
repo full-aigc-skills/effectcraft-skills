@@ -351,3 +351,32 @@ Discovery PASS is limited to native version/registry/schema identity. Creative, 
 本版纳入已验证的 doctor 和命令差异增量（9.2.1、9.24）；此前候选段落保留阶段记录。未完成运行时绑定草稿不纳入本版；74 项实施任务、固定宿主与其他目标平台验收仍开放。
 
 This release includes the verified doctor/catalog increments (9.2.1 and 9.24). Earlier candidate paragraphs retain checkpoint scope. Runtime-binding drafts are excluded; 74 implementation tasks, fixed-host and other target-platform qualification remain open.
+
+## 任务执行绑定候选 / Task execution binding candidate — 2026-10-09
+
+任务9.25完成限定组件：任务私有执行快照、旧控制器派发、原Python/CLI身份、独立技能入口及损坏拒绝。24项目标测试及482项完整回归（444通过／38条件跳过）通过。15个独立入口先登记完整资源再监督；复制中断保留暂存，历史缺绑定不补建，UNKNOWN工作身份不能因执行版本变化绕过。测试共享回执改用真实平台锁摘要，保留原故障及非目标保全断言。
+
+macOS arm64实际公开resume/review保留原隔离Python3.13.16、EffectCraft0.4.0和代码快照；测试技能锁改成不可用的假设新版本后仍完成原生工程重开和12帧视频完整解码，新任务使用不同代码快照。三个公开损坏拒绝案例保全任务和worker日志。两个真实原生版本升级、跨状态根清理、Windows/其他平台原生执行及固定宿主派发未验收；9.1.4、EC-RT-002和V1保持开放。插件仍锁定已发布source45，候选未发布。
+
+Task9.25 closes only task-private snapshot/original-controller dispatch and fail-closed integrity behavior.24 targeted tests and482 regressions pass (444 passes/38 conditional skips), including registration from all15 independent entries. Actual macOS public recovery/review uses locked Python3.13.16, the original controller and EffectCraft0.4.0 despite a hypothetical unavailable new source lock. Original identity, deadline and snapshot remain unchanged; a new task freezes a distinct code generation. Both native deliveries decode12 video frames. Missing/corrupt/modified snapshots refuse publicly without changing the task or worker log.
+
+This does not qualify two actual native release versions, cleanup across state roots, native Windows/other platforms or installed host dispatch. The Windows adapter uses owned Job/EOF supervision; its portable tests are not native target evidence.9.1.4 and the full requirement remain open; published source45/plugin47 excludes this candidate. [Evidence](evidence/task-execution-binding-candidate-20261009.json).
+
+```mermaid
+flowchart LR
+ A[登记任务与原执行身份] --> B[暂存并核对执行快照]
+ B --> C[原子发布任务私有资源]
+ C --> D[原解释器与守护器启动worker]
+ E[更新后的技能恢复入口] --> F{原绑定与资源有效}
+ F -->|是| G[原快照控制器]
+ G --> D
+ F -->|否| H[保留现场并拒绝写入]
+ B -->|复制失败| H
+```
+
+
+## 2026-10-09 开发发行状态 / Development release status
+
+技能源 dev.46／插件 dev.48 纳入任务执行绑定组件9.25；此前章节的“候选未发布”和旧锁定版本仅描述各自检查点。24项绑定测试与macOS原生恢复证据对应本次执行代码，固定安装后的智能体自然语言派发验收仍开放。两个实际原生版本升级、跨状态根清理、其他目标平台及完整V1不因本次发布关闭。
+
+Source dev.46 / plugin dev.48 includes component9.25. Earlier unpublished-candidate statements describe their historical checkpoints. Publication does not qualify installed-host dispatch, two actual native-version upgrades, global cleanup or full V1.

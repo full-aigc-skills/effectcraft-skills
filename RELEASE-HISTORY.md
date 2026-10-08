@@ -1,5 +1,9 @@
 # Version-bound release records
 
+## Development release dev.46 — 2026-10-09
+
+Adds task-private execution snapshots and original Python/controller/runtime binding to all 15 independent skills. 24 targeted tests and 482 regressions (444 passed / 38 conditional skips); bounded macOS native recovery evidence. Task9.25 component complete; 74 tasks, cross-version cleanup, target-platform and fixed-host acceptance, and full V1 remain open.
+
 ## Development release dev.45 — 2026-10-08
 
 Fixes the Windows recovery-argv test to compare file identity across equivalent short/long paths. Skill payload is unchanged from dev.44; the original tag remains immutable.

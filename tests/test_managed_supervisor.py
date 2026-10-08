@@ -7,6 +7,8 @@ import subprocess
 import sys
 import tempfile
 import unittest
+from unittest.mock import patch
+from types import SimpleNamespace
 
 
 SCRIPT = Path(__file__).resolve().parents[1] / 'skills/effectcraft-use/scripts/managed.py'
@@ -44,7 +46,11 @@ class ManagedSupervisorTests(unittest.TestCase):
                         parent['state']='reconciling';store.save(parent)
                 except BaseException as error:errors.append(error)
             watcher=threading.Thread(target=cancel_ancestor);watcher.start()
-            try:result=managed.supervise(store,'child',root/'runtime')
+            original_load=managed.load
+            injected=SimpleNamespace(resolve=lambda *args:{'python':sys.executable,'guard':str(SCRIPT.with_name('process_guard.py')),'script':str(driver),'runtimeHome':str(root/'runtime')})
+            try:
+                with patch.object(managed,'load',side_effect=lambda name:injected if name=='runtime_binding' else original_load(name)):
+                    result=managed.supervise(store,'child',root/'runtime')
             finally:watcher.join(timeout=6)
             self.assertFalse(errors,errors);self.assertFalse(watcher.is_alive())
             self.assertTrue(marker.exists());self.assertEqual(result['state'],'reconciling')
@@ -103,11 +109,14 @@ class ManagedSupervisorTests(unittest.TestCase):
             source.write_bytes(b'original project')
             store = task_store.Store(root / 'state')
             request = {'inputs': {}, 'source': str(root / 'source-delivery')}
+            binding=managed.load('runtime_binding');execution,manifest=binding.prepare(SCRIPT.parent.parent,root/'runtime')
+            runtime=managed.read(SCRIPT.with_name('runtime.lock.json'))['artifacts'][execution['platform']]['binarySha256']
             store.create('source-conflict', plan={'operations': []},
-                         output=str(root / 'output'), runtime_sha='a' * 64,
+                         output=str(root / 'output'), runtime_sha=runtime,
                          inputs={}, source=str(source), mode='workflow',
-                         authorization={'requestHash': task_store.digest(request)})
+                         authorization={'requestHash': task_store.digest(request)},runtime_binding=execution)
             task_store.atomic_json(store.path('source-conflict').parent / 'request.json', request)
+            binding.freeze(store,'source-conflict',SCRIPT.parent.parent,manifest)
             source.write_bytes(b'external revision')
             process = subprocess.run([sys.executable, '-I', '-B', str(SCRIPT),
                                       '--state-root', str(store.root),

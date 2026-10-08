@@ -232,13 +232,15 @@ def revise(store,task,plan,output,runtime_home):
     # 预算先于任何子任务写入持久化，失败不退轮数、不换ID重试。
     request={'inputs':inputs,'source':None,'commandRevision':context}
     source=Path(state['output'])/plan['project']
+    execution,manifest=load('runtime_binding').prepare(Path(__file__).resolve().parent.parent,runtime_home)
     store.create(child,plan=generated,output=str(output),runtime_sha=state['identity']['runtimeSha256'],
         inputs={k:tasks.file_sha(v) for k,v in inputs.items()},source=str(source),mode=state['identity']['mode'],
-        authorization={'writeRoot':str(Path(output).absolute()),'inputs':inputs,'requestHash':tasks.digest(request)},parent=root['taskId'])
+        authorization={'writeRoot':str(Path(output).absolute()),'inputs':inputs,'requestHash':tasks.digest(request)},parent=root['taskId'],runtime_binding=execution)
     tasks.atomic_json(store.path(child).parent/'request.json',request)
     for path,content in contents.items():
         p=Path(path);p.parent.mkdir(parents=True,exist_ok=True)
         with p.open('xb') as f:f.write(content)
+    load('runtime_binding').freeze(store,child,Path(__file__).resolve().parent.parent,manifest)
     validate_prepared(store,child)
     result=managed.supervise(store,child,runtime_home)
     if result['state']=='review_ready':

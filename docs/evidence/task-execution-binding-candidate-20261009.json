@@ -1,0 +1,134 @@
+{
+  "schema": "effectcraft-task-execution-binding-evidence/v1",
+  "candidateDate": "2026-10-09",
+  "status": "bounded-component-PASS",
+  "publishedSource": "v0.1.0-dev.45",
+  "publishedPlugin": "v0.1.0-dev.47",
+  "candidatePublished": false,
+  "regression": {
+    "pythonVersion": "3.13.5",
+    "total": 482,
+    "passed": 444,
+    "conditionalSkipped": 38,
+    "status": "PASS",
+    "logSha256": "0a9424e627d998a900dfe58d098ae9b3e00aa221e8d3d71c90a762e2efd32e7c"
+  },
+  "targetedBindingTests": 24,
+  "independentEntryRegistrationCases": 15,
+  "native": {
+    "status": "PASS",
+    "platform": "darwin-arm64",
+    "pythonVersion": "3.13.16",
+    "pythonMode": "locked",
+    "nativeVersion": "0.4.0",
+    "oldTaskIdentityPreserved": true,
+    "deadlinePreserved": true,
+    "oldSnapshotPreserved": true,
+    "newSourceGenerationSeparate": true,
+    "nativeDeliveries": [
+      {
+        "task": "upgrade-held",
+        "projectSha256": "d9d126a2a46dc98b88ac9321f7d971c1e99ff3498184ca113aa546a81386d8ae",
+        "videoSha256": "91e8bb85c879e78317a30470510dd5e7f844bb4a02aa36b60d12442c73d7b9e9",
+        "decodedFrames": 12
+      },
+      {
+        "task": "new-generation",
+        "projectSha256": "b2dcb156beb79e27f0986124949dab3d6d5c8c83c234f6bebf74a520fde731b3",
+        "videoSha256": "91e8bb85c879e78317a30470510dd5e7f844bb4a02aa36b60d12442c73d7b9e9",
+        "decodedFrames": 12
+      }
+    ],
+    "scope": "actual old-task public resume/review after a hypothetical unavailable new source lock, then actual new source-generation run; same native 0.4.0",
+    "remaining": [
+      "two actual native release versions",
+      "cleanup manager qualification",
+      "Windows and other target native execution",
+      "installed host natural-language dispatch",
+      "full V1"
+    ]
+  },
+  "nativeBinding": {
+    "originalIdentityHash": "0add60383979d396955578d318edee88a0e9eef931cd0b1a83e35cc80cd413f1",
+    "originalExecutionSha256": "9778e86216616bb5689a3e1e163cc2824eb3a79ac76156d469dfa6caa3041f9b",
+    "newExecutionSha256": "c94df9d14828b3222e8951c3bb5ddfc4ef33837e583baf993cbd852635a45d35",
+    "pythonBinarySha256": "65f8844799498293cbecee5cea3f7e7b69f0c0e2a75d9e0e49b45ccf1634a535",
+    "nativeBinarySha256": "c1717eb87e5b57b3ed88c6a78047268a5afa566beb36104fdcc05dc8634a01c1",
+    "oldSnapshotControllerSha256": "70a4401ced932f773abbde9940c91bbfa8fe6703c87bfc9f2ae20c7e0826a609"
+  },
+  "publicRefusalCases": [
+    {
+      "case": "missing snapshot",
+      "status": "PASS",
+      "stateAndWorkerLogPreserved": true,
+      "nativeEditsReplayed": false
+    },
+    {
+      "case": "corrupt manifest",
+      "status": "PASS",
+      "stateAndWorkerLogPreserved": true,
+      "nativeEditsReplayed": false
+    },
+    {
+      "case": "changed executable resource",
+      "status": "PASS",
+      "stateAndWorkerLogPreserved": true,
+      "nativeEditsReplayed": false
+    }
+  ],
+  "componentContracts": [
+    "task-private execution manifest, staged atomic publication and retained failed staging",
+    "same-work UNKNOWN conflict key excludes executor and runtime changes",
+    "missing/corrupt/linked execution material refuses before native dispatch",
+    "original Python/controller/native-home handoff; legacy resume and revise are diagnostic only",
+    "supervisor uses bound guard and worker; command revision child freezes resources before supervision",
+    "Windows controller Job/EOF adapter checks stopped receipt and matching exit code; native target acceptance NOT_RUN",
+    "state-root references are readonly and never authorize deleting runtime versions"
+  ],
+  "testRepairBoundary": "shared command receipt fixtures now use actual platform lock digest instead of a*64; original negative and preservation assertions remain",
+  "windowsNativeHandoff": "NOT_RUN",
+  "implementationSha256": {
+    "skills/effectcraft-use/scripts/runtime_binding.py": "27292b56554ea6bfbbd0126d2f9d17f6239570abba9354a2bcedd2b4e427b5d5",
+    "skills/effectcraft-use/scripts/managed.py": "70a4401ced932f773abbde9940c91bbfa8fe6703c87bfc9f2ae20c7e0826a609",
+    "skills/effectcraft-use/scripts/task_store.py": "5af9fc1fcc196d4ded1521654d87eee19655dc92d4d03bc706263d1ac65abcbd",
+    "skills/effectcraft-use/scripts/command_revision.py": "659d3dbb9c481d09b4bab908364cea6d80730befe74dd5c30e007ba467a1bb96",
+    "tests/test_runtime_binding.py": "265eefc87092aea205e1715d9a3151a01e17af3e3ffc19a8eb46d57165a8405a",
+    "tests/test_managed_supervisor.py": "e1347ed0dabb643d5291e69373a3fc1669e539315866e9354711f6dfb3f83ab3",
+    "tests/test_managed_command_revision.py": "1698ee0f76c38ec9a74e484b040dc51e4c3e73e4b84f823b86423da66c0bdeed",
+    "tests/test_managed_command_delivery.py": "c7a5ac360ce18fdeb7ddd04aa34a772dcb4a577d65cea09c4fc48dcea1ada62e",
+    ".github/workflows/managed-runtime.yml": "efe9d3bacd99232549a3142ebfffeb5cb4b0d31b8bb495b2386ebf71a7624f6c"
+  },
+  "redEvidenceSha256": {
+    "integration-red.log": "bea3ef4b27bf9957925b523f55ef653d920e354b7d239008de3d3ec8a911a495",
+    "resources-red.log": "42830db66ff6a9c4f2b8f9985f2bac74602c938dad7cadc88e751631c4095528",
+    "windows-receipt-red.log": "a9df2e216d29f893b99c1952cce83da652c63da876f7e13625fe529335c1b12d"
+  },
+  "remaining": [
+    "9.1.4 full multi-version upgrade and cleanup qualification",
+    "two actual native release versions; hypothetical new lock is not upgrade qualification",
+    "Windows native controller handoff and other target platforms",
+    "fixed released snapshot and installed host natural-language dispatch",
+    "full V1"
+  ],
+  "marketplaceEligible": false,
+  "nativeLifecycle": {
+    "upgrade-held": {
+      "status": "stopped",
+      "returncode": 0,
+      "ownedTreeStopped": true
+    },
+    "new-generation": {
+      "status": "stopped",
+      "returncode": 0,
+      "ownedTreeStopped": true
+    }
+  },
+  "pluginChecks": {
+    "testsPassed": 23,
+    "documentation": "PASS",
+    "requirements": 26,
+    "scenarios": 138,
+    "strictOpenSpec": "PASS",
+    "immutableReleasedSnapshotCheck": "PASS"
+  }
+}

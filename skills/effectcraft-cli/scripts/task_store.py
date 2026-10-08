@@ -87,8 +87,9 @@ class Store:
                     raise ValueError('invalid time')
             if value['identity']['planHash'] != digest(value['plan']) or value['identityHash'] != digest(value['identity']):
                 raise ValueError('identity_mismatch')
-            if value['schema']=='effectcraft-managed-task/v2' and value['workKey']!=digest({k:v for k,v in value['identity'].items() if k not in ('authorization','runtimeSha256')}):
+            if value['schema']=='effectcraft-managed-task/v2' and value['workKey']!=digest({k:v for k,v in value['identity'].items() if k not in ('authorization','runtimeSha256','runtimeBinding')}):
                 raise ValueError('work_identity_mismatch')
+            if 'runtimeBinding' in value['identity']:load('runtime_binding').validate_binding(value['identity']['runtimeBinding'])
             if not isinstance(value['steps'], list) or not isinstance(value['budget'], dict):
                 raise ValueError('invalid records')
             if 'resources' in value:load('resource_budget').validate(value['resources'])
@@ -133,7 +134,7 @@ class Store:
         return [self.read(p.name) for p in sorted(directory.iterdir()) if p.is_dir()]
 
     def create(self, task, *, plan, output, runtime_sha, inputs, source, mode,
-               authorization, seconds=1800, parent=None):
+               authorization, seconds=1800, parent=None, runtime_binding=None):
         if type(seconds) not in (int, float) or not math.isfinite(seconds) or not 0 < seconds <= 1800:
             raise ValueError('invalid_deadline')
         if not re.fullmatch('[a-f0-9]{64}', runtime_sha):
@@ -143,7 +144,9 @@ class Store:
         identity = {'planHash':digest(plan), 'inputHashes':inputs,
                     'project':source, 'projectRevision':file_sha(source) if source else None,
                     'runtimeSha256':runtime_sha, 'mode':mode, 'authorization':authorization}
-        work_key = digest({k:v for k,v in identity.items() if k not in ('authorization','runtimeSha256')})
+        if runtime_binding is not None:
+            load('runtime_binding').validate_binding(runtime_binding);identity['runtimeBinding']=runtime_binding
+        work_key = digest({k:v for k,v in identity.items() if k not in ('authorization','runtimeSha256','runtimeBinding')})
         with self.lock():
             path = self.path(task)
             if path.parent.exists():

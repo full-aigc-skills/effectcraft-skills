@@ -125,6 +125,9 @@ class CommandRevisionFlowTests(unittest.TestCase):
         self.assertEqual(child['parent'],'case');self.assertEqual(latest['budget']['revisions'],1);self.assertEqual(latest['activeRevision'],child['taskId'])
         self.assertEqual(before,(self.output/'scene.ecproj').read_bytes());self.assertFalse((self.f.root/'revised').exists())
         self.m.validate_prepared(self.store,child['taskId'])
+        execution=self.m.load('runtime_binding').resolve(self.store,child['taskId'])
+        self.assertEqual(execution['runtimeHome'],str(Path('prepared').absolute()))
+        self.assertEqual(child['identity']['runtimeBinding']['nativeVersion'],'0.4.0')
 
     def test_wrong_binding_rejects_before_budget_or_child_creation(self):
         self.request['binding']['filesHash']='0'*64;before=self.store.path('case').read_bytes()
@@ -210,7 +213,7 @@ class CommandRevisionFlowTests(unittest.TestCase):
             if op.get('tool')=='save_project':Path(params['path']).write_text(json.dumps(native))
             if op.get('tool')=='render_frame':Path(params['path']).write_bytes(fixture.png())
             record.update(state='succeeded',result={});observer(session,record,'after');steps.append(record)
-        receipt={'schema':'craft-command-receipt/v1','pluginId':'effectcraft','mode':'headless','result':'PASS','runtimeSha256':'a'*64,'steps':steps,
+        receipt={'schema':'craft-command-receipt/v1','pluginId':'effectcraft','mode':'headless','result':'PASS','runtimeSha256':child['identity']['runtimeSha256'],'steps':steps,
           'planSha256':hashlib.sha256(json.dumps(child['plan'],ensure_ascii=False,sort_keys=True,allow_nan=False).encode()).hexdigest()}
         self.f.tasks.atomic_json(out/'success.json',receipt);proof=module.finalize(self.store,child['taskId'])
         return child,proof
@@ -274,7 +277,7 @@ class CommandRevisionFlowTests(unittest.TestCase):
             call(tool,args);row.update(state='succeeded',result={});steps.append(row)
         import hashlib,json
         error='precondition_failed: layer.setText: select a layer first'
-        receipt={'schema':'craft-command-receipt/v1','pluginId':'effectcraft','mode':'headless','result':'FAIL','runtimeSha256':'a'*64,'steps':steps,'error':error,
+        receipt={'schema':'craft-command-receipt/v1','pluginId':'effectcraft','mode':'headless','result':'FAIL','runtimeSha256':child['identity']['runtimeSha256'],'steps':steps,'error':error,
           'planSha256':hashlib.sha256(json.dumps(child['plan'],ensure_ascii=False,sort_keys=True,allow_nan=False).encode()).hexdigest()}
         tasks.atomic_json(out/'failure.json',receipt);tasks.atomic_json(out/'journal.json',receipt)
         self.store.fail(child['taskId'],error,unknown=True)

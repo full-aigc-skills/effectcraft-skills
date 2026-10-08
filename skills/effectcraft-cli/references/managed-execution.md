@@ -130,3 +130,11 @@ sh "$SKILL_DIR/scripts/launch.sh" doctor --compare-catalog /absolute/previous-co
 目录／schema漂移或版本不符报告FAIL；查询失败／超时保持NOT_RUN。损坏安装保留原样，探测不启动。`--compare-catalog`复用离线差异合同，坏旧目录先失败，不借诊断启动原生进程。恢复argv是可选动作，不是新安装或扩大编辑授权。
 
 Default doctor is static and readonly. Explicit --probe-native checks only a previously integrity-verified CLI in its own empty headless session; discovery PASS never establishes creative, desktop or host acceptance. Version/schema drift is FAIL, unavailable discovery remains NOT_RUN. Recovery argv is reported and never executed automatically; corrupted runtime and unknown task records are preserved.
+
+## 任务私有执行绑定 / Task-private execution binding
+
+新任务在启动 worker 前保存 `effectcraft-execution-binding/v1` 及私有 `execution/skill` 快照，绑定解释器、执行代码、参数/命令合同和原生版本。技能目录更新后，resume/reconcile/review/revise 使用原组合；修订子任务沿用原控制器并冻结自身执行资源。默认隔离 Python 校验整个发行载荷；直接 Python 兼容入口只绑定解释器文件，不表示已隔离。
+
+缺少或损坏快照/清单/解释器时保留现场并拒绝启动，不从当前技能重建。历史无绑定任务可 inspect 和诊断，resume/revise 返回 `legacy_execution_binding_missing`；未知任务不得换 ID 或输出目录重做。所有被引用版本继续保留；单一状态根的引用清单不授权跨状态根清理。Windows 接管使用自有 Job 守护和监督通道，真实目标验收单独记录。
+
+New tasks freeze execution resources before starting a worker. Recovery/review/revision dispatch to the original Python/controller/native combination after validating the manifest. Locked Python checks its complete distribution; the direct external-Python compatibility entry binds only the executable. Missing/corrupt snapshots and legacy tasks are never reconstructed or replayed. Retain referenced versions; state-root references cannot authorize global cleanup. Native Windows handoff qualification remains separate from adapter tests.
