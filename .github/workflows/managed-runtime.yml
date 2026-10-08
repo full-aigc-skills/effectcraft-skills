@@ -24,6 +24,7 @@ jobs:
           python -m unittest discover -s tests -p 'test_process*.py' -v
           python -m unittest discover -s tests -p test_posix_group_lease.py -v
           python -m unittest discover -s tests -p test_generator_encoding.py -v
+          python -m unittest discover -s tests -p test_capability_matrix.py -v
           python -m unittest discover -s tests -p 'test_managed_*.py' -v
           python -m unittest discover -s tests -p test_revision_scope.py -v
           python -m unittest discover -s tests -p test_command_resources.py -v

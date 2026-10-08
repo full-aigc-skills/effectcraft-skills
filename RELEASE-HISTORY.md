@@ -1,5 +1,9 @@
 # Version-bound release records
 
+## dev.53 — 2026-10-09
+
+Full-payload capability evidence binding and legacy readonly management guards. Direct cancellation uses the original frozen controller. Source dev.53 / plugin dev.55 remain prereleases; full V1 and platform/host gates remain open.
+
 ## dev.52 — 2026-10-09
 
 取消恢复与父子终态屏障。等待全部后代停止；未知编辑保持 reconciling，不生成虚假业务退出或重放。27 项取消测试及真实 macOS 原生父子中断恢复通过；其他平台原生、宿主及完整 V1 仍开放。
@@ -134,3 +138,8 @@ Fixed native gateway first use passes:48 independently installed domain skills a
 
 Historical source-candidate note: Source candidate: complete native workflow gateway; immutable installed acceptance and full DAG gate6.51 remain pending. [Architecture](docs/Craft-Native-Workflow-Gateway-Architecture.md).
 
+
+
+## Historical README capture — 2026-10-09
+
+[Complete original text with original versions and evidence boundaries](README-HISTORY-20261009.md)

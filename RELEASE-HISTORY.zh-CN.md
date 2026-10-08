@@ -1,5 +1,9 @@
 # 版本绑定的历史发行记录
 
+## dev.53 — 2026-10-09
+
+完整载荷能力证据绑定与历史任务只读管理保护；直接取消使用原冻结控制器。技能源 dev.53／插件 dev.55 为预发行版，完整 V1 与平台／宿主门禁保持开放。
+
 ## dev.52 — 2026-10-09
 
 取消恢复与父子终态屏障。等待全部后代停止；未知编辑保持 reconciling，不生成虚假业务退出或重放。27 项取消测试及真实 macOS 原生父子中断恢复通过；其他平台原生、宿主及完整 V1 仍开放。
@@ -134,3 +138,8 @@ EffectCraft 技能源dev.30候选在原生会话前保护公开工作流目标�
 
 Historical source-candidate note: Source candidate: complete native workflow gateway; immutable installed acceptance and full DAG gate6.51 remain pending. [Architecture](docs/Craft-Native-Workflow-Gateway-Architecture.md).
 
+
+
+## 历史 README 原文 — 2026-10-09
+
+[完整原文（保留原版本和证据边界）](README-HISTORY-20261009.zh-CN.md)

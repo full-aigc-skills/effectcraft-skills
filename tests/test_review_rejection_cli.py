@@ -11,6 +11,10 @@ class ReviewRejectionCliTests(unittest.TestCase):
         self.fixture=fixtures.ReviewLedgerTests();self.fixture.setUp()
         self.addCleanup(self.fixture.doCleanups)
         self.root=self.fixture.root;self.store=self.fixture.store
+        # 本公开入口fixture模拟新建的有绑定任务；无绑定旧任务另测只读拒绝。
+        binding=self.fixture.managed.load('runtime_binding');value,manifest=binding.prepare(fixtures.SCRIPT.parent.parent,self.root/'runtime')
+        state=self.store.read('root');state['identity']['runtimeBinding']=value;state['identity']['runtimeSha256']=json.loads((fixtures.SCRIPT.parent/'runtime.lock.json').read_text())['artifacts'][value['platform']]['binarySha256'];state['identityHash']=self.fixture.tasks.digest(state['identity']);self.store.save(state)
+        binding.freeze(self.store,'root',fixtures.SCRIPT.parent.parent,manifest)
         self.criteria=self.root/'criteria.json';self.fixture.tasks.atomic_json(self.criteria,self.fixture.criteria)
 
     def invoke(self,judge=None):

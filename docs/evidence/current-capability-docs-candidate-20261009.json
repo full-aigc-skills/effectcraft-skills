@@ -1,0 +1,99 @@
+{
+  "schema": "effectcraft-current-capability-docs/v1",
+  "date": "2026-10-09",
+  "status": "local-candidate-PASS",
+  "completedTask": "9.6.3",
+  "requirement": "EC-RL-001",
+  "sourceBase": "82f8aa926430c0349fa6dcc9e5acb4e54d54844a",
+  "pluginBase": "ba74e0e0e1ce68450ad6d15e634e8ed611310363",
+  "candidatePublished": false,
+  "executionSkillPayloadChanged": false,
+  "sourceTests": {
+    "total": 561,
+    "pass": 523,
+    "skip": 38
+  },
+  "pluginTests": {
+    "pass": 24,
+    "skip": 0
+  },
+  "tdd": {
+    "sourceTests": 10,
+    "initialFailedAssertions": 11,
+    "pluginPublicGateInvalidCases": 8
+  },
+  "readmeArchives": [
+    {
+      "repository": "effectcraft-skills",
+      "readme": "README.md",
+      "originalSha256": "7d31f2f11cfb4e764e83786bfb63fde08b00c7c65159000d2a868aed264a1996",
+      "historyFile": "RELEASE-HISTORY.md",
+      "completeOriginalPreserved": true,
+      "currentSha256": "890bcac3e80524d0974d30acda62ba22a12a89e92d543dfcbef4667328fb7989",
+      "originalArchiveFile": "README-HISTORY-20261009.md"
+    },
+    {
+      "repository": "effectcraft-skills",
+      "readme": "README.zh-CN.md",
+      "originalSha256": "2aeb2a07610195aeb53cd7a5a59e7d2af7316bc40fbad221f02e5aab845a3c6e",
+      "historyFile": "RELEASE-HISTORY.zh-CN.md",
+      "completeOriginalPreserved": true,
+      "currentSha256": "1d45e6c902f39c98dd2d6faeb24a493723a53bc15db2f62bdd0056a266302be3",
+      "originalArchiveFile": "README-HISTORY-20261009.zh-CN.md"
+    },
+    {
+      "repository": "effectcraft-plugin",
+      "readme": "README.md",
+      "originalSha256": "e167e73abb950a6fbd652595a02768f11d1ed38a9f1c9b9768afa11842268524",
+      "historyFile": "RELEASE-HISTORY.md",
+      "completeOriginalPreserved": true,
+      "currentSha256": "c8b68a554fbcc0c1a922150d3d033cf5bf650bd30c6428f9a932fc07f503d8c8",
+      "originalArchiveFile": "README-HISTORY-20261009.md"
+    },
+    {
+      "repository": "effectcraft-plugin",
+      "readme": "README.zh-CN.md",
+      "originalSha256": "2fb700d447e879a0bca05f69a47ec44cc47a775f8327d0382370c1c14bb2dcd6",
+      "historyFile": "RELEASE-HISTORY.zh-CN.md",
+      "completeOriginalPreserved": true,
+      "currentSha256": "59d7190c507fd6c7a8c72a0e2bb378cd4ca2d831b29bd63ff389f570d5095b4f",
+      "originalArchiveFile": "README-HISTORY-20261009.zh-CN.md"
+    }
+  ],
+  "implementationPathsVerified": [
+    "managed.py",
+    "task_store.py",
+    "cancellation.py",
+    "runtime_binding.py",
+    "task_entry.py",
+    "task_entry.sh",
+    "task_entry.ps1"
+  ],
+  "protocolOwner": {
+    "owner": "full-aigc-plugins/artcraft-plugin",
+    "tag": "v0.1.0-dev.109",
+    "sha": "09d4ac5b8ff82f8fe819189e4be487b45ab2472b",
+    "gitContentCheck": "PASS",
+    "files": 4,
+    "publicProtocolChanged": false
+  },
+  "matrixScope": "current full-payload-bound native technical sample only; no cold/domain/creative/host promotion",
+  "currentNativeProofReused": "Published source52 readonly-installed sample; byte-identical complete skill payload and artifacts verified, no new native render claimed",
+  "checks": {
+    "effectcraft-capability-red-final.log": "1472f0bbdc7d17c574bbed1729d73cb2226868d7aaf5200fa4572a7fe805b07e",
+    "effectcraft-capability-green-current.log": "1486d50ac4c6de42aff5f2717bdf2fa85e2f6797ae01ae3bb3cef89067a0fdb2",
+    "effectcraft-capability-source-regression.log": "353b413917712e55b5506acc4c1b6100c9c5dd3fa0c8ab145d630f26cbd65d9f",
+    "effectcraft-capability-plugin-red.log": "5e726e33eeda3ba01fbe34613c2ec1f07dca6738f01aa9c3c38adfd30354628c",
+    "effectcraft-capability-plugin-green-final.log": "533fd7476a5f068f4a15d7d7f39d6620133081e78f2f7d91a77df5ee5d9678ec",
+    "effectcraft-capability-plugin-regression-final2.log": "169e063e2ed7d941b4d020b2f0dc4b3cc49b4fa9f9613eaba4f4c38ff243cb0a"
+  },
+  "implementationSha256": {
+    "scripts/build_capability_matrix.py": "dc4d33a7d0656bca8a013fa0bcddac4e7d5339671ff1c221115c5d436d6279ec",
+    "tests/test_capability_matrix.py": "d7df3cc8237d7bfc1ced8c2e1d1c5e51301480abde920d2a0fe98f7a85ca6818",
+    "docs/current-capabilities.json": "d1a1c2f143f64628f535bb27d9da3182fd42d502543c1e1ea31ea1a270caf2a3",
+    "scripts/capability_reference.py": "bdad0279325ff73b013b7b9b22ffecd54050931ec9397c058c508df529233afe",
+    "scripts/validate_docs.py": "9fadcd653dbb0caabe4b67916a0366cf4031ee24aa034bb2cdcb97840655a969",
+    "tests/test_current_capabilities.py": "27592464139c2bc061d4c3eb54e2226b13131833ce43823521590fabf12d6d76"
+  },
+  "remaining": "Full V1, native target platforms, domains and fixed-host acceptance remain OPEN"
+}

@@ -220,7 +220,7 @@ def handoff(store,args,current_script):
     """使用exec替换控制器，避免新前端死亡后留下脱离监督的旧控制器。"""
     state=store.read(args.task)
     if 'runtimeBinding' not in state['identity']:
-        if args.action in ('resume','revise','_worker'):raise ValueError('legacy_execution_binding_missing; inspect original task')
+        if args.action!='inspect':raise ValueError('legacy_execution_binding_missing; inspect original task')
         return
     bound=resolve(store,args.task)
     args.runtime_home=Path(bound['runtimeHome'])

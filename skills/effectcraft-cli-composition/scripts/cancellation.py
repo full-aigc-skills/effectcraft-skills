@@ -109,6 +109,7 @@ def check_local(store,state):
 
 def observed_stop(store, state, current_confirmed=False):
     """后代必须释放全部租约并核对原回执；终态字符串和PID均不是停止证明。"""
+    if state['schema']!='effectcraft-managed-task/v2':return False,'legacy_task_read_only'
     try:
         with ExitStack() as leases:
             if not current_confirmed:
@@ -158,7 +159,9 @@ def update_locked(store, state, current_confirmed=False):
 
 def request_locked(store, task):
     """先落盘根取消与固定名单，再传播后代；中断后祖先约束仍阻止新调度。"""
-    root=store.read(task);family=members_locked(store,root)
+    root=store.read(task)
+    if root['schema']!='effectcraft-managed-task/v2':raise ValueError('legacy_task_read_only')
+    family=members_locked(store,root)
     root.setdefault('cancellationRequestedAt',time.time())
     local_not_started(store,root)
     root['cancellationFamily']=record(root,family,[x['taskId'] for x in family],[],{x['taskId']:'cancellation_requested' for x in family})
@@ -166,7 +169,7 @@ def request_locked(store, task):
     store.save(root)
     # 传播失败也不丢根取消意图；不依赖本进程内存继续阻止新后代。
     for item in family:
-        if item['taskId']==task:continue
+        if item['taskId']==task or item['schema']!='effectcraft-managed-task/v2':continue
         item=store.read(item['taskId']);item.setdefault('cancellationRequestedAt',root['cancellationRequestedAt'])
         local_not_started(store,item)
         if item['state'] in ('planned','running','resuming','reconciling','cancel_requested') or item.get('activeRevision'):item['state']='cancel_requested'
@@ -175,5 +178,6 @@ def request_locked(store, task):
     # 子树先观察，避免未启动的祖先忽略正在运行的孙任务。
     family.sort(key=lambda x:len(store.lineage(x)),reverse=True)
     for item in family:
+        if item['schema']!='effectcraft-managed-task/v2':continue
         state=update_locked(store,store.read(item['taskId']));store.save(state)
     return store.read(task)

@@ -1,0 +1,41 @@
+{
+  "schema": "effectcraft-managed-interface-increment/v1",
+  "date": "2026-10-09",
+  "status": "bounded-local-PASS",
+  "sourceBase": "82f8aa926430c0349fa6dcc9e5acb4e54d54844a",
+  "targetSourceTag": "v0.1.0-dev.53",
+  "targetPluginTag": "v0.1.0-dev.55",
+  "fullTask935": "OPEN",
+  "publicInterfaceTests": 10,
+  "cancellationRegressionTests": 27,
+  "engineeringReviewRegressionTests": 13,
+  "reviewRejectionRegressionTests": 6,
+  "fullRegression": {
+    "total": 571,
+    "pass": 533,
+    "skip": 38,
+    "logSha256": "35e80dc3c3852123fa3620aa6ef32e7bc28a6034d6becc120bf2f34c05dc3025"
+  },
+  "nativeCancelReport": "docs/evidence/native-cancel-interface-20261009.json",
+  "nativeCancelReportSha256": "7b68e4d37fdf0c6d2fa9cbbcb361cbc26a04cdf9cbf0bf310e967edbe2dae850",
+  "historicalUnknown": {
+    "status": "PASS",
+    "originalTaskFilesUnchanged": true,
+    "fileCount": 93,
+    "reconcile": "FAIL process_termination_unconfirmed",
+    "automaticReplay": false,
+    "lifecycleSha256": "829896ec13832fdf656686570e0f7a0ec9e9d1549c6fb08b5073f8d08488d137",
+    "publicLogSha256": "d81878557a43b7c1afbef5fcee341083565488fc5ea5f606d1d9e590c88ead5e"
+  },
+  "scope": "legacy readonly refusal and original-controller cancellation; no full V1 or platform/host claim",
+  "remaining": [
+    "full interface/mode matrix",
+    "all target native platforms",
+    "fixed-host natural-language acceptance",
+    "full V1"
+  ],
+  "pluginRegression": {
+    "pass": 24,
+    "skip": 0
+  }
+}

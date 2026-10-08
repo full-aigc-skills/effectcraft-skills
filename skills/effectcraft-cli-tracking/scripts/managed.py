@@ -321,6 +321,7 @@ def reconcile(store, task):
 
 def _reconcile(store, task):
     """只核对完整已落盘交付；无法证明的部分编辑继续保持 reconciling。"""
+    if store.read(task)['schema']!='effectcraft-managed-task/v2':raise ValueError('legacy_task_read_only')
     with load('platform_support').exclusive_lock(store.root/'leases'/(task+'.supervisor.lock'),timeout=0), load('platform_support').exclusive_lock(store.root/'leases'/(task+'.lifecycle.lock'),timeout=0), load('platform_support').exclusive_lock(store.root/'leases'/(task+'.lock'),timeout=0):
         with store.lock():
             state=store.read(task)
@@ -399,9 +400,10 @@ def main():
     import sys
     for stream in (sys.stdout,sys.stderr):
         if hasattr(stream,"reconfigure"):stream.reconfigure(encoding="utf-8")
-    args=parser().parse_args();store=load('task_store').Store(args.state_root)
+    args=parser().parse_args()
     try:
-        if args.action in ('resume','revise','reconcile','review','_worker'):
+        store=load('task_store').Store(args.state_root)
+        if args.action in ('resume','revise','reconcile','review','cancel','_worker'):
             load('runtime_binding').handoff(store,args,Path(__file__))
         if args.action=='doctor':result=doctor(args.runtime_home,args.probe_native,args.compare_catalog)
         elif args.action=='inspect':result=store.read(args.task)

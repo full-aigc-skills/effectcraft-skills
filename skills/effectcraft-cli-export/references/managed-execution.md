@@ -161,3 +161,10 @@ New tasks freeze execution resources before starting a worker. Recovery/review/r
 父子任务取消：根任务的 `cancellationFamily` 绑定后代身份。`pendingTasks` 非空时保持 cancel_requested；通过各子任务原控制器 reconcile 后再核对父任务。`unknownTasks` 非空时保持 reconciling，不得换任务 ID 或输出目录重做。未启动证明只在原取消时、全部执行租约可取时生成，恢复不补造。
 
 Family cancellation binds descendant identities in `cancellationFamily`. Pending descendants retain cancel_requested; reconcile children through their original controllers before reconciling the parent. Unknown edits retain reconciling and must never be replayed with a new ID or output directory. A not-started proof is captured only during original cancellation while all execution leases are available.
+
+
+## 历史记录与取消入口
+
+缺少原运行绑定的历史任务仅允许 `inspect` 与诊断导出。`reconcile`、`resume`、`cancel`、`review`、`revise` 拒绝写入，不补造身份、租约或回执，不借新任务重做未知编辑。状态缺失、损坏、悬空回执和状态根链接返回错误并保留现场。
+
+直接调用 `managed.py cancel` 与 Shell / PowerShell 入口遵循同一任务绑定，交接原隔离 Python 和冻结控制器。当前父任务取消遇到旧版子任务时保留取消意图，旧子任务保持只读且停止未确认，父任务不会提前声称全部停止。

@@ -95,6 +95,12 @@ class EngineeringLedgerTests(unittest.TestCase):
     def setUp(self):
         import test_managed_review_ledger as fixtures
         self.fixture=fixtures.ReviewLedgerTests();self.fixture.setUp();self.addCleanup(self.fixture.doCleanups)
+        # 公开review测试使用新任务绑定；旧无绑定记录由管理入口保护测试覆盖。
+        f=self.fixture;binding=f.managed.load('runtime_binding');value,manifest=binding.prepare(fixtures.SCRIPT.parent.parent,f.root/'absent-runtime')
+        state=f.store.read('root');state['identity']['runtimeBinding']=value
+        state['identity']['runtimeSha256']=json.loads((fixtures.SCRIPT.parent/'runtime.lock.json').read_text())['artifacts'][value['platform']]['binarySha256']
+        state['identityHash']=f.tasks.digest(state['identity']);f.store.save(state)
+        binding.freeze(f.store,'root',fixtures.SCRIPT.parent.parent,manifest)
 
     def invoke(self):
         import subprocess,sys

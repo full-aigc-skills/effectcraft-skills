@@ -300,6 +300,7 @@ class Store:
             return self.save(state)
 
     def cancel(self, task):
+        if self.read(task)['schema']!='effectcraft-managed-task/v2':raise ValueError('legacy_task_read_only')
         with self.lock():
             return load('cancellation').request_locked(self,task)
 
