@@ -2,12 +2,12 @@
 
 从文字、图形和素材创建可编辑 `.ecproj` 工程、依赖和媒体。当前为开发版，完整 V1 未完成；已发布版本与本地文档候选分别记录。
 
-当前技能源：`0.1.0-dev.59`；消费插件：`0.1.0-dev.61`；15 个独立技能。
+当前技能源：`0.1.0-dev.60`；消费插件：`0.1.0-dev.62`；15 个独立技能。
 
 | Field | Value |
 | --- | --- |
-| Metadata version | 0.1.0-dev.59 |
-| Skills source | effectcraft-skills / v0.1.0-dev.59 |
+| Metadata version | 0.1.0-dev.60 |
+| Skills source | effectcraft-skills / v0.1.0-dev.60 |
 | Acceptance | Development; full V1 OPEN |
 
 
@@ -97,3 +97,7 @@ source56／plugin58修正新增测试的Windows默认编码依赖，显式读取
 桌面原子冲突核对候选：`docs/evidence/desktop-conflict-reconcile-candidate-20261009.json`。v2证明绑定任务、操作参数、会话基线及已停止的所属桌面；公开reconcile/resume可报告单个操作未执行，原attempted与成功回执保全。旧v1、非原子变化或缺停止证明保持unknown；任务未决时拒绝新任务绕过。本增量尚未发布，完整9.3.3／9.3.4及V1继续开放。
 
 本次 source59／plugin61 开发发行包含桌面原子冲突核对和版本化命令完成证明。完成证明仅支持核对原结果后补齐交付登记；缺失、损坏或产物改变时拒绝恢复，取消期间不登记迟到交付。旧候选报告是其记录时点的证据，当前发行验证另见 `docs/evidence/release59-validation-20261009.json`；完整9.3.3／9.3.4、其他原生平台、宿主与V1保持开放。
+
+未发布的[完成证明真实强杀候选](docs/evidence/command-completion-crash-candidate-20261009.json)：命令与自有桌面覆盖证明写入前、证明已写但引用未保存、引用保存后三个SIGKILL窗口。仅原完整证明可经原进程停止、隔离重开与PNG实际解码后登记交付；无证明或悬空证明保持unknown，重复resume不重发。同时补齐损坏ownership的结构化诊断，显式坏值不回退为缺字段。此候选不替代已发布source59／plugin61，完整9.3.3／9.3.4、其他原生平台与固定宿主继续开放。
+
+source60／plugin62 发行分发真实强杀恢复增量及严格进程归属校验。候选报告保留当时未发布的观察上下文；本次发行绑定见 `docs/evidence/release60-validation-20261009.json`。完整V1仍有70项开放。

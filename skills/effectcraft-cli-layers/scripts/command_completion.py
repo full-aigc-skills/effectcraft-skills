@@ -5,6 +5,7 @@ import importlib.util
 import json
 import math
 from pathlib import Path
+import re
 import time
 
 
@@ -27,7 +28,13 @@ def process_identity(value):
             or any(type(value.get(k)) is not int or value[k]<=0 for k in ('guardianPid','workerGroup'))
             or type(value.get('startedAt')) not in (int,float) or not math.isfinite(value['startedAt'])):
         raise ValueError('completion_process_unconfirmed')
-    return {k:value[k] for k in ('guardianPid','workerGroup','startedAt')}|{'ownershipNonce':value.get('ownership',{}).get('nonce')}
+    ownership=value.get('ownership')
+    # 字段缺失沿用非POSIX合同；显式坏值不能回退为无归属材料。
+    if 'ownership' in value and (not isinstance(ownership,dict)
+            or ownership.get('schema')!='effectcraft-posix-group-lease/v1'
+            or not isinstance(ownership.get('nonce'),str) or not re.fullmatch('[a-f0-9]{32}',ownership['nonce'])):
+        raise ValueError('completion_process_unconfirmed: invalid ownership')
+    return {k:value[k] for k in ('guardianPid','workerGroup','startedAt')}|{'ownershipNonce':ownership['nonce'] if ownership is not None else None}
 
 
 def material(store,state):

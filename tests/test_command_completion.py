@@ -2,6 +2,8 @@
 import copy
 import importlib.util
 import json
+import subprocess
+import sys
 from pathlib import Path
 import tempfile
 import time
@@ -109,6 +111,25 @@ class CommandCompletionTests(unittest.TestCase):
     def test_running_lifecycle_cannot_complete_task(self):
         self.seal_and_stop();self.tasks.atomic_json(self.store.lifecycle_path(self.store.read('task')),self.lifecycle)
         with self.assertRaisesRegex(ValueError,'completion_process_unconfirmed'):self.completion.recover(self.store,'task')
+
+    def test_malformed_process_ownership_is_a_preserved_validation_failure(self):
+        self.seal_and_stop();path=self.store.lifecycle_path(self.store.read('task'));original=self.store.path('task').read_bytes()
+        for ownership in (None,[],False,'invalid',{}, {'schema':'wrong','nonce':'a'*32}, {'schema':'effectcraft-posix-group-lease/v1','nonce':False}):
+            with self.subTest(ownership=ownership):
+                self.tasks.atomic_json(path,dict(self.lifecycle,status='stopped',returncode=1,ownership=ownership))
+                before=path.read_bytes()
+                with self.assertRaises(ValueError):self.completion.recover(self.store,'task')
+                self.assertEqual(path.read_bytes(),before);self.assertEqual(self.store.path('task').read_bytes(),original)
+
+    def test_public_reconcile_returns_json_for_corrupt_process_ownership(self):
+        self.seal_and_stop();path=self.store.lifecycle_path(self.store.read('task'))
+        self.tasks.atomic_json(path,dict(self.lifecycle,status='stopped',returncode=1,ownership=None));before=self.store.path('task').read_bytes()
+        bound=load('runtime_binding').resolve(self.store,'task')
+        result=subprocess.run([sys.executable,'-I','-B',bound['script'],'--state-root',str(self.store.root),'reconcile','--task','task'],capture_output=True,timeout=30)
+        self.assertNotEqual(result.returncode,0)
+        self.assertTrue(result.stdout.strip(),'public recovery must return a structured validation failure')
+        self.assertEqual(json.loads(result.stdout)['result'],'FAIL');self.assertNotIn(b'Traceback',result.stderr)
+        self.assertEqual(self.store.path('task').read_bytes(),before)
 
     def test_cancellation_during_readonly_reopen_does_not_publish_late_delivery(self):
         self.seal_and_stop();a,b=self.inspectors(lambda:self.store.cancel('task'))

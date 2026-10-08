@@ -2,12 +2,12 @@
 
 Create editable `.ecproj` projects, dependencies and media from text, graphics and footage. This is a development release; full V1 remains open. Published releases and local documentation candidates have separate evidence.
 
-Current source: `0.1.0-dev.59`; consuming plugin: `0.1.0-dev.61`; 15 independent skills.
+Current source: `0.1.0-dev.60`; consuming plugin: `0.1.0-dev.62`; 15 independent skills.
 
 | Field | Value |
 | --- | --- |
-| Metadata version | 0.1.0-dev.59 |
-| Skills source | effectcraft-skills / v0.1.0-dev.59 |
+| Metadata version | 0.1.0-dev.60 |
+| Skills source | effectcraft-skills / v0.1.0-dev.60 |
 | Acceptance | Development; full V1 OPEN |
 
 
@@ -97,3 +97,7 @@ Local desktop revision candidate: owned managed sessions persist project/editor 
 Desktop atomic-conflict reconciliation candidate: `docs/evidence/desktop-conflict-reconcile-candidate-20261009.json`. Versioned proofs bind the task, operation arguments, original session baseline and stopped owned desktop. Public reconcile/resume can identify an individual operation as not executed while preserving attempted intents and successful receipts. Legacy proofs, non-atomic changes and missing stop evidence remain unknown; unresolved tasks block replacement task IDs. This increment is unpublished; full 9.3.3/9.3.4 and V1 remain open.
 
 Source59 / plugin61 development release includes atomic desktop conflict reconciliation and versioned command completion seals. Recovery verifies original results before registering delivery; missing or changed evidence refuses recovery, and cancellation prevents late delivery. Earlier candidate reports retain their historical scope; see `docs/evidence/release59-validation-20261009.json` for this release. Full fault/recovery, other native platforms, host acceptance and V1 remain open.
+
+Historical unpublished [real worker crash candidate](docs/evidence/command-completion-crash-candidate-20261009.json): commands and owned desktop cover SIGKILL before the proof, between proof and reference, and after both are durable. Only a complete original proof permits delivery registration after owned-process stop, isolated native reopen and actual PNG decode; missing or orphan proofs stay unknown and repeated resume does not replay edits. Malformed ownership returns structured failure without treating corruption as absence. Source59/plugin61 remain unchanged; full 9.3.3/9.3.4, other native platforms and fixed-host gates remain open.
+
+Source60 / plugin62 release distributes the real worker crash increment and strict ownership validation. Candidate reports retain their original unpublished observation context; release binding is recorded in `docs/evidence/release60-validation-20261009.json`. Full V1 remains open (70 tasks).
