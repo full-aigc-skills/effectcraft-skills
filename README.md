@@ -2,12 +2,12 @@
 
 Create editable `.ecproj` projects, dependencies and media from text, graphics and footage. This is a development release; full V1 remains open. Published releases and local documentation candidates have separate evidence.
 
-Current source: `0.1.0-dev.55`; consuming plugin: `0.1.0-dev.57`; 15 independent skills.
+Current source: `0.1.0-dev.56`; consuming plugin: `0.1.0-dev.58`; 15 independent skills.
 
 | Field | Value |
 | --- | --- |
-| Metadata version | 0.1.0-dev.55 |
-| Skills source | effectcraft-skills / v0.1.0-dev.55 |
+| Metadata version | 0.1.0-dev.56 |
+| Skills source | effectcraft-skills / v0.1.0-dev.56 |
 | Acceptance | Development; full V1 OPEN |
 
 
@@ -80,3 +80,6 @@ Local [three-mode public composition acceptance](docs/evidence/managed-three-mod
 
 
 Source dev.55 / plugin dev.57 distribute [default managed routing](docs/evidence/managed-default-routing-20261009.json): all 15 skills document workflow/commands/desktop writes; 45 readonly preflights and 18 legacy-action cases pass. Regression: 589 tests, 548 passed, 41 conditional skips. Tasks9.3.1 and9.3.6 are complete; 70 tasks remain open. Native evidence reuses only 105 unchanged execution resources; three guidance files differ. No new model dispatch or full-platform acceptance is claimed. Candidate reports retain their original validation timestamp; release bindings are recorded separately.
+
+
+Source56/plugin58 fix Windows default-encoding dependence in the new routing tests by reading UTF-8 explicitly. Source55 failed Windows CI and original tags are retained. Skill execution payloads are unchanged; no new native or host acceptance is claimed.

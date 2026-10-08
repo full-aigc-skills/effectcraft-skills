@@ -1,5 +1,11 @@
 # 版本绑定的历史发行记录
 
+## dev.56 — 2026-10-09
+
+修正新增派发测试在Windows cp1252下读取中文技能清单失败：显式UTF-8，不修改技能运行载荷。替代source55／plugin57发行配对，保留旧标签与失败CI。完整V1仍有70项开放。
+
+Fix UTF-8 decoding in portable routing tests; original failed Windows CI is retained. Execution payloads unchanged, full V1 remains open.
+
 ## dev.55 — 2026-10-09
 
 15个技能默认受管理三模式派发；只读预检和旧状态拒绝执行合同通过。源码589项548通过／41条件跳过；本机三模式原生组合证据绑定未变执行资源，完整平台及固定宿主门禁仍开放，V1剩余70项。插件消费技能源dev.55固定发行快照。

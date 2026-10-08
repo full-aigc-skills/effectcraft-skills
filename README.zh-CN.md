@@ -2,12 +2,12 @@
 
 从文字、图形和素材创建可编辑 `.ecproj` 工程、依赖和媒体。当前为开发版，完整 V1 未完成；已发布版本与本地文档候选分别记录。
 
-当前技能源：`0.1.0-dev.55`；消费插件：`0.1.0-dev.57`；15 个独立技能。
+当前技能源：`0.1.0-dev.56`；消费插件：`0.1.0-dev.58`；15 个独立技能。
 
 | Field | Value |
 | --- | --- |
-| Metadata version | 0.1.0-dev.55 |
-| Skills source | effectcraft-skills / v0.1.0-dev.55 |
+| Metadata version | 0.1.0-dev.56 |
+| Skills source | effectcraft-skills / v0.1.0-dev.56 |
 | Acceptance | Development; full V1 OPEN |
 
 
@@ -80,3 +80,6 @@ dev.54 的[统一管理接口验收](docs/evidence/managed-public-interface-cand
 
 
 dev.55 技能源／dev.57 插件分发 [默认受管理派发验收](docs/evidence/managed-default-routing-20261009.json)：15个技能明确 workflow／commands／desktop 写入入口，45组只读预检与18组历史状态操作通过。源码589项回归548通过／41条件跳过。9.3.1与9.3.6已完成，70项仍开放；原生证据仅复用105份未变执行资源，三份指引已更新，未声明新宿主模型派发或完整平台通过。原始候选报告保留验证时点，发行绑定另见版本记录。
+
+
+source56／plugin58修正新增测试的Windows默认编码依赖，显式读取UTF-8；source55的Windows失败CI与原标签保留。技能执行载荷不变，此修正不新增原生或宿主验收。

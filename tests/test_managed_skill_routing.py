@@ -12,9 +12,9 @@ ROOT=Path(__file__).resolve().parents[1]
 BASE=ROOT/'skills/effectcraft-use'
 class ManagedSkillRoutingTests(unittest.TestCase):
  def test_every_skill_routes_command_and_desktop_writes_through_managed_launcher(self):
-  for row in json.loads((ROOT/'skill-suite.json').read_text())['skills']:
+  for row in json.loads((ROOT/'skill-suite.json').read_text(encoding='utf-8'))['skills']:
    with self.subTest(skill=row['name']):
-    text=(ROOT/'skills'/row['name']/'SKILL.md').read_text()
+    text=(ROOT/'skills'/row['name']/'SKILL.md').read_text(encoding='utf-8')
     self.assertIn('launch.sh" run --mode commands --plan "$SKILL_DIR/examples/commands-advanced.json"',text)
     self.assertIn('launch.sh" run --mode desktop --plan "$SKILL_DIR/examples/desktop-first-use.json"',text)
     self.assertNotRegex(text,r'(?m)^python3 .*commands\.py" run ')
@@ -22,7 +22,7 @@ class ManagedSkillRoutingTests(unittest.TestCase):
  def test_documented_mode_plans_preflight_from_every_independent_skill_without_writes(self):
   with tempfile.TemporaryDirectory() as temp:
    root=Path(temp)
-   for row in json.loads((ROOT/'skill-suite.json').read_text())['skills']:
+   for row in json.loads((ROOT/'skill-suite.json').read_text(encoding='utf-8'))['skills']:
     skill=ROOT/'skills'/row['name']
     for mode,name in [('workflow','brand-intro.json'),('commands','commands-advanced.json'),('desktop','desktop-first-use.json')]:
      with self.subTest(skill=row['name'],mode=mode):
@@ -31,7 +31,7 @@ class ManagedSkillRoutingTests(unittest.TestCase):
  def test_legacy_inspect_is_readonly_in_all_modes_and_mutating_actions_refuse(self):
   spec=importlib.util.spec_from_file_location('routing_store',BASE/'scripts/task_store.py');tasks=importlib.util.module_from_spec(spec);spec.loader.exec_module(tasks)
   with tempfile.TemporaryDirectory() as temp:
-   root=Path(temp);criteria=root/'criteria.json';criteria.write_text('{}');plan=root/'revision.json';plan.write_text('{}')
+   root=Path(temp);criteria=root/'criteria.json';criteria.write_text('{}',encoding='utf-8');plan=root/'revision.json';plan.write_text('{}',encoding='utf-8')
    def snapshot():return {p.relative_to(root).as_posix():hashlib.sha256(p.read_bytes()).hexdigest() for p in root.rglob('*') if p.is_file()}
    for mode in ['workflow','commands','desktop']:
     store=tasks.Store(root/mode);store.create('legacy',plan={},output=str(root/(mode+' old output')),runtime_sha='a'*64,inputs={},source=None,mode=mode,authorization={})
