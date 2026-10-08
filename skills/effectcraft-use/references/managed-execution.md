@@ -69,3 +69,13 @@ Video checks decode the media and verify exact composition frame count, zero-bas
 Each `review` verifies the task-bound installed native runtime, copies the project and declared assets to a temporary package, reopens it, checks missing footage and compares the exact native composition/layers. It never saves or edits originals; changed original digests fail. Missing runtime or incomplete timeout is engineering NOT_RUN, while native errors/structural drift fail. Immutable historical reports remain intact but do not replace current verification. Failed current checks leave creative NOT_RUN, with no new visual request. `revise` repeats engineering verification before consuming a revision round.
 
 质量回执兼容`accepted`布尔值，并增加独立`userAcceptance.status=NOT_RUN`；工程、技术和模型创作通过均不能代替明确的用户决定。 / The quality report retains the compatible `accepted` boolean and adds independent `userAcceptance.status=NOT_RUN`. Engineering, media and model judgments never substitute for an explicit user decision.
+
+## 命令与桌面交付复检 / Command and desktop delivery review
+
+受管理 `--mode commands` 和 `--mode desktop` 会在任务状态目录保存内部交付观察：保存/PNG渲染前读取全部原生合成与图层，返回后固定工程、媒体与素材摘要。`craft-command-plan/v1`、`craft-command-receipt/v1` 和用户输出文件名保持兼容；不向交付目录写入额外 manifest/native 文件。多次写入同一路径只把最后明确写出的文件列为当前交付，之前观察保留。
+
+`review --task TASK --criteria CRITERIA.json` 核对原成功回执和完整输出清单，使用固定运行时隔离打开每个当前工程，检查全部合成、图层和素材。PNG按自身渲染时合成、实际解码尺寸及alpha核验；只有匹配保存版本的媒体才能通过来源关联。未保存渲染版本、未覆盖导出、缺运行时或观察记录变化不会被旧PASS覆盖。缺观察的历史命令任务仅供诊断，不补建基线、不重放。
+
+此候选完成命名PNG及保存工程的工程/技术整合；命令视频/序列、Judge评价与自动修订整合仍待完成。当前命令review不会产生Judge请求或代签用户接受；工程和技术PASS后返回`command_judge_integration_pending`，创作/用户接受保持NOT_RUN。
+
+Managed commands and owned-desktop runs persist internal observations in task state, binding each saved project or named PNG to its native context and actual bytes. Public command schemas and user outputs stay compatible. Review checks the original receipt, full inventory, every saved composition/layer and dependency through isolated native reopening, and actual PNG dimensions/alpha against its own render context. A later project cannot stand in for an unsaved render version. Historical tasks without observations remain diagnostic-only. Video/sequence, Judge and automatic command revision integration remain open; engineering/technical PASS alone never sets creative or user acceptance to PASS.

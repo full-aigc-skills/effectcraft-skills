@@ -150,7 +150,7 @@ def reply_json(text):
     json.dumps(value, allow_nan=False)
     return value
 
-def parse_reply(reply, output=None, index=0):
+def parse_reply(reply, output=None, index=0, *, receipt_only=False):
     if (not isinstance(reply, dict)
             or ('isError' in reply and not isinstance(reply['isError'], bool))
             or not isinstance(reply.get('content'), list)
@@ -166,7 +166,7 @@ def parse_reply(reply, output=None, index=0):
         try:
             result = reply_json(texts[0])
         except json.JSONDecodeError:
-            if output is None:
+            if output is None and not receipt_only:
                 raise RuntimeError("outcome_unknown: unexpected_reply") from None
         except (ValueError, TypeError):
             raise RuntimeError('outcome_unknown: unsafe_json_reply') from None
@@ -174,7 +174,7 @@ def parse_reply(reply, output=None, index=0):
             if isinstance(result, dict) and result.get("error"):
                 raise RuntimeError("semantic_error: " + json.dumps(result, ensure_ascii=False))
             return result
-    if output is None or not content:
+    if (output is None and not receipt_only) or not content:
         raise RuntimeError("outcome_unknown: unexpected_reply")
     # 原生工具允许图片和普通文字；附件落盘，日志不保留大块 base64。
     result = {"content": []}
@@ -195,11 +195,14 @@ def parse_reply(reply, output=None, index=0):
                 data = base64.b64decode(item["data"], validate=True)
             except (ValueError, KeyError, TypeError):
                 raise RuntimeError("outcome_unknown: invalid_image_reply") from None
-            path = Path(output) / "tool-images" / (str(index) + "-" + str(number) + "." + extension)
-            path.parent.mkdir(exist_ok=True)
-            path.write_bytes(data)
-            result["content"].append({"type": "image", "mimeType": item["mimeType"],
-                "path": str(path.relative_to(output)), "sha256": hashlib.sha256(data).hexdigest(), "bytes": len(data)})
+            image = {"type": "image", "mimeType": item["mimeType"],
+                     "sha256": hashlib.sha256(data).hexdigest(), "bytes": len(data)}
+            if not receipt_only:
+                path = Path(output) / "tool-images" / (str(index) + "-" + str(number) + "." + extension)
+                path.parent.mkdir(exist_ok=True)
+                path.write_bytes(data)
+                image["path"] = str(path.relative_to(output))
+            result["content"].append(image)
         else:
             raise RuntimeError("outcome_unknown: unsupported_tool_content")
     return result
@@ -252,7 +255,7 @@ def runtime_rows(session, params=None):
     return rows
 
 def execute(plan, output, runtime_home=None, mode="headless", connect=None, token_file=None,
-            installer=None, session_factory=None, inputs=None):
+            installer=None, session_factory=None, inputs=None, observer=None):
     inputs = inputs or {}
     if not isinstance(inputs, dict) or any(not isinstance(k, str) or not re.fullmatch(r"[a-zA-Z][\w-]*", k) or k == "output" for k in inputs):
         raise ValueError("invalid_input_name")
@@ -339,6 +342,7 @@ def execute(plan, output, runtime_home=None, mode="headless", connect=None, toke
                     tool, args = step["tool"], params
                 receipt["steps"].append(record)
                 write(output / "journal.json", receipt)
+                if observer is not None:observer(session,record,"before")
                 result = parse_reply(session.request("tools/call", {"name": tool, "arguments": args}),
                                      output if "tool" in step else None, index)
                 record["result"] = result
@@ -346,6 +350,7 @@ def execute(plan, output, runtime_home=None, mode="headless", connect=None, toke
                 if "as" in step:
                     bindings[step["as"]] = result
                 write(output / "journal.json", receipt)
+                if observer is not None:observer(session,record,"after")
         receipt["result"] = "PASS"
         write(output / "success.json", receipt)
     except (ValueError, RuntimeError, OSError, TimeoutError, subprocess.SubprocessError) as error:

@@ -1,6 +1,6 @@
 # EffectCraft 优化候选交付（2026-10-08）
 
-本次是未发布的技能源候选。继续以 effectcraft-plugin 的 `openspec/changes/establish-v1-plugin` 为唯一规格事实源；插件已发布快照和 `skills.lock.json` 保持不变。下列结果不代表完整 V1 已完成。
+本文件保留各候选阶段的限定证据，本次分发更新为技能源dev.40。继续以 effectcraft-plugin 的 `openspec/changes/establish-v1-plugin` 为唯一规格事实源；插件dev.42通过来源锁消费本次技能源快照。下列结果不代表完整 V1 已完成。
 
 执行代码维护在 `skills/effectcraft-use/scripts/`，生成到全部 15 个技能，各自独立安装，不读取兄弟技能。参考 [当前能力矩阵](current-capabilities.json)、[候选证据](evidence/managed-optimization-20261008.json) 与 [公开使用合同](../skills/effectcraft-use/references/managed-execution.md)。
 
@@ -164,3 +164,46 @@ flowchart LR
   G --> H[Independent media and creative gates]
   H --> I[User acceptance NOT_RUN]
 ```
+
+## 命令与桌面质量观察候选
+
+9.21限定组件通过：受管理命令及自有桌面共用调用前原生快照、修订号和渲染前后实际素材摘要，内部记录保存在任务状态目录，公开命令计划／回执和用户文件保持兼容。每个当前保存工程核对全部合成与图层，素材在隔离副本重映射后通过原生检查；PNG使用自身渲染版本的尺寸／alpha合同。未保存的渲染版本不归给后来工程，未覆盖输出明确NOT_RUN。
+
+```mermaid
+flowchart TD
+  A[同一受管理任务] --> B[commands 或自有 desktop]
+  B --> C[调用前只读原生快照]
+  C --> D[原命令 只调用一次]
+  D --> E[调用后输出与素材摘要]
+  E --> F[任务内观察与成功回执绑定]
+  F --> G[review 原件和记录核对]
+  G --> H[固定引擎隔离重开全部工程]
+  G --> I[PNG解码及渲染版本关联]
+  H --> J[工程 技术 创作 用户状态分离]
+  I --> J
+  G -->|缺失或变化| K[拒绝验收 保留现场 不重放]
+```
+
+28项目标及353项回归（315通过／38条件跳过）通过。当前独立技能经公开launch分别完成命令与桌面两工程／两PNG／素材用例，14个公开review反例保全现场并在恢复原件后再次通过。桌面监听归属和进程退出已核实；仅复用准备好的缓存，不声明冷安装或模型派发。命令视频／序列、Judge及自动修订、9.3.6、9.4.1与完整V1继续开放；创作／用户接受保持NOT_RUN。本次分发为技能源dev.40／插件dev.42；固定宿主安装派发尚未验收。[候选证据](evidence/command-delivery-candidate-20261008.json)。
+
+
+## Command and desktop quality observation candidate
+
+Scoped task9.21 passes. Managed commands and owned desktop share pre-call native snapshots, native revision IDs and actual footage hashes before/after rendering, stored only in task state. Public command plans/receipts and user outputs stay compatible. Review independently reopens every current saved project and compares all compositions/layers and isolated dependency copies; named PNGs use their own render context for actual dimensions/alpha checks. A later project cannot substitute for an unsaved render version. Uncovered outputs remain NOT_RUN.
+
+```mermaid
+flowchart TD
+  A[Managed task] --> B[Commands or owned desktop]
+  B --> C[Readonly native snapshot]
+  C --> D[Original command called once]
+  D --> E[Actual output and dependency hashes]
+  E --> F[Task observation bound to success receipt]
+  F --> G[Review original bytes and records]
+  G --> H[Isolated native reopen of every project]
+  G --> I[PNG decode and render version matching]
+  H --> J[Separate engineering technical creative user states]
+  I --> J
+  G -->|Missing or changed| K[Reject acceptance preserve scene no replay]
+```
+
+28 targeted tests and353 regressions pass with315 passes/38 conditional skips. The current standalone skill runs both public launch modes with two saved projects, two transparent PNGs and imported footage. Fourteen public-review negative cases preserve original task/output bytes; restoring test originals recovers engineering/technical PASS. Owned listener and process exit are verified. Prepared caches are reused; this is not cold-install or model-dispatch evidence. Video/sequence, Judge and automatic command revision, tasks9.3.6/9.4.1 and fullV1 remain open; creative/user acceptance remain NOT_RUN. This distribution is source dev.40/plugin dev.42; new installed-host dispatch remains unaccepted. [Candidate evidence](evidence/command-delivery-candidate-20261008.json).

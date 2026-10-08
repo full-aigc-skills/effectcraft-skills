@@ -72,12 +72,12 @@ def run(plan,output,runtime_home=None,inputs=None,task_hooks=None):
     def request(method,params):
      if method!='tools/call':return original(method,params)
      identifier=task_hooks.before(params.get('name',method),params)
-     result=original(method,params);task_hooks.after(identifier,commands.parse_reply(result));return result
+     result=original(method,params);task_hooks.after(identifier,commands.parse_reply(result,receipt_only=True));return result
     session.request=request
    return session
   interrupted=False
   try:
-   receipt=commands.execute(plan,output,home,'bridge','127.0.0.1:'+str(port),str(token) if token else None,installer=install,session_factory=factory,inputs=inputs)
+   receipt=commands.execute(plan,output,home,'bridge','127.0.0.1:'+str(port),str(token) if token else None,installer=install,session_factory=factory,inputs=inputs,observer=task_hooks.command_observation if task_hooks else None)
   except KeyboardInterrupt:
    if not output.is_dir():raise
    interrupted=True

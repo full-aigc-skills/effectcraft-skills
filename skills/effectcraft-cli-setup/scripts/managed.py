@@ -111,6 +111,9 @@ class Hooks:
         load('resource_meter').sample(self.store,self.task)
         load('resource_meter').retire(self.store,self.task,stage)
 
+    def command_observation(self,session,record,phase):
+        return load("command_delivery").Observer(self.store,self.task)(session,record,phase)
+
     def session(self, argv):
         owner=self
         state=self.store.read(self.task)
@@ -124,7 +127,7 @@ class Hooks:
                 identifier=owner.before(params.get('name',method),params)
                 result=underlying.request(method,params)
                 # 使用真实返回解析器；畸形/错误回复保持 attempted，不误记成功。
-                parsed=load('commands').parse_reply(result)
+                parsed=load('commands').parse_reply(result,receipt_only=True)
                 owner.after(identifier,parsed)
                 return result
         return Wrapped()
@@ -164,13 +167,13 @@ def worker(store, task, runtime_home):
                 proof={'manifestSha256':load('task_store').file_sha(output/'manifest.json'),
                        'projectSha256':load('task_store').file_sha(output/'project.ecproj'),'engineeringReopen':'PASS'}
             elif state['identity']['mode']=='commands':
-                result=load('commands').execute(plan,output,runtime_home,session_factory=hooks.session,inputs=request['inputs'])
+                result=load('commands').execute(plan,output,runtime_home,session_factory=hooks.session,inputs=request['inputs'],observer=hooks.command_observation)
                 if result['result']!='PASS':raise RuntimeError(result.get('error','native_command_failed'))
-                proof={'receiptSha256':load('task_store').file_sha(output/'success.json'),'engineeringReopen':'NOT_RUN'}
+                proof=load('command_delivery').finalize(store,task)
             else:
                 result=load('desktop_session').run(plan,output,runtime_home,request['inputs'],task_hooks=hooks)
                 if result['result']!='PASS':raise RuntimeError(result.get('error','desktop_command_failed'))
-                proof={'receiptSha256':load('task_store').file_sha(output/'success.json'),'engineeringReopen':'NOT_RUN'}
+                proof=load('command_delivery').finalize(store,task)
             store.delivered(task,proof)
         except BaseException as error:
             store.fail(task,str(error),unknown=bool(store.read(task)['steps']))
@@ -276,8 +279,11 @@ def reconcile(store, task):
             state['reconciliation']={'result':'unknown','automaticReplay':False,
                 'requiredAction':'inspect original project, native process and receipts; partial edits cannot be resent'}
             if state.get('delivery') and not any(s['state']=='attempted' for s in state['steps']):
-                report=load('quality_review').inspect_delivery(state['output'])
-                if report['technical']['status']=='PASS' and report.get('binding',{}).get('manifestSha256')==state['delivery'].get('manifestSha256'):
+                if state['identity']['mode']=='workflow':
+                    report=load('quality_review').inspect_delivery(state['output']);proof_key='manifestSha256'
+                else:
+                    report=load('command_delivery').inspect(store,task,None);proof_key='commandDeliverySha256'
+                if report['technical']['status']=='PASS' and report.get('binding',{}).get(proof_key)==state['delivery'].get(proof_key):
                     state['state']='review_ready';state['reconciliation']['result']='verified_delivery'
             if state['state']=='reconciling' and state.get('renderRecovery'):
                 load('render_recovery').validate(store,state)
@@ -289,6 +295,8 @@ def reconcile(store, task):
 
 
 def review(store, task, criteria, judge=None, runtime_home=None):
+    if store.read(task)['identity']['mode']!='workflow':
+        return load('command_delivery').review(store,task,criteria,judge,runtime_home)
     return load('review_ledger').review(store,task,criteria,judge,runtime_home)
 
 

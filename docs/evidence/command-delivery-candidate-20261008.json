@@ -1,0 +1,721 @@
+{
+  "schema": "effectcraft-command-delivery-candidate/v1",
+  "result": "PASS",
+  "sourceFiles": {
+    "skills/effectcraft-use/scripts/command_delivery.py": "c9ea3c4c962a0b8e1dc35efd71805588684ae96818f5e9ace263970e92017f97",
+    "skills/effectcraft-use/scripts/commands.py": "da65937aef566fcd59f4d5315230de64a05334cf63441bcfa3abead987aa15c5",
+    "skills/effectcraft-use/scripts/managed.py": "0fe555059be7adcce9f03ec11d5b45a998a893dd04b646af3e2444c1a74658ca",
+    "skills/effectcraft-use/scripts/desktop_session.py": "1fd05fd25b1f1a0f9a076472a448cbe0cbca6fba6aa449d835bbf98173db2464",
+    "skills/effectcraft-use/references/managed-execution.md": "6ee9ccf030c89e36f93ab2462342c59f32698aa0547a7ee66d5ba8a19f9a68aa",
+    "tests/test_managed_command_delivery.py": "0156cb29d6af24156d4b51355a9a470ec5512433e1d98963cebbdb2dfbb52e82"
+  },
+  "tests": {
+    "component": {
+      "total": 28,
+      "passed": 28
+    },
+    "sourceIdentityRed": {
+      "total": 26,
+      "failures": 2,
+      "errors": 1
+    },
+    "regression": {
+      "total": 353,
+      "passed": 315,
+      "conditionalSkips": 38
+    }
+  },
+  "logs": {
+    "component-green.log": "965a5455df8eedd6733b605f8e4d8ab4c8d2d308c80b842964f9a7f025ba97cb",
+    "dependencies-red.log": "6a44151f86b5b1903149214957dc4da56e5ca82f75591db3e703cd1ab8402dac",
+    "regression.log": "98728f9a8dc97ae56a0672672df900d4ecb6df47a5cc00861d28f8c0aaa82710",
+    "native-current.log": "89fb67eecda09b67a4c78d42b37364bffd8a5e6949b66ee034d0f85e316c2f99",
+    "negative-current.log": "3e0a0ba99f19dbffaa6f5a18c2555d44cece691c8c7c610bd026e13cd1fe3628"
+  },
+  "native": {
+    "result": "PASS",
+    "platform": "darwin-arm64",
+    "skillFiles": {
+      "SKILL.md": "d48614435cbb1a065ae4825ba98705baf100f57c6ffa793d597f8b1d0e0f3648",
+      "references/output-execution.md": "1e185e63d8e20fdc54537feacdfb6e7a140474f5e61e2932747699d751671b36",
+      "references/expression-parent.md": "c67e09b82b9740bbbc603b2ec48c0aeba42c3703f775b7c234473935a355080c",
+      "references/command-reference.md": "0a54e772d6d4dc85d9c5cf4820caa81c56709c1b843fbe27366e28467535ca64",
+      "references/tracking-scene.md": "2e699e1ab62f47a1c40405fc6dd48e15474f130295f33fdcd4e80efcad3e4be9",
+      "references/command-usage.md": "b3f3714a615d229bf96476158206910ed43be18f30838b02c37e5e46db853b30",
+      "references/bridge-tools.json": "1a9c5431674b0e563e83ae3e5aebf9e4c25a95c4a55c53125dccb6dc3ae60859",
+      "references/business-scenes.md": "fa6dde18bb5ea19d15de3c6be5d0fc2cdbf4f4e2cf3170a624600b2d3c4e556b",
+      "references/workflow.md": "09a885345734d8d13cd36466841c28441125caa4863472d2a5b9ed4278cc5cdc",
+      "references/segmented-render.md": "d4a500643465eafad7b96f4491086f203e121bd782d69e208095de36717a71b7",
+      "references/commands.json": "f4a4bd1bb063ffe89b0ab0f71dca12d0b1a92eec3e73306756ebf0a93bb3eeb7",
+      "references/capability-diff.json": "201b27776325f0b49a3e93c7fcfb8651bfbdf53843a9083ec2bdfc875c5c8959",
+      "references/native-command-snapshot.json": "043d3e4bcc4e03fd15df178cfcf8cfd2e81679308a48da8ff289d802b4204b74",
+      "references/codex-judge.md": "a2c18c4705ea0d1de3a395622fbfbc24da283addd6134b8f286d4b1ca63844c4",
+      "references/desktop-install.md": "db2db151b0eff30a3381a03ae377fb23ac09b2b4a919859740bd9343e7f14887",
+      "references/puppet-scene.md": "ce185ef007e86e1189210330049b80cc3a4418015826686ff3b143d81810e55f",
+      "references/camera-scene.md": "19bcbf1dce86e32974f59bfd5785ab0c7664df69ce75fd3130f6e4ec5a1e30c9",
+      "references/motion-tracking.md": "dcb4d2ea69f503e45692bbd3f2d2383546f892bd2cb5d163b7811a310af5d194",
+      "references/managed-execution.md": "6ee9ccf030c89e36f93ab2462342c59f32698aa0547a7ee66d5ba8a19f9a68aa",
+      "references/installation-concurrency.md": "69067acebcd47f1924a8d6aa9d8a4ce6f44ad0756d44888a21eb224bcdb1c215",
+      "references/exchange-loss.md": "eee665f62b77274ca8ce0efc4117012ade85978905cdfd40ab488af64297b8ae",
+      "references/first-use-failures.md": "ce2a8d1a8ca6b8a29a084d52d105d510476de88d40b439d6c2ff79212581d61d",
+      "references/native-workflow.md": "42fee416c66a69f6f3802abe1be6f002963cf109e7e22a4d6297b6dcaf62b8e9",
+      "references/command-coverage.json": "a58a899ed84841acaf17108e53b6dd118f3490139668e65baf1edb5045fcc548",
+      "agents/openai.yaml": "8fe0093ba521c032e6b243bf5c2e3d9d2303cf1ae78f76fe8365e414b7da57b7",
+      "examples/tracking-create.json": "14d6c8654cb81c1b2b578eea021039b38c5179bd9459b7ec41528999d7f53d0d",
+      "examples/camera-scene-reopen.json": "7f1ade6f23c628045941d7168c822d0372e79a63c4ff05cfbd375a03c376b4ee",
+      "examples/puppet-record-follow-create.json": "ac59e9682a32efbe12a6bdeacb5136508c120413b3ae3bdf5efda4b6602e7ed9",
+      "examples/camera-scene-create.json": "bdced8cc3a735793852bf67140ff62ec79544c938c61d733c372f6f4a61d0946",
+      "examples/tracking-reopen.json": "0b393fda8bd68c6819e25ac8f8101381dc175220ca3c8c1c3b8c35637e49ce7b",
+      "examples/layer-mask.json": "61efc2abc7274b45224659ab4aae7e847486af3f3660161a03b83b978ec7a8bc",
+      "examples/puppet-record-follow-reopen.json": "b722ee0ea4681556ae42eb58da21b293180081add09f23bb416d23ff368ae611",
+      "examples/commands-advanced.json": "e2def610996d594575136e357cab0d9ee355ce51cf782817d323b37e8227941b",
+      "examples/puppet-reopen.json": "bd05b66c9480cedaf60cbfe2fb6352dff8a6e573cd27a1fb1be43097bda58b62",
+      "examples/puppet-create.json": "405a5b98b410d2db642eec0a9d0ec8cf48c622c9f1632f36e2c2be3f01ff8560",
+      "examples/commands-revision-create.json": "03d3d7796210dfd4ff27f6cde0e1ba10b4376b0243dc4938d87103ca991f5f61",
+      "examples/expression-parent-create.json": "fca2b95312130f735c884e354ce4fede48bc67ca0a3c740b4b17a79967c20d4d",
+      "examples/native-workflow.json": "0ba62e8bd042dacb028b14c84c18cb2ee10c77e54dbd13efcd7090c8fa9fae16",
+      "examples/desktop-first-use.json": "0d1dbf9c43e8d5ce790443577b5398c2aa7af317fc15a328dc85c62813527d84",
+      "examples/commands-revision.json": "d54bfa78c48b674136b56a8e0c7e36e4c1c475a5907ba46ae450b2ac86e17d1e",
+      "examples/puppet-record-follow-revise.json": "448b635cf49567dc359a3d9ff385fe73afe4b4a32ec280ba5f8cab93ceb00a76",
+      "examples/brand-intro.json": "430aa74e69a3195f70fdfe53ae9b8939fc888df1b58e01d76fd76ccdfe3edd80",
+      "examples/camera-scene-revise.json": "2cca564a10133b56d2d8d20b0feb5cafb627a3e082ce2303fe073567af8bd00f",
+      "examples/expression-parent-revise.json": "8076203648de8834c0681149e557ea4ffed35e0863c2e7a2dec2b4001e3ca22f",
+      "scripts/bootstrap.py": "d5a77de7766e1d634bc903d9d6918b343bc7f87472d0225a52f3bd0fff882965",
+      "scripts/desktop-platforms.lock.json": "3b4b56b144ef102f1ab2e5fbf4f374b22292dbce6a51a01e9bea466f9ed09b92",
+      "scripts/exchange_loss.py": "8871bc2d4e2e6bedd0b1d2852a06ccdbd43b0339d67afc53e6029fb3539c8c4f",
+      "scripts/launch.sh": "c050a7e218e3ccdb9c264284091fac509ece094602646e5ec24e8fac2bdebfa8",
+      "scripts/image_sequence.py": "f67d0e565d8c99abd519bfaabe44599d25606450ca4f98df1ea227619ab2fff0",
+      "scripts/additional-platforms.lock.json": "d72653f778b07bb61eed795d49ffc3e7214ad39e74c64e76959818187567dce6",
+      "scripts/review_ledger.py": "0de65b5a1440b0f334337f82491892aebd4fec79b859587496161514f0b6c8e5",
+      "scripts/task_store.py": "1726f122ad3ce5dba073e2d959d367d4f9a4314486fd24ef512e4b8e5385fe78",
+      "scripts/web_adapter.mjs": "081a816b285a512ebed8cc47dc87e5a16aa0502344c83b25036d3cee8b5c6f78",
+      "scripts/segmented_sequence.py": "f0b078e72211c245267c22514a7b4202099a47cc42a5e9c8243bdd7b0dc473e9",
+      "scripts/platform_support.py": "d6a133dc25b81570f585f473f2fe290e181e78bc24032a05ae83be6f0a45aed8",
+      "scripts/launch.ps1": "762c1f6149132bb82a2fb057ed8397b3f1846f944890dac6a05870e7091403d0",
+      "scripts/judge_contract.py": "2e781b7474607bc75107e3144aa557f49ea81756337af39c6027ef0a6282e735",
+      "scripts/mcp_session.py": "dd6df96dc1734cd7e43c4b820661d2e2c8c713dc8849fc89ab06a3720d99619b",
+      "scripts/resource_budget.py": "501cb33b348cab13cace063dbdb2158d8bdd196419aee7978197a8fc40e27e89",
+      "scripts/render_recovery.py": "6baf8f315f20d5e6b9115423502d66e9e51e33dc2398adc6bbff85b6b68b1e31",
+      "scripts/output_guard.py": "018c5c27217c11ec7b45ded52a1e13d7c42b34a3a53df21566e26f192143302b",
+      "scripts/runtime.lock.json": "b427c71c77e1a217c72f7c19ac872b19df28e07150f4e7f6319defe7f5d9acc0",
+      "scripts/python-platforms.tsv": "3836b670271e8f8327ea386510b18dea6a867ece27be5e74f4165eaa38ad8c65",
+      "scripts/cli.py": "9303ae8ae30009fa706d5d56603032485ad81416aee1d0af523ce902e3f28165",
+      "scripts/desktop_session.py": "1fd05fd25b1f1a0f9a076472a448cbe0cbca6fba6aa449d835bbf98173db2464",
+      "scripts/native_workflow.py": "0db0471f8d849db9c3ffaeaac1c7bc40bf0cd500a638f7b681ecdeb934960bdd",
+      "scripts/desktop.lock.json": "d2af78ee474b8e19ff3c26c792bb27ad180622ffe6dbed5a402bcb7aa7167311",
+      "scripts/quality_review.py": "e0ddc78bb8bdc9b2e1dfca2e8ae7c1915ad9008ced0b3d3a242ccc45086e77e9",
+      "scripts/command_delivery.py": "c9ea3c4c962a0b8e1dc35efd71805588684ae96818f5e9ace263970e92017f97",
+      "scripts/managed.py": "0fe555059be7adcce9f03ec11d5b45a998a893dd04b646af3e2444c1a74658ca",
+      "scripts/png_inspection.py": "0e3c50907c66c6dcc45256d045920da346ad77892e47401de3103c8f6232938d",
+      "scripts/additional_platforms.py": "1a4ffc9f04e240374269a9869d0383f9f833082cf066203fddba117f247f48d9",
+      "scripts/revision.py": "97ddd415f6edcac419f19327e0f1ea0a2d4ed9492231ef9e4d4c253a0aa94b76",
+      "scripts/python.lock.json": "e877b3fe406a2a210ebe5d7f660aa1d0483def44454a54dbe7429bfdba1c9f3f",
+      "scripts/workflow.py": "52eb0ccd9942b83588155ddb851c63c6fbea0f3122a0aa2a3029a2640cb6ce14",
+      "scripts/parameter-contract.json": "dd1bde23fb12e26774f412f0aacc93e8102eaed79d4255709b5717c112daa762",
+      "scripts/orphan_segments.py": "244059948ca6b783c64cdd5942e91f3e6268dfd71f3c48c300595ccbcb2584b9",
+      "scripts/process_guard.py": "914127933d528388cff33db36e92f8ed62263737e985c65b1f7e200ee14d50a4",
+      "scripts/engineering_review.py": "cd85935fe5a4b4d5285c46896cd50d5b9defd3516eb9d96fcd31e8966bacab07",
+      "scripts/preserved_stage.py": "64199df3ee6af2901a859a5aac401fd27ca2f0c6ba9238e6f72c3563f681ad63",
+      "scripts/commands.py": "da65937aef566fcd59f4d5315230de64a05334cf63441bcfa3abead987aa15c5",
+      "scripts/resource_meter.py": "7c89e528b2851a190b5ca849f29ec03d26b4d827ff12aeef7d4c7c01c1cd6dcf",
+      "scripts/desktop.py": "802de3eef9ed9fca3ad09a2f5f6f204f6bbba5a09450efe6ae062e7159409553",
+      "scripts/python-integrity/windows-arm64.tsv": "625a22a5086fd7d312bc156cde8e3f4443ceb2079e2ff91457c6de0cadd5df4d",
+      "scripts/python-integrity/darwin-x86_64.tsv": "53196035ea5ca246ef60da5b248d02a91964a269c6ec7397eedc0f28a72694ca",
+      "scripts/python-integrity/windows-x86.tsv": "551536440722a4fc82e578f4af5a11ef72a9736b3be4b08621982f0f767cc981",
+      "scripts/python-integrity/linux-aarch64.tsv": "6b639cbaa8c4e691d226447b747fde28fb0f9e337fe828d46b2ceba80ad325f7",
+      "scripts/python-integrity/darwin-arm64.tsv": "8f9c3aaf79cd0ff1867ac5d3c937d6ca0c60ccf1ab2b321a2b7a8454209d6fdd",
+      "scripts/python-integrity/linux-x86_64.tsv": "f81e6ac6a770f895b5b1a89838da856f21e9c827f4fc320ed1562645783c0c55",
+      "scripts/python-integrity/windows-x86_64.tsv": "e1e98775d10bcb9fbf55e482a31d9efdb91a8d61d80718998f66f7c9b195e5f3",
+      "scripts/runtime-integrity/darwin-arm64.json": "c7eb5424dbb14940624e3ae6a494078a41dfa0c6738b7779d5d9ceb40f7e2220",
+      "scripts/runtime-integrity/linux-x86_64.json": "0700c5bcadaa68ec96ac723504c6ffd3212999bfc1c4f7ec1e27ab47e6a564a8",
+      "scripts/runtime-integrity/windows-x86_64.json": "33e0714f70aee024ec182148933a536d721c5321f0b7efa1470a21e4d85c21a0",
+      "scripts/runtime-integrity/windows-x86.json": "ebe596ae6de96e0ddebbe5ca171b3b65337cf33e2c40c5f99631aff6b71d02c4",
+      "scripts/runtime-integrity/windows-arm64.json": "edb91da2b4bb474de49cbb705d5c1ff3c6700eb84eea8efc2ec65c208df40572",
+      "scripts/runtime-integrity/linux-aarch64.json": "b1c0b809c03fbf7d3d018f7418250fce3e56bd7e816781df5242c2cea08370fb",
+      "scripts/runtime-integrity/darwin-x86_64.json": "c7eb5424dbb14940624e3ae6a494078a41dfa0c6738b7779d5d9ceb40f7e2220"
+    },
+    "skillUnchanged": true,
+    "nativeCacheReused": true,
+    "isolatedPythonPreparedByLaunch": true,
+    "cases": [
+      {
+        "mode": "commands",
+        "binding": {
+          "commandDeliverySha256": "57406d6a10181812af4195728565425b185178e0c3e9bf8577df89fa5fb3993d",
+          "receiptSha256": "c71c0d8a60d341f181693df3adc63aad0951d93ee180c0eb55bec0f12e5544d8",
+          "filesHash": "1635628298919dfa8bd9ef5117f0b586e0cdb7d81f92a83fce1311e2d18ca111"
+        },
+        "engineering": {
+          "status": "PASS",
+          "fresh": true,
+          "projects": [
+            {
+              "path": "first.ecproj",
+              "sha256": "2c83c8e2f1c87143c00096ecc739a882e6da57c8560f5b9324902abb22e8cfc0",
+              "compositions": 1,
+              "verifiedAssets": 1
+            },
+            {
+              "path": "second.ecproj",
+              "sha256": "2c65ab73bd6b1fb964ddf348d278f14a7da86ce91c110d9d03d84fb4e551fb94",
+              "compositions": 2,
+              "verifiedAssets": 1
+            }
+          ]
+        },
+        "technical": {
+          "status": "PASS",
+          "media": [
+            {
+              "path": "earlier.png",
+              "facts": {
+                "width": 96,
+                "height": 64,
+                "bitDepth": 8,
+                "alpha": true,
+                "alphaExtrema": [
+                  0,
+                  255
+                ],
+                "rgbaSha256": "37224178fc3e1aae0dc46b88953d344395f927df50a20b98dff2d3e2bf98642e"
+              },
+              "composition": {
+                "background": [
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                "duration": 1.0,
+                "frameRate": 12.0,
+                "height": 64,
+                "id": 1,
+                "layers": [
+                  {
+                    "blendMode": "Normal",
+                    "id": 49,
+                    "in": 0.0,
+                    "index": 1,
+                    "label": "Lavender",
+                    "name": "logo.png",
+                    "out": 1.0,
+                    "parent": null,
+                    "start": 0.0,
+                    "stretch": 100.0,
+                    "switches": {
+                      "adjustment": false,
+                      "audio": true,
+                      "collapse": false,
+                      "effects": true,
+                      "frame_blend": "Off",
+                      "guide": false,
+                      "locked": false,
+                      "motion_blur": false,
+                      "quality": "Best",
+                      "sampling": "Bilinear",
+                      "shy": false,
+                      "solo": false,
+                      "three_d": false,
+                      "video": true
+                    },
+                    "trackMatte": null,
+                    "type": "Footage"
+                  },
+                  {
+                    "blendMode": "Normal",
+                    "id": 2,
+                    "in": 0.0,
+                    "index": 2,
+                    "label": "Blue",
+                    "name": "Subject",
+                    "out": 1.0,
+                    "parent": null,
+                    "start": 0.0,
+                    "stretch": 100.0,
+                    "switches": {
+                      "adjustment": false,
+                      "audio": true,
+                      "collapse": false,
+                      "effects": true,
+                      "frame_blend": "Off",
+                      "guide": false,
+                      "locked": false,
+                      "motion_blur": false,
+                      "quality": "Best",
+                      "sampling": "Bilinear",
+                      "shy": false,
+                      "solo": false,
+                      "three_d": false,
+                      "video": true
+                    },
+                    "trackMatte": null,
+                    "type": "Shape"
+                  }
+                ],
+                "name": "Bound source first",
+                "preserveFrameRate": false,
+                "preserveResolution": false,
+                "width": 96,
+                "workArea": [
+                  0.0,
+                  1.0
+                ]
+              },
+              "sourceProjects": [
+                "first.ecproj"
+              ],
+              "seconds": 0,
+              "sourceSnapshotHash": "c08bacb16937ca3c5c4fb0bc878da047a6b8b339601e29aeeb16ed10cbb825dd"
+            },
+            {
+              "path": "final.png",
+              "facts": {
+                "width": 32,
+                "height": 32,
+                "bitDepth": 8,
+                "alpha": true,
+                "alphaExtrema": [
+                  0,
+                  255
+                ],
+                "rgbaSha256": "30f565d23f61c37f06999fdef0f9f7061612198290e1557f47384db89f299d98"
+              },
+              "composition": {
+                "background": [
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                "duration": 1.0,
+                "frameRate": 12.0,
+                "height": 64,
+                "id": 72,
+                "layers": [
+                  {
+                    "blendMode": "Normal",
+                    "id": 73,
+                    "in": 0.0,
+                    "index": 1,
+                    "label": "Blue",
+                    "name": "Badge",
+                    "out": 1.0,
+                    "parent": null,
+                    "start": 0.0,
+                    "stretch": 100.0,
+                    "switches": {
+                      "adjustment": false,
+                      "audio": true,
+                      "collapse": false,
+                      "effects": true,
+                      "frame_blend": "Off",
+                      "guide": false,
+                      "locked": false,
+                      "motion_blur": false,
+                      "quality": "Best",
+                      "sampling": "Bilinear",
+                      "shy": false,
+                      "solo": false,
+                      "three_d": false,
+                      "video": true
+                    },
+                    "trackMatte": null,
+                    "type": "Shape"
+                  }
+                ],
+                "name": "Bound source second",
+                "preserveFrameRate": false,
+                "preserveResolution": false,
+                "width": 64,
+                "workArea": [
+                  0.0,
+                  1.0
+                ]
+              },
+              "sourceProjects": [
+                "second.ecproj"
+              ],
+              "seconds": 0.5,
+              "sourceSnapshotHash": "ef410450e936f772aeb10e8fc0e9cde73bcb77ffb5c76457266a4e82e864c733"
+            }
+          ],
+          "unreviewed": [],
+          "unmatchedFrames": [],
+          "verifiedAssets": 2
+        },
+        "nativeVersions": [
+          4,
+          7
+        ],
+        "actualFootageBound": true,
+        "creative": "NOT_RUN",
+        "userAcceptance": "NOT_RUN",
+        "requiredAction": "command_judge_integration_pending"
+      },
+      {
+        "mode": "desktop",
+        "binding": {
+          "commandDeliverySha256": "a2d06a36567d4d508a1457055f0a7d2686e01caab403c69a9cc6578e0d802a66",
+          "receiptSha256": "02f2178d4b98d6670c5fd6fa59eb573bee7820bf240eae06ec5a018f4b0208da",
+          "filesHash": "0522f78fb5b662a87a1bad6d400f758062e5d8327faa0ffcc10ddf13ef839df8"
+        },
+        "engineering": {
+          "status": "PASS",
+          "fresh": true,
+          "projects": [
+            {
+              "path": "first.ecproj",
+              "sha256": "f29c65dcf979479c1cea6312792a00c1a079f52402e61a03efb1155bdbed1456",
+              "compositions": 1,
+              "verifiedAssets": 1
+            },
+            {
+              "path": "second.ecproj",
+              "sha256": "796da18d489d8a51dbfe30171798dfc3fdf5c672a0d603c39ef345bb0e0c2027",
+              "compositions": 2,
+              "verifiedAssets": 1
+            }
+          ]
+        },
+        "technical": {
+          "status": "PASS",
+          "media": [
+            {
+              "path": "earlier.png",
+              "facts": {
+                "width": 96,
+                "height": 64,
+                "bitDepth": 8,
+                "alpha": true,
+                "alphaExtrema": [
+                  0,
+                  255
+                ],
+                "rgbaSha256": "37224178fc3e1aae0dc46b88953d344395f927df50a20b98dff2d3e2bf98642e"
+              },
+              "composition": {
+                "background": [
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                "duration": 1.0,
+                "frameRate": 12.0,
+                "height": 64,
+                "id": 1,
+                "layers": [
+                  {
+                    "blendMode": "Normal",
+                    "id": 49,
+                    "in": 0.0,
+                    "index": 1,
+                    "label": "Lavender",
+                    "name": "logo.png",
+                    "out": 1.0,
+                    "parent": null,
+                    "start": 0.0,
+                    "stretch": 100.0,
+                    "switches": {
+                      "adjustment": false,
+                      "audio": true,
+                      "collapse": false,
+                      "effects": true,
+                      "frame_blend": "Off",
+                      "guide": false,
+                      "locked": false,
+                      "motion_blur": false,
+                      "quality": "Best",
+                      "sampling": "Bilinear",
+                      "shy": false,
+                      "solo": false,
+                      "three_d": false,
+                      "video": true
+                    },
+                    "trackMatte": null,
+                    "type": "Footage"
+                  },
+                  {
+                    "blendMode": "Normal",
+                    "id": 2,
+                    "in": 0.0,
+                    "index": 2,
+                    "label": "Blue",
+                    "name": "Subject",
+                    "out": 1.0,
+                    "parent": null,
+                    "start": 0.0,
+                    "stretch": 100.0,
+                    "switches": {
+                      "adjustment": false,
+                      "audio": true,
+                      "collapse": false,
+                      "effects": true,
+                      "frame_blend": "Off",
+                      "guide": false,
+                      "locked": false,
+                      "motion_blur": false,
+                      "quality": "Best",
+                      "sampling": "Bilinear",
+                      "shy": false,
+                      "solo": false,
+                      "three_d": false,
+                      "video": true
+                    },
+                    "trackMatte": null,
+                    "type": "Shape"
+                  }
+                ],
+                "name": "Bound source first",
+                "preserveFrameRate": false,
+                "preserveResolution": false,
+                "width": 96,
+                "workArea": [
+                  0.0,
+                  1.0
+                ]
+              },
+              "sourceProjects": [
+                "first.ecproj"
+              ],
+              "seconds": 0,
+              "sourceSnapshotHash": "c08bacb16937ca3c5c4fb0bc878da047a6b8b339601e29aeeb16ed10cbb825dd"
+            },
+            {
+              "path": "final.png",
+              "facts": {
+                "width": 32,
+                "height": 32,
+                "bitDepth": 8,
+                "alpha": true,
+                "alphaExtrema": [
+                  0,
+                  255
+                ],
+                "rgbaSha256": "30f565d23f61c37f06999fdef0f9f7061612198290e1557f47384db89f299d98"
+              },
+              "composition": {
+                "background": [
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                "duration": 1.0,
+                "frameRate": 12.0,
+                "height": 64,
+                "id": 72,
+                "layers": [
+                  {
+                    "blendMode": "Normal",
+                    "id": 73,
+                    "in": 0.0,
+                    "index": 1,
+                    "label": "Blue",
+                    "name": "Badge",
+                    "out": 1.0,
+                    "parent": null,
+                    "start": 0.0,
+                    "stretch": 100.0,
+                    "switches": {
+                      "adjustment": false,
+                      "audio": true,
+                      "collapse": false,
+                      "effects": true,
+                      "frame_blend": "Off",
+                      "guide": false,
+                      "locked": false,
+                      "motion_blur": false,
+                      "quality": "Best",
+                      "sampling": "Bilinear",
+                      "shy": false,
+                      "solo": false,
+                      "three_d": false,
+                      "video": true
+                    },
+                    "trackMatte": null,
+                    "type": "Shape"
+                  }
+                ],
+                "name": "Bound source second",
+                "preserveFrameRate": false,
+                "preserveResolution": false,
+                "width": 64,
+                "workArea": [
+                  0.0,
+                  1.0
+                ]
+              },
+              "sourceProjects": [
+                "second.ecproj"
+              ],
+              "seconds": 0.5,
+              "sourceSnapshotHash": "ef410450e936f772aeb10e8fc0e9cde73bcb77ffb5c76457266a4e82e864c733"
+            }
+          ],
+          "unreviewed": [],
+          "unmatchedFrames": [],
+          "verifiedAssets": 2
+        },
+        "nativeVersions": [
+          4,
+          7
+        ],
+        "actualFootageBound": true,
+        "creative": "NOT_RUN",
+        "userAcceptance": "NOT_RUN",
+        "requiredAction": "command_judge_integration_pending"
+      }
+    ],
+    "ownedDesktop": {
+      "ownedProcessesStopped": true,
+      "listenerOwnedByPID": true,
+      "sessionsStarted": 1
+    }
+  },
+  "publicReviewNegatives": {
+    "result": "PASS",
+    "cases": [
+      {
+        "mode": "commands",
+        "case": "missing-runtime",
+        "engineering": "NOT_RUN",
+        "technical": "PASS",
+        "cacheNotCreated": true
+      },
+      {
+        "mode": "commands",
+        "case": "corrupt-png",
+        "technical": "FAIL",
+        "creative": "NOT_RUN",
+        "userAcceptance": "NOT_RUN",
+        "stateAndOutputPreserved": true,
+        "automaticReplay": false
+      },
+      {
+        "mode": "commands",
+        "case": "native-project-changed",
+        "technical": "FAIL",
+        "creative": "NOT_RUN",
+        "userAcceptance": "NOT_RUN",
+        "stateAndOutputPreserved": true,
+        "automaticReplay": false
+      },
+      {
+        "mode": "commands",
+        "case": "footage-changed",
+        "technical": "FAIL",
+        "creative": "NOT_RUN",
+        "userAcceptance": "NOT_RUN",
+        "stateAndOutputPreserved": true,
+        "automaticReplay": false
+      },
+      {
+        "mode": "commands",
+        "case": "observation-changed",
+        "technical": "FAIL",
+        "creative": "NOT_RUN",
+        "userAcceptance": "NOT_RUN",
+        "stateAndOutputPreserved": true,
+        "automaticReplay": false
+      },
+      {
+        "mode": "commands",
+        "case": "delivery-record-changed",
+        "technical": "FAIL",
+        "creative": "NOT_RUN",
+        "userAcceptance": "NOT_RUN",
+        "stateAndOutputPreserved": true,
+        "automaticReplay": false
+      },
+      {
+        "mode": "commands",
+        "case": "success-receipt-changed",
+        "technical": "FAIL",
+        "creative": "NOT_RUN",
+        "userAcceptance": "NOT_RUN",
+        "stateAndOutputPreserved": true,
+        "automaticReplay": false
+      },
+      {
+        "mode": "desktop",
+        "case": "missing-runtime",
+        "engineering": "NOT_RUN",
+        "technical": "PASS",
+        "cacheNotCreated": true
+      },
+      {
+        "mode": "desktop",
+        "case": "corrupt-png",
+        "technical": "FAIL",
+        "creative": "NOT_RUN",
+        "userAcceptance": "NOT_RUN",
+        "stateAndOutputPreserved": true,
+        "automaticReplay": false
+      },
+      {
+        "mode": "desktop",
+        "case": "native-project-changed",
+        "technical": "FAIL",
+        "creative": "NOT_RUN",
+        "userAcceptance": "NOT_RUN",
+        "stateAndOutputPreserved": true,
+        "automaticReplay": false
+      },
+      {
+        "mode": "desktop",
+        "case": "footage-changed",
+        "technical": "FAIL",
+        "creative": "NOT_RUN",
+        "userAcceptance": "NOT_RUN",
+        "stateAndOutputPreserved": true,
+        "automaticReplay": false
+      },
+      {
+        "mode": "desktop",
+        "case": "observation-changed",
+        "technical": "FAIL",
+        "creative": "NOT_RUN",
+        "userAcceptance": "NOT_RUN",
+        "stateAndOutputPreserved": true,
+        "automaticReplay": false
+      },
+      {
+        "mode": "desktop",
+        "case": "delivery-record-changed",
+        "technical": "FAIL",
+        "creative": "NOT_RUN",
+        "userAcceptance": "NOT_RUN",
+        "stateAndOutputPreserved": true,
+        "automaticReplay": false
+      },
+      {
+        "mode": "desktop",
+        "case": "success-receipt-changed",
+        "technical": "FAIL",
+        "creative": "NOT_RUN",
+        "userAcceptance": "NOT_RUN",
+        "stateAndOutputPreserved": true,
+        "automaticReplay": false
+      }
+    ],
+    "restoredBothModes": "engineering/technical PASS, creative/user NOT_RUN",
+    "originalsPreserved": true,
+    "scope": "public managed CLI; same current standalone skill and original tasks; no edits replayed or baselines regenerated"
+  },
+  "ownedDesktop": {
+    "ownedProcessesStopped": true,
+    "listenerOwnedByPID": true,
+    "sessionsStarted": 1
+  },
+  "compatibility": {
+    "commandPlan": "craft-command-plan/v1",
+    "commandReceipt": "craft-command-receipt/v1",
+    "internalOnly": "effectcraft-command-delivery/v1",
+    "userOutputsNotRewritten": true,
+    "copiesSynchronized": 15
+  },
+  "limitations": [
+    "macOS arm64 current standalone source copy; native cache reused; isolated Python prepared by public launch",
+    "not installed immutable-release or model-dispatch acceptance",
+    "named PNG and JSON native project only; video/sequence, Judge and automatic command revision remain open",
+    "other target platforms, complete OpenSpec tasks 9.3.6/9.4.1 and full V1 remain open",
+    "source dev.40 / plugin dev.42 distribution; CI tracked separately"
+  ]
+}

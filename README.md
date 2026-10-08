@@ -1,15 +1,15 @@
 # EffectCraft Skills
 
-Development source dev.39 adds actual video frame/timestamp/alpha and asset checks, isolated current-project reopening, and independent engineering/technical/creative/user acceptance states. Regression: 287 passed / 38 conditional skips out of 325. Complete V1 and other-platform/host acceptance remain open. [Evidence](docs/evidence/engineering-review-candidate-20261008.json).
+Development source dev.40 adds managed command/desktop saved-project and named-PNG quality checks, bound to native revisions and actual footage bytes. Regression: 315 passed / 38 conditional skips out of 353. Full V1 and other platforms/hosts remain open. [Evidence](docs/evidence/command-delivery-candidate-20261008.json).
 
 Segmented first-use guidance now matches native acceptance of fixed Film40 / Effect38 / Art117, including HD full frames, revision, recovery and relocation. Installation qualification of this new guide snapshot is recorded separately. [Evidence](docs/evidence/craft-fixed-segmented-hd-refresh-20261008.json).
 
-> **Development release dev.39 (2026-10-08):** pinned isolated Python 3.13.16 and EffectCraft 0.4.0; managed execution, owned segment recovery and shared retry accounting. Local macOS evidence does not establish all platforms or hosts. See [implementation and open gates](docs/managed-optimization-20261008.md) and the [platform matrix](docs/current-capabilities.json).
+> **Development release dev.40 (2026-10-08):** pinned isolated Python 3.13.16 and EffectCraft 0.4.0; managed execution, owned segment recovery and shared retry accounting. Local macOS evidence does not establish all platforms or hosts. See [implementation and open gates](docs/managed-optimization-20261008.md) and the [platform matrix](docs/current-capabilities.json).
 
 
 Turn text, graphics and footage into an editable `.ecproj`, dependencies and rendered media.
 
-Current source: `0.1.0-dev.39`; consuming plugin: `0.1.0-dev.41`; 15 independent skills.
+Current source: `0.1.0-dev.40`; consuming plugin: `0.1.0-dev.42`; 15 independent skills.
 
 Verified first-use platform: macOS arm64 and Python 3.11+. Pinned runtimes install into the user data directory; skill files stay in their host-loaded directory. These are development releases; complete V1 acceptance and generic Skills CLI installation remain open.
 
