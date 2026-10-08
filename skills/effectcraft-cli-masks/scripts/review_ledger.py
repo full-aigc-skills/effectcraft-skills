@@ -3,6 +3,7 @@ import importlib.util
 from pathlib import Path
 import re
 import subprocess
+import time
 
 
 def load(name):
@@ -74,25 +75,27 @@ def validate(store, root, criteria_hash):
     return ledger
 
 
-def review(store, task, criteria, judge=None):
+def review(store, task, criteria, judge=None, runtime_home=None):
     """保留本次只读技术检查，供公开入口输出拒绝诊断。"""
     report={}
     try:
-        return _review(store,task,criteria,judge,report)
+        return _review(store,task,criteria,judge,report,runtime_home)
     except (ValueError,OSError,KeyError,TypeError,subprocess.SubprocessError) as error:
         error.review_report=report
         raise
 
 
-def _review(store, task, criteria, judge, report):
+def _review(store, task, criteria, judge, report, runtime_home):
     """只在当前任务族约束内写入评估；根账本是已结算版本的事实源。"""
     managed=load('managed');quality=load('quality_review');tasks=load('task_store')
     state=store.read(task)
     if state['schema']!='effectcraft-managed-task/v2':raise ValueError('legacy_task_read_only')
     if state['state']!='review_ready':raise ValueError('review_state_conflict')
     report.update(quality.inspect_delivery(state['output']))
-    if state.get('delivery',{}).get('engineeringReopen')=='PASS' and report.get('binding',{}).get('manifestSha256')==state['delivery'].get('manifestSha256'):
-        report['engineering']={'status':'PASS','source':'current managed workflow save/reopen'}
+    with store.lock():store.allowed(store.read(task))
+    if report.get('binding'):
+        report['engineering']=load('engineering_review').verify(state['output'],runtime_home,
+            state['identity']['runtimeSha256'],timeout=max(.1,min(120,state['deadline']-time.time())))
     response=managed.read(judge) if judge else None
     criteria_hash=tasks.digest(criteria)
     with store.lock():
@@ -108,7 +111,14 @@ def _review(store, task, criteria, judge, report):
             if response is not None and tasks.digest(response)!=entry['responseHash']:
                 raise ValueError('judge_response_conflict')
             frozen=directory/'reviews'/entry['requestId']
-            request=managed.read(frozen/'request.json');report=managed.read(frozen/'quality.json')
+            if report['technical']['status']!='PASS' or report['engineering']['status']!='PASS':
+                report['historicalReview']={'path':str((frozen/'quality.json').relative_to(directory)),'sha256':entry['reportSha256']}
+                action='technical_verification' if report['technical']['status']!='PASS' else 'engineering_verification'
+                return {'report':report,'judgeRequest':None,'requiredAction':action}
+            request=managed.read(frozen/'request.json')
+            frozen_report=managed.read(frozen/'quality.json')
+            frozen_report.update(engineering=report['engineering'],technical=report['technical'],userAcceptance=report['userAcceptance'])
+            report=frozen_report
             reference={'path':str((frozen/'quality.json').relative_to(directory)), 'sha256':entry['reportSha256']}
             # 根记录先结算；崩溃后只修复子记录引用，不重算评分或停滞。
             if current.get('review')!=reference:
@@ -123,6 +133,10 @@ def _review(store, task, criteria, judge, report):
             if request['binding']!=report['binding']:raise ValueError('artifact_changed')
         elif response is not None:raise ValueError('judge_request_missing')
         else:
+            if report['engineering']['status']!='PASS':
+                return {'report':report,'judgeRequest':None,'requiredAction':'engineering_verification'}
+            if report['binding']['manifestSha256']!=state.get('delivery',{}).get('manifestSha256'):
+                raise ValueError('artifact_changed')
             native=managed.read(Path(state['output'])/'native.json')
             temporal=bool(managed.read(Path(state['output'])/'manifest.json').get('video') or native['composition'].get('duration',0)>0)
             request=quality.judge_request(task,state['output'],report,criteria,temporal)
@@ -134,6 +148,8 @@ def _review(store, task, criteria, judge, report):
         expected=quality.judge_request(task,state['output'],report,criteria,temporal)
         expected['requestId']=request['requestId']
         if request!=expected:raise ValueError('judge_request_changed')
+        if report['engineering']['status']!='PASS':
+            return {'report':report,'judgeRequest':None,'requiredAction':'engineering_verification'}
         root['qualityReviews']=ledger
         if response is None:
             store.save(root)

@@ -55,3 +55,17 @@
 For a settled version, `review` reuses its original Judge request. A task family keeps the first criteria; identical imports are idempotent and conflicting responses are rejected. Immutable request/response/report files live in private `reviews/REQUEST_ID/` directories. The root `effectcraft-review-ledger/v1` commits each version once, and an interrupted child reference can be repaired by the same import. `bestVerified` binds the best engineering/technical verified version to its report digest. Changed artifacts, corrupt receipts, ancestor cancellation or deadline expiry prevent further review mutations. Historical scores without this ledger remain diagnostic; comparison and stagnation budgets are never reset automatically.
 
 Judge v2仅验收`scope.coverage=sampled`列出的具体样本，不能据此声称全帧创作通过。旧v1请求/评分保留诊断读取，不自动升级或用于新的修订。无能力的回执保存在`review-attempts/`，不会消耗停滞次数。 / Judge v2 accepts only its declared sample coverage. It does not claim all-frame creative acceptance. Legacy v1 requests/scores remain diagnostic; NOT_RUN receipts are retained without scoring or consuming stagnation.
+
+## 视频与素材复检 / Video and dependency verification
+
+视频技术检查实际解码全部媒体，核对合成帧数、零起点及连续时间格；封装时长容差不能掩盖少一帧。声明alpha的视频须实际解码为带alpha的像素格式，不透明视频不能冒称透明保真。素材声明的包内路径与摘要必须同时匹配实际文件和交付文件表。缺解码器保留NOT_RUN；这些技术结果不能代替原生工程重开或创作评价。
+
+Video checks decode the media and verify exact composition frame count, zero-based timestamps and continuous frame timing. Duration tolerance cannot hide a missing frame. Declared video alpha requires an actual decoded alpha pixel format; opaque media does not prove transparency. Each declared dependency must match both its actual package file and file-table digest. Missing decoders remain NOT_RUN. Technical results do not replace engineering reopen or creative judgment.
+
+## 当前工程检查 / Current engineering verification
+
+`review`每次都核验任务绑定的已安装原生运行时，在临时目录复制工程及声明素材，实际重开、执行缺失素材检查，并比较原生合成与图层。原工程和素材不保存、不修改；前后摘要变化会失败。缺运行时或重开超时保持工程NOT_RUN，不能沿用历史PASS；原生错误或结构差异为FAIL。已结算报告原样保留，当前检查不通过时创作NOT_RUN、不可接受，不生成新的视觉请求。`revise`在预算检查后、扣减轮数前再次执行同一工程核验。
+
+Each `review` verifies the task-bound installed native runtime, copies the project and declared assets to a temporary package, reopens it, checks missing footage and compares the exact native composition/layers. It never saves or edits originals; changed original digests fail. Missing runtime or incomplete timeout is engineering NOT_RUN, while native errors/structural drift fail. Immutable historical reports remain intact but do not replace current verification. Failed current checks leave creative NOT_RUN, with no new visual request. `revise` repeats engineering verification before consuming a revision round.
+
+质量回执兼容`accepted`布尔值，并增加独立`userAcceptance.status=NOT_RUN`；工程、技术和模型创作通过均不能代替明确的用户决定。 / The quality report retains the compatible `accepted` boolean and adds independent `userAcceptance.status=NOT_RUN`. Engineering, media and model judgments never substitute for an explicit user decision.

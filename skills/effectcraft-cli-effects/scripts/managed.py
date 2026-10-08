@@ -288,8 +288,8 @@ def reconcile(store, task):
             return store.save(state)
 
 
-def review(store, task, criteria, judge=None):
-    return load('review_ledger').review(store,task,criteria,judge)
+def review(store, task, criteria, judge=None, runtime_home=None):
+    return load('review_ledger').review(store,task,criteria,judge,runtime_home)
 
 
 def main():
@@ -323,7 +323,7 @@ def main():
                 result=reconcile(store,args.task)
                 if result.get('state')=='reconciling' and result.get('reconciliation',{}).get('result')=='render_resume_ready':
                     result=supervise(store,args.task,args.runtime_home,recover=True)
-        elif args.action=='review':result=review(store,args.task,read(args.criteria),args.judge)
+        elif args.action=='review':result=review(store,args.task,read(args.criteria),args.judge,args.runtime_home)
         elif args.action=='_worker':worker(store,args.task,args.runtime_home);return
         else:
             inputs={}
@@ -345,6 +345,7 @@ def main():
             report.setdefault('schema','effectcraft-quality/v1')
             report.setdefault('engineering',{'status':'NOT_RUN'})
             report.setdefault('technical',{'status':'NOT_RUN'})
+            report.setdefault('userAcceptance',{'status':'NOT_RUN','source':'explicit user decision required'})
             report['creative']={'status':'NOT_RUN','reason':str(error)}
             report['readyForAcceptance']=False;report['accepted']=False
             result.update(schema='effectcraft-review-rejection/v1',taskId=args.task,report=report,

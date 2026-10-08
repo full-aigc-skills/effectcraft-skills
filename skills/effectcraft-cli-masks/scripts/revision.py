@@ -3,6 +3,7 @@ import copy
 import importlib.util
 from pathlib import Path
 import uuid
+import time
 
 
 def load(name):
@@ -84,6 +85,16 @@ def revise(store, task, plan, output, runtime_home):
             raise ValueError('revision_budget_exhausted')
         if root.get('activeRevision'):
             raise ValueError('revision_in_progress')
+    # 预算先检查，原生只读核验在全局状态锁之外进行；结算前再次核对取消与并发。
+    engineering=load('engineering_review').verify(source,runtime_home,state['identity']['runtimeSha256'],
+        timeout=max(.1,min(120,root['deadline']-time.time())))
+    if engineering['status']!='PASS':raise ValueError('engineering_gate: '+engineering.get('reason',engineering['status']))
+    if quality.binding(source)!=report['binding']:raise ValueError('artifact_changed')
+    with store.lock():
+        root=store.read(root['taskId']);store.allowed(root)
+        if root['budget']['revisions']>=2 or root['budget']['stagnant']>=2:
+            raise ValueError('revision_budget_exhausted')
+        if root.get('activeRevision'):raise ValueError('revision_in_progress')
         child=uuid.uuid4().hex
         root['budget']['revisions']+=1;root['activeRevision']=child;store.save(root)
     # 预算在尝试前持久化；异常不回退次数，也不自动重复尝试。

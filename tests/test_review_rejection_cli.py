@@ -63,9 +63,11 @@ class ReviewRejectionCliTests(unittest.TestCase):
         self.assert_rejection('judge_request_changed')
         self.assertEqual(request_path.read_bytes(),before)
 
-    def test_healthy_receipt_still_returns_verified_pass(self):
+    def test_history_is_not_current_pass_when_native_runtime_is_absent(self):
         self.fixture.accept(response_changes={'status':'PASS','passed':True,'issues':[]})
         result,data=self.invoke(self.root/'root-response.json')
         self.assertEqual(result.returncode,0,result.stdout+result.stderr)
-        self.assertEqual(data['report']['creative']['status'],'PASS')
+        self.assertEqual(data['report']['creative']['status'],'NOT_RUN')
+        self.assertEqual(data['report']['engineering']['status'],'NOT_RUN')
+        self.assertFalse(data['report']['readyForAcceptance'])
         self.assertNotEqual(data.get('schema'),'effectcraft-review-rejection/v1')

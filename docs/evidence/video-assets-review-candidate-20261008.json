@@ -1,0 +1,158 @@
+{
+  "schema": "effectcraft-video-assets-candidate/v1",
+  "result": "PASS",
+  "sourceFiles": {
+    "skills/effectcraft-use/scripts/quality_review.py": "c097d672194030a6e56d23cebd6aa43d6bdc77f6922e7c65abb7e3b568a9e7b6",
+    "skills/effectcraft-use/references/managed-execution.md": "24313d41484e76e768620041aa425ab13f78f9d3eef2b9e767866ebb2924cff6",
+    "tests/test_managed_video_review.py": "85e5c6ac3254e852de79bb8549ae8aadafc6db82bc7c2f5e84d2b6f8c667f3d4",
+    "tests/test_managed_asset_review.py": "b7fd26e39bee804865507eba3ecc9ac68ba183d9f9622c6200149cb61f3d6201"
+  },
+  "red": {
+    "videoTests": 8,
+    "videoFailures": 4,
+    "assetTests": 5,
+    "assetFailures": 5
+  },
+  "green": {
+    "videoTests": 9,
+    "assetTests": 5,
+    "regressionTotal": 312,
+    "passed": 274,
+    "skipped": 38
+  },
+  "logs": {
+    "effectcraft-video-red.log": "e4170fa9fa65d075ade16d26e1d10e7c063f197d1bf2308bb653db0c19bdd36b",
+    "effectcraft-assets-red.log": "1fafff7412d3739c6c61a493682a1abf375fee55e31b9e801fd876e1cdd48274",
+    "effectcraft-video-green.log": "d455a0fe1ad56ff3b76795b9069713e79d2d791f2a4a46c5d2e4f20d7908cb8e",
+    "effectcraft-assets-green.log": "812020290987e68027b66f0b10a6cd36f917bfc0dc21dae04c9d9796dd2b845e",
+    "effectcraft-video-assets-regression.log": "be1efbaf78a8288bd96eb4f8f003f3f74de827861de8eac3a15f83ab77513e34"
+  },
+  "nativeVideo": {
+    "schema": "effectcraft-video-native/v1",
+    "result": "PASS",
+    "platform": "darwin-arm64",
+    "scope": "single independently copied current skill; prepared isolated Python/native caches; actual run/create/save/reopen/12-frame render and public review",
+    "executionFiles": {
+      "bootstrap.py": "d5a77de7766e1d634bc903d9d6918b343bc7f87472d0225a52f3bd0fff882965",
+      "desktop-platforms.lock.json": "3b4b56b144ef102f1ab2e5fbf4f374b22292dbce6a51a01e9bea466f9ed09b92",
+      "exchange_loss.py": "8871bc2d4e2e6bedd0b1d2852a06ccdbd43b0339d67afc53e6029fb3539c8c4f",
+      "launch.sh": "c050a7e218e3ccdb9c264284091fac509ece094602646e5ec24e8fac2bdebfa8",
+      "image_sequence.py": "f67d0e565d8c99abd519bfaabe44599d25606450ca4f98df1ea227619ab2fff0",
+      "additional-platforms.lock.json": "d72653f778b07bb61eed795d49ffc3e7214ad39e74c64e76959818187567dce6",
+      "review_ledger.py": "61506acff6c0a22ae5377657ba31ac528e6b9ec67940266638ba28a304fd5a87",
+      "task_store.py": "1726f122ad3ce5dba073e2d959d367d4f9a4314486fd24ef512e4b8e5385fe78",
+      "web_adapter.mjs": "081a816b285a512ebed8cc47dc87e5a16aa0502344c83b25036d3cee8b5c6f78",
+      "segmented_sequence.py": "f0b078e72211c245267c22514a7b4202099a47cc42a5e9c8243bdd7b0dc473e9",
+      "platform_support.py": "d6a133dc25b81570f585f473f2fe290e181e78bc24032a05ae83be6f0a45aed8",
+      "launch.ps1": "762c1f6149132bb82a2fb057ed8397b3f1846f944890dac6a05870e7091403d0",
+      "judge_contract.py": "2e781b7474607bc75107e3144aa557f49ea81756337af39c6027ef0a6282e735",
+      "mcp_session.py": "dd6df96dc1734cd7e43c4b820661d2e2c8c713dc8849fc89ab06a3720d99619b",
+      "resource_budget.py": "501cb33b348cab13cace063dbdb2158d8bdd196419aee7978197a8fc40e27e89",
+      "render_recovery.py": "6baf8f315f20d5e6b9115423502d66e9e51e33dc2398adc6bbff85b6b68b1e31",
+      "output_guard.py": "018c5c27217c11ec7b45ded52a1e13d7c42b34a3a53df21566e26f192143302b",
+      "runtime.lock.json": "b427c71c77e1a217c72f7c19ac872b19df28e07150f4e7f6319defe7f5d9acc0",
+      "python-platforms.tsv": "3836b670271e8f8327ea386510b18dea6a867ece27be5e74f4165eaa38ad8c65",
+      "cli.py": "9303ae8ae30009fa706d5d56603032485ad81416aee1d0af523ce902e3f28165",
+      "desktop_session.py": "7c4e783b68b25f33f6b248fa7221c8e4842a3aa93c7651999a38da247cf2f266",
+      "native_workflow.py": "0db0471f8d849db9c3ffaeaac1c7bc40bf0cd500a638f7b681ecdeb934960bdd",
+      "desktop.lock.json": "d2af78ee474b8e19ff3c26c792bb27ad180622ffe6dbed5a402bcb7aa7167311",
+      "quality_review.py": "c097d672194030a6e56d23cebd6aa43d6bdc77f6922e7c65abb7e3b568a9e7b6",
+      "managed.py": "8bc7d74c5d282727fb5dbf235b83b9017b0d4d022808669c0877deea1535f0b0",
+      "png_inspection.py": "0e3c50907c66c6dcc45256d045920da346ad77892e47401de3103c8f6232938d",
+      "additional_platforms.py": "1a4ffc9f04e240374269a9869d0383f9f833082cf066203fddba117f247f48d9",
+      "revision.py": "a9f47e0daa59e5f63ccdebd52cab0bda88bfd0d4bedb1f0712ad09e0ecfb6141",
+      "python.lock.json": "e877b3fe406a2a210ebe5d7f660aa1d0483def44454a54dbe7429bfdba1c9f3f",
+      "workflow.py": "52eb0ccd9942b83588155ddb851c63c6fbea0f3122a0aa2a3029a2640cb6ce14",
+      "parameter-contract.json": "dd1bde23fb12e26774f412f0aacc93e8102eaed79d4255709b5717c112daa762",
+      "orphan_segments.py": "244059948ca6b783c64cdd5942e91f3e6268dfd71f3c48c300595ccbcb2584b9",
+      "process_guard.py": "914127933d528388cff33db36e92f8ed62263737e985c65b1f7e200ee14d50a4",
+      "preserved_stage.py": "64199df3ee6af2901a859a5aac401fd27ca2f0c6ba9238e6f72c3563f681ad63",
+      "commands.py": "abb5c49e8ad2cd2bb539c8135274c4f2ff81aebbfdeb72fcd2fe383f55262fb7",
+      "resource_meter.py": "7c89e528b2851a190b5ca849f29ec03d26b4d827ff12aeef7d4c7c01c1cd6dcf",
+      "desktop.py": "802de3eef9ed9fca3ad09a2f5f6f204f6bbba5a09450efe6ae062e7159409553"
+    },
+    "runtimeSha256": "c1717eb87e5b57b3ed88c6a78047268a5afa566beb36104fdcc05dc8634a01c1",
+    "binding": {
+      "manifestSha256": "585d0398fd5ea7501e5b020cd4ee3afab4a499b2ea274fa1daa058cc2a3f84ba",
+      "projectSha256": "45afe8fae1672e7f3a184676baf385258307e211b4dea9140a066fa7ea070207",
+      "filesHash": "92bb2cbe7d979381504962b8681e8cdbb0e4aff105e85ab3b7ecd05e46189c0b"
+    },
+    "engineering": "PASS",
+    "technical": "PASS",
+    "verifiedFrames": 12,
+    "missingDecoder": "NOT_RUN",
+    "negativeCases": [
+      {
+        "case": "missing-frame",
+        "result": "PASS",
+        "technical": "FAIL",
+        "reason": "video_frame_count_mismatch",
+        "creative": "NOT_RUN",
+        "judgeRequest": null,
+        "stateBytesPreserved": true,
+        "projectBytesPreserved": true
+      },
+      {
+        "case": "wrong-alpha",
+        "result": "PASS",
+        "technical": "FAIL",
+        "reason": "video_alpha_missing",
+        "creative": "NOT_RUN",
+        "judgeRequest": null,
+        "stateBytesPreserved": true,
+        "projectBytesPreserved": true
+      }
+    ],
+    "restoredTechnical": "PASS",
+    "creative": "NOT_RUN",
+    "accepted": false,
+    "limitations": [
+      "no new visual judgment",
+      "not fresh runtime installation",
+      "other target platforms and complete engineering review gate remain open"
+    ]
+  },
+  "nativeAssets": {
+    "schema": "effectcraft-assets-native/v1",
+    "result": "PASS",
+    "platform": "darwin-arm64",
+    "engineering": "PASS",
+    "technical": "PASS",
+    "verifiedAssets": 1,
+    "verifiedFrames": 12,
+    "binding": {
+      "manifestSha256": "388171171b776c9060141a79fc5a2ee98d83114f61a4cbedf149f025ad22738d",
+      "projectSha256": "6ac86cfd5ef2f4cc79279a3e6a7489f3b50f01a342dd5dbdc486f420dc7f9ec5",
+      "filesHash": "83b53f2fabd3f0abbe0c41bed5e641d1c4451c03f63f4d46b5e8e2d15bc04aa2"
+    },
+    "negativeCases": [
+      {
+        "case": "digest-disagreement",
+        "result": "PASS",
+        "technical": "FAIL",
+        "creative": "NOT_RUN",
+        "stateBytesPreserved": true,
+        "projectBytesPreserved": true
+      },
+      {
+        "case": "unlisted-asset",
+        "result": "PASS",
+        "technical": "FAIL",
+        "creative": "NOT_RUN",
+        "stateBytesPreserved": true,
+        "projectBytesPreserved": true
+      }
+    ],
+    "restoredTechnical": "PASS",
+    "creative": "NOT_RUN",
+    "accepted": false,
+    "scope": "same single current copied skill; real asset import/collect/save/reopen/render and public review; prepared caches reused"
+  },
+  "limitations": [
+    "current source candidate, not plugin dev.40 locked snapshot",
+    "native tests reuse prepared isolated caches, not cold installation",
+    "no new visual judgment; creative remains NOT_RUN and accepted remains false",
+    "9.4.1 current engineering reopen verification and all four explicit status contracts remain open",
+    "other native platforms, fixed installed hosts and complete V1 remain open"
+  ]
+}

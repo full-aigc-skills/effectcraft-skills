@@ -41,6 +41,13 @@ def binding(root):
     for name,expected in manifest['files'].items():
         if sha(contained(root,name))!=expected:
             raise ValueError('artifact_changed: '+name)
+    assets=manifest.get('assets',{})
+    if not isinstance(assets,dict):raise ValueError('asset_contract_invalid')
+    for asset in assets.values():
+        if not isinstance(asset,dict):raise ValueError('asset_contract_invalid')
+        name=asset['path'];path=contained(root,name)
+        if manifest['files'].get(name)!=asset.get('sha256') or sha(path)!=asset['sha256']:
+            raise ValueError('asset_contract_mismatch')
     return {'manifestSha256':sha(root/'manifest.json'),
             'projectSha256':sha(root/'project.ecproj'),
             'filesHash':load('task_store').digest(manifest['files'])}
@@ -88,7 +95,8 @@ def inspect_delivery(root, timeout=120):
     root=Path(root).resolve()
     result={'schema':'effectcraft-quality/v1','engineering':{'status':'NOT_RUN'},
             'technical':{'status':'NOT_RUN','media':[]},'creative':{'status':'NOT_RUN'},
-            'accepted':False}
+            'userAcceptance':{'status':'NOT_RUN','source':'explicit user decision required'},
+            'readyForAcceptance':False,'accepted':False}
     try:
         result['binding']=binding(root)
         manifest=read(root/'manifest.json'); technical=result['technical']; media=technical['media']
@@ -109,7 +117,7 @@ def inspect_delivery(root, timeout=120):
             if not ffmpeg or not ffprobe:
                 technical.update(status='NOT_RUN',reason='media_decoder_missing')
                 return result
-            probe=subprocess.run([ffprobe,'-v','error','-show_streams','-show_format','-of','json',str(path)],capture_output=True,text=True,timeout=timeout,check=True)
+            probe=subprocess.run([ffprobe,'-v','error','-select_streams','v','-show_streams','-show_format','-show_frames','-show_entries','frame=best_effort_timestamp_time,pix_fmt','-read_intervals','%+#10001','-of','json',str(path)],capture_output=True,text=True,timeout=timeout,check=True)
             facts=json.loads(probe.stdout); streams=[s for s in facts.get('streams',[]) if s.get('codec_type')=='video']
             if len(streams)!=1 or float(facts['format'].get('duration',0))<=0:
                 raise ValueError('video_stream_invalid')
@@ -122,9 +130,27 @@ def inspect_delivery(root, timeout=120):
                     or abs(actual_rate-float(native['frameRate']))>.01
                     or abs(float(facts['format']['duration'])-float(native['duration']))>max(.05,1/actual_rate)):
                 raise ValueError('video_contract_mismatch')
-            media.append({'path':video['path'],'decoded':True,'probe':facts})
+            expected_count=math.ceil(Fraction(str(native['duration']))*Fraction(str(native['frameRate'])))
+            if not 0<expected_count<=10000:raise ValueError('video_frame_budget_exceeded')
+            decoded=facts.get('frames',[])
+            if len(decoded)!=expected_count:raise ValueError('video_frame_count_mismatch')
+            # 比较实际解码时间；帧数及封装时长相同也不能掩盖缺口或起点偏移。
+            rate=Fraction(str(native['frameRate']))
+            precision=max(Fraction(1,1000000),Fraction(stream['time_base']))
+            for index,frame in enumerate(decoded):
+                if abs(Fraction(frame['best_effort_timestamp_time'])-index/rate)>precision:
+                    raise ValueError('video_timeline_mismatch')
+            if video.get('alpha'):
+                formats=subprocess.run([ffprobe,'-v','error','-show_pixel_formats','-of','json'],
+                    capture_output=True,text=True,timeout=timeout,check=True)
+                alpha_formats={row['name'] for row in json.loads(formats.stdout)['pixel_formats'] if row.get('flags',{}).get('alpha')==1}
+                if any(frame.get('pix_fmt') not in alpha_formats for frame in decoded):
+                    raise ValueError('video_alpha_missing')
+            media.append({'path':video['path'],'decoded':True,'verifiedFrames':len(decoded),
+                          'timelineVerified':True,'alphaVerified':bool(video.get('alpha')),'probe':facts})
         if not media:
             raise ValueError('no_media_to_review')
+        technical['verifiedAssets']=len(manifest.get('assets',{}))
         technical['status']='PASS'
     except (ValueError,TypeError,KeyError,OSError,subprocess.SubprocessError) as error:
         result['technical'].update(status='FAIL',reason=str(error))

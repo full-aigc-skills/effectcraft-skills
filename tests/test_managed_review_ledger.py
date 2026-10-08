@@ -17,9 +17,18 @@ class ReviewLedgerTests(unittest.TestCase):
         self.tmp=tempfile.TemporaryDirectory();self.addCleanup(self.tmp.cleanup)
         self.root=Path(self.tmp.name);self.store=self.tasks.Store(self.root/'state')
         self.criteria={'goal':'clear title'}
+        # 账本单元测试注入明确的工程适配器结果；真实重开另由原生/公开CLI测试验证。
+        self.engineering_status={};self.real_load=self.managed.load
+        self.ledger=self.real_load('review_ledger');ledger_load=self.ledger.load
+        engineering=ledger_load('engineering_review')
+        engineering.verify=lambda output,home,sha,timeout=120:{'schema':'effectcraft-engineering-review/v1',
+            'status':self.engineering_status[Path(output).name],'fresh':True,'source':'unit adapter fixture'}
+        self.ledger.load=lambda name:engineering if name=='engineering_review' else ledger_load(name)
+        self.managed.load=lambda name:self.ledger if name=='review_ledger' else self.real_load(name)
         self.delivery('root')
 
     def delivery(self,task,parent=None,engineering='PASS'):
+        self.engineering_status[task]=engineering
         output=self.root/task;output.mkdir()
         def chunk(kind,data):return struct.pack('>I',len(data))+kind+data+struct.pack('>I',zlib.crc32(kind+data))
         png=b'\x89PNG\r\n\x1a\n'+chunk(b'IHDR',struct.pack('>IIBBBBB',1,1,8,6,0,0,0))+chunk(b'IDAT',zlib.compress(b'\x00\xff\x00\x00\x00'))+chunk(b'IEND',b'')
@@ -93,9 +102,9 @@ class ReviewLedgerTests(unittest.TestCase):
 
     def test_unverified_engineering_does_not_become_best(self):
         self.delivery('unverified',engineering='NOT_RUN')
-        request=self.request('unverified')
-        with self.assertRaisesRegex(ValueError,'engineering_gate'):
-            self.accept('unverified',request=request)
+        result=self.managed.review(self.store,'unverified',self.criteria)
+        self.assertIsNone(result['judgeRequest']);self.assertEqual(result['requiredAction'],'engineering_verification')
+        self.assertEqual(result['report']['engineering']['status'],'NOT_RUN')
         self.assertNotIn('bestTask',self.store.read('unverified'))
 
     def test_ancestor_cancel_blocks_child_review_mutation(self):
