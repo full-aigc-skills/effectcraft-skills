@@ -8,10 +8,10 @@ from pathlib import Path
 ROOT=Path(__file__).resolve().parents[1]
 
 def build(check=False):
-    base=ROOT/'skills/effectcraft-use';runtime=json.loads((base/'scripts/runtime.lock.json').read_text())
-    python=json.loads((base/'scripts/python.lock.json').read_text())
+    base=ROOT/'skills/effectcraft-use';runtime=json.loads((base/'scripts/runtime.lock.json').read_text(encoding='utf-8'))
+    python=json.loads((base/'scripts/python.lock.json').read_text(encoding='utf-8'))
     evidence_path=ROOT/'docs/evidence/managed-optimization-20261008.json'
-    evidence=json.loads(evidence_path.read_text()) if evidence_path.exists() else {}
+    evidence=json.loads(evidence_path.read_text(encoding='utf-8')) if evidence_path.exists() else {}
     rows=[]
     for key,artifact in runtime['artifacts'].items():
         proof=evidence.get('platforms',{}).get(key,{})
@@ -26,8 +26,8 @@ def build(check=False):
             'freebsd':{'sourceBuild':'NOT_RUN'},'fullV1':'NOT_RUN'}
     text=json.dumps(result,ensure_ascii=False,indent=2)+'\n';path=ROOT/'docs/current-capabilities.json'
     if check:
-        if not path.exists() or path.read_text()!=text:raise ValueError('capability_matrix_drift')
-    else:path.write_text(text)
+        if not path.exists() or path.read_text(encoding='utf-8')!=text:raise ValueError('capability_matrix_drift')
+    else:path.write_text(text,encoding='utf-8',newline='\n')
     print(json.dumps({'result':'PASS','scope':'generated capability matrix','platforms':len(rows)}))
 
 if __name__=='__main__':

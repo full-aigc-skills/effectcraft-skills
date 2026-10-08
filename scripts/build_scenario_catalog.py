@@ -5,15 +5,15 @@ ROOT=Path(__file__).resolve().parents[1]
 START='<!-- COMPLETE_SCENARIO_COMMANDS_START -->'
 END='<!-- COMPLETE_SCENARIO_COMMANDS_END -->'
 def build(check=False):
- suite=json.loads((ROOT/'skill-suite.json').read_text())
+ suite=json.loads((ROOT/'skill-suite.json').read_text(encoding='utf-8'))
  domain=suite['pluginId']
- rows=json.loads((ROOT/'skills'/f'{domain}-use'/'references/command-coverage.json').read_text())['commands']
+ rows=json.loads((ROOT/'skills'/f'{domain}-use'/'references/command-coverage.json').read_text(encoding='utf-8'))['commands']
  changed=0
  for skill in suite['skills']:
   if skill['kind'] not in ('scenario','cli'):continue
   own=[r for r in rows if r['ownerSkill']==skill['name']]
   path=ROOT/'skills'/skill['name']/'references/scenario.md'
-  old=path.read_text() if path.exists() else '# 通用命令操作指南 / General command guide\n'
+  old=path.read_text(encoding='utf-8') if path.exists() else '# 通用命令操作指南 / General command guide\n'
   if START in old:old=old[:old.index(START)].rstrip()+'\n'
   lines=[START,'','## 完整归属清单 / Complete assigned command list','',f'本技能归属 {len(own)} 条命令。下面按命令族分组；上述短表若存在，仅是示例。归属按最长前缀确定，实际任务可组合其他能力的命令。','',
    'Each command below has a parameter contract in this skill’s `command-reference.md`. Assignment uses the most specific prefix; a task can combine commands from multiple capabilities.','',
@@ -29,8 +29,8 @@ def build(check=False):
   lines += [END,'']
   wanted=old.rstrip()+'\n\n'+'\n'.join(lines)
   if check:
-   if not path.exists() or path.read_text()!=wanted:raise ValueError('scenario_catalog_drift: '+str(path))
-  else:path.parent.mkdir(parents=True,exist_ok=True);path.write_text(wanted)
+   if not path.exists() or path.read_text(encoding='utf-8')!=wanted:raise ValueError('scenario_catalog_drift: '+str(path))
+  else:path.parent.mkdir(parents=True,exist_ok=True);path.write_text(wanted,encoding='utf-8',newline='\n')
   changed+=len(own)
  if changed!=len(rows):raise ValueError('incomplete_scenario_assignment')
  print(json.dumps({'domain':domain,'commands':changed,'check':check}))

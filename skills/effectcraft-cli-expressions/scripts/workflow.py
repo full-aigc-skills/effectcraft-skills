@@ -29,8 +29,8 @@ PARAMETER_COMMANDS = {'effect.apply', 'effect.remove', 'effect.toggle', 'mask.ne
 def parameter_contract():
     """读取本技能内由固定 CLI 反射得到的字段合同，并绑定已校验制品身份。"""
     folder = Path(__file__).parent
-    contract = json.loads((folder / 'parameter-contract.json').read_text())
-    lock = json.loads((folder / 'runtime.lock.json').read_text())
+    contract = json.loads((folder / 'parameter-contract.json').read_text(encoding='utf-8'))
+    lock = json.loads((folder / 'runtime.lock.json').read_text(encoding='utf-8'))
     spec=importlib.util.spec_from_file_location('workflow_platform',folder/'platform_support.py')
     support=importlib.util.module_from_spec(spec);spec.loader.exec_module(support)
     key=support.platform_key()
@@ -177,7 +177,7 @@ def _execute(plan, output, runtime_home, source, owned, task_hooks=None):
         source_project = source / 'project.ecproj'
         if source_project.is_symlink():
             raise ValueError('invalid_source')
-        prior = json.loads((source / 'manifest.json').read_text())
+        prior = json.loads((source / 'manifest.json').read_text(encoding='utf-8'))
         source_hash = sha(source_project)
         if source_hash != prior['files']['project.ecproj'] or source_hash != plan.get('expectedProjectSha256'):
             raise ValueError('revision_conflict')
@@ -200,7 +200,7 @@ def _execute(plan, output, runtime_home, source, owned, task_hooks=None):
         path = Path(asset['path'])
         if path.is_symlink() or not path.is_file() or sha(path) != asset['sha256']:
             raise ValueError('asset_digest_mismatch: ' + alias)
-    installed = load_module('bootstrap').install(json.loads(Path(__file__).with_name('runtime.lock.json').read_text()),
+    installed = load_module('bootstrap').install(json.loads(Path(__file__).with_name('runtime.lock.json').read_text(encoding='utf-8')),
         runtime_home or os.environ.get('CRAFT_RUNTIME_HOME', str(Path.home() / '.local/share/craft-runtimes')))
     cli = installed['executable']
     output.parent.mkdir(parents=True, exist_ok=True)
@@ -370,9 +370,9 @@ def _finish_export(context, task_hooks=None, export_operation=None):
         serialized = serialized.replace(asset['staging'], asset['path'])
         del asset['staging']
     serialized = serialized.replace(str(working), '.').replace(str(stage), '.').replace(str(source_project) if source_project else '\x00', 'source/project.ecproj')
-    if initial: (stage / 'operations.json').write_text(serialized + '\n')
+    if initial: (stage / 'operations.json').write_text(serialized + '\n', encoding='utf-8', newline='\n')
     for name, value in [('native.json', {'composition': comp, 'layers': layers}), ('plan.json', plan)]:
-        if initial: (stage / name).write_text(json.dumps(value, ensure_ascii=False, indent=2) + '\n')
+        if initial: (stage / name).write_text(json.dumps(value, ensure_ascii=False, indent=2) + '\n', encoding='utf-8', newline='\n')
     if task_hooks and initial:
         export_operation=task_hooks.before('render_and_deliver',{'project':str(project),'exports':plan.get('exports',[])})
         if (plan.get('exports') or [{}])[0].get('format')=='png-segmented':
@@ -402,7 +402,7 @@ def _finish_export(context, task_hooks=None, export_operation=None):
                 'video': {'path': 'intro.mp4', 'alpha': False} if output_format == 'mp4' else None,
                 'imageSequence': sequence,
                 'files': {str(f.relative_to(stage)): sha(f) for f in stage.rglob('*') if f.is_file() and f!=stage/'manifest.json'}, 'lossReport': {'path':'exchange-loss.json','sha256':sha(stage/'exchange-loss.json')}, 'acceptance': 'requires-domain-and-visual-review'}
-    (stage / 'manifest.json').write_text(json.dumps(manifest, ensure_ascii=False, indent=2) + '\n')
+    (stage / 'manifest.json').write_text(json.dumps(manifest, ensure_ascii=False, indent=2) + '\n', encoding='utf-8', newline='\n')
     if stage != output:
         if output.exists() or output.is_symlink():
             raise ValueError('output_exists')
@@ -419,7 +419,7 @@ def main():
     parser.add_argument('--asset', action='append', default=[], help='name=/absolute/path; computes input digest')
     args = parser.parse_args()
     try:
-        plan = json.loads(args.plan.read_text())
+        plan = json.loads(args.plan.read_text(encoding='utf-8'))
         for assignment in args.asset:
             alias, path = assignment.split('=', 1)
             plan.setdefault('assets', {})[alias] = {'path': path, 'sha256': sha(path)}

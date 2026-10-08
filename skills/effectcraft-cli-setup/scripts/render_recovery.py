@@ -48,7 +48,7 @@ def validate(store,state):
     reference=state['renderRecovery'];path=store.path(state['taskId']).parent/'render-context.json';tasks=load('task_store')
     if reference.get('schema')!='effectcraft-render-recovery/v1' or tasks.file_sha(path)!=reference['contextSha256']:
         raise ValueError('render_recovery_context_changed')
-    value=load('commands').reply_json(path.read_text())
+    value=load('commands').reply_json(path.read_text(encoding='utf-8'))
     if (value.get('schema')!='effectcraft-export-context/v1' or value['taskId']!=state['taskId']
             or value['identityHash']!=state['identityHash'] or tasks.digest(value['plan'])!=state['identity']['planHash']
             or value['operationId']!=reference['operationId']):raise ValueError('render_recovery_binding_changed')
@@ -75,7 +75,7 @@ def validate(store,state):
         relative=path.relative_to(output).as_posix()
         if relative in value['immutableFiles'] or relative in generated or relative.startswith('rgba-segments/') or path in orphan_files:continue
         if relative=='failure.json':
-            failure=load('commands').reply_json(path.read_text())
+            failure=load('commands').reply_json(path.read_text(encoding='utf-8'))
             if failure.get('schema')=='craft-failed-stage/v1' and (output/failure['stage']).resolve()==Path(value['working']).resolve():continue
         raise ValueError('render_recovery_unowned_file: '+relative)
     if value['sourceProject'] and tasks.file_sha(value['sourceProject'])!=value['sourceHash']:raise ValueError('revision_conflict')
@@ -88,6 +88,6 @@ def archive_failure(store,task,context):
     """保留旧失败诊断到任务目录，不把它装进成功交付清单。"""
     path=Path(context['output'])/'failure.json'
     if path.exists():
-        failure=load('commands').reply_json(path.read_text())
+        failure=load('commands').reply_json(path.read_text(encoding='utf-8'))
         target=store.path(task).parent/('render-failure-'+str(len(store.read(task).get('renderResumes',[])))+'.json')
         load('task_store').atomic_json(target,failure);path.unlink()

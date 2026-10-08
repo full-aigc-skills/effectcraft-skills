@@ -24,7 +24,7 @@ def main():
  try:
   path=Path(__file__).with_name('bootstrap.py');spec=importlib.util.spec_from_file_location('craft_bootstrap',path)
   module=importlib.util.module_from_spec(spec);spec.loader.exec_module(module)
-  installed=module.install(json.loads(path.with_name('runtime.lock.json').read_text()),args.runtime_home,args.archive)
+  installed=module.install(json.loads(path.with_name('runtime.lock.json').read_text(encoding='utf-8')),args.runtime_home,args.archive)
   installation_completed=True
   result=subprocess.run([installed['executable'],*argv],timeout=600)
   return result.returncode

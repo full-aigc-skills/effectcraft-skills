@@ -9,14 +9,14 @@ from pathlib import Path
 import sys
 
 ROOT = Path(__file__).resolve().parents[1]
-DOMAIN = json.loads((ROOT / "skill-suite.json").read_text())["pluginId"]
+DOMAIN = json.loads((ROOT / "skill-suite.json").read_text(encoding='utf-8'))["pluginId"]
 BASE = ROOT / "skills" / (DOMAIN + "-use")
 
 def capture():
     def load(name):
         spec = importlib.util.spec_from_file_location("capture_" + name, BASE / "scripts" / (name + ".py"))
         value = importlib.util.module_from_spec(spec); spec.loader.exec_module(value); return value
-    lock = json.loads((BASE / "scripts/runtime.lock.json").read_text())
+    lock = json.loads((BASE / "scripts/runtime.lock.json").read_text(encoding='utf-8'))
     installed = load("bootstrap").install(lock, Path.home() / ".local/share/craft-runtimes")
     argv = [installed["executable"], "mcp"] + (["--headless"] if DOMAIN == "vectorcraft" else [])
     if DOMAIN == "effectcraft":
@@ -33,14 +33,14 @@ def capture():
                 "runtimeSha256":installed["binarySha256"], "mode":"headless-empty",
                 "scope":"registered commands and empty-session state only; no command execution acceptance",
                 "tools":tools, "commands":rows}
-    (BASE / "references/native-command-snapshot.json").write_text(json.dumps(snapshot, ensure_ascii=False, indent=2) + "\n")
+    (BASE / "references/native-command-snapshot.json").write_text(json.dumps(snapshot, ensure_ascii=False, indent=2) + "\n", encoding="utf-8", newline="\n")
 
 def build(check=False):
-    suite = json.loads((ROOT / "skill-suite.json").read_text())
-    reflection = json.loads((BASE / "references/commands.json").read_text())
-    snapshot = json.loads((BASE / "references/native-command-snapshot.json").read_text())
+    suite = json.loads((ROOT / "skill-suite.json").read_text(encoding='utf-8'))
+    reflection = json.loads((BASE / "references/commands.json").read_text(encoding='utf-8'))
+    snapshot = json.loads((BASE / "references/native-command-snapshot.json").read_text(encoding='utf-8'))
     current = {r["id"]:r for r in snapshot["commands"]}
-    node = ast.parse((BASE / "scripts/workflow.py").read_text())
+    node = ast.parse((BASE / "scripts/workflow.py").read_text(encoding='utf-8'))
     mapped = set()
     for entry in node.body:
         if isinstance(entry, ast.Assign) and any(isinstance(t, ast.Name) and t.id == "ALLOWED" for t in entry.targets):
@@ -50,7 +50,7 @@ def build(check=False):
         path = BASE / 'examples' / filename
         if not path.is_file():
             continue
-        for operation in json.loads(path.read_text())['operations']:
+        for operation in json.loads(path.read_text(encoding='utf-8'))['operations']:
             identifier = operation.get('params', {}).get('command') if operation['command'] == 'native.command' else operation['command']
             if identifier not in current:
                 raise ValueError('recipe_registry_drift: ' + str(identifier))
@@ -100,10 +100,10 @@ def build(check=False):
     for name, content in outputs.items():
         path = BASE / "references" / name
         if check:
-            if not path.is_file() or path.read_text() != content:
+            if not path.is_file() or path.read_text(encoding='utf-8') != content:
                 raise ValueError("command_documentation_drift: " + name)
         else:
-            path.write_text(content)
+            path.write_text(content,encoding='utf-8',newline='\n')
     print(json.dumps({"pluginId":DOMAIN,"commands":len(rows),"mapped":sum(r["workflowMapped"] for r in rows),
                       "allRouted":True, "nativeExecutionAcceptance":"NOT_RUN"}))
 

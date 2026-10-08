@@ -73,6 +73,6 @@ def export_sequence(cli, project, composition, stage):
     if result.returncode:
         raise ValueError('sequence_render_failed')
     manifest = inspect_sequence(directory, composition)
-    (directory/'sequence.json').write_text(json.dumps(manifest, indent=2)+'\n')
+    (directory/'sequence.json').write_text(json.dumps(manifest, indent=2)+'\n', encoding='utf-8', newline='\n')
     return {'path': 'rgba-sequence/sequence.json', 'sha256': hashlib.sha256((directory/'sequence.json').read_bytes()).hexdigest(),
             'metadata': {k: v for k, v in manifest.items() if k != 'frames'}}

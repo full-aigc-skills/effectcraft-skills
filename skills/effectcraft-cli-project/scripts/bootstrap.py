@@ -112,7 +112,7 @@ def inspect_install(destination, artifact, expected):
     if expected.get('integrityFile'):
         manifest=Path(__file__).parent/expected['integrityFile']
         if digest(manifest)!=expected['integritySha256']:raise ValueError('runtime_integrity_manifest_changed')
-        files=json.loads(manifest.read_text())
+        files=json.loads(manifest.read_text(encoding='utf-8'))
         actual={str(p.relative_to(destination)).replace(os.sep,'/'):digest(p) for p in destination.rglob('*') if p.is_file() and p.name!='installation.json'}
         if any(p.is_symlink() for p in destination.rglob('*')) or actual!=files:
             raise ValueError('runtime_payload_changed; preserve directory for inspection')
@@ -197,7 +197,7 @@ def install(lock, runtime_home, archive=None, platform_key=None):
                 raise ValueError('runtime_version_mismatch')
             receipt = dict(expected, name=artifact.removesuffix('-cli'), version=version,
                            platform=key, versionOutput=result.stdout.strip(), source='official-github-release')
-            (payload / 'installation.json').write_text(json.dumps(receipt, indent=2) + '\n')
+            (payload / 'installation.json').write_text(json.dumps(receipt, indent=2) + '\n', encoding='utf-8', newline='\n')
             inspect_install(payload,artifact,expected)
             # 同文件系统原子发布。没有任何自动升级/替换已有版本的分支。
             payload.rename(destination)
@@ -218,7 +218,7 @@ def main():
     parser.add_argument('--archive', type=Path, help='已下载的官方 ZIP；仍强制校验锁定摘要')
     args = parser.parse_args()
     try:
-        lock = json.loads(Path(__file__).with_name('runtime.lock.json').read_text())
+        lock = json.loads(Path(__file__).with_name('runtime.lock.json').read_text(encoding='utf-8'))
         print(json.dumps(install(lock, args.runtime_home, args.archive), ensure_ascii=False))
     except (ValueError, OSError, subprocess.SubprocessError, zipfile.BadZipFile) as error:
         print(json.dumps({'error': str(error), 'installed': False, 'dependencySetup': setup_failure(args.runtime_home)}, ensure_ascii=False))

@@ -11,7 +11,7 @@ spec.loader.exec_module(commands)
 def validate(params):
     if not isinstance(params, dict) or set(params) != {'command', 'params'} or not isinstance(params['params'], dict):
         raise ValueError('invalid_native_operation')
-    lock = json.loads(Path(__file__).with_name('runtime.lock.json').read_text())
+    lock = json.loads(Path(__file__).with_name('runtime.lock.json').read_text(encoding='utf-8'))
     catalog = commands.catalog()
     if catalog['pluginId'] != commands.DOMAIN or catalog['runtimeSha256'] not in {v['binarySha256'] for v in lock['artifacts'].values()}:
         raise ValueError('native_catalog_identity_mismatch')

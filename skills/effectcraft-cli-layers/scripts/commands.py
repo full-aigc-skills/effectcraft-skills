@@ -14,7 +14,7 @@ import sys
 
 sys.dont_write_bytecode = True
 ROOT = Path(__file__).resolve().parent.parent
-DOMAIN = json.loads((ROOT / "scripts/runtime.lock.json").read_text())["artifact"].removesuffix("-cli")
+DOMAIN = json.loads((ROOT / "scripts/runtime.lock.json").read_text(encoding='utf-8'))["artifact"].removesuffix("-cli")
 ROUTES = {
     "filmcraft": ("command_list", "command_run", "id"),
     "effectcraft": ("list_commands", "execute_command", "command"),
@@ -23,7 +23,7 @@ ROUTES = {
 }
 
 def catalog():
-    return json.loads((ROOT / "references/command-coverage.json").read_text())
+    return json.loads((ROOT / "references/command-coverage.json").read_text(encoding='utf-8'))
 
 def load(name):
     spec = importlib.util.spec_from_file_location("craft_command_" + name, ROOT / "scripts" / (name + ".py"))
@@ -54,9 +54,9 @@ def references(value, aliases):
             references(child, aliases)
 
 def bridge_tools():
-    data = reply_json((ROOT / "references/bridge-tools.json").read_text())
-    native = reply_json((ROOT / "references/native-command-snapshot.json").read_text())
-    desktop = reply_json((ROOT / "scripts/desktop.lock.json").read_text())
+    data = reply_json((ROOT / "references/bridge-tools.json").read_text(encoding='utf-8'))
+    native = reply_json((ROOT / "references/native-command-snapshot.json").read_text(encoding='utf-8'))
+    desktop = reply_json((ROOT / "scripts/desktop.lock.json").read_text(encoding='utf-8'))
     if (data.get("schema") != "craft-bridge-tools/v1" or data.get("pluginId") != DOMAIN
             or data.get("runtimeSha256") != native["runtimeSha256"]
             or data.get("desktopBinarySha256") != desktop["binarySha256"]
@@ -69,7 +69,7 @@ def bridge_tools():
     return data["tools"]
 
 def tool_schemas(mode="headless"):
-    rows = reply_json((ROOT / "references/native-command-snapshot.json").read_text())["tools"]
+    rows = reply_json((ROOT / "references/native-command-snapshot.json").read_text(encoding='utf-8'))["tools"]
     return rows + (bridge_tools() if mode == "bridge" else [])
 
 def verify_bridge_tools(rows, required):
@@ -237,7 +237,7 @@ def backend_argv(executable, output, mode="headless", connect=None, token_file=N
 
 def write(path, value):
     temporary = path.with_suffix(path.suffix + ".tmp")
-    temporary.write_text(json.dumps(value, ensure_ascii=False, indent=2, allow_nan=False) + "\n")
+    temporary.write_text(json.dumps(value, ensure_ascii=False, indent=2, allow_nan=False) + "\n", encoding='utf-8', newline='\n')
     temporary.replace(path)
 
 def runtime_rows(session, params=None):
@@ -282,7 +282,7 @@ def execute(plan, output, runtime_home=None, mode="headless", connect=None, toke
     write(output / "journal.json", receipt)
     try:
         installer = installer or load("bootstrap").install
-        lock = json.loads((ROOT / "scripts/runtime.lock.json").read_text())
+        lock = json.loads((ROOT / "scripts/runtime.lock.json").read_text(encoding='utf-8'))
         installed = installer(lock, runtime_home or os.environ.get("CRAFT_RUNTIME_HOME",
                                str(Path.home() / ".local/share/craft-runtimes")))
         receipt["runtimeSha256"] = installed["binarySha256"]
@@ -378,7 +378,7 @@ def main():
             if result is None:
                 raise ValueError("unknown_command: " + args.command)
         else:
-            plan = reply_json(args.plan.read_text())
+            plan = reply_json(args.plan.read_text(encoding='utf-8'))
             inputs = {}
             for item in args.input:
                 name, separator, path = item.partition("=")

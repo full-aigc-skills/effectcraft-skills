@@ -10,7 +10,7 @@ def sync(check=False):
  # 完整归属清单独立于共享参考，同步前先验证，避免发布过期的场景列表。
  import subprocess
  subprocess.run([sys.executable,'-I','-B',str(ROOT/'scripts/build_scenario_catalog.py'),'--check'],check=True)
- suite=json.loads((ROOT/'skill-suite.json').read_text());base=ROOT/'skills'/(suite['pluginId']+'-use');errors=[]
+ suite=json.loads((ROOT/'skill-suite.json').read_text(encoding='utf-8'));base=ROOT/'skills'/(suite['pluginId']+'-use');errors=[]
  for entry in suite['skills']:
   if entry['name']==base.name:continue
   target=ROOT/'skills'/entry['name']
@@ -24,7 +24,7 @@ def sync(check=False):
   for source in sorted((base/'references').glob('*')):
    if source.name in {'commands.json','scenario.md'} or not source.is_file():continue
    destination=target/'references'/source.name
-   data=source.read_text().replace(base.name,target.name).encode()
+   data=source.read_text(encoding='utf-8').replace(base.name,target.name).encode()
    if check:
     if not destination.is_file() or destination.read_bytes()!=data:errors.append(str(destination.relative_to(ROOT)))
    else:destination.parent.mkdir(parents=True,exist_ok=True);destination.write_bytes(data)

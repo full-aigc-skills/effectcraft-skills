@@ -133,7 +133,7 @@ def render_segments(cli, project, composition, output, chunk_bytes=CHUNK_BYTES, 
         checkpoint = output/'checkpoint.json'
         regular_path(checkpoint)
         if checkpoint.exists():
-            if checkpoint.stat().st_size > 2*1024*1024 or json.loads(checkpoint.read_text()) != binding:
+            if checkpoint.stat().st_size > 2*1024*1024 or json.loads(checkpoint.read_text(encoding='utf-8')) != binding:
                 raise ValueError('segment_binding_conflict')
         else:
             atomic_json(checkpoint, binding)
@@ -144,7 +144,7 @@ def render_segments(cli, project, composition, output, chunk_bytes=CHUNK_BYTES, 
         regular_path(ledger_path)
         if ledger_path.exists() and ledger_path.stat().st_size > 2*1024*1024:
             raise ValueError('segment_checkpoint_invalid')
-        ledger = json.loads(ledger_path.read_text()) if ledger_path.exists() else {}
+        ledger = json.loads(ledger_path.read_text(encoding='utf-8')) if ledger_path.exists() else {}
         if not isinstance(ledger, dict) or any(k not in {str(i) for i in range(len(parts))} or not isinstance(v, str) or len(v) != 64 for k, v in ledger.items()):
             raise ValueError('segment_checkpoint_invalid')
         completion = output/'segments.json'
@@ -171,7 +171,7 @@ def render_segments(cli, project, composition, output, chunk_bytes=CHUNK_BYTES, 
                     regular_path(directory/'sequence.json')
                     if sha(directory/'sequence.json') != ledger.get(str(index)):
                         raise ValueError('segment_receipt_changed')
-                    saved = json.loads((directory/'sequence.json').read_text())
+                    saved = json.loads((directory/'sequence.json').read_text(encoding='utf-8'))
                     # 检查器要求只有帧；验证副本不修改已完成的段。
                     with tempfile.TemporaryDirectory(prefix='effect-segment-check-') as temp:
                         copy = Path(temp)
@@ -219,14 +219,14 @@ def main():
     parser.add_argument('--runtime-home', default=os.environ.get('CRAFT_RUNTIME_HOME', str(Path.home()/'.local/share/craft-runtimes')))
     args = parser.parse_args()
     try:
-        composition = json.loads(args.composition.read_text())
+        composition = json.loads(args.composition.read_text(encoding='utf-8'))
         plan_segments(composition)
         chunk_bytes = CHUNK_BYTES
         if args.chunk_frames is not None:
             if not 1 <= args.chunk_frames <= 10000:
                 raise ValueError('segment_budget_invalid')
             chunk_bytes = min(CHUNK_BYTES, args.chunk_frames*composition['width']*composition['height']*4)
-        installed = module('bootstrap').install(json.loads(Path(__file__).with_name('runtime.lock.json').read_text()), args.runtime_home)
+        installed = module('bootstrap').install(json.loads(Path(__file__).with_name('runtime.lock.json').read_text(encoding='utf-8')), args.runtime_home)
         result = render_segments(installed['executable'], args.project, composition, args.output, chunk_bytes)
         print(json.dumps({'state': result['state'], 'frameCount': result['frameCount'], 'segments': len(result['segments'])}))
         return 0

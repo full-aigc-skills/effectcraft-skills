@@ -11,11 +11,11 @@ import unittest
 ROOT=Path(__file__).resolve().parents[1]
 class SkillSuiteTests(unittest.TestCase):
  def test_suite_contains_separate_cli_setup_and_task_skills(self):
-  suite=json.loads((ROOT/'skill-suite.json').read_text())
+  suite=json.loads((ROOT/'skill-suite.json').read_text(encoding='utf-8'))
   names={entry['name'] for entry in suite['skills']}
   domain=suite['pluginId']
   for entry in suite['skills']:
-   lock=json.loads((ROOT/'skills'/entry['name']/'scripts/runtime.lock.json').read_text())
+   lock=json.loads((ROOT/'skills'/entry['name']/'scripts/runtime.lock.json').read_text(encoding='utf-8'))
    self.assertEqual(suite['runtimeVersion'],lock['resolvedVersion'])
   self.assertTrue({domain+'-use',domain+'-cli',domain+'-cli-setup'}.issubset(names))
   self.assertGreater(len(names),3)
@@ -26,7 +26,7 @@ class SkillSuiteTests(unittest.TestCase):
     self.assertEqual(result.returncode,0,result.stderr)
     self.assertFalse(any(isolated.rglob('*.pyc')))
  def test_unknown_command_is_refused_before_installation(self):
-  suite=json.loads((ROOT/'skill-suite.json').read_text())
+  suite=json.loads((ROOT/'skill-suite.json').read_text(encoding='utf-8'))
   for entry in suite['skills']:
    with tempfile.TemporaryDirectory() as temporary:
     isolated=Path(temporary)/'only-skill';shutil.copytree(ROOT/'skills'/entry['name'],isolated,ignore=shutil.ignore_patterns('__pycache__'))
@@ -36,7 +36,7 @@ class SkillSuiteTests(unittest.TestCase):
     self.assertFalse(runtime.exists())
 
  def test_every_single_skill_rejects_later_invalid_effect_field_before_installation(self):
-  suite=json.loads((ROOT/'skill-suite.json').read_text())
+  suite=json.loads((ROOT/'skill-suite.json').read_text(encoding='utf-8'))
   for entry in suite['skills']:
    with self.subTest(skill=entry['name']),tempfile.TemporaryDirectory() as temporary:
     root=Path(temporary);isolated=root/'only-skill'
@@ -55,7 +55,7 @@ class SkillSuiteTests(unittest.TestCase):
 @unittest.skipUnless(os.environ.get('CRAFT_LIVE_SUITE')=='1','requires declared native CLI platform and live runtime')
 class LiveSkillSuiteTests(unittest.TestCase):
  def test_every_single_skill_discovers_pinned_runtime_and_commands(self):
-  suite=json.loads((ROOT/'skill-suite.json').read_text());domain=suite['pluginId']
+  suite=json.loads((ROOT/'skill-suite.json').read_text(encoding='utf-8'));domain=suite['pluginId']
   runtime=Path(os.environ.get('CRAFT_RUNTIME_HOME',str(Path.home()/'.local/share/craft-runtimes')))
   for entry in suite['skills']:
    with self.subTest(skill=entry['name']),tempfile.TemporaryDirectory() as temporary:
@@ -68,7 +68,7 @@ class LiveSkillSuiteTests(unittest.TestCase):
      self.assertIn('verify-package',run('--help'))
     else:
      rows=json.loads(run('commands',*(['--json'] if domain!='vectorcraft' else [])));ids={row['id'] for row in rows}
-     contract=json.loads((isolated/'references/commands.json').read_text())
+     contract=json.loads((isolated/'references/commands.json').read_text(encoding='utf-8'))
      self.assertTrue({row['id'] for row in contract['commands']}.issubset(ids))
     self.assertFalse(any(isolated.rglob('*.pyc')))
 if __name__=='__main__':unittest.main()

@@ -19,7 +19,7 @@ def safe_file(root,location):
 def write_report(root,outputs,warnings):
  root=Path(root)
  native=safe_file(root,NATIVE);inspection=safe_file(root,'native.json')
- model=json.loads(inspection.read_text())
+ model=json.loads(inspection.read_text(encoding='utf-8'))
  report={'schema':'craft-exchange-loss/v1','pluginId':PLUGIN,'native':{'location':NATIVE,'sha256':sha(native)},'inspection':{'location':'native.json','sha256':sha(inspection)},'outputs':[],'acceptance':'technical-observations-only'}
  if len(outputs)!=len(set(outputs)):raise ValueError('loss_duplicate_output')
  for location in outputs:
@@ -40,7 +40,7 @@ def write_report(root,outputs,warnings):
    change('editable-timeline','lost','MP4 contains rendered streams rather than editable clips, tracks and subtitle style parameters.')
    if PLUGIN=='effectcraft':change('audio-output','lost','This public export explicitly renders with audio off; native media remains in the project.')
    if (root/'export-probe.json').is_file():
-    probe=json.loads((root/'export-probe.json').read_text());observations['audioStreamPresent']=bool(probe.get('audio'))
+    probe=json.loads((root/'export-probe.json').read_text(encoding='utf-8'));observations['audioStreamPresent']=bool(probe.get('audio'))
   elif fmt=='svg':
    if path.stat().st_size>16*1024*1024:raise ValueError('loss_svg_too_large')
    xml=ET.fromstring(path.read_bytes())
@@ -54,7 +54,7 @@ def write_report(root,outputs,warnings):
    change('effect-fidelity','unknown','Native adjustment, mask, blend and effect equivalence is not proven by layer count.')
    change('editable-layer-roundtrip','unknown','A reopened PSD inspection is evidence of observed structure, not complete editability equivalence.')
    if (root/'psd-inspection.json').is_file():
-    psd=json.loads((root/'psd-inspection.json').read_text());observations['nativeLayerCount']=len(model.get('layers',[]));observations['psdLayerCount']=len(psd.get('layers',[]))
+    psd=json.loads((root/'psd-inspection.json').read_text(encoding='utf-8'));observations['nativeLayerCount']=len(model.get('layers',[]));observations['psdLayerCount']=len(psd.get('layers',[]))
     report['psdInspection']={'location':'psd-inspection.json','sha256':sha(root/'psd-inspection.json')}
   elif fmt=='pdf':
    change('font-portability','unknown','PDF font embedding and substitution are not verified.')
@@ -67,5 +67,5 @@ def write_report(root,outputs,warnings):
    change('font-portability','unknown','Native live-text portability is not verified.')
   elif fmt not in ('jpg','jpeg','webp'):raise ValueError('loss_format_unsupported')
   report['outputs'].append({'location':location,'sha256':sha(path),'format':fmt,'role':'derivative','nativeSubstitute':False,'changes':changes,'observations':observations,'warnings':warnings.get(location,[])})
- (root/'exchange-loss.json').write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n')
+ (root/'exchange-loss.json').write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n', encoding='utf-8', newline='\n')
  return report

@@ -7,8 +7,8 @@ def load(name):
 
 def native_desktop(runtime_home,archive,key):
  """Linux/Windows 桌面与 CLI 来自同一已锁定完整发行包。"""
- runtime=json.loads(Path(__file__).with_name('runtime.lock.json').read_text())
- desktop=json.loads(Path(__file__).with_name('desktop-platforms.lock.json').read_text())
+ runtime=json.loads(Path(__file__).with_name('runtime.lock.json').read_text(encoding='utf-8'))
+ desktop=json.loads(Path(__file__).with_name('desktop-platforms.lock.json').read_text(encoding='utf-8'))
  if key not in desktop['artifacts'] or runtime['resolvedVersion']!=desktop['version']:raise ValueError('unsupported_desktop_platform')
  installed=load('bootstrap').install(runtime,runtime_home,archive,key)
  directory=Path(runtime_home).expanduser().absolute()/'effectcraft'/runtime['resolvedVersion'];row=desktop['artifacts'][key];binary=directory/row['path']
@@ -78,7 +78,7 @@ def install(lock,runtime_home,archive=None,platform_key=None):
   if destination.exists() or destination.is_symlink():
    actual=inspect(destination,lock);receipt=destination/'receipt.json'
    if receipt.is_symlink() or not receipt.is_file():raise ValueError('desktop_receipt_missing')
-   stored=json.loads(receipt.read_text())
+   stored=json.loads(receipt.read_text(encoding='utf-8'))
    if stored.get('lock')!=lock or stored.get('files')!=actual['files']:raise ValueError('desktop_install_mutated')
    return {k:v for k,v in actual.items() if k!='files'}|{'reused':True,'scope':'signed app installation only; launch/GUI acceptance separate'}
   with tempfile.TemporaryDirectory(prefix='.desktop-',dir=parent) as td:
@@ -91,7 +91,7 @@ def install(lock,runtime_home,archive=None,platform_key=None):
     subprocess.run(['/usr/bin/hdiutil','attach','-readonly','-nobrowse','-mountpoint',str(mount),str(source.resolve())],check=True,capture_output=True,timeout=60);attached=True;apps=list(mount.glob('*.app'))
     if len(apps)!=1 or apps[0].name!=lock['app'] or apps[0].is_symlink():raise ValueError('desktop_bundle_inventory_mismatch')
     subprocess.run(['/usr/bin/ditto','--norsrc','--noextattr',str(apps[0]),str(payload/lock['app'])],check=True,capture_output=True,timeout=60);actual=inspect(payload,lock)
-    (payload/'receipt.json').write_text(json.dumps({'schema':'craft-desktop-install/v1','lock':lock,'files':actual['files']},indent=2)+'\n')
+    (payload/'receipt.json').write_text(json.dumps({'schema':'craft-desktop-install/v1','lock':lock,'files':actual['files']},indent=2)+'\n', encoding='utf-8', newline='\n')
    finally:
     if attached:subprocess.run(['/usr/bin/hdiutil','detach',str(mount)],check=True,capture_output=True,timeout=60)
    os.replace(payload,destination)
@@ -99,7 +99,7 @@ def install(lock,runtime_home,archive=None,platform_key=None):
   return {k:v for k,v in actual.items() if k!='files'}|{'reused':False,'scope':'signed app installation only; launch/GUI acceptance separate'}
 
 def main():
- parser=argparse.ArgumentParser(description=__doc__);parser.add_argument('command',choices=['install','run']);parser.add_argument('plan',nargs='?',type=Path);parser.add_argument('--output',type=Path);parser.add_argument('--input',action='append',default=[]);parser.add_argument('--runtime-home',type=Path,default=Path.home()/'.local/share/craft-runtimes');parser.add_argument('--archive',type=Path,help='可选固定本地DMG；仍执行全部摘要校验');args=parser.parse_args();lock=json.loads(Path(__file__).with_name('desktop.lock.json').read_text())
+ parser=argparse.ArgumentParser(description=__doc__);parser.add_argument('command',choices=['install','run']);parser.add_argument('plan',nargs='?',type=Path);parser.add_argument('--output',type=Path);parser.add_argument('--input',action='append',default=[]);parser.add_argument('--runtime-home',type=Path,default=Path.home()/'.local/share/craft-runtimes');parser.add_argument('--archive',type=Path,help='可选固定本地DMG；仍执行全部摘要校验');args=parser.parse_args();lock=json.loads(Path(__file__).with_name('desktop.lock.json').read_text(encoding='utf-8'))
  try:
   if args.command=='install':
    if args.plan or args.output or args.input:raise ValueError('unexpected_install_arguments')

@@ -21,6 +21,7 @@ jobs:
         shell: bash
         run: |
           python -m unittest discover -s tests -p test_platform_support.py -v
+          python -m unittest discover -s tests -p test_generator_encoding.py -v
           python -m unittest discover -s tests -p 'test_managed_*.py' -v
           python -m unittest discover -s tests -p test_revision_scope.py -v
           python scripts/build_command_coverage.py --check

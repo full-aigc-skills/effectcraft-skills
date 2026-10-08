@@ -113,7 +113,7 @@ class Store:
                 if step['state']=='succeeded' and value['schema']=='effectcraft-managed-task/v2':
                     receipt_path=path.parent/'receipts'/(step['id']+'.json')
                     if receipt_path.is_symlink() or receipt_path.parent.is_symlink():raise ValueError('receipt_symlink')
-                    receipt=load('commands').reply_json(receipt_path.read_text())
+                    receipt=load('commands').reply_json(receipt_path.read_text(encoding='utf-8'))
                     if receipt['operationId']!=step['id'] or receipt['taskId']!=task or digest(receipt['result'])!=step['resultHash']:
                         raise ValueError('receipt_mismatch')
             return value

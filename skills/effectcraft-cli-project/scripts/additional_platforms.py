@@ -16,7 +16,7 @@ def load(name):
     spec=importlib.util.spec_from_file_location('extra_'+name,HERE/(name+'.py'))
     m=importlib.util.module_from_spec(spec);spec.loader.exec_module(m);return m
 
-def lock():return json.loads((HERE/'additional-platforms.lock.json').read_text())
+def lock():return json.loads((HERE/'additional-platforms.lock.json').read_text(encoding='utf-8'))
 
 def tree(directory):
     if any(p.is_symlink() for p in directory.rglob('*')):raise ValueError('payload_symlink')
@@ -24,7 +24,7 @@ def tree(directory):
 
 def verified(destination,entry):
     if destination.is_symlink():raise ValueError('runtime_symlink')
-    record=json.loads((destination/'receipt.json').read_text())
+    record=json.loads((destination/'receipt.json').read_text(encoding='utf-8'))
     if record['source']!=entry or record['files']!=tree(destination):raise ValueError('installed_payload_changed')
     return record
 

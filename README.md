@@ -2,12 +2,12 @@
 
 Segmented first-use guidance now matches native acceptance of fixed Film40 / Effect38 / Art117, including HD full frames, revision, recovery and relocation. Installation qualification of this new guide snapshot is recorded separately. [Evidence](docs/evidence/craft-fixed-segmented-hd-refresh-20261008.json).
 
-> **Development release dev.36 (2026-10-08):** pinned isolated Python 3.13.16 and EffectCraft 0.4.0; managed execution, owned segment recovery and shared retry accounting. Local macOS evidence does not establish all platforms or hosts. See [implementation and open gates](docs/managed-optimization-20261008.md) and the [platform matrix](docs/current-capabilities.json).
+> **Development release dev.37 (2026-10-08):** pinned isolated Python 3.13.16 and EffectCraft 0.4.0; managed execution, owned segment recovery and shared retry accounting. Local macOS evidence does not establish all platforms or hosts. See [implementation and open gates](docs/managed-optimization-20261008.md) and the [platform matrix](docs/current-capabilities.json).
 
 
 Turn text, graphics and footage into an editable `.ecproj`, dependencies and rendered media.
 
-Current source: `0.1.0-dev.36`; consuming plugin: `0.1.0-dev.39`; 15 independent skills.
+Current source: `0.1.0-dev.37`; consuming plugin: `0.1.0-dev.39`; 15 independent skills.
 
 Verified first-use platform: macOS arm64 and Python 3.11+. Pinned runtimes install into the user data directory; skill files stay in their host-loaded directory. These are development releases; complete V1 acceptance and generic Skills CLI installation remain open.
 
@@ -170,12 +170,12 @@ Fixed installed own-directory acceptance passes for the updated scenario skills;
 
 Puppet recording/follow source candidate: ten representative commands, frame-aligned keys, native reopen, targeted revision and three rejection paths pass. Immutable installed-release acceptance remains separate. [Architecture](docs/EffectCraft-Puppet-Record-Follow-Architecture.md).
 
-Fixed EffectCraft plugin dev.36 / source dev.33 acceptance passes: 64 installed skill identities/discovery, 15 fresh standalone Effect CLI installs, and native puppet recording/follow/reopen/targeted revision plus three failure paths. The other 49 cold records are historical and byte-identical. Full V1 stays open. [Fixed evidence](docs/evidence/effectcraft-puppet-record-follow-fixed-first-use-20261008.json).
+Fixed EffectCraft plugin dev.37 / source dev.33 acceptance passes: 64 installed skill identities/discovery, 15 fresh standalone Effect CLI installs, and native puppet recording/follow/reopen/targeted revision plus three failure paths. The other 49 cold records are historical and byte-identical. Full V1 stays open. [Fixed evidence](docs/evidence/effectcraft-puppet-record-follow-fixed-first-use-20261008.json).
 
 Camera scene source candidate passes native Advanced 3D rendering, projection growth, reopen identity, camera-only revision and three rejection paths. [Architecture](docs/EffectCraft-Camera-Scene-Architecture.md). Fixed installed-release acceptance remains separate; full V1 stays open.
 
-Fixed EffectCraft plugin dev.36 / source dev.34 passes 64 installed skill identities/discovery, 15 fresh standalone Effect CLI cold installs, and the native camera render/reopen/targeted revision plus three rejection paths. The other 49 cold records are retained byte-identical historical runs. Full V1 remains open. [Fixed camera evidence](docs/evidence/effectcraft-camera-scene-fixed-first-use-20261008.json).
+Fixed EffectCraft plugin dev.37 / source dev.34 passes 64 installed skill identities/discovery, 15 fresh standalone Effect CLI cold installs, and the native camera render/reopen/targeted revision plus three rejection paths. The other 49 cold records are retained byte-identical historical runs. Full V1 remains open. [Fixed camera evidence](docs/evidence/effectcraft-camera-scene-fixed-first-use-20261008.json).
 
 Independent-install dependency boundary: current byte-identical cold-install records and 128 new fixed-copy bootstrap/CLI failure checks qualify four domain SK-002 requirements. Art and generic Skills CLI installation stay open. [Design and evidence](docs/Craft-Independent-Setup-Boundary-Architecture.md).
 
-Current fixed protocol-reference release matrix (Film/Effect dev.37, Photo dev.36, Vector dev.34, Art dev.107) passes actual isolated Codex installation/discovery of 64 skills, 16 installed authority-file digest checks, and 64 independent public CLI probes using five fresh domain caches. Historical native scene proof is reused only for byte-identical skills; full V1 remains open. [Fixed release evidence](docs/evidence/craft-protocol-authority-fixed-first-use-20261008.json).
+Current fixed protocol-reference release matrix (Film/Effect dev.37, Photo dev.37, Vector dev.34, Art dev.107) passes actual isolated Codex installation/discovery of 64 skills, 16 installed authority-file digest checks, and 64 independent public CLI probes using five fresh domain caches. Historical native scene proof is reused only for byte-identical skills; full V1 remains open. [Fixed release evidence](docs/evidence/craft-protocol-authority-fixed-first-use-20261008.json).

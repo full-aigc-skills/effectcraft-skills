@@ -20,7 +20,7 @@ def owned_listener(process, port):
     if platform.system()=='Linux':
         try:
             sockets={os.readlink(p)[8:-1] for p in (Path('/proc')/str(process.pid)/'fd').iterdir() if os.readlink(p).startswith('socket:[')}
-            for line in (Path('/proc')/str(process.pid)/'net/tcp').read_text().splitlines()[1:]:
+            for line in (Path('/proc')/str(process.pid)/'net/tcp').read_text(encoding='utf-8').splitlines()[1:]:
                 row=line.split()
                 if row[1]=='0100007F:'+format(int(port),'04X') and row[3]=='0A' and row[9] in sockets:return True
             return False

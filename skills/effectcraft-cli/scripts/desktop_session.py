@@ -44,7 +44,7 @@ class OwnedSession:
 
 def read_plan(path):
  """计划与原生回复使用相同的严格 JSON 规则，拒绝重复键和非有限值。"""
- return load("commands").reply_json(Path(path).read_text())
+ return load("commands").reply_json(Path(path).read_text(encoding='utf-8'))
 
 def run(plan,output,runtime_home=None,inputs=None,task_hooks=None):
  commands=load('commands');inputs=inputs or {};commands.validate(plan,inputs,mode="bridge")
@@ -56,14 +56,14 @@ def run(plan,output,runtime_home=None,inputs=None,task_hooks=None):
  if output.exists() or output.is_symlink():raise ValueError('output_exists')
  if not output.parent.is_dir():raise ValueError('output_parent_missing')
  key=load('platform_support').platform_key()
- if key not in json.loads(Path(__file__).with_name('runtime.lock.json').read_text())['artifacts']:raise ValueError('unsupported_desktop_platform')
+ if key not in json.loads(Path(__file__).with_name('runtime.lock.json').read_text(encoding='utf-8'))['artifacts']:raise ValueError('unsupported_desktop_platform')
  home=runtime_home or os.environ.get('CRAFT_RUNTIME_HOME',str(Path.home()/'.local/share/craft-runtimes'));desktop={};sessions=[]
  def install(lock,home):
-  desktop.update(load('desktop').install(json.loads(Path(__file__).with_name('desktop.lock.json').read_text()),home));return load('bootstrap').install(lock,home)
+  desktop.update(load('desktop').install(json.loads(Path(__file__).with_name('desktop.lock.json').read_text(encoding='utf-8')),home));return load('bootstrap').install(lock,home)
  with tempfile.TemporaryDirectory(prefix='craft-desktop-session-') as private:
   token=None
   if commands.DOMAIN=='photocraft':
-   token=Path(private)/'control-token';token.write_text(secrets.token_hex(32));token.chmod(0o600)
+   token=Path(private)/'control-token';token.write_text(secrets.token_hex(32), encoding='utf-8', newline='\n');token.chmod(0o600)
   with socket.socket() as probe:probe.bind(('127.0.0.1',0));port=probe.getsockname()[1]
   def factory(argv):
    session=OwnedSession(argv,desktop,commands.DOMAIN,output,port,token);sessions.append(session)
@@ -81,7 +81,7 @@ def run(plan,output,runtime_home=None,inputs=None,task_hooks=None):
   except KeyboardInterrupt:
    if not output.is_dir():raise
    interrupted=True
-   try:receipt=commands.reply_json((output/'journal.json').read_text())
+   try:receipt=commands.reply_json((output/'journal.json').read_text(encoding='utf-8'))
    except (OSError,ValueError):receipt={'schema':'craft-command-receipt/v1','steps':[]}
    receipt['result']='unknown';receipt['error']='interrupted: request not replayed'
    if receipt.get('steps') and receipt['steps'][-1].get('state')=='started':receipt['steps'][-1]['state']='unknown'
