@@ -1,5 +1,7 @@
 # 版本绑定的历史发行记录
 
+技能源dev.36修正管道测试夹具，在Windows按原始二进制输出LF；技能内容与dev.35一致。保留dev.35的Windows CI失败记录，新目标CI独立核验。
+
 技能源 dev.35：隔离 Python 启动、持久任务执行、原生分段恢复及共享重试预算。源码回归213通过、38条件跳过；macOS arm64未发布原生段恢复及12帧像素对照通过。其他平台/宿主与完整V1保持开放。[证据](docs/evidence/managed-orphan-retry-component-20261008.json)。
 
 以下记录逐字移自 README 前部，描述各自版本，不作为当前安装合同。

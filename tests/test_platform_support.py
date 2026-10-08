@@ -40,7 +40,7 @@ class PlatformSupportTests(unittest.TestCase):
 
     def test_pipe_reader_handles_partial_lines_eof_and_timeout(self):
         module = self.module()
-        child = subprocess.Popen([sys.executable, '-u', '-c', "import sys,time;sys.stdout.write('ab');sys.stdout.flush();time.sleep(.1);print('cd');time.sleep(.3)"], stdout=subprocess.PIPE)
+        child = subprocess.Popen([sys.executable, '-u', '-c', "import sys,time;sys.stdout.buffer.write(b'ab');sys.stdout.buffer.flush();time.sleep(.1);sys.stdout.buffer.write(b'cd\\n');sys.stdout.buffer.flush();time.sleep(.3)"], stdout=subprocess.PIPE)
         try:
             reader = module.PipeReader(child.stdout)
             self.assertEqual(reader.readline(2), b'abcd\n')
