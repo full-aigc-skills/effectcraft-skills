@@ -156,3 +156,8 @@ Default doctor is static and readonly. Explicit --probe-native checks only a pre
 缺少或损坏快照/清单/解释器时保留现场并拒绝启动，不从当前技能重建。历史无绑定任务可 inspect 和诊断，resume/revise 返回 `legacy_execution_binding_missing`；未知任务不得换 ID 或输出目录重做。所有被引用版本继续保留；单一状态根的引用清单不授权跨状态根清理。Windows 接管使用自有 Job 守护和监督通道，真实目标验收单独记录。
 
 New tasks freeze execution resources before starting a worker. Recovery/review/revision dispatch to the original Python/controller/native combination after validating the manifest. Locked Python checks its complete distribution; the direct external-Python compatibility entry binds only the executable. Missing/corrupt snapshots and legacy tasks are never reconstructed or replayed. Retain referenced versions; state-root references cannot authorize global cleanup. Native Windows handoff qualification remains separate from adapter tests.
+
+
+父子任务取消：根任务的 `cancellationFamily` 绑定后代身份。`pendingTasks` 非空时保持 cancel_requested；通过各子任务原控制器 reconcile 后再核对父任务。`unknownTasks` 非空时保持 reconciling，不得换任务 ID 或输出目录重做。未启动证明只在原取消时、全部执行租约可取时生成，恢复不补造。
+
+Family cancellation binds descendant identities in `cancellationFamily`. Pending descendants retain cancel_requested; reconcile children through their original controllers before reconciling the parent. Unknown edits retain reconciling and must never be replayed with a new ID or output directory. A not-started proof is captured only during original cancellation while all execution leases are available.

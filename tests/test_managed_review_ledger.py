@@ -109,10 +109,13 @@ class ReviewLedgerTests(unittest.TestCase):
 
     def test_ancestor_cancel_blocks_child_review_mutation(self):
         self.accept();self.delivery('child',parent='root');self.store.cancel('root')
-        before=self.store.read('root')
-        with self.assertRaisesRegex(ValueError,'parent_cancelled_or_expired'):
+        before=self.store.read('root');child_before=self.store.path('child').read_bytes()
+        # 子任务交付声明没有进程停止证明；取消屏障先拒绝其评估状态。
+        self.assertEqual(self.store.read('child')['state'],'cancel_requested')
+        with self.assertRaisesRegex(ValueError,'review_state_conflict'):
             self.request('child')
         self.assertEqual(self.store.read('root'),before)
+        self.assertEqual(self.store.path('child').read_bytes(),child_before)
 
     def test_root_commit_survives_child_reference_write_failure(self):
         from unittest.mock import patch

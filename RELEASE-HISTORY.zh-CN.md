@@ -1,5 +1,11 @@
 # 版本绑定的历史发行记录
 
+## dev.52 — 2026-10-09
+
+取消恢复与父子终态屏障。等待全部后代停止；未知编辑保持 reconciling，不生成虚假业务退出或重放。27 项取消测试及真实 macOS 原生父子中断恢复通过；其他平台原生、宿主及完整 V1 仍开放。
+
+Cancellation recovery and family completion barrier. Unknown edits remain reconciling; no invented business exit or editing replay. Native platform/host and full V1 gates remain open.
+
 ## dev.51 — 2026-10-09
 
 开发版技能源 dev.51／插件 dev.53：POSIX 私有进程组归属及 nonce 绑定业务结果覆盖守护器丢失、孤儿后代和强制取消。当前回归及离线安装副本证据见 [发布验证](docs/evidence/group-ownership-release51-20261009.json)。下方历史检查点保留原摘要；跨平台原生、固定宿主、创作验收及完整 V1 仍开放。

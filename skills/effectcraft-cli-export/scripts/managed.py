@@ -279,10 +279,12 @@ def supervise(store, task, runtime_home, recover=False):
         lifecycle=read(receipt)
         if lifecycle.get('schema')!='effectcraft-process-lifecycle/v1' or lifecycle.get('status')!='stopped':
             return store.fail(task,'owned process tree termination is unconfirmed',unknown=True)
+        try:load('task_store').exit_evidence(lifecycle.get('returncode'),lifecycle.get('ownership'))
+        except ValueError as error:return store.fail(task,'owned process result unconfirmed: '+str(error),unknown=True)
         try:load('resource_meter').sample(store,task)
         except (ValueError,OSError) as error:return store.fail(task,'resource observation unconfirmed: '+str(error),unknown=True)
         if cancellation:store.stopped(task,'owned process tree verified stopped: '+stop_reason)
-        return store.worker_exited(task,lifecycle['returncode'])
+        return store.worker_exited(task,lifecycle['returncode'],lifecycle.get('ownership'))
 
 
 def run(store, plan, output, runtime_home, mode='workflow', inputs=None, source=None, task=None, parent=None, revision_scope=None):
@@ -319,23 +321,40 @@ def reconcile(store, task):
 
 def _reconcile(store, task):
     """只核对完整已落盘交付；无法证明的部分编辑继续保持 reconciling。"""
-    with load('platform_support').exclusive_lock(store.root/'leases'/(task+'.lifecycle.lock'),timeout=0), load('platform_support').exclusive_lock(store.root/'leases'/(task+'.lock'),timeout=0):
+    with load('platform_support').exclusive_lock(store.root/'leases'/(task+'.supervisor.lock'),timeout=0), load('platform_support').exclusive_lock(store.root/'leases'/(task+'.lifecycle.lock'),timeout=0), load('platform_support').exclusive_lock(store.root/'leases'/(task+'.lock'),timeout=0):
         with store.lock():
             state=store.read(task)
             if state['state'] not in ('running','resuming','reconciling','cancel_requested'):
                 return state
             lifecycle_path=store.lifecycle_path(state)
+            cancelling=state['state']=='cancel_requested' or bool(state.get('cancellationRequestedAt'))
+            never_started=cancelling and load('cancellation').check_local(store,state)
             if lifecycle_path.exists():
                 lifecycle=read(lifecycle_path)
-                if lifecycle.get('schema')!='effectcraft-process-lifecycle/v1' or lifecycle.get('status')!='stopped':
+                if (lifecycle.get('schema')!='effectcraft-process-lifecycle/v1' or lifecycle.get('status')!='stopped'
+                        or cancelling and type(lifecycle.get('returncode')) is not int):
                     raise ValueError('process_termination_unconfirmed')
+            elif cancelling and not never_started:
+                raise ValueError('process_termination_unconfirmed: cancellation lifecycle missing')
             elif state.get('worker'):
                 raise ValueError('legacy_process_ownership_unknown')
+            if cancelling and not never_started:exit_result=load('task_store').exit_evidence(lifecycle['returncode'],lifecycle.get('ownership'))
             state=load('orphan_segments').settle_locked(store,task)
             state=load('resource_meter').sample_locked(store,task)
             state['state']='reconciling'
             state['reconciliation']={'result':'unknown','automaticReplay':False,
                 'requiredAction':'inspect original project, native process and receipts; partial edits cannot be resent'}
+            if cancelling:
+                # 控制器已重启；原回执及执行租约分别证明停止，未知编辑保持原身份。
+                state['termination']={'status':'confirmed','reason':'not started at cancellation' if never_started else 'cancel reconciliation verified owned process stop','at':time.time()}
+                if not never_started:
+                    state['termination'].update(lifecycleReceipt=lifecycle_path.name,lifecycleSha256=load('task_store').file_sha(lifecycle_path))
+                    state['processExit']=exit_result
+                    state['workerExitCode']=exit_result['returncode'] if exit_result['workerResultVerified'] else None
+                    state['workerExitObservedAt']=exit_result['observedAt'] if exit_result['workerResultVerified'] else None
+                state=load('cancellation').update_locked(store,state,current_confirmed=True)
+                if state['state']=='cancelled':state['reconciliation']['result']='cancelled_after_verified_stop'
+                return store.save(state)
             if state.get('delivery') and not any(s['state']=='attempted' for s in state['steps']):
                 if state['identity']['mode']=='workflow':
                     report=load('quality_review').inspect_delivery(state['output']);proof_key='manifestSha256'

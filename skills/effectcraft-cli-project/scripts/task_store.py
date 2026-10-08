@@ -51,6 +51,42 @@ def atomic_json(path, value):
         temporary.unlink(missing_ok=True)
 
 
+def exit_evidence(returncode, ownership=None):
+    """区分已核对业务退出与强制组停止；不把持有者退出写成已知业务结果。"""
+    if type(returncode) is not int:raise ValueError('worker_exit_not_confirmed')
+    source='legacy-business-result';verified=True
+    if ownership is not None:
+        if (not isinstance(ownership,dict) or ownership.get('schema')!='effectcraft-posix-group-lease/v1'
+                or type(ownership.get('workerResultVerified')) is not bool):raise ValueError('process_exit_evidence_invalid')
+        verified=ownership['workerResultVerified'];source=ownership.get('exitCodeSource')
+        if verified:
+            if (source!='business-result' or type(ownership.get('workerReturncode')) is not int
+                    or ownership['workerReturncode']!=returncode):raise ValueError('process_exit_evidence_invalid')
+        elif (source!='group-holder-forced-stop' or ownership.get('workerReturncode') is not None
+                or ownership.get('forcedDrain') is not True or returncode>=0
+                or type(ownership.get('gateReturncode')) is not int
+                or ownership['gateReturncode']!=returncode):raise ValueError('process_exit_evidence_invalid')
+    return {'schema':'effectcraft-managed-process-exit/v1','returncode':returncode,'source':source,
+            'workerResultVerified':verified,'observedAt':time.time()}
+
+
+def validate_exit_record(state):
+    """已版本化退出记录与业务退出字段须一致；历史无该字段的记录保持兼容。"""
+    if 'processExit' not in state:return
+    value=state['processExit']
+    if (not isinstance(value,dict) or set(value)!={'schema','returncode','source','workerResultVerified','observedAt'}
+            or value['schema']!='effectcraft-managed-process-exit/v1' or type(value['returncode']) is not int
+            or type(value['workerResultVerified']) is not bool or type(value['observedAt']) not in (int,float)
+            or not math.isfinite(value['observedAt']) or value['observedAt']<=0):raise ValueError('process_exit_record_invalid')
+    if value['workerResultVerified']:
+        if (value['source'] not in ('legacy-business-result','business-result')
+                or type(state.get('workerExitCode')) is not int or state['workerExitCode']!=value['returncode']
+                or state.get('workerExitObservedAt')!=value['observedAt']):raise ValueError('process_exit_record_invalid')
+    elif (value['source']!='group-holder-forced-stop' or value['returncode']>=0
+            or state.get('workerExitCode') is not None or state.get('workerExitObservedAt') is not None):
+        raise ValueError('process_exit_record_invalid')
+
+
 ACTIVE = {'planned', 'resuming', 'running', 'reconciling', 'cancel_requested'}
 STATES = ACTIVE | {'review_ready', 'completed', 'failed', 'cancelled'}
 
@@ -92,6 +128,8 @@ class Store:
             if 'runtimeBinding' in value['identity']:load('runtime_binding').validate_binding(value['identity']['runtimeBinding'])
             if not isinstance(value['steps'], list) or not isinstance(value['budget'], dict):
                 raise ValueError('invalid records')
+            validate_exit_record(value)
+            load('cancellation').validate(value)
             if 'resources' in value:load('resource_budget').validate(value['resources'])
             if 'resourceLocations' in value:load('resource_meter').validate(value['resourceLocations'],value['output'])
             if 'resourceObservation' in value:load('resource_meter').validate_observation(value['resourceObservation'])
@@ -263,44 +301,28 @@ class Store:
 
     def cancel(self, task):
         with self.lock():
-            state = self.read(task)
-            descendants={task}
-            states=self.all()
-            while True:
-                more={s['taskId'] for s in states if s['parent'] in descendants}
-                if more.issubset(descendants):break
-                descendants.update(more)
-            for child in states:
-                if child['taskId']!=task and child['taskId'] in descendants and child['state'] in ACTIVE:
-                    child['cancellationRequestedAt']=time.time()
-                    child['state']='cancelled' if child['state']=='planned' else 'cancel_requested'
-                    self.save(child)
-            state['cancellationRequestedAt']=time.time()
-            if state['state'] == 'planned':
-                state['state'] = 'cancelled'
-            elif state['state'] in ACTIVE or state.get('activeRevision'):
-                state['state'] = 'cancel_requested'
-            return self.save(state)
+            return load('cancellation').request_locked(self,task)
 
     def stopped(self, task, reason):
         """监督器确认自有进程退出后调用；终止进程不证明未知编辑未发生。"""
         with self.lock():
             state=self.read(task)
-            unknown=any(s['state']=='attempted' for s in state['steps'])
+            state.setdefault('cancellationRequestedAt',time.time())
             state['termination']={'status':'confirmed','reason':reason,'at':time.time()}
-            state['state']='reconciling' if unknown else 'cancelled'
-            return self.save(state)
+            return self.save(load('cancellation').update_locked(self,state,current_confirmed=True))
 
-    def worker_exited(self, task, returncode):
+    def worker_exited(self, task, returncode, ownership=None):
         """登记已退出的自有worker；不把worker退出当作原生子进程停止证明。"""
-        if type(returncode) is not int:
-            raise ValueError('worker_exit_not_confirmed')
+        evidence=exit_evidence(returncode,ownership)
         with self.lock():
             state = self.read(task)
             if state['schema'] != 'effectcraft-managed-task/v2':
                 raise ValueError('legacy_task_read_only')
-            state['workerExitCode'] = returncode
-            state['workerExitObservedAt'] = time.time()
+            if state['state']=='cancelled' and load('cancellation').check_local(self,state):
+                return state
+            state['processExit']=evidence
+            state['workerExitCode'] = returncode if evidence['workerResultVerified'] else None
+            state['workerExitObservedAt'] = evidence['observedAt'] if evidence['workerResultVerified'] else None
             if state['state'] in ('planned','resuming'):
                 # 持锁重读后处理，避免覆盖并发取消或已确认的交付终态。
                 state['state'] = 'reconciling' if state['steps'] else 'failed'

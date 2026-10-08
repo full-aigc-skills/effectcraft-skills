@@ -1,5 +1,11 @@
 # Version-bound release records
 
+## dev.52 — 2026-10-09
+
+取消恢复与父子终态屏障。等待全部后代停止；未知编辑保持 reconciling，不生成虚假业务退出或重放。27 项取消测试及真实 macOS 原生父子中断恢复通过；其他平台原生、宿主及完整 V1 仍开放。
+
+Cancellation recovery and family completion barrier. Unknown edits remain reconciling; no invented business exit or editing replay. Native platform/host and full V1 gates remain open.
+
 ## dev.51 — 2026-10-09
 
 Development source dev.51 / plugin dev.53: POSIX private group ownership and nonce-bound business results cover guardian loss, orphan descendants and forced cancellation. Current regression and offline installed-copy evidence: [release validation](docs/evidence/group-ownership-release51-20261009.json). Historical checkpoints below retain their original fingerprints; cross-platform native, fixed-host, creative acceptance and full V1 remain open.
