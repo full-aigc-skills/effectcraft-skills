@@ -1,0 +1,275 @@
+{
+  "schema": "effectcraft-review-ledger-candidate/v1",
+  "result": "PASS",
+  "requirement": "EC-QA-003",
+  "task": "9.17",
+  "sourceBase": "8babe4b187b2f8d6de6f494d1bf1437e794946c5",
+  "sourceFiles": {
+    "skills/effectcraft-use/scripts/managed.py": "fc2a8d83775581aef8380deabe52ed380c0ed0257e81ea2cb804011e529f8658",
+    "skills/effectcraft-use/scripts/revision.py": "a9f47e0daa59e5f63ccdebd52cab0bda88bfd0d4bedb1f0712ad09e0ecfb6141",
+    "skills/effectcraft-use/scripts/review_ledger.py": "8ccafdccddf9e73819b7c9a5fd9a90dc1431ecae395a09a89e23055322a9977e",
+    "tests/test_managed_review_ledger.py": "413ae07066b8b84a176cb20c420bfc411a12a5b7cbcf18846736ebc66f10ad64"
+  },
+  "red": {
+    "targetTests": 8,
+    "failures": 7,
+    "errors": 1,
+    "cause": "new pending request identities, conflicting receipt overwrite, missing immutable best version, criteria/cancel/engineering gates absent",
+    "logSha256": "2b967f4d12089f4408c21673b8dc00eab29e3b619d099e35ff10015aa0139b2a"
+  },
+  "green": {
+    "targetTests": 14,
+    "regressionTotal": 273,
+    "regressionPassed": 235,
+    "regressionSkipped": 38,
+    "regressionLogSha256": "b8a5e8ea522ade4a6b8582ed91c5fdecdf7978d1abc06206a305cebde2aab250"
+  },
+  "native": {
+    "schema": "effectcraft-review-ledger-native/v1",
+    "result": "PASS",
+    "platform": "darwin-arm64",
+    "scope": "one independently copied current candidate skill; actual native creation, host visual/temporal observations, public review/revise/review; prepared isolated Python/native caches reused",
+    "skillFiles": {
+      "SKILL.md": "d48614435cbb1a065ae4825ba98705baf100f57c6ffa793d597f8b1d0e0f3648",
+      "references/output-execution.md": "1e185e63d8e20fdc54537feacdfb6e7a140474f5e61e2932747699d751671b36",
+      "references/expression-parent.md": "c67e09b82b9740bbbc603b2ec48c0aeba42c3703f775b7c234473935a355080c",
+      "references/command-reference.md": "0a54e772d6d4dc85d9c5cf4820caa81c56709c1b843fbe27366e28467535ca64",
+      "references/tracking-scene.md": "2e699e1ab62f47a1c40405fc6dd48e15474f130295f33fdcd4e80efcad3e4be9",
+      "references/command-usage.md": "b3f3714a615d229bf96476158206910ed43be18f30838b02c37e5e46db853b30",
+      "references/bridge-tools.json": "1a9c5431674b0e563e83ae3e5aebf9e4c25a95c4a55c53125dccb6dc3ae60859",
+      "references/business-scenes.md": "fa6dde18bb5ea19d15de3c6be5d0fc2cdbf4f4e2cf3170a624600b2d3c4e556b",
+      "references/workflow.md": "09a885345734d8d13cd36466841c28441125caa4863472d2a5b9ed4278cc5cdc",
+      "references/segmented-render.md": "d4a500643465eafad7b96f4491086f203e121bd782d69e208095de36717a71b7",
+      "references/commands.json": "f4a4bd1bb063ffe89b0ab0f71dca12d0b1a92eec3e73306756ebf0a93bb3eeb7",
+      "references/capability-diff.json": "201b27776325f0b49a3e93c7fcfb8651bfbdf53843a9083ec2bdfc875c5c8959",
+      "references/native-command-snapshot.json": "043d3e4bcc4e03fd15df178cfcf8cfd2e81679308a48da8ff289d802b4204b74",
+      "references/desktop-install.md": "db2db151b0eff30a3381a03ae377fb23ac09b2b4a919859740bd9343e7f14887",
+      "references/puppet-scene.md": "ce185ef007e86e1189210330049b80cc3a4418015826686ff3b143d81810e55f",
+      "references/camera-scene.md": "19bcbf1dce86e32974f59bfd5785ab0c7664df69ce75fd3130f6e4ec5a1e30c9",
+      "references/motion-tracking.md": "dcb4d2ea69f503e45692bbd3f2d2383546f892bd2cb5d163b7811a310af5d194",
+      "references/managed-execution.md": "23ba9aa1a5912066480b9205592c6b0b9712d28a74d16bd24089795a5f5214fc",
+      "references/installation-concurrency.md": "69067acebcd47f1924a8d6aa9d8a4ce6f44ad0756d44888a21eb224bcdb1c215",
+      "references/exchange-loss.md": "eee665f62b77274ca8ce0efc4117012ade85978905cdfd40ab488af64297b8ae",
+      "references/first-use-failures.md": "ce2a8d1a8ca6b8a29a084d52d105d510476de88d40b439d6c2ff79212581d61d",
+      "references/native-workflow.md": "42fee416c66a69f6f3802abe1be6f002963cf109e7e22a4d6297b6dcaf62b8e9",
+      "references/command-coverage.json": "a58a899ed84841acaf17108e53b6dd118f3490139668e65baf1edb5045fcc548",
+      "agents/openai.yaml": "8fe0093ba521c032e6b243bf5c2e3d9d2303cf1ae78f76fe8365e414b7da57b7",
+      "examples/tracking-create.json": "14d6c8654cb81c1b2b578eea021039b38c5179bd9459b7ec41528999d7f53d0d",
+      "examples/camera-scene-reopen.json": "7f1ade6f23c628045941d7168c822d0372e79a63c4ff05cfbd375a03c376b4ee",
+      "examples/puppet-record-follow-create.json": "ac59e9682a32efbe12a6bdeacb5136508c120413b3ae3bdf5efda4b6602e7ed9",
+      "examples/camera-scene-create.json": "bdced8cc3a735793852bf67140ff62ec79544c938c61d733c372f6f4a61d0946",
+      "examples/tracking-reopen.json": "0b393fda8bd68c6819e25ac8f8101381dc175220ca3c8c1c3b8c35637e49ce7b",
+      "examples/layer-mask.json": "61efc2abc7274b45224659ab4aae7e847486af3f3660161a03b83b978ec7a8bc",
+      "examples/puppet-record-follow-reopen.json": "b722ee0ea4681556ae42eb58da21b293180081add09f23bb416d23ff368ae611",
+      "examples/commands-advanced.json": "e2def610996d594575136e357cab0d9ee355ce51cf782817d323b37e8227941b",
+      "examples/puppet-reopen.json": "bd05b66c9480cedaf60cbfe2fb6352dff8a6e573cd27a1fb1be43097bda58b62",
+      "examples/puppet-create.json": "405a5b98b410d2db642eec0a9d0ec8cf48c622c9f1632f36e2c2be3f01ff8560",
+      "examples/commands-revision-create.json": "03d3d7796210dfd4ff27f6cde0e1ba10b4376b0243dc4938d87103ca991f5f61",
+      "examples/expression-parent-create.json": "fca2b95312130f735c884e354ce4fede48bc67ca0a3c740b4b17a79967c20d4d",
+      "examples/native-workflow.json": "0ba62e8bd042dacb028b14c84c18cb2ee10c77e54dbd13efcd7090c8fa9fae16",
+      "examples/desktop-first-use.json": "0d1dbf9c43e8d5ce790443577b5398c2aa7af317fc15a328dc85c62813527d84",
+      "examples/commands-revision.json": "d54bfa78c48b674136b56a8e0c7e36e4c1c475a5907ba46ae450b2ac86e17d1e",
+      "examples/puppet-record-follow-revise.json": "448b635cf49567dc359a3d9ff385fe73afe4b4a32ec280ba5f8cab93ceb00a76",
+      "examples/brand-intro.json": "430aa74e69a3195f70fdfe53ae9b8939fc888df1b58e01d76fd76ccdfe3edd80",
+      "examples/camera-scene-revise.json": "2cca564a10133b56d2d8d20b0feb5cafb627a3e082ce2303fe073567af8bd00f",
+      "examples/expression-parent-revise.json": "8076203648de8834c0681149e557ea4ffed35e0863c2e7a2dec2b4001e3ca22f",
+      "scripts/bootstrap.py": "d5a77de7766e1d634bc903d9d6918b343bc7f87472d0225a52f3bd0fff882965",
+      "scripts/desktop-platforms.lock.json": "3b4b56b144ef102f1ab2e5fbf4f374b22292dbce6a51a01e9bea466f9ed09b92",
+      "scripts/exchange_loss.py": "8871bc2d4e2e6bedd0b1d2852a06ccdbd43b0339d67afc53e6029fb3539c8c4f",
+      "scripts/launch.sh": "c050a7e218e3ccdb9c264284091fac509ece094602646e5ec24e8fac2bdebfa8",
+      "scripts/image_sequence.py": "f67d0e565d8c99abd519bfaabe44599d25606450ca4f98df1ea227619ab2fff0",
+      "scripts/additional-platforms.lock.json": "d72653f778b07bb61eed795d49ffc3e7214ad39e74c64e76959818187567dce6",
+      "scripts/review_ledger.py": "8ccafdccddf9e73819b7c9a5fd9a90dc1431ecae395a09a89e23055322a9977e",
+      "scripts/task_store.py": "1726f122ad3ce5dba073e2d959d367d4f9a4314486fd24ef512e4b8e5385fe78",
+      "scripts/web_adapter.mjs": "081a816b285a512ebed8cc47dc87e5a16aa0502344c83b25036d3cee8b5c6f78",
+      "scripts/segmented_sequence.py": "f0b078e72211c245267c22514a7b4202099a47cc42a5e9c8243bdd7b0dc473e9",
+      "scripts/platform_support.py": "d6a133dc25b81570f585f473f2fe290e181e78bc24032a05ae83be6f0a45aed8",
+      "scripts/launch.ps1": "762c1f6149132bb82a2fb057ed8397b3f1846f944890dac6a05870e7091403d0",
+      "scripts/mcp_session.py": "dd6df96dc1734cd7e43c4b820661d2e2c8c713dc8849fc89ab06a3720d99619b",
+      "scripts/resource_budget.py": "501cb33b348cab13cace063dbdb2158d8bdd196419aee7978197a8fc40e27e89",
+      "scripts/render_recovery.py": "6baf8f315f20d5e6b9115423502d66e9e51e33dc2398adc6bbff85b6b68b1e31",
+      "scripts/output_guard.py": "018c5c27217c11ec7b45ded52a1e13d7c42b34a3a53df21566e26f192143302b",
+      "scripts/runtime.lock.json": "b427c71c77e1a217c72f7c19ac872b19df28e07150f4e7f6319defe7f5d9acc0",
+      "scripts/python-platforms.tsv": "3836b670271e8f8327ea386510b18dea6a867ece27be5e74f4165eaa38ad8c65",
+      "scripts/cli.py": "9303ae8ae30009fa706d5d56603032485ad81416aee1d0af523ce902e3f28165",
+      "scripts/desktop_session.py": "7c4e783b68b25f33f6b248fa7221c8e4842a3aa93c7651999a38da247cf2f266",
+      "scripts/native_workflow.py": "0db0471f8d849db9c3ffaeaac1c7bc40bf0cd500a638f7b681ecdeb934960bdd",
+      "scripts/desktop.lock.json": "d2af78ee474b8e19ff3c26c792bb27ad180622ffe6dbed5a402bcb7aa7167311",
+      "scripts/quality_review.py": "d3acdc273c89aaaa0b7456490313b80951a42947e408e003d451f0914ce17e74",
+      "scripts/managed.py": "fc2a8d83775581aef8380deabe52ed380c0ed0257e81ea2cb804011e529f8658",
+      "scripts/png_inspection.py": "0e3c50907c66c6dcc45256d045920da346ad77892e47401de3103c8f6232938d",
+      "scripts/additional_platforms.py": "1a4ffc9f04e240374269a9869d0383f9f833082cf066203fddba117f247f48d9",
+      "scripts/revision.py": "a9f47e0daa59e5f63ccdebd52cab0bda88bfd0d4bedb1f0712ad09e0ecfb6141",
+      "scripts/python.lock.json": "e877b3fe406a2a210ebe5d7f660aa1d0483def44454a54dbe7429bfdba1c9f3f",
+      "scripts/workflow.py": "52eb0ccd9942b83588155ddb851c63c6fbea0f3122a0aa2a3029a2640cb6ce14",
+      "scripts/parameter-contract.json": "dd1bde23fb12e26774f412f0aacc93e8102eaed79d4255709b5717c112daa762",
+      "scripts/orphan_segments.py": "244059948ca6b783c64cdd5942e91f3e6268dfd71f3c48c300595ccbcb2584b9",
+      "scripts/process_guard.py": "914127933d528388cff33db36e92f8ed62263737e985c65b1f7e200ee14d50a4",
+      "scripts/preserved_stage.py": "64199df3ee6af2901a859a5aac401fd27ca2f0c6ba9238e6f72c3563f681ad63",
+      "scripts/commands.py": "abb5c49e8ad2cd2bb539c8135274c4f2ff81aebbfdeb72fcd2fe383f55262fb7",
+      "scripts/resource_meter.py": "7c89e528b2851a190b5ca849f29ec03d26b4d827ff12aeef7d4c7c01c1cd6dcf",
+      "scripts/desktop.py": "802de3eef9ed9fca3ad09a2f5f6f204f6bbba5a09450efe6ae062e7159409553",
+      "scripts/python-integrity/windows-arm64.tsv": "625a22a5086fd7d312bc156cde8e3f4443ceb2079e2ff91457c6de0cadd5df4d",
+      "scripts/python-integrity/darwin-x86_64.tsv": "53196035ea5ca246ef60da5b248d02a91964a269c6ec7397eedc0f28a72694ca",
+      "scripts/python-integrity/windows-x86.tsv": "551536440722a4fc82e578f4af5a11ef72a9736b3be4b08621982f0f767cc981",
+      "scripts/python-integrity/linux-aarch64.tsv": "6b639cbaa8c4e691d226447b747fde28fb0f9e337fe828d46b2ceba80ad325f7",
+      "scripts/python-integrity/darwin-arm64.tsv": "8f9c3aaf79cd0ff1867ac5d3c937d6ca0c60ccf1ab2b321a2b7a8454209d6fdd",
+      "scripts/python-integrity/linux-x86_64.tsv": "f81e6ac6a770f895b5b1a89838da856f21e9c827f4fc320ed1562645783c0c55",
+      "scripts/python-integrity/windows-x86_64.tsv": "e1e98775d10bcb9fbf55e482a31d9efdb91a8d61d80718998f66f7c9b195e5f3",
+      "scripts/runtime-integrity/darwin-arm64.json": "c7eb5424dbb14940624e3ae6a494078a41dfa0c6738b7779d5d9ceb40f7e2220",
+      "scripts/runtime-integrity/linux-x86_64.json": "0700c5bcadaa68ec96ac723504c6ffd3212999bfc1c4f7ec1e27ab47e6a564a8",
+      "scripts/runtime-integrity/windows-x86_64.json": "33e0714f70aee024ec182148933a536d721c5321f0b7efa1470a21e4d85c21a0",
+      "scripts/runtime-integrity/windows-x86.json": "ebe596ae6de96e0ddebbe5ca171b3b65337cf33e2c40c5f99631aff6b71d02c4",
+      "scripts/runtime-integrity/windows-arm64.json": "edb91da2b4bb474de49cbb705d5c1ff3c6700eb84eea8efc2ec65c208df40572",
+      "scripts/runtime-integrity/linux-aarch64.json": "b1c0b809c03fbf7d3d018f7418250fce3e56bd7e816781df5242c2cea08370fb",
+      "scripts/runtime-integrity/darwin-x86_64.json": "c7eb5424dbb14940624e3ae6a494078a41dfa0c6738b7779d5d9ceb40f7e2220"
+    },
+    "initialBinding": {
+      "manifestSha256": "585d0398fd5ea7501e5b020cd4ee3afab4a499b2ea274fa1daa058cc2a3f84ba",
+      "projectSha256": "45afe8fae1672e7f3a184676baf385258307e211b4dea9140a066fa7ea070207",
+      "filesHash": "92bb2cbe7d979381504962b8681e8cdbb0e4aff105e85ab3b7ecd05e46189c0b"
+    },
+    "finalBinding": {
+      "manifestSha256": "e8ca2987172a030c9b43912f5257c65fefd2016d2e200f9474a4661e68a6dffa",
+      "projectSha256": "9d0281cfd2e5d0298699bc599dd43976c6d395482c5dc3da733249f12029d399",
+      "filesHash": "e3d111b4d830d10fbacec6db97bcf9167d506afcd1544bc020b923388a68aac2"
+    },
+    "bestVerified": {
+      "binding": {
+        "filesHash": "e3d111b4d830d10fbacec6db97bcf9167d506afcd1544bc020b923388a68aac2",
+        "manifestSha256": "e8ca2987172a030c9b43912f5257c65fefd2016d2e200f9474a4661e68a6dffa",
+        "projectSha256": "9d0281cfd2e5d0298699bc599dd43976c6d395482c5dc3da733249f12029d399"
+      },
+      "reportSha256": "3c1ef1d6208a9d3553c137100510970540077835fc0421bc6479eee33158da69",
+      "requestHash": "02e58ab444e65f5810c7cc85b1c100eed16dbf0b1b3d627feafa0c833a9344ec",
+      "requestId": "df0a307065b049f2986475a33635214e",
+      "responseHash": "897e5c53d98a097c2d0b4360b337b68d5b2fad4f926b939c8f72bccaf98d544f",
+      "score": 0.95,
+      "taskId": "49e3752718dd4cf385faf6dadb4bad7f"
+    },
+    "budget": {
+      "maxRevisions": 2,
+      "revisions": 1,
+      "stagnant": 0
+    },
+    "nativeRuntimeSha256": "c1717eb87e5b57b3ed88c6a78047268a5afa566beb36104fdcc05dc8634a01c1",
+    "deadlinePreserved": true,
+    "originalFilesPreserved": true,
+    "nonTargetNativeContentPreserved": true,
+    "initialCreativeScore": 0.2,
+    "finalCreativeScore": 0.95,
+    "initialIssue": "title cropped on both frame edges",
+    "revision": "only title text shortened to NOVA",
+    "hostObservedVideoFrames": [
+      0,
+      3,
+      6,
+      11
+    ],
+    "hostObservedPreviewTimes": [
+      0,
+      0.25,
+      0.5,
+      0.9166666666666666
+    ],
+    "initialHostReceipt": {
+      "requestId": "7deb3896bdaf4158bf8f1e1de5d512fe",
+      "binding": {
+        "manifestSha256": "585d0398fd5ea7501e5b020cd4ee3afab4a499b2ea274fa1daa058cc2a3f84ba",
+        "projectSha256": "45afe8fae1672e7f3a184676baf385258307e211b4dea9140a066fa7ea070207",
+        "filesHash": "92bb2cbe7d979381504962b8681e8cdbb0e4aff105e85ab3b7ecd05e46189c0b"
+      },
+      "score": 0.2,
+      "passed": false,
+      "issues": [
+        {
+          "layer": "title",
+          "property": "text/sourceText",
+          "timeRange": [
+            0.5,
+            1
+          ],
+          "description": "After the fade-in the long title extends beyond both image edges. The NOVA prefix is outside the frame; only a middle fragment is visible. Shorten to NOVA without changing badge or opacity keys."
+        }
+      ],
+      "temporalReviewed": true,
+      "evidence": {
+        "host": "Codex current visual tools",
+        "observed": [
+          {
+            "path": "frame-0000.png",
+            "seconds": 0
+          },
+          {
+            "path": "frame-0001.png",
+            "seconds": 0.5
+          },
+          {
+            "path": "frame-0002.png",
+            "seconds": 0.9166666666666666
+          },
+          {
+            "path": "intro.mp4",
+            "decodedFrameIndex": 3
+          }
+        ],
+        "observations": "Badge is visible at the beginning. Text appears during the fade, but the long line is cropped at both sides at .5 and .9167 seconds."
+      }
+    },
+    "finalHostReceipt": {
+      "requestId": "df0a307065b049f2986475a33635214e",
+      "binding": {
+        "manifestSha256": "e8ca2987172a030c9b43912f5257c65fefd2016d2e200f9474a4661e68a6dffa",
+        "projectSha256": "9d0281cfd2e5d0298699bc599dd43976c6d395482c5dc3da733249f12029d399",
+        "filesHash": "e3d111b4d830d10fbacec6db97bcf9167d506afcd1544bc020b923388a68aac2"
+      },
+      "score": 0.95,
+      "passed": true,
+      "issues": [],
+      "temporalReviewed": true,
+      "evidence": {
+        "host": "Codex current visual tools",
+        "observedMedia": "intro.mp4",
+        "decodedFrameIndices": [
+          0,
+          3,
+          6,
+          11
+        ],
+        "observedPreviewsSeconds": [
+          0,
+          0.25,
+          0.5,
+          0.9166666666666666
+        ],
+        "observations": "The shortened NOVA title is fully inside the frame. It is absent at frame0, appears dim at frame3, and is fully visible at frames6/11. Native non-target comparison and decoded badge pixels confirm badge preservation. PNG title alpha maxima are 0,128,255,255."
+      }
+    },
+    "repeatReceiptLeavesStateBytesUnchanged": true,
+    "repeatRequestReusesId": true,
+    "conflictingReceiptRejectedWithoutStateChange": true,
+    "engineering": "PASS",
+    "technical": "PASS",
+    "creative": "PASS",
+    "userAccepted": false,
+    "excluded": [
+      "other platforms/architectures",
+      "formal complete judge range protocol",
+      "automatic natural-language skill selection",
+      "fixed release",
+      "complete V1"
+    ]
+  },
+  "currentExecutionResourcesMatchObservedCopy": true,
+  "postAcceptanceDocumentationChanges": [
+    "references/managed-execution.md"
+  ],
+  "copiesSynchronized": 15,
+  "initialSystemPathDecoderDiagnostic": "media_decoder_missing correctly returned NOT_RUN; native acceptance used host-installed ffmpeg/ffprobe with prepared isolated Python/native caches",
+  "excluded": [
+    "complete Judge scope/receipt protocol",
+    "all platform/host gates",
+    "fixed release verification",
+    "complete V1"
+  ]
+}

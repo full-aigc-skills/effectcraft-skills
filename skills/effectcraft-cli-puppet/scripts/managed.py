@@ -289,34 +289,7 @@ def reconcile(store, task):
 
 
 def review(store, task, criteria, judge=None):
-    quality=load('quality_review');state=store.read(task);directory=store.path(task).parent
-    report=quality.inspect_delivery(state['output'])
-    if state.get('delivery',{}).get('engineeringReopen')=='PASS' and report.get('binding',{}).get('manifestSha256')==state['delivery'].get('manifestSha256'):
-        report['engineering']={'status':'PASS','source':'current managed workflow save/reopen'}
-    if judge:
-        request=read(directory/'judge-request.json')
-        if request['criteriaHash']!=load('task_store').digest(criteria):raise ValueError('criteria_changed')
-        report=quality.accept_judge(state['output'],report,request,read(judge))
-    else:
-        native=read(Path(state['output'])/'native.json')
-        temporal=bool(read(Path(state['output'])/'manifest.json').get('video') or native['composition'].get('duration',0)>0)
-        request=quality.judge_request(task,state['output'],report,criteria,temporal)
-        load('task_store').atomic_json(directory/'judge-request.json',request)
-    load('task_store').atomic_json(directory/'quality.json',report)
-    with store.lock():
-        state=store.read(task);state['review']={'path':'quality.json','sha256':load('task_store').file_sha(directory/'quality.json')}
-        store.save(state)
-        if judge:
-            root=store.lineage(state)[-1]
-            seen=root.setdefault('reviewedRequests',[])
-            if request['requestId'] not in seen:
-                seen.append(request['requestId'])
-                score=report['creative']['receipt']['score']
-                if score>root.get('bestScore',-1):
-                    root['bestScore']=score;root['bestTask']=task;root['budget']['stagnant']=0
-                else:root['budget']['stagnant']+=1
-                store.save(root)
-    return {'report':report,'judgeRequest':request,'requiredAction':None if judge else 'host_visual_review'}
+    return load('review_ledger').review(store,task,criteria,judge)
 
 
 def main():
@@ -365,7 +338,18 @@ def main():
         print(json.dumps(result,ensure_ascii=False,allow_nan=False))
         if result.get('state') in ('failed','reconciling','cancel_requested'):raise SystemExit(1)
     except (ValueError,OSError,KeyError,TypeError,subprocess.SubprocessError) as error:
-        print(json.dumps({'result':'FAIL','error':str(error)},ensure_ascii=False));raise SystemExit(1)
+        result={'result':'FAIL','error':str(error)}
+        if args.action=='review':
+            # 历史PASS属于原摘要；拒绝不能冒充当前创作验收。
+            report=getattr(error,'review_report',{}).copy()
+            report.setdefault('schema','effectcraft-quality/v1')
+            report.setdefault('engineering',{'status':'NOT_RUN'})
+            report.setdefault('technical',{'status':'NOT_RUN'})
+            report['creative']={'status':'NOT_RUN','reason':str(error)}
+            report['readyForAcceptance']=False;report['accepted']=False
+            result.update(schema='effectcraft-review-rejection/v1',taskId=args.task,report=report,
+                          requiredAction='inspect_current_delivery_and_request')
+        print(json.dumps(result,ensure_ascii=False,allow_nan=False));raise SystemExit(1)
 
 
 if __name__=='__main__':main()

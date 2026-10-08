@@ -64,6 +64,9 @@ def revise(store, task, plan, output, runtime_home):
     if load('task_store').file_sha(review_path)!=state['review']['sha256']:
         raise ValueError('review_changed')
     report=managed.read(review_path)
+    ledger=load('review_ledger').validate(store,root,load('task_store').digest(managed.read(store.path(task).parent/'judge-request.json')['criteria']))
+    if task not in ledger['entries'] or ledger['entries'][task]['reportSha256']!=state['review']['sha256']:
+        raise ValueError('settled_review_required')
     if report['technical']['status']!='PASS' or report['creative']['status']!='FAIL':
         raise ValueError('failed_creative_review_required')
     source=Path(state['output'])

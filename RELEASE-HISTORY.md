@@ -1,5 +1,7 @@
 # Version-bound release records
 
+Source dev.38: Judge v2, immutable version review ledgers, ordinary/segmented sequence checks and public rejection diagnostics. Regression: 260 passed / 38 conditional skips. Historical native visual loops and current entry verification retain separate hashes; other platforms, fixed host acceptance and complete V1 stay open.
+
 Source dev.37 fixes explicit UTF-8 contract/receipt I/O and deterministic LF generation across platforms. Windows CI exposed the default-codepage failure; added generator/runtime Unicode regression. Native skill resources change from dev.35/36, so their old evidence is historical and final native release verification is recorded separately.
 
 Source dev.36 corrects the pipe-reader test fixture to emit exact binary LF bytes on Windows; skill payloads are identical to dev.35. The dev.35 Windows CI failure remains recorded; new target CI is verified separately.

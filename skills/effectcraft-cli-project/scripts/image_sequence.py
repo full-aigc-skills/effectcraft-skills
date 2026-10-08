@@ -34,13 +34,13 @@ def rgba_facts(path):
     return dict(facts, alphaExtrema=[minimum, maximum], rgbaSha256=pixels.hexdigest())
 
 
-def inspect_sequence(directory, composition):
+def inspect_sequence(directory, composition, *, receipt=False):
     rate = Fraction(str(composition['frameRate'])); duration = Fraction(str(composition['duration']))
     count = math.ceil(rate*duration)
     if not 0 < count <= 10000 or count*composition['width']*composition['height']*4 > 512*1024*1024:
         raise ValueError('sequence_frame_budget_exceeded')
     expected = [f'frame_{index:05d}.png' for index in range(count)]
-    if directory.is_symlink() or sorted(p.name for p in directory.iterdir()) != expected:
+    if directory.is_symlink() or sorted(p.name for p in directory.iterdir() if not (receipt and p.name=='sequence.json')) != expected:
         raise ValueError('sequence_frame_set_mismatch')
     frames = []
     for index, name in enumerate(expected):

@@ -1,13 +1,15 @@
 # EffectCraft 独立技能
 
+开发版 dev.38 增加 Judge v2、不可覆盖的评价账本、序列技术复检及过期评价的显式 NOT_RUN 诊断。298项回归中260通过、38条件跳过；真实原生视觉修订及本次公开入口拒绝复验分开记录。固定插件安装、其他平台创作与完整V1仍开放。 [Evidence](docs/evidence/review-rejection-candidate-20261008.json).
+
 分段首用指南已根据固定 Film40／Effect38／Art117 的原生验收更新：覆盖 HD 全帧、返工、恢复和迁移。新指南快照的插件安装验收另行记录。[证据](docs/evidence/craft-fixed-segmented-hd-refresh-20261008.json)。
 
-> **开发版 dev.37（2026-10-08）：**固定隔离 Python 3.13.16、EffectCraft 0.4.0，包含受管理执行、自有分段恢复与共享重试预算。本机证据不替代其他平台/宿主验收。见[实现与开放门禁](docs/managed-optimization-20261008.md)和[平台矩阵](docs/current-capabilities.json)。
+> **开发版 dev.38（2026-10-08）：**固定隔离 Python 3.13.16、EffectCraft 0.4.0，包含受管理执行、自有分段恢复与共享重试预算。本机证据不替代其他平台/宿主验收。见[实现与开放门禁](docs/managed-optimization-20261008.md)和[平台矩阵](docs/current-capabilities.json)。
 
 
 文字、图形与镜头需求进入，交付可编辑 `.ecproj`、依赖素材和渲染结果。
 
-当前技能源：`0.1.0-dev.37`；消费插件：`0.1.0-dev.39`；15 个独立技能。
+当前技能源：`0.1.0-dev.38`；消费插件：`0.1.0-dev.40`；15 个独立技能。
 
 已验证首次使用平台：macOS arm64、Python 3.11+。固定运行时安装在用户数据目录，技能文件保留在宿主加载目录。当前为开发版本；完整首版验收及通用 Skills CLI 实际安装仍未完成。
 

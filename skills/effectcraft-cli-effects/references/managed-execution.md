@@ -25,7 +25,7 @@
 计划默认保留透明预览契约。明确需要普通不透明背景预览时设置 `previewAlpha: false`；透明交付保持 true 并检查真实 alpha，不事后改写门禁来迁就成品。初始计划应根据用户已授权的文字、位置等范围填写 `revisionScope`（参考 brand-intro 模板）；不允许通过 `run --source` 为受管理工程换新任务绕过修订预算。
 
 1. `review` 输出 `judgeRequest`，绑定任务、工程、全部产物与评价标准。实际打开请求列出的图片/视频；技术检查 PASS 不能代替视觉与时序观察。
-2. 缺少视觉或时序能力时保持 NOT_RUN。可用时保存响应 JSON：`requestId`、`binding` 原样引用，`score` 为 0–1，`passed` 为布尔，`issues` 标注对象、属性、时间区间与观察结果，`temporalReviewed` 仅在实际查看对应时间样本后为 true；`evidence` 明确范围。
+2. 使用显式 `effectcraft-judge-request/v2` / `effectcraft-judge-receipt/v2`。回执原样绑定 `requestId`、`taskId`、`binding`、`criteriaHash`、`scopeHash`；实际观察请求的帧样本后填写 `capabilities`、`observations`（媒体路径/摘要、帧索引、方法及观察描述）、`status`、`score`、`passed`、`issues`、`temporalReviewed`。缺视觉/时序能力或样本覆盖时返回 NOT_RUN，不计分、不选最佳。具体宿主步骤见 [Codex Judge 适配](codex-judge.md)。
 3. 再次 `review --judge RECEIPT` 导入回执。过期文件、摘要变化或技术失败均拒绝。`accepted` 保持 false，等待用户接受。
 4. 初始计划声明 `revisionScope: [{"layer":"title","properties":["text/sourceText"]}]`。创作 FAIL 后可调用 `revise`，仅支持该范围内 `layer.setText` / `prop.set`，不开放任意命令网关；修订计划必须包含 `expectedProjectSha256`，不得新建 document 或扩大素材/对象范围。
 5. 每轮先持久化预算，再基于原工程另存。完整比较非目标属性与关键帧，重开、渲染、再评估。最多 2 轮、任务总期限 1800 秒；连续两次无改善停止。`bestTask` 指向最佳已评价版本，失败现场保留。
@@ -46,3 +46,12 @@
 `additional_platforms.py web-install --archive PINNED_ZIP` 验证并安装固定 Web 包，`web-serve --port 0` 只在回环地址提供带 COOP/COEP 的站点。浏览器载入后使用本技能 `web_adapter.mjs` 的 `discover/inspect/readArtifact`，读取上游公开的 `window.effectcraft` API。Web 的受管理写入与完整作品验收仍是独立开放项；不能把页面载入当成创作成功。
 
 `additional_platforms.py freebsd-build` 只在实际 FreeBSD 上执行固定提交源码的 `cargo build --locked` 和引擎测试，要求已准备构建工具与锁文件列出的系统库。失败保留构建日志和源码，不借用 Linux 包或静默安装全局工具。当前主机没有 FreeBSD 目标环境，源码构建及原生任务验收未通过。
+
+
+## 固定版本评价 / Settled version reviews
+
+`review` 对同一版本复用原Judge请求。任务族的评价标准从首次请求起固定，重复导入同一回执不会再次计入停滞；同一请求的冲突评分拒绝。已结算请求、响应和报告保存在任务私有 `reviews/REQUEST_ID/`，根任务内部 `effectcraft-review-ledger/v1` 原子结算，子引用写入中断可由相同导入修复。`inspect` 返回的 `bestVerified` 绑定最佳工程/技术验证版本及不可覆盖的报告摘要。原产物改变、回执损坏、祖先取消或期限到达会拒绝新的评价状态变更。缺少评价账本的历史评分仅允许检查，不自动重置比较和停滞预算。
+
+For a settled version, `review` reuses its original Judge request. A task family keeps the first criteria; identical imports are idempotent and conflicting responses are rejected. Immutable request/response/report files live in private `reviews/REQUEST_ID/` directories. The root `effectcraft-review-ledger/v1` commits each version once, and an interrupted child reference can be repaired by the same import. `bestVerified` binds the best engineering/technical verified version to its report digest. Changed artifacts, corrupt receipts, ancestor cancellation or deadline expiry prevent further review mutations. Historical scores without this ledger remain diagnostic; comparison and stagnation budgets are never reset automatically.
+
+Judge v2仅验收`scope.coverage=sampled`列出的具体样本，不能据此声称全帧创作通过。旧v1请求/评分保留诊断读取，不自动升级或用于新的修订。无能力的回执保存在`review-attempts/`，不会消耗停滞次数。 / Judge v2 accepts only its declared sample coverage. It does not claim all-frame creative acceptance. Legacy v1 requests/scores remain diagnostic; NOT_RUN receipts are retained without scoring or consuming stagnation.

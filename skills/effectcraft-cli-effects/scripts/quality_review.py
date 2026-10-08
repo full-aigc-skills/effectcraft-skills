@@ -46,6 +46,43 @@ def binding(root):
             'filesHash':load('task_store').digest(manifest['files'])}
 
 
+def inspect_sequence_contract(root, sequence):
+    """重算帧像素与时间合同；包摘要匹配不能代替描述和实际内容一致。"""
+    descriptor=contained(root,sequence['path']);data=read(descriptor)
+    if not isinstance(data,dict):raise ValueError('sequence_descriptor_invalid')
+    if sha(descriptor)!=sequence['sha256']:raise ValueError('sequence_descriptor_changed')
+    composition=read(root/'native.json')['composition']
+    image=load('image_sequence')
+    if data.get('schema')=='craft-image-sequence/v1':
+        if descriptor.name!='sequence.json':raise ValueError('sequence_descriptor_invalid')
+        facts=image.inspect_sequence(descriptor.parent,composition,receipt=True)
+        if facts!=data:raise ValueError('sequence_contract_mismatch')
+        return {'path':sequence['path'],'verifiedFrames':facts['frameCount']}
+    if data.get('schema')!='craft-segmented-render-checkpoint/v1':
+        raise ValueError('sequence_schema_invalid')
+    segmented=load('segmented_sequence');bound=data['binding']
+    parts=segmented.plan_segments(composition,bound['chunkBytes'])
+    if (data.get('state')!='verified' or bound['composition']!=composition or bound['parts']!=parts
+            or bound['projectSha256']!=sha(root/'project.ecproj')
+            or data['frameRate']!=segmented.rational(segmented.Fraction(str(composition['frameRate'])))
+            or data['frameCount']!=sum(p['frameCount'] for p in parts)
+            or len(data['segments'])!=len(parts)):
+        raise ValueError('sequence_segment_contract_mismatch')
+    expected={'segments.json','checkpoint.json','verified.json','render.lock'}
+    expected.update(f'segment_{index:05d}' for index in range(len(parts)))
+    if any(p.name not in expected or p.is_symlink() for p in descriptor.parent.iterdir()):
+        raise ValueError('sequence_frame_set_mismatch')
+    for index,(part,record) in enumerate(zip(parts,data['segments'])):
+        location=f'segment_{index:05d}/sequence.json'
+        child=contained(descriptor.parent,location)
+        if record!=dict(part,location=location,sha256=sha(child)):
+            raise ValueError('sequence_segment_receipt_mismatch')
+        comp=dict(composition,duration=str(segmented.Fraction(part['frameCount'],1)/segmented.Fraction(str(composition['frameRate']))))
+        facts=image.inspect_sequence(child.parent,comp,receipt=True)
+        if facts!=read(child):raise ValueError('sequence_contract_mismatch')
+    return {'path':sequence['path'],'verifiedFrames':data['frameCount']}
+
+
 def inspect_delivery(root, timeout=120):
     """解码 PNG/视频，核验真实摘要；原生重开须单独提供当前执行证据。"""
     root=Path(root).resolve()
@@ -65,17 +102,7 @@ def inspect_delivery(root, timeout=120):
             media.append({'path':frame['path'],'facts':facts})
         sequence=manifest.get('imageSequence')
         if sequence:
-            descriptor=contained(root,sequence['path']); data=read(descriptor)
-            # 分段和普通序列各自保留帧摘要；递归核验本包中的全部 PNG。
-            frames=sorted(descriptor.parent.rglob('*.png'))
-            if len(frames)!=data.get('frameCount'):
-                raise ValueError('sequence_frame_set_mismatch')
-            dimensions=data.get('binding',{}).get('composition',data)
-            for path in frames:
-                facts=load('image_sequence').rgba_facts(path)
-                if (facts['width'],facts['height'])!=(dimensions['width'],dimensions['height']):
-                    raise ValueError('sequence_dimensions_mismatch')
-            media.append({'path':sequence['path'],'verifiedFrames':len(frames)})
+            media.append(inspect_sequence_contract(root,sequence))
         video=manifest.get('video')
         if video:
             path=contained(root,video['path']); ffmpeg=shutil.which('ffmpeg'); ffprobe=shutil.which('ffprobe')
@@ -104,8 +131,10 @@ def inspect_delivery(root, timeout=120):
     return result
 
 
-def judge_request(task, root, report, criteria, temporal):
+def judge_request(task, root, report, criteria, temporal, *, version=2):
     """给宿主输出结构化评估请求，不在库中调用外部付费模型。"""
+    if version==2:return load('judge_contract').request(task,root,report,criteria,temporal)
+    if version!=1:raise ValueError('judge_schema_invalid')
     current=binding(root)
     if current!=report.get('binding'):
         raise ValueError('artifact_changed')
@@ -124,6 +153,9 @@ def accept_judge(root, report, request, response):
     current=binding(root)
     if current!=request['binding'] or current!=report.get('binding'):
         raise ValueError('artifact_changed')
+    if request.get('schema')=='effectcraft-judge-request/v2':
+        return load('judge_contract').accept(root,report,request,response)
+    if request.get('schema')!='effectcraft-judge-request/v1':raise ValueError('judge_schema_invalid')
     if response.get('requestId')!=request['requestId'] or response.get('binding')!=current:
         raise ValueError('judge_binding_mismatch')
     if (type(response.get('score')) not in (float,int) or not math.isfinite(response['score'])

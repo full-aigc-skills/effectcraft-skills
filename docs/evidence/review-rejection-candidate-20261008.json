@@ -1,0 +1,71 @@
+{
+  "schema": "effectcraft-review-rejection-candidate/v1",
+  "result": "PASS",
+  "sourceFiles": {
+    "skills/effectcraft-use/scripts/managed.py": "8bc7d74c5d282727fb5dbf235b83b9017b0d4d022808669c0877deea1535f0b0",
+    "skills/effectcraft-use/scripts/review_ledger.py": "61506acff6c0a22ae5377657ba31ac528e6b9ec67940266638ba28a304fd5a87",
+    "skills/effectcraft-use/scripts/judge_contract.py": "2e781b7474607bc75107e3144aa557f49ea81756337af39c6027ef0a6282e735",
+    "tests/test_review_rejection_cli.py": "53a5f18cd6dd9391c93c66073913f494222b5e0364ac17d579b93d933ddeb738"
+  },
+  "red": {
+    "tests": 6,
+    "failures": 5,
+    "logSha256": "2c9115ac4411883cfe494124e9f70c1cb455b8b9e2137d246b5a124005fe66c5"
+  },
+  "green": {
+    "regressionTotal": 298,
+    "passed": 260,
+    "skipped": 38,
+    "logSha256": "fb4a99ab5e8d2f2eeca582ba0cffd8a48d45f8e99e719b448a97ad4bc32b3377"
+  },
+  "native": {
+    "schema": "effectcraft-review-rejection-native/v1",
+    "result": "PASS",
+    "platform": "darwin-arm64",
+    "scope": "Current public launch/review against retained real native delivery; creation and visual acceptance belong to prior judge-v2 candidate, not repeated here",
+    "entryFiles": {
+      "skills/effectcraft-use/scripts/launch.sh": "c050a7e218e3ccdb9c264284091fac509ece094602646e5ec24e8fac2bdebfa8",
+      "skills/effectcraft-use/scripts/managed.py": "8bc7d74c5d282727fb5dbf235b83b9017b0d4d022808669c0877deea1535f0b0",
+      "skills/effectcraft-use/scripts/review_ledger.py": "61506acff6c0a22ae5377657ba31ac528e6b9ec67940266638ba28a304fd5a87",
+      "skills/effectcraft-use/scripts/judge_contract.py": "2e781b7474607bc75107e3144aa557f49ea81756337af39c6027ef0a6282e735"
+    },
+    "rejection": {
+      "result": "FAIL",
+      "error": "artifact_changed: project.ecproj",
+      "schema": "effectcraft-review-rejection/v1",
+      "taskId": "a41a38175d274d84b0ff2523969debf6",
+      "report": {
+        "schema": "effectcraft-quality/v1",
+        "engineering": {
+          "status": "NOT_RUN"
+        },
+        "technical": {
+          "status": "FAIL",
+          "media": [],
+          "reason": "artifact_changed: project.ecproj"
+        },
+        "creative": {
+          "status": "NOT_RUN",
+          "reason": "artifact_changed: project.ecproj"
+        },
+        "accepted": false,
+        "readyForAcceptance": false
+      },
+      "requiredAction": "inspect_current_delivery_and_request"
+    },
+    "historicalReportSha256": "4aeb3d4623990a896aaf4ba601ff6d85061ea48dfdd34c9caf455f685dfa2afc",
+    "originalProjectSha256": "9d0281cfd2e5d0298699bc599dd43976c6d395482c5dc3da733249f12029d399",
+    "stateBytesPreserved": true,
+    "historyBytesPreserved": true,
+    "changedProjectPreservedUntilExplicitTestRestoration": true,
+    "healthyOriginalRestoredWithoutReplay": true
+  },
+  "relatedEvidence": [
+    "docs/evidence/judge-v2-candidate-20261008.json"
+  ],
+  "limitations": [
+    "native creation and visual review retain prior candidate hashes; current public entry independently reverified",
+    "sampled visual review is not full-frame creative acceptance",
+    "fixed release installation, other native platforms and complete V1 remain open"
+  ]
+}

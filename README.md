@@ -1,13 +1,15 @@
 # EffectCraft Skills
 
+Development source dev.38 adds Judge v2, immutable review ledgers, sequence technical verification and explicit NOT_RUN diagnostics for rejected reviews. Regression: 260 passed / 38 conditional skips out of 298. Native visual revision and current public rejection verification have separate evidence. Fixed-plugin installation, other-platform creation and complete V1 remain open. [Evidence](docs/evidence/review-rejection-candidate-20261008.json).
+
 Segmented first-use guidance now matches native acceptance of fixed Film40 / Effect38 / Art117, including HD full frames, revision, recovery and relocation. Installation qualification of this new guide snapshot is recorded separately. [Evidence](docs/evidence/craft-fixed-segmented-hd-refresh-20261008.json).
 
-> **Development release dev.37 (2026-10-08):** pinned isolated Python 3.13.16 and EffectCraft 0.4.0; managed execution, owned segment recovery and shared retry accounting. Local macOS evidence does not establish all platforms or hosts. See [implementation and open gates](docs/managed-optimization-20261008.md) and the [platform matrix](docs/current-capabilities.json).
+> **Development release dev.38 (2026-10-08):** pinned isolated Python 3.13.16 and EffectCraft 0.4.0; managed execution, owned segment recovery and shared retry accounting. Local macOS evidence does not establish all platforms or hosts. See [implementation and open gates](docs/managed-optimization-20261008.md) and the [platform matrix](docs/current-capabilities.json).
 
 
 Turn text, graphics and footage into an editable `.ecproj`, dependencies and rendered media.
 
-Current source: `0.1.0-dev.37`; consuming plugin: `0.1.0-dev.39`; 15 independent skills.
+Current source: `0.1.0-dev.38`; consuming plugin: `0.1.0-dev.40`; 15 independent skills.
 
 Verified first-use platform: macOS arm64 and Python 3.11+. Pinned runtimes install into the user data directory; skill files stay in their host-loaded directory. These are development releases; complete V1 acceptance and generic Skills CLI installation remain open.
 

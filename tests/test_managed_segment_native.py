@@ -123,6 +123,26 @@ class ManagedSegmentNativeTests(unittest.TestCase):
                     self.assertEqual(frame['rgbaSha256'],frames[segment['firstFrame']+frame['index']]['rgbaSha256'])
             quality=managed.load('quality_review').inspect_delivery(output)
             self.assertEqual(quality['technical']['status'],'PASS',quality)
+            # 真实原生序列也必须通过完整描述校验，刷新包摘要不能掩盖错误时间合同。
+            inspector=managed.load('quality_review')
+            shutil.copyfile(output/'native.json',baseline/'native.json')
+            shutil.copyfile(output/'project.ecproj',baseline/'project.ecproj')
+            ordinary={'path':'rgba-sequence/sequence.json','sha256':tasks.file_sha(baseline/'rgba-sequence/sequence.json')}
+            self.assertEqual(inspector.inspect_sequence_contract(baseline,ordinary)['verifiedFrames'],12)
+            manifest_path=output/'manifest.json';manifest_bytes=manifest_path.read_bytes()
+            descriptor=output/'rgba-segments/segments.json';descriptor_bytes=descriptor.read_bytes()
+            try:
+                changed=json.loads(descriptor_bytes);changed['segments'][1]['firstFrame']+=1
+                tasks.atomic_json(descriptor,changed)
+                changed_manifest=json.loads(manifest_bytes)
+                changed_manifest['files']['rgba-segments/segments.json']=tasks.file_sha(descriptor)
+                changed_manifest['imageSequence']['sha256']=tasks.file_sha(descriptor)
+                tasks.atomic_json(manifest_path,changed_manifest)
+                rejected=inspector.inspect_delivery(output)
+                self.assertEqual(rejected['technical']['status'],'FAIL',rejected)
+                self.assertIn('sequence_segment_receipt_mismatch',rejected['technical']['reason'])
+            finally:
+                descriptor.write_bytes(descriptor_bytes);manifest_path.write_bytes(manifest_bytes)
             self.assertEqual(before,hashes(skill))
             repeat=subprocess.run(command,capture_output=True,text=True,timeout=30)
             self.assertEqual(repeat.returncode,0,repeat.stdout+repeat.stderr)
@@ -138,6 +158,7 @@ class ManagedSegmentNativeTests(unittest.TestCase):
                     'completedSegmentByteAndInodeAndMtimePreserved':True,'existingEditingReceiptsPreserved':True,
                     'operationCountBefore':len(interrupted['steps']),'operationCountAfter':len(state['steps']),
                     'framesIndependentlyCompared':len(frames),'deadlinePreserved':True,'technical':quality['technical'],
+                    'actualOrdinarySequenceContractVerified':True,'actualRefreshedPackageWithInvalidSegmentRangeRejected':True,
                     'interruptKind':os.environ.get('CRAFT_SEGMENT_INTERRUPT_KIND','exception'),'repeatResumeIsNoop':True,
                     'resources':state['resources'],
                     'orphanArchivedOutsideDelivery':bool(state.get('orphanArchives')),
