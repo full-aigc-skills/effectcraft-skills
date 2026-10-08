@@ -1,0 +1,43 @@
+{
+  "schema": "effectcraft-managed-ancestor-stop-component/v1",
+  "result": "PASS",
+  "platform": "darwin-arm64",
+  "candidateOnly": true,
+  "scope": "ancestor cancellation/deadline checks before scheduling and during owned worker calls; no complete resource-metering claim",
+  "redObserved": {
+    "taskStore": 3,
+    "supervisor": 1,
+    "reasons": [
+      "grandchild ignored durable ancestor cancel",
+      "grandchild ignored shortened ancestor deadline",
+      "cyclic ancestry was accepted",
+      "inflight owned worker continued despite durable parent cancellation"
+    ]
+  },
+  "validation": {
+    "taskStoreTests": 17,
+    "supervisorTestsWithNativeEnabled": 6,
+    "segmentedNativeResumeTests": 1,
+    "defaultTests": 216,
+    "defaultPassed": 180,
+    "defaultSkipped": 36,
+    "skillCopies": 15
+  },
+  "nativeEvidence": "managed-ancestor-native-20261008.json",
+  "sourceFiles": {
+    "skills/effectcraft-use/scripts/task_store.py": "5c9d0a9c0bc72581db0f060c67c13a825fd453e7813bd6e1271544774086dbc7",
+    "skills/effectcraft-use/scripts/managed.py": "f092220ac8186e6580f3721d4ca1eba8e488def6e83e65f586f54f8cb64f4304",
+    "tests/test_managed_tasks.py": "bc52c28a16e77250b0f100d76c580f0e086ef25a397d155ff1fa2e8cd83989a9",
+    "tests/test_managed_supervisor.py": "e0006ebce7955e0a142cae3cfac3d947c9fc3775a0984ab6df0d0b1d182b8456"
+  },
+  "excluded": [
+    "complete frame/byte/CPU/memory metering",
+    "review/revise ancestry corruption matrix",
+    "guardian crash takeover",
+    "Windows/Linux native process trees",
+    "GUI external edits",
+    "host dispatch of current candidate",
+    "fixed release",
+    "complete V1"
+  ]
+}

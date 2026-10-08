@@ -1,0 +1,50 @@
+{
+  "schema": "effectcraft-resource-location-component/v1",
+  "result": "PASS",
+  "candidateOnly": true,
+  "platform": "darwin-arm64",
+  "scope": "durable owned workflow/segment locations; live sampling and strict post-stop reconciliation; native preview response loss without editing replay",
+  "evidence": [
+    "managed-preview-crash-resource-20261008.json",
+    "managed-meter-native-20261008.json",
+    "managed-meter-segment-20261008.json"
+  ],
+  "defaultRegression": {
+    "total": 235,
+    "passed": 197,
+    "skipped": 38
+  },
+  "targetTests": {
+    "locationUnit": 8,
+    "nativePreviewCrash": 1,
+    "nativeSupervisor": 6,
+    "nativeSegmentRecovery": 1
+  },
+  "redObserved": [
+    "owned-location meter was absent",
+    "live rename-race recheck was absent",
+    "corrupt observation was accepted"
+  ],
+  "harnessCorrection": "first crash-driver attempt used communicate, which closed guardian stdin before preview started; corrected to keep control pipe open. This harness error is not counted as a product red test.",
+  "sourceFiles": {
+    "skills/effectcraft-use/scripts/resource_meter.py": "7fd365a6c2b47245da2422481854d3874708fe8202d2163588e658864b190e99",
+    "skills/effectcraft-use/scripts/resource_budget.py": "d6a241d6a6640b1b1d280b3d961e39cb0b979a0914519503e751ed91858a3dbf",
+    "skills/effectcraft-use/scripts/task_store.py": "b9fe04cc0a51ce9c382d9155a5807f375ee32c9d63c272fedede56b17957db8a",
+    "skills/effectcraft-use/scripts/managed.py": "eb720f75bd46dfbda974ea773c7a24f126292d58d4a196dfa5985523b5948700",
+    "skills/effectcraft-use/scripts/workflow.py": "76784a8b2336b33aeeb5dada3110a736e2510ff1d9bc564ed5dab00b2bbc60c5",
+    "skills/effectcraft-use/scripts/segmented_sequence.py": "f3ddf0c89fce3e9a033461b9b0698caf3a78c32d29847064e35d55deb8cad166",
+    "tests/test_resource_locations.py": "eae78b8075d2026fe9904d75356109cc064d4b2a9a641398afb0ff6af2a307dd",
+    "tests/test_resource_crash_native.py": "49675ef6da3ab3ea3b9b1b313350dac161c4938e8ae7dc1202fb83dcfdce5a14"
+  },
+  "excluded": [
+    "native SIGKILL during partial-frame write",
+    "orphan segment archiving and automatic recovery",
+    "guardian crash takeover",
+    "commands/desktop accounting",
+    "CPU/memory",
+    "other platforms",
+    "current host model dispatch",
+    "immutable release",
+    "complete V1"
+  ]
+}

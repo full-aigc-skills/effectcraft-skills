@@ -1,0 +1,696 @@
+{
+  "schema": "effectcraft-candidate-every-skill-first-use/v1",
+  "status": "PASS",
+  "sourceHead": "341360f4a837f0ab21a66c3903d3d7e54d5e54c9",
+  "workingTreeCandidate": true,
+  "platform": "darwin-arm64",
+  "count": 15,
+  "independentEmptyPythonAndNativeHomes": true,
+  "systemPathOnly": true,
+  "scope": "14 CLI cold starts plus one managed creation cold start; no final-host or fixed-release claim",
+  "records": [
+    {
+      "skill": "effectcraft-cli",
+      "status": "PASS",
+      "seconds": 60.385,
+      "commands": 655,
+      "processes": [
+        {
+          "index": 0,
+          "returncode": 0
+        },
+        {
+          "index": 1,
+          "returncode": 0
+        },
+        {
+          "index": 2,
+          "returncode": 0
+        }
+      ],
+      "skillFilesPreserved": true,
+      "skillIdentity": "25f6f759e83081ff7968e00dcc7d8eee1fb297e412a2ecd8e5151522d6ad7a47",
+      "nativeInstallation": {
+        "url": "https://github.com/storytold/effectcraft/releases/download/v0.4.0/effectcraft-cli-0.4.0-macos-universal.zip",
+        "archiveSha256": "950abbb83800518281115ef05cebc50d63a28dbeec204951c77f16ec2109219f",
+        "binarySha256": "c1717eb87e5b57b3ed88c6a78047268a5afa566beb36104fdcc05dc8634a01c1",
+        "binaryPath": "effectcraft-cli",
+        "payloadRoot": "effectcraft-cli-0.4.0-macos-universal",
+        "archiveFormat": "zip",
+        "evidenceScope": "archive integrity only; native platform acceptance pending",
+        "integrityFile": "runtime-integrity/darwin-arm64.json",
+        "integritySha256": "c7eb5424dbb14940624e3ae6a494078a41dfa0c6738b7779d5d9ceb40f7e2220",
+        "minimumSystem": {
+          "macOS": "11.0",
+          "evidence": "pinned app Info.plist LSMinimumSystemVersion; CLI architecture validated at execution"
+        },
+        "name": "effectcraft",
+        "version": "0.4.0",
+        "platform": "darwin-arm64",
+        "versionOutput": "effectcraft-cli 0.4.0",
+        "source": "official-github-release"
+      },
+      "pythonInstallation": {
+        "version": "3.13.16",
+        "platform": "darwin-arm64",
+        "archiveSha256": "d8975d7df4f08f7b1c7aafcdfacbddcec3d366415f2c1a72b2466b6850815933"
+      }
+    },
+    {
+      "skill": "effectcraft-cli-animation",
+      "status": "PASS",
+      "seconds": 57.878,
+      "commands": 655,
+      "processes": [
+        {
+          "index": 0,
+          "returncode": 0
+        },
+        {
+          "index": 1,
+          "returncode": 0
+        },
+        {
+          "index": 2,
+          "returncode": 0
+        }
+      ],
+      "skillFilesPreserved": true,
+      "skillIdentity": "d32eadd291761cdb17d5e5d559333b9370ed61ff1f95713368e08866ecc31593",
+      "nativeInstallation": {
+        "url": "https://github.com/storytold/effectcraft/releases/download/v0.4.0/effectcraft-cli-0.4.0-macos-universal.zip",
+        "archiveSha256": "950abbb83800518281115ef05cebc50d63a28dbeec204951c77f16ec2109219f",
+        "binarySha256": "c1717eb87e5b57b3ed88c6a78047268a5afa566beb36104fdcc05dc8634a01c1",
+        "binaryPath": "effectcraft-cli",
+        "payloadRoot": "effectcraft-cli-0.4.0-macos-universal",
+        "archiveFormat": "zip",
+        "evidenceScope": "archive integrity only; native platform acceptance pending",
+        "integrityFile": "runtime-integrity/darwin-arm64.json",
+        "integritySha256": "c7eb5424dbb14940624e3ae6a494078a41dfa0c6738b7779d5d9ceb40f7e2220",
+        "minimumSystem": {
+          "macOS": "11.0",
+          "evidence": "pinned app Info.plist LSMinimumSystemVersion; CLI architecture validated at execution"
+        },
+        "name": "effectcraft",
+        "version": "0.4.0",
+        "platform": "darwin-arm64",
+        "versionOutput": "effectcraft-cli 0.4.0",
+        "source": "official-github-release"
+      },
+      "pythonInstallation": {
+        "version": "3.13.16",
+        "platform": "darwin-arm64",
+        "archiveSha256": "d8975d7df4f08f7b1c7aafcdfacbddcec3d366415f2c1a72b2466b6850815933"
+      }
+    },
+    {
+      "skill": "effectcraft-cli-camera",
+      "status": "PASS",
+      "seconds": 52.699,
+      "commands": 655,
+      "processes": [
+        {
+          "index": 0,
+          "returncode": 0
+        },
+        {
+          "index": 1,
+          "returncode": 0
+        },
+        {
+          "index": 2,
+          "returncode": 0
+        }
+      ],
+      "skillFilesPreserved": true,
+      "skillIdentity": "8f727a1fa20778f77f20012544fcd0b2becf98a0724aac8edf93534cb1fc04f4",
+      "nativeInstallation": {
+        "url": "https://github.com/storytold/effectcraft/releases/download/v0.4.0/effectcraft-cli-0.4.0-macos-universal.zip",
+        "archiveSha256": "950abbb83800518281115ef05cebc50d63a28dbeec204951c77f16ec2109219f",
+        "binarySha256": "c1717eb87e5b57b3ed88c6a78047268a5afa566beb36104fdcc05dc8634a01c1",
+        "binaryPath": "effectcraft-cli",
+        "payloadRoot": "effectcraft-cli-0.4.0-macos-universal",
+        "archiveFormat": "zip",
+        "evidenceScope": "archive integrity only; native platform acceptance pending",
+        "integrityFile": "runtime-integrity/darwin-arm64.json",
+        "integritySha256": "c7eb5424dbb14940624e3ae6a494078a41dfa0c6738b7779d5d9ceb40f7e2220",
+        "minimumSystem": {
+          "macOS": "11.0",
+          "evidence": "pinned app Info.plist LSMinimumSystemVersion; CLI architecture validated at execution"
+        },
+        "name": "effectcraft",
+        "version": "0.4.0",
+        "platform": "darwin-arm64",
+        "versionOutput": "effectcraft-cli 0.4.0",
+        "source": "official-github-release"
+      },
+      "pythonInstallation": {
+        "version": "3.13.16",
+        "platform": "darwin-arm64",
+        "archiveSha256": "d8975d7df4f08f7b1c7aafcdfacbddcec3d366415f2c1a72b2466b6850815933"
+      }
+    },
+    {
+      "skill": "effectcraft-cli-composition",
+      "status": "PASS",
+      "seconds": 55.149,
+      "commands": 655,
+      "processes": [
+        {
+          "index": 0,
+          "returncode": 0
+        },
+        {
+          "index": 1,
+          "returncode": 0
+        },
+        {
+          "index": 2,
+          "returncode": 0
+        }
+      ],
+      "skillFilesPreserved": true,
+      "skillIdentity": "a6af4024cfc6fe7f86b2b6aaf274debdcb4ed9a302baeb6f3e09ff291437ca45",
+      "nativeInstallation": {
+        "url": "https://github.com/storytold/effectcraft/releases/download/v0.4.0/effectcraft-cli-0.4.0-macos-universal.zip",
+        "archiveSha256": "950abbb83800518281115ef05cebc50d63a28dbeec204951c77f16ec2109219f",
+        "binarySha256": "c1717eb87e5b57b3ed88c6a78047268a5afa566beb36104fdcc05dc8634a01c1",
+        "binaryPath": "effectcraft-cli",
+        "payloadRoot": "effectcraft-cli-0.4.0-macos-universal",
+        "archiveFormat": "zip",
+        "evidenceScope": "archive integrity only; native platform acceptance pending",
+        "integrityFile": "runtime-integrity/darwin-arm64.json",
+        "integritySha256": "c7eb5424dbb14940624e3ae6a494078a41dfa0c6738b7779d5d9ceb40f7e2220",
+        "minimumSystem": {
+          "macOS": "11.0",
+          "evidence": "pinned app Info.plist LSMinimumSystemVersion; CLI architecture validated at execution"
+        },
+        "name": "effectcraft",
+        "version": "0.4.0",
+        "platform": "darwin-arm64",
+        "versionOutput": "effectcraft-cli 0.4.0",
+        "source": "official-github-release"
+      },
+      "pythonInstallation": {
+        "version": "3.13.16",
+        "platform": "darwin-arm64",
+        "archiveSha256": "d8975d7df4f08f7b1c7aafcdfacbddcec3d366415f2c1a72b2466b6850815933"
+      }
+    },
+    {
+      "skill": "effectcraft-cli-effects",
+      "status": "PASS",
+      "seconds": 55.657,
+      "commands": 655,
+      "processes": [
+        {
+          "index": 0,
+          "returncode": 0
+        },
+        {
+          "index": 1,
+          "returncode": 0
+        },
+        {
+          "index": 2,
+          "returncode": 0
+        }
+      ],
+      "skillFilesPreserved": true,
+      "skillIdentity": "0930a267deb1d14e1078d0134b3d792109a29b026b81a1883e986e0777d8ee87",
+      "nativeInstallation": {
+        "url": "https://github.com/storytold/effectcraft/releases/download/v0.4.0/effectcraft-cli-0.4.0-macos-universal.zip",
+        "archiveSha256": "950abbb83800518281115ef05cebc50d63a28dbeec204951c77f16ec2109219f",
+        "binarySha256": "c1717eb87e5b57b3ed88c6a78047268a5afa566beb36104fdcc05dc8634a01c1",
+        "binaryPath": "effectcraft-cli",
+        "payloadRoot": "effectcraft-cli-0.4.0-macos-universal",
+        "archiveFormat": "zip",
+        "evidenceScope": "archive integrity only; native platform acceptance pending",
+        "integrityFile": "runtime-integrity/darwin-arm64.json",
+        "integritySha256": "c7eb5424dbb14940624e3ae6a494078a41dfa0c6738b7779d5d9ceb40f7e2220",
+        "minimumSystem": {
+          "macOS": "11.0",
+          "evidence": "pinned app Info.plist LSMinimumSystemVersion; CLI architecture validated at execution"
+        },
+        "name": "effectcraft",
+        "version": "0.4.0",
+        "platform": "darwin-arm64",
+        "versionOutput": "effectcraft-cli 0.4.0",
+        "source": "official-github-release"
+      },
+      "pythonInstallation": {
+        "version": "3.13.16",
+        "platform": "darwin-arm64",
+        "archiveSha256": "d8975d7df4f08f7b1c7aafcdfacbddcec3d366415f2c1a72b2466b6850815933"
+      }
+    },
+    {
+      "skill": "effectcraft-cli-export",
+      "status": "PASS",
+      "seconds": 52.845,
+      "commands": 655,
+      "processes": [
+        {
+          "index": 0,
+          "returncode": 0
+        },
+        {
+          "index": 1,
+          "returncode": 0
+        },
+        {
+          "index": 2,
+          "returncode": 0
+        }
+      ],
+      "skillFilesPreserved": true,
+      "skillIdentity": "8e10be8a59d826ba4e2e477dbfeedbf2885331327aff67c0b1c415e7fd9e9daa",
+      "nativeInstallation": {
+        "url": "https://github.com/storytold/effectcraft/releases/download/v0.4.0/effectcraft-cli-0.4.0-macos-universal.zip",
+        "archiveSha256": "950abbb83800518281115ef05cebc50d63a28dbeec204951c77f16ec2109219f",
+        "binarySha256": "c1717eb87e5b57b3ed88c6a78047268a5afa566beb36104fdcc05dc8634a01c1",
+        "binaryPath": "effectcraft-cli",
+        "payloadRoot": "effectcraft-cli-0.4.0-macos-universal",
+        "archiveFormat": "zip",
+        "evidenceScope": "archive integrity only; native platform acceptance pending",
+        "integrityFile": "runtime-integrity/darwin-arm64.json",
+        "integritySha256": "c7eb5424dbb14940624e3ae6a494078a41dfa0c6738b7779d5d9ceb40f7e2220",
+        "minimumSystem": {
+          "macOS": "11.0",
+          "evidence": "pinned app Info.plist LSMinimumSystemVersion; CLI architecture validated at execution"
+        },
+        "name": "effectcraft",
+        "version": "0.4.0",
+        "platform": "darwin-arm64",
+        "versionOutput": "effectcraft-cli 0.4.0",
+        "source": "official-github-release"
+      },
+      "pythonInstallation": {
+        "version": "3.13.16",
+        "platform": "darwin-arm64",
+        "archiveSha256": "d8975d7df4f08f7b1c7aafcdfacbddcec3d366415f2c1a72b2466b6850815933"
+      }
+    },
+    {
+      "skill": "effectcraft-cli-expressions",
+      "status": "PASS",
+      "seconds": 52.735,
+      "commands": 655,
+      "processes": [
+        {
+          "index": 0,
+          "returncode": 0
+        },
+        {
+          "index": 1,
+          "returncode": 0
+        },
+        {
+          "index": 2,
+          "returncode": 0
+        }
+      ],
+      "skillFilesPreserved": true,
+      "skillIdentity": "e9f78977db31b315baee470a4eaef00c27ff981d76fadb35bb0e75f42659ea1a",
+      "nativeInstallation": {
+        "url": "https://github.com/storytold/effectcraft/releases/download/v0.4.0/effectcraft-cli-0.4.0-macos-universal.zip",
+        "archiveSha256": "950abbb83800518281115ef05cebc50d63a28dbeec204951c77f16ec2109219f",
+        "binarySha256": "c1717eb87e5b57b3ed88c6a78047268a5afa566beb36104fdcc05dc8634a01c1",
+        "binaryPath": "effectcraft-cli",
+        "payloadRoot": "effectcraft-cli-0.4.0-macos-universal",
+        "archiveFormat": "zip",
+        "evidenceScope": "archive integrity only; native platform acceptance pending",
+        "integrityFile": "runtime-integrity/darwin-arm64.json",
+        "integritySha256": "c7eb5424dbb14940624e3ae6a494078a41dfa0c6738b7779d5d9ceb40f7e2220",
+        "minimumSystem": {
+          "macOS": "11.0",
+          "evidence": "pinned app Info.plist LSMinimumSystemVersion; CLI architecture validated at execution"
+        },
+        "name": "effectcraft",
+        "version": "0.4.0",
+        "platform": "darwin-arm64",
+        "versionOutput": "effectcraft-cli 0.4.0",
+        "source": "official-github-release"
+      },
+      "pythonInstallation": {
+        "version": "3.13.16",
+        "platform": "darwin-arm64",
+        "archiveSha256": "d8975d7df4f08f7b1c7aafcdfacbddcec3d366415f2c1a72b2466b6850815933"
+      }
+    },
+    {
+      "skill": "effectcraft-cli-footage",
+      "status": "PASS",
+      "seconds": 59.716,
+      "commands": 655,
+      "processes": [
+        {
+          "index": 0,
+          "returncode": 0
+        },
+        {
+          "index": 1,
+          "returncode": 0
+        },
+        {
+          "index": 2,
+          "returncode": 0
+        }
+      ],
+      "skillFilesPreserved": true,
+      "skillIdentity": "f3e26eb99be7217bb6d216dc6ebd49100ff3e18b7c523ab04b174e1951f28c98",
+      "nativeInstallation": {
+        "url": "https://github.com/storytold/effectcraft/releases/download/v0.4.0/effectcraft-cli-0.4.0-macos-universal.zip",
+        "archiveSha256": "950abbb83800518281115ef05cebc50d63a28dbeec204951c77f16ec2109219f",
+        "binarySha256": "c1717eb87e5b57b3ed88c6a78047268a5afa566beb36104fdcc05dc8634a01c1",
+        "binaryPath": "effectcraft-cli",
+        "payloadRoot": "effectcraft-cli-0.4.0-macos-universal",
+        "archiveFormat": "zip",
+        "evidenceScope": "archive integrity only; native platform acceptance pending",
+        "integrityFile": "runtime-integrity/darwin-arm64.json",
+        "integritySha256": "c7eb5424dbb14940624e3ae6a494078a41dfa0c6738b7779d5d9ceb40f7e2220",
+        "minimumSystem": {
+          "macOS": "11.0",
+          "evidence": "pinned app Info.plist LSMinimumSystemVersion; CLI architecture validated at execution"
+        },
+        "name": "effectcraft",
+        "version": "0.4.0",
+        "platform": "darwin-arm64",
+        "versionOutput": "effectcraft-cli 0.4.0",
+        "source": "official-github-release"
+      },
+      "pythonInstallation": {
+        "version": "3.13.16",
+        "platform": "darwin-arm64",
+        "archiveSha256": "d8975d7df4f08f7b1c7aafcdfacbddcec3d366415f2c1a72b2466b6850815933"
+      }
+    },
+    {
+      "skill": "effectcraft-cli-layers",
+      "status": "PASS",
+      "seconds": 57.449,
+      "commands": 655,
+      "processes": [
+        {
+          "index": 0,
+          "returncode": 0
+        },
+        {
+          "index": 1,
+          "returncode": 0
+        },
+        {
+          "index": 2,
+          "returncode": 0
+        }
+      ],
+      "skillFilesPreserved": true,
+      "skillIdentity": "60a7ad57df41ea295ca105c4f6242fa3e8aa112727347d9ae1efca33ff27e515",
+      "nativeInstallation": {
+        "url": "https://github.com/storytold/effectcraft/releases/download/v0.4.0/effectcraft-cli-0.4.0-macos-universal.zip",
+        "archiveSha256": "950abbb83800518281115ef05cebc50d63a28dbeec204951c77f16ec2109219f",
+        "binarySha256": "c1717eb87e5b57b3ed88c6a78047268a5afa566beb36104fdcc05dc8634a01c1",
+        "binaryPath": "effectcraft-cli",
+        "payloadRoot": "effectcraft-cli-0.4.0-macos-universal",
+        "archiveFormat": "zip",
+        "evidenceScope": "archive integrity only; native platform acceptance pending",
+        "integrityFile": "runtime-integrity/darwin-arm64.json",
+        "integritySha256": "c7eb5424dbb14940624e3ae6a494078a41dfa0c6738b7779d5d9ceb40f7e2220",
+        "minimumSystem": {
+          "macOS": "11.0",
+          "evidence": "pinned app Info.plist LSMinimumSystemVersion; CLI architecture validated at execution"
+        },
+        "name": "effectcraft",
+        "version": "0.4.0",
+        "platform": "darwin-arm64",
+        "versionOutput": "effectcraft-cli 0.4.0",
+        "source": "official-github-release"
+      },
+      "pythonInstallation": {
+        "version": "3.13.16",
+        "platform": "darwin-arm64",
+        "archiveSha256": "d8975d7df4f08f7b1c7aafcdfacbddcec3d366415f2c1a72b2466b6850815933"
+      }
+    },
+    {
+      "skill": "effectcraft-cli-masks",
+      "status": "PASS",
+      "seconds": 57.939,
+      "commands": 655,
+      "processes": [
+        {
+          "index": 0,
+          "returncode": 0
+        },
+        {
+          "index": 1,
+          "returncode": 0
+        },
+        {
+          "index": 2,
+          "returncode": 0
+        }
+      ],
+      "skillFilesPreserved": true,
+      "skillIdentity": "a2e027eec70cd0dfdc2ee59e1de6bbda33633af2f0aed960a62026d5d60242f0",
+      "nativeInstallation": {
+        "url": "https://github.com/storytold/effectcraft/releases/download/v0.4.0/effectcraft-cli-0.4.0-macos-universal.zip",
+        "archiveSha256": "950abbb83800518281115ef05cebc50d63a28dbeec204951c77f16ec2109219f",
+        "binarySha256": "c1717eb87e5b57b3ed88c6a78047268a5afa566beb36104fdcc05dc8634a01c1",
+        "binaryPath": "effectcraft-cli",
+        "payloadRoot": "effectcraft-cli-0.4.0-macos-universal",
+        "archiveFormat": "zip",
+        "evidenceScope": "archive integrity only; native platform acceptance pending",
+        "integrityFile": "runtime-integrity/darwin-arm64.json",
+        "integritySha256": "c7eb5424dbb14940624e3ae6a494078a41dfa0c6738b7779d5d9ceb40f7e2220",
+        "minimumSystem": {
+          "macOS": "11.0",
+          "evidence": "pinned app Info.plist LSMinimumSystemVersion; CLI architecture validated at execution"
+        },
+        "name": "effectcraft",
+        "version": "0.4.0",
+        "platform": "darwin-arm64",
+        "versionOutput": "effectcraft-cli 0.4.0",
+        "source": "official-github-release"
+      },
+      "pythonInstallation": {
+        "version": "3.13.16",
+        "platform": "darwin-arm64",
+        "archiveSha256": "d8975d7df4f08f7b1c7aafcdfacbddcec3d366415f2c1a72b2466b6850815933"
+      }
+    },
+    {
+      "skill": "effectcraft-cli-project",
+      "status": "PASS",
+      "skillIdentity": "c37b08fcc8bf8444626ca2c4515fdff625c62f29bfdbd4075a3723f03c3463f5",
+      "scope": "separate empty-runtime managed creation, save/reopen, preview and MP4 export",
+      "task": {
+        "state": "review_ready",
+        "workerExitCode": 0,
+        "stepsSucceeded": 20,
+        "durableStateEqualsStdout": true
+      },
+      "componentEvidence": "managed-supervisor-component-20261008.json"
+    },
+    {
+      "skill": "effectcraft-cli-puppet",
+      "status": "PASS",
+      "seconds": 53.7,
+      "commands": 655,
+      "processes": [
+        {
+          "index": 0,
+          "returncode": 0
+        },
+        {
+          "index": 1,
+          "returncode": 0
+        },
+        {
+          "index": 2,
+          "returncode": 0
+        }
+      ],
+      "skillFilesPreserved": true,
+      "skillIdentity": "3db5bc1b4078b18df4b07b95612318a7c5a75d4f525a994d01659f8c6997ee48",
+      "nativeInstallation": {
+        "url": "https://github.com/storytold/effectcraft/releases/download/v0.4.0/effectcraft-cli-0.4.0-macos-universal.zip",
+        "archiveSha256": "950abbb83800518281115ef05cebc50d63a28dbeec204951c77f16ec2109219f",
+        "binarySha256": "c1717eb87e5b57b3ed88c6a78047268a5afa566beb36104fdcc05dc8634a01c1",
+        "binaryPath": "effectcraft-cli",
+        "payloadRoot": "effectcraft-cli-0.4.0-macos-universal",
+        "archiveFormat": "zip",
+        "evidenceScope": "archive integrity only; native platform acceptance pending",
+        "integrityFile": "runtime-integrity/darwin-arm64.json",
+        "integritySha256": "c7eb5424dbb14940624e3ae6a494078a41dfa0c6738b7779d5d9ceb40f7e2220",
+        "minimumSystem": {
+          "macOS": "11.0",
+          "evidence": "pinned app Info.plist LSMinimumSystemVersion; CLI architecture validated at execution"
+        },
+        "name": "effectcraft",
+        "version": "0.4.0",
+        "platform": "darwin-arm64",
+        "versionOutput": "effectcraft-cli 0.4.0",
+        "source": "official-github-release"
+      },
+      "pythonInstallation": {
+        "version": "3.13.16",
+        "platform": "darwin-arm64",
+        "archiveSha256": "d8975d7df4f08f7b1c7aafcdfacbddcec3d366415f2c1a72b2466b6850815933"
+      }
+    },
+    {
+      "skill": "effectcraft-cli-setup",
+      "status": "PASS",
+      "seconds": 49.902,
+      "commands": 655,
+      "processes": [
+        {
+          "index": 0,
+          "returncode": 0
+        },
+        {
+          "index": 1,
+          "returncode": 0
+        },
+        {
+          "index": 2,
+          "returncode": 0
+        }
+      ],
+      "skillFilesPreserved": true,
+      "skillIdentity": "d93f47954791e79de0b7a14ab6ee84a53e0a81844084db221c02110079c7fbf7",
+      "nativeInstallation": {
+        "url": "https://github.com/storytold/effectcraft/releases/download/v0.4.0/effectcraft-cli-0.4.0-macos-universal.zip",
+        "archiveSha256": "950abbb83800518281115ef05cebc50d63a28dbeec204951c77f16ec2109219f",
+        "binarySha256": "c1717eb87e5b57b3ed88c6a78047268a5afa566beb36104fdcc05dc8634a01c1",
+        "binaryPath": "effectcraft-cli",
+        "payloadRoot": "effectcraft-cli-0.4.0-macos-universal",
+        "archiveFormat": "zip",
+        "evidenceScope": "archive integrity only; native platform acceptance pending",
+        "integrityFile": "runtime-integrity/darwin-arm64.json",
+        "integritySha256": "c7eb5424dbb14940624e3ae6a494078a41dfa0c6738b7779d5d9ceb40f7e2220",
+        "minimumSystem": {
+          "macOS": "11.0",
+          "evidence": "pinned app Info.plist LSMinimumSystemVersion; CLI architecture validated at execution"
+        },
+        "name": "effectcraft",
+        "version": "0.4.0",
+        "platform": "darwin-arm64",
+        "versionOutput": "effectcraft-cli 0.4.0",
+        "source": "official-github-release"
+      },
+      "pythonInstallation": {
+        "version": "3.13.16",
+        "platform": "darwin-arm64",
+        "archiveSha256": "d8975d7df4f08f7b1c7aafcdfacbddcec3d366415f2c1a72b2466b6850815933"
+      }
+    },
+    {
+      "skill": "effectcraft-cli-tracking",
+      "status": "PASS",
+      "seconds": 51.394,
+      "commands": 655,
+      "processes": [
+        {
+          "index": 0,
+          "returncode": 0
+        },
+        {
+          "index": 1,
+          "returncode": 0
+        },
+        {
+          "index": 2,
+          "returncode": 0
+        }
+      ],
+      "skillFilesPreserved": true,
+      "skillIdentity": "42d92c1eb3a199cc33985eeb5298e6b4bb8f7be340abe2e7fb248a39cd60bd83",
+      "nativeInstallation": {
+        "url": "https://github.com/storytold/effectcraft/releases/download/v0.4.0/effectcraft-cli-0.4.0-macos-universal.zip",
+        "archiveSha256": "950abbb83800518281115ef05cebc50d63a28dbeec204951c77f16ec2109219f",
+        "binarySha256": "c1717eb87e5b57b3ed88c6a78047268a5afa566beb36104fdcc05dc8634a01c1",
+        "binaryPath": "effectcraft-cli",
+        "payloadRoot": "effectcraft-cli-0.4.0-macos-universal",
+        "archiveFormat": "zip",
+        "evidenceScope": "archive integrity only; native platform acceptance pending",
+        "integrityFile": "runtime-integrity/darwin-arm64.json",
+        "integritySha256": "c7eb5424dbb14940624e3ae6a494078a41dfa0c6738b7779d5d9ceb40f7e2220",
+        "minimumSystem": {
+          "macOS": "11.0",
+          "evidence": "pinned app Info.plist LSMinimumSystemVersion; CLI architecture validated at execution"
+        },
+        "name": "effectcraft",
+        "version": "0.4.0",
+        "platform": "darwin-arm64",
+        "versionOutput": "effectcraft-cli 0.4.0",
+        "source": "official-github-release"
+      },
+      "pythonInstallation": {
+        "version": "3.13.16",
+        "platform": "darwin-arm64",
+        "archiveSha256": "d8975d7df4f08f7b1c7aafcdfacbddcec3d366415f2c1a72b2466b6850815933"
+      }
+    },
+    {
+      "skill": "effectcraft-use",
+      "status": "PASS",
+      "seconds": 62.968,
+      "commands": 655,
+      "processes": [
+        {
+          "index": 0,
+          "returncode": 0
+        },
+        {
+          "index": 1,
+          "returncode": 0
+        },
+        {
+          "index": 2,
+          "returncode": 0
+        }
+      ],
+      "skillFilesPreserved": true,
+      "skillIdentity": "9df6dd32f93a4f1aa70d956f84d656181e7749ab05674e1b63f42c2bd63373a1",
+      "nativeInstallation": {
+        "url": "https://github.com/storytold/effectcraft/releases/download/v0.4.0/effectcraft-cli-0.4.0-macos-universal.zip",
+        "archiveSha256": "950abbb83800518281115ef05cebc50d63a28dbeec204951c77f16ec2109219f",
+        "binarySha256": "c1717eb87e5b57b3ed88c6a78047268a5afa566beb36104fdcc05dc8634a01c1",
+        "binaryPath": "effectcraft-cli",
+        "payloadRoot": "effectcraft-cli-0.4.0-macos-universal",
+        "archiveFormat": "zip",
+        "evidenceScope": "archive integrity only; native platform acceptance pending",
+        "integrityFile": "runtime-integrity/darwin-arm64.json",
+        "integritySha256": "c7eb5424dbb14940624e3ae6a494078a41dfa0c6738b7779d5d9ceb40f7e2220",
+        "minimumSystem": {
+          "macOS": "11.0",
+          "evidence": "pinned app Info.plist LSMinimumSystemVersion; CLI architecture validated at execution"
+        },
+        "name": "effectcraft",
+        "version": "0.4.0",
+        "platform": "darwin-arm64",
+        "versionOutput": "effectcraft-cli 0.4.0",
+        "source": "official-github-release"
+      },
+      "pythonInstallation": {
+        "version": "3.13.16",
+        "platform": "darwin-arm64",
+        "archiveSha256": "d8975d7df4f08f7b1c7aafcdfacbddcec3d366415f2c1a72b2466b6850815933"
+      }
+    }
+  ],
+  "visualObservation": {
+    "status": "REVIEW_REQUIRED",
+    "observation": "The sample dark title has low contrast against the black video background. Creative approval is not asserted."
+  },
+  "remaining": [
+    "fixed source release",
+    "plugin immutable snapshot integration",
+    "final candidate host discovery and dispatch",
+    "15 independent creative scenarios",
+    "aggregate recovery contract and full V1",
+    "creative approval"
+  ]
+}

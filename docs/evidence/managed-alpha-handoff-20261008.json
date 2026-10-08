@@ -1,0 +1,61 @@
+{
+  "schema": "effectcraft-filmcraft-alpha-handoff/v1",
+  "result": "passed",
+  "effectRuntimeSha256": "c1717eb87e5b57b3ed88c6a78047268a5afa566beb36104fdcc05dc8634a01c1",
+  "filmRuntimeSha256": "80dfc579f7639dc1d182c4dc9ab9cd834beaa234e6144e664757d40632f36893",
+  "effectProjectSha256": "a7b9927620441f903e46ca0e009edfaabc347845cccc2df63f20f8a86505bf97",
+  "overlaySha256": "bff7d4a8d361da40ad2b942c1d591409cbaa0f38a92c01bdf9eaa9e5bd174f06",
+  "filmProjectSha256": "43c97b67881fd2aed6ac387e403ab1ae34d9021071a1c6ab77ad6b6314d02326",
+  "filmVideoSha256": "50823e7cb7d35111c8b80d1cd119774e142b64f9fd140b99e40fe148bcd1726a",
+  "overlayProbe": {
+    "audio": null,
+    "container": "Image",
+    "duration": "1270080000000",
+    "file_size": 6974,
+    "kind": "Still",
+    "name": "overlay.png",
+    "start_timecode": null,
+    "video": {
+      "bitrate": null,
+      "codec": "PNG",
+      "color": {
+        "matrix": "Bt709",
+        "primaries": "Bt709",
+        "range": "Full",
+        "transfer": "Srgb"
+      },
+      "frame_rate": {
+        "den": 1001,
+        "num": 30000
+      },
+      "has_alpha": true,
+      "height": 180,
+      "par": [
+        1,
+        1
+      ],
+      "pixel_format": "RGBA 8-bit",
+      "width": 320
+    }
+  },
+  "previewCorner": [
+    1,
+    128,
+    1
+  ],
+  "previewBadge": [
+    239,
+    91,
+    54
+  ],
+  "decodedCorner": [
+    0,
+    128,
+    1
+  ],
+  "opaquePixelsVerified": 2423,
+  "animationPreserved": true,
+  "badgeLayerPreserved": true,
+  "sourceProjectPreserved": true,
+  "scope": "one installed skill per domain; each empty runtime; static transparent PNG handoff, not animated alpha video or all color pipelines"
+}

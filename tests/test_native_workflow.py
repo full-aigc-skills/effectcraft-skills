@@ -50,6 +50,16 @@ class NativeWorkflowTests(unittest.TestCase):
             streams = info['streams']
             self.assertEqual(len(streams), 1)
             self.assertEqual((streams[0]['codec_name'], streams[0]['width'], streams[0]['height'], streams[0]['nb_read_frames']), ('h264', 320, 180, '12'))
+            # 实际解码视频，标题与黑底应有可见对比；排除左侧彩色徽标区域。
+            pixels = subprocess.check_output([
+                'ffmpeg', '-v', 'error', '-i', str(first / 'intro.mp4'),
+                '-vf', 'select=eq(n\\,6)', '-frames:v', '1',
+                '-pix_fmt', 'rgb24', '-f', 'rawvideo', '-'])
+            self.assertEqual(len(pixels), 320 * 180 * 3)
+            bright_title_pixels = sum(
+                min(pixels[(y * 320 + x) * 3:(y * 320 + x) * 3 + 3]) > 160
+                for y in range(50, 115) for x in range(90, 220))
+            self.assertGreater(bright_title_pixels, 100, 'default video title is unreadable against its background')
             change = {'expectedProjectSha256': delivered['files']['project.ecproj'],
                       'operations': [{'command': 'layer.setText', 'params': {'layer': {'$ref': 'title.layer'}, 'text': 'NOVA PLUS'}}],
                       'frames': [0, .5], 'exports': [{'format': 'mp4'}]}

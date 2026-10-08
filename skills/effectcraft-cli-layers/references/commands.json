@@ -3,7 +3,7 @@
   "pluginId": "effectcraft",
   "runtimeVersion": "0.2.0",
   "upstreamRepository": "https://github.com/storytold/effectcraft",
-  "upstreamCommit": "24fcbdf3d2d6b928d3788d33f1722d8a21b9ad29",
+  "upstreamCommit": "f5ebe5f6c5e887dddda4a2be1fcb47154e959b81",
   "scope": "observed command catalogue, not capability or creative acceptance",
   "commands": [
     {
@@ -45,7 +45,7 @@
     {
       "id": "layer.addItem",
       "label": "Add Footage to Comp",
-      "params": "{item: id|name, time?, duration? (s, for a still)}",
+      "params": "{item: id|name, time? (s, the In point), index? (1-based stack position; default above the selected layer), position? ([x, y] comp px; default the centre), duration? (s, for a still)}",
       "enabledAtEmptySession": false
     },
     {
@@ -303,7 +303,7 @@
     {
       "id": "layer.newModel",
       "label": "3D Model Layer",
-      "params": "{item?: id or name of a 3D model footage item, path?: a .gltf, .glb or .obj file to import, name?, time? (s)}",
+      "params": "{item?: id or name of a 3D model footage item, path?: a .gltf, .glb or .obj file to import, name?, time? (s), index? (1-based stack position), position? ([x, y] comp px)}",
       "enabledAtEmptySession": false
     },
     {
@@ -388,6 +388,12 @@
       "id": "text.fontFeatures",
       "label": "OpenType Features",
       "params": "{layer?, font?, style?} → {family, style, features: [tags], options: {smallCaps, superscript, stylisticSets: [n], fractions, …}} (what the font sets with its own glyphs)",
+      "enabledAtEmptySession": true
+    },
+    {
+      "id": "text.fonts",
+      "label": "List Fonts",
+      "params": "{query?, rescan?} → {count, families: [{family, styles, origin: bundled|system|user, nativeName?}], added} (rescan picks up fonts installed since launch)",
       "enabledAtEmptySession": true
     },
     {

@@ -8,9 +8,21 @@ license: Apache-2.0
 
 以原生 `.ecproj` 为编辑事实源，交付工程、依赖素材清单、预览与约定成片。此技能可单独复制安装；所有安装资源位于本技能目录，不读取兄弟技能或插件私有文件。
 
+## 默认受管理入口
+
+从宿主实际加载的技能目录设置 `SKILL_DIR`。**创作写入默认使用 `launch.sh` / `launch.ps1`**，自动准备用户目录内的固定 Python 与 EffectCraft，不改全局 PATH。下文原始 Python/CLI 示例保留兼容与诊断用途，不能绕过任务恢复账本。完整操作合同见 [任务控制、评估与修订](references/managed-execution.md)。
+
+```sh
+/bin/sh "$SKILL_DIR/scripts/launch.sh" plan --plan PLAN.json --output /absolute/new-result
+/bin/sh "$SKILL_DIR/scripts/launch.sh" run --plan PLAN.json --output /absolute/new-result
+```
+
+Windows PowerShell：`& "$SKILL_DIR/scripts/launch.ps1" run --plan PLAN.json --output "C:\Users\me\result"`。
+原生命令计划追加 `--mode commands`，自有桌面会话使用 `--mode desktop`。交付后必须 `review` 并实际查看媒体；只有技术验证与创作评估都通过才报告可验收，用户接受状态独立保留。需要自动修订时，在首次计划中声明 `revisionScope`；默认最多 2 轮、父子任务共用 30 分钟。未知任务只 inspect/reconcile，不换任务 ID 重做。
+
 ## 首次使用
 
-1. 定位本 `SKILL.md` 的实际目录。需要 Python 3.11+；使用该目录下的 `scripts/bootstrap.py`，不要假设当前工作目录就是技能目录。
+1. 定位本 `SKILL.md` 的实际目录。无需预装 Python；启动器准备锁定的隔离 Python 3.13.16；使用该目录下的 `scripts/bootstrap.py`，不要假设当前工作目录就是技能目录。
 2. 用户已要求安装或完成创作且现有授权涵盖必要依赖时，直接运行安装入口；安装范围是用户数据目录，不需要 sudo。下载固定官方制品并校验摘要，失败即停止，不删除隔离属性、不改 shell 配置。
 
 将 `SKILL_DIR` 设置为宿主实际加载的本 `SKILL.md` 所在目录（绝对路径）。用户级安装可能位于 `~/.agents/skills/effectcraft-use`，项目级可能位于 `.agents/skills/effectcraft-use`，插件可能位于其 `skills/effectcraft-use` 或宿主缓存目录；以实际加载路径为准，不按当前工作目录猜测，也不搜索后随意选择重复版本。技能目录与 CLI 的用户数据安装目录是两个独立位置。
@@ -20,7 +32,7 @@ license: Apache-2.0
 python3 -I -B "$SKILL_DIR/scripts/bootstrap.py"
 ```
 
-安装器返回 JSON `executable`，后续将其作为 argv 的第一个元素。当前锁定平台为 macOS arm64；未支持的平台返回 `unsupported_platform`，不要安装别的平台制品。
+安装器返回 JSON `executable`，后续将其作为 argv 的第一个元素。当前锁定七种原生系统/架构；目标平台运行验收以有效证据为准；未支持的平台返回 `unsupported_platform`，不要安装别的平台制品。
 
 安装位置默认 `~/.local/share/craft-runtimes`，可用 `--runtime-home` 或 `CRAFT_RUNTIME_HOME` 指定。重复调用校验并复用同版运行时，不联网升级。`--archive` 接受已下载的官方 ZIP，但不跳过摘要检查。
 
@@ -28,7 +40,7 @@ python3 -I -B "$SKILL_DIR/scripts/bootstrap.py"
 
 ## 可执行工作流
 
-优先使用 [原生合成计划](references/workflow.md) 中的 `scripts/workflow.py`。它自动安装 CLI、保存并重新打开工程、输出预览和可选视频，支持基于工程摘要的局部修订。外部文件用 `--asset 名称=绝对路径` 注册，由 `asset.import`、`layer.addItem` 导入合成；`asset.replace` 保留项目项 ID 和图层动画，原生收集器打包依赖。移动交付后用 `--source` 核验并重新链接素材。示例 `examples/brand-intro.json` 可以直接运行。
+通过受管理入口执行 [原生合成计划](references/workflow.md)，内部复用 `scripts/workflow.py`。它自动安装 CLI、保存并重新打开工程、输出预览和可选视频，支持基于工程摘要的局部修订。外部文件用 `--asset 名称=绝对路径` 注册，由 `asset.import`、`layer.addItem` 导入合成；`asset.replace` 保留项目项 ID 和图层动画，原生收集器打包依赖。移动交付后用 `--source` 核验并重新链接素材。示例 `examples/brand-intro.json` 可以直接运行。
 
 ## 编辑流程
 

@@ -2,8 +2,8 @@
   "schema": "craft-bridge-tools/v1",
   "pluginId": "effectcraft",
   "mode": "bridge",
-  "runtimeSha256": "74d44fc90018ac381dc4516edff939ab26eb6d900ae5c3f49d1eba5ac14105fe",
-  "desktopBinarySha256": "e7db491a0b7af0a12977e32fa1da23490df8087f38a56c60a9ae2a7d914a22de",
+  "runtimeSha256": "c1717eb87e5b57b3ed88c6a78047268a5afa566beb36104fdcc05dc8634a01c1",
+  "desktopBinarySha256": "703c02246cc17a3412c307c97ac8a8cfa912bd7cda68d5f817ea1763aa297bb6",
   "tools": [
     {
       "description": "Screenshot of the live app window, or one panel (`Composition`, `Timeline`, `EffectControls`, `Project`, ...) or element id, as PNG (longest side `max_side`, default 1600). Use it to check what the UI looks like after an action.",
@@ -195,5 +195,5 @@
       "name": "control"
     }
   ],
-  "scope": "actual tools/list from fixed CLI bridge to signed official0.2.0 desktop; bridge-only inputs; no exhaustive UI execution acceptance"
+  "scope": "CLI 0.4.0 bridge tool reflection; desktop invocation acceptance is separate"
 }

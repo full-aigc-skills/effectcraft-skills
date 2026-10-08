@@ -1,6 +1,19 @@
 """按固定官方DMG安装桌面应用；与CLI缓存分离，不启动或覆盖用户应用。"""
-import argparse,fcntl,hashlib,json,os,platform,plistlib,re,shutil,subprocess,tempfile,time
+import argparse,hashlib,importlib.util,json,os,platform,plistlib,re,shutil,subprocess,tempfile,time
 from pathlib import Path
+
+def load(name):
+ spec=importlib.util.spec_from_file_location('desktop_'+name,Path(__file__).with_name(name+'.py'));module=importlib.util.module_from_spec(spec);spec.loader.exec_module(module);return module
+
+def native_desktop(runtime_home,archive,key):
+ """Linux/Windows 桌面与 CLI 来自同一已锁定完整发行包。"""
+ runtime=json.loads(Path(__file__).with_name('runtime.lock.json').read_text())
+ desktop=json.loads(Path(__file__).with_name('desktop-platforms.lock.json').read_text())
+ if key not in desktop['artifacts'] or runtime['resolvedVersion']!=desktop['version']:raise ValueError('unsupported_desktop_platform')
+ installed=load('bootstrap').install(runtime,runtime_home,archive,key)
+ directory=Path(runtime_home).expanduser().absolute()/'effectcraft'/runtime['resolvedVersion'];row=desktop['artifacts'][key];binary=directory/row['path']
+ if binary.is_symlink() or not binary.is_file() or sha(binary)!=row['binarySha256']:raise ValueError('desktop_identity_mismatch')
+ return {'app':str(directory),'executable':str(binary),'version':desktop['version'],'binarySha256':row['binarySha256'],'reused':installed['reused'],'scope':'locked native archive; target GUI acceptance remains separate'}
 
 def sha(path):
  with Path(path).open('rb') as stream:return hashlib.file_digest(stream,'sha256').hexdigest()
@@ -37,7 +50,7 @@ def inspect(directory,lock):
   if path.is_symlink() or not path.is_file():raise ValueError('invalid_desktop_payload')
  info=plistlib.loads((app/'Contents/Info.plist').read_bytes());binary=app/'Contents/MacOS'/lock['executable']
  if info.get('CFBundleShortVersionString')!=lock['version'] or info.get('CFBundleIdentifier')!=lock['bundleIdentifier'] or info.get('CFBundleExecutable')!=lock['executable'] or sha(binary)!=lock['binarySha256']:raise ValueError('desktop_identity_mismatch')
- if 'arm64' not in subprocess.check_output(['/usr/bin/lipo','-archs',str(binary)],text=True).split():raise ValueError('desktop_architecture_mismatch')
+ if platform.machine().lower() not in subprocess.check_output(['/usr/bin/lipo','-archs',str(binary)],text=True).split():raise ValueError('desktop_architecture_mismatch')
  subprocess.run(['/usr/bin/codesign','--verify','--deep','--strict',str(app)],check=True,capture_output=True,timeout=60)
  return {'app':str(app),'executable':str(binary),'version':lock['version'],'binarySha256':lock['binarySha256'],'files':tree(app)}
 
@@ -52,16 +65,16 @@ def download_archive(url,target,max_bytes):
    Path(target).unlink(missing_ok=True);time.sleep(2**attempt)
 
 def install(lock,runtime_home,archive=None,platform_key=None):
- validate(lock);key=platform_key or platform.system().lower()+'-'+platform.machine().lower()
- if key!='darwin-arm64':raise ValueError('unsupported_platform: '+key)
+ validate(lock);key=platform_key or load('platform_support').platform_key()
+ if key.startswith(('linux-','windows-')):return native_desktop(runtime_home,archive,key)
+ if key not in ('darwin-arm64','darwin-x86_64'):raise ValueError('unsupported_platform: '+key)
  home=Path(runtime_home).expanduser().absolute()
  if home.is_symlink():raise ValueError('desktop_home_symlink')
  home.mkdir(parents=True,exist_ok=True);home=home.resolve();parent=home/(lock['domain']+'-desktop')
  if parent.is_symlink():raise ValueError('desktop_namespace_symlink')
  parent.mkdir(mode=0o700,exist_ok=True);guard=parent/'.install.lock'
- fd=os.open(guard,os.O_CREAT|os.O_RDWR|os.O_NOFOLLOW,0o600)
- with os.fdopen(fd,'r+') as stream:
-  fcntl.flock(stream,fcntl.LOCK_EX);destination=parent/lock['version']
+ with load('platform_support').exclusive_lock(guard):
+  destination=parent/lock['version']
   if destination.exists() or destination.is_symlink():
    actual=inspect(destination,lock);receipt=destination/'receipt.json'
    if receipt.is_symlink() or not receipt.is_file():raise ValueError('desktop_receipt_missing')
@@ -77,7 +90,7 @@ def install(lock,runtime_home,archive=None,platform_key=None):
    try:
     subprocess.run(['/usr/bin/hdiutil','attach','-readonly','-nobrowse','-mountpoint',str(mount),str(source.resolve())],check=True,capture_output=True,timeout=60);attached=True;apps=list(mount.glob('*.app'))
     if len(apps)!=1 or apps[0].name!=lock['app'] or apps[0].is_symlink():raise ValueError('desktop_bundle_inventory_mismatch')
-    shutil.copytree(apps[0],payload/lock['app'],symlinks=True);actual=inspect(payload,lock)
+    subprocess.run(['/usr/bin/ditto','--norsrc','--noextattr',str(apps[0]),str(payload/lock['app'])],check=True,capture_output=True,timeout=60);actual=inspect(payload,lock)
     (payload/'receipt.json').write_text(json.dumps({'schema':'craft-desktop-install/v1','lock':lock,'files':actual['files']},indent=2)+'\n')
    finally:
     if attached:subprocess.run(['/usr/bin/hdiutil','detach',str(mount)],check=True,capture_output=True,timeout=60)

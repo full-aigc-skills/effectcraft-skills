@@ -1,8 +1,8 @@
 {
   "schema": "craft-command-coverage/v1",
   "pluginId": "effectcraft",
-  "runtimeSha256": "74d44fc90018ac381dc4516edff939ab26eb6d900ae5c3f49d1eba5ac14105fe",
-  "upstreamCommit": "24fcbdf3d2d6b928d3788d33f1722d8a21b9ad29",
+  "runtimeSha256": "c1717eb87e5b57b3ed88c6a78047268a5afa566beb36104fdcc05dc8634a01c1",
+  "upstreamCommit": "f5ebe5f6c5e887dddda4a2be1fcb47154e959b81",
   "scope": "complete documentation and native-session route; not complete native acceptance",
   "workflowOperationCount": 22,
   "workflowNativeCommandCount": 19,
@@ -19,6 +19,7 @@
     "add_keyframe",
     "add_effect",
     "list_effects",
+    "list_fonts",
     "get_state",
     "render_frame",
     "open_project",
@@ -192,7 +193,7 @@
     {
       "id": "file.import",
       "label": "File...",
-      "params": "{paths: [string], importAs?: footage|composition|compositionLayerSizes (Photoshop, PDF, Illustrator and EPS files), layer?: name|index (footage of one Photoshop layer), page?: number from 1 (PDF / Illustrator page), drag?: bool (dropped files: Settings ▸ Import ▸ Default Drag Import As)}",
+      "params": "{paths: [string], importAs?: footage|composition|compositionLayerSizes (Photoshop, PDF, Illustrator and EPS files), layer?: name|index (footage of one Photoshop layer), page?: number from 1 (PDF / Illustrator page), drag?: bool (dropped files: Settings ▸ Import ▸ Default Drag Import As), addToComp?: bool (also add them to the active comp, at time?, index?, position? as in layer.addItem)}",
       "enabledAtEmptySession": true,
       "ownerSkill": "effectcraft-cli-project",
       "ownerInstall": "npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-project",
@@ -207,7 +208,7 @@
           "File",
           "Import"
         ],
-        "params": "{paths: [string], importAs?: footage|composition|compositionLayerSizes (Photoshop, PDF, Illustrator and EPS files), layer?: name|index (footage of one Photoshop layer), page?: number from 1 (PDF / Illustrator page), drag?: bool (dropped files: Settings ▸ Import ▸ Default Drag Import As)}",
+        "params": "{paths: [string], importAs?: footage|composition|compositionLayerSizes (Photoshop, PDF, Illustrator and EPS files), layer?: name|index (footage of one Photoshop layer), page?: number from 1 (PDF / Illustrator page), drag?: bool (dropped files: Settings ▸ Import ▸ Default Drag Import As), addToComp?: bool (also add them to the active comp, at time?, index?, position? as in layer.addItem)}",
         "shortcut": "Cmd+I"
       },
       "executionAcceptance": "NOT_RUN",
@@ -269,6 +270,194 @@
         "id": "render.backend",
         "label": "Video Rendering and Effects",
         "params": "{backend?: gpu|cpu}"
+      },
+      "executionAcceptance": "NOT_RUN",
+      "acceptanceScope": "full per-command contexts and outputs in this coverage audit"
+    },
+    {
+      "id": "roto.models",
+      "label": "Roto Brush Models",
+      "params": null,
+      "enabledAtEmptySession": true,
+      "ownerSkill": "effectcraft-cli-masks",
+      "ownerInstall": "npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-masks",
+      "nativeUsage": "commands.py describe roto.models; commands.py run PLAN.json --output NEW_DIRECTORY",
+      "workflowMapped": false,
+      "usageRecipes": [],
+      "observedEmptySession": {
+        "enabled": true,
+        "id": "roto.models",
+        "label": "Roto Brush Models"
+      },
+      "executionAcceptance": "NOT_RUN",
+      "acceptanceScope": "full per-command contexts and outputs in this coverage audit"
+    },
+    {
+      "id": "roto.model.select",
+      "label": "Use Roto Brush Model",
+      "params": "{id: classical|mobilesam, wait?} (Roto Brush 2.0 / 3.0 use it; wait: loaded before returning)",
+      "enabledAtEmptySession": true,
+      "ownerSkill": "effectcraft-cli-masks",
+      "ownerInstall": "npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-masks",
+      "nativeUsage": "commands.py describe roto.model.select; commands.py run PLAN.json --output NEW_DIRECTORY",
+      "workflowMapped": false,
+      "usageRecipes": [],
+      "observedEmptySession": {
+        "enabled": true,
+        "id": "roto.model.select",
+        "label": "Use Roto Brush Model",
+        "params": "{id: classical|mobilesam, wait?} (Roto Brush 2.0 / 3.0 use it; wait: loaded before returning)"
+      },
+      "executionAcceptance": "NOT_RUN",
+      "acceptanceScope": "full per-command contexts and outputs in this coverage audit"
+    },
+    {
+      "id": "roto.model.install",
+      "label": "Install Roto Brush Model",
+      "params": "{path: weights file, id?, wait?} — verified against the registry's SHA-256",
+      "enabledAtEmptySession": true,
+      "ownerSkill": "effectcraft-cli-masks",
+      "ownerInstall": "npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-masks",
+      "nativeUsage": "commands.py describe roto.model.install; commands.py run PLAN.json --output NEW_DIRECTORY",
+      "workflowMapped": false,
+      "usageRecipes": [],
+      "observedEmptySession": {
+        "enabled": true,
+        "id": "roto.model.install",
+        "label": "Install Roto Brush Model",
+        "params": "{path: weights file, id?, wait?} — verified against the registry's SHA-256"
+      },
+      "executionAcceptance": "NOT_RUN",
+      "acceptanceScope": "full per-command contexts and outputs in this coverage audit"
+    },
+    {
+      "id": "roto.model.download",
+      "label": "Download Roto Brush Model",
+      "params": "{id, wait?} — the official weights, verified (desktop; uses the system curl)",
+      "enabledAtEmptySession": true,
+      "ownerSkill": "effectcraft-cli-masks",
+      "ownerInstall": "npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-masks",
+      "nativeUsage": "commands.py describe roto.model.download; commands.py run PLAN.json --output NEW_DIRECTORY",
+      "workflowMapped": false,
+      "usageRecipes": [],
+      "observedEmptySession": {
+        "enabled": true,
+        "id": "roto.model.download",
+        "label": "Download Roto Brush Model",
+        "params": "{id, wait?} — the official weights, verified (desktop; uses the system curl)"
+      },
+      "executionAcceptance": "NOT_RUN",
+      "acceptanceScope": "full per-command contexts and outputs in this coverage audit"
+    },
+    {
+      "id": "roto.model.remove",
+      "label": "Remove Roto Brush Model",
+      "params": "{id}",
+      "enabledAtEmptySession": true,
+      "ownerSkill": "effectcraft-cli-masks",
+      "ownerInstall": "npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-masks",
+      "nativeUsage": "commands.py describe roto.model.remove; commands.py run PLAN.json --output NEW_DIRECTORY",
+      "workflowMapped": false,
+      "usageRecipes": [],
+      "observedEmptySession": {
+        "enabled": true,
+        "id": "roto.model.remove",
+        "label": "Remove Roto Brush Model",
+        "params": "{id}"
+      },
+      "executionAcceptance": "NOT_RUN",
+      "acceptanceScope": "full per-command contexts and outputs in this coverage audit"
+    },
+    {
+      "id": "face.models",
+      "label": "Face Tracking Models",
+      "params": null,
+      "enabledAtEmptySession": true,
+      "ownerSkill": "effectcraft-cli",
+      "ownerInstall": "npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli",
+      "nativeUsage": "commands.py describe face.models; commands.py run PLAN.json --output NEW_DIRECTORY",
+      "workflowMapped": false,
+      "usageRecipes": [],
+      "observedEmptySession": {
+        "enabled": true,
+        "id": "face.models",
+        "label": "Face Tracking Models"
+      },
+      "executionAcceptance": "NOT_RUN",
+      "acceptanceScope": "full per-command contexts and outputs in this coverage audit"
+    },
+    {
+      "id": "face.model.select",
+      "label": "Use Face Tracking Model",
+      "params": "{id: classical|mediapipe-face, wait?} (face tracking uses it; wait: loaded before returning)",
+      "enabledAtEmptySession": true,
+      "ownerSkill": "effectcraft-cli",
+      "ownerInstall": "npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli",
+      "nativeUsage": "commands.py describe face.model.select; commands.py run PLAN.json --output NEW_DIRECTORY",
+      "workflowMapped": false,
+      "usageRecipes": [],
+      "observedEmptySession": {
+        "enabled": true,
+        "id": "face.model.select",
+        "label": "Use Face Tracking Model",
+        "params": "{id: classical|mediapipe-face, wait?} (face tracking uses it; wait: loaded before returning)"
+      },
+      "executionAcceptance": "NOT_RUN",
+      "acceptanceScope": "full per-command contexts and outputs in this coverage audit"
+    },
+    {
+      "id": "face.model.install",
+      "label": "Install Face Tracking Model",
+      "params": "{path: model file, id?, wait?} — verified against the registry's SHA-256",
+      "enabledAtEmptySession": true,
+      "ownerSkill": "effectcraft-cli",
+      "ownerInstall": "npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli",
+      "nativeUsage": "commands.py describe face.model.install; commands.py run PLAN.json --output NEW_DIRECTORY",
+      "workflowMapped": false,
+      "usageRecipes": [],
+      "observedEmptySession": {
+        "enabled": true,
+        "id": "face.model.install",
+        "label": "Install Face Tracking Model",
+        "params": "{path: model file, id?, wait?} — verified against the registry's SHA-256"
+      },
+      "executionAcceptance": "NOT_RUN",
+      "acceptanceScope": "full per-command contexts and outputs in this coverage audit"
+    },
+    {
+      "id": "face.model.download",
+      "label": "Download Face Tracking Model",
+      "params": "{id, wait?} — the official model, verified (desktop; uses the system curl)",
+      "enabledAtEmptySession": true,
+      "ownerSkill": "effectcraft-cli",
+      "ownerInstall": "npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli",
+      "nativeUsage": "commands.py describe face.model.download; commands.py run PLAN.json --output NEW_DIRECTORY",
+      "workflowMapped": false,
+      "usageRecipes": [],
+      "observedEmptySession": {
+        "enabled": true,
+        "id": "face.model.download",
+        "label": "Download Face Tracking Model",
+        "params": "{id, wait?} — the official model, verified (desktop; uses the system curl)"
+      },
+      "executionAcceptance": "NOT_RUN",
+      "acceptanceScope": "full per-command contexts and outputs in this coverage audit"
+    },
+    {
+      "id": "face.model.remove",
+      "label": "Remove Face Tracking Model",
+      "params": "{id}",
+      "enabledAtEmptySession": true,
+      "ownerSkill": "effectcraft-cli",
+      "ownerInstall": "npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli",
+      "nativeUsage": "commands.py describe face.model.remove; commands.py run PLAN.json --output NEW_DIRECTORY",
+      "workflowMapped": false,
+      "usageRecipes": [],
+      "observedEmptySession": {
+        "enabled": true,
+        "id": "face.model.remove",
+        "label": "Remove Face Tracking Model",
+        "params": "{id}"
       },
       "executionAcceptance": "NOT_RUN",
       "acceptanceScope": "full per-command contexts and outputs in this coverage audit"
@@ -815,7 +1004,7 @@
     {
       "id": "comp.new",
       "label": "New Composition...",
-      "params": "{name?, width?, height?, frameRate?, duration? (s), startTime? (s) | startTimecode?, background? [r,g,b]|#hex, pixelAspect?, shutterAngle?, shutterPhase?, motionBlurSamples?, adaptiveSampleLimit? (16–256), preserveFrameRate?: bool, preserveResolution?: bool, renderer? classic3D|advanced3D, anchor?, open?}",
+      "params": "{name?, width?, height?, frameRate?, duration? (s), startTime? (s) | startTimecode?, background? [r,g,b]|#hex, pixelAspect?, shutterAngle?, shutterPhase?, motionBlurSamples?, adaptiveSampleLimit? (16–256), preserveFrameRate?: bool, preserveResolution?: bool, renderer?: classic3D|advanced3D, anchor?, open?}",
       "enabledAtEmptySession": true,
       "ownerSkill": "effectcraft-cli-composition",
       "ownerInstall": "npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-composition",
@@ -829,7 +1018,7 @@
         "menu": [
           "Composition"
         ],
-        "params": "{name?, width?, height?, frameRate?, duration? (s), startTime? (s) | startTimecode?, background? [r,g,b]|#hex, pixelAspect?, shutterAngle?, shutterPhase?, motionBlurSamples?, adaptiveSampleLimit? (16–256), preserveFrameRate?: bool, preserveResolution?: bool, renderer? classic3D|advanced3D, anchor?, open?}",
+        "params": "{name?, width?, height?, frameRate?, duration? (s), startTime? (s) | startTimecode?, background? [r,g,b]|#hex, pixelAspect?, shutterAngle?, shutterPhase?, motionBlurSamples?, adaptiveSampleLimit? (16–256), preserveFrameRate?: bool, preserveResolution?: bool, renderer?: classic3D|advanced3D, anchor?, open?}",
         "shortcut": "Cmd+N"
       },
       "executionAcceptance": "NOT_RUN",
@@ -838,7 +1027,7 @@
     {
       "id": "comp.settings",
       "label": "Composition Settings...",
-      "params": "{comp?, name?, width?, height?, anchor? 0-8 (resize anchor, 4 = center), frameRate?, duration?, startTime? (s) | startTimecode?, background?, shutterAngle?, shutterPhase?, motionBlurSamples?, adaptiveSampleLimit? (16–256), preserveFrameRate?: bool (nested or in the render queue it shows only its own frames), preserveResolution?: bool (nested, it renders at full size), pixelAspect?, renderer? classic3D|advanced3D}",
+      "params": "{comp?, name?, width?, height?, anchor? 0-8 (resize anchor, 4 = center), frameRate?, duration?, startTime? (s) | startTimecode?, background?, shutterAngle?, shutterPhase?, motionBlurSamples?, adaptiveSampleLimit? (16–256), preserveFrameRate?: bool (nested or in the render queue it shows only its own frames), preserveResolution?: bool (nested, it renders at full size), pixelAspect?, renderer?: classic3D|advanced3D}",
       "enabledAtEmptySession": false,
       "ownerSkill": "effectcraft-cli-composition",
       "ownerInstall": "npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-composition",
@@ -852,7 +1041,7 @@
         "menu": [
           "Composition"
         ],
-        "params": "{comp?, name?, width?, height?, anchor? 0-8 (resize anchor, 4 = center), frameRate?, duration?, startTime? (s) | startTimecode?, background?, shutterAngle?, shutterPhase?, motionBlurSamples?, adaptiveSampleLimit? (16–256), preserveFrameRate?: bool (nested or in the render queue it shows only its own frames), preserveResolution?: bool (nested, it renders at full size), pixelAspect?, renderer? classic3D|advanced3D}",
+        "params": "{comp?, name?, width?, height?, anchor? 0-8 (resize anchor, 4 = center), frameRate?, duration?, startTime? (s) | startTimecode?, background?, shutterAngle?, shutterPhase?, motionBlurSamples?, adaptiveSampleLimit? (16–256), preserveFrameRate?: bool (nested or in the render queue it shows only its own frames), preserveResolution?: bool (nested, it renders at full size), pixelAspect?, renderer?: classic3D|advanced3D}",
         "shortcut": "Cmd+K",
         "why": "no composition is open"
       },
@@ -1160,7 +1349,7 @@
     {
       "id": "layer.addItem",
       "label": "Add Footage to Comp",
-      "params": "{item: id|name, time?, duration? (s, for a still)}",
+      "params": "{item: id|name, time? (s, the In point), index? (1-based stack position; default above the selected layer), position? ([x, y] comp px; default the centre), duration? (s, for a still)}",
       "enabledAtEmptySession": false,
       "ownerSkill": "effectcraft-cli-layers",
       "ownerInstall": "npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-layers",
@@ -1174,7 +1363,7 @@
         "menu": [
           "File"
         ],
-        "params": "{item: id|name, time?, duration? (s, for a still)}",
+        "params": "{item: id|name, time? (s, the In point), index? (1-based stack position; default above the selected layer), position? ([x, y] comp px; default the centre), duration? (s, for a still)}",
         "shortcut": "Cmd+/",
         "why": "no composition is open"
       },
@@ -2620,7 +2809,7 @@
     {
       "id": "layer.newModel",
       "label": "3D Model Layer",
-      "params": "{item?: id or name of a 3D model footage item, path?: a .gltf, .glb or .obj file to import, name?, time? (s)}",
+      "params": "{item?: id or name of a 3D model footage item, path?: a .gltf, .glb or .obj file to import, name?, time? (s), index? (1-based stack position), position? ([x, y] comp px)}",
       "enabledAtEmptySession": false,
       "ownerSkill": "effectcraft-cli-layers",
       "ownerInstall": "npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-layers",
@@ -2631,7 +2820,7 @@
         "enabled": false,
         "id": "layer.newModel",
         "label": "3D Model Layer",
-        "params": "{item?: id or name of a 3D model footage item, path?: a .gltf, .glb or .obj file to import, name?, time? (s)}",
+        "params": "{item?: id or name of a 3D model footage item, path?: a .gltf, .glb or .obj file to import, name?, time? (s), index? (1-based stack position), position? ([x, y] comp px)}",
         "why": "no composition is open"
       },
       "executionAcceptance": "NOT_RUN",
@@ -3169,6 +3358,25 @@
         "id": "text.fontFeatures",
         "label": "OpenType Features",
         "params": "{layer?, font?, style?} → {family, style, features: [tags], options: {smallCaps, superscript, stylisticSets: [n], fractions, …}} (what the font sets with its own glyphs)"
+      },
+      "executionAcceptance": "NOT_RUN",
+      "acceptanceScope": "full per-command contexts and outputs in this coverage audit"
+    },
+    {
+      "id": "text.fonts",
+      "label": "List Fonts",
+      "params": "{query?, rescan?} → {count, families: [{family, styles, origin: bundled|system|user, nativeName?}], added} (rescan picks up fonts installed since launch)",
+      "enabledAtEmptySession": true,
+      "ownerSkill": "effectcraft-cli-layers",
+      "ownerInstall": "npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-layers",
+      "nativeUsage": "commands.py describe text.fonts; commands.py run PLAN.json --output NEW_DIRECTORY",
+      "workflowMapped": false,
+      "usageRecipes": [],
+      "observedEmptySession": {
+        "enabled": true,
+        "id": "text.fonts",
+        "label": "List Fonts",
+        "params": "{query?, rescan?} → {count, families: [{family, styles, origin: bundled|system|user, nativeName?}], added} (rescan picks up fonts installed since launch)"
       },
       "executionAcceptance": "NOT_RUN",
       "acceptanceScope": "full per-command contexts and outputs in this coverage audit"
@@ -4051,6 +4259,25 @@
       "acceptanceScope": "full per-command contexts and outputs in this coverage audit"
     },
     {
+      "id": "project.usage",
+      "label": "Project Item Usage",
+      "params": "{items?: [id|name] (default: selected)} → {items, layers, comps} that deleting them removes",
+      "enabledAtEmptySession": true,
+      "ownerSkill": "effectcraft-cli-project",
+      "ownerInstall": "npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-project",
+      "nativeUsage": "commands.py describe project.usage; commands.py run PLAN.json --output NEW_DIRECTORY",
+      "workflowMapped": false,
+      "usageRecipes": [],
+      "observedEmptySession": {
+        "enabled": true,
+        "id": "project.usage",
+        "label": "Project Item Usage",
+        "params": "{items?: [id|name] (default: selected)} → {items, layers, comps} that deleting them removes"
+      },
+      "executionAcceptance": "NOT_RUN",
+      "acceptanceScope": "full per-command contexts and outputs in this coverage audit"
+    },
+    {
       "id": "project.duplicate",
       "label": "Duplicate Project Items",
       "params": "{items?: [id|name] (default: selected)} → {items}",
@@ -4486,6 +4713,25 @@
         "id": "markers.list",
         "label": "List Markers",
         "params": "{layer? (omit for composition markers)}"
+      },
+      "executionAcceptance": "NOT_RUN",
+      "acceptanceScope": "full per-command contexts and outputs in this coverage audit"
+    },
+    {
+      "id": "markers.nested",
+      "label": "Nested Comp Markers",
+      "params": "{layer: a precomp layer, comp?} — its comp's markers at their times in this comp (as on the layer bar)",
+      "enabledAtEmptySession": true,
+      "ownerSkill": "effectcraft-cli",
+      "ownerInstall": "npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli",
+      "nativeUsage": "commands.py describe markers.nested; commands.py run PLAN.json --output NEW_DIRECTORY",
+      "workflowMapped": false,
+      "usageRecipes": [],
+      "observedEmptySession": {
+        "enabled": true,
+        "id": "markers.nested",
+        "label": "Nested Comp Markers",
+        "params": "{layer: a precomp layer, comp?} — its comp's markers at their times in this comp (as on the layer bar)"
       },
       "executionAcceptance": "NOT_RUN",
       "acceptanceScope": "full per-command contexts and outputs in this coverage audit"
@@ -9286,6 +9532,26 @@
       "acceptanceScope": "full per-command contexts and outputs in this coverage audit"
     },
     {
+      "id": "playback.scrubAudio",
+      "label": "Scrub Audio",
+      "params": "{time? (s, default the current time)} — plays one frame of the comp's audio there (Ctrl/Cmd-drag the current time)",
+      "enabledAtEmptySession": false,
+      "ownerSkill": "effectcraft-cli",
+      "ownerInstall": "npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli",
+      "nativeUsage": "commands.py describe playback.scrubAudio; commands.py run PLAN.json --output NEW_DIRECTORY",
+      "workflowMapped": false,
+      "usageRecipes": [],
+      "observedEmptySession": {
+        "enabled": false,
+        "id": "playback.scrubAudio",
+        "label": "Scrub Audio",
+        "params": "{time? (s, default the current time)} — plays one frame of the comp's audio there (Ctrl/Cmd-drag the current time)",
+        "why": "no composition is open"
+      },
+      "executionAcceptance": "NOT_RUN",
+      "acceptanceScope": "full per-command contexts and outputs in this coverage audit"
+    },
+    {
       "id": "view.zoomIn",
       "label": "Zoom In",
       "params": null,
@@ -9671,6 +9937,30 @@
           "View"
         ],
         "shortcut": "Ctrl+Cmd+F"
+      },
+      "executionAcceptance": "NOT_RUN",
+      "acceptanceScope": "full per-command contexts and outputs in this coverage audit"
+    },
+    {
+      "id": "view.newViewer",
+      "label": "New Viewer",
+      "params": "{} — another Composition viewer of the active comp; the one in use is locked",
+      "enabledAtEmptySession": false,
+      "ownerSkill": "effectcraft-cli",
+      "ownerInstall": "npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli",
+      "nativeUsage": "commands.py describe view.newViewer; commands.py run PLAN.json --output NEW_DIRECTORY",
+      "workflowMapped": false,
+      "usageRecipes": [],
+      "observedEmptySession": {
+        "enabled": false,
+        "id": "view.newViewer",
+        "label": "New Viewer",
+        "menu": [
+          "View"
+        ],
+        "params": "{} — another Composition viewer of the active comp; the one in use is locked",
+        "shortcut": "Alt+Shift+N",
+        "why": "no composition is open"
       },
       "executionAcceptance": "NOT_RUN",
       "acceptanceScope": "full per-command contexts and outputs in this coverage audit"
@@ -12835,7 +13125,7 @@
     {
       "id": "mediaBrowser.import",
       "label": "Import",
-      "params": "{paths, addToComp?}",
+      "params": "{paths, addToComp?, time?, index?, position? (where the layers go, as in layer.addItem)}",
       "enabledAtEmptySession": true,
       "ownerSkill": "effectcraft-cli-footage",
       "ownerInstall": "npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-footage",
@@ -12846,7 +13136,7 @@
         "enabled": true,
         "id": "mediaBrowser.import",
         "label": "Import",
-        "params": "{paths, addToComp?}"
+        "params": "{paths, addToComp?, time?, index?, position? (where the layers go, as in layer.addItem)}"
       },
       "executionAcceptance": "NOT_RUN",
       "acceptanceScope": "full per-command contexts and outputs in this coverage audit"

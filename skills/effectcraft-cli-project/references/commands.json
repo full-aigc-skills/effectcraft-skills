@@ -3,7 +3,7 @@
   "pluginId": "effectcraft",
   "runtimeVersion": "0.2.0",
   "upstreamRepository": "https://github.com/storytold/effectcraft",
-  "upstreamCommit": "24fcbdf3d2d6b928d3788d33f1722d8a21b9ad29",
+  "upstreamCommit": "f5ebe5f6c5e887dddda4a2be1fcb47154e959b81",
   "scope": "observed command catalogue, not capability or creative acceptance",
   "commands": [
     {
@@ -51,7 +51,7 @@
     {
       "id": "file.import",
       "label": "File...",
-      "params": "{paths: [string], importAs?: footage|composition|compositionLayerSizes (Photoshop, PDF, Illustrator and EPS files), layer?: name|index (footage of one Photoshop layer), page?: number from 1 (PDF / Illustrator page), drag?: bool (dropped files: Settings ▸ Import ▸ Default Drag Import As)}",
+      "params": "{paths: [string], importAs?: footage|composition|compositionLayerSizes (Photoshop, PDF, Illustrator and EPS files), layer?: name|index (footage of one Photoshop layer), page?: number from 1 (PDF / Illustrator page), drag?: bool (dropped files: Settings ▸ Import ▸ Default Drag Import As), addToComp?: bool (also add them to the active comp, at time?, index?, position? as in layer.addItem)}",
       "enabledAtEmptySession": true
     },
     {
@@ -100,6 +100,12 @@
       "id": "project.delete",
       "label": "Delete Project Items",
       "params": "{items?: [id|name] (default: selected)} (folders with their contents; layers using the items go too)",
+      "enabledAtEmptySession": true
+    },
+    {
+      "id": "project.usage",
+      "label": "Project Item Usage",
+      "params": "{items?: [id|name] (default: selected)} → {items, layers, comps} that deleting them removes",
       "enabledAtEmptySession": true
     },
     {

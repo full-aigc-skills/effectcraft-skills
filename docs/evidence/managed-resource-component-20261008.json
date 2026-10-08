@@ -1,0 +1,51 @@
+{
+  "schema": "effectcraft-workflow-resource-component/v1",
+  "result": "PASS",
+  "candidateOnly": true,
+  "platform": "darwin-arm64",
+  "scope": "managed workflow preview/export frame and decoded-byte reservations; observed export media byte high-water; parent-child sharing and segmented recovery",
+  "evidence": [
+    "managed-resource-native-20261008.json",
+    "managed-resource-segment-20261008.json",
+    "managed-resource-family-20261008.json"
+  ],
+  "defaultRegression": {
+    "total": 226,
+    "passed": 189,
+    "skipped": 37
+  },
+  "targetTests": {
+    "resourceLedgerUnit": 9,
+    "resourceLedgerWithNativeFamily": 10,
+    "nativeSupervisor": 6,
+    "nativeSegmentRecovery": 1
+  },
+  "redObserved": [
+    "resource reservation API/ledger missing",
+    "workflow export lacked resource entries",
+    "legacy missing ledger still started",
+    "deleted reservation reset consumed frames",
+    "deleted child entry allowed new sibling"
+  ],
+  "sourceFiles": {
+    "skills/effectcraft-use/scripts/resource_budget.py": "91e9d29632bceaf8198b367e6564c28a2c8126bb4849396313b7b28b0a102865",
+    "skills/effectcraft-use/scripts/task_store.py": "9a38e03ad9d2deb7aeac69811e18f419f86183f453c499288c5190653ff0f918",
+    "skills/effectcraft-use/scripts/managed.py": "3e8321400128eb8292472558811991579af6badfe555e88caa42d1819fa41d03",
+    "skills/effectcraft-use/scripts/workflow.py": "adf4cc6eff7d80a56f147f462cfbd9b82ffdeb91939d7fc4ab496463c9e1dcae",
+    "skills/effectcraft-use/scripts/revision.py": "3fd34fb68d20be3f6cbc43edf0e51433123a780f6a5d094ba76f579fed9cdc41",
+    "tests/test_resource_budget.py": "b3d16c25bcdbbbaa2d9c423835f9a2ab34273c7efd05f899ff08ae6c14d1835e",
+    "tests/test_managed_render_resume.py": "5d571832060434d5930ad40c0cb54901482a28e9904c2c831ca3eea15cc575e9",
+    "tests/test_managed_supervisor.py": "d20297c8e364f5220260a13c5bf17924e79d2671008f8213ad4a14a40e4a019e",
+    "tests/test_managed_segment_native.py": "fcf4100a0fe57bf588b844a2c55f50e3e1826bbe8f0c081006387d055c010027"
+  },
+  "excluded": [
+    "preview interrupted before export context occupancy reconciliation",
+    "SIGKILL inside active native rendering temporary data accounting",
+    "commands and desktop resource accounting",
+    "CPU/memory metering",
+    "other target systems",
+    "current host natural-language dispatch",
+    "immutable release",
+    "complete V1"
+  ]
+}

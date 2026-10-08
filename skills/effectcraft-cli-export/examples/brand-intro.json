@@ -56,7 +56,7 @@
         ],
         "font": "Arial",
         "size": 30,
-        "fill": "#192a3b"
+        "fill": "#f7f8fa"
       },
       "as": "title"
     },
@@ -91,6 +91,21 @@
   "exports": [
     {
       "format": "mp4"
+    }
+  ],
+  "revisionScope": [
+    {
+      "layer": "title",
+      "properties": [
+        "text/sourceText",
+        "transform/position"
+      ]
+    },
+    {
+      "layer": "badge",
+      "properties": [
+        "transform/position"
+      ]
     }
   ]
 }

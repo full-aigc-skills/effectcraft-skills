@@ -1,5 +1,7 @@
 # 版本绑定的历史发行记录
 
+技能源 dev.35：隔离 Python 启动、持久任务执行、原生分段恢复及共享重试预算。源码回归213通过、38条件跳过；macOS arm64未发布原生段恢复及12帧像素对照通过。其他平台/宿主与完整V1保持开放。[证据](docs/evidence/managed-orphan-retry-component-20261008.json)。
+
 以下记录逐字移自 README 前部，描述各自版本，不作为当前安装合同。
 
 固定EffectCraft插件dev.32／源dev.30通过本领域每个技能的独立冷安装、7项安装保护和1项冷原生创建／重开／返工／导出。三个更新领域合计41个独立空缓存、21项保护和3项原生验收通过，全部64安装摘要保持不变。Art捆绑升级与完整V1另行验收。[证据](docs/evidence/craft-three-domain-output-guards-fixed-first-use-20261007.json)。

@@ -1,8 +1,13 @@
 # EffectCraft 独立技能
 
+分段首用指南已根据固定 Film40／Effect38／Art117 的原生验收更新：覆盖 HD 全帧、返工、恢复和迁移。新指南快照的插件安装验收另行记录。[证据](docs/evidence/craft-fixed-segmented-hd-refresh-20261008.json)。
+
+> **开发版 dev.35（2026-10-08）：**固定隔离 Python 3.13.16、EffectCraft 0.4.0，包含受管理执行、自有分段恢复与共享重试预算。本机证据不替代其他平台/宿主验收。见[实现与开放门禁](docs/managed-optimization-20261008.md)和[平台矩阵](docs/current-capabilities.json)。
+
+
 文字、图形与镜头需求进入，交付可编辑 `.ecproj`、依赖素材和渲染结果。
 
-当前技能源：`0.1.0-dev.34`；目标插件：`0.1.0-dev.36`；15 个独立技能。
+当前技能源：`0.1.0-dev.35`；消费插件：`0.1.0-dev.39`；15 个独立技能。
 
 已验证首次使用平台：macOS arm64、Python 3.11+。固定运行时安装在用户数据目录，技能文件保留在宿主加载目录。当前为开发版本；完整首版验收及通用 Skills CLI 实际安装仍未完成。
 
@@ -13,8 +18,8 @@
 <!-- CRAFT_FIRST_USE_START -->
 ```bash
 : "${SKILL_DIR:?Set to the actual loaded skill directory}"
-python3 -I -B "$SKILL_DIR/scripts/cli.py" -- --version
-python3 -I -B "$SKILL_DIR/scripts/cli.py" -- commands --json
+sh "$SKILL_DIR/scripts/launch.sh" doctor
+sh "$SKILL_DIR/scripts/launch.sh" run --plan "$SKILL_DIR/examples/brand-intro.json" --output "$PWD/effectcraft-result"
 ```
 <!-- CRAFT_FIRST_USE_END -->
 

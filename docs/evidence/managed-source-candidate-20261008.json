@@ -1,0 +1,72 @@
+{
+  "schema": "effectcraft-source-candidate/v1",
+  "sourceHead": "341360f4a837f0ab21a66c3903d3d7e54d5e54c9",
+  "workingTreeCandidate": true,
+  "skills": {
+    "effectcraft-use": "8ed96d9adf1c5abb162f7371767de72b6ae6333c8484c276d1c213876956d101",
+    "effectcraft-cli": "a119f3aa55c72a3a40610ea79d7aaab7d343238cc8ebd2024ad075874cd6df00",
+    "effectcraft-cli-setup": "f41e75b18fa8d90bf82183d0bfdba8f5e83c24809d971ca7221f0b5535f8e8ad",
+    "effectcraft-cli-project": "71202f6bce9f3be39ae161b9c956f9f15bc4f3f33d54d9791bd86db2264830a3",
+    "effectcraft-cli-footage": "742ece9641ea63791de9c93e0a2716449778acacb3246432163c7307d3c3909d",
+    "effectcraft-cli-composition": "24a65621f21b28e377c74970ec64dd96697f8c567fc7db633c5f255c8d7fb055",
+    "effectcraft-cli-layers": "734427c0ad90d5410b4c5593b53af591da931d3eaa711ece5cbbd45787d43d74",
+    "effectcraft-cli-animation": "ff532054ce70f1622668f2494bc775d685c8549274575b8c0305b934078490df",
+    "effectcraft-cli-effects": "b61fc973fe8c32894242e943eebdb13bd1fed9d4c1a5b386f477c75fa3394187",
+    "effectcraft-cli-masks": "f36ba121e0c610b6d073a1fa787f42803e1c7888a8796243ac9d130015b4779c",
+    "effectcraft-cli-expressions": "e8618eb67995440cb747fcb26a6d50f4059b93ffcc16fa82d6afef9ed24d8f53",
+    "effectcraft-cli-camera": "b41720c9597c312865d649ef79e869935cdc8ec53b9b68bcfe1162cc114dd8d9",
+    "effectcraft-cli-export": "11eaa4dcd777ebd8d5e321d44db6681d4432898b4f3f223042a3faaef2b4d3a9",
+    "effectcraft-cli-tracking": "ec2b00bc370584ca6a56eace2e125d5a7b5e53c99486e3ded27ff434f83cc904",
+    "effectcraft-cli-puppet": "427b19c802e6b69c5df764eb2943253272f9bbddaa061f764013bfca7742b352"
+  },
+  "runtimeVersion": "0.4.0",
+  "publishedSource": {
+    "package": "effectcraft-skills",
+    "repo": "https://github.com/full-aigc-skills/effectcraft-skills.git",
+    "ref": "v0.1.0-dev.34",
+    "sha": "550a51842ba0feb3bb6cbd6d890f77e20f25101b",
+    "skills": [
+      "effectcraft-use",
+      "effectcraft-cli",
+      "effectcraft-cli-setup",
+      "effectcraft-cli-project",
+      "effectcraft-cli-footage",
+      "effectcraft-cli-composition",
+      "effectcraft-cli-layers",
+      "effectcraft-cli-animation",
+      "effectcraft-cli-effects",
+      "effectcraft-cli-masks",
+      "effectcraft-cli-expressions",
+      "effectcraft-cli-camera",
+      "effectcraft-cli-export",
+      "effectcraft-cli-tracking",
+      "effectcraft-cli-puppet"
+    ],
+    "dest": "skills/",
+    "sha256": {
+      "effectcraft-use": "6275bea8397aeddbe93ee4ef7d66ab13698686e72655c7bc68e28fdd612f90e0",
+      "effectcraft-cli": "7800051387dbdc5dfe49ced0f97e3cc1c502fdf738cc9ae735ca5b5f6f25a8ee",
+      "effectcraft-cli-setup": "d2fa99911d79b737d7ebe29ec29ae71cacc84d800d6198e31086dd275897499e",
+      "effectcraft-cli-project": "98ecdac4d1e5b66ec8718cabbff47e91b383bdc39bc4c349af37c09669f6951a",
+      "effectcraft-cli-footage": "b13d729a269f7037908ccb48394bb1bfc971e4e93f593dbaa4b82ab6aaa3c4d9",
+      "effectcraft-cli-composition": "1e91faed542ae95ac034f6dfe2dfc1d5d80b3899d48c8f1068add120410d7b10",
+      "effectcraft-cli-layers": "847f64d1053528a4cce1b2c2ed1ab4be485e25096fd3229fa6f22b265baa91d9",
+      "effectcraft-cli-animation": "aeaf55514f5afb8c8151d37adff72b639a231015a412adf9ebc00bdd6692f50a",
+      "effectcraft-cli-effects": "955831de9a5f414c205dd30c5eb953f410c81871f1c8daff2a6ff064701521d6",
+      "effectcraft-cli-masks": "42c1f76b33bbb6c0210d8bd79f06beb1610c16b8e0838fe544752ff45b583129",
+      "effectcraft-cli-expressions": "ac1137632f843f8ec9a7cfcdbe6240f54f5883618b781f6e9dc10e2c425dee51",
+      "effectcraft-cli-camera": "f19299fe471a420359f55bcbe3ff3583594dbbcef9ec92441ac5972cfeae8414",
+      "effectcraft-cli-export": "efd03426738d714a27677a0ebe933c699c9469b4788450a25f2e850de84cfd2a",
+      "effectcraft-cli-tracking": "cfcc79c84d669fe1a16ab595cd60081166ee4778f6875144e9d0ae5a96282192",
+      "effectcraft-cli-puppet": "71bb9bc0633255e50bb1cff285d63f3ebfec4691119ba81945fc6fe03927ad8d"
+    }
+  },
+  "status": "candidate-structure-verified",
+  "releaseReady": false,
+  "remaining": [
+    "target-platform native acceptance",
+    "fixed released source snapshot",
+    "host acceptance bound to final candidate",
+    "separate publication authorization"
+  ]
+}

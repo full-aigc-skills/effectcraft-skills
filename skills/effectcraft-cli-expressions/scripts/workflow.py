@@ -31,9 +31,12 @@ def parameter_contract():
     folder = Path(__file__).parent
     contract = json.loads((folder / 'parameter-contract.json').read_text())
     lock = json.loads((folder / 'runtime.lock.json').read_text())
+    spec=importlib.util.spec_from_file_location('workflow_platform',folder/'platform_support.py')
+    support=importlib.util.module_from_spec(spec);spec.loader.exec_module(support)
+    key=support.platform_key()
     if (contract.get('schema') != 'effectcraft-parameter-contract/v1'
             or contract.get('runtimeVersion') != lock['resolvedVersion']
-            or contract.get('binarySha256') != lock['artifacts']['darwin-arm64']['binarySha256']
+            or contract.get('runtimeSha256ByPlatform', {}).get(key) != lock['artifacts'][key]['binarySha256']
             or set(contract.get('commands', {})) != PARAMETER_COMMANDS):
         raise ValueError('parameter_contract_identity_mismatch')
     return contract['commands']
@@ -138,6 +141,8 @@ def validate(plan):
             raise ValueError('invalid_export')
         if 'chunkFrames' in export and (export['format']!='png-segmented' or type(export['chunkFrames']) is not int or not 1<=export['chunkFrames']<=10000):
             raise ValueError('invalid_export')
+    if type(plan.get('previewAlpha',True)) is not bool:
+        raise ValueError('preview_alpha_must_be_boolean')
     for value in plan.get('frames', [0]):
         if type(value) not in (int, float) or not 0 <= value <= 3600:
             raise ValueError('invalid_frame_time')
@@ -154,11 +159,11 @@ def validate(plan):
     return schemas
 
 
-def execute(plan, output, runtime_home=None, source=None):
-    return _execute(plan, output, runtime_home, source, {'output': False})
+def execute(plan, output, runtime_home=None, source=None, task_hooks=None):
+    return _execute(plan, output, runtime_home, source, {'output': False}, task_hooks)
 
 
-def _execute(plan, output, runtime_home, source, owned):
+def _execute(plan, output, runtime_home, source, owned, task_hooks=None):
     schemas = validate(plan)
     output = Path(output).absolute()
     output = output.parent.resolve()/output.name
@@ -182,6 +187,19 @@ def _execute(plan, output, runtime_home, source, owned):
         inherited = prior.get('assets', {})
     elif 'document' not in plan:
         raise ValueError('document_required')
+    # 输入失败须在安装、输出占用及保留暂存前返回；复制后仍复核以发现并发变化。
+    for alias, asset in inherited.items():
+        path = (source / asset['path']).resolve()
+        if not path.is_relative_to(source):
+            raise ValueError('invalid_asset_path')
+        if not path.is_file() or sha(path) != asset['sha256']:
+            raise ValueError('asset_digest_mismatch: ' + alias)
+    for alias, asset in plan.get('assets', {}).items():
+        if alias in inherited:
+            raise ValueError('asset_alias_exists')
+        path = Path(asset['path'])
+        if path.is_symlink() or not path.is_file() or sha(path) != asset['sha256']:
+            raise ValueError('asset_digest_mismatch: ' + alias)
     installed = load_module('bootstrap').install(json.loads(Path(__file__).with_name('runtime.lock.json').read_text()),
         runtime_home or os.environ.get('CRAFT_RUNTIME_HOME', str(Path.home() / '.local/share/craft-runtimes')))
     cli = installed['executable']
@@ -219,7 +237,7 @@ def _execute(plan, output, runtime_home, source, owned):
             assets[alias] = {'sha256': asset['sha256'], 'staging': str(copy_asset(alias, asset['path'], asset['sha256']))}
         receipts = []
         owned['operations'] = receipts
-        with load_module('mcp_session').Session([cli, '--empty', 'mcp']) as session:
+        with (task_hooks.session if task_hooks else load_module('mcp_session').Session)([cli, '--empty', 'mcp']) as session:
             def call(name, args):
                 owned['lastAttempt'] = {'tool': name, 'arguments': args, 'phase': 'submitted'}
                 result = session.request('tools/call', {'name': name, 'arguments': args})
@@ -302,52 +320,95 @@ def _execute(plan, output, runtime_home, source, owned):
             call('open_project', {'path': str(project)})
             comp = call('get_comp', {'comp': bindings['composition']['comp']})
             layers = {str(layer['id']): call('get_layer', {'comp': comp['id'], 'layer': layer['id']}) for layer in comp['layers']}
+            if task_hooks:
+                task_hooks.reserve_render(comp,plan);task_hooks.watch_render(stage,output)
             frames = []
             for index, time in enumerate(plan.get('frames', [0])):
                 filename = f'frame-{index:04d}.png'
-                call('render_frame', {'comp': comp['id'], 'time': time, 'max_side': 0, 'path': str(stage / filename), 'inline': False, 'transparent': True})
+                call('render_frame', {'comp': comp['id'], 'time': time, 'max_side': 0, 'path': str(stage / filename), 'inline': False, 'transparent': plan.get('previewAlpha',True)})
                 if not (stage / filename).is_file():
                     raise ValueError('frame_missing')
-                frames.append({'path': filename, 'seconds': time, 'requestedAlpha': True})
-        output_format = plan.get('exports', [{}])[0].get('format') if plan.get('exports') else None
-        sequence = load_module('image_sequence').export_sequence(cli, project, comp, stage) if output_format == 'png-sequence' else None
-        if output_format == 'png-segmented':
-            producer = load_module('segmented_sequence')
-            chunk_frames = plan['exports'][0].get('chunkFrames')
-            chunk_bytes = min(producer.CHUNK_BYTES, chunk_frames*comp['width']*comp['height']*4) if chunk_frames else producer.CHUNK_BYTES
-            segmented = producer.render_segments(cli, project.resolve(), comp, (stage/'rgba-segments').resolve(), chunk_bytes)
-            descriptor = stage/'rgba-segments/segments.json'
-            sequence = {'path':'rgba-segments/segments.json','sha256':sha(descriptor),
-                        'metadata':{'width':comp['width'],'height':comp['height'],'bitDepth':8,'channels':'rgba','alphaRepresentation':'straight-png','colorSpace':'unknown','frameRate':segmented['frameRate'],'frameCount':segmented['frameCount'],'durationTicks':str(segmented['frameCount']),'timeBase':{'num':segmented['frameRate']['den'],'den':segmented['frameRate']['num']}}}
-        if output_format == 'mp4':
-            # 0.2.0 CLI 将 --comp 字符串解释为名称，数字 ID 只用于 MCP。
-            rendered = subprocess.run([cli, '--project', str(project), 'render', '--comp', comp['name'], '--out', str(stage / 'intro.mp4'), '--format', 'h264', '--start', '0', '--end', str(comp['duration']), '--fps', str(comp['frameRate']), '--audio', 'off'], capture_output=True, text=True, timeout=180)
-            if rendered.returncode or not (stage / 'intro.mp4').is_file():
-                raise RuntimeError('render_failed: ' + rendered.stdout[-1000:] + rendered.stderr[-1000:])
-        if source_project and sha(source_project) != source_hash:
-            raise ValueError('revision_conflict')
-        # 交付记录使用包内路径；原生文件自身仍是引擎保存的格式。
-        serialized = json.dumps(receipts, ensure_ascii=False, indent=2)
-        for asset in assets.values():
-            serialized = serialized.replace(asset['staging'], asset['path'])
-            del asset['staging']
-        serialized = serialized.replace(str(working), '.').replace(str(stage), '.').replace(str(source_project) if source_project else '\x00', 'source/project.ecproj')
-        (stage / 'operations.json').write_text(serialized + '\n')
-        for name, value in [('native.json', {'composition': comp, 'layers': layers}), ('plan.json', plan)]:
-            (stage / name).write_text(json.dumps(value, ensure_ascii=False, indent=2) + '\n')
-        exchange_report(stage,[frame['path'] for frame in frames]+(['intro.mp4'] if output_format == 'mp4' else [])+([str(f.relative_to(stage)) for f in sorted((stage/Path(sequence['path']).parent).rglob('*.png'))] if sequence else []),{})
-        manifest = {'schema': 'effectcraft-delivery/v1', 'sourceProjectSha256': source_hash,
-                    'runtimeSha256': installed['binarySha256'], 'bindings': bindings, 'frames': frames, 'assets': assets,
-                    'video': {'path': 'intro.mp4', 'alpha': False} if output_format == 'mp4' else None,
-                    'imageSequence': sequence,
-                    'files': {str(f.relative_to(stage)): sha(f) for f in stage.rglob('*') if f.is_file()}, 'lossReport': {'path':'exchange-loss.json','sha256':sha(stage/'exchange-loss.json')}, 'acceptance': 'requires-domain-and-visual-review'}
-        (stage / 'manifest.json').write_text(json.dumps(manifest, ensure_ascii=False, indent=2) + '\n')
-        if stage != output:
-            if output.exists() or output.is_symlink():
-                raise ValueError('output_exists')
-            stage.rename(output)
-        return manifest
+                frames.append({'path': filename, 'seconds': time, 'requestedAlpha': plan.get('previewAlpha',True)})
+        output_format=plan.get('exports',[{}])[0].get('format') if plan.get('exports') else None
+        if task_hooks and output_format=='png-segmented' and stage!=output:
+            # 无素材时在编辑会话结束后原子发布自有工程目录；渲染故障不再搬动工程。
+            if output.exists() or output.is_symlink():raise ValueError('output_exists')
+            stage.rename(output);stage=output;project=output/'project.ecproj'
+        context={'schema':'effectcraft-export-context/v1','plan':plan,'output':str(output),
+            'stage':str(stage),'working':str(working),'project':str(project),
+            'sourceProject':str(source_project) if source_project else None,'sourceHash':source_hash,
+            'comp':comp,'layers':layers,'frames':frames,'bindings':bindings,'assets':assets,'receipts':receipts,
+            'cli':str(cli),'runtimeSha256':installed['binarySha256'],'executionIdentity':execution_identity}
+        return finish_export(context,task_hooks)
 
+
+def finish_export(context, task_hooks=None, export_operation=None):
+    if task_hooks:
+        task_hooks.reserve_render(context['comp'],context['plan']);task_hooks.watch_render(context['stage'],context['output'])
+    try:result=_finish_export(context,task_hooks,export_operation)
+    except BaseException:
+        if task_hooks:
+            try:task_hooks.observe_render(context)
+            except (ValueError,OSError):pass # 计量诊断已持久化，保留原生原异常。
+        raise
+    if task_hooks:task_hooks.observe_render(context)
+    return result
+
+
+def _finish_export(context, task_hooks=None, export_operation=None):
+    """只执行既定导出与交付完成阶段；不重新进入 MCP 编辑会话。"""
+    plan=context['plan'];output=Path(context['output']);stage=Path(context['stage'])
+    project=Path(context['project']);working=Path(context['working']);cli=context['cli']
+    source_project=Path(context['sourceProject']) if context['sourceProject'] else None
+    source_hash=context['sourceHash'];comp=context['comp'];layers=context['layers']
+    frames=context['frames'];bindings=context['bindings'];receipts=context['receipts']
+    assets={key:dict(value) for key,value in context['assets'].items()}
+    initial=export_operation is None
+    # 交付记录使用包内路径；原生文件自身仍是引擎保存的格式。
+    serialized = json.dumps(receipts, ensure_ascii=False, indent=2)
+    for asset in assets.values():
+        serialized = serialized.replace(asset['staging'], asset['path'])
+        del asset['staging']
+    serialized = serialized.replace(str(working), '.').replace(str(stage), '.').replace(str(source_project) if source_project else '\x00', 'source/project.ecproj')
+    if initial: (stage / 'operations.json').write_text(serialized + '\n')
+    for name, value in [('native.json', {'composition': comp, 'layers': layers}), ('plan.json', plan)]:
+        if initial: (stage / name).write_text(json.dumps(value, ensure_ascii=False, indent=2) + '\n')
+    if task_hooks and initial:
+        export_operation=task_hooks.before('render_and_deliver',{'project':str(project),'exports':plan.get('exports',[])})
+        if (plan.get('exports') or [{}])[0].get('format')=='png-segmented':
+            task_hooks.checkpoint_export(export_operation,context)
+    output_format = plan.get('exports', [{}])[0].get('format') if plan.get('exports') else None
+    sequence = load_module('image_sequence').export_sequence(cli, project, comp, stage) if output_format == 'png-sequence' else None
+    if output_format == 'png-segmented':
+        producer = load_module('segmented_sequence')
+        chunk_frames = plan['exports'][0].get('chunkFrames')
+        chunk_bytes = min(producer.CHUNK_BYTES, chunk_frames*comp['width']*comp['height']*4) if chunk_frames else producer.CHUNK_BYTES
+        segmented = producer.render_segments(cli, project.resolve(), comp, (stage/'rgba-segments').resolve(), chunk_bytes,
+            before_segment=task_hooks.allowed if task_hooks else None,before_native=task_hooks.watch_segment if task_hooks else None,
+            after_native=task_hooks.finish_segment if task_hooks else None)
+        descriptor = stage/'rgba-segments/segments.json'
+        sequence = {'path':'rgba-segments/segments.json','sha256':sha(descriptor),
+                    'metadata':{'width':comp['width'],'height':comp['height'],'bitDepth':8,'channels':'rgba','alphaRepresentation':'straight-png','colorSpace':'unknown','frameRate':segmented['frameRate'],'frameCount':segmented['frameCount'],'durationTicks':str(segmented['frameCount']),'timeBase':{'num':segmented['frameRate']['den'],'den':segmented['frameRate']['num']}}}
+    if output_format == 'mp4':
+        # 0.2.0 CLI 将 --comp 字符串解释为名称，数字 ID 只用于 MCP。
+        rendered = subprocess.run([cli, '--project', str(project), 'render', '--comp', comp['name'], '--out', str(stage / 'intro.mp4'), '--format', 'h264', '--start', '0', '--end', str(comp['duration']), '--fps', str(comp['frameRate']), '--audio', 'off'], capture_output=True, text=True, timeout=180)
+        if rendered.returncode or not (stage / 'intro.mp4').is_file():
+            raise RuntimeError('render_failed: ' + rendered.stdout[-1000:] + rendered.stderr[-1000:])
+    if source_project and sha(source_project) != source_hash:
+        raise ValueError('revision_conflict')
+    exchange_report(stage,[frame['path'] for frame in frames]+(['intro.mp4'] if output_format == 'mp4' else [])+([str(f.relative_to(stage)) for f in sorted((stage/Path(sequence['path']).parent).rglob('*.png'))] if sequence else []),{})
+    manifest = {'schema': 'effectcraft-delivery/v1', 'sourceProjectSha256': source_hash,
+                'runtimeSha256': context['runtimeSha256'], 'bindings': bindings, 'frames': frames, 'assets': assets,
+                'video': {'path': 'intro.mp4', 'alpha': False} if output_format == 'mp4' else None,
+                'imageSequence': sequence,
+                'files': {str(f.relative_to(stage)): sha(f) for f in stage.rglob('*') if f.is_file() and f!=stage/'manifest.json'}, 'lossReport': {'path':'exchange-loss.json','sha256':sha(stage/'exchange-loss.json')}, 'acceptance': 'requires-domain-and-visual-review'}
+    (stage / 'manifest.json').write_text(json.dumps(manifest, ensure_ascii=False, indent=2) + '\n')
+    if stage != output:
+        if output.exists() or output.is_symlink():
+            raise ValueError('output_exists')
+        stage.rename(output)
+    if task_hooks: task_hooks.after(export_operation, {'manifestSha256': sha(output/'manifest.json')})
+    return manifest
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)

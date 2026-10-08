@@ -139,7 +139,7 @@ File...
 原生参数原文 / Verbatim native parameters:
 
 ```text
-{paths: [string], importAs?: footage|composition|compositionLayerSizes (Photoshop, PDF, Illustrator and EPS files), layer?: name|index (footage of one Photoshop layer), page?: number from 1 (PDF / Illustrator page), drag?: bool (dropped files: Settings ▸ Import ▸ Default Drag Import As)}
+{paths: [string], importAs?: footage|composition|compositionLayerSizes (Photoshop, PDF, Illustrator and EPS files), layer?: name|index (footage of one Photoshop layer), page?: number from 1 (PDF / Illustrator page), drag?: bool (dropped files: Settings ▸ Import ▸ Default Drag Import As), addToComp?: bool (also add them to the active comp, at time?, index?, position? as in layer.addItem)}
 ```
 
 ## file.projectSettings
@@ -191,6 +191,176 @@ Video Rendering and Effects
 
 ```text
 {backend?: gpu|cpu}
+```
+
+## roto.models
+
+Roto Brush Models
+
+- 技能 / Owner: `effectcraft-cli-masks`。
+- 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-masks`。
+- 当前工作流映射 / Workflow mapped: false。
+- 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
+- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe roto.models`；按原生参数构造计划后执行 run。
+- 完整逐命令验收 / Full command acceptance: NOT_RUN。
+
+原生参数原文 / Verbatim native parameters:
+
+```text
+{} (no parameter documentation in snapshot)
+```
+
+## roto.model.select
+
+Use Roto Brush Model
+
+- 技能 / Owner: `effectcraft-cli-masks`。
+- 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-masks`。
+- 当前工作流映射 / Workflow mapped: false。
+- 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
+- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe roto.model.select`；按原生参数构造计划后执行 run。
+- 完整逐命令验收 / Full command acceptance: NOT_RUN。
+
+原生参数原文 / Verbatim native parameters:
+
+```text
+{id: classical|mobilesam, wait?} (Roto Brush 2.0 / 3.0 use it; wait: loaded before returning)
+```
+
+## roto.model.install
+
+Install Roto Brush Model
+
+- 技能 / Owner: `effectcraft-cli-masks`。
+- 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-masks`。
+- 当前工作流映射 / Workflow mapped: false。
+- 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
+- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe roto.model.install`；按原生参数构造计划后执行 run。
+- 完整逐命令验收 / Full command acceptance: NOT_RUN。
+
+原生参数原文 / Verbatim native parameters:
+
+```text
+{path: weights file, id?, wait?} — verified against the registry's SHA-256
+```
+
+## roto.model.download
+
+Download Roto Brush Model
+
+- 技能 / Owner: `effectcraft-cli-masks`。
+- 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-masks`。
+- 当前工作流映射 / Workflow mapped: false。
+- 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
+- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe roto.model.download`；按原生参数构造计划后执行 run。
+- 完整逐命令验收 / Full command acceptance: NOT_RUN。
+
+原生参数原文 / Verbatim native parameters:
+
+```text
+{id, wait?} — the official weights, verified (desktop; uses the system curl)
+```
+
+## roto.model.remove
+
+Remove Roto Brush Model
+
+- 技能 / Owner: `effectcraft-cli-masks`。
+- 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-masks`。
+- 当前工作流映射 / Workflow mapped: false。
+- 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
+- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe roto.model.remove`；按原生参数构造计划后执行 run。
+- 完整逐命令验收 / Full command acceptance: NOT_RUN。
+
+原生参数原文 / Verbatim native parameters:
+
+```text
+{id}
+```
+
+## face.models
+
+Face Tracking Models
+
+- 技能 / Owner: `effectcraft-cli`。
+- 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli`。
+- 当前工作流映射 / Workflow mapped: false。
+- 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
+- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe face.models`；按原生参数构造计划后执行 run。
+- 完整逐命令验收 / Full command acceptance: NOT_RUN。
+
+原生参数原文 / Verbatim native parameters:
+
+```text
+{} (no parameter documentation in snapshot)
+```
+
+## face.model.select
+
+Use Face Tracking Model
+
+- 技能 / Owner: `effectcraft-cli`。
+- 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli`。
+- 当前工作流映射 / Workflow mapped: false。
+- 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
+- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe face.model.select`；按原生参数构造计划后执行 run。
+- 完整逐命令验收 / Full command acceptance: NOT_RUN。
+
+原生参数原文 / Verbatim native parameters:
+
+```text
+{id: classical|mediapipe-face, wait?} (face tracking uses it; wait: loaded before returning)
+```
+
+## face.model.install
+
+Install Face Tracking Model
+
+- 技能 / Owner: `effectcraft-cli`。
+- 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli`。
+- 当前工作流映射 / Workflow mapped: false。
+- 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
+- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe face.model.install`；按原生参数构造计划后执行 run。
+- 完整逐命令验收 / Full command acceptance: NOT_RUN。
+
+原生参数原文 / Verbatim native parameters:
+
+```text
+{path: model file, id?, wait?} — verified against the registry's SHA-256
+```
+
+## face.model.download
+
+Download Face Tracking Model
+
+- 技能 / Owner: `effectcraft-cli`。
+- 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli`。
+- 当前工作流映射 / Workflow mapped: false。
+- 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
+- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe face.model.download`；按原生参数构造计划后执行 run。
+- 完整逐命令验收 / Full command acceptance: NOT_RUN。
+
+原生参数原文 / Verbatim native parameters:
+
+```text
+{id, wait?} — the official model, verified (desktop; uses the system curl)
+```
+
+## face.model.remove
+
+Remove Face Tracking Model
+
+- 技能 / Owner: `effectcraft-cli`。
+- 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli`。
+- 当前工作流映射 / Workflow mapped: false。
+- 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
+- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe face.model.remove`；按原生参数构造计划后执行 run。
+- 完整逐命令验收 / Full command acceptance: NOT_RUN。
+
+原生参数原文 / Verbatim native parameters:
+
+```text
+{id}
 ```
 
 ## edit.undo
@@ -615,7 +785,7 @@ New Composition...
 原生参数原文 / Verbatim native parameters:
 
 ```text
-{name?, width?, height?, frameRate?, duration? (s), startTime? (s) | startTimecode?, background? [r,g,b]|#hex, pixelAspect?, shutterAngle?, shutterPhase?, motionBlurSamples?, adaptiveSampleLimit? (16–256), preserveFrameRate?: bool, preserveResolution?: bool, renderer? classic3D|advanced3D, anchor?, open?}
+{name?, width?, height?, frameRate?, duration? (s), startTime? (s) | startTimecode?, background? [r,g,b]|#hex, pixelAspect?, shutterAngle?, shutterPhase?, motionBlurSamples?, adaptiveSampleLimit? (16–256), preserveFrameRate?: bool, preserveResolution?: bool, renderer?: classic3D|advanced3D, anchor?, open?}
 ```
 
 ## comp.settings
@@ -632,7 +802,7 @@ Composition Settings...
 原生参数原文 / Verbatim native parameters:
 
 ```text
-{comp?, name?, width?, height?, anchor? 0-8 (resize anchor, 4 = center), frameRate?, duration?, startTime? (s) | startTimecode?, background?, shutterAngle?, shutterPhase?, motionBlurSamples?, adaptiveSampleLimit? (16–256), preserveFrameRate?: bool (nested or in the render queue it shows only its own frames), preserveResolution?: bool (nested, it renders at full size), pixelAspect?, renderer? classic3D|advanced3D}
+{comp?, name?, width?, height?, anchor? 0-8 (resize anchor, 4 = center), frameRate?, duration?, startTime? (s) | startTimecode?, background?, shutterAngle?, shutterPhase?, motionBlurSamples?, adaptiveSampleLimit? (16–256), preserveFrameRate?: bool (nested or in the render queue it shows only its own frames), preserveResolution?: bool (nested, it renders at full size), pixelAspect?, renderer?: classic3D|advanced3D}
 ```
 
 ## comp.setPosterTime
@@ -874,7 +1044,7 @@ Add Footage to Comp
 原生参数原文 / Verbatim native parameters:
 
 ```text
-{item: id|name, time?, duration? (s, for a still)}
+{item: id|name, time? (s, the In point), index? (1-based stack position; default above the selected layer), position? ([x, y] comp px; default the centre), duration? (s, for a still)}
 ```
 
 ## layer.select
@@ -1983,7 +2153,7 @@ Dolly Camera
 原生参数原文 / Verbatim native parameters:
 
 ```text
-{item?: id or name of a 3D model footage item, path?: a .gltf, .glb or .obj file to import, name?, time? (s)}
+{item?: id or name of a 3D model footage item, path?: a .gltf, .glb or .obj file to import, name?, time? (s), index? (1-based stack position), position? ([x, y] comp px)}
 ```
 
 ## layer.new3dPrimitive
@@ -2409,6 +2579,23 @@ OpenType Features
 
 ```text
 {layer?, font?, style?} → {family, style, features: [tags], options: {smallCaps, superscript, stylisticSets: [n], fractions, …}} (what the font sets with its own glyphs)
+```
+
+## text.fonts
+
+List Fonts
+
+- 技能 / Owner: `effectcraft-cli-layers`。
+- 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-layers`。
+- 当前工作流映射 / Workflow mapped: false。
+- 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
+- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe text.fonts`；按原生参数构造计划后执行 run。
+- 完整逐命令验收 / Full command acceptance: NOT_RUN。
+
+原生参数原文 / Verbatim native parameters:
+
+```text
+{query?, rescan?} → {count, families: [{family, styles, origin: bundled|system|user, nativeName?}], added} (rescan picks up fonts installed since launch)
 ```
 
 ## text.setSelection
@@ -3112,6 +3299,23 @@ Delete Project Items
 {items?: [id|name] (default: selected)} (folders with their contents; layers using the items go too)
 ```
 
+## project.usage
+
+Project Item Usage
+
+- 技能 / Owner: `effectcraft-cli-project`。
+- 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-project`。
+- 当前工作流映射 / Workflow mapped: false。
+- 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
+- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe project.usage`；按原生参数构造计划后执行 run。
+- 完整逐命令验收 / Full command acceptance: NOT_RUN。
+
+原生参数原文 / Verbatim native parameters:
+
+```text
+{items?: [id|name] (default: selected)} → {items, layers, comps} that deleting them removes
+```
+
 ## project.duplicate
 
 Duplicate Project Items
@@ -3484,6 +3688,23 @@ List Markers
 
 ```text
 {layer? (omit for composition markers)}
+```
+
+## markers.nested
+
+Nested Comp Markers
+
+- 技能 / Owner: `effectcraft-cli`。
+- 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli`。
+- 当前工作流映射 / Workflow mapped: false。
+- 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
+- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe markers.nested`；按原生参数构造计划后执行 run。
+- 完整逐命令验收 / Full command acceptance: NOT_RUN。
+
+原生参数原文 / Verbatim native parameters:
+
+```text
+{layer: a precomp layer, comp?} — its comp's markers at their times in this comp (as on the layer bar)
 ```
 
 ## markers.set
@@ -7313,6 +7534,23 @@ Audio
 {value?: include audio in previews}
 ```
 
+## playback.scrubAudio
+
+Scrub Audio
+
+- 技能 / Owner: `effectcraft-cli`。
+- 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli`。
+- 当前工作流映射 / Workflow mapped: false。
+- 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
+- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe playback.scrubAudio`；按原生参数构造计划后执行 run。
+- 完整逐命令验收 / Full command acceptance: NOT_RUN。
+
+原生参数原文 / Verbatim native parameters:
+
+```text
+{time? (s, default the current time)} — plays one frame of the comp's audio there (Ctrl/Cmd-drag the current time)
+```
+
 ## view.zoomIn
 
 Zoom In
@@ -7600,6 +7838,23 @@ Enter Full Screen
 
 ```text
 {} (no parameter documentation in snapshot)
+```
+
+## view.newViewer
+
+New Viewer
+
+- 技能 / Owner: `effectcraft-cli`。
+- 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli`。
+- 当前工作流映射 / Workflow mapped: false。
+- 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
+- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe view.newViewer`；按原生参数构造计划后执行 run。
+- 完整逐命令验收 / Full command acceptance: NOT_RUN。
+
+原生参数原文 / Verbatim native parameters:
+
+```text
+{} — another Composition viewer of the active comp; the one in use is locked
 ```
 
 ## window.panel
@@ -10268,7 +10523,7 @@ Import
 原生参数原文 / Verbatim native parameters:
 
 ```text
-{paths, addToComp?}
+{paths, addToComp?, time?, index?, position? (where the layers go, as in layer.addItem)}
 ```
 
 ## mediaBrowser.action

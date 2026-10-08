@@ -36,7 +36,7 @@
 
 ## 完整归属清单 / Complete assigned command list
 
-本技能归属 117 条命令。下面按命令族分组；上述短表若存在，仅是示例。归属按最长前缀确定，实际任务可组合其他能力的命令。
+本技能归属 118 条命令。下面按命令族分组；上述短表若存在，仅是示例。归属按最长前缀确定，实际任务可组合其他能力的命令。
 
 Each command below has a parameter contract in this skill’s `command-reference.md`. Assignment uses the most specific prefix; a task can combine commands from multiple capabilities.
 
@@ -161,7 +161,7 @@ Order: inspect project and selection, describe parameters, construct and check t
 | `shape.stroke.taper` | Stroke Taper | `describe shape.stroke.taper` |
 | `shape.stroke.wave` | Stroke Wave | `describe shape.stroke.wave` |
 
-### `text` — 12
+### `text` — 13
 
 | 命令 / Command | 用途 / Label | 参数入口 / Parameters |
 | --- | --- | --- |
@@ -171,6 +171,7 @@ Order: inspect project and selection, describe parameters, construct and check t
 | `text.edit` | Edit Text | `describe text.edit` |
 | `text.endEdit` | Exit Text Editing | `describe text.endEdit` |
 | `text.fontFeatures` | OpenType Features | `describe text.fontFeatures` |
+| `text.fonts` | List Fonts | `describe text.fonts` |
 | `text.setSelection` | Set Text Selection | `describe text.setSelection` |
 | `text.moveCaret` | Move Text Caret | `describe text.moveCaret` |
 | `text.insert` | Type Text | `describe text.insert` |

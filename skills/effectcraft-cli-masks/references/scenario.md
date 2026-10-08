@@ -49,7 +49,7 @@ python3 -I -B "$SKILL_DIR/scripts/workflow.py" "$SKILL_DIR/examples/layer-mask.j
 
 ## 完整归属清单 / Complete assigned command list
 
-本技能归属 32 条命令。下面按命令族分组；上述短表若存在，仅是示例。归属按最长前缀确定，实际任务可组合其他能力的命令。
+本技能归属 37 条命令。下面按命令族分组；上述短表若存在，仅是示例。归属按最长前缀确定，实际任务可组合其他能力的命令。
 
 Each command below has a parameter contract in this skill’s `command-reference.md`. Assignment uses the most specific prefix; a task can combine commands from multiple capabilities.
 
@@ -92,10 +92,15 @@ Order: inspect project and selection, describe parameters, construct and check t
 | `path.setFirstVertex` | Set First Vertex | `describe path.setFirstVertex` |
 | `path.freeTransform` | Free Transform Points | `describe path.freeTransform` |
 
-### `roto` — 9
+### `roto` — 14
 
 | 命令 / Command | 用途 / Label | 参数入口 / Parameters |
 | --- | --- | --- |
+| `roto.models` | Roto Brush Models | `describe roto.models` |
+| `roto.model.select` | Use Roto Brush Model | `describe roto.model.select` |
+| `roto.model.install` | Install Roto Brush Model | `describe roto.model.install` |
+| `roto.model.download` | Download Roto Brush Model | `describe roto.model.download` |
+| `roto.model.remove` | Remove Roto Brush Model | `describe roto.model.remove` |
 | `roto.stroke` | Roto Brush Stroke | `describe roto.stroke` |
 | `roto.propagate` | Propagate Roto Brush | `describe roto.propagate` |
 | `roto.span` | Set Segmentation Span | `describe roto.span` |

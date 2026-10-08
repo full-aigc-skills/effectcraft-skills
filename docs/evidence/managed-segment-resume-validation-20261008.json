@@ -1,0 +1,40 @@
+{
+  "schema": "effectcraft-managed-resume-validation/v1",
+  "result": "PASS",
+  "platform": "darwin-arm64",
+  "candidateOnly": true,
+  "evidence": [
+    "managed-segment-resume-exception-20261008.json",
+    "managed-segment-resume-kill-20261008.json"
+  ],
+  "regression": {
+    "total": 212,
+    "passed": 176,
+    "skipped": 36
+  },
+  "nativeRegressions": {
+    "introAndTextRevision": "PASS",
+    "collectMoveReplaceAssets": "PASS"
+  },
+  "redObserved": [
+    "repeated public resume attempted a second recovery and failed reconciliation_required",
+    "invalid asset digest reached installer and preserved an unwanted output"
+  ],
+  "sourceFiles": {
+    "skills/effectcraft-use/scripts/managed.py": "6cd824e07c45ec218d7f75c2ac52ddb09b261dca39810d192841a5db242f3cfc",
+    "skills/effectcraft-use/scripts/workflow.py": "82d143acddd945392c5909cd04a1c2db749f6a5fd0f7d5dd3053a667fe9faa6b",
+    "skills/effectcraft-use/scripts/render_recovery.py": "9449870e19be300d462209fb010c4f3c6cd54a66c2a4a0143ddbb5f1300b242e",
+    "tests/test_managed_segment_native.py": "514a3cb96dddd3318a1d2835add3b37342a0f6efbb0bbc0c4a63fce13f3c93fa",
+    "tests/test_workflow.py": "2292a5a600fdb2df7f64124b8d13ecaabc4281c10967b7971b1dd55266ef2f32"
+  },
+  "excluded": [
+    "native CLI killed during active rendering",
+    "guardian killed before stopped receipt",
+    "all other OS and architectures",
+    "external GUI conflicts",
+    "complete resource metering",
+    "host natural-language dispatch of this candidate",
+    "immutable release",
+    "complete V1"
+  ]
+}

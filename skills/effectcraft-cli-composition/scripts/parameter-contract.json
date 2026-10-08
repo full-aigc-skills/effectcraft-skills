@@ -1,7 +1,7 @@
 {
   "schema": "effectcraft-parameter-contract/v1",
-  "runtimeVersion": "0.2.0",
-  "binarySha256": "74d44fc90018ac381dc4516edff939ab26eb6d900ae5c3f49d1eba5ac14105fe",
+  "runtimeVersion": "0.4.0",
+  "binarySha256": "c1717eb87e5b57b3ed88c6a78047268a5afa566beb36104fdcc05dc8634a01c1",
   "commands": {
     "effect.apply": {
       "additionalProperties": false,
@@ -56,7 +56,7 @@
     },
     "mask.new": {
       "additionalProperties": false,
-      "description": "{layer?, vertices: [[x,y]…], inTangents?, outTangents?, closed?, mode?}",
+      "description": "{layer?, vertices: [[x,y]\u2026], inTangents?, outTangents?, closed?, mode?}",
       "properties": {
         "closed": {
           "description": "closed?"
@@ -74,7 +74,7 @@
           "description": "outTangents?"
         },
         "vertices": {
-          "description": "vertices: [[x,y]…]"
+          "description": "vertices: [[x,y]\u2026]"
         }
       },
       "required": [
@@ -130,5 +130,14 @@
       ],
       "type": "object"
     }
+  },
+  "runtimeSha256ByPlatform": {
+    "darwin-arm64": "c1717eb87e5b57b3ed88c6a78047268a5afa566beb36104fdcc05dc8634a01c1",
+    "darwin-x86_64": "c1717eb87e5b57b3ed88c6a78047268a5afa566beb36104fdcc05dc8634a01c1",
+    "windows-x86": "1b21654db091473cf89d273c116baf3443ee30cfb9aaecfe597e27fbd69ca530",
+    "windows-x86_64": "79e54a87f2e4fb6ad86506b1d855195307b684489c8721cddf5b9495b3c286e7",
+    "windows-arm64": "cba6f944952450b0bd6ad5707cc0e93234289d86d28d6bb6c586fed60598c516",
+    "linux-x86_64": "8509cd24b293260298f8dcf8158d2fa86b88b3a24eb6be82774df3a577c46b31",
+    "linux-aarch64": "336691a350568fc67faf020dcbadaa10b50cef440ad6e341893fb83ae3ede2aa"
   }
 }

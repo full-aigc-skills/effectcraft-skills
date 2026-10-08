@@ -8,6 +8,20 @@ import tempfile
 SOURCE = Path(__file__).resolve().parents[1] / 'skills/effectcraft-use/scripts/workflow.py'
 
 class WorkflowTests(unittest.TestCase):
+    def test_bad_asset_digest_fails_before_install_or_output_claim(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            root=Path(temporary);asset=root/'logo.png';asset.write_bytes(b'input')
+            plan={'document':{'name':'Intro','width':16,'height':16,'frameRate':12,'duration':1},
+                'operations':[],'assets':{'logo':{'path':str(asset),'sha256':'0'*64}}}
+            original=self.module.load_module
+            def prevent_install(name):
+                if name=='bootstrap':raise AssertionError('invalid input reached installer')
+                return original(name)
+            with patch.object(self.module,'load_module',side_effect=prevent_install):
+                with self.assertRaisesRegex(ValueError,'asset_digest_mismatch'):
+                    self.module.execute(plan,root/'output')
+            self.assertEqual([p.name for p in root.iterdir()],['logo.png'])
+
     def setUp(self):
         spec = importlib.util.spec_from_file_location('workflow', SOURCE)
         self.module = importlib.util.module_from_spec(spec)

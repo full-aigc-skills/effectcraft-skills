@@ -1,5 +1,7 @@
 """单请求串行 stdio MCP 会话；超时不重试有副作用的请求。"""
 import json
+import importlib.util
+from pathlib import Path
 from contextlib import suppress
 import os
 import select
@@ -13,8 +15,13 @@ class Session:
         self.timeout = timeout
         self.buffer = b''
         self.sequence = 0
+        self.pipe_reader = None
         self.stderr = tempfile.TemporaryFile()
         self.process = subprocess.Popen(argv, stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=self.stderr)
+        if os.name == 'nt':
+            spec=importlib.util.spec_from_file_location('pipe_platform',Path(__file__).with_name('platform_support.py'))
+            adapter=importlib.util.module_from_spec(spec);spec.loader.exec_module(adapter)
+            self.pipe_reader=adapter.PipeReader(self.process.stdout)
         try:
             self.request('initialize', {'protocolVersion': '2024-11-05', 'capabilities': {}, 'clientInfo': {'name': 'craft-skill', 'version': '0.1.0'}})
             self.send({'jsonrpc': '2.0', 'method': 'notifications/initialized'})
@@ -39,6 +46,9 @@ class Session:
         while True:
             if time.monotonic() >= deadline:
                 raise TimeoutError('outcome_unknown: request not retried')
+            if self.pipe_reader and b'\n' not in self.buffer:
+                try: self.buffer = self.pipe_reader.readline(max(0, deadline-time.monotonic()))
+                except (EOFError, ValueError) as error: raise RuntimeError('outcome_unknown: '+str(error)) from None
             if b'\n' in self.buffer:
                 line, self.buffer = self.buffer.split(b'\n', 1)
                 if not line.strip():
@@ -87,6 +97,7 @@ class Session:
         return json.loads(texts[0])
 
     def close(self):
+        if self.pipe_reader: self.pipe_reader.close()
         if self.process.stdin:
             with suppress(BrokenPipeError):
                 self.process.stdin.close()

@@ -1,5 +1,7 @@
 # Version-bound release records
 
+Source dev.35: isolated Python bootstrap, durable managed execution, native segment recovery and shared retry budgets. Source regression: 213 passed / 38 conditional skips; native unpublished-segment recovery and 12-frame pixel comparison passed on macOS arm64. Other platforms/hosts and complete V1 remain open. [Evidence](docs/evidence/managed-orphan-retry-component-20261008.json).
+
 These records were moved verbatim from the README preface. They describe their own versions and are not the current installation contract.
 
 Fixed EffectCraft plugin dev.32/source dev.30 passes independent cold installation for every domain skill,7 installed guard tests and1 actual cold native create/reopen/revise/export case. Across the three updated domains:41 distinct empty caches,21 guards and3 native cases pass; all64 installed skill hashes remain unchanged. Art bundle upgrade and full V1 remain separate. [Evidence](docs/evidence/craft-three-domain-output-guards-fixed-first-use-20261007.json).

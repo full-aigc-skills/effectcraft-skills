@@ -1,0 +1,39 @@
+name: Managed runtime candidate
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  portable-contracts:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, macos-latest, windows-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - name: Platform and durable-task regression
+        shell: bash
+        run: |
+          python -m unittest discover -s tests -p test_platform_support.py -v
+          python -m unittest discover -s tests -p 'test_managed_*.py' -v
+          python -m unittest discover -s tests -p test_revision_scope.py -v
+          python scripts/build_command_coverage.py --check
+          python scripts/sync_skill_suite.py --check
+      - name: Native pinned CLI discovery from each independent skill
+        shell: bash
+        env:
+          CRAFT_LIVE_SUITE: '1'
+        run: python -m unittest discover -s tests -p test_skill_suite.py -v
+      - name: PowerShell syntax check
+        if: runner.os == 'Windows'
+        shell: pwsh
+        run: |
+          $tokens=$null; $errors=$null
+          [System.Management.Automation.Language.Parser]::ParseFile((Join-Path $pwd 'skills/effectcraft-use/scripts/launch.ps1'),[ref]$tokens,[ref]$errors) > $null
+          if ($errors.Count) { $errors | Format-List; exit 1 }

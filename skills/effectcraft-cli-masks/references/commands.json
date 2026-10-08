@@ -3,9 +3,39 @@
   "pluginId": "effectcraft",
   "runtimeVersion": "0.2.0",
   "upstreamRepository": "https://github.com/storytold/effectcraft",
-  "upstreamCommit": "24fcbdf3d2d6b928d3788d33f1722d8a21b9ad29",
+  "upstreamCommit": "f5ebe5f6c5e887dddda4a2be1fcb47154e959b81",
   "scope": "observed command catalogue, not capability or creative acceptance",
   "commands": [
+    {
+      "id": "roto.models",
+      "label": "Roto Brush Models",
+      "params": null,
+      "enabledAtEmptySession": true
+    },
+    {
+      "id": "roto.model.select",
+      "label": "Use Roto Brush Model",
+      "params": "{id: classical|mobilesam, wait?} (Roto Brush 2.0 / 3.0 use it; wait: loaded before returning)",
+      "enabledAtEmptySession": true
+    },
+    {
+      "id": "roto.model.install",
+      "label": "Install Roto Brush Model",
+      "params": "{path: weights file, id?, wait?} — verified against the registry's SHA-256",
+      "enabledAtEmptySession": true
+    },
+    {
+      "id": "roto.model.download",
+      "label": "Download Roto Brush Model",
+      "params": "{id, wait?} — the official weights, verified (desktop; uses the system curl)",
+      "enabledAtEmptySession": true
+    },
+    {
+      "id": "roto.model.remove",
+      "label": "Remove Roto Brush Model",
+      "params": "{id}",
+      "enabledAtEmptySession": true
+    },
     {
       "id": "mask.new",
       "label": "New Mask from Points",

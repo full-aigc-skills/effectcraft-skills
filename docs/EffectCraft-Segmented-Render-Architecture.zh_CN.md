@@ -67,3 +67,9 @@ python3 -I -B "$SKILL_DIR/scripts/segmented_sequence.py" \
 当前源码工作流支持 `exports: [{"format":"png-segmented","chunkFrames":60}]`，先保存和收集原生工程，再输出 rgba-segments，并记录完整 imageSequence 及嵌套 PNG 交换记录。chunkFrames 可省略，不能越过单段预算；无效字段／范围和多个导出在安装前拒绝。有界原生 Film 收集和 Art 编排已通过候选联调；4.26 仍等待 HD 与固定发行安装后首次使用。Art 分段架构文档及证据说明候选范围，历史生产器证据保留原源码身份。
 
 [Art 候选联调证据](evidence/art-segment-adapter-candidate-20261007.json) 绑定真实公开分段导出、Film 连续收集和 Art 移动包返工／恢复；使用当前源码与已有核验原生执行器，固定安装后冷使用及 HD 保持开放。
+
+## 当前固定发行补充验收（2026-10-08）
+
+[固定版本证据](evidence/craft-fixed-segmented-hd-refresh-20261008.json)：实际安装的 Film40/source37、Effect38/source34 和 Art117/source89 完成验证。Art 单技能从空运行时公开安装四领域及 Node/core，交付 1920×1080、24 fps、5 秒、120 帧、四段动画；独立解码全部 120 帧。Logo 替换只重建受影响任务，损坏帧拒绝、原字节恢复不重复扣预算，五子工程移动包通过。另一个双领域冷安装用例验证十二帧分段交接、文字返工时非目标动画关键帧不变、移动工程重开和旧交付保全。两个原生用例分别耗时 255.657 秒与 26.797 秒。首次双领域尝试因磁盘满在安装阶段失败，保留诊断，清理关闭缓存后另建空目录成功。
+
+以上补充了前文历史候选阶段缺失的固定发行和 HD 证据；前文未完成说明属于其当时版本。当前修改的指南尚待独立新发行安装验证；本报告不证明新版本、通用 Skills CLI、GUI、创意质量或完整 V1。

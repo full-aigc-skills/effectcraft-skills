@@ -1,3 +1,8 @@
 __pycache__/
 *.pyc
 .DS_Store
+
+# 本地索引及原生验收现场，不属于分发内容
+/.codegraph/
+/docs/evidence/*.log
+/docs/evidence/managed-nova-20261008/

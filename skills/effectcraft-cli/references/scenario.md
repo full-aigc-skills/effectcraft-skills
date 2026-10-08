@@ -4,7 +4,7 @@
 
 ## 完整归属清单 / Complete assigned command list
 
-本技能归属 191 条命令。下面按命令族分组；上述短表若存在，仅是示例。归属按最长前缀确定，实际任务可组合其他能力的命令。
+本技能归属 199 条命令。下面按命令族分组；上述短表若存在，仅是示例。归属按最长前缀确定，实际任务可组合其他能力的命令。
 
 Each command below has a parameter contract in this skill’s `command-reference.md`. Assignment uses the most specific prefix; a task can combine commands from multiple capabilities.
 
@@ -121,6 +121,16 @@ Order: inspect project and selection, describe parameters, construct and check t
 | `essential.instance` | Essential Properties of a precomp layer | `describe essential.instance` |
 | `essential.templateInfo` | Read a template's manifest | `describe essential.templateInfo` |
 
+### `face` — 5
+
+| 命令 / Command | 用途 / Label | 参数入口 / Parameters |
+| --- | --- | --- |
+| `face.models` | Face Tracking Models | `describe face.models` |
+| `face.model.select` | Use Face Tracking Model | `describe face.model.select` |
+| `face.model.install` | Install Face Tracking Model | `describe face.model.install` |
+| `face.model.download` | Download Face Tracking Model | `describe face.model.download` |
+| `face.model.remove` | Remove Face Tracking Model | `describe face.model.remove` |
+
 ### `help` — 13
 
 | 命令 / Command | 用途 / Label | 参数入口 / Parameters |
@@ -170,11 +180,12 @@ Order: inspect project and selection, describe parameters, construct and check t
 | `liquify.stroke` | Liquify Stroke | `describe liquify.stroke` |
 | `liquify.clear` | Clear Liquify Mesh | `describe liquify.clear` |
 
-### `markers` — 4
+### `markers` — 5
 
 | 命令 / Command | 用途 / Label | 参数入口 / Parameters |
 | --- | --- | --- |
 | `markers.list` | List Markers | `describe markers.list` |
+| `markers.nested` | Nested Comp Markers | `describe markers.nested` |
 | `markers.set` | Marker Settings | `describe markers.set` |
 | `markers.delete` | Delete Marker | `describe markers.delete` |
 | `markers.convert` | Convert Marker | `describe markers.convert` |
@@ -204,13 +215,14 @@ Order: inspect project and selection, describe parameters, construct and check t
 | `paths.nullsFollowPoints` | Nulls Follow Points | `describe paths.nullsFollowPoints` |
 | `paths.tracePath` | Trace Path | `describe paths.tracePath` |
 
-### `playback` — 5
+### `playback` — 6
 
 | 命令 / Command | 用途 / Label | 参数入口 / Parameters |
 | --- | --- | --- |
 | `playback.toggle` | Play Current Preview | `describe playback.toggle` |
 | `playback.cacheWhenIdle` | Cache Frames When Idle | `describe playback.cacheWhenIdle` |
 | `playback.audio` | Audio | `describe playback.audio` |
+| `playback.scrubAudio` | Scrub Audio | `describe playback.scrubAudio` |
 | `playback.settings.get` | Preview Settings | `describe playback.settings.get` |
 | `playback.settings.set` | Change Preview Settings | `describe playback.settings.set` |
 
@@ -276,7 +288,7 @@ Order: inspect project and selection, describe parameters, construct and check t
 | `templates.saveAs` | Save as Template... | `describe templates.saveAs` |
 | `templates.delete` | Delete Template | `describe templates.delete` |
 
-### `view` — 43
+### `view` — 44
 
 | 命令 / Command | 用途 / Label | 参数入口 / Parameters |
 | --- | --- | --- |
@@ -322,6 +334,7 @@ Order: inspect project and selection, describe parameters, construct and check t
 | `view.options` | View Options... | `describe view.options` |
 | `view.layerControls` | Show Layer Controls | `describe view.layerControls` |
 | `view.fullScreen` | Enter Full Screen | `describe view.fullScreen` |
+| `view.newViewer` | New Viewer | `describe view.newViewer` |
 | `view.assign3dShortcut` | Assign Shortcut to 3D View | `describe view.assign3dShortcut` |
 
 ### `warp` — 3

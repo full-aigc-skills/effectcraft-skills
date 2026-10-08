@@ -1,0 +1,41 @@
+{
+  "schema": "effectcraft-additional-platforms/v1",
+  "version": "0.4.0",
+  "web": {
+    "url": "https://github.com/storytold/effectcraft/releases/download/v0.4.0/effectcraft-web-0.4.0.zip",
+    "archiveSha256": "68f781094d119ab6428d0d4d50bd8718b8226916c8274345ac268562848ecccf",
+    "payloadRoot": "effectcraft-web-0.4.0",
+    "api": "window.effectcraft",
+    "acceptance": "NOT_RUN"
+  },
+  "freebsd": {
+    "url": "https://codeload.github.com/storytold/effectcraft/tar.gz/f5ebe5f6c5e887dddda4a2be1fcb47154e959b81",
+    "archiveSha256": "9699ea30bd15a3dca87375cf4498caf414eb58229a214e7d5138d4e72c094d5a",
+    "commit": "f5ebe5f6c5e887dddda4a2be1fcb47154e959b81",
+    "payloadRoot": "effectcraft-f5ebe5f6c5e887dddda4a2be1fcb47154e959b81",
+    "acceptance": "NOT_RUN",
+    "upstreamTarget": "FreeBSD 14.3",
+    "dependencies": [
+      "cargo",
+      "rustc",
+      "pkgconf",
+      "cmake",
+      "cc"
+    ],
+    "packages": [
+      "libxkbcommon",
+      "wayland",
+      "libX11",
+      "libXcursor",
+      "libXrandr",
+      "libXi",
+      "libxcb",
+      "mesa-libs",
+      "vulkan-loader",
+      "gtk3",
+      "fontconfig",
+      "freetype2",
+      "alsa-lib"
+    ]
+  }
+}

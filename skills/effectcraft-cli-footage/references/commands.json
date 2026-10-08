@@ -3,7 +3,7 @@
   "pluginId": "effectcraft",
   "runtimeVersion": "0.2.0",
   "upstreamRepository": "https://github.com/storytold/effectcraft",
-  "upstreamCommit": "24fcbdf3d2d6b928d3788d33f1722d8a21b9ad29",
+  "upstreamCommit": "f5ebe5f6c5e887dddda4a2be1fcb47154e959b81",
   "scope": "observed command catalogue, not capability or creative acceptance",
   "commands": [
     {
@@ -39,7 +39,7 @@
     {
       "id": "mediaBrowser.import",
       "label": "Import",
-      "params": "{paths, addToComp?}",
+      "params": "{paths, addToComp?, time?, index?, position? (where the layers go, as in layer.addItem)}",
       "enabledAtEmptySession": true
     },
     {

@@ -26,7 +26,7 @@ class DesktopSessionTests(unittest.TestCase):
    self.assertEqual(p.terminated,1);self.assertTrue(session.stopped)
  def test_unsupported_platform_has_no_output(self):
   m=load();commands=m.load('commands');command=commands.catalog()['commands'][0]['id']
-  with tempfile.TemporaryDirectory() as td,patch.object(m.platform,'system',return_value='Linux'):
+  with tempfile.TemporaryDirectory() as td,patch.object(m.platform,'system',return_value='FreeBSD'):
    out=Path(td)/'output'
    with self.assertRaisesRegex(ValueError,'unsupported_desktop_platform'):m.run({'schema':'craft-command-plan/v1','operations':[{'command':command,'params':{}}]},out)
    self.assertFalse(out.exists())

@@ -13,7 +13,7 @@ def validate(params):
         raise ValueError('invalid_native_operation')
     lock = json.loads(Path(__file__).with_name('runtime.lock.json').read_text())
     catalog = commands.catalog()
-    if catalog['pluginId'] != commands.DOMAIN or catalog['runtimeSha256'] != lock['artifacts']['darwin-arm64']['binarySha256']:
+    if catalog['pluginId'] != commands.DOMAIN or catalog['runtimeSha256'] not in {v['binarySha256'] for v in lock['artifacts'].values()}:
         raise ValueError('native_catalog_identity_mismatch')
     if not isinstance(params['command'], str) or params['command'] not in {row['id'] for row in catalog['commands']}:
         raise ValueError('unknown_native_command')

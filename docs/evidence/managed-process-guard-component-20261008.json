@@ -1,0 +1,44 @@
+{
+  "schema": "effectcraft-process-guard-component/v1",
+  "result": "PASS",
+  "workingTreeCandidate": true,
+  "platform": "Darwin-arm64",
+  "sourceHead": "341360f4a837f0ab21a66c3903d3d7e54d5e54c9",
+  "nativeEvidence": "managed-process-guard-native-20261008.json",
+  "nativeEvidenceSha256": "c12fea68452c4c962fa2b38e02e7728064c27e5cfedcda456c6c02083e0502dc",
+  "checks": {
+    "realProcessTreeTests": {
+      "passed": 3,
+      "scope": [
+        "EOF",
+        "supervisor SIGKILL",
+        "TERM-resistant descendant",
+        "unrelated process preservation",
+        "actual return code"
+      ]
+    },
+    "nativeSupervisorTests": {
+      "passed": 5,
+      "skipped": 0
+    },
+    "defaultRegression": {
+      "total": 201,
+      "passed": 166,
+      "skipped": 35
+    },
+    "sharedSkillResources": "PASS"
+  },
+  "testFiles": {
+    "tests/test_process_guard.py": "91a783ee26264507be596f5c2f7661ca8235c0ea110ccb45bd83d04965c9a98d",
+    "tests/test_managed_supervisor.py": "0fe4327a43a6ccc3b82789ad3e2972088e68b49c6a849eecb3f0401cb9dd3c36"
+  },
+  "exclusions": [
+    "Windows Job real target execution",
+    "other native platforms",
+    "guardian SIGKILL ownership takeover",
+    "segmented managed resume",
+    "host model dispatch",
+    "fixed release",
+    "complete V1"
+  ]
+}

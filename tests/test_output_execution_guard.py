@@ -12,6 +12,23 @@ SCRIPT = Path(os.environ.get('CRAFT_INSTALLED_OUTPUT_GUARD_SKILL', Path(__file__
 
 
 class OutputGuardTests(unittest.TestCase):
+    def test_render_resume_reuses_same_claim_and_rejects_another_identity(self):
+        module=self.module()
+        self.assertTrue(hasattr(module,'resume_claim'),'verified export claim continuation is missing')
+        with tempfile.TemporaryDirectory() as directory:
+            output=Path(directory).resolve()/'delivery';identity={'planHash':'a'*64}
+            with self.assertRaisesRegex(RuntimeError,'render interrupted'):
+                with module.claim(output,identity):
+                    output.mkdir();(output/'project.ecproj').write_bytes(b'saved')
+                    raise RuntimeError('render interrupted')
+            inode=[output.stat().st_dev,output.stat().st_ino]
+            with self.assertRaisesRegex(ValueError,'output_execution_identity_mismatch'):
+                with module.resume_claim(output,{'planHash':'b'*64},inode):pass
+            with module.resume_claim(output,identity,inode):
+                self.assertEqual((output/'project.ecproj').read_bytes(),b'saved')
+            record=json.loads(next(output.parent.glob('.effectcraft-execution-*.json')).read_text())
+            self.assertEqual(record['state'],'finished');self.assertEqual(record['identity'],identity)
+
     def module(self):
         spec = importlib.util.spec_from_file_location('output_guard', SCRIPT)
         module = importlib.util.module_from_spec(spec)

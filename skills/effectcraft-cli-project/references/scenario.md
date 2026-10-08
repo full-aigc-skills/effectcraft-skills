@@ -36,7 +36,7 @@
 
 ## 完整归属清单 / Complete assigned command list
 
-本技能归属 66 条命令。下面按命令族分组；上述短表若存在，仅是示例。归属按最长前缀确定，实际任务可组合其他能力的命令。
+本技能归属 67 条命令。下面按命令族分组；上述短表若存在，仅是示例。归属按最长前缀确定，实际任务可组合其他能力的命令。
 
 Each command below has a parameter contract in this skill’s `command-reference.md`. Assignment uses the most specific prefix; a task can combine commands from multiple capabilities.
 
@@ -107,7 +107,7 @@ Order: inspect project and selection, describe parameters, construct and check t
 | `file.scripts.list` | List Scripts | `describe file.scripts.list` |
 | `file.newFromTemplate` | New Project from Template... | `describe file.newFromTemplate` |
 
-### `project` — 10
+### `project` — 11
 
 | 命令 / Command | 用途 / Label | 参数入口 / Parameters |
 | --- | --- | --- |
@@ -117,6 +117,7 @@ Order: inspect project and selection, describe parameters, construct and check t
 | `project.setLabel` | Item Label | `describe project.setLabel` |
 | `project.setComment` | Item Comment | `describe project.setComment` |
 | `project.delete` | Delete Project Items | `describe project.delete` |
+| `project.usage` | Project Item Usage | `describe project.usage` |
 | `project.duplicate` | Duplicate Project Items | `describe project.duplicate` |
 | `project.summary` | Project Summary | `describe project.summary` |
 | `project.newFolder` | New Folder | `describe project.newFolder` |

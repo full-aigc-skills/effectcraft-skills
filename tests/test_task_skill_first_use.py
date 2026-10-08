@@ -78,7 +78,7 @@ class TaskSkillFirstUseTests(unittest.TestCase):
                                 env=self.environment, capture_output=True, text=True, timeout=240)
         if success:
             self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
-            self.assertTrue((self.runtime / 'effectcraft/0.2.0/effectcraft-cli').is_file())
+            self.assertTrue((self.runtime / 'effectcraft/0.4.0/effectcraft-cli').is_file())
         else:
             self.assertNotEqual(result.returncode, 0)
         return result
@@ -102,7 +102,7 @@ class TaskSkillFirstUseTests(unittest.TestCase):
     def render(self, project, name='frame.png', time=0, transparent=False):
         output = self.root / name
         if transparent:
-            # 0.2.0 render-frame 是 RGB 预览。透明交付使用 RGBA PNG 原生序列导出。
+            # 0.4.0 render-frame 是 RGB 预览。透明交付使用 RGBA PNG 原生序列导出。
             # render 的 --comp 要求名称；props/get/render-frame 则接受数字 ID。
             composition = self.info(project)['activeComp']
             result = json.loads(self.cli('render', '--comp', composition['name'], '--start', time,

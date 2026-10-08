@@ -1,9 +1,9 @@
 {
   "schema": "craft-native-command-snapshot/v1",
   "pluginId": "effectcraft",
-  "runtimeSha256": "74d44fc90018ac381dc4516edff939ab26eb6d900ae5c3f49d1eba5ac14105fe",
+  "runtimeSha256": "c1717eb87e5b57b3ed88c6a78047268a5afa566beb36104fdcc05dc8634a01c1",
   "mode": "headless-empty",
-  "scope": "registered commands and empty-session state only; no command execution acceptance",
+  "scope": "macOS arm64 registry only; not command acceptance",
   "tools": [
     {
       "description": "List engine commands: id, label, menu path, shortcut, `params` doc (e.g. `{name?, width?, height?, frameRate?, duration? (s)}`) and whether it can run now (`why` if not). Every menu item, shortcut and panel gesture maps to one of these ids; run them with execute_command. Narrow with `filter` (e.g. `layer.new`, `keys`, `effect`).",
@@ -293,7 +293,7 @@
       "name": "add_keyframe"
     },
     {
-      "description": "Apply an effect to a layer and optionally set its parameters in one undoable call. `effect` is an id (`ec.blur.gaussian`) or After Effects name (`Gaussian Blur`; see list_effects); `values` maps parameter ids to values, e.g. {\"blurriness\": 12}. Returns the instance `path` (`effects/#n`, for set_property / add_keyframe) and its parameters with their paths and current values.",
+      "description": "Apply an effect to a layer and optionally set its parameters in one undoable call. `effect` is an id (`ec.blur.gaussian`) or After Effects name (`Gaussian Blur`; see list_effects); `values` maps parameter ids to values, e.g. {\"blurriness\": 12}. One undo step; if a value fails, nothing is applied. Returns the instance `path` (`effects/#n`, for set_property / add_keyframe) and its parameters with their paths and current values.",
       "inputSchema": {
         "properties": {
           "comp": {
@@ -341,6 +341,24 @@
         "type": "object"
       },
       "name": "list_effects"
+    },
+    {
+      "description": "The font families text layers can use, bundled and installed on this machine: family, styles, origin (bundled / system / user) and the name in the font's own language. Narrow with `query`; `rescan` picks up fonts installed since launch. Set one with execute_command `layer.setText {\"layer\", \"font\", \"style\"}`.",
+      "inputSchema": {
+        "properties": {
+          "query": {
+            "description": "Only families whose name (English or own-language) contains this text.",
+            "type": "string"
+          },
+          "rescan": {
+            "description": "Look for fonts installed since launch first.",
+            "type": "boolean"
+          }
+        },
+        "required": [],
+        "type": "object"
+      },
+      "name": "list_fonts"
     },
     {
       "description": "Where things stand: the editor state (active comp, current time, selected layers/keys/items, open comps, tool, work area) plus what this build can do (`app`: version, command and effect counts, GPU effects, import/export formats, After Effects parity summary). Cheap; call it to re-orient after a series of edits.",
@@ -624,7 +642,7 @@
         "File",
         "Import"
       ],
-      "params": "{paths: [string], importAs?: footage|composition|compositionLayerSizes (Photoshop, PDF, Illustrator and EPS files), layer?: name|index (footage of one Photoshop layer), page?: number from 1 (PDF / Illustrator page), drag?: bool (dropped files: Settings ▸ Import ▸ Default Drag Import As)}",
+      "params": "{paths: [string], importAs?: footage|composition|compositionLayerSizes (Photoshop, PDF, Illustrator and EPS files), layer?: name|index (footage of one Photoshop layer), page?: number from 1 (PDF / Illustrator page), drag?: bool (dropped files: Settings ▸ Import ▸ Default Drag Import As), addToComp?: bool (also add them to the active comp, at time?, index?, position? as in layer.addItem)}",
       "shortcut": "Cmd+I"
     },
     {
@@ -647,6 +665,64 @@
       "id": "render.backend",
       "label": "Video Rendering and Effects",
       "params": "{backend?: gpu|cpu}"
+    },
+    {
+      "enabled": true,
+      "id": "roto.models",
+      "label": "Roto Brush Models"
+    },
+    {
+      "enabled": true,
+      "id": "roto.model.select",
+      "label": "Use Roto Brush Model",
+      "params": "{id: classical|mobilesam, wait?} (Roto Brush 2.0 / 3.0 use it; wait: loaded before returning)"
+    },
+    {
+      "enabled": true,
+      "id": "roto.model.install",
+      "label": "Install Roto Brush Model",
+      "params": "{path: weights file, id?, wait?} — verified against the registry's SHA-256"
+    },
+    {
+      "enabled": true,
+      "id": "roto.model.download",
+      "label": "Download Roto Brush Model",
+      "params": "{id, wait?} — the official weights, verified (desktop; uses the system curl)"
+    },
+    {
+      "enabled": true,
+      "id": "roto.model.remove",
+      "label": "Remove Roto Brush Model",
+      "params": "{id}"
+    },
+    {
+      "enabled": true,
+      "id": "face.models",
+      "label": "Face Tracking Models"
+    },
+    {
+      "enabled": true,
+      "id": "face.model.select",
+      "label": "Use Face Tracking Model",
+      "params": "{id: classical|mediapipe-face, wait?} (face tracking uses it; wait: loaded before returning)"
+    },
+    {
+      "enabled": true,
+      "id": "face.model.install",
+      "label": "Install Face Tracking Model",
+      "params": "{path: model file, id?, wait?} — verified against the registry's SHA-256"
+    },
+    {
+      "enabled": true,
+      "id": "face.model.download",
+      "label": "Download Face Tracking Model",
+      "params": "{id, wait?} — the official model, verified (desktop; uses the system curl)"
+    },
+    {
+      "enabled": true,
+      "id": "face.model.remove",
+      "label": "Remove Face Tracking Model",
+      "params": "{id}"
     },
     {
       "enabled": false,
@@ -882,7 +958,7 @@
       "menu": [
         "Composition"
       ],
-      "params": "{name?, width?, height?, frameRate?, duration? (s), startTime? (s) | startTimecode?, background? [r,g,b]|#hex, pixelAspect?, shutterAngle?, shutterPhase?, motionBlurSamples?, adaptiveSampleLimit? (16–256), preserveFrameRate?: bool, preserveResolution?: bool, renderer? classic3D|advanced3D, anchor?, open?}",
+      "params": "{name?, width?, height?, frameRate?, duration? (s), startTime? (s) | startTimecode?, background? [r,g,b]|#hex, pixelAspect?, shutterAngle?, shutterPhase?, motionBlurSamples?, adaptiveSampleLimit? (16–256), preserveFrameRate?: bool, preserveResolution?: bool, renderer?: classic3D|advanced3D, anchor?, open?}",
       "shortcut": "Cmd+N"
     },
     {
@@ -892,7 +968,7 @@
       "menu": [
         "Composition"
       ],
-      "params": "{comp?, name?, width?, height?, anchor? 0-8 (resize anchor, 4 = center), frameRate?, duration?, startTime? (s) | startTimecode?, background?, shutterAngle?, shutterPhase?, motionBlurSamples?, adaptiveSampleLimit? (16–256), preserveFrameRate?: bool (nested or in the render queue it shows only its own frames), preserveResolution?: bool (nested, it renders at full size), pixelAspect?, renderer? classic3D|advanced3D}",
+      "params": "{comp?, name?, width?, height?, anchor? 0-8 (resize anchor, 4 = center), frameRate?, duration?, startTime? (s) | startTimecode?, background?, shutterAngle?, shutterPhase?, motionBlurSamples?, adaptiveSampleLimit? (16–256), preserveFrameRate?: bool (nested or in the render queue it shows only its own frames), preserveResolution?: bool (nested, it renders at full size), pixelAspect?, renderer?: classic3D|advanced3D}",
       "shortcut": "Cmd+K",
       "why": "no composition is open"
     },
@@ -1028,7 +1104,7 @@
       "menu": [
         "File"
       ],
-      "params": "{item: id|name, time?, duration? (s, for a still)}",
+      "params": "{item: id|name, time? (s, the In point), index? (1-based stack position; default above the selected layer), position? ([x, y] comp px; default the centre), duration? (s, for a still)}",
       "shortcut": "Cmd+/",
       "why": "no composition is open"
     },
@@ -1635,7 +1711,7 @@
       "enabled": false,
       "id": "layer.newModel",
       "label": "3D Model Layer",
-      "params": "{item?: id or name of a 3D model footage item, path?: a .gltf, .glb or .obj file to import, name?, time? (s)}",
+      "params": "{item?: id or name of a 3D model footage item, path?: a .gltf, .glb or .obj file to import, name?, time? (s), index? (1-based stack position), position? ([x, y] comp px)}",
       "why": "no composition is open"
     },
     {
@@ -1848,6 +1924,12 @@
       "id": "text.fontFeatures",
       "label": "OpenType Features",
       "params": "{layer?, font?, style?} → {family, style, features: [tags], options: {smallCaps, superscript, stylisticSets: [n], fractions, …}} (what the font sets with its own glyphs)"
+    },
+    {
+      "enabled": true,
+      "id": "text.fonts",
+      "label": "List Fonts",
+      "params": "{query?, rescan?} → {count, families: [{family, styles, origin: bundled|system|user, nativeName?}], added} (rescan picks up fonts installed since launch)"
     },
     {
       "enabled": false,
@@ -2190,6 +2272,12 @@
     },
     {
       "enabled": true,
+      "id": "project.usage",
+      "label": "Project Item Usage",
+      "params": "{items?: [id|name] (default: selected)} → {items, layers, comps} that deleting them removes"
+    },
+    {
+      "enabled": true,
       "id": "project.duplicate",
       "label": "Duplicate Project Items",
       "params": "{items?: [id|name] (default: selected)} → {items}"
@@ -2341,6 +2429,12 @@
       "id": "markers.list",
       "label": "List Markers",
       "params": "{layer? (omit for composition markers)}"
+    },
+    {
+      "enabled": true,
+      "id": "markers.nested",
+      "label": "Nested Comp Markers",
+      "params": "{layer: a precomp layer, comp?} — its comp's markers at their times in this comp (as on the layer bar)"
     },
     {
       "enabled": false,
@@ -4212,6 +4306,13 @@
     },
     {
       "enabled": false,
+      "id": "playback.scrubAudio",
+      "label": "Scrub Audio",
+      "params": "{time? (s, default the current time)} — plays one frame of the comp's audio there (Ctrl/Cmd-drag the current time)",
+      "why": "no composition is open"
+    },
+    {
+      "enabled": false,
       "id": "view.zoomIn",
       "label": "Zoom In",
       "menu": [
@@ -4378,6 +4479,17 @@
         "View"
       ],
       "shortcut": "Ctrl+Cmd+F"
+    },
+    {
+      "enabled": false,
+      "id": "view.newViewer",
+      "label": "New Viewer",
+      "menu": [
+        "View"
+      ],
+      "params": "{} — another Composition viewer of the active comp; the one in use is locked",
+      "shortcut": "Alt+Shift+N",
+      "why": "no composition is open"
     },
     {
       "enabled": true,
@@ -5512,7 +5624,7 @@
       "enabled": true,
       "id": "mediaBrowser.import",
       "label": "Import",
-      "params": "{paths, addToComp?}"
+      "params": "{paths, addToComp?, time?, index?, position? (where the layers go, as in layer.addItem)}"
     },
     {
       "enabled": true,

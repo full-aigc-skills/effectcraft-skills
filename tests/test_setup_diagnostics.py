@@ -88,7 +88,7 @@ class SetupFailureTests(unittest.TestCase):
   for payload in cases:
    with self.subTest(domain=domain,payload=payload),tempfile.TemporaryDirectory(prefix='craft malformed lock ') as temporary:
     scripts=Path(temporary)/'only skill/scripts';scripts.mkdir(parents=True)
-    for name in ['bootstrap.py','cli.py']:shutil.copyfile(source/name,scripts/name)
+    for name in ['bootstrap.py','cli.py','platform_support.py']:shutil.copyfile(source/name,scripts/name)
     (scripts/filename).write_text(json.dumps(payload));runtime=Path(temporary)/'runtime'
     for entry in ['bootstrap.py','cli.py']:
      argv=[sys.executable,'-I','-B',str(scripts/entry),'--runtime-home',str(runtime)]

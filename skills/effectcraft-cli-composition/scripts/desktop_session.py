@@ -6,8 +6,7 @@ def load(name):
  spec=importlib.util.spec_from_file_location('craft_desktop_'+name,Path(__file__).with_name(name+'.py'));module=importlib.util.module_from_spec(spec);spec.loader.exec_module(module);return module
 
 def owned_listener(process,port):
- result=subprocess.run(['/usr/sbin/lsof','-nP','-a','-p',str(process.pid),'-iTCP:'+str(port),'-sTCP:LISTEN','-Fn'],capture_output=True,text=True,timeout=3)
- return result.returncode==0 and ('n127.0.0.1:'+str(port)) in result.stdout.splitlines()
+ return load('platform_support').owned_listener(process,port)
 
 class OwnedSession:
  def __init__(self,argv,desktop,domain,output,port,token_file=None):
@@ -47,7 +46,7 @@ def read_plan(path):
  """计划与原生回复使用相同的严格 JSON 规则，拒绝重复键和非有限值。"""
  return load("commands").reply_json(Path(path).read_text())
 
-def run(plan,output,runtime_home=None,inputs=None):
+def run(plan,output,runtime_home=None,inputs=None,task_hooks=None):
  commands=load('commands');inputs=inputs or {};commands.validate(plan,inputs,mode="bridge")
  if any(not isinstance(k,str) or not re.fullmatch(r'[a-zA-Z][\w-]*',k) or k=='output' for k in inputs):raise ValueError('invalid_input_name')
  for name,path in inputs.items():
@@ -56,7 +55,8 @@ def run(plan,output,runtime_home=None,inputs=None):
  output=Path(output).absolute()
  if output.exists() or output.is_symlink():raise ValueError('output_exists')
  if not output.parent.is_dir():raise ValueError('output_parent_missing')
- if platform.system().lower()+'-'+platform.machine().lower()!='darwin-arm64':raise ValueError('unsupported_desktop_platform')
+ key=load('platform_support').platform_key()
+ if key not in json.loads(Path(__file__).with_name('runtime.lock.json').read_text())['artifacts']:raise ValueError('unsupported_desktop_platform')
  home=runtime_home or os.environ.get('CRAFT_RUNTIME_HOME',str(Path.home()/'.local/share/craft-runtimes'));desktop={};sessions=[]
  def install(lock,home):
   desktop.update(load('desktop').install(json.loads(Path(__file__).with_name('desktop.lock.json').read_text()),home));return load('bootstrap').install(lock,home)
@@ -66,7 +66,15 @@ def run(plan,output,runtime_home=None,inputs=None):
    token=Path(private)/'control-token';token.write_text(secrets.token_hex(32));token.chmod(0o600)
   with socket.socket() as probe:probe.bind(('127.0.0.1',0));port=probe.getsockname()[1]
   def factory(argv):
-   session=OwnedSession(argv,desktop,commands.DOMAIN,output,port,token);sessions.append(session);return session
+   session=OwnedSession(argv,desktop,commands.DOMAIN,output,port,token);sessions.append(session)
+   if task_hooks:
+    original=session.request
+    def request(method,params):
+     if method!='tools/call':return original(method,params)
+     identifier=task_hooks.before(params.get('name',method),params)
+     result=original(method,params);task_hooks.after(identifier,commands.parse_reply(result));return result
+    session.request=request
+   return session
   interrupted=False
   try:
    receipt=commands.execute(plan,output,home,'bridge','127.0.0.1:'+str(port),str(token) if token else None,installer=install,session_factory=factory,inputs=inputs)

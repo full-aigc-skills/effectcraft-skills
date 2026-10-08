@@ -93,7 +93,7 @@ class AnimationTemporalTests(unittest.TestCase):
                 self.assertEqual(workflow.sha(first/name), expected)
             self.assertEqual(tree_hash(skill), original_hash)
             self.assertEqual(tree_hash(original), original_hash)
-            evidence = {'schema':'craft-effect-temporal-first-use/v1', 'result':'passed', 'nativeVersion':'0.2.0', 'skillSha256':original_hash, 'runtimeMode':'single installed skill copied alone; empty runtime; default public installation', 'rgbaAlpha':alpha, 'videoBadgeRgb':pixels, 'revisedVideoBadgeRgb':revised_pixels, 'firstFiles':receipt['files'], 'revisedFiles':revised['files'], 'preserved':['badge layer and keys','title opacity keys','all first delivery files','installed skill bytes'], 'unverified':['animated transparent video','all interpolation modes','model dispatch','GUI','creative acceptance']}
+            evidence = {'schema':'craft-effect-temporal-first-use/v1', 'result':'passed', 'nativeVersion':'0.4.0', 'skillSha256':original_hash, 'runtimeMode':'single installed skill copied alone; empty runtime; default public installation', 'rgbaAlpha':alpha, 'videoBadgeRgb':pixels, 'revisedVideoBadgeRgb':revised_pixels, 'firstFiles':receipt['files'], 'revisedFiles':revised['files'], 'preserved':['badge layer and keys','title opacity keys','all first delivery files','installed skill bytes'], 'unverified':['animated transparent video','all interpolation modes','model dispatch','GUI','creative acceptance']}
             if os.environ.get('CRAFT_TEMPORAL_EVIDENCE'):
                 target = Path(os.environ['CRAFT_TEMPORAL_EVIDENCE'])
                 with target.open('x') as output:

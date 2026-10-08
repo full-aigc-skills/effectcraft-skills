@@ -1,6 +1,8 @@
 #!/usr/bin/env python3
 """仅用标准库安装锁定的官方 CLI；技能单独复制后仍可运行。"""
 import argparse
+import importlib.util
+import tarfile
 import hashlib
 import http.client
 import ssl
@@ -20,6 +22,12 @@ import zipfile
 
 MAX_BYTES = 1024 * 1024 * 1024
 LOCK_WAIT_SECONDS = 120
+
+
+def portable():
+    spec = importlib.util.spec_from_file_location('craft_platform', Path(__file__).with_name('platform_support.py'))
+    value = importlib.util.module_from_spec(spec); spec.loader.exec_module(value)
+    return value
 
 
 def digest(path):
@@ -63,6 +71,20 @@ def download(url, destination):
 
 def extract(archive, destination):
     """先检查全部成员，再解压；拒绝链接、重复路径和越界。"""
+    if tarfile.is_tarfile(archive):
+        with tarfile.open(archive, 'r:*') as source:
+            members = source.getmembers(); seen = set(); total = 0
+            for item in members:
+                path = PurePosixPath(item.name)
+                if (path.is_absolute() or '..' in path.parts or '\\' in item.name
+                        or ':' in item.name or not (item.isfile() or item.isdir())
+                        or str(path) in seen):
+                    raise ValueError('unsafe_archive: ' + item.name)
+                seen.add(str(path)); total += item.size
+                if total > MAX_BYTES:
+                    raise ValueError('archive_too_large')
+            source.extractall(destination, members=members, filter='data')
+        return
     with zipfile.ZipFile(archive) as source:
         seen = set()
         total = 0
@@ -82,11 +104,18 @@ def extract(archive, destination):
 
 
 def inspect_install(destination, artifact, expected):
-    binary = destination / artifact
+    binary = destination / expected.get('binaryPath', artifact)
     if destination.is_symlink() or binary.is_symlink() or not binary.is_file():
         raise ValueError('invalid_installed_path')
     if digest(binary) != expected['binarySha256']:
         raise ValueError('installed_checksum_mismatch; preserve directory for inspection')
+    if expected.get('integrityFile'):
+        manifest=Path(__file__).parent/expected['integrityFile']
+        if digest(manifest)!=expected['integritySha256']:raise ValueError('runtime_integrity_manifest_changed')
+        files=json.loads(manifest.read_text())
+        actual={str(p.relative_to(destination)).replace(os.sep,'/'):digest(p) for p in destination.rglob('*') if p.is_file() and p.name!='installation.json'}
+        if any(p.is_symlink() for p in destination.rglob('*')) or actual!=files:
+            raise ValueError('runtime_payload_changed; preserve directory for inspection')
     receipt = destination / 'installation.json'
     if receipt.is_symlink() or not receipt.is_file():
         raise ValueError('installation_receipt_missing')
@@ -95,7 +124,7 @@ def inspect_install(destination, artifact, expected):
 
 def install(lock, runtime_home, archive=None, platform_key=None):
     """每个版本只安装一次；失败不覆盖旧版，也不改变 PATH 或用户配置。"""
-    key = platform_key or f'{platform.system().lower()}-{platform.machine().lower()}'
+    key = platform_key or portable().platform_key()
     # 锁结构先验证：损坏的独立安装材料不能触发目录写入或下载。
     if (not isinstance(lock, dict) or not isinstance(lock.get('artifacts'), dict)
             or not isinstance(lock.get('artifact'), str)
@@ -117,26 +146,14 @@ def install(lock, runtime_home, archive=None, platform_key=None):
     artifact, version = lock['artifact'], lock['resolvedVersion']
     if not re.fullmatch(r'[a-z]+craft-cli', artifact) or not re.fullmatch(r'\d+\.\d+\.\d+', version):
         raise ValueError('invalid_runtime_identity')
+    portable().check_minimum(expected.get('minimumSystem',{}))
     parent = Path(runtime_home).expanduser().absolute() / artifact.removesuffix('-cli')
     parent.mkdir(parents=True, exist_ok=True)
     if parent.is_symlink():
         raise ValueError('invalid_runtime_directory')
     destination = parent / version
-    # 当前发行矩阵仅支持 macOS；flock 随进程退出释放，不靠遗留 PID 判断活动状态。
-    import fcntl
-    fd = os.open(parent / '.install.lock', os.O_CREAT | os.O_RDWR | os.O_NOFOLLOW, 0o600)
-    with os.fdopen(fd, 'w') as mutex:
-        # 只等待安装互斥；不得因此重放编辑、渲染等原生副作用。
-        deadline = time.monotonic() + LOCK_WAIT_SECONDS
-        while True:
-            try:
-                fcntl.flock(mutex, fcntl.LOCK_EX | fcntl.LOCK_NB)
-                break
-            except BlockingIOError:
-                remaining = deadline - time.monotonic()
-                if remaining <= 0:
-                    raise TimeoutError('runtime_install_busy: installation lock wait expired') from None
-                time.sleep(min(.05, remaining))
+    guard = portable()
+    with guard.exclusive_lock(parent / '.install.lock', LOCK_WAIT_SECONDS):
         if destination.exists() or destination.is_symlink():
             return inspect_install(destination, artifact, expected)
         with tempfile.TemporaryDirectory(prefix='.install-', dir=parent) as temporary:
@@ -148,21 +165,32 @@ def install(lock, runtime_home, archive=None, platform_key=None):
                 raise ValueError('archive_checksum_mismatch')
             unpacked = stage / 'unpacked'
             extract(package, unpacked)
-            binaries = [p for p in unpacked.rglob(artifact) if p.is_file()]
+            binary_name = Path(expected.get('binaryPath', artifact)).name
+            binaries = [p for p in unpacked.rglob(binary_name) if p.is_file()]
             if len(binaries) != 1 or digest(binaries[0]) != expected['binarySha256']:
                 raise ValueError('binary_checksum_mismatch')
             payload = stage / 'payload'
-            payload.mkdir()
-            binary = payload / artifact
-            shutil.copyfile(binaries[0], binary)
+            if 'binaryPath' in expected:
+                relative = PurePosixPath(expected['binaryPath'])
+                payload_root = PurePosixPath(expected.get('payloadRoot', '.'))
+                if relative.is_absolute() or '..' in relative.parts or payload_root.is_absolute() or '..' in payload_root.parts:
+                    raise ValueError('unsafe_payload_path')
+                shutil.copytree(unpacked / payload_root, payload)
+                binary = payload / relative
+                if not binary.is_file() or digest(binary) != expected['binarySha256']:
+                    raise ValueError('binary_checksum_mismatch')
+            else:
+                payload.mkdir()
+                binary = payload / artifact
+                shutil.copyfile(binaries[0], binary)
             binary.chmod(0o755)
-            licenses = [p for p in unpacked.rglob('LICENSE*') if p.is_file()]
+            licenses = [p for p in unpacked.rglob('*') if p.is_file() and p.name.lower().startswith(('license', 'copying'))]
             if not licenses:
                 raise ValueError('license_missing')
             for index, path in enumerate(licenses):
                 target = payload / path.name
                 if target.exists():
-                    target = payload / f'{index}-{path.name}'
+                    continue
                 shutil.copyfile(path, target)
             result = subprocess.run([str(binary), '--version'], capture_output=True, text=True, timeout=20, check=True)
             if result.stdout.strip() != expected.get('versionOutput', f'{artifact} {version}'):
@@ -170,6 +198,7 @@ def install(lock, runtime_home, archive=None, platform_key=None):
             receipt = dict(expected, name=artifact.removesuffix('-cli'), version=version,
                            platform=key, versionOutput=result.stdout.strip(), source='official-github-release')
             (payload / 'installation.json').write_text(json.dumps(receipt, indent=2) + '\n')
+            inspect_install(payload,artifact,expected)
             # 同文件系统原子发布。没有任何自动升级/替换已有版本的分支。
             payload.rename(destination)
             return dict(inspect_install(destination, artifact, expected), reused=False)

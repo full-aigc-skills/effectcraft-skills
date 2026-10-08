@@ -83,18 +83,18 @@ def atomic_json(path, value):
 @contextmanager
 def output_lock(root):
     # 内核锁在进程退出时释放；不通过删除锁文件抢占仍在运行的生产器。
-    import fcntl
+    platform_adapter = module('platform_support')
     path = root/'render.lock'
     regular_path(path)
     with path.open('a+b') as stream:
         try:
-            fcntl.flock(stream, fcntl.LOCK_EX | fcntl.LOCK_NB)
+            platform_adapter.lock_stream(stream)
         except BlockingIOError as error:
             raise ValueError('segment_render_busy') from error
         try:
             yield
         finally:
-            fcntl.flock(stream, fcntl.LOCK_UN)
+            platform_adapter.unlock_stream(stream)
 
 
 def render_segment(cli, project, composition, directory, part):
@@ -117,7 +117,7 @@ def render_segment(cli, project, composition, directory, part):
         source.rename(directory/f'frame_{index:05d}.png')
 
 
-def render_segments(cli, project, composition, output, chunk_bytes=CHUNK_BYTES):
+def render_segments(cli, project, composition, output, chunk_bytes=CHUNK_BYTES, before_segment=None,before_native=None,after_native=None):
     """只有与当前输入绑定且重新通过像素核验的段允许复用。"""
     parts = plan_segments(composition, chunk_bytes)
     cli, project, output = Path(cli).absolute(), Path(project).absolute(), Path(output).absolute()
@@ -152,6 +152,7 @@ def render_segments(cli, project, composition, output, chunk_bytes=CHUNK_BYTES):
         completion.unlink(missing_ok=True)
         records, total = [], 0
         for index, part in enumerate(parts):
+            if before_segment:before_segment()
             if sha(project) != binding['projectSha256'] or sha(cli) != binding['runtimeSha256']:
                 raise ValueError('segment_input_changed')
             directory = output/f'segment_{index:05d}'
@@ -184,12 +185,16 @@ def render_segments(cli, project, composition, output, chunk_bytes=CHUNK_BYTES):
             if manifest is None:
                 with tempfile.TemporaryDirectory(dir=output.parent, prefix='.effect-segment-') as temp:
                     stage = Path(temp)
-                    render_segment(cli, project, composition, stage, part)
-                    manifest = sequence.inspect_sequence(stage, comp)
-                    atomic_json(stage/'sequence.json', manifest)
-                    if directory.exists():
-                        shutil.rmtree(directory)
-                    stage.rename(directory)
+                    if before_native:before_native(stage,directory,part,composition)
+                    try:
+                        render_segment(cli, project, composition, stage, part)
+                        manifest = sequence.inspect_sequence(stage, comp)
+                        atomic_json(stage/'sequence.json', manifest)
+                        if directory.exists():
+                            shutil.rmtree(directory)
+                        stage.rename(directory)
+                    finally:
+                        if after_native:after_native(stage)
                 ledger[str(index)] = sha(directory/'sequence.json')
                 atomic_json(ledger_path, ledger)
             total += sum(frame['bytes'] for frame in manifest['frames'])

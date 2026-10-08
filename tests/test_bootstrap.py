@@ -90,6 +90,22 @@ class BootstrapTests(unittest.TestCase):
             with self.assertRaisesRegex(ValueError, 'unsupported_platform'):
                 self.module.install(self.lock, self.root / 'runtime', platform_key='unknown')
 
+    def test_tar_runtime_preserves_required_shared_libraries(self):
+        import io
+        import tarfile
+        package = self.root/'official.tar.gz'
+        with tarfile.open(package, 'w:gz') as tar:
+            for name, data in [('bin/filmcraft-cli', self.binary), ('lib/required.so', b'library'), ('LICENSE', b'license')]:
+                info = tarfile.TarInfo(name); info.size=len(data); info.mode=0o755
+                tar.addfile(info, io.BytesIO(data))
+        expected = self.lock['artifacts']['darwin-arm64']
+        expected.update(archiveFormat='tar.gz', binaryPath='bin/filmcraft-cli', payloadRoot='.',
+                        archiveSha256=hashlib.sha256(package.read_bytes()).hexdigest())
+        result = self.module.install(self.lock, self.root/'runtime', package, 'darwin-arm64')
+        binary = Path(result['executable'])
+        self.assertEqual(binary.name, 'filmcraft-cli')
+        self.assertEqual((binary.parent.parent/'lib/required.so').read_bytes(), b'library')
+
     def hold_install_lock(self):
         import subprocess
         import sys

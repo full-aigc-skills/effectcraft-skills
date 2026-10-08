@@ -12,9 +12,21 @@ license: Apache-2.0
 
 输入为用户已确认的任务、素材、工程或对象、输出目录与修改范围；需要现有工程时先核对摘要。返回实际 CLI 结果、保存后的原生工程、需要的派生输出与核验记录。安装成功、命令目录存在与创作任务完成分别报告。
 
+## 默认受管理入口
+
+从宿主实际加载的技能目录设置 `SKILL_DIR`。**创作写入默认使用 `launch.sh` / `launch.ps1`**，自动准备用户目录内的固定 Python 与 EffectCraft，不改全局 PATH。下文原始 Python/CLI 示例保留兼容与诊断用途，不能绕过任务恢复账本。完整操作合同见 [任务控制、评估与修订](references/managed-execution.md)。
+
+```sh
+/bin/sh "$SKILL_DIR/scripts/launch.sh" plan --plan PLAN.json --output /absolute/new-result
+/bin/sh "$SKILL_DIR/scripts/launch.sh" run --plan PLAN.json --output /absolute/new-result
+```
+
+Windows PowerShell：`& "$SKILL_DIR/scripts/launch.ps1" run --plan PLAN.json --output "C:\Users\me\result"`。
+原生命令计划追加 `--mode commands`，自有桌面会话使用 `--mode desktop`。交付后必须 `review` 并实际查看媒体；只有技术验证与创作评估都通过才报告可验收，用户接受状态独立保留。需要自动修订时，在首次计划中声明 `revisionScope`；默认最多 2 轮、父子任务共用 30 分钟。未知任务只 inspect/reconcile，不换任务 ID 重做。
+
 ## 首次使用与公共入口
 
-定位当前 SKILL.md 的真实目录。当前支持 macOS arm64、Python 3.11+；固定 CLI 安装到用户数据目录。已有任务授权覆盖必要依赖时直接执行本技能安装器，不另造批准流程。
+定位当前 SKILL.md 的真实目录。原生制品覆盖 macOS arm64/x86_64、Windows x86/x64/arm64、Linux x86_64/aarch64；无需预装 Python；固定 CLI 安装到用户数据目录。已有任务授权覆盖必要依赖时直接执行本技能安装器，不另造批准流程。
 
 将 `SKILL_DIR` 设置为宿主实际加载的本 `SKILL.md` 所在目录（绝对路径）。用户级安装可能位于 `~/.agents/skills/effectcraft-cli-camera`，项目级可能位于 `.agents/skills/effectcraft-cli-camera`，插件可能位于其 `skills/effectcraft-cli-camera` 或宿主缓存目录；以实际加载路径为准，不按当前工作目录猜测，也不搜索后随意选择重复版本。技能目录与 CLI 的用户数据安装目录是两个独立位置。
 
