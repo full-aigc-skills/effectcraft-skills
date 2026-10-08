@@ -1,5 +1,11 @@
 # 版本绑定的历史发行记录
 
+## dev.55 — 2026-10-09
+
+15个技能默认受管理三模式派发；只读预检和旧状态拒绝执行合同通过。源码589项548通过／41条件跳过；本机三模式原生组合证据绑定未变执行资源，完整平台及固定宿主门禁仍开放，V1剩余70项。插件消费技能源dev.55固定发行快照。
+
+Managed routing guidance and native three-mode composition evidence. Full V1 and native platform/host gates remain open. [Routing evidence](docs/evidence/managed-default-routing-20261009.json) · [Native composition evidence](docs/evidence/managed-three-mode-composition-20261009.json).
+
 ## dev.54 — 2026-10-09
 
 严格绑定操作回执的版本、任务、操作与参数身份，拒绝孤立材料和冲突覆盖。9.3.5管理入口验收完成：583项源码测试中545通过、38条件跳过；真实原生分段恢复及Codex观察后局部修订通过。完整V1剩余72项；其他平台原生、固定宿主派发及三模式完整组合仍开放。

@@ -4,6 +4,10 @@
 
 This entry routes every command in the pinned reflected registry. It does not broaden the acceptance claims of workflow.py. The reference preserves verbatim parameters, skill ownership, empty-session observations and per-command acceptance status.
 
+创作写入默认通过 `launch.sh run --mode commands --plan PLAN --output NEW_DIR` 或Windows `launch.ps1`；自有桌面选择 `--mode desktop`。先阅读 [受管理入口](managed-execution.md)。下文原始Python查询需已有解释器，原始run示例保留显式兼容用途；未知任务不得用这些示例绕过原账本。
+
+Default creative writes use the managed launcher with explicit commands/desktop mode. Raw Python queries require an available interpreter; raw run examples document compatibility and do not authorize replaying unknown work.
+
 ## 1. 定位、查询与准备 / Locate, inspect and prepare
 
 SKILL_DIR 必须是宿主实际加载本 SKILL.md 的目录；支持用户／项目 .agents/skills、插件 skills 和宿主缓存。任何本领域单技能均包含此入口、目录和示例，不读取兄弟目录。

@@ -18,6 +18,24 @@
 
 `workflow` 计划沿用原生合成格式；`commands` / `desktop` 沿用 `craft-command-plan/v1`。不得把未解析的自然语言直接当作原生参数。输入通过 `--input name=/absolute/file` 指定；已有工程通过 `--source DELIVERY --expectedProjectSha256` 对应计划字段核对（摘要写在计划，非命令行参数）。
 
+### 按计划格式选择写入模式
+
+`workflow` 是默认模式，仅接收原生合成计划（例如 `brand-intro.json`）；`craft-command-plan/v1` 必须显式选择 `commands` 或自有桌面 `desktop`，不能交给默认 workflow。桌面模式会准备固定桌面制品并启动本任务拥有的会话，不连接或关闭用户已有桌面。
+
+```sh
+sh "$SKILL_DIR/scripts/launch.sh" plan --mode workflow --plan "$SKILL_DIR/examples/brand-intro.json" --output "/absolute/new workflow"
+sh "$SKILL_DIR/scripts/launch.sh" run --mode commands --plan "$SKILL_DIR/examples/commands-advanced.json" --output "/absolute/new commands"
+sh "$SKILL_DIR/scripts/launch.sh" run --mode desktop --plan "$SKILL_DIR/examples/desktop-first-use.json" --output "/absolute/new desktop"
+```
+
+```powershell
+& "$SKILL_DIR/scripts/launch.ps1" plan --mode workflow --plan "$SKILL_DIR/examples/brand-intro.json" --output 'C:\new workflow'
+& "$SKILL_DIR/scripts/launch.ps1" run --mode commands --plan "$SKILL_DIR/examples/commands-advanced.json" --output 'C:\new commands'
+& "$SKILL_DIR/scripts/launch.ps1" run --mode desktop --plan "$SKILL_DIR/examples/desktop-first-use.json" --output 'C:\new desktop'
+```
+
+原始 `commands.py run PLAN --output DIR`、`desktop.py run PLAN --output DIR` 和 `cli.py -- ARGV` 保留公开兼容契约，供明确指定的兼容调用使用；技能默认创作不直接调用它们。已有未知任务只用原任务的inspect/reconcile/resume核对，不能借兼容入口另做一遍。
+
 任务记录使用内部 `effectcraft-managed-task/v2`，公共 `craft-task/v1`、`craft-artifact/v1` 所有权不变。旧交付可以复核；旧 v1 状态可检查但不可恢复执行；缺少版本化状态的历史任务不能自动转成可执行任务。运行时改变时原任务拒绝切换，应保留原技能快照与旧缓存执行诊断。
 
 POSIX 离线首用（制品须预先准备，版本与平台以技能内锁为准）：

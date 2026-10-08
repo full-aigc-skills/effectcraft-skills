@@ -1,0 +1,2668 @@
+{
+  "schema": "effectcraft-managed-three-mode-acceptance/v1",
+  "status": "PASS",
+  "date": "2026-10-09",
+  "completedTask": "9.3.6",
+  "requirement": "EC-TX-005",
+  "platform": "darwin-arm64",
+  "sourceCommit": "29fddc504ca2231bcc2d8de7bd7e589142ab656b",
+  "pluginCommit": "0b69ac8a6552a5379f64a41b013fa0f0ba9d1a9b",
+  "publishedSource": "v0.1.0-dev.54",
+  "sourceSkillFiles": {
+    "SKILL.md": "d48614435cbb1a065ae4825ba98705baf100f57c6ffa793d597f8b1d0e0f3648",
+    "references/output-execution.md": "1e185e63d8e20fdc54537feacdfb6e7a140474f5e61e2932747699d751671b36",
+    "references/expression-parent.md": "c67e09b82b9740bbbc603b2ec48c0aeba42c3703f775b7c234473935a355080c",
+    "references/command-reference.md": "aa978528c9b9c490d9390d79928d2258d62f87b83ace02823b7a76a349c233ba",
+    "references/tracking-scene.md": "2e699e1ab62f47a1c40405fc6dd48e15474f130295f33fdcd4e80efcad3e4be9",
+    "references/command-usage.md": "f6668cd5a7b7066c0abefa1f38534ba5e16e3227ca5cd06d05196377013964b6",
+    "references/bridge-tools.json": "1a9c5431674b0e563e83ae3e5aebf9e4c25a95c4a55c53125dccb6dc3ae60859",
+    "references/business-scenes.md": "fa6dde18bb5ea19d15de3c6be5d0fc2cdbf4f4e2cf3170a624600b2d3c4e556b",
+    "references/workflow.md": "09a885345734d8d13cd36466841c28441125caa4863472d2a5b9ed4278cc5cdc",
+    "references/segmented-render.md": "d4a500643465eafad7b96f4491086f203e121bd782d69e208095de36717a71b7",
+    "references/commands.json": "f4a4bd1bb063ffe89b0ab0f71dca12d0b1a92eec3e73306756ebf0a93bb3eeb7",
+    "references/capability-diff.json": "201b27776325f0b49a3e93c7fcfb8651bfbdf53843a9083ec2bdfc875c5c8959",
+    "references/native-command-snapshot.json": "043d3e4bcc4e03fd15df178cfcf8cfd2e81679308a48da8ff289d802b4204b74",
+    "references/codex-judge.md": "e4cd12c1942fdf49d4186c8e1552e83a6b7191e66b8d1ee4e2e156180dd3cfea",
+    "references/desktop-install.md": "db2db151b0eff30a3381a03ae377fb23ac09b2b4a919859740bd9343e7f14887",
+    "references/puppet-scene.md": "ce185ef007e86e1189210330049b80cc3a4418015826686ff3b143d81810e55f",
+    "references/camera-scene.md": "19bcbf1dce86e32974f59bfd5785ab0c7664df69ce75fd3130f6e4ec5a1e30c9",
+    "references/motion-tracking.md": "dcb4d2ea69f503e45692bbd3f2d2383546f892bd2cb5d163b7811a310af5d194",
+    "references/managed-execution.md": "bb8ac2aa692e40b9e7e0a9fe9a1444c2de41f3c4d4fa38cc467b023e852baea9",
+    "references/installation-concurrency.md": "69067acebcd47f1924a8d6aa9d8a4ce6f44ad0756d44888a21eb224bcdb1c215",
+    "references/exchange-loss.md": "eee665f62b77274ca8ce0efc4117012ade85978905cdfd40ab488af64297b8ae",
+    "references/first-use-failures.md": "ce2a8d1a8ca6b8a29a084d52d105d510476de88d40b439d6c2ff79212581d61d",
+    "references/native-workflow.md": "42fee416c66a69f6f3802abe1be6f002963cf109e7e22a4d6297b6dcaf62b8e9",
+    "references/command-coverage.json": "613f7a5fceff44bf5d7ac9f4a3521b849617ae5420be243d80ea21f1f7be7e76",
+    "agents/openai.yaml": "8fe0093ba521c032e6b243bf5c2e3d9d2303cf1ae78f76fe8365e414b7da57b7",
+    "examples/tracking-create.json": "14d6c8654cb81c1b2b578eea021039b38c5179bd9459b7ec41528999d7f53d0d",
+    "examples/camera-scene-reopen.json": "7f1ade6f23c628045941d7168c822d0372e79a63c4ff05cfbd375a03c376b4ee",
+    "examples/puppet-record-follow-create.json": "ac59e9682a32efbe12a6bdeacb5136508c120413b3ae3bdf5efda4b6602e7ed9",
+    "examples/camera-scene-create.json": "bdced8cc3a735793852bf67140ff62ec79544c938c61d733c372f6f4a61d0946",
+    "examples/tracking-reopen.json": "0b393fda8bd68c6819e25ac8f8101381dc175220ca3c8c1c3b8c35637e49ce7b",
+    "examples/layer-mask.json": "61efc2abc7274b45224659ab4aae7e847486af3f3660161a03b83b978ec7a8bc",
+    "examples/puppet-record-follow-reopen.json": "b722ee0ea4681556ae42eb58da21b293180081add09f23bb416d23ff368ae611",
+    "examples/commands-advanced.json": "e2def610996d594575136e357cab0d9ee355ce51cf782817d323b37e8227941b",
+    "examples/puppet-reopen.json": "bd05b66c9480cedaf60cbfe2fb6352dff8a6e573cd27a1fb1be43097bda58b62",
+    "examples/puppet-create.json": "405a5b98b410d2db642eec0a9d0ec8cf48c622c9f1632f36e2c2be3f01ff8560",
+    "examples/commands-revision-create.json": "03d3d7796210dfd4ff27f6cde0e1ba10b4376b0243dc4938d87103ca991f5f61",
+    "examples/expression-parent-create.json": "fca2b95312130f735c884e354ce4fede48bc67ca0a3c740b4b17a79967c20d4d",
+    "examples/native-workflow.json": "0ba62e8bd042dacb028b14c84c18cb2ee10c77e54dbd13efcd7090c8fa9fae16",
+    "examples/desktop-first-use.json": "0d1dbf9c43e8d5ce790443577b5398c2aa7af317fc15a328dc85c62813527d84",
+    "examples/commands-revision.json": "d54bfa78c48b674136b56a8e0c7e36e4c1c475a5907ba46ae450b2ac86e17d1e",
+    "examples/puppet-record-follow-revise.json": "448b635cf49567dc359a3d9ff385fe73afe4b4a32ec280ba5f8cab93ceb00a76",
+    "examples/brand-intro.json": "430aa74e69a3195f70fdfe53ae9b8939fc888df1b58e01d76fd76ccdfe3edd80",
+    "examples/camera-scene-revise.json": "2cca564a10133b56d2d8d20b0feb5cafb627a3e082ce2303fe073567af8bd00f",
+    "examples/expression-parent-revise.json": "8076203648de8834c0681149e557ea4ffed35e0863c2e7a2dec2b4001e3ca22f",
+    "scripts/bootstrap.py": "1eca0f59586609ae4314c77b4d5adb3886fe5443178fb2b300abb25cb75ae99b",
+    "scripts/desktop-platforms.lock.json": "3b4b56b144ef102f1ab2e5fbf4f374b22292dbce6a51a01e9bea466f9ed09b92",
+    "scripts/exchange_loss.py": "8871bc2d4e2e6bedd0b1d2852a06ccdbd43b0339d67afc53e6029fb3539c8c4f",
+    "scripts/launch.sh": "31bf2cef53d4d1b6a229d74389729cf24572209c48125c1dec8800df99c6431f",
+    "scripts/command_catalog.py": "ee88018a7139455125009f8d6a31f97b7e0f062a994f7d4377d910ba2001b7f7",
+    "scripts/command_revision.py": "0bf2629997ab92ce8454cde14b0033753b431f53e25139537850d1cf5c6a58c1",
+    "scripts/runtime_binding.py": "06799b6f1004052c02efc73d238c38b0f27d626c087a010cef74e3440dc5186a",
+    "scripts/image_sequence.py": "f67d0e565d8c99abd519bfaabe44599d25606450ca4f98df1ea227619ab2fff0",
+    "scripts/additional-platforms.lock.json": "d72653f778b07bb61eed795d49ffc3e7214ad39e74c64e76959818187567dce6",
+    "scripts/task_entry.sh": "efd4e8903592721a1ca63c6967c08e82d06474cc097dd614fa089d0763670779",
+    "scripts/review_ledger.py": "4931523dd1c76eb15037faaf28aaa7c85b7c85c6dfd447455925dd5a3ae9c512",
+    "scripts/task_store.py": "cee2e43d47f3db749de2383ed7034b111bb2099309f8d2d656d6e573f82c30d6",
+    "scripts/web_adapter.mjs": "081a816b285a512ebed8cc47dc87e5a16aa0502344c83b25036d3cee8b5c6f78",
+    "scripts/cancellation.py": "db22d93fe4a9eafc06460c62de9f2be3193bd1750a707c2a352ebb09502a971c",
+    "scripts/segmented_sequence.py": "f0b078e72211c245267c22514a7b4202099a47cc42a5e9c8243bdd7b0dc473e9",
+    "scripts/platform_support.py": "d6a133dc25b81570f585f473f2fe290e181e78bc24032a05ae83be6f0a45aed8",
+    "scripts/task_entry.ps1": "530d74a89c51f0ea55df332d11f9df92c9b545de56ca562b777181b959f8092f",
+    "scripts/command_judge.py": "1d9617f42edcd4dd730b0781fc55b330c40f8774db0063ff7cb53fa7af4e83f0",
+    "scripts/launch.ps1": "eaed943345d51f44b2490bdcd6d92b5f85121d4b4f47576c19ad56512c81b9b6",
+    "scripts/judge_contract.py": "58e1e4fad0e296cbf185a4e6e5cf5bd3f2db6482b34dbfcb622b814639469480",
+    "scripts/native_diagnostics.py": "0c352d047edde58a35151ba2b03c001b2a6b591bb8032307e80573d115912389",
+    "scripts/mcp_session.py": "dd6df96dc1734cd7e43c4b820661d2e2c8c713dc8849fc89ab06a3720d99619b",
+    "scripts/resource_budget.py": "97b4f4b4ac77b65df113c7eccf2ad2d4559cb849a9fe2c20d5eb8c4e7121be30",
+    "scripts/render_recovery.py": "6baf8f315f20d5e6b9115423502d66e9e51e33dc2398adc6bbff85b6b68b1e31",
+    "scripts/output_guard.py": "018c5c27217c11ec7b45ded52a1e13d7c42b34a3a53df21566e26f192143302b",
+    "scripts/runtime.lock.json": "b427c71c77e1a217c72f7c19ac872b19df28e07150f4e7f6319defe7f5d9acc0",
+    "scripts/task_entry.py": "a45fe452696b53d95e58142bd94bff50627034522f490c9241da5b9f39dcbff2",
+    "scripts/python-platforms.tsv": "3836b670271e8f8327ea386510b18dea6a867ece27be5e74f4165eaa38ad8c65",
+    "scripts/cli.py": "9303ae8ae30009fa706d5d56603032485ad81416aee1d0af523ce902e3f28165",
+    "scripts/desktop_session.py": "a4441b65603b73ad350aff4348553c9681c77cb5c030e97bc5630a7d88251a8e",
+    "scripts/native_workflow.py": "0db0471f8d849db9c3ffaeaac1c7bc40bf0cd500a638f7b681ecdeb934960bdd",
+    "scripts/desktop.lock.json": "d2af78ee474b8e19ff3c26c792bb27ad180622ffe6dbed5a402bcb7aa7167311",
+    "scripts/quality_review.py": "e0ddc78bb8bdc9b2e1dfca2e8ae7c1915ad9008ced0b3d3a242ccc45086e77e9",
+    "scripts/command_delivery.py": "77e05cf2c24c3ac7fefaa68512fb47a4852406741949d26b339c46fe262f4d5c",
+    "scripts/managed.py": "9acd35c7f1e5cb703c725e537519b02a334ba83cf0da227c1ab91023a100b24e",
+    "scripts/png_inspection.py": "0e3c50907c66c6dcc45256d045920da346ad77892e47401de3103c8f6232938d",
+    "scripts/additional_platforms.py": "1a4ffc9f04e240374269a9869d0383f9f833082cf066203fddba117f247f48d9",
+    "scripts/entry_identity.awk": "5d4b4432e043568509d05303e34357e8e8fa056f0fc5394b80f6f4d8a20cbcbe",
+    "scripts/revision.py": "546214f38430c14f354b6c0aa8feff8928d3267b9dee1b7ea708933bc3633590",
+    "scripts/python.lock.json": "e877b3fe406a2a210ebe5d7f660aa1d0483def44454a54dbe7429bfdba1c9f3f",
+    "scripts/workflow.py": "52eb0ccd9942b83588155ddb851c63c6fbea0f3122a0aa2a3029a2640cb6ce14",
+    "scripts/parameter-contract.json": "dd1bde23fb12e26774f412f0aacc93e8102eaed79d4255709b5717c112daa762",
+    "scripts/posix_group_lease.py": "23593ea54ff78457eb7d873a979aa1e1d4da601ea459dc288a4b7a8b975c6155",
+    "scripts/orphan_segments.py": "244059948ca6b783c64cdd5942e91f3e6268dfd71f3c48c300595ccbcb2584b9",
+    "scripts/process_guard.py": "8ddf5881adeec3d224ef57821d3c83bd4319cf2d1f9efb5ed0f1dab846446f4f",
+    "scripts/engineering_review.py": "8a06516198de09b49d43cec4bff51aeded085bec9d352567055ef9edca29ec53",
+    "scripts/preserved_stage.py": "64199df3ee6af2901a859a5aac401fd27ca2f0c6ba9238e6f72c3563f681ad63",
+    "scripts/commands.py": "7a7bf479698a48d9f4c5e6e94577108dbd230da312c21e04c168ae7e7491f610",
+    "scripts/resource_meter.py": "a62257919fd22cfa6eb616be285122978a6732c0b888893fd8b4440396b8993f",
+    "scripts/desktop.py": "802de3eef9ed9fca3ad09a2f5f6f204f6bbba5a09450efe6ae062e7159409553",
+    "scripts/python-integrity/windows-arm64.tsv": "625a22a5086fd7d312bc156cde8e3f4443ceb2079e2ff91457c6de0cadd5df4d",
+    "scripts/python-integrity/darwin-x86_64.tsv": "53196035ea5ca246ef60da5b248d02a91964a269c6ec7397eedc0f28a72694ca",
+    "scripts/python-integrity/windows-x86.tsv": "551536440722a4fc82e578f4af5a11ef72a9736b3be4b08621982f0f767cc981",
+    "scripts/python-integrity/linux-aarch64.tsv": "6b639cbaa8c4e691d226447b747fde28fb0f9e337fe828d46b2ceba80ad325f7",
+    "scripts/python-integrity/darwin-arm64.tsv": "8f9c3aaf79cd0ff1867ac5d3c937d6ca0c60ccf1ab2b321a2b7a8454209d6fdd",
+    "scripts/python-integrity/linux-x86_64.tsv": "f81e6ac6a770f895b5b1a89838da856f21e9c827f4fc320ed1562645783c0c55",
+    "scripts/python-integrity/windows-x86_64.tsv": "e1e98775d10bcb9fbf55e482a31d9efdb91a8d61d80718998f66f7c9b195e5f3",
+    "scripts/runtime-integrity/darwin-arm64.json": "c7eb5424dbb14940624e3ae6a494078a41dfa0c6738b7779d5d9ceb40f7e2220",
+    "scripts/runtime-integrity/linux-x86_64.json": "0700c5bcadaa68ec96ac723504c6ffd3212999bfc1c4f7ec1e27ab47e6a564a8",
+    "scripts/runtime-integrity/windows-x86_64.json": "33e0714f70aee024ec182148933a536d721c5321f0b7efa1470a21e4d85c21a0",
+    "scripts/runtime-integrity/windows-x86.json": "ebe596ae6de96e0ddebbe5ca171b3b65337cf33e2c40c5f99631aff6b71d02c4",
+    "scripts/runtime-integrity/windows-arm64.json": "edb91da2b4bb474de49cbb705d5c1ff3c6700eb84eea8efc2ec65c208df40572",
+    "scripts/runtime-integrity/linux-aarch64.json": "b1c0b809c03fbf7d3d018f7418250fce3e56bd7e816781df5242c2cea08370fb",
+    "scripts/runtime-integrity/darwin-x86_64.json": "c7eb5424dbb14940624e3ae6a494078a41dfa0c6738b7779d5d9ceb40f7e2220"
+  },
+  "currentPublishedPluginPayloadMatches": true,
+  "testFile": "tests/test_managed_three_mode_native.py",
+  "testSha256": "9ea95c154d859ac5717674402a6ac51bd1bee61f6c1ca244afd02252ea8b9bb5",
+  "cases": [
+    {
+      "schema": "effectcraft-managed-three-mode-native/v1",
+      "status": "PASS",
+      "platform": "darwin-arm64",
+      "installedFiles": {
+        "SKILL.md": "d48614435cbb1a065ae4825ba98705baf100f57c6ffa793d597f8b1d0e0f3648",
+        "references/output-execution.md": "1e185e63d8e20fdc54537feacdfb6e7a140474f5e61e2932747699d751671b36",
+        "references/expression-parent.md": "c67e09b82b9740bbbc603b2ec48c0aeba42c3703f775b7c234473935a355080c",
+        "references/command-reference.md": "aa978528c9b9c490d9390d79928d2258d62f87b83ace02823b7a76a349c233ba",
+        "references/tracking-scene.md": "2e699e1ab62f47a1c40405fc6dd48e15474f130295f33fdcd4e80efcad3e4be9",
+        "references/command-usage.md": "f6668cd5a7b7066c0abefa1f38534ba5e16e3227ca5cd06d05196377013964b6",
+        "references/bridge-tools.json": "1a9c5431674b0e563e83ae3e5aebf9e4c25a95c4a55c53125dccb6dc3ae60859",
+        "references/business-scenes.md": "fa6dde18bb5ea19d15de3c6be5d0fc2cdbf4f4e2cf3170a624600b2d3c4e556b",
+        "references/workflow.md": "09a885345734d8d13cd36466841c28441125caa4863472d2a5b9ed4278cc5cdc",
+        "references/segmented-render.md": "d4a500643465eafad7b96f4491086f203e121bd782d69e208095de36717a71b7",
+        "references/commands.json": "f4a4bd1bb063ffe89b0ab0f71dca12d0b1a92eec3e73306756ebf0a93bb3eeb7",
+        "references/capability-diff.json": "201b27776325f0b49a3e93c7fcfb8651bfbdf53843a9083ec2bdfc875c5c8959",
+        "references/native-command-snapshot.json": "043d3e4bcc4e03fd15df178cfcf8cfd2e81679308a48da8ff289d802b4204b74",
+        "references/codex-judge.md": "e4cd12c1942fdf49d4186c8e1552e83a6b7191e66b8d1ee4e2e156180dd3cfea",
+        "references/desktop-install.md": "db2db151b0eff30a3381a03ae377fb23ac09b2b4a919859740bd9343e7f14887",
+        "references/puppet-scene.md": "ce185ef007e86e1189210330049b80cc3a4418015826686ff3b143d81810e55f",
+        "references/camera-scene.md": "19bcbf1dce86e32974f59bfd5785ab0c7664df69ce75fd3130f6e4ec5a1e30c9",
+        "references/motion-tracking.md": "dcb4d2ea69f503e45692bbd3f2d2383546f892bd2cb5d163b7811a310af5d194",
+        "references/managed-execution.md": "bb8ac2aa692e40b9e7e0a9fe9a1444c2de41f3c4d4fa38cc467b023e852baea9",
+        "references/installation-concurrency.md": "69067acebcd47f1924a8d6aa9d8a4ce6f44ad0756d44888a21eb224bcdb1c215",
+        "references/exchange-loss.md": "eee665f62b77274ca8ce0efc4117012ade85978905cdfd40ab488af64297b8ae",
+        "references/first-use-failures.md": "ce2a8d1a8ca6b8a29a084d52d105d510476de88d40b439d6c2ff79212581d61d",
+        "references/native-workflow.md": "42fee416c66a69f6f3802abe1be6f002963cf109e7e22a4d6297b6dcaf62b8e9",
+        "references/command-coverage.json": "613f7a5fceff44bf5d7ac9f4a3521b849617ae5420be243d80ea21f1f7be7e76",
+        "agents/openai.yaml": "8fe0093ba521c032e6b243bf5c2e3d9d2303cf1ae78f76fe8365e414b7da57b7",
+        "examples/tracking-create.json": "14d6c8654cb81c1b2b578eea021039b38c5179bd9459b7ec41528999d7f53d0d",
+        "examples/camera-scene-reopen.json": "7f1ade6f23c628045941d7168c822d0372e79a63c4ff05cfbd375a03c376b4ee",
+        "examples/puppet-record-follow-create.json": "ac59e9682a32efbe12a6bdeacb5136508c120413b3ae3bdf5efda4b6602e7ed9",
+        "examples/camera-scene-create.json": "bdced8cc3a735793852bf67140ff62ec79544c938c61d733c372f6f4a61d0946",
+        "examples/tracking-reopen.json": "0b393fda8bd68c6819e25ac8f8101381dc175220ca3c8c1c3b8c35637e49ce7b",
+        "examples/layer-mask.json": "61efc2abc7274b45224659ab4aae7e847486af3f3660161a03b83b978ec7a8bc",
+        "examples/puppet-record-follow-reopen.json": "b722ee0ea4681556ae42eb58da21b293180081add09f23bb416d23ff368ae611",
+        "examples/commands-advanced.json": "e2def610996d594575136e357cab0d9ee355ce51cf782817d323b37e8227941b",
+        "examples/puppet-reopen.json": "bd05b66c9480cedaf60cbfe2fb6352dff8a6e573cd27a1fb1be43097bda58b62",
+        "examples/puppet-create.json": "405a5b98b410d2db642eec0a9d0ec8cf48c622c9f1632f36e2c2be3f01ff8560",
+        "examples/commands-revision-create.json": "03d3d7796210dfd4ff27f6cde0e1ba10b4376b0243dc4938d87103ca991f5f61",
+        "examples/expression-parent-create.json": "fca2b95312130f735c884e354ce4fede48bc67ca0a3c740b4b17a79967c20d4d",
+        "examples/native-workflow.json": "0ba62e8bd042dacb028b14c84c18cb2ee10c77e54dbd13efcd7090c8fa9fae16",
+        "examples/desktop-first-use.json": "0d1dbf9c43e8d5ce790443577b5398c2aa7af317fc15a328dc85c62813527d84",
+        "examples/commands-revision.json": "d54bfa78c48b674136b56a8e0c7e36e4c1c475a5907ba46ae450b2ac86e17d1e",
+        "examples/puppet-record-follow-revise.json": "448b635cf49567dc359a3d9ff385fe73afe4b4a32ec280ba5f8cab93ceb00a76",
+        "examples/brand-intro.json": "430aa74e69a3195f70fdfe53ae9b8939fc888df1b58e01d76fd76ccdfe3edd80",
+        "examples/camera-scene-revise.json": "2cca564a10133b56d2d8d20b0feb5cafb627a3e082ce2303fe073567af8bd00f",
+        "examples/expression-parent-revise.json": "8076203648de8834c0681149e557ea4ffed35e0863c2e7a2dec2b4001e3ca22f",
+        "scripts/bootstrap.py": "1eca0f59586609ae4314c77b4d5adb3886fe5443178fb2b300abb25cb75ae99b",
+        "scripts/desktop-platforms.lock.json": "3b4b56b144ef102f1ab2e5fbf4f374b22292dbce6a51a01e9bea466f9ed09b92",
+        "scripts/exchange_loss.py": "8871bc2d4e2e6bedd0b1d2852a06ccdbd43b0339d67afc53e6029fb3539c8c4f",
+        "scripts/launch.sh": "31bf2cef53d4d1b6a229d74389729cf24572209c48125c1dec8800df99c6431f",
+        "scripts/command_catalog.py": "ee88018a7139455125009f8d6a31f97b7e0f062a994f7d4377d910ba2001b7f7",
+        "scripts/command_revision.py": "0bf2629997ab92ce8454cde14b0033753b431f53e25139537850d1cf5c6a58c1",
+        "scripts/runtime_binding.py": "06799b6f1004052c02efc73d238c38b0f27d626c087a010cef74e3440dc5186a",
+        "scripts/image_sequence.py": "f67d0e565d8c99abd519bfaabe44599d25606450ca4f98df1ea227619ab2fff0",
+        "scripts/additional-platforms.lock.json": "d72653f778b07bb61eed795d49ffc3e7214ad39e74c64e76959818187567dce6",
+        "scripts/task_entry.sh": "efd4e8903592721a1ca63c6967c08e82d06474cc097dd614fa089d0763670779",
+        "scripts/review_ledger.py": "4931523dd1c76eb15037faaf28aaa7c85b7c85c6dfd447455925dd5a3ae9c512",
+        "scripts/task_store.py": "cee2e43d47f3db749de2383ed7034b111bb2099309f8d2d656d6e573f82c30d6",
+        "scripts/web_adapter.mjs": "081a816b285a512ebed8cc47dc87e5a16aa0502344c83b25036d3cee8b5c6f78",
+        "scripts/cancellation.py": "db22d93fe4a9eafc06460c62de9f2be3193bd1750a707c2a352ebb09502a971c",
+        "scripts/segmented_sequence.py": "f0b078e72211c245267c22514a7b4202099a47cc42a5e9c8243bdd7b0dc473e9",
+        "scripts/platform_support.py": "d6a133dc25b81570f585f473f2fe290e181e78bc24032a05ae83be6f0a45aed8",
+        "scripts/task_entry.ps1": "530d74a89c51f0ea55df332d11f9df92c9b545de56ca562b777181b959f8092f",
+        "scripts/command_judge.py": "1d9617f42edcd4dd730b0781fc55b330c40f8774db0063ff7cb53fa7af4e83f0",
+        "scripts/launch.ps1": "eaed943345d51f44b2490bdcd6d92b5f85121d4b4f47576c19ad56512c81b9b6",
+        "scripts/judge_contract.py": "58e1e4fad0e296cbf185a4e6e5cf5bd3f2db6482b34dbfcb622b814639469480",
+        "scripts/native_diagnostics.py": "0c352d047edde58a35151ba2b03c001b2a6b591bb8032307e80573d115912389",
+        "scripts/mcp_session.py": "dd6df96dc1734cd7e43c4b820661d2e2c8c713dc8849fc89ab06a3720d99619b",
+        "scripts/resource_budget.py": "97b4f4b4ac77b65df113c7eccf2ad2d4559cb849a9fe2c20d5eb8c4e7121be30",
+        "scripts/render_recovery.py": "6baf8f315f20d5e6b9115423502d66e9e51e33dc2398adc6bbff85b6b68b1e31",
+        "scripts/output_guard.py": "018c5c27217c11ec7b45ded52a1e13d7c42b34a3a53df21566e26f192143302b",
+        "scripts/runtime.lock.json": "b427c71c77e1a217c72f7c19ac872b19df28e07150f4e7f6319defe7f5d9acc0",
+        "scripts/task_entry.py": "a45fe452696b53d95e58142bd94bff50627034522f490c9241da5b9f39dcbff2",
+        "scripts/python-platforms.tsv": "3836b670271e8f8327ea386510b18dea6a867ece27be5e74f4165eaa38ad8c65",
+        "scripts/cli.py": "9303ae8ae30009fa706d5d56603032485ad81416aee1d0af523ce902e3f28165",
+        "scripts/desktop_session.py": "a4441b65603b73ad350aff4348553c9681c77cb5c030e97bc5630a7d88251a8e",
+        "scripts/native_workflow.py": "0db0471f8d849db9c3ffaeaac1c7bc40bf0cd500a638f7b681ecdeb934960bdd",
+        "scripts/desktop.lock.json": "d2af78ee474b8e19ff3c26c792bb27ad180622ffe6dbed5a402bcb7aa7167311",
+        "scripts/quality_review.py": "e0ddc78bb8bdc9b2e1dfca2e8ae7c1915ad9008ced0b3d3a242ccc45086e77e9",
+        "scripts/command_delivery.py": "77e05cf2c24c3ac7fefaa68512fb47a4852406741949d26b339c46fe262f4d5c",
+        "scripts/managed.py": "9acd35c7f1e5cb703c725e537519b02a334ba83cf0da227c1ab91023a100b24e",
+        "scripts/png_inspection.py": "0e3c50907c66c6dcc45256d045920da346ad77892e47401de3103c8f6232938d",
+        "scripts/additional_platforms.py": "1a4ffc9f04e240374269a9869d0383f9f833082cf066203fddba117f247f48d9",
+        "scripts/entry_identity.awk": "5d4b4432e043568509d05303e34357e8e8fa056f0fc5394b80f6f4d8a20cbcbe",
+        "scripts/revision.py": "546214f38430c14f354b6c0aa8feff8928d3267b9dee1b7ea708933bc3633590",
+        "scripts/python.lock.json": "e877b3fe406a2a210ebe5d7f660aa1d0483def44454a54dbe7429bfdba1c9f3f",
+        "scripts/workflow.py": "52eb0ccd9942b83588155ddb851c63c6fbea0f3122a0aa2a3029a2640cb6ce14",
+        "scripts/parameter-contract.json": "dd1bde23fb12e26774f412f0aacc93e8102eaed79d4255709b5717c112daa762",
+        "scripts/posix_group_lease.py": "23593ea54ff78457eb7d873a979aa1e1d4da601ea459dc288a4b7a8b975c6155",
+        "scripts/orphan_segments.py": "244059948ca6b783c64cdd5942e91f3e6268dfd71f3c48c300595ccbcb2584b9",
+        "scripts/process_guard.py": "8ddf5881adeec3d224ef57821d3c83bd4319cf2d1f9efb5ed0f1dab846446f4f",
+        "scripts/engineering_review.py": "8a06516198de09b49d43cec4bff51aeded085bec9d352567055ef9edca29ec53",
+        "scripts/preserved_stage.py": "64199df3ee6af2901a859a5aac401fd27ca2f0c6ba9238e6f72c3563f681ad63",
+        "scripts/commands.py": "7a7bf479698a48d9f4c5e6e94577108dbd230da312c21e04c168ae7e7491f610",
+        "scripts/resource_meter.py": "a62257919fd22cfa6eb616be285122978a6732c0b888893fd8b4440396b8993f",
+        "scripts/desktop.py": "802de3eef9ed9fca3ad09a2f5f6f204f6bbba5a09450efe6ae062e7159409553",
+        "scripts/python-integrity/windows-arm64.tsv": "625a22a5086fd7d312bc156cde8e3f4443ceb2079e2ff91457c6de0cadd5df4d",
+        "scripts/python-integrity/darwin-x86_64.tsv": "53196035ea5ca246ef60da5b248d02a91964a269c6ec7397eedc0f28a72694ca",
+        "scripts/python-integrity/windows-x86.tsv": "551536440722a4fc82e578f4af5a11ef72a9736b3be4b08621982f0f767cc981",
+        "scripts/python-integrity/linux-aarch64.tsv": "6b639cbaa8c4e691d226447b747fde28fb0f9e337fe828d46b2ceba80ad325f7",
+        "scripts/python-integrity/darwin-arm64.tsv": "8f9c3aaf79cd0ff1867ac5d3c937d6ca0c60ccf1ab2b321a2b7a8454209d6fdd",
+        "scripts/python-integrity/linux-x86_64.tsv": "f81e6ac6a770f895b5b1a89838da856f21e9c827f4fc320ed1562645783c0c55",
+        "scripts/python-integrity/windows-x86_64.tsv": "e1e98775d10bcb9fbf55e482a31d9efdb91a8d61d80718998f66f7c9b195e5f3",
+        "scripts/runtime-integrity/darwin-arm64.json": "c7eb5424dbb14940624e3ae6a494078a41dfa0c6738b7779d5d9ceb40f7e2220",
+        "scripts/runtime-integrity/linux-x86_64.json": "0700c5bcadaa68ec96ac723504c6ffd3212999bfc1c4f7ec1e27ab47e6a564a8",
+        "scripts/runtime-integrity/windows-x86_64.json": "33e0714f70aee024ec182148933a536d721c5321f0b7efa1470a21e4d85c21a0",
+        "scripts/runtime-integrity/windows-x86.json": "ebe596ae6de96e0ddebbe5ca171b3b65337cf33e2c40c5f99631aff6b71d02c4",
+        "scripts/runtime-integrity/windows-arm64.json": "edb91da2b4bb474de49cbb705d5c1ff3c6700eb84eea8efc2ec65c208df40572",
+        "scripts/runtime-integrity/linux-aarch64.json": "b1c0b809c03fbf7d3d018f7418250fce3e56bd7e816781df5242c2cea08370fb",
+        "scripts/runtime-integrity/darwin-x86_64.json": "c7eb5424dbb14940624e3ae6a494078a41dfa0c6738b7779d5d9ceb40f7e2220"
+      },
+      "cases": [
+        {
+          "mode": "workflow",
+          "status": "PASS",
+          "taskIdentityHash": "f06a84da07a05839532f01d162ed6f58a1ae0284e313b5a51ab8e79ab18b3834",
+          "operations": 20,
+          "projectSha256": "9d0281cfd2e5d0298699bc599dd43976c6d395482c5dc3da733249f12029d399",
+          "engineering": "PASS",
+          "technical": "PASS",
+          "creative": "NOT_RUN",
+          "publicRecoveryNoReplay": true,
+          "adapter": null,
+          "desktop": null,
+          "unknownNativeErrorNoReplay": false
+        }
+      ],
+      "rawCLICompatible": true,
+      "installedFilesUnchanged": true,
+      "pythonPreparation": "verified isolated cache reused",
+      "nativePreparation": "official pinned installer; per-case cold/reuse recorded by shared acceptance cache",
+      "desktopPreparation": "signed official pinned installer",
+      "testSha256": "9ea95c154d859ac5717674402a6ac51bd1bee61f6c1ca244afd02252ea8b9bb5",
+      "fullV1": "NOT_RUN",
+      "hostDispatch": "NOT_RUN",
+      "nativeCacheBeforeCase": false,
+      "observedTaskReceipts": {
+        "successful": {
+          "identityHash": "f06a84da07a05839532f01d162ed6f58a1ae0284e313b5a51ab8e79ab18b3834",
+          "state": "review_ready",
+          "steps": 20,
+          "succeeded": 20,
+          "attempted": 0,
+          "receiptFiles": {
+            "a5112d152fa44c52b4ddf3e14b6aae94.json": "16a38766dcfa7148c50f02cbc75a15e984cafc4cf315a23bef60a9bc40384380",
+            "6c4e7c61ea614735be0d048df9c77321.json": "bcbe22a9abe7b62f8336ea8270b22558d5e0fcab8edba164d2d7b0763e978b13",
+            "f086c0732ab14195a205b7583e7d7ee2.json": "b703198dc1d3439e3e616bf592a4cfae18d7fccb1130dda1d1c6ef01a4eddcc4",
+            "6ecbda20c0ce40eab019c4b89067916b.json": "308e0b46fc02f8ace89bc2e5b3cfe98cad441cbad7e237e9c0e25c6132b91d57",
+            "39099d9536a149a6b0f06de22a4b1e50.json": "481ff056c5604f6e4902e390d4557ac2556b3e54cb03ec7623e0f14b22bf337f",
+            "e55037b184b64333ad634d6bcbb0d0d9.json": "55f96b039090654c3b8ceebff4d7bab6af73f3e22235442b782c0e4028f8ff78",
+            "ce99cc2a9d6847148f786ab5718c33b4.json": "c264eab42a0f05c6e2c4a8d0d2c72c9d24e07e5db07422adf407ca64e74ecaaf",
+            "7b8fdaa020e548dc8202d4b18f3b2da9.json": "faf2fe3aa8708d5b0639ee57f1c2dc06dce94474adba3ed13d0c3e238daf7a26",
+            "ab15dad603b0416eb10e715182099b16.json": "531751b40653e9a90c50b9c9ca3c277acc6a302f6e2fe47f286e27d484a45a4c",
+            "13b985b04bff4a929747e7525aefaeb2.json": "7da6adcf07bf711ae513b6f5de037d11d1f0bba97c6253656793822e2c0d1412",
+            "100dd9ff70444b31a3a58c3eeb296696.json": "f108d0aa81e43565898ead8724fc4c22fc25ceeba10862eab3ec5ad2976cdfeb",
+            "6301d4174f084d65b40e2a66c7b4b6f8.json": "2389ac7eed7d433fd01fcaec961a05ea7ffd0aea14e784c47e95ae7ad1158eef",
+            "31c4e788ebe945b29e8875c282e1f824.json": "e4bc113564d916600a764dbd570882dcc976860b9d0b5c0c99828683247e43b6",
+            "47bba380ae674ab5a8ec530e1984856c.json": "cd113b6d1f7c5e82236c9c6f10e295ef2796fec0abd929ae55543980af3f0d69",
+            "2b7f563c6d4546eea8388b673ef56c26.json": "183e5381490195d8b76d233eff3c7d2755172f10a05fab12a1af2dbf03eedb3f",
+            "3b280c42ad4d49939d5c65437b521711.json": "28a6fb16dd757c0c247bdebcecf8cda6cbfcb05d30372ce69ae801dd000a6f64",
+            "b70fb507dcd64120a98a34eded843c2f.json": "a5198c776c5972d5915556891a33c3a27e5ecce6af8694959eaab58504c01562",
+            "b1ba3ae653df4c01959cb68ed27076d1.json": "cef48792ca8083431e0c1baef413f4c8b3dd6f7c6c20a19d9eb6bcdf59c23fa1",
+            "a27bbfcf2b864f7f8eb82ed70ba9fa33.json": "d00c670d025d6679fa5a38de5fcb4afadda48285ae2785309847cbe121037bb1",
+            "20be908cbd494e0a8c7b61e1f471de94.json": "e0c567fef479f6fc08c2c90231c47e259ed948dc626eb3c633aac28332aa0b60"
+          },
+          "lifecycleSha256": "54e1499dd07b28337cf2cb263a7455a1f6c89718ac4e4a7e40798659c3859dcd",
+          "processExit": {
+            "observedAt": 1791492486.028967,
+            "returncode": 0,
+            "schema": "effectcraft-managed-process-exit/v1",
+            "source": "business-result",
+            "workerResultVerified": true
+          }
+        }
+      },
+      "publicLogs": {
+        "workflow-000-plan.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "workflow-000-plan.stdout": "42778116e719be9c0131f3a585f7145afe203aef2babff7a0278463a3e24a4d3",
+        "workflow-001-run.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "workflow-001-run.stdout": "161e471512347e3a0f6959b38c9eb403606641ecdcc9f2c534b6e8343ab9bd5b",
+        "workflow-002-inspect.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "workflow-002-inspect.stdout": "2563b4001409725b008f1ce1be34ce42123ef9d9d1551455b865f4b75b279cb5",
+        "workflow-003-reconcile.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "workflow-003-reconcile.stdout": "2563b4001409725b008f1ce1be34ce42123ef9d9d1551455b865f4b75b279cb5",
+        "workflow-004-resume.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "workflow-004-resume.stdout": "2563b4001409725b008f1ce1be34ce42123ef9d9d1551455b865f4b75b279cb5",
+        "workflow-005-review.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "workflow-005-review.stdout": "ec0a01f357f29e052cd7557aae4120b10c23f9b62d2ef232d831e7c5e434d210"
+      },
+      "nativeTestLogSha256": "70514c3467c7be0382573252c862698a9d3208d1e963f818d9ea938fb7defa25"
+    },
+    {
+      "schema": "effectcraft-managed-three-mode-native/v1",
+      "status": "PASS",
+      "platform": "darwin-arm64",
+      "installedFiles": {
+        "SKILL.md": "d48614435cbb1a065ae4825ba98705baf100f57c6ffa793d597f8b1d0e0f3648",
+        "references/output-execution.md": "1e185e63d8e20fdc54537feacdfb6e7a140474f5e61e2932747699d751671b36",
+        "references/expression-parent.md": "c67e09b82b9740bbbc603b2ec48c0aeba42c3703f775b7c234473935a355080c",
+        "references/command-reference.md": "aa978528c9b9c490d9390d79928d2258d62f87b83ace02823b7a76a349c233ba",
+        "references/tracking-scene.md": "2e699e1ab62f47a1c40405fc6dd48e15474f130295f33fdcd4e80efcad3e4be9",
+        "references/command-usage.md": "f6668cd5a7b7066c0abefa1f38534ba5e16e3227ca5cd06d05196377013964b6",
+        "references/bridge-tools.json": "1a9c5431674b0e563e83ae3e5aebf9e4c25a95c4a55c53125dccb6dc3ae60859",
+        "references/business-scenes.md": "fa6dde18bb5ea19d15de3c6be5d0fc2cdbf4f4e2cf3170a624600b2d3c4e556b",
+        "references/workflow.md": "09a885345734d8d13cd36466841c28441125caa4863472d2a5b9ed4278cc5cdc",
+        "references/segmented-render.md": "d4a500643465eafad7b96f4491086f203e121bd782d69e208095de36717a71b7",
+        "references/commands.json": "f4a4bd1bb063ffe89b0ab0f71dca12d0b1a92eec3e73306756ebf0a93bb3eeb7",
+        "references/capability-diff.json": "201b27776325f0b49a3e93c7fcfb8651bfbdf53843a9083ec2bdfc875c5c8959",
+        "references/native-command-snapshot.json": "043d3e4bcc4e03fd15df178cfcf8cfd2e81679308a48da8ff289d802b4204b74",
+        "references/codex-judge.md": "e4cd12c1942fdf49d4186c8e1552e83a6b7191e66b8d1ee4e2e156180dd3cfea",
+        "references/desktop-install.md": "db2db151b0eff30a3381a03ae377fb23ac09b2b4a919859740bd9343e7f14887",
+        "references/puppet-scene.md": "ce185ef007e86e1189210330049b80cc3a4418015826686ff3b143d81810e55f",
+        "references/camera-scene.md": "19bcbf1dce86e32974f59bfd5785ab0c7664df69ce75fd3130f6e4ec5a1e30c9",
+        "references/motion-tracking.md": "dcb4d2ea69f503e45692bbd3f2d2383546f892bd2cb5d163b7811a310af5d194",
+        "references/managed-execution.md": "bb8ac2aa692e40b9e7e0a9fe9a1444c2de41f3c4d4fa38cc467b023e852baea9",
+        "references/installation-concurrency.md": "69067acebcd47f1924a8d6aa9d8a4ce6f44ad0756d44888a21eb224bcdb1c215",
+        "references/exchange-loss.md": "eee665f62b77274ca8ce0efc4117012ade85978905cdfd40ab488af64297b8ae",
+        "references/first-use-failures.md": "ce2a8d1a8ca6b8a29a084d52d105d510476de88d40b439d6c2ff79212581d61d",
+        "references/native-workflow.md": "42fee416c66a69f6f3802abe1be6f002963cf109e7e22a4d6297b6dcaf62b8e9",
+        "references/command-coverage.json": "613f7a5fceff44bf5d7ac9f4a3521b849617ae5420be243d80ea21f1f7be7e76",
+        "agents/openai.yaml": "8fe0093ba521c032e6b243bf5c2e3d9d2303cf1ae78f76fe8365e414b7da57b7",
+        "examples/tracking-create.json": "14d6c8654cb81c1b2b578eea021039b38c5179bd9459b7ec41528999d7f53d0d",
+        "examples/camera-scene-reopen.json": "7f1ade6f23c628045941d7168c822d0372e79a63c4ff05cfbd375a03c376b4ee",
+        "examples/puppet-record-follow-create.json": "ac59e9682a32efbe12a6bdeacb5136508c120413b3ae3bdf5efda4b6602e7ed9",
+        "examples/camera-scene-create.json": "bdced8cc3a735793852bf67140ff62ec79544c938c61d733c372f6f4a61d0946",
+        "examples/tracking-reopen.json": "0b393fda8bd68c6819e25ac8f8101381dc175220ca3c8c1c3b8c35637e49ce7b",
+        "examples/layer-mask.json": "61efc2abc7274b45224659ab4aae7e847486af3f3660161a03b83b978ec7a8bc",
+        "examples/puppet-record-follow-reopen.json": "b722ee0ea4681556ae42eb58da21b293180081add09f23bb416d23ff368ae611",
+        "examples/commands-advanced.json": "e2def610996d594575136e357cab0d9ee355ce51cf782817d323b37e8227941b",
+        "examples/puppet-reopen.json": "bd05b66c9480cedaf60cbfe2fb6352dff8a6e573cd27a1fb1be43097bda58b62",
+        "examples/puppet-create.json": "405a5b98b410d2db642eec0a9d0ec8cf48c622c9f1632f36e2c2be3f01ff8560",
+        "examples/commands-revision-create.json": "03d3d7796210dfd4ff27f6cde0e1ba10b4376b0243dc4938d87103ca991f5f61",
+        "examples/expression-parent-create.json": "fca2b95312130f735c884e354ce4fede48bc67ca0a3c740b4b17a79967c20d4d",
+        "examples/native-workflow.json": "0ba62e8bd042dacb028b14c84c18cb2ee10c77e54dbd13efcd7090c8fa9fae16",
+        "examples/desktop-first-use.json": "0d1dbf9c43e8d5ce790443577b5398c2aa7af317fc15a328dc85c62813527d84",
+        "examples/commands-revision.json": "d54bfa78c48b674136b56a8e0c7e36e4c1c475a5907ba46ae450b2ac86e17d1e",
+        "examples/puppet-record-follow-revise.json": "448b635cf49567dc359a3d9ff385fe73afe4b4a32ec280ba5f8cab93ceb00a76",
+        "examples/brand-intro.json": "430aa74e69a3195f70fdfe53ae9b8939fc888df1b58e01d76fd76ccdfe3edd80",
+        "examples/camera-scene-revise.json": "2cca564a10133b56d2d8d20b0feb5cafb627a3e082ce2303fe073567af8bd00f",
+        "examples/expression-parent-revise.json": "8076203648de8834c0681149e557ea4ffed35e0863c2e7a2dec2b4001e3ca22f",
+        "scripts/bootstrap.py": "1eca0f59586609ae4314c77b4d5adb3886fe5443178fb2b300abb25cb75ae99b",
+        "scripts/desktop-platforms.lock.json": "3b4b56b144ef102f1ab2e5fbf4f374b22292dbce6a51a01e9bea466f9ed09b92",
+        "scripts/exchange_loss.py": "8871bc2d4e2e6bedd0b1d2852a06ccdbd43b0339d67afc53e6029fb3539c8c4f",
+        "scripts/launch.sh": "31bf2cef53d4d1b6a229d74389729cf24572209c48125c1dec8800df99c6431f",
+        "scripts/command_catalog.py": "ee88018a7139455125009f8d6a31f97b7e0f062a994f7d4377d910ba2001b7f7",
+        "scripts/command_revision.py": "0bf2629997ab92ce8454cde14b0033753b431f53e25139537850d1cf5c6a58c1",
+        "scripts/runtime_binding.py": "06799b6f1004052c02efc73d238c38b0f27d626c087a010cef74e3440dc5186a",
+        "scripts/image_sequence.py": "f67d0e565d8c99abd519bfaabe44599d25606450ca4f98df1ea227619ab2fff0",
+        "scripts/additional-platforms.lock.json": "d72653f778b07bb61eed795d49ffc3e7214ad39e74c64e76959818187567dce6",
+        "scripts/task_entry.sh": "efd4e8903592721a1ca63c6967c08e82d06474cc097dd614fa089d0763670779",
+        "scripts/review_ledger.py": "4931523dd1c76eb15037faaf28aaa7c85b7c85c6dfd447455925dd5a3ae9c512",
+        "scripts/task_store.py": "cee2e43d47f3db749de2383ed7034b111bb2099309f8d2d656d6e573f82c30d6",
+        "scripts/web_adapter.mjs": "081a816b285a512ebed8cc47dc87e5a16aa0502344c83b25036d3cee8b5c6f78",
+        "scripts/cancellation.py": "db22d93fe4a9eafc06460c62de9f2be3193bd1750a707c2a352ebb09502a971c",
+        "scripts/segmented_sequence.py": "f0b078e72211c245267c22514a7b4202099a47cc42a5e9c8243bdd7b0dc473e9",
+        "scripts/platform_support.py": "d6a133dc25b81570f585f473f2fe290e181e78bc24032a05ae83be6f0a45aed8",
+        "scripts/task_entry.ps1": "530d74a89c51f0ea55df332d11f9df92c9b545de56ca562b777181b959f8092f",
+        "scripts/command_judge.py": "1d9617f42edcd4dd730b0781fc55b330c40f8774db0063ff7cb53fa7af4e83f0",
+        "scripts/launch.ps1": "eaed943345d51f44b2490bdcd6d92b5f85121d4b4f47576c19ad56512c81b9b6",
+        "scripts/judge_contract.py": "58e1e4fad0e296cbf185a4e6e5cf5bd3f2db6482b34dbfcb622b814639469480",
+        "scripts/native_diagnostics.py": "0c352d047edde58a35151ba2b03c001b2a6b591bb8032307e80573d115912389",
+        "scripts/mcp_session.py": "dd6df96dc1734cd7e43c4b820661d2e2c8c713dc8849fc89ab06a3720d99619b",
+        "scripts/resource_budget.py": "97b4f4b4ac77b65df113c7eccf2ad2d4559cb849a9fe2c20d5eb8c4e7121be30",
+        "scripts/render_recovery.py": "6baf8f315f20d5e6b9115423502d66e9e51e33dc2398adc6bbff85b6b68b1e31",
+        "scripts/output_guard.py": "018c5c27217c11ec7b45ded52a1e13d7c42b34a3a53df21566e26f192143302b",
+        "scripts/runtime.lock.json": "b427c71c77e1a217c72f7c19ac872b19df28e07150f4e7f6319defe7f5d9acc0",
+        "scripts/task_entry.py": "a45fe452696b53d95e58142bd94bff50627034522f490c9241da5b9f39dcbff2",
+        "scripts/python-platforms.tsv": "3836b670271e8f8327ea386510b18dea6a867ece27be5e74f4165eaa38ad8c65",
+        "scripts/cli.py": "9303ae8ae30009fa706d5d56603032485ad81416aee1d0af523ce902e3f28165",
+        "scripts/desktop_session.py": "a4441b65603b73ad350aff4348553c9681c77cb5c030e97bc5630a7d88251a8e",
+        "scripts/native_workflow.py": "0db0471f8d849db9c3ffaeaac1c7bc40bf0cd500a638f7b681ecdeb934960bdd",
+        "scripts/desktop.lock.json": "d2af78ee474b8e19ff3c26c792bb27ad180622ffe6dbed5a402bcb7aa7167311",
+        "scripts/quality_review.py": "e0ddc78bb8bdc9b2e1dfca2e8ae7c1915ad9008ced0b3d3a242ccc45086e77e9",
+        "scripts/command_delivery.py": "77e05cf2c24c3ac7fefaa68512fb47a4852406741949d26b339c46fe262f4d5c",
+        "scripts/managed.py": "9acd35c7f1e5cb703c725e537519b02a334ba83cf0da227c1ab91023a100b24e",
+        "scripts/png_inspection.py": "0e3c50907c66c6dcc45256d045920da346ad77892e47401de3103c8f6232938d",
+        "scripts/additional_platforms.py": "1a4ffc9f04e240374269a9869d0383f9f833082cf066203fddba117f247f48d9",
+        "scripts/entry_identity.awk": "5d4b4432e043568509d05303e34357e8e8fa056f0fc5394b80f6f4d8a20cbcbe",
+        "scripts/revision.py": "546214f38430c14f354b6c0aa8feff8928d3267b9dee1b7ea708933bc3633590",
+        "scripts/python.lock.json": "e877b3fe406a2a210ebe5d7f660aa1d0483def44454a54dbe7429bfdba1c9f3f",
+        "scripts/workflow.py": "52eb0ccd9942b83588155ddb851c63c6fbea0f3122a0aa2a3029a2640cb6ce14",
+        "scripts/parameter-contract.json": "dd1bde23fb12e26774f412f0aacc93e8102eaed79d4255709b5717c112daa762",
+        "scripts/posix_group_lease.py": "23593ea54ff78457eb7d873a979aa1e1d4da601ea459dc288a4b7a8b975c6155",
+        "scripts/orphan_segments.py": "244059948ca6b783c64cdd5942e91f3e6268dfd71f3c48c300595ccbcb2584b9",
+        "scripts/process_guard.py": "8ddf5881adeec3d224ef57821d3c83bd4319cf2d1f9efb5ed0f1dab846446f4f",
+        "scripts/engineering_review.py": "8a06516198de09b49d43cec4bff51aeded085bec9d352567055ef9edca29ec53",
+        "scripts/preserved_stage.py": "64199df3ee6af2901a859a5aac401fd27ca2f0c6ba9238e6f72c3563f681ad63",
+        "scripts/commands.py": "7a7bf479698a48d9f4c5e6e94577108dbd230da312c21e04c168ae7e7491f610",
+        "scripts/resource_meter.py": "a62257919fd22cfa6eb616be285122978a6732c0b888893fd8b4440396b8993f",
+        "scripts/desktop.py": "802de3eef9ed9fca3ad09a2f5f6f204f6bbba5a09450efe6ae062e7159409553",
+        "scripts/python-integrity/windows-arm64.tsv": "625a22a5086fd7d312bc156cde8e3f4443ceb2079e2ff91457c6de0cadd5df4d",
+        "scripts/python-integrity/darwin-x86_64.tsv": "53196035ea5ca246ef60da5b248d02a91964a269c6ec7397eedc0f28a72694ca",
+        "scripts/python-integrity/windows-x86.tsv": "551536440722a4fc82e578f4af5a11ef72a9736b3be4b08621982f0f767cc981",
+        "scripts/python-integrity/linux-aarch64.tsv": "6b639cbaa8c4e691d226447b747fde28fb0f9e337fe828d46b2ceba80ad325f7",
+        "scripts/python-integrity/darwin-arm64.tsv": "8f9c3aaf79cd0ff1867ac5d3c937d6ca0c60ccf1ab2b321a2b7a8454209d6fdd",
+        "scripts/python-integrity/linux-x86_64.tsv": "f81e6ac6a770f895b5b1a89838da856f21e9c827f4fc320ed1562645783c0c55",
+        "scripts/python-integrity/windows-x86_64.tsv": "e1e98775d10bcb9fbf55e482a31d9efdb91a8d61d80718998f66f7c9b195e5f3",
+        "scripts/runtime-integrity/darwin-arm64.json": "c7eb5424dbb14940624e3ae6a494078a41dfa0c6738b7779d5d9ceb40f7e2220",
+        "scripts/runtime-integrity/linux-x86_64.json": "0700c5bcadaa68ec96ac723504c6ffd3212999bfc1c4f7ec1e27ab47e6a564a8",
+        "scripts/runtime-integrity/windows-x86_64.json": "33e0714f70aee024ec182148933a536d721c5321f0b7efa1470a21e4d85c21a0",
+        "scripts/runtime-integrity/windows-x86.json": "ebe596ae6de96e0ddebbe5ca171b3b65337cf33e2c40c5f99631aff6b71d02c4",
+        "scripts/runtime-integrity/windows-arm64.json": "edb91da2b4bb474de49cbb705d5c1ff3c6700eb84eea8efc2ec65c208df40572",
+        "scripts/runtime-integrity/linux-aarch64.json": "b1c0b809c03fbf7d3d018f7418250fce3e56bd7e816781df5242c2cea08370fb",
+        "scripts/runtime-integrity/darwin-x86_64.json": "c7eb5424dbb14940624e3ae6a494078a41dfa0c6738b7779d5d9ceb40f7e2220"
+      },
+      "cases": [
+        {
+          "mode": "commands",
+          "status": "PASS",
+          "taskIdentityHash": "af858a0915577a77cd591d5ba8793f7b9c5e0fe2daaea4c1f027ae8bfef00957",
+          "operations": 23,
+          "projectSha256": "5546c4aa7fd31a39258d872f5db04f67ce348de64fea199a8afa9695b9e73c60",
+          "engineering": "PASS",
+          "technical": "PASS",
+          "creative": "NOT_RUN",
+          "publicRecoveryNoReplay": true,
+          "adapter": {
+            "schema": "craft-command-receipt/v1",
+            "pluginId": "effectcraft",
+            "planSha256": "7fa54d36b8b184abab0cab5ca01d4ccd16449b1680f4bd2655f179086567f668",
+            "catalogSha256": "613f7a5fceff44bf5d7ac9f4a3521b849617ae5420be243d80ea21f1f7be7e76",
+            "mode": "headless",
+            "result": "PASS",
+            "steps": [
+              {
+                "index": 0,
+                "command": "comp.new",
+                "tool": null,
+                "params": {
+                  "duration": 1,
+                  "frameRate": 12,
+                  "height": 64,
+                  "name": "Actual adapter",
+                  "width": 96
+                },
+                "state": "succeeded",
+                "result": {
+                  "comp": 1
+                }
+              },
+              {
+                "index": 1,
+                "command": "layer.newShape",
+                "tool": null,
+                "params": {
+                  "fill": "#ff0000",
+                  "kind": "rect",
+                  "name": "Subject",
+                  "position": [
+                    32,
+                    32
+                  ],
+                  "size": [
+                    40,
+                    40
+                  ]
+                },
+                "state": "succeeded",
+                "result": {
+                  "layer": 2
+                }
+              },
+              {
+                "index": 2,
+                "command": null,
+                "tool": "get_layer",
+                "params": {
+                  "layer": 2
+                },
+                "state": "succeeded",
+                "result": {
+                  "blendMode": "Normal",
+                  "id": 2,
+                  "in": 0.0,
+                  "index": 1,
+                  "label": "Blue",
+                  "name": "Subject",
+                  "out": 1.0,
+                  "parent": null,
+                  "properties": {
+                    "children": [
+                      {
+                        "children": [
+                          {
+                            "children": [
+                              {
+                                "match": "blend",
+                                "name": "Blend Mode",
+                                "path": "contents/group/blend",
+                                "type": "enum",
+                                "uid": 39,
+                                "value": 0
+                              },
+                              {
+                                "children": [
+                                  {
+                                    "children": [
+                                      {
+                                        "match": "direction",
+                                        "name": "Path Direction",
+                                        "path": "contents/group/contents/rect/direction",
+                                        "type": "enum",
+                                        "uid": 27,
+                                        "value": 0
+                                      },
+                                      {
+                                        "match": "size",
+                                        "name": "Size",
+                                        "path": "contents/group/contents/rect/size",
+                                        "type": "vec2",
+                                        "uid": 28,
+                                        "value": [
+                                          40.0,
+                                          40.0
+                                        ]
+                                      },
+                                      {
+                                        "match": "position",
+                                        "name": "Position",
+                                        "path": "contents/group/contents/rect/position",
+                                        "type": "vec2",
+                                        "uid": 29,
+                                        "value": [
+                                          0.0,
+                                          0.0
+                                        ]
+                                      },
+                                      {
+                                        "match": "roundness",
+                                        "name": "Roundness",
+                                        "path": "contents/group/contents/rect/roundness",
+                                        "type": "scalar",
+                                        "uid": 30,
+                                        "value": 0.0
+                                      }
+                                    ],
+                                    "enabled": true,
+                                    "match": "rect",
+                                    "name": "Rectangle Path 1",
+                                    "path": "contents/group/contents/rect",
+                                    "uid": 26
+                                  },
+                                  {
+                                    "children": [
+                                      {
+                                        "match": "blend",
+                                        "name": "Blend Mode",
+                                        "path": "contents/group/contents/fill/blend",
+                                        "type": "enum",
+                                        "uid": 32,
+                                        "value": 0
+                                      },
+                                      {
+                                        "match": "composite",
+                                        "name": "Composite",
+                                        "path": "contents/group/contents/fill/composite",
+                                        "type": "enum",
+                                        "uid": 33,
+                                        "value": 0
+                                      },
+                                      {
+                                        "match": "rule",
+                                        "name": "Fill Rule",
+                                        "path": "contents/group/contents/fill/rule",
+                                        "type": "enum",
+                                        "uid": 34,
+                                        "value": 0
+                                      },
+                                      {
+                                        "match": "color",
+                                        "name": "Color",
+                                        "path": "contents/group/contents/fill/color",
+                                        "type": "color",
+                                        "uid": 35,
+                                        "value": [
+                                          1.0,
+                                          0.0,
+                                          0.0,
+                                          1.0
+                                        ]
+                                      },
+                                      {
+                                        "match": "opacity",
+                                        "name": "Opacity",
+                                        "path": "contents/group/contents/fill/opacity",
+                                        "type": "scalar",
+                                        "uid": 36,
+                                        "value": 100.0
+                                      }
+                                    ],
+                                    "enabled": true,
+                                    "match": "fill",
+                                    "name": "Fill 1",
+                                    "path": "contents/group/contents/fill",
+                                    "uid": 31
+                                  }
+                                ],
+                                "enabled": true,
+                                "match": "contents",
+                                "name": "Contents",
+                                "path": "contents/group/contents",
+                                "uid": 37
+                              },
+                              {
+                                "children": [
+                                  {
+                                    "match": "anchor",
+                                    "name": "Anchor Point",
+                                    "path": "contents/group/transform/anchor",
+                                    "type": "vec2",
+                                    "uid": 41,
+                                    "value": [
+                                      0.0,
+                                      0.0
+                                    ]
+                                  },
+                                  {
+                                    "match": "position",
+                                    "name": "Position",
+                                    "path": "contents/group/transform/position",
+                                    "type": "vec2",
+                                    "uid": 42,
+                                    "value": [
+                                      0.0,
+                                      0.0
+                                    ]
+                                  },
+                                  {
+                                    "match": "scale",
+                                    "name": "Scale",
+                                    "path": "contents/group/transform/scale",
+                                    "type": "vec2",
+                                    "uid": 43,
+                                    "value": [
+                                      100.0,
+                                      100.0
+                                    ]
+                                  },
+                                  {
+                                    "match": "skew",
+                                    "name": "Skew",
+                                    "path": "contents/group/transform/skew",
+                                    "type": "scalar",
+                                    "uid": 44,
+                                    "value": 0.0
+                                  },
+                                  {
+                                    "match": "skewAxis",
+                                    "name": "Skew Axis",
+                                    "path": "contents/group/transform/skewAxis",
+                                    "type": "scalar",
+                                    "uid": 45,
+                                    "value": 0.0
+                                  },
+                                  {
+                                    "match": "rotation",
+                                    "name": "Rotation",
+                                    "path": "contents/group/transform/rotation",
+                                    "type": "scalar",
+                                    "uid": 46,
+                                    "value": 0.0
+                                  },
+                                  {
+                                    "match": "opacity",
+                                    "name": "Opacity",
+                                    "path": "contents/group/transform/opacity",
+                                    "type": "scalar",
+                                    "uid": 47,
+                                    "value": 100.0
+                                  }
+                                ],
+                                "enabled": true,
+                                "match": "transform",
+                                "name": "Transform",
+                                "path": "contents/group/transform",
+                                "uid": 40
+                              }
+                            ],
+                            "enabled": true,
+                            "match": "group",
+                            "name": "Rectangle 1",
+                            "path": "contents/group",
+                            "uid": 38
+                          }
+                        ],
+                        "enabled": true,
+                        "match": "contents",
+                        "name": "Contents",
+                        "path": "contents",
+                        "uid": 4
+                      },
+                      {
+                        "children": [],
+                        "enabled": true,
+                        "match": "masks",
+                        "name": "Masks",
+                        "path": "masks",
+                        "uid": 5
+                      },
+                      {
+                        "children": [],
+                        "enabled": true,
+                        "match": "effects",
+                        "name": "Effects",
+                        "path": "effects",
+                        "uid": 6
+                      },
+                      {
+                        "children": [
+                          {
+                            "match": "anchor",
+                            "name": "Anchor Point",
+                            "path": "transform/anchor",
+                            "type": "vec3",
+                            "uid": 7,
+                            "value": [
+                              0.0,
+                              0.0,
+                              0.0
+                            ]
+                          },
+                          {
+                            "match": "position",
+                            "name": "Position",
+                            "path": "transform/position",
+                            "type": "vec3",
+                            "uid": 8,
+                            "value": [
+                              32.0,
+                              32.0,
+                              0.0
+                            ]
+                          },
+                          {
+                            "match": "scale",
+                            "name": "Scale",
+                            "path": "transform/scale",
+                            "type": "vec3",
+                            "uid": 9,
+                            "value": [
+                              100.0,
+                              100.0,
+                              100.0
+                            ]
+                          },
+                          {
+                            "match": "orientation",
+                            "name": "Orientation",
+                            "path": "transform/orientation",
+                            "type": "vec3",
+                            "uid": 10,
+                            "value": [
+                              0.0,
+                              0.0,
+                              0.0
+                            ]
+                          },
+                          {
+                            "match": "rotationX",
+                            "name": "X Rotation",
+                            "path": "transform/rotationX",
+                            "type": "scalar",
+                            "uid": 11,
+                            "value": 0.0
+                          },
+                          {
+                            "match": "rotationY",
+                            "name": "Y Rotation",
+                            "path": "transform/rotationY",
+                            "type": "scalar",
+                            "uid": 12,
+                            "value": 0.0
+                          },
+                          {
+                            "match": "rotation",
+                            "name": "Rotation",
+                            "path": "transform/rotation",
+                            "type": "scalar",
+                            "uid": 13,
+                            "value": 0.0
+                          },
+                          {
+                            "match": "opacity",
+                            "name": "Opacity",
+                            "path": "transform/opacity",
+                            "type": "scalar",
+                            "uid": 14,
+                            "value": 100.0
+                          }
+                        ],
+                        "enabled": true,
+                        "match": "transform",
+                        "name": "Transform",
+                        "path": "transform",
+                        "uid": 15
+                      },
+                      {
+                        "children": [
+                          {
+                            "match": "castsShadows",
+                            "name": "Casts Shadows",
+                            "path": "materialOptions/castsShadows",
+                            "type": "enum",
+                            "uid": 17,
+                            "value": 0
+                          },
+                          {
+                            "match": "lightTransmission",
+                            "name": "Light Transmission",
+                            "path": "materialOptions/lightTransmission",
+                            "type": "scalar",
+                            "uid": 18,
+                            "value": 0.0
+                          },
+                          {
+                            "match": "acceptsShadows",
+                            "name": "Accepts Shadows",
+                            "path": "materialOptions/acceptsShadows",
+                            "type": "enum",
+                            "uid": 19,
+                            "value": 1
+                          },
+                          {
+                            "match": "acceptsLights",
+                            "name": "Accepts Lights",
+                            "path": "materialOptions/acceptsLights",
+                            "type": "bool",
+                            "uid": 20,
+                            "value": true
+                          },
+                          {
+                            "match": "ambient",
+                            "name": "Ambient",
+                            "path": "materialOptions/ambient",
+                            "type": "scalar",
+                            "uid": 21,
+                            "value": 100.0
+                          },
+                          {
+                            "match": "diffuse",
+                            "name": "Diffuse",
+                            "path": "materialOptions/diffuse",
+                            "type": "scalar",
+                            "uid": 22,
+                            "value": 50.0
+                          },
+                          {
+                            "match": "specularIntensity",
+                            "name": "Specular Intensity",
+                            "path": "materialOptions/specularIntensity",
+                            "type": "scalar",
+                            "uid": 23,
+                            "value": 50.0
+                          },
+                          {
+                            "match": "specularShininess",
+                            "name": "Specular Shininess",
+                            "path": "materialOptions/specularShininess",
+                            "type": "scalar",
+                            "uid": 24,
+                            "value": 5.0
+                          },
+                          {
+                            "match": "metal",
+                            "name": "Metal",
+                            "path": "materialOptions/metal",
+                            "type": "scalar",
+                            "uid": 25,
+                            "value": 100.0
+                          }
+                        ],
+                        "enabled": true,
+                        "match": "materialOptions",
+                        "name": "Material Options",
+                        "path": "materialOptions",
+                        "uid": 16
+                      }
+                    ],
+                    "enabled": true,
+                    "match": "layer",
+                    "name": "Subject",
+                    "path": "",
+                    "uid": 3
+                  },
+                  "start": 0.0,
+                  "stretch": 100.0,
+                  "switches": {
+                    "adjustment": false,
+                    "audio": true,
+                    "collapse": false,
+                    "effects": true,
+                    "frame_blend": "Off",
+                    "guide": false,
+                    "locked": false,
+                    "motion_blur": false,
+                    "quality": "Best",
+                    "sampling": "Bilinear",
+                    "shy": false,
+                    "solo": false,
+                    "three_d": false,
+                    "video": true
+                  },
+                  "time": 0.0,
+                  "trackMatte": null,
+                  "type": "Shape"
+                }
+              },
+              {
+                "index": 3,
+                "command": null,
+                "tool": "save_project",
+                "params": {
+                  "path": "${ACCEPTANCE_ROOT}/commands/commands/delivery/project.ecproj"
+                },
+                "state": "succeeded",
+                "result": {
+                  "dirty": false,
+                  "path": "${ACCEPTANCE_ROOT}/commands/commands/delivery/project.ecproj"
+                }
+              },
+              {
+                "index": 4,
+                "command": null,
+                "tool": "render_frame",
+                "params": {
+                  "inline": false,
+                  "max_side": 96,
+                  "path": "${ACCEPTANCE_ROOT}/commands/commands/delivery/preview.png",
+                  "time": 0.5,
+                  "transparent": true
+                },
+                "state": "succeeded",
+                "result": {
+                  "comp": 1,
+                  "height": 64,
+                  "path": "${ACCEPTANCE_ROOT}/commands/commands/delivery/preview.png",
+                  "time": 0.5,
+                  "width": 96
+                }
+              },
+              {
+                "index": 5,
+                "command": null,
+                "tool": "open_project",
+                "params": {
+                  "path": "${ACCEPTANCE_ROOT}/commands/commands/delivery/project.ecproj"
+                },
+                "state": "succeeded",
+                "result": {
+                  "activeComp": 1,
+                  "bitDepth": "8 bpc",
+                  "dirty": false,
+                  "items": [
+                    {
+                      "duration": 1.0,
+                      "frameRate": 12.0,
+                      "id": 1,
+                      "label": "Sandstone",
+                      "layers": 1,
+                      "name": "Actual adapter",
+                      "parent": null,
+                      "size": [
+                        96,
+                        64
+                      ],
+                      "type": "Composition"
+                    }
+                  ],
+                  "path": "${ACCEPTANCE_ROOT}/commands/commands/delivery/project.ecproj",
+                  "renderer": {
+                    "active": "cpu",
+                    "adapter": null,
+                    "gpuAcceleration": true,
+                    "renderer": "Mercury GPU Acceleration"
+                  },
+                  "selectedLayers": [],
+                  "time": 0.0,
+                  "undo": []
+                }
+              },
+              {
+                "index": 6,
+                "command": null,
+                "tool": "get_comp",
+                "params": {},
+                "state": "succeeded",
+                "result": {
+                  "background": [
+                    0.0,
+                    0.0,
+                    0.0
+                  ],
+                  "duration": 1.0,
+                  "frameRate": 12.0,
+                  "height": 64,
+                  "id": 1,
+                  "layers": [
+                    {
+                      "blendMode": "Normal",
+                      "id": 2,
+                      "in": 0.0,
+                      "index": 1,
+                      "label": "Blue",
+                      "name": "Subject",
+                      "out": 1.0,
+                      "parent": null,
+                      "start": 0.0,
+                      "stretch": 100.0,
+                      "switches": {
+                        "adjustment": false,
+                        "audio": true,
+                        "collapse": false,
+                        "effects": true,
+                        "frame_blend": "Off",
+                        "guide": false,
+                        "locked": false,
+                        "motion_blur": false,
+                        "quality": "Best",
+                        "sampling": "Bilinear",
+                        "shy": false,
+                        "solo": false,
+                        "three_d": false,
+                        "video": true
+                      },
+                      "trackMatte": null,
+                      "type": "Shape"
+                    }
+                  ],
+                  "name": "Actual adapter",
+                  "preserveFrameRate": false,
+                  "preserveResolution": false,
+                  "width": 96,
+                  "workArea": [
+                    0.0,
+                    1.0
+                  ]
+                }
+              }
+            ],
+            "creativeAcceptance": "NOT_RUN",
+            "nativeProjectReopenAcceptance": "NOT_RUN",
+            "runtimeSha256": "c1717eb87e5b57b3ed88c6a78047268a5afa566beb36104fdcc05dc8634a01c1",
+            "inputs": {},
+            "registeredCommands": 655
+          },
+          "desktop": null,
+          "unknownNativeErrorNoReplay": true
+        }
+      ],
+      "rawCLICompatible": true,
+      "installedFilesUnchanged": true,
+      "pythonPreparation": "verified isolated cache reused",
+      "nativePreparation": "official pinned installer; per-case cold/reuse recorded by shared acceptance cache",
+      "desktopPreparation": "signed official pinned installer",
+      "testSha256": "9ea95c154d859ac5717674402a6ac51bd1bee61f6c1ca244afd02252ea8b9bb5",
+      "fullV1": "NOT_RUN",
+      "hostDispatch": "NOT_RUN",
+      "nativeCacheBeforeCase": false,
+      "observedTaskReceipts": {
+        "successful": {
+          "identityHash": "af858a0915577a77cd591d5ba8793f7b9c5e0fe2daaea4c1f027ae8bfef00957",
+          "state": "review_ready",
+          "steps": 23,
+          "succeeded": 23,
+          "attempted": 0,
+          "receiptFiles": {
+            "357ce0412f37441082d869592575d889.json": "a27661c001e1ca12755b20b1c407ace8e56c9b217877858c83ee9f0f43a0d08b",
+            "610f10d7858e4834a65bf1484047a708.json": "ad812e4bf12beb57d0147e61ce770e923b8dbf000930cce7e6a405cdf62fcde1",
+            "b06f2c6b0bb948e18cea3bd81cace835.json": "cfd168b91e54c555ffd232df88085301972112f0bb7b4cbb7932363dd442b1e3",
+            "fdb5a8fc5bac42b1af6a2d53d98e4223.json": "d71193b4d898023a2dca0e6ad578630a6c4269df7ff625b01516e4729b35d6c6",
+            "e2e882034c924f949381381bd8da9094.json": "a3fc6c8376a1ec7060c76236f757c409ea1ede531e68a415c2c45ebdeeb49944",
+            "22ca51389b6a499ba4f7edb9d563f6f3.json": "13a91c05b1290d18df7f48724607c095758009411ef90138133f30b796c0114d",
+            "3f7e82c5cbd84f218c53e339214da4be.json": "1dfaaab59a5f122bc14056b1d74f361173f792864722a2daa3e5c2e3684ad71e",
+            "30f7c335ba164378a326c54f133a3dd4.json": "effe2ab135316eea68b8ff79bfef9247f2d49c3ee75f364605cc510d589c669a",
+            "3606373cc6764a6d84fbed248b32ecfa.json": "427c732ff261d3969a9035ccd7783dd0278a6ec82cfeb0af87194196ca195573",
+            "9c58126753e843bc963ec368f935cc31.json": "fb7e24f73e5030d02ede5254c0a7abaa617f44983238a64547ba61d5a5071fba",
+            "44e850f0a8794559af5a9a4023e63a4b.json": "4addc218d44ae8994aa7243f4f878d68d871b7ead365be28c0744b77e0c1be6e",
+            "c545cfd857b54f8988069754ed558ae7.json": "73b198c1d09591705e7b8c988089dfa92b75a5b61712085b9c2bf4954b3cbe87",
+            "92ca33c40c0a4338837bea1e28c45a3f.json": "8a0459a03b5e237ea5d760ce07c23431b886dcbd5800bed96292ac69f73eb077",
+            "aa88deaf4c3348ce9f932625c80b5391.json": "16b5c4cb62b861f27504ff71848b680a7fb5e7ca9953e44c6fb321aa9f3c1c4a",
+            "d011404036724ad983db4ad3cd8098ad.json": "3489413b817ce4e46783da680af44d3390d4dc10088f0718c4e3588d17bd44d7",
+            "7bb2d1d8febe4fa5a0e38ae18a12a68f.json": "8e0f84e6b9bf07699fdbacd192e1dd4ddcf9aa1df68b1cd759112f94a0013ae7",
+            "24d2abb685ea4ab9a545ea4e435f8e96.json": "8cfee38e04816e5eabf888c04c9225371b47fc84d041f6cc98d5a1f9f6ca3bf6",
+            "d503d068debb41c39140fd9b5fbe8e24.json": "04191e64068dd32319880430cecfb6497d7ff33a40c38063e7e18ee897c2470f",
+            "9ec4b09025594279933a1ab0c2aaa576.json": "88702504ada80f2c4f8a0ce9fe00ee6631b471084c944c6cfe399bd59caccbc3",
+            "f21940394c65450a85da9f75219c33a0.json": "5b84355e8c967defb722fd60973f660c4aa876aa45fda96e4f8faa19058d57ac",
+            "eb8902b57c424670ba08e9806a318685.json": "f8929f6f118e3746691aa9e1a0f8fdcd44e83d145b664c7df6f33b2b16d8a783",
+            "d846b17b579b4169ad45ce88cab6f4c3.json": "6f35b4347575c9b47fe10948f03c37fb3dd34d768296f82074e9965096cc7080",
+            "1ac63242c20e44cd9a069033d895cbfd.json": "910d09446434c3bcf5ca56a9017857b23a734b7a0f049b8e4c3d1c291886c88c"
+          },
+          "lifecycleSha256": "39e80454a05dd37c08f03f95a51e528062e9d757a00963f23a26578bcabbb1b1",
+          "processExit": {
+            "observedAt": 1791492509.428094,
+            "returncode": 0,
+            "schema": "effectcraft-managed-process-exit/v1",
+            "source": "business-result",
+            "workerResultVerified": true
+          }
+        },
+        "unknown": {
+          "identityHash": "c9435e36480529d71f227a47bd165b451399ce0aa9ec1e0a0560a5faf853ca97",
+          "state": "reconciling",
+          "steps": 24,
+          "succeeded": 23,
+          "attempted": 1,
+          "receiptFiles": {
+            "f2ecc87521b54b0ca865896c256bd434.json": "126cb80b4cbafef03fb18776bb1779de979f1e223a9b369b9c713d10afa043d5",
+            "bd234c7461d8452c9f75cbcf9ba4775f.json": "daf3eaf00e18ce3ba2bc4a0c53707631312781198a55c0a1d2506f6c869cae25",
+            "120b98489de844ad85b86f2e8b8f0966.json": "aacb758af3be96c8c92da7f71a58de4c4a68ecd43e528351dbdde017d2a72923",
+            "e9a0b36be2c644c2abb09b484a41859b.json": "9743618858e9695d897cf53bb47999ea1a19ed0ef27ced9ebdfcd36a04938ac9",
+            "cc2ec597f94a4214a2e47aac8b164644.json": "b265ab9a71aebb4aa77b22598e634f2cb775de39b983a90b2368be86922f4bda",
+            "5db25cf5b1a24dae8873efbcb87622fc.json": "1ea3bec7d79c624e010f97a674ed385b775da7de837ee5509debc0d9f7d623f8",
+            "473f95c1474749378f76b24643f68790.json": "f0c70e0204f0b9cbd3f790902d5f7bd536babc476da1bbc6591c98e15fba3adc",
+            "dc2c93ae0d8f4dcc8509b9f215e5d480.json": "d4a481babc9cbbf30e4ccaba3bd05399909f430ae7f1d4aebee1a3b0c34303c7",
+            "89a47efabeff444cb6261931fc28c37a.json": "0f8d624984fd2c0f2840f65e00fafa15db81e36ade69de45d1d4ef43a647d77c",
+            "f27222c97c274540ba3174162accf0fc.json": "90b48d9fc54bea14106ab498c84e1fe65bf5b97ca0bf807d2571b77eb43fc68e",
+            "8067eb377e444456908a250d733805c9.json": "e901414aee46b416142c39c5e63f3bc29ac81d7c4ec7e27b232962ccf535a3b9",
+            "4750ec99c31c49419b494aa5deea2ba9.json": "28debeca7152ca4e3ae5dbff40d2b080428fc9681fedf47ba777935102a8a697",
+            "ee12e03cc1d3462cb95fd77f5629cefe.json": "c659768b598757c7064614ada7e51a35cd4bcee4059af1c04902f59e72d7dbca",
+            "df67915873bb42d19353c5880bdb0519.json": "099542a525f56008873e95be142f4499cfad257f590fcd6424ad9587a74d71ed",
+            "d9796dca85154454941de11113925eb0.json": "41eda88a5f1f627cb34f25734aa93c4f7c12f53f2dc41544dc6961d00726a004",
+            "debcb81831ed48188c2248111a499230.json": "28372778f78ae3c5e4e568b4af080e86ed633355d246eac9d825f38a69f965e0",
+            "70e2e577a65f41b59b3dd7057743950e.json": "73c477f7fbc639e96294d6bd906641e77f6f1d975768e53a5e593431c659aa9c",
+            "6648faa463b64c018f8bf253ddf15219.json": "2a63f64d2198d605a91a7be2787c8c90b202707fb3ef923c9d131f7bff385ee4",
+            "6ec1fa9e7a584f09a037deeabc64cd57.json": "1a80aef7bcdbc02a234dd198d45f0f62737eb6ed81cad5cab077618f8c9b092d",
+            "a69b73e0ca8643419f125a0d50f74e4d.json": "3aba729f83da53b179805bab53013debef58ca83c9cae8e8a8f4f4629e554d57",
+            "b4e05bc383a641fca724c4cfe1015cf5.json": "1be0fed24cb451a30c83596824110199cf0f4a500529395375c597e8bf05ae2c",
+            "0d17b39ff955493299adc40e9430d016.json": "b28320ed562808bd7f3a98eb31b8d3c5c904e5732b725fbed9e18b21f7364253",
+            "5d9185d850334f0892d1a549b8fcc8bb.json": "a450002d64665e3a06ce2670c613d5222467a1e22259892058a4b5d2ce9fd29e"
+          },
+          "lifecycleSha256": "100e1f16538f9d507098a40cde6866af04937ce07dc6c02d680f13dd19a0f8c9",
+          "processExit": {
+            "observedAt": 1791492634.036788,
+            "returncode": 1,
+            "schema": "effectcraft-managed-process-exit/v1",
+            "source": "business-result",
+            "workerResultVerified": true
+          }
+        }
+      },
+      "publicLogs": {
+        "commands-000-plan.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "commands-000-plan.stdout": "c8e7241c16192bd53cb422159dc7a3fdcb2214fc5567850cb51a7963e9338605",
+        "commands-001-run.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "commands-001-run.stdout": "2be70e421bc664252cf4bcfd0014818421462b32894618dcf6e1510f0c82d028",
+        "commands-002-inspect.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "commands-002-inspect.stdout": "6144753ce17fde03c4010f18705fece83421ef1b94815eb80a8def4a0a916cb1",
+        "commands-003-reconcile.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "commands-003-reconcile.stdout": "6144753ce17fde03c4010f18705fece83421ef1b94815eb80a8def4a0a916cb1",
+        "commands-004-resume.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "commands-004-resume.stdout": "6144753ce17fde03c4010f18705fece83421ef1b94815eb80a8def4a0a916cb1",
+        "commands-005-review.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "commands-005-review.stdout": "ffc266159524b47e2dba45ea614f8823d76e67b6acb9c34ebecc93e9113c1af0",
+        "commands-006-run.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "commands-006-run.stdout": "5f4bb595d8b1ecbe6dadae4aad2e8baee6cf4d641c305f21ea7a77476f2abe46",
+        "commands-007-reconcile.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "commands-007-reconcile.stdout": "5737622f5dc6b0d5463a887ae8c68e9a2590d952f6b74d0081ec3bb2e389fad2",
+        "commands-008-resume.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "commands-008-resume.stdout": "280c8bc64e672f7dbdf18f27d8ad615fcdab8ebfb8b851998be4c916aa762141",
+        "commands-009-run.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "commands-009-run.stdout": "83579b9b6479401dd415539dae7bc5ef5f10b4a407b356337a9af43f552c072e"
+      },
+      "nativeTestLogSha256": "87787309519bb48911666d274fbcb89e9e7435b25852d20edc62529746d386c9"
+    },
+    {
+      "schema": "effectcraft-managed-three-mode-native/v1",
+      "status": "PASS",
+      "platform": "darwin-arm64",
+      "installedFiles": {
+        "SKILL.md": "d48614435cbb1a065ae4825ba98705baf100f57c6ffa793d597f8b1d0e0f3648",
+        "references/output-execution.md": "1e185e63d8e20fdc54537feacdfb6e7a140474f5e61e2932747699d751671b36",
+        "references/expression-parent.md": "c67e09b82b9740bbbc603b2ec48c0aeba42c3703f775b7c234473935a355080c",
+        "references/command-reference.md": "aa978528c9b9c490d9390d79928d2258d62f87b83ace02823b7a76a349c233ba",
+        "references/tracking-scene.md": "2e699e1ab62f47a1c40405fc6dd48e15474f130295f33fdcd4e80efcad3e4be9",
+        "references/command-usage.md": "f6668cd5a7b7066c0abefa1f38534ba5e16e3227ca5cd06d05196377013964b6",
+        "references/bridge-tools.json": "1a9c5431674b0e563e83ae3e5aebf9e4c25a95c4a55c53125dccb6dc3ae60859",
+        "references/business-scenes.md": "fa6dde18bb5ea19d15de3c6be5d0fc2cdbf4f4e2cf3170a624600b2d3c4e556b",
+        "references/workflow.md": "09a885345734d8d13cd36466841c28441125caa4863472d2a5b9ed4278cc5cdc",
+        "references/segmented-render.md": "d4a500643465eafad7b96f4491086f203e121bd782d69e208095de36717a71b7",
+        "references/commands.json": "f4a4bd1bb063ffe89b0ab0f71dca12d0b1a92eec3e73306756ebf0a93bb3eeb7",
+        "references/capability-diff.json": "201b27776325f0b49a3e93c7fcfb8651bfbdf53843a9083ec2bdfc875c5c8959",
+        "references/native-command-snapshot.json": "043d3e4bcc4e03fd15df178cfcf8cfd2e81679308a48da8ff289d802b4204b74",
+        "references/codex-judge.md": "e4cd12c1942fdf49d4186c8e1552e83a6b7191e66b8d1ee4e2e156180dd3cfea",
+        "references/desktop-install.md": "db2db151b0eff30a3381a03ae377fb23ac09b2b4a919859740bd9343e7f14887",
+        "references/puppet-scene.md": "ce185ef007e86e1189210330049b80cc3a4418015826686ff3b143d81810e55f",
+        "references/camera-scene.md": "19bcbf1dce86e32974f59bfd5785ab0c7664df69ce75fd3130f6e4ec5a1e30c9",
+        "references/motion-tracking.md": "dcb4d2ea69f503e45692bbd3f2d2383546f892bd2cb5d163b7811a310af5d194",
+        "references/managed-execution.md": "bb8ac2aa692e40b9e7e0a9fe9a1444c2de41f3c4d4fa38cc467b023e852baea9",
+        "references/installation-concurrency.md": "69067acebcd47f1924a8d6aa9d8a4ce6f44ad0756d44888a21eb224bcdb1c215",
+        "references/exchange-loss.md": "eee665f62b77274ca8ce0efc4117012ade85978905cdfd40ab488af64297b8ae",
+        "references/first-use-failures.md": "ce2a8d1a8ca6b8a29a084d52d105d510476de88d40b439d6c2ff79212581d61d",
+        "references/native-workflow.md": "42fee416c66a69f6f3802abe1be6f002963cf109e7e22a4d6297b6dcaf62b8e9",
+        "references/command-coverage.json": "613f7a5fceff44bf5d7ac9f4a3521b849617ae5420be243d80ea21f1f7be7e76",
+        "agents/openai.yaml": "8fe0093ba521c032e6b243bf5c2e3d9d2303cf1ae78f76fe8365e414b7da57b7",
+        "examples/tracking-create.json": "14d6c8654cb81c1b2b578eea021039b38c5179bd9459b7ec41528999d7f53d0d",
+        "examples/camera-scene-reopen.json": "7f1ade6f23c628045941d7168c822d0372e79a63c4ff05cfbd375a03c376b4ee",
+        "examples/puppet-record-follow-create.json": "ac59e9682a32efbe12a6bdeacb5136508c120413b3ae3bdf5efda4b6602e7ed9",
+        "examples/camera-scene-create.json": "bdced8cc3a735793852bf67140ff62ec79544c938c61d733c372f6f4a61d0946",
+        "examples/tracking-reopen.json": "0b393fda8bd68c6819e25ac8f8101381dc175220ca3c8c1c3b8c35637e49ce7b",
+        "examples/layer-mask.json": "61efc2abc7274b45224659ab4aae7e847486af3f3660161a03b83b978ec7a8bc",
+        "examples/puppet-record-follow-reopen.json": "b722ee0ea4681556ae42eb58da21b293180081add09f23bb416d23ff368ae611",
+        "examples/commands-advanced.json": "e2def610996d594575136e357cab0d9ee355ce51cf782817d323b37e8227941b",
+        "examples/puppet-reopen.json": "bd05b66c9480cedaf60cbfe2fb6352dff8a6e573cd27a1fb1be43097bda58b62",
+        "examples/puppet-create.json": "405a5b98b410d2db642eec0a9d0ec8cf48c622c9f1632f36e2c2be3f01ff8560",
+        "examples/commands-revision-create.json": "03d3d7796210dfd4ff27f6cde0e1ba10b4376b0243dc4938d87103ca991f5f61",
+        "examples/expression-parent-create.json": "fca2b95312130f735c884e354ce4fede48bc67ca0a3c740b4b17a79967c20d4d",
+        "examples/native-workflow.json": "0ba62e8bd042dacb028b14c84c18cb2ee10c77e54dbd13efcd7090c8fa9fae16",
+        "examples/desktop-first-use.json": "0d1dbf9c43e8d5ce790443577b5398c2aa7af317fc15a328dc85c62813527d84",
+        "examples/commands-revision.json": "d54bfa78c48b674136b56a8e0c7e36e4c1c475a5907ba46ae450b2ac86e17d1e",
+        "examples/puppet-record-follow-revise.json": "448b635cf49567dc359a3d9ff385fe73afe4b4a32ec280ba5f8cab93ceb00a76",
+        "examples/brand-intro.json": "430aa74e69a3195f70fdfe53ae9b8939fc888df1b58e01d76fd76ccdfe3edd80",
+        "examples/camera-scene-revise.json": "2cca564a10133b56d2d8d20b0feb5cafb627a3e082ce2303fe073567af8bd00f",
+        "examples/expression-parent-revise.json": "8076203648de8834c0681149e557ea4ffed35e0863c2e7a2dec2b4001e3ca22f",
+        "scripts/bootstrap.py": "1eca0f59586609ae4314c77b4d5adb3886fe5443178fb2b300abb25cb75ae99b",
+        "scripts/desktop-platforms.lock.json": "3b4b56b144ef102f1ab2e5fbf4f374b22292dbce6a51a01e9bea466f9ed09b92",
+        "scripts/exchange_loss.py": "8871bc2d4e2e6bedd0b1d2852a06ccdbd43b0339d67afc53e6029fb3539c8c4f",
+        "scripts/launch.sh": "31bf2cef53d4d1b6a229d74389729cf24572209c48125c1dec8800df99c6431f",
+        "scripts/command_catalog.py": "ee88018a7139455125009f8d6a31f97b7e0f062a994f7d4377d910ba2001b7f7",
+        "scripts/command_revision.py": "0bf2629997ab92ce8454cde14b0033753b431f53e25139537850d1cf5c6a58c1",
+        "scripts/runtime_binding.py": "06799b6f1004052c02efc73d238c38b0f27d626c087a010cef74e3440dc5186a",
+        "scripts/image_sequence.py": "f67d0e565d8c99abd519bfaabe44599d25606450ca4f98df1ea227619ab2fff0",
+        "scripts/additional-platforms.lock.json": "d72653f778b07bb61eed795d49ffc3e7214ad39e74c64e76959818187567dce6",
+        "scripts/task_entry.sh": "efd4e8903592721a1ca63c6967c08e82d06474cc097dd614fa089d0763670779",
+        "scripts/review_ledger.py": "4931523dd1c76eb15037faaf28aaa7c85b7c85c6dfd447455925dd5a3ae9c512",
+        "scripts/task_store.py": "cee2e43d47f3db749de2383ed7034b111bb2099309f8d2d656d6e573f82c30d6",
+        "scripts/web_adapter.mjs": "081a816b285a512ebed8cc47dc87e5a16aa0502344c83b25036d3cee8b5c6f78",
+        "scripts/cancellation.py": "db22d93fe4a9eafc06460c62de9f2be3193bd1750a707c2a352ebb09502a971c",
+        "scripts/segmented_sequence.py": "f0b078e72211c245267c22514a7b4202099a47cc42a5e9c8243bdd7b0dc473e9",
+        "scripts/platform_support.py": "d6a133dc25b81570f585f473f2fe290e181e78bc24032a05ae83be6f0a45aed8",
+        "scripts/task_entry.ps1": "530d74a89c51f0ea55df332d11f9df92c9b545de56ca562b777181b959f8092f",
+        "scripts/command_judge.py": "1d9617f42edcd4dd730b0781fc55b330c40f8774db0063ff7cb53fa7af4e83f0",
+        "scripts/launch.ps1": "eaed943345d51f44b2490bdcd6d92b5f85121d4b4f47576c19ad56512c81b9b6",
+        "scripts/judge_contract.py": "58e1e4fad0e296cbf185a4e6e5cf5bd3f2db6482b34dbfcb622b814639469480",
+        "scripts/native_diagnostics.py": "0c352d047edde58a35151ba2b03c001b2a6b591bb8032307e80573d115912389",
+        "scripts/mcp_session.py": "dd6df96dc1734cd7e43c4b820661d2e2c8c713dc8849fc89ab06a3720d99619b",
+        "scripts/resource_budget.py": "97b4f4b4ac77b65df113c7eccf2ad2d4559cb849a9fe2c20d5eb8c4e7121be30",
+        "scripts/render_recovery.py": "6baf8f315f20d5e6b9115423502d66e9e51e33dc2398adc6bbff85b6b68b1e31",
+        "scripts/output_guard.py": "018c5c27217c11ec7b45ded52a1e13d7c42b34a3a53df21566e26f192143302b",
+        "scripts/runtime.lock.json": "b427c71c77e1a217c72f7c19ac872b19df28e07150f4e7f6319defe7f5d9acc0",
+        "scripts/task_entry.py": "a45fe452696b53d95e58142bd94bff50627034522f490c9241da5b9f39dcbff2",
+        "scripts/python-platforms.tsv": "3836b670271e8f8327ea386510b18dea6a867ece27be5e74f4165eaa38ad8c65",
+        "scripts/cli.py": "9303ae8ae30009fa706d5d56603032485ad81416aee1d0af523ce902e3f28165",
+        "scripts/desktop_session.py": "a4441b65603b73ad350aff4348553c9681c77cb5c030e97bc5630a7d88251a8e",
+        "scripts/native_workflow.py": "0db0471f8d849db9c3ffaeaac1c7bc40bf0cd500a638f7b681ecdeb934960bdd",
+        "scripts/desktop.lock.json": "d2af78ee474b8e19ff3c26c792bb27ad180622ffe6dbed5a402bcb7aa7167311",
+        "scripts/quality_review.py": "e0ddc78bb8bdc9b2e1dfca2e8ae7c1915ad9008ced0b3d3a242ccc45086e77e9",
+        "scripts/command_delivery.py": "77e05cf2c24c3ac7fefaa68512fb47a4852406741949d26b339c46fe262f4d5c",
+        "scripts/managed.py": "9acd35c7f1e5cb703c725e537519b02a334ba83cf0da227c1ab91023a100b24e",
+        "scripts/png_inspection.py": "0e3c50907c66c6dcc45256d045920da346ad77892e47401de3103c8f6232938d",
+        "scripts/additional_platforms.py": "1a4ffc9f04e240374269a9869d0383f9f833082cf066203fddba117f247f48d9",
+        "scripts/entry_identity.awk": "5d4b4432e043568509d05303e34357e8e8fa056f0fc5394b80f6f4d8a20cbcbe",
+        "scripts/revision.py": "546214f38430c14f354b6c0aa8feff8928d3267b9dee1b7ea708933bc3633590",
+        "scripts/python.lock.json": "e877b3fe406a2a210ebe5d7f660aa1d0483def44454a54dbe7429bfdba1c9f3f",
+        "scripts/workflow.py": "52eb0ccd9942b83588155ddb851c63c6fbea0f3122a0aa2a3029a2640cb6ce14",
+        "scripts/parameter-contract.json": "dd1bde23fb12e26774f412f0aacc93e8102eaed79d4255709b5717c112daa762",
+        "scripts/posix_group_lease.py": "23593ea54ff78457eb7d873a979aa1e1d4da601ea459dc288a4b7a8b975c6155",
+        "scripts/orphan_segments.py": "244059948ca6b783c64cdd5942e91f3e6268dfd71f3c48c300595ccbcb2584b9",
+        "scripts/process_guard.py": "8ddf5881adeec3d224ef57821d3c83bd4319cf2d1f9efb5ed0f1dab846446f4f",
+        "scripts/engineering_review.py": "8a06516198de09b49d43cec4bff51aeded085bec9d352567055ef9edca29ec53",
+        "scripts/preserved_stage.py": "64199df3ee6af2901a859a5aac401fd27ca2f0c6ba9238e6f72c3563f681ad63",
+        "scripts/commands.py": "7a7bf479698a48d9f4c5e6e94577108dbd230da312c21e04c168ae7e7491f610",
+        "scripts/resource_meter.py": "a62257919fd22cfa6eb616be285122978a6732c0b888893fd8b4440396b8993f",
+        "scripts/desktop.py": "802de3eef9ed9fca3ad09a2f5f6f204f6bbba5a09450efe6ae062e7159409553",
+        "scripts/python-integrity/windows-arm64.tsv": "625a22a5086fd7d312bc156cde8e3f4443ceb2079e2ff91457c6de0cadd5df4d",
+        "scripts/python-integrity/darwin-x86_64.tsv": "53196035ea5ca246ef60da5b248d02a91964a269c6ec7397eedc0f28a72694ca",
+        "scripts/python-integrity/windows-x86.tsv": "551536440722a4fc82e578f4af5a11ef72a9736b3be4b08621982f0f767cc981",
+        "scripts/python-integrity/linux-aarch64.tsv": "6b639cbaa8c4e691d226447b747fde28fb0f9e337fe828d46b2ceba80ad325f7",
+        "scripts/python-integrity/darwin-arm64.tsv": "8f9c3aaf79cd0ff1867ac5d3c937d6ca0c60ccf1ab2b321a2b7a8454209d6fdd",
+        "scripts/python-integrity/linux-x86_64.tsv": "f81e6ac6a770f895b5b1a89838da856f21e9c827f4fc320ed1562645783c0c55",
+        "scripts/python-integrity/windows-x86_64.tsv": "e1e98775d10bcb9fbf55e482a31d9efdb91a8d61d80718998f66f7c9b195e5f3",
+        "scripts/runtime-integrity/darwin-arm64.json": "c7eb5424dbb14940624e3ae6a494078a41dfa0c6738b7779d5d9ceb40f7e2220",
+        "scripts/runtime-integrity/linux-x86_64.json": "0700c5bcadaa68ec96ac723504c6ffd3212999bfc1c4f7ec1e27ab47e6a564a8",
+        "scripts/runtime-integrity/windows-x86_64.json": "33e0714f70aee024ec182148933a536d721c5321f0b7efa1470a21e4d85c21a0",
+        "scripts/runtime-integrity/windows-x86.json": "ebe596ae6de96e0ddebbe5ca171b3b65337cf33e2c40c5f99631aff6b71d02c4",
+        "scripts/runtime-integrity/windows-arm64.json": "edb91da2b4bb474de49cbb705d5c1ff3c6700eb84eea8efc2ec65c208df40572",
+        "scripts/runtime-integrity/linux-aarch64.json": "b1c0b809c03fbf7d3d018f7418250fce3e56bd7e816781df5242c2cea08370fb",
+        "scripts/runtime-integrity/darwin-x86_64.json": "c7eb5424dbb14940624e3ae6a494078a41dfa0c6738b7779d5d9ceb40f7e2220"
+      },
+      "cases": [
+        {
+          "mode": "desktop",
+          "status": "PASS",
+          "taskIdentityHash": "e1713d054d3b85bd25a5cbd8bbb86d0300771818f87e26e2a0e0866fcde30ad9",
+          "operations": 24,
+          "projectSha256": "5546c4aa7fd31a39258d872f5db04f67ce348de64fea199a8afa9695b9e73c60",
+          "engineering": "PASS",
+          "technical": "PASS",
+          "creative": "NOT_RUN",
+          "publicRecoveryNoReplay": true,
+          "adapter": {
+            "schema": "craft-command-receipt/v1",
+            "pluginId": "effectcraft",
+            "planSha256": "18fe5e348b339821663a51673a66b22fc1b1a886bca227a3e6f28ddf1926324a",
+            "catalogSha256": "613f7a5fceff44bf5d7ac9f4a3521b849617ae5420be243d80ea21f1f7be7e76",
+            "mode": "bridge",
+            "result": "PASS",
+            "steps": [
+              {
+                "index": 0,
+                "command": "comp.new",
+                "tool": null,
+                "params": {
+                  "duration": 1,
+                  "frameRate": 12,
+                  "height": 64,
+                  "name": "Actual adapter",
+                  "width": 96
+                },
+                "state": "succeeded",
+                "result": {
+                  "comp": 1
+                }
+              },
+              {
+                "index": 1,
+                "command": "layer.newShape",
+                "tool": null,
+                "params": {
+                  "fill": "#ff0000",
+                  "kind": "rect",
+                  "name": "Subject",
+                  "position": [
+                    32,
+                    32
+                  ],
+                  "size": [
+                    40,
+                    40
+                  ]
+                },
+                "state": "succeeded",
+                "result": {
+                  "layer": 2
+                }
+              },
+              {
+                "index": 2,
+                "command": null,
+                "tool": "get_layer",
+                "params": {
+                  "layer": 2
+                },
+                "state": "succeeded",
+                "result": {
+                  "blendMode": "Normal",
+                  "id": 2,
+                  "in": 0.0,
+                  "index": 1,
+                  "label": "Blue",
+                  "name": "Subject",
+                  "out": 1.0,
+                  "parent": null,
+                  "properties": {
+                    "children": [
+                      {
+                        "children": [
+                          {
+                            "children": [
+                              {
+                                "match": "blend",
+                                "name": "Blend Mode",
+                                "path": "contents/group/blend",
+                                "type": "enum",
+                                "uid": 39,
+                                "value": 0
+                              },
+                              {
+                                "children": [
+                                  {
+                                    "children": [
+                                      {
+                                        "match": "direction",
+                                        "name": "Path Direction",
+                                        "path": "contents/group/contents/rect/direction",
+                                        "type": "enum",
+                                        "uid": 27,
+                                        "value": 0
+                                      },
+                                      {
+                                        "match": "size",
+                                        "name": "Size",
+                                        "path": "contents/group/contents/rect/size",
+                                        "type": "vec2",
+                                        "uid": 28,
+                                        "value": [
+                                          40.0,
+                                          40.0
+                                        ]
+                                      },
+                                      {
+                                        "match": "position",
+                                        "name": "Position",
+                                        "path": "contents/group/contents/rect/position",
+                                        "type": "vec2",
+                                        "uid": 29,
+                                        "value": [
+                                          0.0,
+                                          0.0
+                                        ]
+                                      },
+                                      {
+                                        "match": "roundness",
+                                        "name": "Roundness",
+                                        "path": "contents/group/contents/rect/roundness",
+                                        "type": "scalar",
+                                        "uid": 30,
+                                        "value": 0.0
+                                      }
+                                    ],
+                                    "enabled": true,
+                                    "match": "rect",
+                                    "name": "Rectangle Path 1",
+                                    "path": "contents/group/contents/rect",
+                                    "uid": 26
+                                  },
+                                  {
+                                    "children": [
+                                      {
+                                        "match": "blend",
+                                        "name": "Blend Mode",
+                                        "path": "contents/group/contents/fill/blend",
+                                        "type": "enum",
+                                        "uid": 32,
+                                        "value": 0
+                                      },
+                                      {
+                                        "match": "composite",
+                                        "name": "Composite",
+                                        "path": "contents/group/contents/fill/composite",
+                                        "type": "enum",
+                                        "uid": 33,
+                                        "value": 0
+                                      },
+                                      {
+                                        "match": "rule",
+                                        "name": "Fill Rule",
+                                        "path": "contents/group/contents/fill/rule",
+                                        "type": "enum",
+                                        "uid": 34,
+                                        "value": 0
+                                      },
+                                      {
+                                        "match": "color",
+                                        "name": "Color",
+                                        "path": "contents/group/contents/fill/color",
+                                        "type": "color",
+                                        "uid": 35,
+                                        "value": [
+                                          1.0,
+                                          0.0,
+                                          0.0,
+                                          1.0
+                                        ]
+                                      },
+                                      {
+                                        "match": "opacity",
+                                        "name": "Opacity",
+                                        "path": "contents/group/contents/fill/opacity",
+                                        "type": "scalar",
+                                        "uid": 36,
+                                        "value": 100.0
+                                      }
+                                    ],
+                                    "enabled": true,
+                                    "match": "fill",
+                                    "name": "Fill 1",
+                                    "path": "contents/group/contents/fill",
+                                    "uid": 31
+                                  }
+                                ],
+                                "enabled": true,
+                                "match": "contents",
+                                "name": "Contents",
+                                "path": "contents/group/contents",
+                                "uid": 37
+                              },
+                              {
+                                "children": [
+                                  {
+                                    "match": "anchor",
+                                    "name": "Anchor Point",
+                                    "path": "contents/group/transform/anchor",
+                                    "type": "vec2",
+                                    "uid": 41,
+                                    "value": [
+                                      0.0,
+                                      0.0
+                                    ]
+                                  },
+                                  {
+                                    "match": "position",
+                                    "name": "Position",
+                                    "path": "contents/group/transform/position",
+                                    "type": "vec2",
+                                    "uid": 42,
+                                    "value": [
+                                      0.0,
+                                      0.0
+                                    ]
+                                  },
+                                  {
+                                    "match": "scale",
+                                    "name": "Scale",
+                                    "path": "contents/group/transform/scale",
+                                    "type": "vec2",
+                                    "uid": 43,
+                                    "value": [
+                                      100.0,
+                                      100.0
+                                    ]
+                                  },
+                                  {
+                                    "match": "skew",
+                                    "name": "Skew",
+                                    "path": "contents/group/transform/skew",
+                                    "type": "scalar",
+                                    "uid": 44,
+                                    "value": 0.0
+                                  },
+                                  {
+                                    "match": "skewAxis",
+                                    "name": "Skew Axis",
+                                    "path": "contents/group/transform/skewAxis",
+                                    "type": "scalar",
+                                    "uid": 45,
+                                    "value": 0.0
+                                  },
+                                  {
+                                    "match": "rotation",
+                                    "name": "Rotation",
+                                    "path": "contents/group/transform/rotation",
+                                    "type": "scalar",
+                                    "uid": 46,
+                                    "value": 0.0
+                                  },
+                                  {
+                                    "match": "opacity",
+                                    "name": "Opacity",
+                                    "path": "contents/group/transform/opacity",
+                                    "type": "scalar",
+                                    "uid": 47,
+                                    "value": 100.0
+                                  }
+                                ],
+                                "enabled": true,
+                                "match": "transform",
+                                "name": "Transform",
+                                "path": "contents/group/transform",
+                                "uid": 40
+                              }
+                            ],
+                            "enabled": true,
+                            "match": "group",
+                            "name": "Rectangle 1",
+                            "path": "contents/group",
+                            "uid": 38
+                          }
+                        ],
+                        "enabled": true,
+                        "match": "contents",
+                        "name": "Contents",
+                        "path": "contents",
+                        "uid": 4
+                      },
+                      {
+                        "children": [],
+                        "enabled": true,
+                        "match": "masks",
+                        "name": "Masks",
+                        "path": "masks",
+                        "uid": 5
+                      },
+                      {
+                        "children": [],
+                        "enabled": true,
+                        "match": "effects",
+                        "name": "Effects",
+                        "path": "effects",
+                        "uid": 6
+                      },
+                      {
+                        "children": [
+                          {
+                            "match": "anchor",
+                            "name": "Anchor Point",
+                            "path": "transform/anchor",
+                            "type": "vec3",
+                            "uid": 7,
+                            "value": [
+                              0.0,
+                              0.0,
+                              0.0
+                            ]
+                          },
+                          {
+                            "match": "position",
+                            "name": "Position",
+                            "path": "transform/position",
+                            "type": "vec3",
+                            "uid": 8,
+                            "value": [
+                              32.0,
+                              32.0,
+                              0.0
+                            ]
+                          },
+                          {
+                            "match": "scale",
+                            "name": "Scale",
+                            "path": "transform/scale",
+                            "type": "vec3",
+                            "uid": 9,
+                            "value": [
+                              100.0,
+                              100.0,
+                              100.0
+                            ]
+                          },
+                          {
+                            "match": "orientation",
+                            "name": "Orientation",
+                            "path": "transform/orientation",
+                            "type": "vec3",
+                            "uid": 10,
+                            "value": [
+                              0.0,
+                              0.0,
+                              0.0
+                            ]
+                          },
+                          {
+                            "match": "rotationX",
+                            "name": "X Rotation",
+                            "path": "transform/rotationX",
+                            "type": "scalar",
+                            "uid": 11,
+                            "value": 0.0
+                          },
+                          {
+                            "match": "rotationY",
+                            "name": "Y Rotation",
+                            "path": "transform/rotationY",
+                            "type": "scalar",
+                            "uid": 12,
+                            "value": 0.0
+                          },
+                          {
+                            "match": "rotation",
+                            "name": "Rotation",
+                            "path": "transform/rotation",
+                            "type": "scalar",
+                            "uid": 13,
+                            "value": 0.0
+                          },
+                          {
+                            "match": "opacity",
+                            "name": "Opacity",
+                            "path": "transform/opacity",
+                            "type": "scalar",
+                            "uid": 14,
+                            "value": 100.0
+                          }
+                        ],
+                        "enabled": true,
+                        "match": "transform",
+                        "name": "Transform",
+                        "path": "transform",
+                        "uid": 15
+                      },
+                      {
+                        "children": [
+                          {
+                            "match": "castsShadows",
+                            "name": "Casts Shadows",
+                            "path": "materialOptions/castsShadows",
+                            "type": "enum",
+                            "uid": 17,
+                            "value": 0
+                          },
+                          {
+                            "match": "lightTransmission",
+                            "name": "Light Transmission",
+                            "path": "materialOptions/lightTransmission",
+                            "type": "scalar",
+                            "uid": 18,
+                            "value": 0.0
+                          },
+                          {
+                            "match": "acceptsShadows",
+                            "name": "Accepts Shadows",
+                            "path": "materialOptions/acceptsShadows",
+                            "type": "enum",
+                            "uid": 19,
+                            "value": 1
+                          },
+                          {
+                            "match": "acceptsLights",
+                            "name": "Accepts Lights",
+                            "path": "materialOptions/acceptsLights",
+                            "type": "bool",
+                            "uid": 20,
+                            "value": true
+                          },
+                          {
+                            "match": "ambient",
+                            "name": "Ambient",
+                            "path": "materialOptions/ambient",
+                            "type": "scalar",
+                            "uid": 21,
+                            "value": 100.0
+                          },
+                          {
+                            "match": "diffuse",
+                            "name": "Diffuse",
+                            "path": "materialOptions/diffuse",
+                            "type": "scalar",
+                            "uid": 22,
+                            "value": 50.0
+                          },
+                          {
+                            "match": "specularIntensity",
+                            "name": "Specular Intensity",
+                            "path": "materialOptions/specularIntensity",
+                            "type": "scalar",
+                            "uid": 23,
+                            "value": 50.0
+                          },
+                          {
+                            "match": "specularShininess",
+                            "name": "Specular Shininess",
+                            "path": "materialOptions/specularShininess",
+                            "type": "scalar",
+                            "uid": 24,
+                            "value": 5.0
+                          },
+                          {
+                            "match": "metal",
+                            "name": "Metal",
+                            "path": "materialOptions/metal",
+                            "type": "scalar",
+                            "uid": 25,
+                            "value": 100.0
+                          }
+                        ],
+                        "enabled": true,
+                        "match": "materialOptions",
+                        "name": "Material Options",
+                        "path": "materialOptions",
+                        "uid": 16
+                      }
+                    ],
+                    "enabled": true,
+                    "match": "layer",
+                    "name": "Subject",
+                    "path": "",
+                    "uid": 3
+                  },
+                  "start": 0.0,
+                  "stretch": 100.0,
+                  "switches": {
+                    "adjustment": false,
+                    "audio": true,
+                    "collapse": false,
+                    "effects": true,
+                    "frame_blend": "Off",
+                    "guide": false,
+                    "locked": false,
+                    "motion_blur": false,
+                    "quality": "Best",
+                    "sampling": "Bilinear",
+                    "shy": false,
+                    "solo": false,
+                    "three_d": false,
+                    "video": true
+                  },
+                  "time": 0.0,
+                  "trackMatte": null,
+                  "type": "Shape"
+                }
+              },
+              {
+                "index": 3,
+                "command": null,
+                "tool": "save_project",
+                "params": {
+                  "path": "${ACCEPTANCE_ROOT}/desktop/desktop/delivery/project.ecproj"
+                },
+                "state": "succeeded",
+                "result": {
+                  "dirty": false,
+                  "path": "${ACCEPTANCE_ROOT}/desktop/desktop/delivery/project.ecproj"
+                }
+              },
+              {
+                "index": 4,
+                "command": null,
+                "tool": "render_frame",
+                "params": {
+                  "inline": false,
+                  "max_side": 96,
+                  "path": "${ACCEPTANCE_ROOT}/desktop/desktop/delivery/preview.png",
+                  "time": 0.5,
+                  "transparent": true
+                },
+                "state": "succeeded",
+                "result": {
+                  "comp": 1,
+                  "height": 64,
+                  "path": "${ACCEPTANCE_ROOT}/desktop/desktop/delivery/preview.png",
+                  "time": 0.5,
+                  "width": 96
+                }
+              },
+              {
+                "index": 5,
+                "command": null,
+                "tool": "open_project",
+                "params": {
+                  "path": "${ACCEPTANCE_ROOT}/desktop/desktop/delivery/project.ecproj"
+                },
+                "state": "succeeded",
+                "result": {
+                  "activeComp": 1,
+                  "bitDepth": "8 bpc",
+                  "dirty": false,
+                  "items": [
+                    {
+                      "duration": 1.0,
+                      "frameRate": 12.0,
+                      "id": 1,
+                      "label": "Sandstone",
+                      "layers": 1,
+                      "name": "Actual adapter",
+                      "parent": null,
+                      "size": [
+                        96,
+                        64
+                      ],
+                      "type": "Composition"
+                    }
+                  ],
+                  "path": "${ACCEPTANCE_ROOT}/desktop/desktop/delivery/project.ecproj",
+                  "renderer": {
+                    "active": "gpu",
+                    "adapter": "Apple M4 Pro (Metal)",
+                    "gpuAcceleration": true,
+                    "renderer": "Mercury GPU Acceleration"
+                  },
+                  "selectedLayers": [],
+                  "time": 0.0,
+                  "undo": []
+                }
+              },
+              {
+                "index": 6,
+                "command": null,
+                "tool": "get_comp",
+                "params": {},
+                "state": "succeeded",
+                "result": {
+                  "background": [
+                    0.0,
+                    0.0,
+                    0.0
+                  ],
+                  "duration": 1.0,
+                  "frameRate": 12.0,
+                  "height": 64,
+                  "id": 1,
+                  "layers": [
+                    {
+                      "blendMode": "Normal",
+                      "id": 2,
+                      "in": 0.0,
+                      "index": 1,
+                      "label": "Blue",
+                      "name": "Subject",
+                      "out": 1.0,
+                      "parent": null,
+                      "start": 0.0,
+                      "stretch": 100.0,
+                      "switches": {
+                        "adjustment": false,
+                        "audio": true,
+                        "collapse": false,
+                        "effects": true,
+                        "frame_blend": "Off",
+                        "guide": false,
+                        "locked": false,
+                        "motion_blur": false,
+                        "quality": "Best",
+                        "sampling": "Bilinear",
+                        "shy": false,
+                        "solo": false,
+                        "three_d": false,
+                        "video": true
+                      },
+                      "trackMatte": null,
+                      "type": "Shape"
+                    }
+                  ],
+                  "name": "Actual adapter",
+                  "preserveFrameRate": false,
+                  "preserveResolution": false,
+                  "width": 96,
+                  "workArea": [
+                    0.0,
+                    1.0
+                  ]
+                }
+              },
+              {
+                "index": 7,
+                "command": null,
+                "tool": "ui_inspect",
+                "params": {},
+                "state": "succeeded",
+                "result": {
+                  "activeComp": 1,
+                  "dialog": null,
+                  "elements": 156,
+                  "fps": 131.92507934570312,
+                  "pixelsPerPoint": 2.0,
+                  "playing": false,
+                  "renderMs": 0.681167,
+                  "selectedKeys": 0,
+                  "selectedLayers": [],
+                  "time": 0.0,
+                  "ui": {
+                    "active_viewer": 0,
+                    "align_to_selection": false,
+                    "anim_tools": {
+                      "sketch_armed": false,
+                      "sketch_background": true,
+                      "sketch_smoothing": 1.0,
+                      "sketch_speed": 100.0,
+                      "sketch_wireframe": false,
+                      "smooth_tolerance": 1.0,
+                      "wiggle_dim": 0,
+                      "wiggle_dims": "independent",
+                      "wiggle_frequency": 5.0,
+                      "wiggle_magnitude": 1.0,
+                      "wiggle_smooth": true,
+                      "wiggle_spatial": true
+                    },
+                    "cache_when_idle": false,
+                    "dock": {
+                      "Split": {
+                        "a": {
+                          "Split": {
+                            "a": {
+                              "Split": {
+                                "a": {
+                                  "Tabs": {
+                                    "active": 0,
+                                    "panels": [
+                                      "Project",
+                                      "EffectControls"
+                                    ]
+                                  }
+                                },
+                                "b": {
+                                  "Tabs": {
+                                    "active": 0,
+                                    "panels": [
+                                      "Composition",
+                                      "Layer"
+                                    ]
+                                  }
+                                },
+                                "size": {
+                                  "FixedA": 300.0
+                                },
+                                "vertical": false
+                              }
+                            },
+                            "b": {
+                              "Tabs": {
+                                "active": 0,
+                                "panels": [
+                                  "Timeline",
+                                  "RenderQueue"
+                                ]
+                              }
+                            },
+                            "size": {
+                              "Ratio": 0.5600000023841858
+                            },
+                            "vertical": true
+                          }
+                        },
+                        "b": {
+                          "Stack": {
+                            "entries": [
+                              {
+                                "height": 46.0,
+                                "open": true,
+                                "panel": "Preview"
+                              },
+                              {
+                                "height": null,
+                                "open": true,
+                                "panel": "Properties"
+                              },
+                              {
+                                "height": null,
+                                "open": false,
+                                "panel": "Align"
+                              },
+                              {
+                                "height": null,
+                                "open": false,
+                                "panel": "Audio"
+                              },
+                              {
+                                "height": null,
+                                "open": false,
+                                "panel": "EffectsPresets"
+                              }
+                            ]
+                          }
+                        },
+                        "size": {
+                          "FixedB": 300.0
+                        },
+                        "vertical": false
+                      }
+                    },
+                    "effects_favorites": [],
+                    "effects_open": [],
+                    "effects_recent": [],
+                    "effects_search": "",
+                    "effects_view": {
+                      "alphabetical": false,
+                      "depth": "all",
+                      "presets": true
+                    },
+                    "fill_color": [
+                      0.23999999463558197,
+                      0.550000011920929,
+                      0.9599999785423279
+                    ],
+                    "floating": [],
+                    "flowchart": {
+                      "effects": false,
+                      "layers": false,
+                      "root": null,
+                      "solids": true,
+                      "vertical": false
+                    },
+                    "focused": "Composition",
+                    "fx_closed": [],
+                    "fx_curve_channel": {},
+                    "fx_curve_pencil": [],
+                    "fx_levels_channel": {},
+                    "fx_pick": null,
+                    "fx_slider_open": [],
+                    "home_learn": false,
+                    "home_templates": false,
+                    "layer_panel": null,
+                    "layer_view": null,
+                    "locked_tabs": [],
+                    "maximized": null,
+                    "mini_flowchart": null,
+                    "project_columns": [
+                      "type",
+                      "size",
+                      "duration",
+                      "fps"
+                    ],
+                    "project_hscroll": 0.0,
+                    "project_open_folders": [],
+                    "project_scroll": 0.0,
+                    "project_search": "",
+                    "project_sort": "name",
+                    "project_sort_desc": false,
+                    "saved_floating": {},
+                    "saved_workspaces": {},
+                    "scopes": {
+                      "clamp": true,
+                      "float": false,
+                      "scope": "waveformRgb",
+                      "standard": "rec709"
+                    },
+                    "script_console": {
+                      "history": [],
+                      "input": "",
+                      "log": []
+                    },
+                    "show_menu_bar": false,
+                    "slot_tools": [
+                      "Selection",
+                      "Hand",
+                      "Zoom",
+                      "Orbit",
+                      "PanCamera",
+                      "Dolly",
+                      "Rotate",
+                      "PanBehind",
+                      "Rectangle",
+                      "Pen",
+                      "Type",
+                      "Brush",
+                      "Clone",
+                      "Eraser",
+                      "RotoBrush",
+                      "Puppet"
+                    ],
+                    "snapping": true,
+                    "start_screen": false,
+                    "status": "",
+                    "stroke_color": [
+                      1.0,
+                      1.0,
+                      1.0
+                    ],
+                    "stroke_width": 0.0,
+                    "theme": "Dark",
+                    "timeline": {
+                      "columns": [
+                        "av",
+                        "label",
+                        "num",
+                        "parent",
+                        "switches"
+                      ],
+                      "columns_w": 560.0,
+                      "expr_closed": [],
+                      "graph_auto_zoom": true,
+                      "graph_editor": false,
+                      "graph_mode": "auto",
+                      "graph_range": null,
+                      "graph_reference": false,
+                      "graph_show_selected": true,
+                      "graph_snap": true,
+                      "graph_transform_box": true,
+                      "layer_reveal": {},
+                      "open_groups": [],
+                      "open_layers": [],
+                      "outline_scroll": 0.0,
+                      "pps": null,
+                      "reveal": [],
+                      "reveal_props": [],
+                      "scroll_y": 0.0,
+                      "search": "",
+                      "show_modes": false,
+                      "source_name": false,
+                      "start": 0.0
+                    },
+                    "tool": "Selection",
+                    "tool_creates_shape": true,
+                    "tracker_source": null,
+                    "viewer": {
+                      "channel": "RGB",
+                      "custom_pasteboard": [
+                        128,
+                        128,
+                        128
+                      ],
+                      "fast_preview": false,
+                      "grid": false,
+                      "guides": true,
+                      "lock_guides": false,
+                      "pan": [
+                        0.0,
+                        0.0
+                      ],
+                      "pasteboard": null,
+                      "proportional_grid": false,
+                      "res": "Auto",
+                      "roi_draw": false,
+                      "ruler_origin": [
+                        0.0,
+                        0.0
+                      ],
+                      "rulers": false,
+                      "safe_margins": false,
+                      "show_layer_controls": true,
+                      "show_masks": true,
+                      "snap_grid": false,
+                      "snap_guides": false,
+                      "transparency_grid": false,
+                      "zoom": null
+                    },
+                    "viewers": {
+                      "0": 1
+                    },
+                    "workspace": "Default"
+                  },
+                  "window": [
+                    1680.0,
+                    1014.0
+                  ]
+                }
+              }
+            ],
+            "creativeAcceptance": "NOT_RUN",
+            "nativeProjectReopenAcceptance": "NOT_RUN",
+            "runtimeSha256": "c1717eb87e5b57b3ed88c6a78047268a5afa566beb36104fdcc05dc8634a01c1",
+            "inputs": {},
+            "registeredCommands": 655
+          },
+          "desktop": {
+            "schema": "craft-owned-desktop-session/v1",
+            "result": "PASS",
+            "domain": "effectcraft",
+            "desktop": {
+              "app": "${ACCEPTANCE_ROOT}/native runtime/effectcraft-desktop/0.4.0/EffectCraft.app",
+              "executable": "${ACCEPTANCE_ROOT}/native runtime/effectcraft-desktop/0.4.0/EffectCraft.app/Contents/MacOS/EffectCraft",
+              "version": "0.4.0",
+              "binarySha256": "703c02246cc17a3412c307c97ac8a8cfa912bd7cda68d5f817ea1763aa297bb6",
+              "reused": false,
+              "scope": "signed app installation only; launch/GUI acceptance separate"
+            },
+            "ownedProcessesStopped": true,
+            "listenerOwnedByPID": true,
+            "sessionsStarted": 1,
+            "control": "127.0.0.1:50265",
+            "scope": "owned signed desktop and fixed CLI command workflow; no automatic replay",
+            "fullCommandAcceptance": "NOT_RUN"
+          },
+          "unknownNativeErrorNoReplay": true
+        }
+      ],
+      "rawCLICompatible": true,
+      "installedFilesUnchanged": true,
+      "pythonPreparation": "verified isolated cache reused",
+      "nativePreparation": "official pinned installer; per-case cold/reuse recorded by shared acceptance cache",
+      "desktopPreparation": "signed official pinned installer",
+      "testSha256": "9ea95c154d859ac5717674402a6ac51bd1bee61f6c1ca244afd02252ea8b9bb5",
+      "fullV1": "NOT_RUN",
+      "hostDispatch": "NOT_RUN",
+      "nativeCacheBeforeCase": false,
+      "failedDesktopSession": {
+        "schema": "craft-owned-desktop-session/v1",
+        "result": "FAIL",
+        "domain": "effectcraft",
+        "desktop": {
+          "app": "${ACCEPTANCE_ROOT}/native runtime/effectcraft-desktop/0.4.0/EffectCraft.app",
+          "executable": "${ACCEPTANCE_ROOT}/native runtime/effectcraft-desktop/0.4.0/EffectCraft.app/Contents/MacOS/EffectCraft",
+          "version": "0.4.0",
+          "binarySha256": "703c02246cc17a3412c307c97ac8a8cfa912bd7cda68d5f817ea1763aa297bb6",
+          "reused": true,
+          "scope": "signed app installation only; launch/GUI acceptance separate"
+        },
+        "ownedProcessesStopped": true,
+        "listenerOwnedByPID": true,
+        "sessionsStarted": 1,
+        "control": "127.0.0.1:50795",
+        "scope": "owned signed desktop and fixed CLI command workflow; no automatic replay",
+        "fullCommandAcceptance": "NOT_RUN"
+      },
+      "observedTaskReceipts": {
+        "successful": {
+          "identityHash": "e1713d054d3b85bd25a5cbd8bbb86d0300771818f87e26e2a0e0866fcde30ad9",
+          "state": "review_ready",
+          "steps": 24,
+          "succeeded": 24,
+          "attempted": 0,
+          "receiptFiles": {
+            "25abae4ffa3348f5977bdf3504c54421.json": "03656b1c1b1601c8980c6697995d193ec2e10bf08fe954ff4a4d6b26a761f577",
+            "72596e9886d143a6bef0ffdd9a9ff05a.json": "7d4bd978a0b1a84c5f9e7170e041d9c40f36cf569076158ee19d7636ab53189b",
+            "d5eee31a446d4c9e95d3ecbef708c121.json": "9b3da726b7872ad6580b493f3e28d99c5a2ad8d3ccd5bde4794c03a8d04f1352",
+            "abe669d80e0d40759fee6d1adce05df5.json": "7db1bf3b96952cc64c087682e04ee7fa549ecb188ead43a7753d071a35fed1ad",
+            "6d031b8712a04aa1a62a891bd9eba952.json": "b8c8130407d774e105e4086c0a376ba494a4bd5036859edef69a71bb59a76cc7",
+            "29515ba60177453db2ed4de4436e152f.json": "eea1daf51c230fa648d4057a426bf6c2cc36e32563dd04eb51de10608fe5176c",
+            "b4d88cc74c704483b5c02ab05a994bab.json": "bad97865eab700d06191184c50a625559b40ac19bccfa3b0c6cab3bc070fb736",
+            "15e07ad1b9364d03b33b7d958c04a5ba.json": "5e2f714fef691c7ac1a882bbb91aaa0a9c5e46b3b9d58c651b684737602d7274",
+            "1f32a386073f41be86db3d7e4622e5af.json": "3080a3d8429e000dbaafa47ed9cfe15a5a5cc5b11ea7b18d9153a0bec8300425",
+            "58823c168eb1468aa076bde86e586487.json": "9ff20c92bf31ed5b1e543253fbec231893d81cfc6b172cce71ed9d6835dd22aa",
+            "4b8d89dc83824350a56039b8a1c60b2a.json": "77fbfae5b233ab8dfa2e1f466aa40045ae8edeaba0c872cdcd8867570f77a0d8",
+            "4303f69254d443f0ae1a0aae4d9db90d.json": "9dd903baa7414a9ad41a73af5698af980fcdf77a6cad202fcba2332d9f08e101",
+            "d5fdfa74cde04f56af928894456e66a7.json": "1c638493d4c746f651a7358689474493462f0069d65ec8bf5519ea6775184ff0",
+            "6b8158abbba14b4ab5455c5792ae92a0.json": "4ed7add1cdad98c7c4ee29b6b5a53b0d00a9790ec21ee3a926994de8848b1c67",
+            "d4830fe4040e4037bd5a64858526eb8b.json": "da8f3bfaa14f6f4f7d77845f44b2d3133a07455e2980d77f797f791cfbc7fcfe",
+            "9f54a72067fc4de291cd7f23a4177add.json": "feb2b37f36c26c2dd1d28b1e637bbe54344f0361bf02aac00a3e604177c95ca1",
+            "72ab91c072e34544b5831ae75832ebb6.json": "b7cfb104b078354f35bed0c38980876de74e1b3c1481f22aedf113e0a3f516e0",
+            "b4d9e995c4f04fb18e18138534b1ee54.json": "0940c8fa0130e01399250e39a84bf99cbd954270913f61a27a3c27ff324cb163",
+            "42aebd9c03ee4ae682ba9a63e55197bf.json": "0d6fc60e6e91c8f02e77070cb9a9a4534fbabb3318ab80e787fd7c30624dab21",
+            "bbab073643234764a309b8d828400494.json": "01d2eaae4a0848166a2c047a6cfee7af450f38ccbca22bc113095007e6e72bcb",
+            "9d8362bd39fa48f7a8be975e8ce7ce2c.json": "680d1f5132596ef5eb31b87629cf7baae48a03ba76543d27de1ba6e16bc32c65",
+            "ce81b6c93b744bdaac8f6cb83f68ea00.json": "a8a8e7a3e9e614de8b284da0a4f427bb9489f26f9bc68ae670412e0160bcc073",
+            "e99df193db8e4c73a3403bec819b6d9d.json": "4fec8730dc413ed50882f9593f1adefd5df8ab423fce5b4b57935db38369aaa7",
+            "542a452173be41d38853cb569f13d9ab.json": "9115ee949acea48aa4d36ee66a62262dfa7b6feda867c9e7ec8f1cf64f5e751c"
+          },
+          "lifecycleSha256": "c94ac79453832217fb1cbfcbcbfd2a4342fd590327be3ca27951a4bbecaa8389",
+          "processExit": {
+            "observedAt": 1791492477.226627,
+            "returncode": 0,
+            "schema": "effectcraft-managed-process-exit/v1",
+            "source": "business-result",
+            "workerResultVerified": true
+          }
+        },
+        "unknown": {
+          "identityHash": "b130e3e8aea256640434ea3514fee4f5c7a3d899ae04ede0bfbe10c922067c7f",
+          "state": "reconciling",
+          "steps": 25,
+          "succeeded": 24,
+          "attempted": 1,
+          "receiptFiles": {
+            "7f0272a1437740e2a6babba45c94a46a.json": "fc7829fc95aa583734cc4ea62c623e0ca0ea4b3ae69b67e1c8108f7219928b4b",
+            "5b66c24d1e8e4272b3ee86647479cff8.json": "224559926d92a49c606fe0af3d271bd95459ce82b5b22487b1799e49a6d021e6",
+            "0eb41eb83b4745138a721ae3d893e67a.json": "e4adf474835d44510dd0282f9bb3ffabff9d9e94ac630fa8309b419ad823be40",
+            "a5cc438b021b42ce87f66ad3c412b925.json": "9afa817b95a1635e99818ae10fcd33d6907ca064aa2ec58f6b11257e669254a4",
+            "e30d142747bb4fe39ee342b780d07867.json": "81b88c21fcde0a2639cbb0cd2b924679e7f6f5020fef297bea5eec5602d32f48",
+            "0336e2cb981342ddbd783fd7dc7ca5ee.json": "4c9b33ec012acc28951ad8176e736fca7f1a9c6b2067c53cd2a5174d2191de08",
+            "79b3f0a8109d43ecb5c4c56fc98da8b4.json": "e14855b23eedca6411e99624c75d8fe4c658b39e951148305eaab07562c2f9e8",
+            "52a121a0a86d4536be7bed51862aeab0.json": "8323b829b6ee5879f265cfd5b484fc08edc398fc211690415c7a856b8bb3641c",
+            "3291c39005904bf4bb3989488afa1712.json": "012e088b6e3ee68386efc26b71a8902aedd2b10c5aa7051152db2bc386cf38ba",
+            "027f7558bc334acc85d2d2c8a75556f5.json": "fc3a9faa39f9e2f11716c2f8471f5d45e48d2da4fc9ee71738ee61708ab59609",
+            "9227088ff0fc43a0a2830b9bb2b22f26.json": "af7114d4ff9b72f5a69c547ecbce98d31a8e16d154bea287a647d769a202e1ae",
+            "ba4631be0dc9405887c420c60d8a503e.json": "ad21030019e8c6bdba1a4d48d5759e0f28aafeadd94a5f1dbf74621bf5bf4b99",
+            "dd3a8e29bffa49bb90d3e6db11aaeb83.json": "9e4736be8b334b081fa23036f6824db88a9fd573f9480f8e3ab181410d4680e8",
+            "63f19a1640fc4b58becb23e860c79ce3.json": "a1cb8e7dde1f599f1bca28544ce3f5c58aa5ceca8e934c189f84242324f5f9c9",
+            "d020d84a187f4990acb3614c276c306f.json": "12594d2c656c0e4679b4f860a00ce384de4f11fdc97eda776d95f85b82e7e5db",
+            "65dd848b01f94b818b49fe403abaae54.json": "6be5a5e5e1b74ff689a4f46962765af9060d167249880aef5779fc5cecb7d656",
+            "f06ebe2ba78e4f528d2ae8799535394c.json": "5013c6dff94b32cd4ac2a92f374d2805631cdc7c82d5e6db93e222fb39d5bf24",
+            "6e21c88561614dbdb0001a22425c4503.json": "f7d32a24c63b093386113b295b2c3d613edd622032ff8a793dc033f4a4961293",
+            "b21056f69e224838a76f35d5fb4fad6f.json": "8ff2c32134de45bca4684a8d0f5279a087cc56ab524fac94c1eece074a49d7df",
+            "df791d117d3d4434b96602ceb68c5fcc.json": "970fc97089cf5b129c2ff83c3cf5bb0022e4b2eb9ab11ad1ac60c41365997d92",
+            "82c975162a80476d8b1d6b31c5cf6497.json": "9eb190fda6f553b13eefcb2200c18b862539bad2e936843ee46398dbfa149a5e",
+            "903499f3515241afbcd16d94846a2c80.json": "5b66aa4de81539bb12125f1f135feb147a25bcfba89944accc1e84db7df0a42c",
+            "221b12aa61344269aa8316ce07109e6a.json": "9e1c9754565f80a8440fbc84ad5748b8354dc354faab7d9adba74d7657ec4b90",
+            "021080ef77ac49b198cb8f7444df0532.json": "ccedd5d8faa616587fa05a04403e2d27e5288e530669e0c988fdf27ff8d3de02"
+          },
+          "lifecycleSha256": "7206c916af60a360a606d831d3edc36b16b63a41565fc01014e53b0468e4c06b",
+          "processExit": {
+            "observedAt": 1791492604.753532,
+            "returncode": 1,
+            "schema": "effectcraft-managed-process-exit/v1",
+            "source": "business-result",
+            "workerResultVerified": true
+          }
+        }
+      },
+      "publicLogs": {
+        "desktop-000-plan.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "desktop-000-plan.stdout": "455348bb6d698a9e4ac96eb438b800b21d7bb26d780c99e6a4526040c0cec012",
+        "desktop-001-run.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "desktop-001-run.stdout": "f78957b21ec4cec9c36e42d47a21b655db610f14f69008982ec2d16d5e3afb3b",
+        "desktop-002-inspect.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "desktop-002-inspect.stdout": "d0e60b3cd45ea571f38f83b01bb43562d0e528276771e1ce5f20b1ed8df8c84f",
+        "desktop-003-reconcile.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "desktop-003-reconcile.stdout": "d0e60b3cd45ea571f38f83b01bb43562d0e528276771e1ce5f20b1ed8df8c84f",
+        "desktop-004-resume.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "desktop-004-resume.stdout": "d0e60b3cd45ea571f38f83b01bb43562d0e528276771e1ce5f20b1ed8df8c84f",
+        "desktop-005-review.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "desktop-005-review.stdout": "af6bafcb0ae2ed9ee9e854ff6050b9a3c6b109f2042e2dc93cd7b624533102ba",
+        "desktop-006-run.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "desktop-006-run.stdout": "32b4dacc70b8f3e02ac4c367ec324baadc70c62020e6e7888ca1c784979d527f",
+        "desktop-007-reconcile.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "desktop-007-reconcile.stdout": "3256ce6eec64fcd7184542dfbbced8f25f6f00b34a29eba3b2c6d157033472f7",
+        "desktop-008-resume.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "desktop-008-resume.stdout": "7e106804d89f0a9a0390840fc7e1260e15aee5e485bdabf3105869d60cbd7d98",
+        "desktop-009-run.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "desktop-009-run.stdout": "83579b9b6479401dd415539dae7bc5ef5f10b4a407b356337a9af43f552c072e"
+      },
+      "nativeTestLogSha256": "49ebf235a6eefbd173ffc8f1cc88f3ef5b09fd022077419b2da7a91f84990e75"
+    }
+  ],
+  "legacyPublicCommandCLI": {
+    "status": "PASS",
+    "publicEntry": "commands.py run",
+    "operations": 10,
+    "projectSha256": "be1c92ae6638fbc817dc4c11fb06e73677b75493cc2103465969755cac032650",
+    "receipt": {
+      "schema": "craft-command-receipt/v1",
+      "pluginId": "effectcraft",
+      "planSha256": "a70dc28f7416a4fdf4818edc68f67bc05bcd71c869721925438f4742db3e83e3",
+      "catalogSha256": "613f7a5fceff44bf5d7ac9f4a3521b849617ae5420be243d80ea21f1f7be7e76",
+      "mode": "headless",
+      "result": "PASS",
+      "steps": [
+        {
+          "index": 0,
+          "command": "comp.new",
+          "tool": null,
+          "params": {
+            "name": "Coverage",
+            "width": 96,
+            "height": 64,
+            "duration": 1,
+            "frameRate": 12,
+            "background": "#ffffff"
+          },
+          "state": "succeeded",
+          "result": {
+            "comp": 1
+          }
+        },
+        {
+          "index": 1,
+          "command": "layer.newShape",
+          "tool": null,
+          "params": {
+            "kind": "rect",
+            "name": "Subject",
+            "size": [
+              40,
+              40
+            ],
+            "position": [
+              32,
+              32
+            ],
+            "fill": "#ff0000"
+          },
+          "state": "succeeded",
+          "result": {
+            "layer": 2
+          }
+        },
+        {
+          "index": 2,
+          "command": "layer.newShape",
+          "tool": null,
+          "params": {
+            "kind": "ellipse",
+            "name": "Matte",
+            "size": [
+              24,
+              24
+            ],
+            "position": [
+              32,
+              32
+            ],
+            "fill": "#ffffff"
+          },
+          "state": "succeeded",
+          "result": {
+            "layer": 48
+          }
+        },
+        {
+          "index": 3,
+          "command": "layer.setBlendMode",
+          "tool": null,
+          "params": {
+            "layers": [
+              2
+            ],
+            "mode": "Multiply"
+          },
+          "state": "succeeded",
+          "result": null
+        },
+        {
+          "index": 4,
+          "command": "layer.setTrackMatte",
+          "tool": null,
+          "params": {
+            "layer": 2,
+            "matte": 48,
+            "kind": "alpha"
+          },
+          "state": "succeeded",
+          "result": null
+        },
+        {
+          "index": 5,
+          "command": "prop.setExpression",
+          "tool": null,
+          "params": {
+            "layer": 2,
+            "path": "transform/opacity",
+            "expression": "50 + time * 25",
+            "enabled": true
+          },
+          "state": "succeeded",
+          "result": "50 + time * 25"
+        },
+        {
+          "index": 6,
+          "command": "layer.setSwitch",
+          "tool": null,
+          "params": {
+            "layers": [
+              2
+            ],
+            "switch": "threeD",
+            "value": true
+          },
+          "state": "succeeded",
+          "result": true
+        },
+        {
+          "index": 7,
+          "command": "layer.newCamera",
+          "tool": null,
+          "params": {
+            "name": "Camera",
+            "preset": "50mm"
+          },
+          "state": "succeeded",
+          "result": {
+            "layer": 93
+          }
+        },
+        {
+          "index": 8,
+          "command": null,
+          "tool": "get_project",
+          "params": {},
+          "state": "succeeded",
+          "result": {
+            "activeComp": 1,
+            "bitDepth": "8 bpc",
+            "dirty": true,
+            "items": [
+              {
+                "duration": 1.0,
+                "frameRate": 12.0,
+                "id": 1,
+                "label": "Sandstone",
+                "layers": 3,
+                "name": "Coverage",
+                "parent": null,
+                "size": [
+                  96,
+                  64
+                ],
+                "type": "Composition"
+              }
+            ],
+            "path": null,
+            "renderer": {
+              "active": "cpu",
+              "adapter": null,
+              "gpuAcceleration": true,
+              "renderer": "Mercury GPU Acceleration"
+            },
+            "selectedLayers": [
+              93
+            ],
+            "time": 0.0,
+            "undo": [
+              "New Composition",
+              "New Shape Layer",
+              "New Shape Layer",
+              "Blending Mode",
+              "Track Matte",
+              "Expression",
+              "Layer Switch (threeD)",
+              "New Camera"
+            ]
+          }
+        },
+        {
+          "index": 9,
+          "command": null,
+          "tool": "save_project",
+          "params": {
+            "path": "${ACCEPTANCE_ROOT}/legacy command compatibility/project.ecproj"
+          },
+          "state": "succeeded",
+          "result": {
+            "dirty": false,
+            "path": "${ACCEPTANCE_ROOT}/legacy command compatibility/project.ecproj"
+          }
+        }
+      ],
+      "creativeAcceptance": "NOT_RUN",
+      "nativeProjectReopenAcceptance": "NOT_RUN",
+      "runtimeSha256": "c1717eb87e5b57b3ed88c6a78047268a5afa566beb36104fdcc05dc8634a01c1",
+      "inputs": {},
+      "registeredCommands": 655
+    }
+  },
+  "nativeInstallation": {
+    "url": "https://github.com/storytold/effectcraft/releases/download/v0.4.0/effectcraft-cli-0.4.0-macos-universal.zip",
+    "archiveSha256": "950abbb83800518281115ef05cebc50d63a28dbeec204951c77f16ec2109219f",
+    "binarySha256": "c1717eb87e5b57b3ed88c6a78047268a5afa566beb36104fdcc05dc8634a01c1",
+    "binaryPath": "effectcraft-cli",
+    "payloadRoot": "effectcraft-cli-0.4.0-macos-universal",
+    "archiveFormat": "zip",
+    "evidenceScope": "archive integrity only; native platform acceptance pending",
+    "integrityFile": "runtime-integrity/darwin-arm64.json",
+    "integritySha256": "c7eb5424dbb14940624e3ae6a494078a41dfa0c6738b7779d5d9ceb40f7e2220",
+    "minimumSystem": {
+      "macOS": "11.0",
+      "evidence": "pinned app Info.plist LSMinimumSystemVersion; CLI architecture validated at execution"
+    },
+    "name": "effectcraft",
+    "version": "0.4.0",
+    "platform": "darwin-arm64",
+    "versionOutput": "effectcraft-cli 0.4.0",
+    "source": "official-github-release"
+  },
+  "pythonPreparation": "verified isolated 3.13.16 cache reused; no Python cold installation claimed",
+  "sourceRegression": {
+    "total": 586,
+    "pass": 545,
+    "conditionalSkip": 41,
+    "logSha256": "8416b5100066c9c120d472fd40670626fb2458cc272655cb816f1746f33dc6af",
+    "separateNativeConditionalCasesPassed": 3
+  },
+  "currentWorkflowInterruptedRecovery": {
+    "file": "docs/evidence/native-segment-receipt-identity-20261009.json",
+    "sha256": "4453fba3c59c2df905bc4e6fa680704c1946c9648a9ad1917ec7131df9fbae18",
+    "fullSkillFilesMatch": true,
+    "framesCompared": 12,
+    "evidenceReusedForUnchangedPayload": true
+  },
+  "runtimeCodeChanged": false,
+  "scope": "local public shell composition for workflow/commands/desktop, real adapter replies, task and receipt bindings, completed no-op recovery, native-error unknown preservation and identical-plan replay refusal; legacy CLI retained",
+  "excluded": [
+    "full crash and GUI conflict matrix 9.3.3/9.3.4",
+    "other native platforms and architectures",
+    "fixed installed-host natural-language dispatch",
+    "all 655 command scenarios",
+    "15-skill capability matrix rebinding",
+    "full V1"
+  ],
+  "newCandidateCI": "NOT_RUN",
+  "newTestsAndEvidencePublished": false,
+  "fullV1": "OPEN",
+  "initialHarnessFailures": {
+    "stateFileTypo": "test fixture used task.json instead of state.json; not a product TDD red",
+    "wrongReplayPlan": "test used different successful plan; corrected to original failing plan; not a product TDD red"
+  },
+  "recordingScriptSha256": "a9119e38bbf0acc62fedbc9decee95dd2cdddc2101b2289d4b03b0aaec953bfc",
+  "pluginRegression": {
+    "pass": 24,
+    "logSha256": "5f54d3ca82407204bbe70a286e0798a93b188937aea25ce6d0ef5f5ff3d76198"
+  },
+  "validation": {
+    "pluginDocs": "PASS",
+    "openspecStrict": "PASS",
+    "vendorOffline": "PASS",
+    "sharedResources": "PASS",
+    "capabilityMatrix": "valid NOT_RUN; source53 evidence remains historical",
+    "installedReadonlyModesPreserved": {
+      "workflow": "PASS",
+      "commands": "PASS",
+      "desktop": "PASS"
+    },
+    "openImplementationTasks": 71
+  }
+}

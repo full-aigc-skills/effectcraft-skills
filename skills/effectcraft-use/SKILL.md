@@ -13,11 +13,11 @@ license: Apache-2.0
 从宿主实际加载的技能目录设置 `SKILL_DIR`。**创作写入默认使用 `launch.sh` / `launch.ps1`**，自动准备用户目录内的固定 Python 与 EffectCraft，不改全局 PATH。下文原始 Python/CLI 示例保留兼容与诊断用途，不能绕过任务恢复账本。完整操作合同见 [任务控制、评估与修订](references/managed-execution.md)。
 
 ```sh
-/bin/sh "$SKILL_DIR/scripts/launch.sh" plan --plan PLAN.json --output /absolute/new-result
-/bin/sh "$SKILL_DIR/scripts/launch.sh" run --plan PLAN.json --output /absolute/new-result
+/bin/sh "$SKILL_DIR/scripts/launch.sh" plan --mode workflow --plan PLAN.json --output /absolute/new-result
+/bin/sh "$SKILL_DIR/scripts/launch.sh" run --mode workflow --plan PLAN.json --output /absolute/new-result
 ```
 
-Windows PowerShell：`& "$SKILL_DIR/scripts/launch.ps1" run --plan PLAN.json --output "C:\Users\me\result"`。
+Windows PowerShell：`& "$SKILL_DIR/scripts/launch.ps1" run --mode workflow --plan PLAN.json --output "C:\Users\me\result"`。
 原生命令计划追加 `--mode commands`，自有桌面会话使用 `--mode desktop`。交付后必须 `review` 并实际查看媒体；只有技术验证与创作评估都通过才报告可验收，用户接受状态独立保留。需要自动修订时，在首次计划中声明 `revisionScope`；默认最多 2 轮、父子任务共用 30 分钟。未知任务只 inspect/reconcile，不换任务 ID 重做。
 
 ## 首次使用
@@ -86,12 +86,13 @@ python3 -I -B "$SKILL_DIR/scripts/bootstrap.py"
 
 ## 完整原生命令使用
 
-当前技能自带完整目录的参数说明与同会话入口，不受创作模板白名单限制。读取 [完整使用指南](references/command-usage.md)，按需查询 [命令参考](references/command-reference.md)；每条指令有技能路由、前置观察及验收状态。
+下面的查询示例需要已有Python；未准备解释器时先用受管理启动器 `doctor` 诊断。写入示例通过启动器自动准备隔离依赖；Windows用 `& "$SKILL_DIR/scripts/launch.ps1"` 替换 `/bin/sh "$SKILL_DIR/scripts/launch.sh"`，保留相同模式和参数。当前技能自带完整目录的参数说明与同会话入口，不受创作模板白名单限制。读取 [完整使用指南](references/command-usage.md)，按需查询 [命令参考](references/command-reference.md)；每条指令有技能路由、前置观察及验收状态。
 
 ```bash
 python3 -I -B "$SKILL_DIR/scripts/commands.py" list --filter QUERY
 python3 -I -B "$SKILL_DIR/scripts/commands.py" describe COMMAND_ID
-python3 -I -B "$SKILL_DIR/scripts/commands.py" run "$SKILL_DIR/examples/commands-advanced.json" --output /absolute/new-command-result
+/bin/sh "$SKILL_DIR/scripts/launch.sh" run --mode commands --plan "$SKILL_DIR/examples/commands-advanced.json" --output /absolute/new-command-result
+/bin/sh "$SKILL_DIR/scripts/launch.sh" run --mode desktop --plan "$SKILL_DIR/examples/desktop-first-use.json" --output /absolute/new-desktop-result
 ```
 
 新入口执行前检查真实注册表与当前可执行状态，保留返回值引用和逐步回执；语义错误或超时不冒充成功。目录覆盖与直接原生使用不等于所有指令、GUI、交付或 Art 编排已验收。

@@ -2,12 +2,12 @@
 
 Create editable `.ecproj` projects, dependencies and media from text, graphics and footage. This is a development release; full V1 remains open. Published releases and local documentation candidates have separate evidence.
 
-Current source: `0.1.0-dev.54`; consuming plugin: `0.1.0-dev.56`; 15 independent skills.
+Current source: `0.1.0-dev.55`; consuming plugin: `0.1.0-dev.57`; 15 independent skills.
 
 | Field | Value |
 | --- | --- |
-| Metadata version | 0.1.0-dev.54 |
-| Skills source | effectcraft-skills / v0.1.0-dev.54 |
+| Metadata version | 0.1.0-dev.55 |
+| Skills source | effectcraft-skills / v0.1.0-dev.55 |
 | Acceptance | Development; full V1 OPEN |
 
 
@@ -74,4 +74,9 @@ The skill source owns execution code; the plugin consumes pinned tags, commits a
 
 [Version records and complete prior README](RELEASE-HISTORY.md) · [Plugin specifications](https://github.com/full-aigc-plugins/effectcraft-plugin/tree/main/openspec/changes/establish-v1-plugin)
 
-The dev.54 [public interface acceptance](docs/evidence/managed-public-interface-candidate-20261009.json) completes task 9.3.5: receipt identity/orphan guards and nine management roles, with actual native recovery and Codex-observed local revision. Source54/plugin56 distribute this increment; source53/plugin55 remain historical releases. Full three-mode adapter composition, other native platforms and fixed-host dispatch remain open. The [source52 report](docs/evidence/native-smoke-source52-20261009.json) is historical evidence.
+The dev.54 [public interface acceptance](docs/evidence/managed-public-interface-candidate-20261009.json) completes task 9.3.5: receipt identity/orphan guards and nine management roles, with actual native recovery and Codex-observed local revision. Source54/plugin56 distribute this increment; source53/plugin55 remain historical releases. Other native platforms and fixed-host dispatch remain open; subsequent local three-mode composition evidence is below. The [source52 report](docs/evidence/native-smoke-source52-20261009.json) is historical evidence.
+
+Local [three-mode public composition acceptance](docs/evidence/managed-three-mode-composition-20261009.json) completes task 9.3.6 against unchanged released source54/plugin56 payloads: workflow, command plans and actual owned desktop sessions pass installation/adapters/ledger/receipts/recovery, with original-plan replay refusal and legacy CLI compatibility. Default regression: 586 tests, 545 passed, 41 conditional skips; three native conditional cases separately pass. This test/evidence increment is distributed in source55/plugin57; its original native payload binding remains source54/plugin56. Full crash/GUI, other native targets, fixed-host dispatch and full V1 remain open.
+
+
+Source dev.55 / plugin dev.57 distribute [default managed routing](docs/evidence/managed-default-routing-20261009.json): all 15 skills document workflow/commands/desktop writes; 45 readonly preflights and 18 legacy-action cases pass. Regression: 589 tests, 548 passed, 41 conditional skips. Tasks9.3.1 and9.3.6 are complete; 70 tasks remain open. Native evidence reuses only 105 unchanged execution resources; three guidance files differ. No new model dispatch or full-platform acceptance is claimed. Candidate reports retain their original validation timestamp; release bindings are recorded separately.

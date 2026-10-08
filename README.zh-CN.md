@@ -2,12 +2,12 @@
 
 从文字、图形和素材创建可编辑 `.ecproj` 工程、依赖和媒体。当前为开发版，完整 V1 未完成；已发布版本与本地文档候选分别记录。
 
-当前技能源：`0.1.0-dev.54`；消费插件：`0.1.0-dev.56`；15 个独立技能。
+当前技能源：`0.1.0-dev.55`；消费插件：`0.1.0-dev.57`；15 个独立技能。
 
 | Field | Value |
 | --- | --- |
-| Metadata version | 0.1.0-dev.54 |
-| Skills source | effectcraft-skills / v0.1.0-dev.54 |
+| Metadata version | 0.1.0-dev.55 |
+| Skills source | effectcraft-skills / v0.1.0-dev.55 |
 | Acceptance | Development; full V1 OPEN |
 
 
@@ -74,4 +74,9 @@ source53／plugin55 的[15 技能报告](docs/evidence/native-smoke-source53-202
 
 [版本记录及整理前 README](RELEASE-HISTORY.zh-CN.md) · [Plugin specifications](https://github.com/full-aigc-plugins/effectcraft-plugin/tree/main/openspec/changes/establish-v1-plugin)
 
-dev.54 的[统一管理接口验收](docs/evidence/managed-public-interface-candidate-20261009.json)完成9.3.5：严格回执身份／孤立材料保护及九个管理角色，含真实原生恢复与Codex实际观察后的局部修订。source54／plugin56分发本增量，source53／plugin55保留为历史版本；三模式完整适配器组合、其他原生平台和固定宿主派发继续开放。[source52报告](docs/evidence/native-smoke-source52-20261009.json)保留为历史证据。
+dev.54 的[统一管理接口验收](docs/evidence/managed-public-interface-candidate-20261009.json)完成9.3.5：严格回执身份／孤立材料保护及九个管理角色，含真实原生恢复与Codex实际观察后的局部修订。source54／plugin56分发本增量，source53／plugin55保留为历史版本；其他原生平台和固定宿主派发继续开放；后续本机三模式组合验收见下。[source52报告](docs/evidence/native-smoke-source52-20261009.json)保留为历史证据。
+
+本机[三模式公开组合验收](docs/evidence/managed-three-mode-composition-20261009.json)完成9.3.6，使用未改变的已发布source54／plugin56载荷：workflow、命令计划和真实自有桌面会话贯通安装器、真实适配器、账本、回执和恢复，原计划换ID／目录重做被拒绝，旧CLI兼容。默认586项回归545通过、41条件跳过，另行启用的3个原生条件案例全部通过。本次新增测试与证据尚未发布；完整崩溃／GUI矩阵、其他原生目标、固定宿主派发及完整V1仍开放。
+
+
+dev.55 技能源／dev.57 插件分发 [默认受管理派发验收](docs/evidence/managed-default-routing-20261009.json)：15个技能明确 workflow／commands／desktop 写入入口，45组只读预检与18组历史状态操作通过。源码589项回归548通过／41条件跳过。9.3.1与9.3.6已完成，70项仍开放；原生证据仅复用105份未变执行资源，三份指引已更新，未声明新宿主模型派发或完整平台通过。原始候选报告保留验证时点，发行绑定另见版本记录。
