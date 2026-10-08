@@ -166,7 +166,7 @@ def prepare(store,state,plan,output,child,allowed,check_output=True,generator_ve
     return generated,inputs,context,contents
 
 
-def validate_prepared(store,task,runtime_home=None):
+def validate_prepared(store,task,runtime_home=None,for_reconcile=False):
     """恢复只核对原请求及私有种子，不再生成新基线或发送编辑。"""
     tasks=load('task_store');managed=load('managed');state=store.read(task)
     request=managed.read(store.path(task).parent/'request.json')
@@ -177,7 +177,8 @@ def validate_prepared(store,task,runtime_home=None):
     if state['parent']!=root['taskId'] or state['identity']['mode']!=source['identity']['mode'] or state['identity']['runtimeSha256']!=source['identity']['runtimeSha256']:
         raise ValueError('revision_identity_changed')
     if root.get('activeRevision')!=task:raise ValueError('revision_owner_changed')
-    store.allowed(state)
+    if for_reconcile:store.check_resources(state)
+    else:store.allowed(state)
     quality=load('command_judge').Quality(store,source['taskId'])
     if quality.binding(source['output'])!=context['sourceBinding']:raise ValueError('artifact_changed')
     generated,inputs,expected,contents=prepare(store,source,context['revision'],state['output'],task,resolved_scope(store,root),check_output=False,generator_version=context.get('generatorVersion',1))
@@ -205,6 +206,13 @@ def revise(store,task,plan,output,runtime_home):
     ledger=load('review_ledger').validate(store,root,tasks.digest(request['criteria']))
     if task not in ledger['entries'] or ledger['entries'][task]['reportSha256']!=state['review']['sha256']:raise ValueError('settled_review_required')
     if report['technical']['status']!='PASS' or report['engineering']['status']!='PASS' or report['creative']['status']!='FAIL':raise ValueError('failed_creative_review_required')
+    # 不为旧任务补造已用资源；缺少根任务真实帧计量时仅允许检查。
+    root_delivery=load('command_delivery').document(store,root['taskId'])
+    entry=root.get('resources',{}).get('entries',{}).get(root['taskId'],{})
+    frames=entry.get('commandFrames',{})
+    if (entry.get('bindingHash')!=root['identity']['planHash'] or not root_delivery['frames']
+            or any(frames.get(frame['operationHash'])!={'frames':1,'decodedBytes':frame['composition']['width']*frame['composition']['height']*4}
+                for frame in root_delivery['frames'])):raise ValueError('legacy_command_resource_read_only')
     binding=load('command_judge').Quality(store,task).binding(state['output'])
     if binding!=report['binding']:raise ValueError('artifact_changed')
     if plan.get('binding')!=binding:raise ValueError('revision_conflict')
@@ -261,10 +269,10 @@ def assert_media_preserved(before,after):
         if load('task_store').file_sha(before)!=load('task_store').file_sha(after):raise ValueError('non_target_media_changed')
 
 
-def validate_result(store,task,proof=None,runtime_home=None):
+def validate_result(store,task,proof=None,runtime_home=None,for_reconcile=False):
     """交付前核对源仍未变、全原生字段及未受影响媒体；失败保留现场。"""
     tasks=load('task_store');delivery=load('command_delivery');managed=load('managed')
-    context=validate_prepared(store,task);state=store.read(task);source=store.read(context['sourceTask'])
+    context=validate_prepared(store,task,for_reconcile=for_reconcile);state=store.read(task);source=store.read(context['sourceTask'])
     before=delivery.document(store,source['taskId']);after=delivery.document(store,task,proof)
     old={p['path']:p for p in before['projects']};new={p['path']:p for p in after['projects']}
     if set(old)!=set(new):raise ValueError('non_target_changed: project inventory')
@@ -313,10 +321,10 @@ def settle_completed(store,task):
         if stopped.get('schema')!='effectcraft-process-lifecycle/v1' or stopped.get('status')!='stopped':raise ValueError('process_termination_unconfirmed')
         path=store.path(task).parent/'preservation.json'
         if not path.is_file():raise ValueError('preservation_receipt_missing')
-        sha=tasks.file_sha(path);validate_result(store,task)
+        sha=tasks.file_sha(path);validate_result(store,task,for_reconcile=True)
         if tasks.file_sha(path)!=sha:raise ValueError('preservation_receipt_changed')
         with store.lock():
-            latest=store.read(task);root=store.read(root['taskId']);store.allowed(latest)
+            latest=store.read(task);root=store.read(root['taskId']);store.check_resources(latest)
             if latest['delivery']!=state['delivery'] or latest['state']!='review_ready' or root.get('activeRevision')!=task:raise ValueError('revision_owner_changed')
             root['activeRevision']=None;store.save(root)
         return store.read(task)
@@ -329,12 +337,24 @@ def prove_not_executed(store,task):
     with platform.exclusive_lock(store.root/'leases'/(task+'.lifecycle.lock'),timeout=0), platform.exclusive_lock(store.root/'leases'/(task+'.lock'),timeout=0):
         state=store.read(task);request=managed.read(store.path(task).parent/'request.json')
         if not request.get('commandRevision'):return state
-        if state['state']!='reconciling':return state
+        settling=state['state']=='failed' and state.get('reconciliation',{}).get('result')=='revision_not_executed'
+        if state['state']!='reconciling' and not settling:return state
+        if settling:
+            root=store.lineage(state)[-1]
+            if root.get('activeRevision') is None:return state
+            proof_path=store.path(task).parent/'not-executed.json'
+            reference=state['reconciliation'].get('proof',{})
+            try:
+                if reference.get('path')!=proof_path.name or tasks.file_sha(proof_path)!=reference.get('sha256'):
+                    raise ValueError('revision_not_executed_proof_changed')
+            except (OSError,ValueError):raise ValueError('revision_not_executed_proof_changed') from None
         lifecycle=store.lifecycle_path(state)
         if not lifecycle.is_file() or managed.read(lifecycle).get('status')!='stopped':raise ValueError('process_termination_unconfirmed')
         if managed.read(lifecycle).get('schema')!='effectcraft-process-lifecycle/v1':raise ValueError('process_termination_unconfirmed')
-        context=validate_prepared(store,task);output=Path(state['output'])
-        receipt=managed.read(output/'failure.json');journal=managed.read(output/'journal.json')
+        context=validate_prepared(store,task,for_reconcile=True);output=Path(state['output'])
+        try:
+            receipt=managed.read(output/'failure.json');journal=managed.read(output/'journal.json')
+        except (OSError,ValueError):raise ValueError('revision_outcome_unknown: missing or invalid failure receipts') from None
         expected_sha=hashlib.sha256(json.dumps(state['plan'],ensure_ascii=False,sort_keys=True,allow_nan=False).encode()).hexdigest()
         if (receipt!=journal or receipt.get('schema')!='craft-command-receipt/v1' or receipt.get('pluginId')!='effectcraft'
                 or receipt.get('result')!='FAIL' or receipt.get('planSha256')!=expected_sha
@@ -373,8 +393,8 @@ def prove_not_executed(store,task):
             'lifecycleSha256':tasks.file_sha(lifecycle),'seeds':context['seeds'],'result':'revision_not_executed'}
         path=store.path(task).parent/'not-executed.json';load('review_ledger').immutable(path,proof)
         with store.lock():
-            latest=store.read(task);root=store.lineage(latest)[-1];store.allowed(latest)
-            if latest['steps']!=state['steps'] or latest['state']!='reconciling' or root.get('activeRevision')!=task:raise ValueError('revision_owner_changed')
+            latest=store.read(task);root=store.lineage(latest)[-1];store.check_resources(latest)
+            if latest['steps']!=state['steps'] or latest['state']!=state['state'] or latest.get('reconciliation')!=state.get('reconciliation') or root.get('activeRevision')!=task:raise ValueError('revision_owner_changed')
             latest['state']='failed';latest['reconciliation']={'result':'revision_not_executed','automaticReplay':False,
                 'proof':{'path':path.name,'sha256':tasks.file_sha(path)},'requiredAction':'inspect original task; another authorized revision uses remaining shared budget'}
             store.save(latest);root['activeRevision']=None;store.save(root)

@@ -124,6 +124,10 @@ class Observer:
                 comp=call(session,'get_comp',{'comp':record['params'].get('comp',overview['activeComp'])})
                 data.update(composition=comp,seconds=record['params'].get('time',overview.get('time',0)),
                     requestedAlpha=record['params'].get('transparent',False),maxSide=record['params'].get('max_side',0 if record.get('command')=='render.saveCurrentPreview' else 960))
+                width=comp['width'];height=comp['height']
+                if type(width) is not int or type(height) is not int or min(width,height)<=0:raise ValueError('command_composition_dimensions_invalid')
+                load('resource_budget').reserve_command(self.store,self.task,operation,width*height*4)
+                load('resource_meter').watch(self.store,self.task,output,output,'commands',media=[name])
             load('review_ledger').immutable(before,data)
         elif phase=='after':
             if not before.exists():
@@ -146,6 +150,7 @@ class Observer:
                 if sorted(int(item) for item in data['dependencies'])!=data['snapshot']['footageItems']:
                     raise ValueError('command_native_dependencies_mismatch')
             load('review_ledger').immutable(after,data)
+            if artifact=='frame':load('resource_meter').sample(self.store,self.task)
         else:raise ValueError('command_observation_phase')
 
 

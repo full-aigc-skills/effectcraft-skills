@@ -16,7 +16,7 @@ def validate(value, output):
         raise ValueError('resource_locations_invalid')
     output=Path(output);seen=set()
     for row in value['locations']:
-        if not isinstance(row,dict) or set(row)!={'path','alternate','identity','kind','retired'}:raise ValueError('resource_locations_invalid')
+        if not isinstance(row,dict) or set(row)-{'media'}!={'path','alternate','identity','kind','retired'}:raise ValueError('resource_locations_invalid')
         path=Path(row['path']);alternate=Path(row['alternate'])
         if (not path.is_absolute() or not alternate.is_absolute() or '..' in path.parts or '..' in alternate.parts
                 or not isinstance(row['identity'],list) or len(row['identity'])!=2
@@ -24,6 +24,12 @@ def validate(value, output):
             raise ValueError('resource_locations_invalid')
         if row['kind']=='workflow':
             valid=(path==output or path.parent==output.parent and path.name.startswith('.effectcraft-')) and alternate==output
+        elif row['kind']=='commands':
+            valid=path==output and alternate==output
+            media=row.get('media',[])
+            if (not isinstance(media,list) or any(not isinstance(n,str) for n in media) or len(media)!=len(set(media))
+                    or any(not isinstance(n,str) or not n or not Path(n).parts or Path(n).is_absolute() or '..' in Path(n).parts
+                        or Path(n).parts[0] in ('inputs','.desktop-data') for n in media)):raise ValueError('resource_locations_invalid')
         elif row['kind']=='segment':
             valid=(path.parent==output and path.name.startswith('.effect-segment-') and alternate.parent==output/'rgba-segments'
                 and re.fullmatch('segment_[0-9]{5}',alternate.name))
@@ -32,6 +38,7 @@ def validate(value, output):
                 and alternate.parent.parent==output.parent and alternate.parent.name.startswith('.effectcraft-recovery-')
                 and row['retired'])
         else:valid=False
+        if 'media' in row and row['kind']!='commands':raise ValueError('resource_locations_invalid')
         if not valid or row['path'] in seen:raise ValueError('resource_locations_invalid')
         seen.add(row['path'])
     return value
@@ -49,7 +56,7 @@ def validate_observation(value):
         raise ValueError('resource_observation_invalid')
 
 
-def watch(store, task, path, alternate, kind):
+def watch(store, task, path, alternate, kind, media=None):
     path=Path(path).absolute();alternate=Path(alternate).absolute()
     path=path.parent.resolve()/path.name;alternate=alternate.parent.resolve()/alternate.name
     load('segmented_sequence').regular_path(path)
@@ -61,8 +68,11 @@ def watch(store, task, path, alternate, kind):
         for row in value['locations']:
             if row['path']==str(path) or row['identity']==identity and row['kind']==kind:
                 if row['identity']!=identity or row['kind']!=kind:raise ValueError('resource_location_identity_changed')
+                if media is not None:
+                    row['media']=sorted(set(row.get('media',[])+media));validate(value,state['output']);store.save(state)
                 return
         value['locations'].append({'path':str(path),'alternate':str(alternate),'identity':identity,'kind':kind,'retired':False})
+        if media is not None:value['locations'][-1]['media']=sorted(set(media))
         validate(value,state['output']);store.save(state)
 
 
@@ -93,7 +103,16 @@ def files(state):
             if row['retired'] and row['kind']!='archived_segment':continue
             raise ValueError('resource_location_missing')
         for root in roots:
-            if row['kind'] in ('segment','archived_segment'):paths=list(root.glob('frame_*.png'))+list(root.glob('frame.png'))
+            if row['kind']=='commands':
+                import os
+                paths=[root/name for name in row.get('media',[])]
+                for parent,dirs,names in os.walk(root,followlinks=False):
+                    base=Path(parent)
+                    if base==root:dirs[:]=[d for d in dirs if d not in ('inputs','.desktop-data')]
+                    for name in dirs:
+                        if (base/name).is_symlink():raise ValueError('resource_media_symlink')
+                    paths.extend(base/name for name in names if Path(name).suffix.lower()=='.png')
+            elif row['kind'] in ('segment','archived_segment'):paths=list(root.glob('frame_*.png'))+list(root.glob('frame.png'))
             else:
                 paths=list(root.glob('frame-*.png'))+[root/'intro.mp4']
                 for name in ('rgba-sequence','rgba-segments'):

@@ -1,5 +1,7 @@
 # Version-bound release records
 
+开发版 dev.43：命令／桌面PNG修订的共享资源记账、只读过期／取消核对和历史资源缺失保护；任务9.23限定范围完成。426项回归中388通过、38条件跳过；macOS两种模式真实局部修订通过。75项任务及完整V1继续开放。详见 docs/evidence/command-revision-resource-candidate-20261008.json。
+
 Development source dev.42 adds scoped command/desktop local revision with native preservation receipts and known-not-executed reconciliation. 40 targeted tests; regression 365 passed / 38 conditional skips (403 total). Native command visual repair and imported-asset preservation passed; desktop interruption remains unaccepted. Task9.23 and full V1 stay open. [Evidence](docs/evidence/command-revision-candidate-20261008.json).
 
 Source dev.41: managed command/desktop Judge v2 and immutable review ledger integration (task9.22). 10 targeted tests; 325 regression passes / 38 conditional skips. Native sampled multi-composition review and rejection gates passed on macOS arm64. Task9.23 local revision remains unfinished and excluded from this release; full V1 and fixed-host acceptance remain open.

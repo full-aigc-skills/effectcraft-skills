@@ -95,7 +95,7 @@ class CommandRevisionFlowTests(unittest.TestCase):
         scope=[{'project':'scene.ecproj','comp':'main','layer':'title','properties':['text/sourceText']}]
         plan={'schema':'craft-command-plan/v1','operations':[{'command':'comp.new','params':{},'as':'main'},{'command':'layer.newText','params':{},'as':'title'},{'tool':'save_project','params':{'path':{'$output':'scene.ecproj'}}},{'tool':'render_frame','params':{'path':{'$output':'preview.png'}}}]}
         state=self.store.read('case');state['plan']=plan;state['identity']['planHash']=f.tasks.digest(plan);state['identity']['authorization']['revisionScope']=scope
-        state['identityHash']=f.tasks.digest(state['identity']);state['workKey']=f.tasks.digest({k:v for k,v in state['identity'].items() if k not in ('authorization','runtimeSha256')});self.store.save(state)
+        state['identityHash']=f.tasks.digest(state['identity']);state['workKey']=f.tasks.digest({k:v for k,v in state['identity'].items() if k not in ('authorization','runtimeSha256')});state['resources']['entries']['case']['bindingHash']=state['identity']['planHash'];state['resourceReservation']['bindingHash']=state['identity']['planHash'];self.store.save(state)
         f.session.comps[1].update(frameRate=1,duration=1);f.session.layers['3']['properties'][0]['uid']=9
         f.steps=[{'index':0,'command':'comp.new','tool':None,'params':{},'state':'succeeded','result':{'comp':1}},{'index':1,'command':'layer.newText','tool':None,'params':{},'state':'succeeded','result':{'layer':3}}]
         raw={'savedBy':'0.4.0','schema':1,'settings':{},'items':{'1':{'id':1,'kind':{'type':'Comp','layers':[{'id':3,'props':{'uid':4,'children':[{'node':'Prop','uid':9,'value':{'t':'Text','v':'before'}}]}}]}}},'next_id':10}
@@ -141,6 +141,28 @@ class CommandRevisionFlowTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError,'revision_budget_exhausted'):self.revise()
         self.assertEqual(before,self.store.path('case').read_bytes())
 
+    def test_forged_stagnant_counter_rejects_without_charging_or_child(self):
+        root=self.store.read('case');root['budget']['stagnant']=2;self.store.save(root);before=self.store.path('case').read_bytes()
+        with self.assertRaisesRegex(ValueError,'review_selection_changed'):self.revise()
+        self.assertEqual(before,self.store.path('case').read_bytes());self.assertFalse((self.f.root/'revised').exists())
+
+    def test_cancel_intent_rejects_without_charging_or_child(self):
+        root=self.store.read('case');root['cancellationRequestedAt']=root['createdAt'];self.store.save(root);before=self.store.path('case').read_bytes()
+        with self.assertRaisesRegex(ValueError,'cancel_requested'):self.revise()
+        self.assertEqual(before,self.store.path('case').read_bytes());self.assertFalse((self.f.root/'revised').exists())
+
+    def test_expired_deadline_rejects_without_charging_or_child(self):
+        from unittest.mock import patch
+        root=self.store.read('case');before=self.store.path('case').read_bytes()
+        with patch.object(self.f.tasks.time,'time',return_value=root['deadline']+1):
+            with self.assertRaisesRegex(ValueError,'deadline_exceeded'):self.revise()
+        self.assertEqual(before,self.store.path('case').read_bytes());self.assertFalse((self.f.root/'revised').exists())
+
+    def test_legacy_root_without_initial_frame_accounting_is_read_only(self):
+        root=self.store.read('case');root['resources']['entries']['case'].pop('commandFrames',None);self.store.save(root);before=self.store.path('case').read_bytes()
+        with self.assertRaisesRegex(ValueError,'legacy_command_resource_read_only'):self.revise()
+        self.assertEqual(before,self.store.path('case').read_bytes());self.assertFalse((self.f.root/'revised').exists())
+
     def test_partial_child_cannot_be_bypassed_by_a_new_revision(self):
         self.revise();before=self.store.path('case').read_bytes()
         with self.assertRaisesRegex(ValueError,'revision_in_progress'):self.revise()
@@ -175,6 +197,7 @@ class CommandRevisionFlowTests(unittest.TestCase):
         import json,hashlib
         import test_managed_command_delivery as fixture
         child=self.revise();out=Path(child['output']);out.mkdir();self.store.start(child['taskId'])
+        self.m.load('managed').Hooks(self.store,child['taskId']).prepare_command_output(out)
         module=self.f.module;session=copy.deepcopy(self.f.session)
         session.layers['3']['properties'][0]['value']='Short'
         observer=module.Observer(self.store,child['taskId']);steps=[]
@@ -237,7 +260,7 @@ class CommandRevisionFlowTests(unittest.TestCase):
         self.assertEqual(ops[i-1],{'command':'layer.select','params':{'layers':[3]}})
 
     def blocked_child(self):
-        child=self.revise();out=Path(child['output']);out.mkdir();self.store.start(child['taskId']);steps=[]
+        child=self.revise();out=Path(child['output']);out.mkdir();self.store.start(child['taskId']);self.m.load('managed').Hooks(self.store,child['taskId']).prepare_command_output(out);steps=[]
         tasks=self.f.tasks;commands=self.m.load('commands');catalog=commands.ROUTES['effectcraft'][0]
         def call(name,args):
             identity=self.store.begin_step(child['taskId'],name,{'name':name,'arguments':args});self.store.finish_step(child['taskId'],identity,{})
@@ -269,6 +292,63 @@ class CommandRevisionFlowTests(unittest.TestCase):
         before=self.store.path('case').read_bytes()
         with self.assertRaisesRegex(ValueError,'revision_outcome_unknown'):self.m.prove_not_executed(self.store,child['taskId'])
         self.assertEqual(before,self.store.path('case').read_bytes())
+
+    def test_missing_failure_receipt_keeps_unknown_with_stable_diagnostic(self):
+        child=self.blocked_child();(Path(child['output'])/'failure.json').unlink()
+        before=self.store.path('case').read_bytes();state=self.store.path(child['taskId']).read_bytes()
+        with self.assertRaisesRegex(ValueError,'revision_outcome_unknown'):
+            self.m.prove_not_executed(self.store,child['taskId'])
+        self.assertEqual(before,self.store.path('case').read_bytes());self.assertEqual(state,self.store.path(child['taskId']).read_bytes())
+
+    def interrupted_settlement(self):
+        from unittest.mock import patch
+        child=self.blocked_child();original=self.store.save
+        def save(state):
+            if state['taskId']=='case' and state.get('activeRevision') is None:raise OSError('simulated root settlement crash')
+            return original(state)
+        with patch.object(self.store,'save',side_effect=save):
+            with self.assertRaisesRegex(OSError,'simulated root settlement crash'):self.m.prove_not_executed(self.store,child['taskId'])
+        self.assertEqual(self.store.read(child['taskId'])['state'],'failed')
+        self.assertEqual(self.store.read('case')['activeRevision'],child['taskId'])
+        return child
+
+    def test_public_reconcile_finishes_interrupted_not_executed_settlement(self):
+        child=self.interrupted_settlement();proof=self.store.path(child['taskId']).parent/'not-executed.json';before=proof.read_bytes()
+        managed=self.m.load('managed');original=managed.load
+        from unittest.mock import patch
+        with patch.object(managed,'load',side_effect=lambda name:self.m if name=='command_revision' else original(name)):
+            result=managed.reconcile(self.store,child['taskId'])
+        self.assertEqual(result['reconciliation']['result'],'revision_not_executed')
+        self.assertIsNone(self.store.read('case')['activeRevision']);self.assertEqual(self.store.read('case')['budget']['revisions'],1)
+        self.assertEqual(before,proof.read_bytes())
+
+    def test_interrupted_settlement_changed_proof_keeps_root_occupied(self):
+        child=self.interrupted_settlement();proof=self.store.path(child['taskId']).parent/'not-executed.json';proof.write_text('{}')
+        before=self.store.path('case').read_bytes()
+        with self.assertRaisesRegex(ValueError,'revision_not_executed_proof_changed'):
+            self.m.prove_not_executed(self.store,child['taskId'])
+        self.assertEqual(before,self.store.path('case').read_bytes())
+
+    def test_not_executed_settlement_after_expiry_does_not_schedule_work(self):
+        from unittest.mock import patch
+        child=self.interrupted_settlement();state=self.store.read(child['taskId']);steps=copy.deepcopy(state['steps']);root=self.store.read('case')
+        with patch.object(self.f.tasks.time,'time',return_value=root['deadline']+1):
+            result=self.m.prove_not_executed(self.store,child['taskId'])
+        self.assertEqual(result['steps'],steps);self.assertIsNone(self.store.read('case')['activeRevision']);self.assertEqual(self.store.read('case')['budget']['revisions'],1)
+
+    def test_not_executed_settlement_after_cancel_retains_cancel_intent(self):
+        child=self.interrupted_settlement();root=self.store.read('case');root['cancellationRequestedAt']=root['createdAt'];self.store.save(root)
+        result=self.m.prove_not_executed(self.store,child['taskId'])
+        self.assertEqual(result['state'],'failed');latest=self.store.read('case');self.assertIsNone(latest['activeRevision']);self.assertEqual(latest['cancellationRequestedAt'],root['createdAt'])
+        with self.assertRaisesRegex(ValueError,'cancel_requested'):self.store.allowed(latest)
+
+    def test_completed_settlement_after_expiry_rechecks_existing_preservation_only(self):
+        from unittest.mock import patch
+        child,proof=self.executed_child();self.m.validate_result(self.store,child['taskId'],proof);self.store.delivered(child['taskId'],proof)
+        self.f.tasks.atomic_json(self.store.lifecycle_path(self.store.read(child['taskId'])),{'schema':'effectcraft-process-lifecycle/v1','status':'stopped'})
+        root=self.store.read('case');saved=self.store.path(child['taskId']).parent/'preservation.json';before=saved.read_bytes()
+        with patch.object(self.f.tasks.time,'time',return_value=root['deadline']+1):self.m.settle_completed(self.store,child['taskId'])
+        self.assertEqual(before,saved.read_bytes());self.assertIsNone(self.store.read('case')['activeRevision'])
 
 
 class ManagedRevisionEntryTests(unittest.TestCase):

@@ -121,6 +121,11 @@ class Hooks:
         request=read(self.store.path(self.task).parent/'request.json')
         if request.get('commandRevision'):
             load('command_revision').prepare_output(self.store,self.task,output)
+        else:
+            state=self.store.read(self.task)
+            frames=sum(load('command_delivery').kind(op)=='frame' for op in state['plan']['operations'])
+            self.store.reserve_resources(self.task,{'frames':frames,'decodedBytes':0},state['identity']['planHash'])
+        load('resource_meter').watch(self.store,self.task,output,output,'commands')
 
     def session(self, argv):
         owner=self
@@ -280,7 +285,7 @@ def reconcile(store, task):
     state=_reconcile(store,task)
     if state['identity']['mode']!='workflow' and state.get('parent') and state['state']=='review_ready':
         return load('command_revision').settle_completed(store,task)
-    if state['identity']['mode']!='workflow' and state.get('parent') and state['state']=='reconciling':
+    if state['identity']['mode']!='workflow' and state.get('parent') and (state['state']=='reconciling' or state['state']=='failed' and state.get('reconciliation',{}).get('result')=='revision_not_executed'):
         return load('command_revision').prove_not_executed(store,task)
     return state
 

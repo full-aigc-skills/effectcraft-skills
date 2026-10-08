@@ -15,10 +15,17 @@ def validate(value):
     for task,entry in value['entries'].items():
         if not isinstance(task,str) or not re.fullmatch(r'[a-zA-Z0-9][a-zA-Z0-9_-]{0,95}',task):
             raise ValueError('resource_budget_invalid')
-        if (not isinstance(entry,dict) or set(entry)-{'segmentAttempts'}!= {'frames','decodedBytes','encodedBytes','bindingHash'}
+        if (not isinstance(entry,dict) or set(entry)-{'segmentAttempts','commandFrames'}!= {'frames','decodedBytes','encodedBytes','bindingHash'}
                 or not isinstance(entry['bindingHash'],str) or not re.fullmatch('[a-f0-9]{64}',entry['bindingHash'])
                 or any(type(entry[k]) is not int or entry[k]<0 for k in LIMITS)):
             raise ValueError('resource_budget_invalid')
+        commands=entry.get('commandFrames',{})
+        if not isinstance(commands,dict):raise ValueError('resource_budget_invalid')
+        for operation,row in commands.items():
+            if (not isinstance(operation,str) or not re.fullmatch('[a-f0-9]{64}',operation)
+                    or not isinstance(row,dict) or set(row)!={'frames','decodedBytes'}
+                    or type(row['frames']) is not int or row['frames']!=1
+                    or type(row['decodedBytes']) is not int or row['decodedBytes']<=0):raise ValueError('resource_budget_invalid')
         attempts=entry.get('segmentAttempts',{})
         if not isinstance(attempts,dict):raise ValueError('resource_budget_invalid')
         identities=set()
@@ -50,10 +57,30 @@ def usage(value):
     validate(value)
     used={key:sum(entry[key] for entry in value['entries'].values()) for key in LIMITS}
     for entry in value['entries'].values():
+        for key in ('frames','decodedBytes'):
+            used[key]+=max(0,sum(row[key] for row in entry.get('commandFrames',{}).values())-entry[key])
         for rows in entry.get('segmentAttempts',{}).values():
             for row in rows[1:]:
                 for key in ('frames','decodedBytes'):used[key]+=row[key]
     return used
+
+
+def reserve_command(store, task, operation, decoded_bytes):
+    """PNG原生调用前记账；预占与实际尝试取覆盖上界，不重复收费。"""
+    if (not isinstance(operation,str) or not re.fullmatch('[a-f0-9]{64}',operation)
+            or type(decoded_bytes) is not int or decoded_bytes<=0):raise ValueError('resource_attempt_invalid')
+    row={'frames':1,'decodedBytes':decoded_bytes}
+    with store.lock():
+        state=store.read(task);store.allowed(state);root=store.lineage(state)[-1]
+        if state['identity']['mode'] not in ('commands','desktop'):raise ValueError('resource_attempt_mode')
+        value=root['resources'];entry=value['entries'].get(task)
+        if entry is None:raise ValueError('resource_reservation_missing')
+        records=entry.setdefault('commandFrames',{})
+        if operation in records:
+            if records[operation]!=row:raise ValueError('resource_attempt_conflict')
+            return value
+        records[operation]=row;validate(value);store.save(root);check(value)
+        return value
 
 
 def reserve_segment(store, task, segment, attempt, frames, decoded_bytes):

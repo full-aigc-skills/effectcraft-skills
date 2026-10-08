@@ -1,0 +1,138 @@
+{
+  "schema": "effectcraft-command-revision-recovery-evidence/v1",
+  "date": "2026-10-08",
+  "scope": "current source candidate after source42/plugin44; task9.23 remains open",
+  "platform": "macOS arm64",
+  "runtime": "EffectCraft 0.4.0",
+  "isolatedPython": "3.13.16",
+  "tests": {
+    "newRegressionInitial": {
+      "failures": 2,
+      "errors": 1,
+      "total": 43
+    },
+    "targetedPassed": 46,
+    "regressionTotal": 409,
+    "passed": 371,
+    "conditionalSkips": 38
+  },
+  "codeSha256": {
+    "bootstrap.py": "d5a77de7766e1d634bc903d9d6918b343bc7f87472d0225a52f3bd0fff882965",
+    "exchange_loss.py": "8871bc2d4e2e6bedd0b1d2852a06ccdbd43b0339d67afc53e6029fb3539c8c4f",
+    "command_revision.py": "0db54909e2a974dc07a1effaebebdc6070517bb0eebadac733596438561b89e4",
+    "image_sequence.py": "f67d0e565d8c99abd519bfaabe44599d25606450ca4f98df1ea227619ab2fff0",
+    "review_ledger.py": "4931523dd1c76eb15037faaf28aaa7c85b7c85c6dfd447455925dd5a3ae9c512",
+    "task_store.py": "1726f122ad3ce5dba073e2d959d367d4f9a4314486fd24ef512e4b8e5385fe78",
+    "segmented_sequence.py": "f0b078e72211c245267c22514a7b4202099a47cc42a5e9c8243bdd7b0dc473e9",
+    "platform_support.py": "d6a133dc25b81570f585f473f2fe290e181e78bc24032a05ae83be6f0a45aed8",
+    "command_judge.py": "1d9617f42edcd4dd730b0781fc55b330c40f8774db0063ff7cb53fa7af4e83f0",
+    "judge_contract.py": "58e1e4fad0e296cbf185a4e6e5cf5bd3f2db6482b34dbfcb622b814639469480",
+    "mcp_session.py": "dd6df96dc1734cd7e43c4b820661d2e2c8c713dc8849fc89ab06a3720d99619b",
+    "resource_budget.py": "501cb33b348cab13cace063dbdb2158d8bdd196419aee7978197a8fc40e27e89",
+    "render_recovery.py": "6baf8f315f20d5e6b9115423502d66e9e51e33dc2398adc6bbff85b6b68b1e31",
+    "output_guard.py": "018c5c27217c11ec7b45ded52a1e13d7c42b34a3a53df21566e26f192143302b",
+    "cli.py": "9303ae8ae30009fa706d5d56603032485ad81416aee1d0af523ce902e3f28165",
+    "desktop_session.py": "a4441b65603b73ad350aff4348553c9681c77cb5c030e97bc5630a7d88251a8e",
+    "native_workflow.py": "0db0471f8d849db9c3ffaeaac1c7bc40bf0cd500a638f7b681ecdeb934960bdd",
+    "quality_review.py": "e0ddc78bb8bdc9b2e1dfca2e8ae7c1915ad9008ced0b3d3a242ccc45086e77e9",
+    "command_delivery.py": "f3c657f25abb1342ed4c12ada113ad7c2e7a213749f186ce3ae0b742bd618036",
+    "managed.py": "4add48ffabf6a3dcfc198c68863028d09cf17d1abfc16b5795a70e6547dfbf85",
+    "png_inspection.py": "0e3c50907c66c6dcc45256d045920da346ad77892e47401de3103c8f6232938d",
+    "additional_platforms.py": "1a4ffc9f04e240374269a9869d0383f9f833082cf066203fddba117f247f48d9",
+    "revision.py": "546214f38430c14f354b6c0aa8feff8928d3267b9dee1b7ea708933bc3633590",
+    "workflow.py": "52eb0ccd9942b83588155ddb851c63c6fbea0f3122a0aa2a3029a2640cb6ce14",
+    "orphan_segments.py": "244059948ca6b783c64cdd5942e91f3e6268dfd71f3c48c300595ccbcb2584b9",
+    "process_guard.py": "914127933d528388cff33db36e92f8ed62263737e985c65b1f7e200ee14d50a4",
+    "engineering_review.py": "cd85935fe5a4b4d5285c46896cd50d5b9defd3516eb9d96fcd31e8966bacab07",
+    "preserved_stage.py": "64199df3ee6af2901a859a5aac401fd27ca2f0c6ba9238e6f72c3563f681ad63",
+    "commands.py": "46034f7e4c6cf050d670881f58530b2fa2540a9132dca129469763e865ce5277",
+    "resource_meter.py": "7c89e528b2851a190b5ca849f29ec03d26b4d827ff12aeef7d4c7c01c1cd6dcf",
+    "desktop.py": "802de3eef9ed9fca3ad09a2f5f6f204f6bbba5a09450efe6ae062e7159409553"
+  },
+  "testSha256": "5595ef02a5492953374c7540a7433075e0256e1c6c6ffb905dcd03c4b5764007",
+  "regressionLogSha256": "8d9058e183bf02b30c9b526251a07105f5e993fc068c93803d8e60a5f01c564d",
+  "desktopCase": {
+    "taskId": "5700f307ec0b4ea3b23dd3091e2fd699",
+    "mode": "desktop",
+    "sourceScriptsMatchCurrent": true,
+    "gates": {
+      "engineering": "PASS",
+      "technical": "PASS",
+      "creative": "PASS",
+      "userAcceptance": "NOT_RUN"
+    },
+    "accepted": false,
+    "visual": "Codex actually observed source clipped title and child complete NOVA title with translucent green imported logo; one bound sample each",
+    "preservationReceiptSha256": "ca379bc756fea9a875d9b9cf6796a52682b5943c586ef17e45c4fd14b530069b",
+    "reviewReceiptSha256": "6602ea292ec4f9d654cb650528fa877dd671514320a3dab69dca2d6e87e1adaf",
+    "assetRelocation": "actual imported asset path changes with equal file SHA256 and native reopen verification",
+    "originalOutputPreserved": true,
+    "spentRounds": 1,
+    "activeRevision": null,
+    "publicNegativeGates": [
+      {
+        "case": "binding",
+        "expected": "revision_conflict",
+        "status": "PASS",
+        "noBudgetCharge": true,
+        "originalOutputPreserved": true
+      },
+      {
+        "case": "scope",
+        "expected": "revision_scope",
+        "status": "PASS",
+        "noBudgetCharge": true,
+        "originalOutputPreserved": true
+      },
+      {
+        "case": "parameters",
+        "expected": "revision_parameters",
+        "status": "PASS",
+        "noBudgetCharge": true,
+        "originalOutputPreserved": true
+      },
+      {
+        "case": "runtime",
+        "expected": "engineering_gate",
+        "status": "PASS",
+        "noBudgetCharge": true,
+        "originalOutputPreserved": true
+      },
+      {
+        "case": "rounds",
+        "expected": "revision_budget_exhausted",
+        "status": "PASS",
+        "noBudgetCharge": true,
+        "originalOutputPreserved": true
+      },
+      {
+        "case": "cancel",
+        "expected": "cancel_requested",
+        "status": "PASS",
+        "noBudgetCharge": true,
+        "originalOutputPreserved": true
+      },
+      {
+        "case": "deadline",
+        "expected": "deadline_exceeded",
+        "status": "PASS",
+        "noBudgetCharge": true,
+        "originalOutputPreserved": true
+      }
+    ]
+  },
+  "recovery": {
+    "crossFileSettlement": "injected root-write crash after failed child terminal record; public reconcile rechecks existing proof/calls/seeds/lifecycle and clears original occupation without refund",
+    "changedProof": "refused; occupation retained",
+    "missingFailureReceipt": "revision_outcome_unknown; state and occupation retained",
+    "originalInterruptedDesktop": "old unknown task/output retained; no re-edit or reset"
+  },
+  "open": [
+    "initial commands/desktop render resource accounting",
+    "full expired/cancelled settlement recovery matrix",
+    "video/sequence and animated-target revision scope",
+    "immutable installed host natural-language dispatch",
+    "other platform native acceptance",
+    "complete V1"
+  ]
+}

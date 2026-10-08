@@ -48,7 +48,10 @@ class CommandDeliveryTests(unittest.TestCase):
         self.tmp=tempfile.TemporaryDirectory();self.addCleanup(self.tmp.cleanup);self.root=Path(self.tmp.name);self.output=self.root/'output';self.output.mkdir()
         self.tasks=self.module.load('task_store');self.store=self.tasks.Store(self.root/'state')
         self.store.create('case',plan={'schema':'craft-command-plan/v1','operations':[{'tool':'save_project','params':{}}]},output=str(self.output),runtime_sha='a'*64,inputs={},source=None,mode='commands',authorization={})
-        self.store.start('case');self.observer=self.module.Observer(self.store,'case');self.session=Session();self.steps=[]
+        self.store.start('case')
+        self.store.reserve_resources('case',{'frames':0,'decodedBytes':0},self.store.read('case')['identity']['planHash'])
+        self.module.load('resource_meter').watch(self.store,'case',self.output,self.output,'commands')
+        self.observer=self.module.Observer(self.store,'case');self.session=Session();self.steps=[]
 
     def save(self,name='scene.ecproj'):
         record={'index':len(self.steps),'tool':'save_project','command':None,'params':{'path':str(self.output/name)},'state':'started'}

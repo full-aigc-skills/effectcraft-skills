@@ -194,6 +194,11 @@ class Store:
             if (parent['state'] in ('cancel_requested','cancelled') or parent.get('cancellationRequestedAt')
                     or time.time() >= parent['deadline']):
                 raise ValueError('parent_cancelled_or_expired')
+        self.check_resources(state)
+
+    def check_resources(self, state):
+        """只读核对资源父链，不授权调度；过期／取消后仍可核对原结果。"""
+        lineage=self.lineage(state)
         if 'resources' not in lineage[-1]:raise ValueError('legacy_resource_budget_missing')
         load('resource_budget').check(lineage[-1]['resources'])
         for item in lineage:load('resource_budget').check_reference(item,lineage[-1]['resources'])

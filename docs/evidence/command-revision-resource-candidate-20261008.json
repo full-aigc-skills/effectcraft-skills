@@ -1,0 +1,341 @@
+{
+  "schema": "effectcraft-command-revision-resource-evidence/v1",
+  "date": "2026-10-08",
+  "scope": "bounded macOS arm64 command/owned-desktop PNG local revision candidate; OpenSpec9.23",
+  "publishedSource": "v0.1.0-dev.42",
+  "publishedPlugin": "v0.1.0-dev.44",
+  "unpublishedCandidate": true,
+  "runtime": "EffectCraft 0.4.0",
+  "isolatedPython": "3.13.16",
+  "tests": {
+    "resourcesPassed": 13,
+    "revisionPassed": 50,
+    "fullTotal": 426,
+    "fullPassed": 388,
+    "conditionalSkips": 38,
+    "initialResourceRed": {
+      "totalIncludingInheritedCases": 35,
+      "newFailures": 2,
+      "newErrors": 8
+    },
+    "initialExpiryRedErrors": 3,
+    "legacyAccountingRedFailures": 1,
+    "dotOnlyPathRedErrors": 1
+  },
+  "codeSha256": {
+    "additional_platforms.py": "1a4ffc9f04e240374269a9869d0383f9f833082cf066203fddba117f247f48d9",
+    "bootstrap.py": "d5a77de7766e1d634bc903d9d6918b343bc7f87472d0225a52f3bd0fff882965",
+    "cli.py": "9303ae8ae30009fa706d5d56603032485ad81416aee1d0af523ce902e3f28165",
+    "command_delivery.py": "83f98176d7a52032fd43233753cdd16cdef2e397930f804e645cb397816695f4",
+    "command_judge.py": "1d9617f42edcd4dd730b0781fc55b330c40f8774db0063ff7cb53fa7af4e83f0",
+    "command_revision.py": "dadd61cc50e30b43f753055892e5de84aab545dc110210b29b523e8fc80c576c",
+    "commands.py": "46034f7e4c6cf050d670881f58530b2fa2540a9132dca129469763e865ce5277",
+    "desktop.py": "802de3eef9ed9fca3ad09a2f5f6f204f6bbba5a09450efe6ae062e7159409553",
+    "desktop_session.py": "a4441b65603b73ad350aff4348553c9681c77cb5c030e97bc5630a7d88251a8e",
+    "engineering_review.py": "cd85935fe5a4b4d5285c46896cd50d5b9defd3516eb9d96fcd31e8966bacab07",
+    "exchange_loss.py": "8871bc2d4e2e6bedd0b1d2852a06ccdbd43b0339d67afc53e6029fb3539c8c4f",
+    "image_sequence.py": "f67d0e565d8c99abd519bfaabe44599d25606450ca4f98df1ea227619ab2fff0",
+    "judge_contract.py": "58e1e4fad0e296cbf185a4e6e5cf5bd3f2db6482b34dbfcb622b814639469480",
+    "managed.py": "8f6604ffe4e9fc1ae8afcf8abcb7d53070f64afb1cf30e2c1aaa32632cfffbf3",
+    "mcp_session.py": "dd6df96dc1734cd7e43c4b820661d2e2c8c713dc8849fc89ab06a3720d99619b",
+    "native_workflow.py": "0db0471f8d849db9c3ffaeaac1c7bc40bf0cd500a638f7b681ecdeb934960bdd",
+    "orphan_segments.py": "244059948ca6b783c64cdd5942e91f3e6268dfd71f3c48c300595ccbcb2584b9",
+    "output_guard.py": "018c5c27217c11ec7b45ded52a1e13d7c42b34a3a53df21566e26f192143302b",
+    "platform_support.py": "d6a133dc25b81570f585f473f2fe290e181e78bc24032a05ae83be6f0a45aed8",
+    "png_inspection.py": "0e3c50907c66c6dcc45256d045920da346ad77892e47401de3103c8f6232938d",
+    "preserved_stage.py": "64199df3ee6af2901a859a5aac401fd27ca2f0c6ba9238e6f72c3563f681ad63",
+    "process_guard.py": "914127933d528388cff33db36e92f8ed62263737e985c65b1f7e200ee14d50a4",
+    "quality_review.py": "e0ddc78bb8bdc9b2e1dfca2e8ae7c1915ad9008ced0b3d3a242ccc45086e77e9",
+    "render_recovery.py": "6baf8f315f20d5e6b9115423502d66e9e51e33dc2398adc6bbff85b6b68b1e31",
+    "resource_budget.py": "97b4f4b4ac77b65df113c7eccf2ad2d4559cb849a9fe2c20d5eb8c4e7121be30",
+    "resource_meter.py": "a62257919fd22cfa6eb616be285122978a6732c0b888893fd8b4440396b8993f",
+    "review_ledger.py": "4931523dd1c76eb15037faaf28aaa7c85b7c85c6dfd447455925dd5a3ae9c512",
+    "revision.py": "546214f38430c14f354b6c0aa8feff8928d3267b9dee1b7ea708933bc3633590",
+    "segmented_sequence.py": "f0b078e72211c245267c22514a7b4202099a47cc42a5e9c8243bdd7b0dc473e9",
+    "task_store.py": "91fd0e4fe3ccc9b536a0acb0965c1553badc1f7b528407f6f0a507ba4b284964",
+    "workflow.py": "52eb0ccd9942b83588155ddb851c63c6fbea0f3122a0aa2a3029a2640cb6ce14"
+  },
+  "testSha256": {
+    "test_command_resources.py": "04834b652a69cb662d601574785244f52fff798834a325a30dde2b72cc45b40c",
+    "test_managed_command_revision.py": "b42a311a6d75c17a7ff4c0c7b93c73ce4f4dc007476e3ec84a5c1fc351f53c50",
+    "test_managed_command_delivery.py": "89d2450784a1e1a8eec72c4bfe4b6d866f6870e46ed432c986753c3aff262c3e"
+  },
+  "regressionLogSha256": "071a8a900b703dfdfff0e94b93a3fba005b0ce31a5994ecd99800171533e91a5",
+  "nativeCases": {
+    "commands": {
+      "taskId": "582bfd85ef7c446cb0265bb2c3d98eee",
+      "originalAndChildMode": "commands",
+      "runtimeSha256": "c1717eb87e5b57b3ed88c6a78047268a5afa566beb36104fdcc05dc8634a01c1",
+      "scope": "two bound PNG samples per version; cropped white title -> complete NOVA; orange badge moves left/right; imported translucent green logo retained",
+      "gates": {
+        "engineering": "PASS",
+        "technical": "PASS",
+        "creative": "PASS",
+        "userAcceptance": "NOT_RUN"
+      },
+      "accepted": false,
+      "roundsConsumed": 1,
+      "activeRevision": null,
+      "sharedResourceUsage": {
+        "frames": 4,
+        "decodedBytes": 245760,
+        "encodedBytes": 14122
+      },
+      "actualAttemptCount": 4,
+      "preservationSha256": "691e1c0c095226991a4d997c3fb6ce87ff56c74fc82163cc7f27b0d2265f9b2f",
+      "currentReviewSha256": "da7d3b0b29f7e4ebd71cb2bdf09f31ca1276a32360cce9608981332073fa955d",
+      "currentSourceRecheck": {
+        "status": "PASS",
+        "currentReviewScriptsMatch": true,
+        "nativeExecutionChangesSinceCreate": {
+          "resource_meter.py": [
+            "validate"
+          ]
+        },
+        "changeScope": "reject malformed dot-only media paths; current valid paths rechecked by current Store/read/resource validation and native/technical review",
+        "originalOutputAndRootPreserved": true
+      },
+      "nonTargetPixelRegions": [
+        {
+          "path": "title-0.png",
+          "region": [
+            24,
+            72,
+            36,
+            84
+          ],
+          "rgbaSha256": "a17734c4b1a16c86bf0802c88011cedea5176353ca4e73e86469cb286390070f",
+          "scope": "untouched animated orange badge at this bound time; does not assert equality where revised text composites with translucent logo"
+        },
+        {
+          "path": "title-1.png",
+          "region": [
+            124,
+            72,
+            136,
+            84
+          ],
+          "rgbaSha256": "a17734c4b1a16c86bf0802c88011cedea5176353ca4e73e86469cb286390070f",
+          "scope": "untouched animated orange badge at this bound time; does not assert equality where revised text composites with translucent logo"
+        }
+      ],
+      "publicRefusalGates": [
+        {
+          "case": "binding",
+          "expected": "revision_conflict",
+          "status": "PASS",
+          "noBudgetCharge": true,
+          "originalOutputPreserved": true
+        },
+        {
+          "case": "scope",
+          "expected": "revision_scope",
+          "status": "PASS",
+          "noBudgetCharge": true,
+          "originalOutputPreserved": true
+        },
+        {
+          "case": "parameters",
+          "expected": "revision_parameters",
+          "status": "PASS",
+          "noBudgetCharge": true,
+          "originalOutputPreserved": true
+        },
+        {
+          "case": "runtime",
+          "expected": "engineering_gate",
+          "status": "PASS",
+          "noBudgetCharge": true,
+          "originalOutputPreserved": true
+        },
+        {
+          "case": "resources",
+          "expected": "resource_budget_exceeded",
+          "status": "PASS",
+          "noBudgetCharge": true,
+          "originalOutputPreserved": true
+        },
+        {
+          "case": "rounds",
+          "expected": "revision_budget_exhausted",
+          "status": "PASS",
+          "noBudgetCharge": true,
+          "originalOutputPreserved": true
+        },
+        {
+          "case": "cancel",
+          "expected": "cancel_requested",
+          "status": "PASS",
+          "noBudgetCharge": true,
+          "originalOutputPreserved": true
+        },
+        {
+          "case": "deadline",
+          "expected": "deadline_exceeded",
+          "status": "PASS",
+          "noBudgetCharge": true,
+          "originalOutputPreserved": true
+        }
+      ],
+      "faultInjectedCases": [
+        "resources",
+        "rounds",
+        "cancel",
+        "deadline"
+      ],
+      "qaStateRestoredExactly": true
+    },
+    "desktop": {
+      "taskId": "ff6de0482e1e4111b83f899efc58c39c",
+      "originalAndChildMode": "desktop",
+      "runtimeSha256": "c1717eb87e5b57b3ed88c6a78047268a5afa566beb36104fdcc05dc8634a01c1",
+      "scope": "two bound PNG samples per version; cropped white title -> complete NOVA; orange badge moves left/right; imported translucent green logo retained",
+      "gates": {
+        "engineering": "PASS",
+        "technical": "PASS",
+        "creative": "PASS",
+        "userAcceptance": "NOT_RUN"
+      },
+      "accepted": false,
+      "roundsConsumed": 1,
+      "activeRevision": null,
+      "sharedResourceUsage": {
+        "frames": 4,
+        "decodedBytes": 245760,
+        "encodedBytes": 14122
+      },
+      "actualAttemptCount": 4,
+      "preservationSha256": "c9f32784aa9fd2887d7a35e96384346f9b32124053ce878cfbb937303b620937",
+      "currentReviewSha256": "9fdceba12879800140b094627a546e5c3903663bf994a75c7334e1913f40e444",
+      "currentSourceRecheck": {
+        "status": "PASS",
+        "currentReviewScriptsMatch": true,
+        "nativeExecutionChangesSinceCreate": {
+          "resource_meter.py": [
+            "validate"
+          ]
+        },
+        "changeScope": "reject malformed dot-only media paths; current valid paths rechecked by current Store/read/resource validation and native/technical review",
+        "originalOutputAndRootPreserved": true
+      },
+      "nonTargetPixelRegions": [
+        {
+          "path": "title-0.png",
+          "region": [
+            24,
+            72,
+            36,
+            84
+          ],
+          "rgbaSha256": "a17734c4b1a16c86bf0802c88011cedea5176353ca4e73e86469cb286390070f",
+          "scope": "untouched animated orange badge at this bound time; does not assert equality where revised text composites with translucent logo"
+        },
+        {
+          "path": "title-1.png",
+          "region": [
+            124,
+            72,
+            136,
+            84
+          ],
+          "rgbaSha256": "a17734c4b1a16c86bf0802c88011cedea5176353ca4e73e86469cb286390070f",
+          "scope": "untouched animated orange badge at this bound time; does not assert equality where revised text composites with translucent logo"
+        }
+      ],
+      "publicRefusalGates": [
+        {
+          "case": "binding",
+          "expected": "revision_conflict",
+          "status": "PASS",
+          "noBudgetCharge": true,
+          "originalOutputPreserved": true
+        },
+        {
+          "case": "scope",
+          "expected": "revision_scope",
+          "status": "PASS",
+          "noBudgetCharge": true,
+          "originalOutputPreserved": true
+        },
+        {
+          "case": "parameters",
+          "expected": "revision_parameters",
+          "status": "PASS",
+          "noBudgetCharge": true,
+          "originalOutputPreserved": true
+        },
+        {
+          "case": "runtime",
+          "expected": "engineering_gate",
+          "status": "PASS",
+          "noBudgetCharge": true,
+          "originalOutputPreserved": true
+        },
+        {
+          "case": "resources",
+          "expected": "resource_budget_exceeded",
+          "status": "PASS",
+          "noBudgetCharge": true,
+          "originalOutputPreserved": true
+        },
+        {
+          "case": "rounds",
+          "expected": "revision_budget_exhausted",
+          "status": "PASS",
+          "noBudgetCharge": true,
+          "originalOutputPreserved": true
+        },
+        {
+          "case": "cancel",
+          "expected": "cancel_requested",
+          "status": "PASS",
+          "noBudgetCharge": true,
+          "originalOutputPreserved": true
+        },
+        {
+          "case": "deadline",
+          "expected": "deadline_exceeded",
+          "status": "PASS",
+          "noBudgetCharge": true,
+          "originalOutputPreserved": true
+        }
+      ],
+      "faultInjectedCases": [
+        "resources",
+        "rounds",
+        "cancel",
+        "deadline"
+      ],
+      "qaStateRestoredExactly": true
+    }
+  },
+  "staticPropertyValidator": {
+    "status": "PASS",
+    "scope": "current source static prop.set branch; unit validation only, not native per-property acceptance",
+    "targets": [
+      {
+        "comp": 1,
+        "layer": 2,
+        "path": "transform/opacity",
+        "uid": 10
+      }
+    ],
+    "codeSha256": "dadd61cc50e30b43f753055892e5de84aab545dc110210b29b523e8fc80c576c"
+  },
+  "expiredUnknownDesktop": {
+    "taskId": "1807092a1b0d4bc6831b21825d635ead",
+    "diagnostic": "revision_outcome_unknown; missing failure receipt",
+    "currentPublicManagerReconcile": "PASS: keeps unknown and original occupation; no native calls",
+    "originalOutputsAndTwoSpentRoundsPreserved": true,
+    "sourceOfExecution": "current standalone managed.py public CLI; not installed-host model dispatch"
+  },
+  "reconciliation": "readonly resource/ancestry checking separated from execution admission; completed or proven-not-executed results can settle after expiry/cancel; no new native edits/install/render; original deadlines/cancel intent and spent attempts retained",
+  "open": [
+    "full9.3.6 other command/video/sequence resource modes and CPU/memory",
+    "remaining full9.3 crash/concurrency/guardian qualification",
+    "animated-target time/range revisions and per-command/GUI acceptance",
+    "new immutable installed host natural-language dispatch",
+    "other target platform native creation",
+    "full V1"
+  ]
+}
