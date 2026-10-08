@@ -17,12 +17,56 @@ def root():
     return Path.home()/'.local/share/craft-tasks/effectcraft-project-claims'
 
 
-def keys(source):
-    """同时绑定规范路径和文件对象，覆盖原位替换及硬链接别名。"""
+def creation_identity(path, info):
+    """读取创建代际；Linux固定文件描述符核对statx，不用ctime/mtime替代。"""
+    if hasattr(info,'st_birthtime_ns'):
+        value=info.st_birthtime_ns
+        return {'seconds':value//1000000000,'nanoseconds':value%1000000000}
+    if hasattr(info,'st_birthtime'):
+        # 部分Python平台只提供浮点birth time；精度不足只会保守冲突，不放行旧文件。
+        value=int(info.st_birthtime*1000000000)
+        return {'seconds':value//1000000000,'nanoseconds':value%1000000000}
+    import sys
+    if not sys.platform.startswith('linux'):raise ValueError('project_creation_identity_unavailable')
+    import ctypes
+    import struct
+    fd=None
+    try:
+        library=ctypes.CDLL(None,use_errno=True);statx=library.statx
+        statx.argtypes=[ctypes.c_int,ctypes.c_char_p,ctypes.c_int,ctypes.c_uint,ctypes.c_void_p]
+        statx.restype=ctypes.c_int
+        fd=os.open(path,os.O_RDONLY|getattr(os,'O_NOFOLLOW',0));opened=os.fstat(fd)
+        if (opened.st_dev,opened.st_ino)!=(info.st_dev,info.st_ino):raise ValueError('project_source_identity_changed')
+        buffer=ctypes.create_string_buffer(256)
+        # Linux UAPI statx固定前缀：BTIME=0x800、INO=0x100、AT_EMPTY_PATH=0x1000。
+        if statx(fd,b'',0x1000,0x900,buffer)!=0:raise ValueError('project_creation_identity_unavailable')
+        return parse_statx(buffer.raw,info)
+    except (OSError,AttributeError):raise ValueError('project_creation_identity_unavailable') from None
+    finally:
+        if fd is not None:os.close(fd)
+
+
+def parse_statx(data, info):
+    """校验Linux UAPI返回掩码、文件对象与纳秒字段，拒绝不支持的文件系统。"""
+    import struct
+    if len(data)!=256:raise ValueError('project_creation_identity_unavailable')
+    mask=struct.unpack_from('=I',data,0)[0]
+    inode=struct.unpack_from('=Q',data,32)[0]
+    seconds,nanoseconds=struct.unpack_from('=qI',data,80)
+    major,minor=struct.unpack_from('=II',data,136)
+    if (mask&0x900!=0x900 or inode!=info.st_ino
+            or (major,minor)!=(os.major(info.st_dev),os.minor(info.st_dev))
+            or not 0<=nanoseconds<1000000000):raise ValueError('project_creation_identity_unavailable')
+    return {'seconds':seconds,'nanoseconds':nanoseconds}
+
+
+def keys(source, legacy=False):
+    """绑定路径和文件创建代际，避免已删除文件的inode复用误占用新工程。"""
     path=Path(source).resolve();info=path.stat();tasks=load('task_store')
     if not info.st_ino:raise ValueError('project_source_identity_unavailable')
-    return sorted([tasks.digest({'path':os.path.normcase(str(path))}),
-                   tasks.digest({'device':info.st_dev,'inode':info.st_ino})])
+    identity={'device':info.st_dev,'inode':info.st_ino}
+    if not legacy:identity['creation']=creation_identity(path,info)
+    return sorted([tasks.digest({'path':os.path.normcase(str(path))}),tasks.digest(identity)])
 
 
 def read_claim(key):
@@ -71,11 +115,14 @@ def reserve(store,state):
     if directory.is_symlink():raise ValueError('project_claim_invalid')
     with load('platform_support').exclusive_lock(directory/'claims.lock'):
         resource_keys=keys(source)
+        # 旧无代际认领仍保守核对，绝不自动删除未知历史材料。
+        legacy_keys=keys(source,legacy=True)
         # 先完成所有原认领核对，失败不得替换另一把仍有效的认领。
-        for key in resource_keys:
+        for key in sorted(set(resource_keys+legacy_keys)):
             path=directory/(key+'.json')
             if path.exists() or path.is_symlink():check_previous(read_claim(key))
         nonce=uuid.uuid4().hex;owner=owner_identity(store,state)
+        state['projectClaimIdentity']='creation/v1'
         state['projectClaims']=[{'key':key,'nonce':nonce} for key in resource_keys]
         for key in resource_keys:
             load('task_store').atomic_json(directory/(key+'.json'),
@@ -91,7 +138,9 @@ def verify(store,state):
             or any(not isinstance(row,dict) or set(row)!={'key','nonce'}
                    or not isinstance(row['key'],str) or not isinstance(row['nonce'],str) for row in references)
             or len({row['key'] for row in references})!=2):raise ValueError('project_claim_invalid')
-    if sorted(row['key'] for row in references)!=keys(state['identity']['project']):raise ValueError('revision_conflict')
+    algorithm=state.get('projectClaimIdentity')
+    if algorithm not in (None,'creation/v1'):raise ValueError('project_claim_invalid')
+    if sorted(row['key'] for row in references)!=keys(state['identity']['project'],legacy=algorithm is None):raise ValueError('revision_conflict')
     owner=owner_identity(store,state)
     for row in references:
         value=read_claim(row['key'])

@@ -106,9 +106,10 @@ class RuntimeBindingTests(unittest.TestCase):
         suite=json.loads((ROOT/'skill-suite.json').read_text(encoding='utf-8'))
         for row in suite['skills']:
             name=row['name'];path=ROOT/'skills'/name/'scripts/managed.py'
-            with self.subTest(skill=name):
+            # 每项独立技能核验后释放本测试的冻结副本，避免同时保留15份导致ENOSPC。
+            with self.subTest(skill=name),tempfile.TemporaryDirectory(dir=self.root) as case:
                 spec=importlib.util.spec_from_file_location('independent_'+name,path);managed=importlib.util.module_from_spec(spec);spec.loader.exec_module(managed)
-                store=managed.load('task_store').Store(self.root/'standalone state'/name)
+                store=managed.load('task_store').Store(Path(case)/'standalone state'/name)
                 plan=json.loads((BASE/'examples/brand-intro.json').read_text(encoding='utf-8'))
                 with patch.object(managed,'supervise',side_effect=lambda s,t,h:s.read(t)):
                     state=managed.run(store,plan,self.root/'outputs'/name,self.home,task='registered')

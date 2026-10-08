@@ -32,7 +32,7 @@ class ManagedThreeModeNativeTests(unittest.TestCase):
         shutil.copytree(ROOT/'skills/effectcraft-use',skill,ignore=shutil.ignore_patterns('__pycache__','*.pyc'))
         for p in skill.rglob('*'):p.chmod(0o555 if p.is_dir() else 0o444)
         skill.chmod(0o555);original=inventory(skill)
-        runtime=base/'native runtime';env=dict(os.environ,CRAFT_RUNTIME_HOME=str(runtime),PATH='/opt/homebrew/bin:/usr/bin:/bin')
+        runtime=Path(os.environ.get('CRAFT_MANAGED_COMPOSITION_RUNTIME_HOME') or base/'native runtime');env=dict(os.environ,CRAFT_RUNTIME_HOME=str(runtime),PATH='/opt/homebrew/bin:/usr/bin:/bin')
         self.native_before=runtime.exists()
         self.assertIn('CRAFT_PYTHON_HOME',env,'verified isolated interpreter cache required')
         criteria=root/'criteria.json';criteria.write_text(json.dumps({'goal':'Technical interface composition; no creative acceptance claim'}))

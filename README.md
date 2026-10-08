@@ -2,12 +2,12 @@
 
 Create editable `.ecproj` projects, dependencies and media from text, graphics and footage. This is a development release; full V1 remains open. Published releases and local documentation candidates have separate evidence.
 
-Current source: `0.1.0-dev.57`; consuming plugin: `0.1.0-dev.59`; 15 independent skills.
+Current source: `0.1.0-dev.58`; consuming plugin: `0.1.0-dev.60`; 15 independent skills.
 
 | Field | Value |
 | --- | --- |
-| Metadata version | 0.1.0-dev.57 |
-| Skills source | effectcraft-skills / v0.1.0-dev.57 |
+| Metadata version | 0.1.0-dev.58 |
+| Skills source | effectcraft-skills / v0.1.0-dev.58 |
 | Acceptance | Development; full V1 OPEN |
 
 
@@ -89,3 +89,7 @@ Unpublished [source revision conflict protection](docs/evidence/source-revision-
 
 
 Unpublished [cross-store project claims](docs/evidence/shared-project-claims-candidate-20261009.json) coordinate source paths/file objects for new tasks. Missing, corrupt or unknown owners are not automatically cleared. Two real processes select only one owner; the native owner continues and saves/reopens after a competing store is rejected. Regression: 606 tests, 563 passed, 43 conditional skips; all 15 private resource copies match. GUI, complete sessions, parallel old runtimes and platform/host task9.3.2 gates remain open. Published snapshots are unchanged.
+
+Local inode-generation repair candidate: project claims bind creation time in addition to device/inode, distinguish recycled file numbers, preserve legacy unknown claims, and fail closed when creation identity is unavailable. [Candidate evidence](docs/evidence/project-creation-generation-candidate-20261009.json) records the exact source and validation scope. Published source57/plugin59 remain unchanged; task9.3.2, desktop in-memory conflict and full V1 remain open.
+
+Local desktop revision candidate: owned managed sessions persist project/editor context and atomically guard execute_command, batch, open/save and run_script. Unmapped helpers are refused before sending; confirmed read tools are checked again afterward. [Evidence](docs/evidence/desktop-native-revision-candidate-20261009.json) separates native mapping, owned desktop control edits and installed public-entry checks from model dispatch and physical GUI input. Old published snapshots remain unchanged; full9.3.2 and V1 remain open.

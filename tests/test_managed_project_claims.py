@@ -53,6 +53,53 @@ class ManagedProjectClaimTests(unittest.TestCase):
   with self.assertRaisesRegex(ValueError,'project_claim_invalid'):self.first.begin_step('one','edit',{})
   self.assertEqual(self.first.path('one').read_bytes(),before);self.assertEqual(paths[0].read_text(encoding='utf-8'),'{broken')
 
+ def test_reused_inode_with_distinct_creation_generation_does_not_steal_old_claim(self):
+  from types import SimpleNamespace
+  old=self.source.resolve();new=(self.root/'different-project.ecproj').resolve();new.write_bytes(b'new project')
+  stat=Path.stat
+  def identity_stat(path,*args,**kwargs):
+   result=stat(path,*args,**kwargs)
+   if path in (old,new):
+    fields={name:getattr(result,name) for name in dir(result) if name.startswith('st_')}
+    fields.update(st_dev=123,st_ino=456)
+    return SimpleNamespace(**fields)
+   return result
+  original=self.module.load
+  def loader(name):
+   value=original(name)
+   if name=='project_claims':
+    # 确定性重现两文件跨代际复用同一编号；不模拟认领器本身。
+    value.creation_identity=lambda path,info: {'seconds':1 if Path(path)==old else 2,'nanoseconds':0}
+   return value
+  with patch.object(self.module,'load',side_effect=loader),patch.object(Path,'stat',identity_stat):
+   self.create(self.first,'one');self.first.path('one').unlink()
+   before={p.name:p.read_bytes() for p in (self.root/'shared claims').glob('*.json')}
+   state=self.create(self.second,'two',new)
+   self.assertEqual(state['state'],'planned')
+   for name,data in before.items():self.assertEqual((self.root/'shared claims'/name).read_bytes(),data)
+
+
+ def legacy(self):
+  claims=self.module.load('project_claims');state=self.first.read('one');old_keys=claims.keys(self.source,legacy=True)
+  old_record=claims.read_claim(state['projectClaims'][0]['key']);nonce=old_record['nonce']
+  for row in state['projectClaims']:(claims.root()/(row['key']+'.json')).unlink()
+  state.pop('projectClaimIdentity');state['projectClaims']=[{'key':key,'nonce':nonce} for key in old_keys]
+  for key in old_keys:
+   record=dict(old_record,key=key);self.module.atomic_json(claims.root()/(key+'.json'),record)
+  self.first.save(state)
+ def test_legacy_task_keeps_original_inode_binding_without_migration(self):
+  self.create(self.first,'one');self.legacy();self.first.start('one')
+  operation=self.first.begin_step('one','edit',{});self.first.finish_step('one',operation,{})
+  self.assertNotIn('projectClaimIdentity',self.first.read('one'))
+ def test_legacy_unknown_claim_is_preserved_and_blocks_new_hardlink_task(self):
+  self.create(self.first,'one');self.legacy();self.first.path('one').unlink();alias=self.root/'alias'
+  try:os.link(self.source,alias)
+  except OSError:self.skipTest('hardlink unavailable')
+  before={p.name:p.read_bytes() for p in (self.root/'shared claims').glob('*.json')}
+  with self.assertRaisesRegex(ValueError,'project_claim_owner_unconfirmed'):self.create(self.second,'two',alias)
+  self.assertEqual(before,{p.name:p.read_bytes() for p in (self.root/'shared claims').glob('*.json')})
+
+
  def test_two_real_processes_cannot_both_acquire_the_project(self):
   import subprocess,sys,time
   code=r'''

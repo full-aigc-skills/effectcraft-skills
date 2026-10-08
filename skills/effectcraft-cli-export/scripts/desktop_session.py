@@ -68,12 +68,7 @@ def run(plan,output,runtime_home=None,inputs=None,task_hooks=None):
   def factory(argv):
    session=OwnedSession(argv,desktop,commands.DOMAIN,output,port,token);sessions.append(session)
    if task_hooks:
-    original=session.request
-    def request(method,params):
-     if method!='tools/call':return original(method,params)
-     identifier=task_hooks.before(params.get('name',method),params)
-     result=original(method,params);task_hooks.after(identifier,commands.parse_reply(result,receipt_only=True));return result
-    session.request=request
+    session.request=load('desktop_revision').Guard(task_hooks,session.request).request
    return session
   interrupted=False
   try:
