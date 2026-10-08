@@ -229,7 +229,8 @@ class Store:
                      'budget':{'maxRevisions':2, 'revisions':0, 'stagnant':0},
                      'steps':[], 'worker':None, 'delivery':None, 'review':None}
             if not parent:state['resources']=load('resource_budget').empty()
-            return self.save(state)
+            with load('project_claims').reserve(self,state):
+                return self.save(state)
 
     def lineage(self, state):
         """只读核对完整父链；所有根预算查询共用循环检测。"""
@@ -266,6 +267,19 @@ class Store:
         for item in lineage:load('resource_budget').check_reference(item,lineage[-1]['resources'])
         load('resource_budget').check_family(self,lineage[-1])
 
+    def check_source_revision(self, state):
+        """每次新操作与交付前核对源工程；外部变化、丢失或链接替换均拒绝。"""
+        source = state['identity']['project']
+        if source is None:
+            return
+        try:
+            actual = file_sha(source)
+        except (ValueError, OSError):
+            raise ValueError('revision_conflict') from None
+        if actual != state['identity']['projectRevision']:
+            raise ValueError('revision_conflict')
+        load('project_claims').verify(self,state)
+
     def start(self, task):
         with self.lock():
             state = self.read(task); self.allowed(state)
@@ -279,9 +293,7 @@ class Store:
                     raise ValueError('reconciliation_required')
             elif state['state'] != 'planned' or state['steps']:
                 raise ValueError('reconciliation_required')
-            source = state['identity']['project']
-            if source and file_sha(source) != state['identity']['projectRevision']:
-                raise ValueError('revision_conflict')
+            self.check_source_revision(state)
             state['state'] = 'running'
             if state.get('worker'):state.setdefault('workerHistory',[]).append(state['worker'])
             state['worker'] = {'pid':os.getpid(), 'nonce':uuid.uuid4().hex}
@@ -294,6 +306,7 @@ class Store:
                 raise ValueError('state_conflict')
             if any(s['state'] == 'attempted' for s in state['steps']):
                 raise ValueError('unresolved_operation')
+            self.check_source_revision(state)
             step = {'id':uuid.uuid4().hex, 'operation':operation, 'argumentsHash':digest(arguments),
                     'state':'attempted', 'attemptedAt':time.time()}
             state['steps'].append(step); self.save(state)
@@ -363,6 +376,7 @@ class Store:
             state = self.read(task); self.allowed(state)
             if state['state'] != 'running' or any(s['state'] != 'succeeded' for s in state['steps']):
                 raise ValueError('unresolved_operation')
+            self.check_source_revision(state)
             state.update(state='review_ready', delivery=manifest)
             return self.save(state)
 

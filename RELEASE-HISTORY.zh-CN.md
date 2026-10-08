@@ -1,5 +1,11 @@
 # 版本绑定的历史发行记录
 
+## dev.57 — 2026-10-09
+
+源工程在启动、逐操作及交付前核对版本；用户级路径与文件身份认领防止新任务跨账本绕过占用。保留原生组件证据及失败关闭边界。桌面内存版本保护尚未实现，失败测试保留本地且不进入发行。任务9.3.2及完整V1保持开放，共70项未完成。插件dev.59消费此固定快照。
+
+Source revision checks and shared project ownership across state roots. Desktop in-memory revision protection remains unimplemented and excluded; full V1 remains open.
+
 ## dev.56 — 2026-10-09
 
 修正新增派发测试在Windows cp1252下读取中文技能清单失败：显式UTF-8，不修改技能运行载荷。替代source55／plugin57发行配对，保留旧标签与失败CI。完整V1仍有70项开放。

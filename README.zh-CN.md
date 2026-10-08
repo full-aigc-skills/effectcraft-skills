@@ -2,12 +2,12 @@
 
 从文字、图形和素材创建可编辑 `.ecproj` 工程、依赖和媒体。当前为开发版，完整 V1 未完成；已发布版本与本地文档候选分别记录。
 
-当前技能源：`0.1.0-dev.56`；消费插件：`0.1.0-dev.58`；15 个独立技能。
+当前技能源：`0.1.0-dev.57`；消费插件：`0.1.0-dev.59`；15 个独立技能。
 
 | Field | Value |
 | --- | --- |
-| Metadata version | 0.1.0-dev.56 |
-| Skills source | effectcraft-skills / v0.1.0-dev.56 |
+| Metadata version | 0.1.0-dev.57 |
+| Skills source | effectcraft-skills / v0.1.0-dev.57 |
 | Acceptance | Development; full V1 OPEN |
 
 
@@ -83,3 +83,9 @@ dev.55 技能源／dev.57 插件分发 [默认受管理派发验收](docs/eviden
 
 
 source56／plugin58修正新增测试的Windows默认编码依赖，显式读取UTF-8；source55的Windows失败CI与原标签保留。技能执行载荷不变，此修正不新增原生或宿主验收。
+
+
+未发布的[运行期源工程冲突保护](docs/evidence/source-revision-conflict-candidate-20261009.json)：逐操作登记前和最终交付前复核源工程版本，外部保存后拒绝下一编辑，保全用户新版本和既有回执。595项回归553通过／42条件跳过，另独立原生保存冲突案例通过；9.3.2完整GUI／会话／跨状态根范围仍开放，插件固定source56／plugin58不变。
+
+
+未发布的[跨账本工程认领](docs/evidence/shared-project-claims-candidate-20261009.json)为新任务共享源工程路径／文件对象占用，原账本缺失、损坏或unknown时不自动转交。两个真实进程并发仅一方获认领；原生持有者保全并继续保存重开通过。606项回归563通过／43条件跳过，15技能资源一致；9.3.2的GUI、完整会话、旧运行时并行及平台／宿主范围仍开放，发布快照不变。

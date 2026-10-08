@@ -2,12 +2,12 @@
 
 Create editable `.ecproj` projects, dependencies and media from text, graphics and footage. This is a development release; full V1 remains open. Published releases and local documentation candidates have separate evidence.
 
-Current source: `0.1.0-dev.56`; consuming plugin: `0.1.0-dev.58`; 15 independent skills.
+Current source: `0.1.0-dev.57`; consuming plugin: `0.1.0-dev.59`; 15 independent skills.
 
 | Field | Value |
 | --- | --- |
-| Metadata version | 0.1.0-dev.56 |
-| Skills source | effectcraft-skills / v0.1.0-dev.56 |
+| Metadata version | 0.1.0-dev.57 |
+| Skills source | effectcraft-skills / v0.1.0-dev.57 |
 | Acceptance | Development; full V1 OPEN |
 
 
@@ -83,3 +83,9 @@ Source dev.55 / plugin dev.57 distribute [default managed routing](docs/evidence
 
 
 Source56/plugin58 fix Windows default-encoding dependence in the new routing tests by reading UTF-8 explicitly. Source55 failed Windows CI and original tags are retained. Skill execution payloads are unchanged; no new native or host acceptance is claimed.
+
+
+Unpublished [source revision conflict protection](docs/evidence/source-revision-conflict-candidate-20261009.json) rechecks the source before each operation intent and final delivery. An external native save blocks the next edit while preserving the new source and existing receipts. Regression: 595 tests, 553 passed, 42 conditional skips; the explicit native save-conflict case also passes. Full task9.3.2 GUI/session/cross-state-root gates remain open; published source56/plugin58 snapshots are unchanged.
+
+
+Unpublished [cross-store project claims](docs/evidence/shared-project-claims-candidate-20261009.json) coordinate source paths/file objects for new tasks. Missing, corrupt or unknown owners are not automatically cleared. Two real processes select only one owner; the native owner continues and saves/reopens after a competing store is rejected. Regression: 606 tests, 563 passed, 43 conditional skips; all 15 private resource copies match. GUI, complete sessions, parallel old runtimes and platform/host task9.3.2 gates remain open. Published snapshots are unchanged.
