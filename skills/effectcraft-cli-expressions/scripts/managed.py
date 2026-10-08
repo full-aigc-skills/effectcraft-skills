@@ -320,6 +320,10 @@ def review(store, task, criteria, judge=None):
 
 
 def main():
+    # 固定重定向输出编码，Windows默认代码页也能返回中文帮助和回执。
+    import sys
+    for stream in (sys.stdout,sys.stderr):
+        if hasattr(stream,"reconfigure"):stream.reconfigure(encoding="utf-8")
     parser=argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--runtime-home',type=Path,default=Path(os.environ.get('CRAFT_RUNTIME_HOME',str(Path.home()/'.local/share/craft-runtimes'))))
     parser.add_argument('--state-root',type=Path,default=Path(os.environ.get('CRAFT_STATE_HOME',str(Path.home()/'.local/share/craft-tasks/effectcraft'))))

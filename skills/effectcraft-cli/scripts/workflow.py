@@ -411,6 +411,10 @@ def _finish_export(context, task_hooks=None, export_operation=None):
     return manifest
 
 def main():
+    # 固定重定向输出编码，Windows默认代码页也能返回中文帮助和回执。
+    import sys
+    for stream in (sys.stdout,sys.stderr):
+        if hasattr(stream,"reconfigure"):stream.reconfigure(encoding="utf-8")
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('plan', type=Path)
     parser.add_argument('--output', required=True, type=Path)

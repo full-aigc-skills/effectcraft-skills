@@ -211,6 +211,10 @@ def render_segments(cli, project, composition, output, chunk_bytes=CHUNK_BYTES, 
 
 
 def main():
+    # 固定重定向输出编码，Windows默认代码页也能返回中文帮助和回执。
+    import sys
+    for stream in (sys.stdout,sys.stderr):
+        if hasattr(stream,"reconfigure"):stream.reconfigure(encoding="utf-8")
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--project', type=Path, required=True)
     parser.add_argument('--composition', type=Path, required=True)

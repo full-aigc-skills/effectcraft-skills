@@ -360,6 +360,10 @@ def execute(plan, output, runtime_home=None, mode="headless", connect=None, toke
     return receipt
 
 def main():
+    # 固定重定向输出编码，Windows默认代码页也能返回中文帮助和回执。
+    import sys
+    for stream in (sys.stdout,sys.stderr):
+        if hasattr(stream,"reconfigure"):stream.reconfigure(encoding="utf-8")
     parser = argparse.ArgumentParser(description=__doc__)
     sub = parser.add_subparsers(dest="action", required=True)
     listing = sub.add_parser("list"); listing.add_argument("--filter", default=""); listing.add_argument("--tools", action="store_true"); listing.add_argument("--mode", choices=["headless", "bridge"], default="headless")

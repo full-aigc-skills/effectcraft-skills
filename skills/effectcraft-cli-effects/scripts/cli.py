@@ -13,6 +13,10 @@ def setup_failure(runtime_home):
  """安装器缺失时也保留当前技能自身的恢复位置，不读取兄弟技能。"""
  return {'skill':'effectcraft-cli-setup','bootstrapScript':str(Path(__file__).with_name('bootstrap.py').resolve()),'runtimeHome':str(Path(runtime_home).expanduser().absolute()),'automaticRetry':False}
 def main():
+ # 固定重定向输出编码，Windows默认代码页也能返回中文帮助和回执。
+ import sys
+ for stream in (sys.stdout,sys.stderr):
+     if hasattr(stream,"reconfigure"):stream.reconfigure(encoding="utf-8")
  parser=argparse.ArgumentParser(description=__doc__)
  parser.add_argument('--runtime-home',default=os.environ.get('CRAFT_RUNTIME_HOME',str(Path.home()/'.local/share/craft-runtimes')))
  parser.add_argument('--archive',type=Path)

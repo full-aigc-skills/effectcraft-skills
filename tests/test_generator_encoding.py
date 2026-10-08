@@ -6,12 +6,20 @@ import unittest
 import importlib.util
 import json
 import tempfile
+import subprocess
 from unittest.mock import patch
 
 ROOT=Path(__file__).resolve().parents[1]
 
 
 class GeneratorEncodingTests(unittest.TestCase):
+    def test_cli_help_survives_redirected_windows_codepage(self):
+        script=ROOT/'skills/effectcraft-use/scripts/cli.py'
+        code="import sys,runpy;sys.stdout.reconfigure(encoding='cp1252');sys.stderr.reconfigure(encoding='cp1252');runpy.run_path(sys.argv.pop(1),run_name='__main__')"
+        result=subprocess.run([sys.executable,'-I','-B','-c',code,str(script),'--help'],capture_output=True)
+        self.assertEqual(result.returncode,0,result.stderr.decode('utf-8',errors='replace'))
+        self.assertIn('独立技能',result.stdout.decode('utf-8'))
+
     def test_runtime_contract_and_unicode_receipt_use_utf8(self):
         read=Path.read_text;write=Path.write_text
         def windows_read(path,encoding=None,errors=None,**kwargs):

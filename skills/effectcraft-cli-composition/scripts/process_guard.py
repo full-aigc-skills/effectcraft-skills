@@ -134,6 +134,10 @@ def guard(command,receipt,lease,grace=2):
 
 
 def main():
+    # 固定重定向输出编码，Windows默认代码页也能返回中文帮助和回执。
+    import sys
+    for stream in (sys.stdout,sys.stderr):
+        if hasattr(stream,"reconfigure"):stream.reconfigure(encoding="utf-8")
     if len(sys.argv)>1 and sys.argv[1]=='_gate':
         if sys.stdin.buffer.read(1)!=b'G':return 1
         child=subprocess.Popen(sys.argv[2:],stdin=subprocess.DEVNULL)

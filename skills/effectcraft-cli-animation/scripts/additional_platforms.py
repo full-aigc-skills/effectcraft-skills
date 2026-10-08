@@ -78,6 +78,10 @@ class Handler(SimpleHTTPRequestHandler):
         super().end_headers()
 
 def main():
+    # 固定重定向输出编码，Windows默认代码页也能返回中文帮助和回执。
+    import sys
+    for stream in (sys.stdout,sys.stderr):
+        if hasattr(stream,"reconfigure"):stream.reconfigure(encoding="utf-8")
     p=argparse.ArgumentParser(description=__doc__);p.add_argument('action',choices=['web-install','web-serve','freebsd-build'])
     p.add_argument('--runtime-home',type=Path,default=Path.home()/'.local/share/craft-runtimes');p.add_argument('--archive',type=Path);p.add_argument('--port',type=int,default=0);args=p.parse_args()
     if args.action=='freebsd-build':print(json.dumps(build_freebsd(args.runtime_home,args.archive)));return

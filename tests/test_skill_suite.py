@@ -22,7 +22,7 @@ class SkillSuiteTests(unittest.TestCase):
   for name in names:
    with tempfile.TemporaryDirectory() as temporary:
     isolated=Path(temporary)/'only-skill';shutil.copytree(ROOT/'skills'/name,isolated,ignore=shutil.ignore_patterns('__pycache__'))
-    result=subprocess.run([sys.executable,'-I','-B',str(isolated/'scripts/cli.py'),'--help'],capture_output=True,text=True)
+    result=subprocess.run([sys.executable,'-I','-B',str(isolated/'scripts/cli.py'),'--help'],capture_output=True,text=True,encoding="utf-8")
     self.assertEqual(result.returncode,0,result.stderr)
     self.assertFalse(any(isolated.rglob('*.pyc')))
  def test_unknown_command_is_refused_before_installation(self):
@@ -31,7 +31,7 @@ class SkillSuiteTests(unittest.TestCase):
    with tempfile.TemporaryDirectory() as temporary:
     isolated=Path(temporary)/'only-skill';shutil.copytree(ROOT/'skills'/entry['name'],isolated,ignore=shutil.ignore_patterns('__pycache__'))
     runtime=Path(temporary)/'runtime'
-    result=subprocess.run([sys.executable,'-I','-B',str(isolated/'scripts/cli.py'),'--runtime-home',str(runtime),'--','invented-subcommand'],capture_output=True,text=True)
+    result=subprocess.run([sys.executable,'-I','-B',str(isolated/'scripts/cli.py'),'--runtime-home',str(runtime),'--','invented-subcommand'],capture_output=True,text=True,encoding="utf-8")
     self.assertNotEqual(result.returncode,0)
     self.assertFalse(runtime.exists())
 
@@ -46,7 +46,7 @@ class SkillSuiteTests(unittest.TestCase):
      {'command':'layer.newSolid','params':{}},
      {'command':'effect.apply','params':{'effect':'Gaussian Blur','blurriness':12}}]}))
     result=subprocess.run([sys.executable,'-I','-B',str(isolated/'scripts/workflow.py'),str(plan),
-     '--output',str(root/'output'),'--runtime-home',str(root/'runtime')],capture_output=True,text=True,timeout=30)
+     '--output',str(root/'output'),'--runtime-home',str(root/'runtime')],capture_output=True,text=True,encoding="utf-8",timeout=30)
     self.assertEqual(result.returncode,1,result.stdout+result.stderr)
     self.assertIn('unsupported_mapping: effect.apply',json.loads(result.stdout)['error'])
     self.assertFalse((root/'runtime').exists());self.assertFalse((root/'output').exists())
@@ -61,7 +61,7 @@ class LiveSkillSuiteTests(unittest.TestCase):
    with self.subTest(skill=entry['name']),tempfile.TemporaryDirectory() as temporary:
     isolated=Path(temporary)/'only-skill';shutil.copytree(ROOT/'skills'/entry['name'],isolated,ignore=shutil.ignore_patterns('__pycache__'))
     def run(*args):
-     result=subprocess.run([sys.executable,'-I','-B',str(isolated/'scripts/cli.py'),'--runtime-home',str(runtime),'--',*args],capture_output=True,text=True,timeout=600)
+     result=subprocess.run([sys.executable,'-I','-B',str(isolated/'scripts/cli.py'),'--runtime-home',str(runtime),'--',*args],capture_output=True,text=True,encoding="utf-8",timeout=600)
      self.assertEqual(result.returncode,0,result.stdout+result.stderr);return result.stdout
     version=run('--version');self.assertIn('0.1.0-dev.7' if domain=='artcraft' else '0.4.0',version)
     if domain=='artcraft':

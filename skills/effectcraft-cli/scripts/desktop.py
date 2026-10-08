@@ -99,6 +99,10 @@ def install(lock,runtime_home,archive=None,platform_key=None):
   return {k:v for k,v in actual.items() if k!='files'}|{'reused':False,'scope':'signed app installation only; launch/GUI acceptance separate'}
 
 def main():
+ # 固定重定向输出编码，Windows默认代码页也能返回中文帮助和回执。
+ import sys
+ for stream in (sys.stdout,sys.stderr):
+     if hasattr(stream,"reconfigure"):stream.reconfigure(encoding="utf-8")
  parser=argparse.ArgumentParser(description=__doc__);parser.add_argument('command',choices=['install','run']);parser.add_argument('plan',nargs='?',type=Path);parser.add_argument('--output',type=Path);parser.add_argument('--input',action='append',default=[]);parser.add_argument('--runtime-home',type=Path,default=Path.home()/'.local/share/craft-runtimes');parser.add_argument('--archive',type=Path,help='可选固定本地DMG；仍执行全部摘要校验');args=parser.parse_args();lock=json.loads(Path(__file__).with_name('desktop.lock.json').read_text(encoding='utf-8'))
  try:
   if args.command=='install':
