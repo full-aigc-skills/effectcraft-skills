@@ -15,6 +15,22 @@ class PowerShellEntryTests(unittest.TestCase):
         r=subprocess.run([ENGINE,'-NoProfile','-NonInteractive','-EncodedCommand',base64.b64encode(code.encode('utf-16le')).decode()],capture_output=True,timeout=40)
         self.assertEqual(r.returncode,0,r.stderr.decode('utf-8',errors='replace'));return r.stdout.decode('utf-8-sig')
 
+    def test_missing_entry_text_has_stable_bound_diagnostic(self):
+        source=base64.b64encode(str(ROOT/'task_entry.ps1').encode()).decode()
+        code="""$ErrorActionPreference='Stop';$tokens=$null;$errors=$null
+$source=[Text.Encoding]::UTF8.GetString([Convert]::FromBase64String('SOURCE'))
+$ast=[Management.Automation.Language.Parser]::ParseFile($source,[ref]$tokens,[ref]$errors)
+foreach($name in @('Fail-Entry','Read-EntryText')){
+ $fn=$ast.FindAll({param($n) $n -is [Management.Automation.Language.FunctionDefinitionAst]},$true)|Where-Object {$_.Name -eq $name}
+ Invoke-Expression $fn.Extent.Text
+}
+$missing=Join-Path ([IO.Path]::GetTempPath()) ([Guid]::NewGuid().ToString()+'.tsv')
+$reason='';try{Read-EntryText $missing 16384}catch{$reason=$_.Exception.Message}
+if($reason -notlike 'bound_entry_invalid:*'){throw ('unexpected diagnostic: '+$reason)}
+if(Test-Path -LiteralPath $missing){throw 'missing entry was created'}
+""".replace('SOURCE',source)
+        self.run_ps(code)
+
     def test_launcher_and_selector_parse_without_syntax_errors(self):
         for name in ('launch.ps1','task_entry.ps1'):
             encoded=base64.b64encode(str(ROOT/name).encode()).decode()

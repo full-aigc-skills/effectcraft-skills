@@ -1,10 +1,10 @@
 # EffectCraft 独立技能
 
-开发版技能源 dev.49／插件 dev.51：旧 v2 任务在准备当前 Python 前校验并派发原解释器；受管理入口支持 CRAFT_RUNTIME_ARCHIVE 离线原生制品。macOS 原生重开与完整解码通过，真实 Windows、固定宿主及完整 V1 待验收。 [Evidence](docs/evidence/release-readiness-20261009.json).
+开发版技能源 dev.50／插件 dev.52：旧 v2 任务在准备当前 Python 前校验并派发原解释器；受管理入口支持 CRAFT_RUNTIME_ARCHIVE 离线原生制品。macOS 原生重开与完整解码通过，真实 Windows、固定宿主及完整 V1 待验收。 [Evidence](docs/evidence/release-readiness-source50-20261009.json).
 
 文字、图形与镜头需求进入，交付可编辑 `.ecproj`、依赖素材和渲染结果。
 
-当前技能源：`0.1.0-dev.49`；消费插件：`0.1.0-dev.51`；15 个独立技能。
+当前技能源：`0.1.0-dev.50`；消费插件：`0.1.0-dev.52`；15 个独立技能。
 
 已验证首次使用平台：macOS arm64、Python 3.11+。固定运行时安装在用户数据目录，技能文件保留在宿主加载目录。当前为开发版本；完整首版验收及通用 Skills CLI 实际安装仍未完成。
 

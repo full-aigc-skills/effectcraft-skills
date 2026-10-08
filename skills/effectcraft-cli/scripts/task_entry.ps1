@@ -2,7 +2,8 @@
 $ErrorActionPreference='Stop'
 function Fail-Entry([string]$reason) { throw "bound_entry_invalid: $reason" }
 function Read-EntryText([string]$path,[long]$limit) {
-    $item=Get-Item -LiteralPath $path
+    try { $item=Get-Item -LiteralPath $path -ErrorAction Stop }
+    catch { Fail-Entry 'file_unavailable' }
     if ($item.PSIsContainer -or ($item.Attributes -band [IO.FileAttributes]::ReparsePoint) -or $item.Length -gt $limit) { Fail-Entry 'file' }
     return [Text.UTF8Encoding]::new($false,$true).GetString([IO.File]::ReadAllBytes($path))
 }
@@ -56,7 +57,8 @@ if ($expect -or $task -cnotmatch '^[a-zA-Z0-9][a-zA-Z0-9_-]{0,95}$') {Fail-Entry
 if ($state.StartsWith('~/') -or $state.StartsWith('~\')) {$state=Join-Path $env:USERPROFILE $state.Substring(2)}
 $state=[IO.Path]::GetFullPath($state);$taskRoot=Join-Path (Join-Path $state 'tasks') $task;$execution=Join-Path $taskRoot 'execution'
 foreach ($path in @($state,(Join-Path $state 'tasks'),$taskRoot,$execution)) {
-    $item=Get-Item -LiteralPath $path
+    try { $item=Get-Item -LiteralPath $path -ErrorAction Stop }
+    catch { Fail-Entry 'file_unavailable' }
     if (-not $item.PSIsContainer -or ($item.Attributes -band [IO.FileAttributes]::ReparsePoint)) {Fail-Entry 'symlink'}
 }
 $identity=(Read-EntryText (Join-Path $execution 'identity.json') 16777216).TrimEnd("`n")

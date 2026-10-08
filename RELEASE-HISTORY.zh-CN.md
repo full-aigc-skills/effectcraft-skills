@@ -1,5 +1,12 @@
 # 版本绑定的历史发行记录
 
+## dev.50 — 2026-10-09
+
+修正 Windows PowerShell 启动描述缺失时的稳定 bound_entry_invalid 诊断；失败仍拒绝执行、不创建材料、不准备当前 Python。source dev.49 的 Windows CI 失败记录保留，由 source dev.50／plugin dev.52 替代；原发布标签及归档不改写。完整 V1、其他原生平台及宿主验收仍开放。
+
+Fix stable PowerShell missing-entry diagnostics; execution remains fail-closed. Supersedes source dev.49 / plugin dev.51 without rewriting their tags or archives. Full V1 remains open.
+
+
 ## dev.49 — 2026-10-09
 
 技能源 dev.49／插件 dev.51：可信 v2 任务在当前 Python 安装前选择并校验原解释器；新增 CRAFT_RUNTIME_ARCHIVE 离线制品连接，显式参数优先，失败不回落联网。旧 v1 仍可检查，不自动重放。macOS 原生工程重开与完整解码已复核；Windows 原生、固定宿主及完整 V1 保持开放。
