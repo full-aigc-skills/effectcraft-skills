@@ -65,7 +65,21 @@ class WindowsJob:
 
 def group_alive(group):
     """僵尸不再执行或写入；查询失败不能被当作进程已停止。"""
-    result=subprocess.run(['ps','-axo','pgid=,stat='],capture_output=True,text=True,timeout=5)
+    if type(group) is not int or group<=0:raise ValueError('owned_process_group_invalid')
+    try:
+        # 本任务租约内的原进程组；信号0只探测存在性，不发送停止信号。
+        os.killpg(group,0)
+    except ProcessLookupError:
+        return False
+    except PermissionError:
+        # macOS对僵尸组也可能返回EPERM；此时仍须取得有效成员证据。
+        pass
+    except OSError as error:
+        raise ValueError('process_tree_inspection_failed') from error
+    try:
+        result=subprocess.run(['ps','-axo','pgid=,stat='],capture_output=True,text=True,timeout=5)
+    except (OSError,subprocess.SubprocessError,UnicodeError) as error:
+        raise ValueError('process_tree_inspection_failed') from error
     if result.returncode:raise ValueError('process_tree_inspection_failed')
     for line in result.stdout.splitlines():
         fields=line.split()
@@ -75,6 +89,7 @@ def group_alive(group):
 
 def guard(command,receipt,lease,grace=2):
     """持有生命周期锁直到整个自有组停止；stdin EOF 请求取消。"""
+    if os.name!='nt':return load('posix_group_lease').guard(command,receipt,lease,grace,group_alive)
     closed=threading.Event()
     def watch():
         os.read(sys.stdin.fileno(),1);closed.set()
@@ -138,6 +153,8 @@ def main():
     import sys
     for stream in (sys.stdout,sys.stderr):
         if hasattr(stream,"reconfigure"):stream.reconfigure(encoding="utf-8")
+    if len(sys.argv)>1 and sys.argv[1]=='_posix_gate':
+        return load('posix_group_lease').gate(int(sys.argv[2]),sys.argv[3],sys.argv[4:])
     if len(sys.argv)>1 and sys.argv[1]=='_gate':
         if sys.stdin.buffer.read(1)!=b'G':return 1
         child=subprocess.Popen(sys.argv[2:],stdin=subprocess.DEVNULL)

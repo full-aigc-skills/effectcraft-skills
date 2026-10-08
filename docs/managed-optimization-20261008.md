@@ -442,3 +442,49 @@ flowchart LR
   E -->|"不一致"| G
   F --> H["返回原退出状态，不回落安装"]
 ```
+
+## 禁止进程枚举的沙箱与空组核对
+
+未发布候选以本任务生命周期租约和原自有进程组为边界：信号0仅核对存在性，明确不存在时保存真实退出码；组存在或内核返回EPERM时仍查询成员。有效枚举可区分活动成员与僵尸；权限及枚举都无法取得有效证据时继续unknown。当前macOS真实沙箱及后代清理通过，旧unknown任务93文件保全且reconcile仍拒绝。10项目标／516项回归（478通过、38条件跳过）通过；Windows／其他POSIX原生目标、固定宿主及完整V1仍开放。[组件证据](evidence/process-group-probe-candidate-20261009.json)。
+
+```mermaid
+flowchart TD
+    A[持有任务生命周期租约] --> B[原自有进程组的内核信号0探测]
+    B -->|明确不存在| C[记录stopped与真实退出码]
+    B -->|存在或EPERM| D[核对进程组成员]
+    D -->|无活动成员| C
+    D -->|仍有活动成员| E[有界清理自有组并重新核对]
+    D -->|无法核对| F[保留unknown与现场]
+    F --> G[拒绝自动续写或重放]
+```
+
+## 15个单技能只读离线验收
+
+任务9.5.1在macOS arm64完成：15个只含一个技能的安装目录，全部包含空格且只读；操作系统禁止联网、读取开发工作区和执行系统Python，公开run/review均通过，原生工程重开及每例320×180／12fps／1秒的12帧视频实际解码通过。安装文件内容及只读模式不变，最终15份内容均匹配当前技能源，所有任务生命周期均stopped且未残留CLI进程。
+
+首次从空Python和原生缓存消费已备官方归档，后续14例复用同一用户运行时缓存；不是15次冷安装。ffmpeg／ffprobe已预备，未验证自动安装这两项媒体工具。创作评价及用户接受仍NOT_RUN；领域代表任务／FilmCraft透明交接9.5.2、其他平台资格9.1.2、固定宿主及V1保持开放。当前候选尚未发布，也未运行候选CI。[证据](evidence/independent-offline15-candidate-20261009.json)。
+
+## POSIX 进程组归属发布 dev.51／plugin dev.53
+
+开发版技能源 dev.51／插件 dev.53：POSIX 私有进程组归属及 nonce 绑定业务结果覆盖守护器丢失、孤儿后代和强制取消。当前回归及离线安装副本证据见 [发布验证](evidence/group-ownership-release51-20261009.json)。下方历史检查点保留原摘要；跨平台原生、固定宿主、创作验收及完整 V1 仍开放。
+
+```mermaid
+sequenceDiagram
+  participant S as Supervisor
+  participant G as Guardian
+  participant A as POSIX group holder
+  participant W as Business worker
+  S->>G: Private control lease
+  G->>A: Open control + anonymous result pipe
+  A->>W: Execute in owned group
+  W-->>A: Actual business exit
+  A-->>G: Versioned nonce-bound result
+  G->>A: Drain descendants while ownership held
+  alt Guardian disappears
+    A->>A: Control EOF stops own group
+  else Forced cancel without business receipt
+    G-->>S: Confirm stopped, negative executor exit, unverified business
+  else Result and group stop verified
+    G-->>S: Actual business exit + stopped receipt
+  end
+```

@@ -1,0 +1,113 @@
+{
+  "schema": "effectcraft-process-group-probe-component/v1",
+  "date": "2026-10-09",
+  "status": "bounded-macOS-component-PASS",
+  "requirement": "EC-TX-005",
+  "completedComponentTask": "9.30",
+  "sourceBase": {
+    "tag": "v0.1.0-dev.50",
+    "sha": "a2ddbea666856db31b3f9b05396579d802b78d87"
+  },
+  "pluginBase": {
+    "tag": "v0.1.0-dev.52",
+    "sha": "c677c2e8570734fd5c240f184c91d4b865e09a03"
+  },
+  "candidatePublished": false,
+  "implementationSha256": {
+    "additional_platforms.py": "1a4ffc9f04e240374269a9869d0383f9f833082cf066203fddba117f247f48d9",
+    "bootstrap.py": "1eca0f59586609ae4314c77b4d5adb3886fe5443178fb2b300abb25cb75ae99b",
+    "cli.py": "9303ae8ae30009fa706d5d56603032485ad81416aee1d0af523ce902e3f28165",
+    "command_catalog.py": "ee88018a7139455125009f8d6a31f97b7e0f062a994f7d4377d910ba2001b7f7",
+    "command_delivery.py": "77e05cf2c24c3ac7fefaa68512fb47a4852406741949d26b339c46fe262f4d5c",
+    "command_judge.py": "1d9617f42edcd4dd730b0781fc55b330c40f8774db0063ff7cb53fa7af4e83f0",
+    "command_revision.py": "0bf2629997ab92ce8454cde14b0033753b431f53e25139537850d1cf5c6a58c1",
+    "commands.py": "7a7bf479698a48d9f4c5e6e94577108dbd230da312c21e04c168ae7e7491f610",
+    "desktop.py": "802de3eef9ed9fca3ad09a2f5f6f204f6bbba5a09450efe6ae062e7159409553",
+    "desktop_session.py": "a4441b65603b73ad350aff4348553c9681c77cb5c030e97bc5630a7d88251a8e",
+    "engineering_review.py": "8a06516198de09b49d43cec4bff51aeded085bec9d352567055ef9edca29ec53",
+    "entry_identity.awk": "5d4b4432e043568509d05303e34357e8e8fa056f0fc5394b80f6f4d8a20cbcbe",
+    "exchange_loss.py": "8871bc2d4e2e6bedd0b1d2852a06ccdbd43b0339d67afc53e6029fb3539c8c4f",
+    "image_sequence.py": "f67d0e565d8c99abd519bfaabe44599d25606450ca4f98df1ea227619ab2fff0",
+    "judge_contract.py": "58e1e4fad0e296cbf185a4e6e5cf5bd3f2db6482b34dbfcb622b814639469480",
+    "launch.ps1": "eaed943345d51f44b2490bdcd6d92b5f85121d4b4f47576c19ad56512c81b9b6",
+    "launch.sh": "31bf2cef53d4d1b6a229d74389729cf24572209c48125c1dec8800df99c6431f",
+    "managed.py": "0a086fe5c513d5834a67360904bd6f094244e66d5dfa3bc5d92c6491f4366935",
+    "mcp_session.py": "dd6df96dc1734cd7e43c4b820661d2e2c8c713dc8849fc89ab06a3720d99619b",
+    "native_diagnostics.py": "0c352d047edde58a35151ba2b03c001b2a6b591bb8032307e80573d115912389",
+    "native_workflow.py": "0db0471f8d849db9c3ffaeaac1c7bc40bf0cd500a638f7b681ecdeb934960bdd",
+    "orphan_segments.py": "244059948ca6b783c64cdd5942e91f3e6268dfd71f3c48c300595ccbcb2584b9",
+    "output_guard.py": "018c5c27217c11ec7b45ded52a1e13d7c42b34a3a53df21566e26f192143302b",
+    "platform_support.py": "d6a133dc25b81570f585f473f2fe290e181e78bc24032a05ae83be6f0a45aed8",
+    "png_inspection.py": "0e3c50907c66c6dcc45256d045920da346ad77892e47401de3103c8f6232938d",
+    "preserved_stage.py": "64199df3ee6af2901a859a5aac401fd27ca2f0c6ba9238e6f72c3563f681ad63",
+    "process_guard.py": "d1b56e09b32eff1f8396f288e5deccfab9c029cab1835ad465bcdc77915d4013",
+    "quality_review.py": "e0ddc78bb8bdc9b2e1dfca2e8ae7c1915ad9008ced0b3d3a242ccc45086e77e9",
+    "render_recovery.py": "6baf8f315f20d5e6b9115423502d66e9e51e33dc2398adc6bbff85b6b68b1e31",
+    "resource_budget.py": "97b4f4b4ac77b65df113c7eccf2ad2d4559cb849a9fe2c20d5eb8c4e7121be30",
+    "resource_meter.py": "a62257919fd22cfa6eb616be285122978a6732c0b888893fd8b4440396b8993f",
+    "review_ledger.py": "4931523dd1c76eb15037faaf28aaa7c85b7c85c6dfd447455925dd5a3ae9c512",
+    "revision.py": "546214f38430c14f354b6c0aa8feff8928d3267b9dee1b7ea708933bc3633590",
+    "runtime_binding.py": "0165798d737abc09423d301da24bed7f6d8dbb3f93af1bb84b7fe7880c54c9e6",
+    "segmented_sequence.py": "f0b078e72211c245267c22514a7b4202099a47cc42a5e9c8243bdd7b0dc473e9",
+    "task_entry.ps1": "530d74a89c51f0ea55df332d11f9df92c9b545de56ca562b777181b959f8092f",
+    "task_entry.py": "a45fe452696b53d95e58142bd94bff50627034522f490c9241da5b9f39dcbff2",
+    "task_entry.sh": "efd4e8903592721a1ca63c6967c08e82d06474cc097dd614fa089d0763670779",
+    "task_store.py": "5af9fc1fcc196d4ded1521654d87eee19655dc92d4d03bc706263d1ac65abcbd",
+    "workflow.py": "52eb0ccd9942b83588155ddb851c63c6fbea0f3122a0aa2a3029a2640cb6ce14"
+  },
+  "testSha256": {
+    "test_process_group_probe.py": "5121b7c012dd4ef6b51f08f680147eb78298b9e54ba516395b19322c8add1a77",
+    "test_process_guard.py": "91a783ee26264507be596f5c2f7661ca8235c0ea110ccb45bd83d04965c9a98d"
+  },
+  "workflowSha256": "4085dee30c19c3404f57cd3e5b2150f3e03224353bade659142c5a97fc1d7b21",
+  "red": {
+    "initialTests": 6,
+    "failedAssertions": 7,
+    "errors": 2,
+    "logSha256": "02132fb5298c00a88ddc768190af4c794574e8f8cd9d97259d816843aada0d2b",
+    "permissionFallbackRedLogSha256": "86b138eaccd4c1c1073c867e8f2909b5a76cca2a74b5f2cb44152abb391cd831"
+  },
+  "green": {
+    "targetedTests": 10,
+    "status": "PASS",
+    "logSha256": "8cd350336251f420d8a999fddb40345a328a5eabcdb7bd9f1e14ef51ddcf6c33",
+    "actualMacSandboxExitCode": 7,
+    "actualProcessCases": [
+      "sandbox normal exit with network denied",
+      "EOF with TERM-resistant descendant and unrelated process preservation",
+      "supervisor killed",
+      "normal nonzero exit"
+    ]
+  },
+  "regression": {
+    "total": 516,
+    "passed": 478,
+    "conditionalSkipped": 38,
+    "pythonVersion": "3.13.5",
+    "logSha256": "0e8d252f75e1c0549df046268df28f61e287860dc6c665a117eb992a86f6a300"
+  },
+  "historicalUnknownPreservation": {
+    "status": "PASS",
+    "originalTaskFilesUnchanged": true,
+    "fileCount": 93,
+    "reconcile": "FAIL process_termination_unconfirmed",
+    "automaticReplay": false,
+    "lifecycleSha256": "829896ec13832fdf656686570e0f7a0ec9e9d1549c6fb08b5073f8d08488d137",
+    "publicLogSha256": "d81878557a43b7c1afbef5fcee341083565488fc5ea5f606d1d9e590c88ead5e"
+  },
+  "semantics": {
+    "noSignalKernelProbe": "os.killpg(owned_group,0)",
+    "noGroup": "stopped evidence without ps",
+    "kernelPermissionDenied": "requires successful member enumeration; never enough alone",
+    "enumerationDeniedForExistingGroup": "unknown, fail closed",
+    "legacyUnknown": "unchanged and not replayed"
+  },
+  "remaining": [
+    "native Windows Job acceptance",
+    "other POSIX native targets",
+    "full 9.3 cancellation/recovery matrix",
+    "fixed installed host natural-language dispatch",
+    "full V1"
+  ],
+  "candidateCI": "NOT_RUN"
+}

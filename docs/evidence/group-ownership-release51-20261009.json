@@ -1,0 +1,158 @@
+{
+  "schema": "effectcraft-group-ownership-release/v1",
+  "date": "2026-10-09",
+  "status": "bounded-macOS-component-PASS",
+  "sourceVersion": "0.1.0-dev.51",
+  "pluginVersion": "0.1.0-dev.53",
+  "requirement": "EC-TX-005",
+  "completedComponentTask": "9.31",
+  "implementationSha256": {
+    "additional-platforms.lock.json": "d72653f778b07bb61eed795d49ffc3e7214ad39e74c64e76959818187567dce6",
+    "additional_platforms.py": "1a4ffc9f04e240374269a9869d0383f9f833082cf066203fddba117f247f48d9",
+    "bootstrap.py": "1eca0f59586609ae4314c77b4d5adb3886fe5443178fb2b300abb25cb75ae99b",
+    "cli.py": "9303ae8ae30009fa706d5d56603032485ad81416aee1d0af523ce902e3f28165",
+    "command_catalog.py": "ee88018a7139455125009f8d6a31f97b7e0f062a994f7d4377d910ba2001b7f7",
+    "command_delivery.py": "77e05cf2c24c3ac7fefaa68512fb47a4852406741949d26b339c46fe262f4d5c",
+    "command_judge.py": "1d9617f42edcd4dd730b0781fc55b330c40f8774db0063ff7cb53fa7af4e83f0",
+    "command_revision.py": "0bf2629997ab92ce8454cde14b0033753b431f53e25139537850d1cf5c6a58c1",
+    "commands.py": "7a7bf479698a48d9f4c5e6e94577108dbd230da312c21e04c168ae7e7491f610",
+    "desktop-platforms.lock.json": "3b4b56b144ef102f1ab2e5fbf4f374b22292dbce6a51a01e9bea466f9ed09b92",
+    "desktop.lock.json": "d2af78ee474b8e19ff3c26c792bb27ad180622ffe6dbed5a402bcb7aa7167311",
+    "desktop.py": "802de3eef9ed9fca3ad09a2f5f6f204f6bbba5a09450efe6ae062e7159409553",
+    "desktop_session.py": "a4441b65603b73ad350aff4348553c9681c77cb5c030e97bc5630a7d88251a8e",
+    "engineering_review.py": "8a06516198de09b49d43cec4bff51aeded085bec9d352567055ef9edca29ec53",
+    "entry_identity.awk": "5d4b4432e043568509d05303e34357e8e8fa056f0fc5394b80f6f4d8a20cbcbe",
+    "exchange_loss.py": "8871bc2d4e2e6bedd0b1d2852a06ccdbd43b0339d67afc53e6029fb3539c8c4f",
+    "image_sequence.py": "f67d0e565d8c99abd519bfaabe44599d25606450ca4f98df1ea227619ab2fff0",
+    "judge_contract.py": "58e1e4fad0e296cbf185a4e6e5cf5bd3f2db6482b34dbfcb622b814639469480",
+    "launch.ps1": "eaed943345d51f44b2490bdcd6d92b5f85121d4b4f47576c19ad56512c81b9b6",
+    "launch.sh": "31bf2cef53d4d1b6a229d74389729cf24572209c48125c1dec8800df99c6431f",
+    "managed.py": "0a086fe5c513d5834a67360904bd6f094244e66d5dfa3bc5d92c6491f4366935",
+    "mcp_session.py": "dd6df96dc1734cd7e43c4b820661d2e2c8c713dc8849fc89ab06a3720d99619b",
+    "native_diagnostics.py": "0c352d047edde58a35151ba2b03c001b2a6b591bb8032307e80573d115912389",
+    "native_workflow.py": "0db0471f8d849db9c3ffaeaac1c7bc40bf0cd500a638f7b681ecdeb934960bdd",
+    "orphan_segments.py": "244059948ca6b783c64cdd5942e91f3e6268dfd71f3c48c300595ccbcb2584b9",
+    "output_guard.py": "018c5c27217c11ec7b45ded52a1e13d7c42b34a3a53df21566e26f192143302b",
+    "parameter-contract.json": "dd1bde23fb12e26774f412f0aacc93e8102eaed79d4255709b5717c112daa762",
+    "platform_support.py": "d6a133dc25b81570f585f473f2fe290e181e78bc24032a05ae83be6f0a45aed8",
+    "png_inspection.py": "0e3c50907c66c6dcc45256d045920da346ad77892e47401de3103c8f6232938d",
+    "posix_group_lease.py": "23593ea54ff78457eb7d873a979aa1e1d4da601ea459dc288a4b7a8b975c6155",
+    "preserved_stage.py": "64199df3ee6af2901a859a5aac401fd27ca2f0c6ba9238e6f72c3563f681ad63",
+    "process_guard.py": "8ddf5881adeec3d224ef57821d3c83bd4319cf2d1f9efb5ed0f1dab846446f4f",
+    "python-platforms.tsv": "3836b670271e8f8327ea386510b18dea6a867ece27be5e74f4165eaa38ad8c65",
+    "python.lock.json": "e877b3fe406a2a210ebe5d7f660aa1d0483def44454a54dbe7429bfdba1c9f3f",
+    "quality_review.py": "e0ddc78bb8bdc9b2e1dfca2e8ae7c1915ad9008ced0b3d3a242ccc45086e77e9",
+    "render_recovery.py": "6baf8f315f20d5e6b9115423502d66e9e51e33dc2398adc6bbff85b6b68b1e31",
+    "resource_budget.py": "97b4f4b4ac77b65df113c7eccf2ad2d4559cb849a9fe2c20d5eb8c4e7121be30",
+    "resource_meter.py": "a62257919fd22cfa6eb616be285122978a6732c0b888893fd8b4440396b8993f",
+    "review_ledger.py": "4931523dd1c76eb15037faaf28aaa7c85b7c85c6dfd447455925dd5a3ae9c512",
+    "revision.py": "546214f38430c14f354b6c0aa8feff8928d3267b9dee1b7ea708933bc3633590",
+    "runtime.lock.json": "b427c71c77e1a217c72f7c19ac872b19df28e07150f4e7f6319defe7f5d9acc0",
+    "runtime_binding.py": "0165798d737abc09423d301da24bed7f6d8dbb3f93af1bb84b7fe7880c54c9e6",
+    "segmented_sequence.py": "f0b078e72211c245267c22514a7b4202099a47cc42a5e9c8243bdd7b0dc473e9",
+    "task_entry.ps1": "530d74a89c51f0ea55df332d11f9df92c9b545de56ca562b777181b959f8092f",
+    "task_entry.py": "a45fe452696b53d95e58142bd94bff50627034522f490c9241da5b9f39dcbff2",
+    "task_entry.sh": "efd4e8903592721a1ca63c6967c08e82d06474cc097dd614fa089d0763670779",
+    "task_store.py": "5af9fc1fcc196d4ded1521654d87eee19655dc92d4d03bc706263d1ac65abcbd",
+    "web_adapter.mjs": "081a816b285a512ebed8cc47dc87e5a16aa0502344c83b25036d3cee8b5c6f78",
+    "workflow.py": "52eb0ccd9942b83588155ddb851c63c6fbea0f3122a0aa2a3029a2640cb6ce14"
+  },
+  "testSha256": {
+    "test_process_group_ownership.py": "712c221866a94de5bb578dadded460249094c0e2474e6fc6c4e884d24a6c2d70",
+    "test_process_group_probe.py": "5121b7c012dd4ef6b51f08f680147eb78298b9e54ba516395b19322c8add1a77",
+    "test_process_guard.py": "91a783ee26264507be596f5c2f7661ca8235c0ea110ccb45bd83d04965c9a98d",
+    "test_posix_group_lease.py": "3d69a6e3c9ba81af06c664575c575be23059e28d27e7c90338666da0db30002f"
+  },
+  "red": {
+    "orphanAndGuardianTestsFailed": 2,
+    "orphanLogSha256": "401b0cadcdb790a9cb9edf4e3fb7b89084720130c382d24bba20c232c7aa6e92",
+    "forcedCancelTestsFailed": 1,
+    "forcedCancelLogSha256": "b5274bc6b5df6aa75794f2bbbc7a206a3e4e89f9e1e3320d1ebf1197e65cd549"
+  },
+  "regression": {
+    "total": 524,
+    "passed": 486,
+    "conditionalSkips": 38,
+    "python": "3.13.5",
+    "logSha256": "22ca84f211f56453def7c73b7fb49d563dbb37cf33c3b018f188a6a12adbdbd7"
+  },
+  "targeted": {
+    "tests": 18,
+    "status": "PASS",
+    "actualMacSandbox": [
+      "worker exit with TERM-resistant orphan",
+      "guardian killed with private control EOF",
+      "forced cancel without invented business success",
+      "unrelated process preserved"
+    ],
+    "protocol": [
+      "EOF required",
+      "nonce/schema/type/size/duplicates rejected",
+      "lost group anchor never signalled"
+    ]
+  },
+  "nativeCurrentCheckpoint": {
+    "status": "PASS",
+    "cases": [
+      {
+        "skill": "effectcraft-use",
+        "status": "PASS",
+        "cacheMode": "verified shared user cache reuse",
+        "installedFiles": 107,
+        "installedInventorySha256": "92ac3a5060b2e0e13410150e3f52bb06fa2e18c5b89b435d53475c61a9a88d24",
+        "installedFilesAndModesUnchanged": true,
+        "engineering": "PASS",
+        "technical": "PASS",
+        "creative": "NOT_RUN",
+        "userAcceptance": "NOT_RUN",
+        "lifecycle": "stopped",
+        "decodedFrames": 12,
+        "width": 320,
+        "height": 180,
+        "frameRate": "12/1",
+        "seconds": 51.915,
+        "projectSha256": "8e62825b838d6674c2f9355bb64ed7339e45e39b7da91f44fda95437b6698783",
+        "videoSha256": "91e8bb85c879e78317a30470510dd5e7f844bb4a02aa36b60d12442c73d7b9e9",
+        "publicRunLogSha256": "befafa549056f27f7c0b68ecb3ff45f4939983e5010bab4829b74bc675f13964",
+        "publicReviewLogSha256": "83a360d5692c4ce8681262f2be4d69b08eaf9a0f7ca764d76f741aa7cebaddc7"
+      }
+    ],
+    "scope": "current first independent readonly installed skill; prepared official archives and verified shared cache; not cold startup, domain scene or model dispatch",
+    "lifecycle": {
+      "exitCodeSource": "business-result",
+      "forcedDrain": true,
+      "gateReturncode": -9,
+      "nonce": "898a1d3dd2e13a7e5ee3a6b8a41f7983",
+      "schema": "effectcraft-posix-group-lease/v1",
+      "workerResultVerified": true,
+      "workerReturncode": 0
+    },
+    "osControls": {
+      "source-read": "DENIED",
+      "skill-write": "DENIED",
+      "system-python": "DENIED",
+      "network": "DENIED"
+    }
+  },
+  "historicalUnknown": {
+    "status": "PASS",
+    "originalTaskFilesUnchanged": true,
+    "fileCount": 93,
+    "reconcile": "FAIL process_termination_unconfirmed",
+    "automaticReplay": false,
+    "lifecycleSha256": "829896ec13832fdf656686570e0f7a0ec9e9d1549c6fb08b5073f8d08488d137",
+    "publicLogSha256": "d81878557a43b7c1afbef5fcee341083565488fc5ea5f606d1d9e590c88ead5e"
+  },
+  "historicalEvidence": [
+    "process-group-probe-candidate-20261009.json",
+    "independent-offline15-candidate-20261009.json"
+  ],
+  "remaining": [
+    "all target native environments",
+    "full process recovery/cancellation matrix",
+    "fixed-host natural-language dispatch for current release",
+    "creative and user acceptance",
+    "full V1"
+  ],
+  "publication": "development pre-release only; source commit and immutable plugin pin verified at publication"
+}

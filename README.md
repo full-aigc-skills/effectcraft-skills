@@ -1,10 +1,16 @@
 # EffectCraft Skills
 
+Development source dev.51 / plugin dev.53: POSIX private group ownership and nonce-bound business results cover guardian loss, orphan descendants and forced cancellation. Current regression and offline installed-copy evidence: [release validation](docs/evidence/group-ownership-release51-20261009.json). Historical checkpoints below retain their original fingerprints; cross-platform native, fixed-host, creative acceptance and full V1 remain open.
+
+Historical single-skill offline checkpoint completes9.5.1:15/15 actual readonly macOS arm64 installs with spaces, unavailable system Python and network denied pass public run/review, native reopen and12-frame decode. All installed copies matched the source at that checkpoint. One cold cache and14 verified shared-cache reuses; official archives and ffmpeg/ffprobe are prerequisites. Target-platform9.1.2, domain/transparent handoff9.5.2, hosts and fullV1 stay open. [Evidence](docs/evidence/independent-offline15-candidate-20261009.json).
+
+Historical process-group checkpoint:10 targeted tests and516 regressions pass (478 passes/38 conditional skips), including actual macOS sandbox exit and descendant cleanup. Historical unknown tasks remain preserved without replay. At that checkpoint source50/plugin52 snapshots were unchanged; target platforms and fullV1 remain open. [Evidence](docs/evidence/process-group-probe-candidate-20261009.json).
+
 Development source dev.50 / plugin dev.52: trusted v2 tasks select their original Python before current-runtime preparation; managed entry supports CRAFT_RUNTIME_ARCHIVE offline native artifacts. Current macOS native reopen/decode passes; native Windows, fixed-host and full V1 acceptance remain open. [Evidence](docs/evidence/release-readiness-source50-20261009.json).
 
 Turn text, graphics and footage into an editable `.ecproj`, dependencies and rendered media.
 
-Current source: `0.1.0-dev.50`; consuming plugin: `0.1.0-dev.52`; 15 independent skills.
+Current source: `0.1.0-dev.51`; consuming plugin: `0.1.0-dev.53`; 15 independent skills.
 
 Verified first-use platform: macOS arm64 and Python 3.11+. Pinned runtimes install into the user data directory; skill files stay in their host-loaded directory. These are development releases; complete V1 acceptance and generic Skills CLI installation remain open.
 

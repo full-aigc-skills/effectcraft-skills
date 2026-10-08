@@ -1,5 +1,9 @@
 # Version-bound release records
 
+## dev.51 — 2026-10-09
+
+Development source dev.51 / plugin dev.53: POSIX private group ownership and nonce-bound business results cover guardian loss, orphan descendants and forced cancellation. Current regression and offline installed-copy evidence: [release validation](docs/evidence/group-ownership-release51-20261009.json). Historical checkpoints below retain their original fingerprints; cross-platform native, fixed-host, creative acceptance and full V1 remain open.
+
 ## dev.50 — 2026-10-09
 
 修正 Windows PowerShell 启动描述缺失时的稳定 bound_entry_invalid 诊断；失败仍拒绝执行、不创建材料、不准备当前 Python。source dev.49 的 Windows CI 失败记录保留，由 source dev.50／plugin dev.52 替代；原发布标签及归档不改写。完整 V1、其他原生平台及宿主验收仍开放。

@@ -1,10 +1,16 @@
 # EffectCraft 独立技能
 
+开发版技能源 dev.51／插件 dev.53：POSIX 私有进程组归属及 nonce 绑定业务结果覆盖守护器丢失、孤儿后代和强制取消。当前回归及离线安装副本证据见 [发布验证](docs/evidence/group-ownership-release51-20261009.json)。下方历史检查点保留原摘要；跨平台原生、固定宿主、创作验收及完整 V1 仍开放。
+
+历史单技能离线检查点已完成9.5.1：macOS arm64实际15/15只读、空格路径、无系统Python及禁止联网的公开run/review通过，工程重开与每例12帧解码通过，15份安装与该检查点技能源一致。首例冷缓存、14例共享用户缓存复用；需要预备官方归档及ffmpeg/ffprobe，不是15次冷安装或领域代表验收。其他平台9.1.2、领域与透明交接9.5.2、宿主及完整V1仍开放。 [Evidence](docs/evidence/independent-offline15-candidate-20261009.json).
+
+历史进程组核对检查点：10项目标与516项回归通过（478通过／38条件跳过），真实macOS沙箱空组退出及后代清理通过；历史unknown保留且不重放。该检查点的source50／plugin52快照不变，跨平台与完整V1仍开放。 [Evidence](docs/evidence/process-group-probe-candidate-20261009.json).
+
 开发版技能源 dev.50／插件 dev.52：旧 v2 任务在准备当前 Python 前校验并派发原解释器；受管理入口支持 CRAFT_RUNTIME_ARCHIVE 离线原生制品。macOS 原生重开与完整解码通过，真实 Windows、固定宿主及完整 V1 待验收。 [Evidence](docs/evidence/release-readiness-source50-20261009.json).
 
 文字、图形与镜头需求进入，交付可编辑 `.ecproj`、依赖素材和渲染结果。
 
-当前技能源：`0.1.0-dev.50`；消费插件：`0.1.0-dev.52`；15 个独立技能。
+当前技能源：`0.1.0-dev.51`；消费插件：`0.1.0-dev.53`；15 个独立技能。
 
 已验证首次使用平台：macOS arm64、Python 3.11+。固定运行时安装在用户数据目录，技能文件保留在宿主加载目录。当前为开发版本；完整首版验收及通用 Skills CLI 实际安装仍未完成。
 

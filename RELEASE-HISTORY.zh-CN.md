@@ -1,5 +1,9 @@
 # 版本绑定的历史发行记录
 
+## dev.51 — 2026-10-09
+
+开发版技能源 dev.51／插件 dev.53：POSIX 私有进程组归属及 nonce 绑定业务结果覆盖守护器丢失、孤儿后代和强制取消。当前回归及离线安装副本证据见 [发布验证](docs/evidence/group-ownership-release51-20261009.json)。下方历史检查点保留原摘要；跨平台原生、固定宿主、创作验收及完整 V1 仍开放。
+
 ## dev.50 — 2026-10-09
 
 修正 Windows PowerShell 启动描述缺失时的稳定 bound_entry_invalid 诊断；失败仍拒绝执行、不创建材料、不准备当前 Python。source dev.49 的 Windows CI 失败记录保留，由 source dev.50／plugin dev.52 替代；原发布标签及归档不改写。完整 V1、其他原生平台及宿主验收仍开放。
