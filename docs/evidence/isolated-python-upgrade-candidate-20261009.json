@@ -1,0 +1,280 @@
+{
+  "schema": "effectcraft-isolated-python-upgrade-component/v1",
+  "date": "2026-10-09",
+  "status": "bounded-component-PASS",
+  "candidatePublished": false,
+  "publishedSource": "v0.1.0-dev.47",
+  "publishedPlugin": "v0.1.0-dev.49",
+  "implementationSha256": {
+    "launch.sh": "a4f43fcb77602c65968c4bc112ccb5ccb1bdfbcd3910e137559fb67b74ff02ae",
+    "launch.ps1": "9b9556e65a5fe7427de31785b35706fad956459bb16060268e9bbd423c1ad684",
+    "bootstrap.py": "6d84f523fba15446e944ed4e260ec1d351c83b42bd1e818c4efd1ed243185ae8",
+    "managed.py": "8364efd8e3b7219ea702cd92ec4faf7e344b3f104fc7edcf29169ce349543b8a",
+    "runtime_binding.py": "27292b56554ea6bfbbd0126d2f9d17f6239570abba9354a2bcedd2b4e427b5d5",
+    "engineering_review.py": "8a06516198de09b49d43cec4bff51aeded085bec9d352567055ef9edca29ec53",
+    "command_delivery.py": "77e05cf2c24c3ac7fefaa68512fb47a4852406741949d26b339c46fe262f4d5c",
+    "command_revision.py": "0bf2629997ab92ce8454cde14b0033753b431f53e25139537850d1cf5c6a58c1"
+  },
+  "testSha256": "9c0b4d508d5ca50ab9ee05fafcc88467c88b923da633a402c802dcdbe3743ff0",
+  "workflowSha256": "9ff00bd5ea9834672ba67007312ebef335321121db06e6458d5ef6cc623959b9",
+  "red": {
+    "tests": 4,
+    "failedAssertions": 13,
+    "cause": "Python launcher ignores missing, damaged or wrong installation receipt",
+    "logSha256": "8296c419439204691915b3428fe4032b6ae77f1b2ec997ab73de15bfe0f5a345"
+  },
+  "green": {
+    "tests": 4,
+    "passed": 4,
+    "validLegacyFieldOrders": 6,
+    "invalidReceiptCases": 13,
+    "missingReceipt": "PASS",
+    "symlinkReceipt": "PASS on POSIX; nativeWindows separate",
+    "logSha256": "5e13978fda1a53a16b260e95227a69253d8e22082ba8cca6be2c73f18bb9768b"
+  },
+  "powershellFunction": {
+    "nativeWindowsAcceptance": "NOT_RUN",
+    "status": "PASS",
+    "runtime": "PowerShell on macOS, function contract only",
+    "cases": 19
+  },
+  "regression": {
+    "total": 490,
+    "passed": 452,
+    "conditionalSkipped": 38,
+    "pythonVersion": "3.13.5",
+    "status": "PASS",
+    "logSha256": "12d8c53f5afd92ab1e0874ab08adb2afef3de8182acb7fa59425e0a74ca765c6"
+  },
+  "oldPythonOfficialArtifact": {
+    "url": "https://github.com/astral-sh/python-build-standalone/releases/download/20260929/cpython-3.13.15%2B20260929-aarch64-apple-darwin-install_only.tar.gz",
+    "version": "3.13.15",
+    "archiveSha256": "003d459a75ff6949a6590812b1e02a65e849b5b2a9f47c421010138ec643a11c",
+    "integritySha256": "ecc29c1c575b09fd252c67595f9358424a4c4ab40c4e6d3d0bc37d6ceca47f41",
+    "manifestMembers": 1655,
+    "minimumMacOS": "11.0",
+    "licenses": [
+      "python/lib/python3.13/LICENSE.txt",
+      "python/lib/python3.13/site-packages/pip/_vendor/packaging/LICENSE",
+      "python/lib/python3.13/site-packages/pip/_vendor/packaging/LICENSE.APACHE",
+      "python/lib/python3.13/site-packages/pip/_vendor/packaging/LICENSE.BSD",
+      "python/lib/python3.13/site-packages/pip/_vendor/truststore/LICENSE",
+      "python/lib/python3.13/site-packages/pip/_vendor/pygments/LICENSE",
+      "python/lib/python3.13/site-packages/pip/_vendor/distlib/LICENSE.txt",
+      "python/lib/python3.13/site-packages/pip/_vendor/distro/LICENSE",
+      "python/lib/python3.13/site-packages/pip/_vendor/cachecontrol/LICENSE.txt",
+      "python/lib/python3.13/site-packages/pip/_vendor/idna/LICENSE.md",
+      "python/lib/python3.13/site-packages/pip/_vendor/requests/LICENSE",
+      "python/lib/python3.13/site-packages/pip/_vendor/tomli/LICENSE",
+      "python/lib/python3.13/site-packages/pip/_vendor/certifi/LICENSE",
+      "python/lib/python3.13/site-packages/pip/_vendor/pyproject_hooks/LICENSE",
+      "python/lib/python3.13/site-packages/pip/_vendor/rich/LICENSE",
+      "python/lib/python3.13/site-packages/pip/_vendor/tomli_w/LICENSE",
+      "python/lib/python3.13/site-packages/pip/_vendor/urllib3/LICENSE.txt",
+      "python/lib/python3.13/site-packages/pip/_vendor/pkg_resources/LICENSE",
+      "python/lib/python3.13/site-packages/pip/_vendor/resolvelib/LICENSE",
+      "python/lib/python3.13/site-packages/pip/_vendor/platformdirs/LICENSE",
+      "python/lib/python3.13/site-packages/pip-26.2.1.dist-info/licenses/LICENSE.txt",
+      "python/lib/python3.13/site-packages/pip-26.2.1.dist-info/licenses/src/pip/_vendor/packaging/LICENSE",
+      "python/lib/python3.13/site-packages/pip-26.2.1.dist-info/licenses/src/pip/_vendor/packaging/LICENSE.APACHE",
+      "python/lib/python3.13/site-packages/pip-26.2.1.dist-info/licenses/src/pip/_vendor/packaging/LICENSE.BSD",
+      "python/lib/python3.13/site-packages/pip-26.2.1.dist-info/licenses/src/pip/_vendor/truststore/LICENSE",
+      "python/lib/python3.13/site-packages/pip-26.2.1.dist-info/licenses/src/pip/_vendor/pygments/LICENSE",
+      "python/lib/python3.13/site-packages/pip-26.2.1.dist-info/licenses/src/pip/_vendor/distlib/LICENSE.txt",
+      "python/lib/python3.13/site-packages/pip-26.2.1.dist-info/licenses/src/pip/_vendor/distro/LICENSE",
+      "python/lib/python3.13/site-packages/pip-26.2.1.dist-info/licenses/src/pip/_vendor/cachecontrol/LICENSE.txt",
+      "python/lib/python3.13/site-packages/pip-26.2.1.dist-info/licenses/src/pip/_vendor/idna/LICENSE.md",
+      "python/lib/python3.13/site-packages/pip-26.2.1.dist-info/licenses/src/pip/_vendor/requests/LICENSE",
+      "python/lib/python3.13/site-packages/pip-26.2.1.dist-info/licenses/src/pip/_vendor/tomli/LICENSE",
+      "python/lib/python3.13/site-packages/pip-26.2.1.dist-info/licenses/src/pip/_vendor/certifi/LICENSE",
+      "python/lib/python3.13/site-packages/pip-26.2.1.dist-info/licenses/src/pip/_vendor/pyproject_hooks/LICENSE",
+      "python/lib/python3.13/site-packages/pip-26.2.1.dist-info/licenses/src/pip/_vendor/rich/LICENSE",
+      "python/lib/python3.13/site-packages/pip-26.2.1.dist-info/licenses/src/pip/_vendor/tomli_w/LICENSE",
+      "python/lib/python3.13/site-packages/pip-26.2.1.dist-info/licenses/src/pip/_vendor/urllib3/LICENSE.txt",
+      "python/lib/python3.13/site-packages/pip-26.2.1.dist-info/licenses/src/pip/_vendor/pkg_resources/LICENSE",
+      "python/lib/python3.13/site-packages/pip-26.2.1.dist-info/licenses/src/pip/_vendor/resolvelib/LICENSE",
+      "python/lib/python3.13/site-packages/pip-26.2.1.dist-info/licenses/src/pip/_vendor/platformdirs/LICENSE"
+    ],
+    "actualVersion": "Python 3.13.15",
+    "executableSha256": "c0f2d3027488a0e592176d3fd372d5ade5c28b32b1e56812c572d3f378454b80"
+  },
+  "newPythonOfficialArtifact": {
+    "version": "3.13.16",
+    "url": "https://github.com/astral-sh/python-build-standalone/releases/download/20261003/cpython-3.13.16%2B20261003-aarch64-apple-darwin-install_only.tar.gz",
+    "archiveSha256": "d8975d7df4f08f7b1c7aafcdfacbddcec3d366415f2c1a72b2466b6850815933",
+    "executable": "python/bin/python3.13",
+    "integrityFile": "python-integrity/darwin-arm64.tsv",
+    "integritySha256": "8f9c3aaf79cd0ff1867ac5d3c937d6ca0c60ccf1ab2b321a2b7a8454209d6fdd",
+    "license": "Python-2.0",
+    "platformAcceptance": "NOT_RUN",
+    "minimumSystem": {
+      "macOS": "11.0",
+      "source": "pinned archive _sysconfigdata MACOSX_DEPLOYMENT_TARGET"
+    }
+  },
+  "native": {
+    "schema": "effectcraft-native-upgrade-evidence/v1",
+    "status": "PASS",
+    "platform": "darwin-arm64",
+    "oldVersion": "0.3.1",
+    "newVersion": "0.4.0",
+    "activeOldNativeVerifiedDuringInstall": true,
+    "oldVersionInventoryPreserved": true,
+    "oldTaskIdentitiesAndDeadlinesPreserved": true,
+    "oldFrozenExecutionPreserved": true,
+    "newTaskLockedPython": "3.13.16",
+    "oldTaskIsolatedPython": "3.13.15",
+    "oldPythonEntireInventoryPreserved": true,
+    "oldTaskPythonMode": "locked",
+    "qaGate": "test-only pause before first layer edit registration, comp.new already succeeded; never modifies production source",
+    "deliveries": [
+      {
+        "task": "old-active",
+        "nativeVersion": "0.3.1",
+        "runtimeSha256": "4b40ee223b5163bd17184e2d25db68b0dcb989dc6e63488df183a950aa0f879b",
+        "pythonMode": "locked",
+        "pythonVersion": "3.13.15",
+        "projectSha256": "56d6ac8e76cfe0311d028643acb3617b1d09e94f14ffaf62053fe87b1417956d",
+        "videoSha256": "91e8bb85c879e78317a30470510dd5e7f844bb4a02aa36b60d12442c73d7b9e9",
+        "decodedFrames": 12,
+        "size": [
+          320,
+          180
+        ],
+        "engineering": "PASS",
+        "technical": "PASS",
+        "lifecycle": "stopped"
+      },
+      {
+        "task": "old-held",
+        "nativeVersion": "0.3.1",
+        "runtimeSha256": "4b40ee223b5163bd17184e2d25db68b0dcb989dc6e63488df183a950aa0f879b",
+        "pythonMode": "locked",
+        "pythonVersion": "3.13.15",
+        "projectSha256": "5ed2e9f45562620db08d0df0d81412f56265fc458c2f6657ca5111d12ace310c",
+        "videoSha256": "91e8bb85c879e78317a30470510dd5e7f844bb4a02aa36b60d12442c73d7b9e9",
+        "decodedFrames": 12,
+        "size": [
+          320,
+          180
+        ],
+        "engineering": "PASS",
+        "technical": "PASS",
+        "lifecycle": "stopped"
+      },
+      {
+        "task": "new-version",
+        "nativeVersion": "0.4.0",
+        "runtimeSha256": "c1717eb87e5b57b3ed88c6a78047268a5afa566beb36104fdcc05dc8634a01c1",
+        "pythonMode": "locked",
+        "pythonVersion": "3.13.16",
+        "projectSha256": "1cb1dac7ec8b720c813083a953cc0eb4c432bf93a62dd45b197e84db88078e1e",
+        "videoSha256": "91e8bb85c879e78317a30470510dd5e7f844bb4a02aa36b60d12442c73d7b9e9",
+        "decodedFrames": 12,
+        "size": [
+          320,
+          180
+        ],
+        "engineering": "PASS",
+        "technical": "PASS",
+        "lifecycle": "stopped"
+      }
+    ],
+    "remaining": [
+      "cleanup across state roots",
+      "other target platforms",
+      "fixed installed host natural-language dispatch",
+      "fullV1"
+    ]
+  },
+  "readonlyNativePythonReceipt": {
+    "status": "PASS",
+    "platform": "darwin-arm64",
+    "cases": [
+      {
+        "case": "wrong-version",
+        "status": "PASS",
+        "pythonExecuted": false,
+        "receiptPreserved": true,
+        "taskFilesPreserved": true
+      },
+      {
+        "case": "duplicate-field",
+        "status": "PASS",
+        "pythonExecuted": false,
+        "receiptPreserved": true,
+        "taskFilesPreserved": true
+      },
+      {
+        "case": "malformed-json",
+        "status": "PASS",
+        "pythonExecuted": false,
+        "receiptPreserved": true,
+        "taskFilesPreserved": true
+      }
+    ],
+    "qaReceiptRestoredExactly": true
+  },
+  "finalSnapshotMatchesCurrentImplementation": true,
+  "finalCandidateNative": {
+    "status": "PASS",
+    "task": "final-guard",
+    "oldBoundResume": "PASS with old3.13.15 and task files byte-identical",
+    "pythonMode": "locked",
+    "pythonVersion": "3.13.16",
+    "nativeVersion": "0.4.0",
+    "projectSha256": "3cbbc866b2ac73dd1540a2a6f5a1bbf9e4ba7c381776a8142f0599c7f930201a",
+    "videoSha256": "91e8bb85c879e78317a30470510dd5e7f844bb4a02aa36b60d12442c73d7b9e9",
+    "decodedFrames": 12,
+    "engineering": "PASS",
+    "technical": "PASS",
+    "lifecycle": "stopped",
+    "scope": "final launcher source after strict JSON whitespace/ordinal comparison; original two-version pipeline is an earlier checkpoint; readonly re-review preserves identity/deadline/edit steps",
+    "restrictedPathReview": {
+      "engineering": "PASS",
+      "technical": "NOT_RUN",
+      "reason": "media_decoder_missing",
+      "originalReportSha256": "e5e863dd9e27756acaba34b522109a8eaa1d8b7ee249e646e3b0294cb6d34a0d"
+    },
+    "mediaDecoderBoundary": "existing verified ffmpeg/ffprobe from normal PATH; automatic decoder preparation not established"
+  },
+  "pairCheckpointImplementationSha256": {
+    "launch.sh": "80f4825d8c7de4637380e3253d3db355c0406226824641a93cb8e5ba80e5bc0f",
+    "launch.ps1": "e9809161484952bed32f84926c4b9e28c4d3cd6a13fe20610d058f4872f577da",
+    "bootstrap.py": "6d84f523fba15446e944ed4e260ec1d351c83b42bd1e818c4efd1ed243185ae8",
+    "managed.py": "8364efd8e3b7219ea702cd92ec4faf7e344b3f104fc7edcf29169ce349543b8a",
+    "runtime_binding.py": "27292b56554ea6bfbbd0126d2f9d17f6239570abba9354a2bcedd2b4e427b5d5",
+    "engineering_review.py": "8a06516198de09b49d43cec4bff51aeded085bec9d352567055ef9edca29ec53",
+    "command_delivery.py": "77e05cf2c24c3ac7fefaa68512fb47a4852406741949d26b339c46fe262f4d5c",
+    "command_revision.py": "0bf2629997ab92ce8454cde14b0033753b431f53e25139537850d1cf5c6a58c1"
+  },
+  "strictWhitespaceRedLogSha256": "ff4238f9dd9dabf152bacefe148873ba6c1ab82e7f7069a10041a060d3f708e1",
+  "powershellWhitespaceRedLogSha256": "d6bfc18efc5edfe8c7b8ef41b018334756e8a73c6aa31b0dff09e353eb6ef708",
+  "qualityScope": {
+    "engineering": "PASS",
+    "technical": "PASS",
+    "creative": "NOT_RUN",
+    "userAcceptance": "NOT_RUN"
+  },
+  "remainingBoundEntryGap": {
+    "status": "FAIL_REQUIREMENT_OPEN",
+    "case": "known old task cannot reach bound controller when current frontend Python bootstrap fails",
+    "oldBoundPython": "3.13.15",
+    "oldTaskState": "review_ready",
+    "oldBoundResourcesPresent": true,
+    "currentFrontendPython": "3.13.16",
+    "frontendPythonHome": "new empty private cache",
+    "currentBootstrapRejection": "python_archive_checksum_mismatch",
+    "allTaskFilesPreserved": true,
+    "scope": "no native replay or data loss; existing-task public startup still depends on preparing current Python; must be fixed before9.1.4 closure"
+  },
+  "candidateCI": "NOT_RUN",
+  "pluginSnapshot": "immutable source47; candidate not vendored",
+  "remaining": [
+    "old-task public entry still depends on current Python bootstrap; failure reproduction preserved",
+    "cleanup across state roots",
+    "native Windows and other target-platform receipt/upgrade qualification",
+    "fixed installed host natural-language dispatch",
+    "fullV1"
+  ]
+}

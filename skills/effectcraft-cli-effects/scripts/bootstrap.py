@@ -103,7 +103,7 @@ def extract(archive, destination):
         source.extractall(destination)
 
 
-def inspect_install(destination, artifact, expected):
+def inspect_install(destination, artifact, expected, version=None, platform_key=None):
     binary = destination / expected.get('binaryPath', artifact)
     if destination.is_symlink() or binary.is_symlink() or not binary.is_file():
         raise ValueError('invalid_installed_path')
@@ -119,6 +119,25 @@ def inspect_install(destination, artifact, expected):
     receipt = destination / 'installation.json'
     if receipt.is_symlink() or not receipt.is_file():
         raise ValueError('installation_receipt_missing')
+    def unique_fields(pairs):
+        result={}
+        for key,value in pairs:
+            if key in result:raise ValueError('duplicate installation field')
+            result[key]=value
+        return result
+    identity={field:expected[field] for field in ('url','archiveSha256','binarySha256','binaryPath','payloadRoot','integrityFile','integritySha256','provenanceSha256') if field in expected}
+    identity.update(name=artifact.removesuffix('-cli'),source='official-github-release')
+    if version is not None:
+        identity.update(version=version,versionOutput=expected.get('versionOutput',f'{artifact} {version}'))
+    elif 'versionOutput' in expected:identity['versionOutput']=expected['versionOutput']
+    if platform_key is not None:identity['platform']=platform_key
+    try:
+        record=json.loads(receipt.read_text(encoding='utf-8'),object_pairs_hook=unique_fields,
+                          parse_constant=lambda _: (_ for _ in ()).throw(ValueError('nonfinite receipt')))
+        if not isinstance(record,dict) or any(record.get(k)!=v for k,v in identity.items()):
+            raise ValueError('receipt identity mismatch')
+    except (ValueError,OSError):
+        raise ValueError('installation_receipt_invalid; preserve directory for inspection') from None
     return {'executable': str(binary), 'reused': True, 'binarySha256': expected['binarySha256']}
 
 
@@ -155,7 +174,7 @@ def install(lock, runtime_home, archive=None, platform_key=None):
     guard = portable()
     with guard.exclusive_lock(parent / '.install.lock', LOCK_WAIT_SECONDS):
         if destination.exists() or destination.is_symlink():
-            return inspect_install(destination, artifact, expected)
+            return inspect_install(destination, artifact, expected, version, key)
         with tempfile.TemporaryDirectory(prefix='.install-', dir=parent) as temporary:
             stage = Path(temporary)
             package = Path(archive) if archive else stage / 'release.zip'
@@ -198,10 +217,10 @@ def install(lock, runtime_home, archive=None, platform_key=None):
             receipt = dict(expected, name=artifact.removesuffix('-cli'), version=version,
                            platform=key, versionOutput=result.stdout.strip(), source='official-github-release')
             (payload / 'installation.json').write_text(json.dumps(receipt, indent=2) + '\n', encoding='utf-8', newline='\n')
-            inspect_install(payload,artifact,expected)
+            inspect_install(payload,artifact,expected,version,key)
             # 同文件系统原子发布。没有任何自动升级/替换已有版本的分支。
             payload.rename(destination)
-            return dict(inspect_install(destination, artifact, expected), reused=False)
+            return dict(inspect_install(destination, artifact, expected, version, key), reused=False)
 
 
 def setup_failure(runtime_home):

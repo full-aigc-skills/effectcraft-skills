@@ -1,17 +1,21 @@
 # EffectCraft 独立技能
 
+开发版技能源 dev.48／插件 dev.50 包含安装回执保护及 macOS 隔离 Python／原生版本升级的限定验证：490 项回归（452 通过／38 条件跳过），PowerShell 本机函数 19 例通过。真实 Windows 与固定宿主待验收；新 Python 准备失败仍阻止旧任务恢复（OpenSpec 9.29）。75 项任务及完整 V1 保持开放。[证据](docs/evidence/isolated-python-upgrade-candidate-20261009.json)。
+
+上一原生升级组件：安装回执校验及macOS真实0.3.1→0.4.0活动任务隔离验证通过；486项回归（448通过／38条件跳过）。旧任务保留原代码与Python3.13.5执行文件，新任务使用隔离Python3.13.16及0.4.0；外部旧Python不作为隔离标准库证明。固定source47/plugin49不含此次安装器改动；跨状态根清理、其他平台／宿主及完整V1仍开放。[证据](docs/evidence/runtime-upgrade-component-candidate-20261009.json)。
+
 工作区执行绑定候选：任务私有快照与原控制器恢复通过24项目标和482项回归（444通过／38条件跳过），并完成本机限定原生恢复。开发版source47/plugin49包含该组件；固定安装后的宿主验收仍开放；74项实施任务及完整V1仍开放。[证据](docs/evidence/task-execution-binding-candidate-20261009.json)。
 
 开发版技能源45已完成只读doctor／目录任务9.2.1：显式已验证CLI能力发现、恢复argv和离线差异。回归420通过／38条件跳过，15个单技能实际诊断及15次无Python只读诊断通过。开发版source47/plugin49包含本增量，74项实施任务及完整V1仍开放。[证据](docs/evidence/doctor-capabilities-candidate-20261008.json)。
 
 分段首用指南已根据固定 Film40／Effect38／Art117 的原生验收更新：覆盖 HD 全帧、返工、恢复和迁移。新指南快照的插件安装验收另行记录。[证据](docs/evidence/craft-fixed-segmented-hd-refresh-20261008.json)。
 
-> **开发版 dev.47（2026-10-09）：**固定隔离 Python 3.13.16、EffectCraft 0.4.0，包含受管理执行、自有分段恢复与共享重试预算。本机证据不替代其他平台/宿主验收。见[实现与开放门禁](docs/managed-optimization-20261008.md)和[平台矩阵](docs/current-capabilities.json)。
+> **开发版 dev.48（2026-10-09）：**技能源 dev.48 新增 Python 和 CLI 安装回执严格校验，记录限定原生升级证据；完整 V1 及其他平台／宿主验收继续开放。
 
 
 文字、图形与镜头需求进入，交付可编辑 `.ecproj`、依赖素材和渲染结果。
 
-当前技能源：`0.1.0-dev.47`；消费插件：`0.1.0-dev.49`；15 个独立技能。
+当前技能源：`0.1.0-dev.48`；消费插件：`0.1.0-dev.50`；15 个独立技能。
 
 已验证首次使用平台：macOS arm64、Python 3.11+。固定运行时安装在用户数据目录，技能文件保留在宿主加载目录。当前为开发版本；完整首版验收及通用 Skills CLI 实际安装仍未完成。
 

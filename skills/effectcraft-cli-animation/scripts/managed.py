@@ -51,7 +51,7 @@ def doctor(runtime_home,probe_native=False,compare_catalog=None):
         except ValueError as error:result['runtime']['platformError']=str(error)
     if expected and (directory.exists() or directory.is_symlink()):
         try:
-            result['runtime'].update(load('bootstrap').inspect_install(directory,lock['artifact'],expected),installed=True)
+            result['runtime'].update(load('bootstrap').inspect_install(directory,lock['artifact'],expected,lock['resolvedVersion'],key),installed=True)
         except (ValueError,OSError) as error:result['runtime']['error']=str(error)
     if probe_native and result['runtime']['installed'] and 'platformError' not in result['runtime']:
         result['nativeCapabilities']=load('native_diagnostics').observe(result['runtime']['executable'],catalog,

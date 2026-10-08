@@ -1,5 +1,11 @@
 # Version-bound release records
 
+## dev.48 — 2026-10-09
+
+新增严格 Python／CLI 安装回执校验，15 个独立技能资源同步。490 项回归：452 通过／38 条件跳过；PowerShell 本机函数19例通过，macOS 完整隔离发行升级与原生工程／12帧解码通过。任务9.26–9.28为限定组件证据；9.29旧任务入口缺陷、75项开放任务、其他平台／宿主与完整V1未完成。
+
+Strict Python/CLI receipt validation; bounded macOS upgrade and native decode evidence. 452 regression passes / 38 conditional skips; 19 local PowerShell function cases. Old-task bootstrap gap 9.29, 75 tasks and full V1 remain open.
+
 ## dev.47 — 2026-10-09
 
 修正新增绑定测试读取中文JSON时的Windows默认编码问题，显式使用UTF-8。执行技能载荷与dev.46相同，保留其标签和失败CI记录；dev.46草稿由本版替代。

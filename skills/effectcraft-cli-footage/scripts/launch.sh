@@ -81,6 +81,29 @@ verify() {
     [ "$actual" = "$expected" ] || fail "python_installed_checksum_mismatch: $relative"
   done < "$HERE/$manifest"
 }
+verify_receipt() {
+  receipt="$1/installation.json"
+  [ -f "$receipt" ] && [ ! -L "$receipt" ] || fail python_installation_receipt_invalid
+  [ "$(wc -c < "$receipt" | tr -d ' ')" -le 4096 ] || fail python_installation_receipt_invalid
+  # 仅接受本入口已生成的三字段ASCII身份；兼容旧格式和六种字段顺序。
+  # 保留引号内字符，不把错误版本中的空白归一化成正确版本。
+  awk -v version="$version" -v platform="$key" -v sha="$archive_sha" '
+    BEGIN { fields[1]="\"version\":\""version"\"";
+            fields[2]="\"platform\":\""platform"\"";
+            fields[3]="\"archiveSha256\":\""sha"\"" }
+    { for(i=1;i<=length($0);i++) {
+        c=substr($0,i,1); if(c=="\\") { invalid=1; exit 1 }
+        if(c=="\"") quoted=!quoted;
+        if(quoted || (c!=" " && c!="\t" && c!="\r")) text=text c
+      }
+      if(quoted) { invalid=1; exit 1 }
+    }
+    END { if(invalid || quoted) exit 1;
+      for(i=1;i<=3;i++) for(j=1;j<=3;j++) for(k=1;k<=3;k++)
+        if(i!=j && j!=k && i!=k && text=="{"fields[i]","fields[j]","fields[k]"}") valid=1;
+      exit !valid
+    }' "$receipt" || fail python_installation_receipt_invalid
+}
 if [ ! -e "$destination" ] && [ ! -L "$destination" ]; then
   stage=$(mktemp -d "$base/.python-XXXXXXXX")
   archive=${CRAFT_PYTHON_ARCHIVE:-$stage/python.tar.gz}
@@ -93,8 +116,10 @@ if [ ! -e "$destination" ] && [ ! -L "$destination" ]; then
   tar -xzf "$archive" -C "$stage/payload"
   verify "$stage/payload"
   printf '{"version":"%s","platform":"%s","archiveSha256":"%s"}\n' "$version" "$key" "$archive_sha" > "$stage/payload/installation.json"
+  verify_receipt "$stage/payload"
   mv "$stage/payload" "$destination"
 else
+  verify_receipt "$destination"
   verify "$destination"
 fi
 cleanup; stage=''; trap - EXIT INT TERM

@@ -301,7 +301,7 @@ def inspect(store,task,runtime_home):
         if runtime_home is None:raise ValueError('engineering_runtime_location_missing')
         lock=read(Path(__file__).with_name('runtime.lock.json'));expected=lock['artifacts'][load('platform_support').platform_key()]
         if expected['binarySha256']!=state['identity']['runtimeSha256']:raise ValueError('engineering_task_runtime_mismatch')
-        installed=load('bootstrap').inspect_install(Path(runtime_home)/'effectcraft'/lock['resolvedVersion'],lock['artifact'],expected)
+        installed=load('bootstrap').inspect_install(Path(runtime_home)/'effectcraft'/lock['resolvedVersion'],lock['artifact'],expected,lock['resolvedVersion'],load('platform_support').platform_key())
     except (ValueError,OSError,KeyError,TypeError) as error:
         report['engineering']['reason']=str(error);return report
     report['engineering']=verify_projects(output,data['projects'],installed['executable'],timeout=max(.1,min(120,state['deadline']-time.time())))

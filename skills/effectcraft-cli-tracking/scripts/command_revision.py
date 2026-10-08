@@ -296,7 +296,7 @@ def validate_result(store,task,proof=None,runtime_home=None,for_reconcile=False)
             load('png_inspection').inspect_png(Path(state['output'])/name)
     if runtime_home is not None:
         lock=managed.read(Path(__file__).with_name('runtime.lock.json'));expected=lock['artifacts'][load('platform_support').platform_key()]
-        installed=load('bootstrap').inspect_install(Path(runtime_home)/'effectcraft'/lock['resolvedVersion'],lock['artifact'],expected)
+        installed=load('bootstrap').inspect_install(Path(runtime_home)/'effectcraft'/lock['resolvedVersion'],lock['artifact'],expected,lock['resolvedVersion'],load('platform_support').platform_key())
         report=delivery.verify_projects(Path(state['output']),after['projects'],installed['executable'])
         if report['status']!='PASS':raise ValueError('engineering_gate: '+str(report))
     # 后续核对只能读取已生成的证据，不能因缺失而重新保存原工程。

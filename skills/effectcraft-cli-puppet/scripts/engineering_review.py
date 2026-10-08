@@ -23,7 +23,7 @@ def verify(root, runtime_home, runtime_sha, timeout=120):
         if runtime_home is None:raise ValueError('engineering_runtime_location_missing')
         lock=runtime_lock();key=load('platform_support').platform_key();expected=lock['artifacts'][key]
         if expected['binarySha256']!=runtime_sha:raise ValueError('engineering_task_runtime_mismatch')
-        installed=load('bootstrap').inspect_install(Path(runtime_home)/'effectcraft'/lock['resolvedVersion'],lock['artifact'],expected)
+        installed=load('bootstrap').inspect_install(Path(runtime_home)/'effectcraft'/lock['resolvedVersion'],lock['artifact'],expected,lock['resolvedVersion'],load('platform_support').platform_key())
     except (ValueError,OSError,KeyError,TypeError) as error:
         report['reason']=str(error);return report
     try:

@@ -43,6 +43,28 @@ function Assert-Tree([string]$root) {
         if ((Get-FileHash -LiteralPath $file -Algorithm SHA256).Hash.ToLowerInvariant() -ne $parts[1]) { throw 'python_installed_checksum_mismatch' }
     }
 }
+function Assert-PythonReceipt([string]$root) {
+    try {
+        $receipt = Join-Path $root 'installation.json'
+        $item = Get-Item -LiteralPath $receipt
+        if ($item.PSIsContainer -or ($item.Attributes -band [IO.FileAttributes]::ReparsePoint) -or $item.Length -gt 4096) { throw 'invalid receipt file' }
+        $raw = [Text.UTF8Encoding]::new($false,$true).GetString([IO.File]::ReadAllBytes($receipt))
+        $compact = [Text.StringBuilder]::new(); $quoted = $false
+        foreach ($character in $raw.ToCharArray()) {
+            if ($character -eq '\') { throw 'escaped receipt field' }
+            if ($character -eq '"') { $quoted = -not $quoted }
+            if ($quoted -or [int]$character -notin @(32,9,13,10)) { [void]$compact.Append($character) }
+            if ($quoted -and ($character -eq "`n" -or $character -eq "`r")) { throw 'multiline receipt field' }
+        }
+        if ($quoted) { throw 'unclosed receipt field' }
+        $fields = @(('"version":"'+$lockData.version+'"'),('"platform":"'+$key+'"'),('"archiveSha256":"'+$entry.archiveSha256+'"'))
+        $valid = $false
+        for ($i=0; $i -lt 3; $i++) { for ($j=0; $j -lt 3; $j++) { for ($k=0; $k -lt 3; $k++) {
+            if ($i -ne $j -and $j -ne $k -and $i -ne $k -and [String]::Equals($compact.ToString(),('{'+$fields[$i]+','+$fields[$j]+','+$fields[$k]+'}'),[StringComparison]::Ordinal)) { $valid = $true }
+        } } }
+        if (-not $valid) { throw 'receipt identity mismatch' }
+    } catch { throw 'python_installation_receipt_invalid' }
+}
 try {
     if (-not (Test-Path -LiteralPath $destination)) {
         $stage = Join-Path $base ('.python-' + [Guid]::NewGuid().ToString('N'))
@@ -57,9 +79,11 @@ try {
         Expand-Archive -LiteralPath $archive -DestinationPath $payload
         Assert-Tree $payload
         @{version=$lockData.version;platform=$key;archiveSha256=$entry.archiveSha256} | ConvertTo-Json | Set-Content -LiteralPath (Join-Path $payload 'installation.json')
+        Assert-PythonReceipt $payload
         [IO.Directory]::Move($payload, $destination)
     } else {
         if ((Get-Item -LiteralPath $destination).Attributes -band [IO.FileAttributes]::ReparsePoint) { throw 'python_runtime_symlink' }
+        Assert-PythonReceipt $destination
         Assert-Tree $destination
     }
 } finally {
