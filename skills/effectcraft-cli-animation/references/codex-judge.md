@@ -10,3 +10,7 @@
 6. 仅在创作FAIL、工程/技术通过且已有revisionScope与预算时，通过公开revise局部修改，再重复实际观察。用户接受始终独立。
 
 This adapter runs in the current Codex agent using its actual visual tools. It adds no independent paid model API. Read the v2 request, verify bound artifact digests, and inspect the requested preview/video/sequence samples. For video, extract the exact requested frame indices using an available decoder and keep derived images outside the skill and original delivery. Record only samples actually inspected, along with source-media path/digest, indices, method and observations. Return the explicit v2 receipt bound to task/request, criteria and scope. Missing tools or temporal coverage produce NOT_RUN; a sampled PASS does not assert all-frame acceptance. Import the receipt via public review, then revise only within the existing authorization and shared budget. User acceptance remains independent.
+
+命令／桌面修订需要原plan/run通过独立 `--revision-scope` 预先绑定范围；其内部请求使用 `effectcraft-command-revision/v1` 和当前Judge binding，不能沿用workflow的manifest或expectedProjectSha256字段。参见本技能 `managed-execution.md`。仅在新子版本完成原生保全复检后实际观察，不能把旧PNG或旧评分用于新版本。
+
+Command/desktop revision requires a scope bound separately before the original run. Its internal request uses the current Judge binding, not workflow manifest fields. Reopen/preservation checks and actual observation apply to the new child version; old media/scores do not prove it.

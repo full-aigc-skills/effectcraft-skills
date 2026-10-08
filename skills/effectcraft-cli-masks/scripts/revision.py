@@ -56,6 +56,8 @@ def assert_preserved(before, after, targets):
 
 
 def revise(store, task, plan, output, runtime_home):
+    if store.read(task)['identity']['mode']!='workflow':
+        return load('command_revision').revise(store,task,plan,output,runtime_home)
     managed=load('managed'); quality=load('quality_review')
     state=store.read(task)
     root=store.lineage(state)[-1]

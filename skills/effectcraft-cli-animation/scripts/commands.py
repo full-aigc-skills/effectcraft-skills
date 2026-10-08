@@ -255,7 +255,7 @@ def runtime_rows(session, params=None):
     return rows
 
 def execute(plan, output, runtime_home=None, mode="headless", connect=None, token_file=None,
-            installer=None, session_factory=None, inputs=None, observer=None):
+            installer=None, session_factory=None, inputs=None, observer=None, prepare_output=None):
     inputs = inputs or {}
     if not isinstance(inputs, dict) or any(not isinstance(k, str) or not re.fullmatch(r"[a-zA-Z][\w-]*", k) or k == "output" for k in inputs):
         raise ValueError("invalid_input_name")
@@ -284,6 +284,7 @@ def execute(plan, output, runtime_home=None, mode="headless", connect=None, toke
     output.mkdir()
     write(output / "journal.json", receipt)
     try:
+        if prepare_output is not None:prepare_output(output)
         installer = installer or load("bootstrap").install
         lock = json.loads((ROOT / "scripts/runtime.lock.json").read_text(encoding='utf-8'))
         installed = installer(lock, runtime_home or os.environ.get("CRAFT_RUNTIME_HOME",

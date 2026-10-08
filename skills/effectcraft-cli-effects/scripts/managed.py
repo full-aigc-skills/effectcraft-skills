@@ -48,8 +48,11 @@ def doctor(runtime_home):
     return result
 
 
-def preflight(plan, output, mode, inputs=None, source=None):
+def preflight(plan, output, mode, inputs=None, source=None, revision_scope=None):
     inputs=inputs or {}
+    if revision_scope is not None:
+        if mode=='workflow':raise ValueError('revision_scope_mode')
+        load('command_revision').validate_scope(plan,revision_scope)
     if mode=='workflow':
         load('workflow').validate(plan)
     else:
@@ -114,6 +117,11 @@ class Hooks:
     def command_observation(self,session,record,phase):
         return load("command_delivery").Observer(self.store,self.task)(session,record,phase)
 
+    def prepare_command_output(self,output):
+        request=read(self.store.path(self.task).parent/'request.json')
+        if request.get('commandRevision'):
+            load('command_revision').prepare_output(self.store,self.task,output)
+
     def session(self, argv):
         owner=self
         state=self.store.read(self.task)
@@ -150,13 +158,17 @@ def worker(store, task, runtime_home):
                 hashes.update({name:load('task_store').file_sha(asset['path']) for name,asset in plan.get('assets',{}).items()})
                 current={'inputHashes':hashes}
             else:
-                current=preflight(plan,output,state['identity']['mode'],request['inputs'],request.get('source'))
+                current=preflight(plan,output,state['identity']['mode'],request['inputs'],request.get('source'),request.get('revisionScope'))
+            if request.get('revisionScope')!=state['identity']['authorization'].get('revisionScope'):
+                raise ValueError('revision_scope_changed')
             if current['inputHashes']!=state['identity']['inputHashes']:
                 raise ValueError('input_changed')
             key=load('platform_support').platform_key()
             if read(HERE/'runtime.lock.json')['artifacts'][key]['binarySha256']!=state['identity']['runtimeSha256']:
                 raise ValueError('runtime_changed; original task must keep its locked runtime')
             output.parent.mkdir(parents=True,exist_ok=True)
+            if request.get('commandRevision'):
+                load('command_revision').validate_prepared(store,task,runtime_home)
             if state['identity']['mode']=='workflow':
                 if recovering:
                     with load('output_guard').resume_claim(output,context['executionIdentity'],context['outputIdentity']):
@@ -167,13 +179,15 @@ def worker(store, task, runtime_home):
                 proof={'manifestSha256':load('task_store').file_sha(output/'manifest.json'),
                        'projectSha256':load('task_store').file_sha(output/'project.ecproj'),'engineeringReopen':'PASS'}
             elif state['identity']['mode']=='commands':
-                result=load('commands').execute(plan,output,runtime_home,session_factory=hooks.session,inputs=request['inputs'],observer=hooks.command_observation)
+                result=load('commands').execute(plan,output,runtime_home,session_factory=hooks.session,inputs=request['inputs'],observer=hooks.command_observation,prepare_output=hooks.prepare_command_output)
                 if result['result']!='PASS':raise RuntimeError(result.get('error','native_command_failed'))
                 proof=load('command_delivery').finalize(store,task)
             else:
                 result=load('desktop_session').run(plan,output,runtime_home,request['inputs'],task_hooks=hooks)
                 if result['result']!='PASS':raise RuntimeError(result.get('error','desktop_command_failed'))
                 proof=load('command_delivery').finalize(store,task)
+            if request.get('commandRevision'):
+                load('command_revision').validate_result(store,task,proof,runtime_home)
             store.delivered(task,proof)
         except BaseException as error:
             store.fail(task,str(error),unknown=bool(store.read(task)['steps']))
@@ -241,8 +255,8 @@ def supervise(store, task, runtime_home, recover=False):
         return store.worker_exited(task,lifecycle['returncode'])
 
 
-def run(store, plan, output, runtime_home, mode='workflow', inputs=None, source=None, task=None, parent=None):
-    inputs=inputs or {};check=preflight(plan,output,mode,inputs,source)
+def run(store, plan, output, runtime_home, mode='workflow', inputs=None, source=None, task=None, parent=None, revision_scope=None):
+    inputs=inputs or {};check=preflight(plan,output,mode,inputs,source,revision_scope)
     if source and not parent:
         for prior in store.all():
             if Path(prior['output']).resolve()==Path(source).resolve():
@@ -251,15 +265,27 @@ def run(store, plan, output, runtime_home, mode='workflow', inputs=None, source=
     if key not in lock['artifacts']:raise ValueError('unsupported_platform: '+key)
     task=task or uuid.uuid4().hex
     request={'inputs':inputs,'source':str(source) if source else None}
+    authorization={'writeRoot':str(Path(output).absolute()),'inputs':inputs}
+    if revision_scope is not None:
+        request['revisionScope']=revision_scope;authorization['revisionScope']=revision_scope
+    authorization['requestHash']=load('task_store').digest(request)
     store.create(task,plan=plan,output=str(output),runtime_sha=lock['artifacts'][key]['binarySha256'],
                  inputs=check['inputHashes'],source=str(Path(source)/'project.ecproj') if source else None,
-                 mode=mode,authorization={'writeRoot':str(Path(output).absolute()),'inputs':inputs,
-                 'requestHash':load('task_store').digest(request)},parent=parent)
+                 mode=mode,authorization=authorization,parent=parent)
     load('task_store').atomic_json(store.path(task).parent/'request.json',request)
     return supervise(store,task,runtime_home)
 
 
 def reconcile(store, task):
+    state=_reconcile(store,task)
+    if state['identity']['mode']!='workflow' and state.get('parent') and state['state']=='review_ready':
+        return load('command_revision').settle_completed(store,task)
+    if state['identity']['mode']!='workflow' and state.get('parent') and state['state']=='reconciling':
+        return load('command_revision').prove_not_executed(store,task)
+    return state
+
+
+def _reconcile(store, task):
     """只核对完整已落盘交付；无法证明的部分编辑继续保持 reconciling。"""
     with load('platform_support').exclusive_lock(store.root/'leases'/(task+'.lifecycle.lock'),timeout=0), load('platform_support').exclusive_lock(store.root/'leases'/(task+'.lock'),timeout=0):
         with store.lock():
@@ -314,6 +340,7 @@ def main():
         p=sub.add_parser(name);p.add_argument('--plan',type=Path,required=True);p.add_argument('--output',type=Path,required=True)
         p.add_argument('--mode',choices=['workflow','commands','desktop'],default='workflow');p.add_argument('--input',action='append',default=[])
         p.add_argument('--source',type=Path);p.add_argument('--task')
+        if name in ('plan','run'):p.add_argument('--revision-scope',type=Path)
     for name in ('inspect','reconcile','resume','cancel','_worker','review'):
         p=sub.add_parser(name);p.add_argument('--task',required=True)
         if name=='review':p.add_argument('--criteria',type=Path,required=True);p.add_argument('--judge',type=Path)
@@ -340,9 +367,10 @@ def main():
                 if not sep or name in inputs:raise ValueError('invalid_input')
                 inputs[name]=str(Path(value).absolute())
             plan=read(args.plan)
-            if args.action=='plan':result=preflight(plan,args.output,args.mode,inputs,args.source)
+            scope=read(args.revision_scope) if getattr(args,'revision_scope',None) else None
+            if args.action=='plan':result=preflight(plan,args.output,args.mode,inputs,args.source,scope)
             elif args.action=='revise':result=load('revision').revise(store,args.task,plan,args.output,args.runtime_home)
-            else:result=run(store,plan,args.output,args.runtime_home,args.mode,inputs,args.source,args.task)
+            else:result=run(store,plan,args.output,args.runtime_home,args.mode,inputs,args.source,args.task,revision_scope=scope)
         print(json.dumps(result,ensure_ascii=False,allow_nan=False))
         if result.get('state') in ('failed','reconciling','cancel_requested'):raise SystemExit(1)
     except (ValueError,OSError,KeyError,TypeError,subprocess.SubprocessError) as error:

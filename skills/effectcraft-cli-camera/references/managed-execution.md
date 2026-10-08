@@ -27,7 +27,7 @@
 1. `review` 输出 `judgeRequest`，绑定任务、工程、全部产物与评价标准。实际打开请求列出的图片/视频；技术检查 PASS 不能代替视觉与时序观察。
 2. 使用显式 `effectcraft-judge-request/v2` / `effectcraft-judge-receipt/v2`。回执原样绑定 `requestId`、`taskId`、`binding`、`criteriaHash`、`scopeHash`；实际观察请求的帧样本后填写 `capabilities`、`observations`（媒体路径/摘要、帧索引、方法及观察描述）、`status`、`score`、`passed`、`issues`、`temporalReviewed`。缺视觉/时序能力或样本覆盖时返回 NOT_RUN，不计分、不选最佳。具体宿主步骤见 [Codex Judge 适配](codex-judge.md)。
 3. 再次 `review --judge RECEIPT` 导入回执。过期文件、摘要变化或技术失败均拒绝。`accepted` 保持 false，等待用户接受。
-4. 初始计划声明 `revisionScope: [{"layer":"title","properties":["text/sourceText"]}]`。创作 FAIL 后可调用 `revise`，仅支持该范围内 `layer.setText` / `prop.set`，不开放任意命令网关；修订计划必须包含 `expectedProjectSha256`，不得新建 document 或扩大素材/对象范围。
+4. workflow初始计划声明 `revisionScope: [{"layer":"title","properties":["text/sourceText"]}]`。创作 FAIL 后可调用 `revise`，仅支持该范围内 `layer.setText` / `prop.set`，不开放任意命令网关；修订计划必须包含 `expectedProjectSha256`，不得新建 document 或扩大素材/对象范围。
 5. 每轮先持久化预算，再基于原工程另存。完整比较非目标属性与关键帧，重开、渲染、再评估。最多 2 轮、任务总期限 1800 秒；连续两次无改善停止。`bestTask` 指向最佳已评价版本，失败现场保留。
 
 工程 PASS、媒体 PASS、创作 PASS/FAIL/NOT_RUN、用户接受分别记录。取消进程后如果存在已尝试而无回执的编辑，状态保持 reconciling，终止成功不等于编辑未发生。
@@ -81,3 +81,29 @@ Each `review` verifies the task-bound installed native runtime, copies the proje
 Managed commands and owned-desktop runs persist internal observations in task state, binding each saved project or named PNG to its native context and actual bytes. Public command schemas and user outputs stay compatible. Review checks the original receipt, full inventory, every saved composition/layer and dependency through isolated native reopening, and actual PNG dimensions/alpha against its own render context. A later project cannot stand in for an unsaved render version. Historical tasks without observations remain diagnostic-only. Video/sequence, Judge and automatic command revision integration remain open; engineering/technical PASS alone never sets creative or user acceptance to PASS.
 
 Command/desktop review now emits the existing Judge v2 request after current engineering and technical gates. `scope.contexts` independently binds each composition/native version, dependency identity, timebase and required frames; media rows reference their context. Observe every required media path and meet each context’s sample coverage. Frames from different works cannot fill one another’s gaps. Missing visual/temporal/media evidence remains NOT_RUN; conflicting/stale receipts are rejected and identical imports are idempotent. User acceptance stays independent. Command video/sequence and local revision integration remain open.
+
+## 命令／桌面局部修订候选 / Command and desktop local revision candidate
+
+原始 `craft-command-plan/v1` 不增加字段。`plan` 与 `run --mode commands|desktop` 通过独立 `--revision-scope SCOPE.json` 在创建任务前绑定授权；文件内容示例：
+
+```json
+[{"project":"title.ecproj","comp":"main","layer":"title","properties":["text/sourceText"]}]
+```
+
+`main` 必须是原计划 `comp.new` 的创建别名，`title` 为原计划的图层创建别名，工程路径必须由原计划声明保存。别名只从原成功回执解析，不能以新ID扩大范围。缺范围的历史任务不补建授权。
+
+当前工程和技术通过、Judge FAIL 已结算后，`revise --task ORIGINAL_ID --plan REVISION.json --output NEW_DIRECTORY` 接收以下内部管理请求；不是新的公开 craft 交付协议：
+
+```json
+{"schema":"effectcraft-command-revision/v1","binding":{"commandDeliverySha256":"COPY_CURRENT_BINDING","receiptSha256":"COPY_CURRENT_BINDING","filesHash":"COPY_CURRENT_BINDING"},"project":"title.ecproj","operations":[{"comp":1,"command":"layer.setText","params":{"layer":2,"text":"NOVA"}}]}
+```
+
+完整复制当前 Judge 请求的 `binding`，使用原成功回执的实际 comp/layer ID。仅支持事先授权的 `layer.setText` 与静态 `prop.set`；有动画关键帧的目标属性拒绝，未来时间范围授权另行验收。text-only 操作只豁免文字内容比较，字号、字体、描边等仍须保全。
+
+子任务沿用原模式和运行时，以私有工程副本重开，在新输出保存全部当前工程并重新渲染全部绑定PNG。只允许目标属性变化及摘要相同素材的路径搬迁；其他原生字段、关键帧和未受影响媒体像素保持一致。原任务／工程／媒体不改写。子版本共享原任务30分钟期限、最多两轮、停滞及资源预算，尝试前持久扣轮数，失败不退回。完成后对返回子任务ID执行 `review`，实际查看新样本后导入新的Judge回执。
+
+若监督器在原生完成后断开，只能 `inspect` / `reconcile` 原子任务。必须有已退出进程证据和既有 `preservation.json` 才解除根任务修订占用；缺回执不补建基线，部分编辑保持未知，不通过另起任务自动重做。视频／序列、动画目标时间范围、完整宿主派发与各平台验收保持独立开放。
+
+Commands and desktop runs bind a separate `--revision-scope` file before execution; raw command plans stay compatible. A settled creative FAIL plus fresh engineering/technical PASS permits the internal revision request above, bound to the current Judge binding and original native IDs. Only authorized static properties/text can change; animated targets require a future time-scoped contract. Text-only changes preserve nested font/style fields. Child versions reopen private copies, save all projects and rerender all bound PNGs, preserving originals and non-target native fields/pixels. They share the original deadline, two-round, stagnation and resource budgets. Review the returned child ID and actually observe its samples. Interrupted completion can release ownership only through verified stopped-process and existing preservation receipts; unknown edits are never replayed. Video/sequences, animated time scopes, full host dispatch and target-platform acceptance remain separate gates.
+
+生成器内部版本2在编辑前显式选中授权图层。旧版计划不改写或重发；`reconcile` 可核对注册表阻断：仅当持久调用序列、参数/结果摘要、失败日志、源/种子和停止证明完全对应，且全部已发送调用只有读取/open_project/comp.open/layer.select、无工程或媒体新输出时，才记录 `revision_not_executed`。这会保留失败子任务、记录 `not-executed.json`、解除占用，但不退回轮数或自动重试。缺证据仍为unknown。 / Generator v2 explicitly selects the authorized layer before editing. Old plans are never rewritten or resent. Reconciliation can prove a registry-blocked edit was not sent only through exact durable call/argument/result matching, unchanged source/seeds, stopped-process evidence and absence of edited outputs. It retains the failed child and spent attempt; no automatic retry or refund occurs.

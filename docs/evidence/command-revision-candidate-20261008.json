@@ -1,0 +1,91 @@
+{
+  "schema": "effectcraft-command-revision-evidence/v1",
+  "date": "2026-10-08",
+  "scope": "development component; task 9.23 remains open",
+  "sourceVersion": "0.1.0-dev.42",
+  "pluginVersion": "0.1.0-dev.44",
+  "platform": "macOS arm64",
+  "runtime": "EffectCraft 0.4.0",
+  "python": "3.13.16 isolated",
+  "tests": {
+    "targeted": 40,
+    "regressionTotal": 403,
+    "passed": 365,
+    "conditionalSkips": 38
+  },
+  "codeSha256": {
+    "skills/effectcraft-use/scripts/additional_platforms.py": "1a4ffc9f04e240374269a9869d0383f9f833082cf066203fddba117f247f48d9",
+    "skills/effectcraft-use/scripts/bootstrap.py": "d5a77de7766e1d634bc903d9d6918b343bc7f87472d0225a52f3bd0fff882965",
+    "skills/effectcraft-use/scripts/cli.py": "9303ae8ae30009fa706d5d56603032485ad81416aee1d0af523ce902e3f28165",
+    "skills/effectcraft-use/scripts/command_delivery.py": "f3c657f25abb1342ed4c12ada113ad7c2e7a213749f186ce3ae0b742bd618036",
+    "skills/effectcraft-use/scripts/command_judge.py": "1d9617f42edcd4dd730b0781fc55b330c40f8774db0063ff7cb53fa7af4e83f0",
+    "skills/effectcraft-use/scripts/command_revision.py": "114cf4eed3fb7c2a726cfb7c429d5e3e3afac34c6175303a53d54afe427eb409",
+    "skills/effectcraft-use/scripts/commands.py": "46034f7e4c6cf050d670881f58530b2fa2540a9132dca129469763e865ce5277",
+    "skills/effectcraft-use/scripts/desktop.py": "802de3eef9ed9fca3ad09a2f5f6f204f6bbba5a09450efe6ae062e7159409553",
+    "skills/effectcraft-use/scripts/desktop_session.py": "a4441b65603b73ad350aff4348553c9681c77cb5c030e97bc5630a7d88251a8e",
+    "skills/effectcraft-use/scripts/engineering_review.py": "cd85935fe5a4b4d5285c46896cd50d5b9defd3516eb9d96fcd31e8966bacab07",
+    "skills/effectcraft-use/scripts/exchange_loss.py": "8871bc2d4e2e6bedd0b1d2852a06ccdbd43b0339d67afc53e6029fb3539c8c4f",
+    "skills/effectcraft-use/scripts/image_sequence.py": "f67d0e565d8c99abd519bfaabe44599d25606450ca4f98df1ea227619ab2fff0",
+    "skills/effectcraft-use/scripts/judge_contract.py": "58e1e4fad0e296cbf185a4e6e5cf5bd3f2db6482b34dbfcb622b814639469480",
+    "skills/effectcraft-use/scripts/managed.py": "ac5182184fe9d5730b22298de869c4fddd80105f49688f34ffc43b256e96714f",
+    "skills/effectcraft-use/scripts/mcp_session.py": "dd6df96dc1734cd7e43c4b820661d2e2c8c713dc8849fc89ab06a3720d99619b",
+    "skills/effectcraft-use/scripts/native_workflow.py": "0db0471f8d849db9c3ffaeaac1c7bc40bf0cd500a638f7b681ecdeb934960bdd",
+    "skills/effectcraft-use/scripts/orphan_segments.py": "244059948ca6b783c64cdd5942e91f3e6268dfd71f3c48c300595ccbcb2584b9",
+    "skills/effectcraft-use/scripts/output_guard.py": "018c5c27217c11ec7b45ded52a1e13d7c42b34a3a53df21566e26f192143302b",
+    "skills/effectcraft-use/scripts/platform_support.py": "d6a133dc25b81570f585f473f2fe290e181e78bc24032a05ae83be6f0a45aed8",
+    "skills/effectcraft-use/scripts/png_inspection.py": "0e3c50907c66c6dcc45256d045920da346ad77892e47401de3103c8f6232938d",
+    "skills/effectcraft-use/scripts/preserved_stage.py": "64199df3ee6af2901a859a5aac401fd27ca2f0c6ba9238e6f72c3563f681ad63",
+    "skills/effectcraft-use/scripts/process_guard.py": "914127933d528388cff33db36e92f8ed62263737e985c65b1f7e200ee14d50a4",
+    "skills/effectcraft-use/scripts/quality_review.py": "e0ddc78bb8bdc9b2e1dfca2e8ae7c1915ad9008ced0b3d3a242ccc45086e77e9",
+    "skills/effectcraft-use/scripts/render_recovery.py": "6baf8f315f20d5e6b9115423502d66e9e51e33dc2398adc6bbff85b6b68b1e31",
+    "skills/effectcraft-use/scripts/resource_budget.py": "501cb33b348cab13cace063dbdb2158d8bdd196419aee7978197a8fc40e27e89",
+    "skills/effectcraft-use/scripts/resource_meter.py": "7c89e528b2851a190b5ca849f29ec03d26b4d827ff12aeef7d4c7c01c1cd6dcf",
+    "skills/effectcraft-use/scripts/review_ledger.py": "4931523dd1c76eb15037faaf28aaa7c85b7c85c6dfd447455925dd5a3ae9c512",
+    "skills/effectcraft-use/scripts/revision.py": "546214f38430c14f354b6c0aa8feff8928d3267b9dee1b7ea708933bc3633590",
+    "skills/effectcraft-use/scripts/segmented_sequence.py": "f0b078e72211c245267c22514a7b4202099a47cc42a5e9c8243bdd7b0dc473e9",
+    "skills/effectcraft-use/scripts/task_store.py": "1726f122ad3ce5dba073e2d959d367d4f9a4314486fd24ef512e4b8e5385fe78",
+    "skills/effectcraft-use/scripts/workflow.py": "52eb0ccd9942b83588155ddb851c63c6fbea0f3122a0aa2a3029a2640cb6ce14"
+  },
+  "testSha256": "f90cc30e19cf6084e024ebee75a474b545a8c31e39dabf50ba4bfe98eabe511b",
+  "cases": {
+    "commandMultiComposition": {
+      "gates": {
+        "engineering": "PASS",
+        "technical": "PASS",
+        "creative": "PASS",
+        "user": "NOT_RUN"
+      },
+      "receiptSha256": "5f312b4b5ace4361422e54661af02c652a2e246b4d24f76963caa0efcff552a0",
+      "samples": 4,
+      "recovery": "completed existing delivery reconciled without re-edit",
+      "roundsConsumed": 2
+    },
+    "commandImportedAsset": {
+      "gates": {
+        "engineering": "PASS",
+        "technical": "PASS",
+        "creative": "PASS",
+        "user": "NOT_RUN"
+      },
+      "receiptSha256": "5c771491874a58e3ff15495b0a147c867fd3bb6b8101aa08884e8c79bccfd8cd",
+      "samples": 1,
+      "assetSha256": "e80e9a724bbc9662600a87025d23b7b1a3fcabea8d2b3b271803a3dd2ccaf7bc",
+      "assetRelocationVerified": true
+    },
+    "desktopInterrupted": {
+      "status": "NOT_RUN",
+      "reason": "driver 500 second timeout; owned worker stopped; partial output retained; reconcile reports missing failure receipt; unknown edit not replayed",
+      "diagnosticSha256": "c3953154880c3e4ca21597aa867c4abdcf5aeb4b30e9673efe0fdee6ac816aee"
+    }
+  },
+  "open": [
+    "desktop complete positive revision/recovery qualification",
+    "initial commands/desktop family resource accounting",
+    "crash between child terminal state and root settlement",
+    "animated target time scope and video/sequence revisions",
+    "new immutable installed-host natural-language dispatch",
+    "other target platform native creation",
+    "full V1"
+  ],
+  "acceptance": "sampled creative PASS does not imply whole-sequence or user acceptance"
+}

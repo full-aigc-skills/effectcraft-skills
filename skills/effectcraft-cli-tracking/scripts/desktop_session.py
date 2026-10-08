@@ -77,7 +77,7 @@ def run(plan,output,runtime_home=None,inputs=None,task_hooks=None):
    return session
   interrupted=False
   try:
-   receipt=commands.execute(plan,output,home,'bridge','127.0.0.1:'+str(port),str(token) if token else None,installer=install,session_factory=factory,inputs=inputs,observer=task_hooks.command_observation if task_hooks else None)
+   receipt=commands.execute(plan,output,home,'bridge','127.0.0.1:'+str(port),str(token) if token else None,installer=install,session_factory=factory,inputs=inputs,observer=task_hooks.command_observation if task_hooks else None,prepare_output=getattr(task_hooks,'prepare_command_output',None))
   except KeyboardInterrupt:
    if not output.is_dir():raise
    interrupted=True

@@ -190,8 +190,8 @@ def finalize(store,task):
     return {'receiptSha256':data['receiptSha256'],'commandDeliverySha256':sha(base/'delivery.json'),'engineeringReopen':'NOT_RUN'}
 
 
-def document(store,task):
-    state=store.read(task);base=directory(store,task);path=base/'delivery.json';proof=state.get('delivery') or {}
+def document(store,task,proof=None):
+    state=store.read(task);base=directory(store,task);path=base/'delivery.json';proof=proof if proof is not None else state.get('delivery') or {}
     if not proof.get('commandDeliverySha256'):raise ValueError('legacy_command_delivery_read_only')
     if sha(path)!=proof['commandDeliverySha256']:raise ValueError('command_delivery_changed')
     data=read(path);output=Path(state['output'])

@@ -1,5 +1,7 @@
 # Version-bound release records
 
+Development source dev.42 adds scoped command/desktop local revision with native preservation receipts and known-not-executed reconciliation. 40 targeted tests; regression 365 passed / 38 conditional skips (403 total). Native command visual repair and imported-asset preservation passed; desktop interruption remains unaccepted. Task9.23 and full V1 stay open. [Evidence](docs/evidence/command-revision-candidate-20261008.json).
+
 Source dev.41: managed command/desktop Judge v2 and immutable review ledger integration (task9.22). 10 targeted tests; 325 regression passes / 38 conditional skips. Native sampled multi-composition review and rejection gates passed on macOS arm64. Task9.23 local revision remains unfinished and excluded from this release; full V1 and fixed-host acceptance remain open.
 
 Source dev.40: managed commands/owned desktop native observations, readonly saved-project and PNG review, native revision/actual-footage source binding. 28 targeted tests; 315 regression passes / 38 conditional skips. Full V1 and fixed-host acceptance stay open.
