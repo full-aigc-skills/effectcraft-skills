@@ -1,21 +1,10 @@
 # EffectCraft Skills
 
-Development source dev.48 / plugin dev.50 includes installation-receipt protection and bounded macOS isolated Python/native upgrade evidence: 490 regressions (452 passes / 38 conditional skips), plus 19 local PowerShell function cases. Native Windows and fixed-host acceptance remain open. A new-Python bootstrap failure still blocks old-task recovery (OpenSpec 9.29); 75 tasks and full V1 remain open. [Evidence](docs/evidence/isolated-python-upgrade-candidate-20261009.json).
-
-Previous native-upgrade component validates installation receipts and actual macOS active-task isolation across official0.3.1→0.4.0;486 regressions (448 passes/38 conditional skips). Old tasks retain their original controller and external Python3.13.5 executable; new tasks use isolated Python3.13.16 and native0.4.0. External Python is not isolated-stdlib proof. Fixed source47/plugin49 excludes this installer increment; cleanup across state roots, other targets/hosts and fullV1 remain open. [Evidence](docs/evidence/runtime-upgrade-component-candidate-20261009.json).
-
-Working-tree execution-binding candidate: task-private snapshots and original-controller recovery pass24 targeted tests and482 regressions (444 passes/38 conditional skips), plus bounded actual macOS recovery. Published source45/plugin47 excludes this candidate;74 implementation tasks and full V1 remain open. [Evidence](docs/evidence/task-execution-binding-candidate-20261009.json).
-
-Development source45 completes readonly doctor/catalog task9.2.1: explicit verified native discovery, executable recovery argv and offline differences.420 regression passes/38 conditional skips;15 readonly single-skill probes and15 no-Python diagnostics pass. Development source47/plugin49 includes this increment;74 implementation tasks and full V1 remain open. [Evidence](docs/evidence/doctor-capabilities-candidate-20261008.json).
-
-Segmented first-use guidance now matches native acceptance of fixed Film40 / Effect38 / Art117, including HD full frames, revision, recovery and relocation. Installation qualification of this new guide snapshot is recorded separately. [Evidence](docs/evidence/craft-fixed-segmented-hd-refresh-20261008.json).
-
-> **Development release dev.48 (2026-10-09):** source dev.48 adds strict Python and CLI installation-receipt checks. Bounded native upgrade evidence is recorded; complete V1 and other platform/host qualification remain open.
-
+Development source dev.49 / plugin dev.51: trusted v2 tasks select their original Python before current-runtime preparation; managed entry supports CRAFT_RUNTIME_ARCHIVE offline native artifacts. Current macOS native reopen/decode passes; native Windows, fixed-host and full V1 acceptance remain open. [Evidence](docs/evidence/release-readiness-20261009.json).
 
 Turn text, graphics and footage into an editable `.ecproj`, dependencies and rendered media.
 
-Current source: `0.1.0-dev.48`; consuming plugin: `0.1.0-dev.50`; 15 independent skills.
+Current source: `0.1.0-dev.49`; consuming plugin: `0.1.0-dev.51`; 15 independent skills.
 
 Verified first-use platform: macOS arm64 and Python 3.11+. Pinned runtimes install into the user data directory; skill files stay in their host-loaded directory. These are development releases; complete V1 acceptance and generic Skills CLI installation remain open.
 

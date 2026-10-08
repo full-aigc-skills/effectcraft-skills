@@ -1,5 +1,26 @@
 # 版本绑定的历史发行记录
 
+## dev.49 — 2026-10-09
+
+技能源 dev.49／插件 dev.51：可信 v2 任务在当前 Python 安装前选择并校验原解释器；新增 CRAFT_RUNTIME_ARCHIVE 离线制品连接，显式参数优先，失败不回落联网。旧 v1 仍可检查，不自动重放。macOS 原生工程重开与完整解码已复核；Windows 原生、固定宿主及完整 V1 保持开放。
+
+### Previous README status checkpoints
+
+未发布的任务入口候选：可信 v2 任务在准备当前 Python 前选择并校验原解释器。当前缓存为空、归档错误且当前 Python 锁损坏时，macOS 隔离3.13.15／原生0.3.1实际恢复、工程重开和12帧解码通过；启动证据缺失／篡改则保留并拒绝执行。已发布 source48／plugin50 快照不变，真实 Windows 入口及完整9.29仍开放。[证据](docs/evidence/task-bound-entry-candidate-20261009.json)。
+
+开发版技能源 dev.48／插件 dev.50 包含安装回执保护及 macOS 隔离 Python／原生版本升级的限定验证：490 项回归（452 通过／38 条件跳过），PowerShell 本机函数 19 例通过。真实 Windows 与固定宿主待验收；新 Python 准备失败仍阻止旧任务恢复（OpenSpec 9.29）。75 项任务及完整 V1 保持开放。[证据](docs/evidence/isolated-python-upgrade-candidate-20261009.json)。
+
+上一原生升级组件：安装回执校验及macOS真实0.3.1→0.4.0活动任务隔离验证通过；486项回归（448通过／38条件跳过）。旧任务保留原代码与Python3.13.5执行文件，新任务使用隔离Python3.13.16及0.4.0；外部旧Python不作为隔离标准库证明。固定source47/plugin49不含此次安装器改动；跨状态根清理、其他平台／宿主及完整V1仍开放。[证据](docs/evidence/runtime-upgrade-component-candidate-20261009.json)。
+
+工作区执行绑定候选：任务私有快照与原控制器恢复通过24项目标和482项回归（444通过／38条件跳过），并完成本机限定原生恢复。开发版source47/plugin49包含该组件；固定安装后的宿主验收仍开放；74项实施任务及完整V1仍开放。[证据](docs/evidence/task-execution-binding-candidate-20261009.json)。
+
+开发版技能源45已完成只读doctor／目录任务9.2.1：显式已验证CLI能力发现、恢复argv和离线差异。回归420通过／38条件跳过，15个单技能实际诊断及15次无Python只读诊断通过。开发版source47/plugin49包含本增量，74项实施任务及完整V1仍开放。[证据](docs/evidence/doctor-capabilities-candidate-20261008.json)。
+
+分段首用指南已根据固定 Film40／Effect38／Art117 的原生验收更新：覆盖 HD 全帧、返工、恢复和迁移。新指南快照的插件安装验收另行记录。[证据](docs/evidence/craft-fixed-segmented-hd-refresh-20261008.json)。
+
+> **开发版 dev.48（2026-10-09）：**技能源 dev.48 新增 Python 和 CLI 安装回执严格校验，记录限定原生升级证据；完整 V1 及其他平台／宿主验收继续开放。
+
+
 ## dev.48 — 2026-10-09
 
 新增严格 Python／CLI 安装回执校验，15 个独立技能资源同步。490 项回归：452 通过／38 条件跳过；PowerShell 本机函数19例通过，macOS 完整隔离发行升级与原生工程／12帧解码通过。任务9.26–9.28为限定组件证据；9.29旧任务入口缺陷、75项开放任务、其他平台／宿主与完整V1未完成。

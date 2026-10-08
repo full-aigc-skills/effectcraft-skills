@@ -42,7 +42,7 @@ def source_files(skill):
     skill=Path(skill)
     if skill.is_symlink():raise ValueError('execution_source_symlink')
     paths=list((skill/'scripts').glob('*.py'))
-    paths += [skill/'scripts'/n for n in ('runtime.lock.json','python.lock.json','desktop.lock.json','desktop-platforms.lock.json','additional-platforms.lock.json','parameter-contract.json','python-platforms.tsv','launch.sh','launch.ps1','web_adapter.mjs')]
+    paths += [skill/'scripts'/n for n in ('runtime.lock.json','python.lock.json','desktop.lock.json','desktop-platforms.lock.json','additional-platforms.lock.json','parameter-contract.json','python-platforms.tsv','launch.sh','launch.ps1','task_entry.sh','task_entry.ps1','entry_identity.awk','web_adapter.mjs')]
     paths += [skill/'references'/n for n in ('command-coverage.json','native-command-snapshot.json','bridge-tools.json','commands.json')]
     for folder in ('runtime-integrity','python-integrity'):
         directory=skill/'scripts'/folder
@@ -98,12 +98,13 @@ def verify_python(value,skill):
 
 
 def validate_binding(value):
-    if (not isinstance(value,dict) or set(value)!={'schema','skillSha256','python','runtimeHome','nativeVersion','platform'}
-            or value['schema']!='effectcraft-execution-binding/v1' or not isinstance(value['skillSha256'],str) or not re.fullmatch('[a-f0-9]{64}',value['skillSha256'])
+    if (not isinstance(value,dict) or set(value)!=({'schema','skillSha256','python','runtimeHome','nativeVersion','platform','entrySha256'} if value.get('schema')=='effectcraft-execution-binding/v2' else {'schema','skillSha256','python','runtimeHome','nativeVersion','platform'})
+            or value['schema'] not in ('effectcraft-execution-binding/v1','effectcraft-execution-binding/v2') or not isinstance(value['skillSha256'],str) or not re.fullmatch('[a-f0-9]{64}',value['skillSha256'])
             or not isinstance(value['runtimeHome'],str) or not Path(value['runtimeHome']).is_absolute()
             or not isinstance(value['nativeVersion'],str) or not re.fullmatch(r'\d+\.\d+\.\d+',value['nativeVersion'])
             or not isinstance(value['platform'],str) or not re.fullmatch('[a-z0-9_-]+',value['platform'])):
         raise ValueError('execution_binding_invalid')
+    if value['schema']=='effectcraft-execution-binding/v2' and (not isinstance(value['entrySha256'],str) or not re.fullmatch('[a-f0-9]{64}',value['entrySha256'])):raise ValueError('execution_binding_invalid')
     py=value['python']
     if (not isinstance(py,dict) or set(py)!={'mode','executable','sha256','version','root','platform'} or py['mode'] not in ('locked','external')
             or not isinstance(py['executable'],str) or not Path(py['executable']).is_absolute()
@@ -111,6 +112,33 @@ def validate_binding(value):
             or not isinstance(py['version'],str) or not re.fullmatch(r'\d+\.\d+\.\d+',py['version'])
             or py['platform']!=value['platform'] or (py['mode']=='locked' and (not isinstance(py['root'],str) or not Path(py['root']).is_absolute()))
             or py['mode']=='external' and py['root'] is not None):raise ValueError('execution_binding_invalid')
+
+
+def entry_bytes(binding,skill):
+    """固定字段描述仅用于安装前选择；不保存命令、凭据或可执行Shell表达式。"""
+    py=binding['python'];lock=read(Path(skill)/'scripts/python.lock.json');entry=lock['artifacts'].get(py['platform'],{})
+    minimum=entry.get('minimumSystem',{})
+    system_min=minimum.get('macOS',minimum.get('glibc',minimum.get('windows','0.0')))
+    rows=[('schema','effectcraft-task-entry/v1'),('mode',py['mode']),('executable',py['executable']),('executableSha256',py['sha256']),
+          ('root',py['root'] or '-'),('platform',py['platform']),('version',py['version']),
+          ('manifest',entry.get('integrityFile','-') if py['mode']=='locked' else '-'),
+          ('manifestSha256',entry.get('integritySha256','-') if py['mode']=='locked' else '-'),
+          ('archiveSha256',entry.get('archiveSha256','-') if py['mode']=='locked' else '-'),('minimumSystem',system_min)]
+    if any(not isinstance(value,str) or any(c in value for c in ('\t','\r','\n','\0')) for key,value in rows):
+        raise ValueError('bound_entry_path_unrepresentable')
+    return ''.join(key+'\t'+value+'\n' for key,value in rows).encode('utf-8')
+
+
+def verify_entry(store,task,skill):
+    """重读权威状态，启动描述与原绑定相符才允许派发原控制器。"""
+    state=store.read(task);binding=state['identity'].get('runtimeBinding')
+    if not binding or binding['schema']!='effectcraft-execution-binding/v2':raise ValueError('bound_entry_missing; legacy task requires original diagnostics')
+    directory=store.path(task).parent/'execution'
+    if file_sha(directory/'entry.tsv')!=binding['entrySha256'] or (directory/'entry.tsv').read_bytes()!=entry_bytes(binding,skill):
+        raise ValueError('bound_entry_changed')
+    identity=directory/'identity.json'
+    if file_sha(identity)!=hashlib.sha256(load('task_store').canonical(state['identity'])+b'\n').hexdigest():raise ValueError('bound_entry_identity_changed')
+    return binding
 
 
 def prepare(skill,runtime_home):
@@ -121,6 +149,7 @@ def prepare(skill,runtime_home):
     value={'schema':'effectcraft-execution-binding/v1','skillSha256':digest(manifest),
            'python':python_identity(skill,platform),'runtimeHome':str(Path(runtime_home).expanduser().absolute()),
            'nativeVersion':lock['resolvedVersion'],'platform':platform}
+    value['schema']='effectcraft-execution-binding/v2';value['entrySha256']=hashlib.sha256(entry_bytes(value,skill)).hexdigest()
     validate_binding(value);return value,manifest
 
 
@@ -138,7 +167,12 @@ def freeze(store,task,source,manifest):
     for name in manifest:
         target=stage/'skill'/name;target.parent.mkdir(parents=True,exist_ok=True);shutil.copyfile(Path(source)/name,target)
     if source_files(source)!=manifest or inventory(stage/'skill')!=manifest:raise ValueError('execution_source_changed')
-    load('task_store').atomic_json(stage/'manifest.json',manifest);stage.rename(destination)
+    load('task_store').atomic_json(stage/'manifest.json',manifest)
+    if binding['schema']=='effectcraft-execution-binding/v2':
+        payload=entry_bytes(binding,stage/'skill')
+        if hashlib.sha256(payload).hexdigest()!=binding['entrySha256']:raise ValueError('bound_entry_changed')
+        (stage/'entry.tsv').write_bytes(payload);load('task_store').atomic_json(stage/'identity.json',state['identity'])
+    stage.rename(destination)
 
 
 def inventory(skill):
@@ -161,6 +195,7 @@ def resolve(store,task):
         for name in manifest:relative(name)
         if inventory(skill)!=manifest:raise ValueError('execution_snapshot_changed')
     except (OSError,ValueError,TypeError):raise ValueError('execution_snapshot_invalid; preserve original task') from None
+    if binding['schema']=='effectcraft-execution-binding/v2':verify_entry(store,task,skill)
     verify_python(binding['python'],skill)
     lock=read(skill/'scripts/runtime.lock.json')
     if lock['resolvedVersion']!=binding['nativeVersion'] or lock['artifacts'][binding['platform']]['binarySha256']!=state['identity']['runtimeSha256']:
@@ -188,6 +223,7 @@ def handoff(store,args,current_script):
         if args.action in ('resume','revise','_worker'):raise ValueError('legacy_execution_binding_missing; inspect original task')
         return
     bound=resolve(store,args.task)
+    args.runtime_home=Path(bound['runtimeHome'])
     if Path(current_script).resolve()==Path(bound['script']).resolve() and Path(sys.executable).resolve()==Path(bound['python']).resolve():return
     suffix=[args.action,'--task',args.task]
     for key in ('plan','output','source','criteria','judge'):

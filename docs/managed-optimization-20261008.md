@@ -403,7 +403,7 @@ flowchart LR
 此组件不关闭9.1.4、2.4–2.6、其他目标平台或完整V1：跨状态根清理尚缺实现与证据；旧Python3.13.5仅绑定外部执行文件，不证明旧隔离标准库升级。新候选未提交／发布，插件skills/仍为不可变source47快照；安装后智能体自然语言派发尚未验收。首次暂停是受控测试边界，不等于未知编辑的可恢复证明。[证据 / Evidence](evidence/runtime-upgrade-component-candidate-20261009.json)。
 
 
-## 2026-10-09 隔离Python双版本与入口失败 / Isolated Python versions and frontend failure
+## 2026-10-09 前一检查点：隔离Python双版本与入口失败 / Previous isolated-Python checkpoint
 
 启动前新增Python安装回执校验：非链接文件、固定版本／平台／归档摘要、无额外／重复字段与非法编码；兼容旧入口生成的六种字段顺序和排版。坏回执保留，不调用解释器、不重装。4项POSIX公开入口测试先出现13个失败断言后转绿；PowerShell实际函数在本机19例通过，语法通过，真实Windows执行仍NOT_RUN。3个实际隔离Python坏回执公开doctor反例均保全回执和全部任务文件。
 
@@ -421,3 +421,24 @@ flowchart LR
 ```
 
 新发现的真实失败必须保留：调用已有old-held的公开resume，指定空的当前Python缓存并提供坏新制品；虽然绑定的旧3.13.15及快照完好，启动器仍先准备当前3.13.16并失败，无法进入原控制器。所有任务文件未改变、未重放编辑。这是9.29／9.1.4的未完成行为，不能用正常升级通过或本轮单元测试掩盖。后续须在当前Python安装之前选择并验证已有任务原执行资源；旧记录没有可信启动证据时保留现场，不能通过当前代码重建旧快照。跨状态根清理、其他原生平台和固定宿主仍开放。[证据 / Evidence](evidence/isolated-python-upgrade-candidate-20261009.json)。
+
+## 2026-10-09 安装前任务派发候选 / Bound task entry candidate
+
+v2执行绑定把固定字段启动描述摘要纳入任务身份。冻结目录原子发布原身份JSON、描述和完整技能快照；POSIX／PowerShell入口在任何当前Python安装或锁读取之前核对顶层原身份、原平台／系统下限、Python回执和完整载荷。只执行当前包内的只读Python校验器，重读原任务与完整快照后交接原控制器及runtimeHome；不执行任务目录里的Shell代码。POSIX采用同PID exec，Windows继续使用原自有Job与stdin所有权通道。当前v1绑定读取及原核验保留；缺少新启动材料的历史记录不隐式迁移、补建或重做。
+
+macOS原生证据：隔离Python3.13.15／EffectCraft0.3.1的v2任务在当前Python缓存为空、坏新归档和坏当前Python锁下恢复；工程重开和12帧媒体完整解码PASS。原身份／截止时间／已完成步骤／冻结快照保全，错误前端runtimeHome被原绑定替代；坏原Python回执在启动解释器前拒绝。最终前端再次只读重开／解码通过，原任务快照仍为此前检查点，不覆盖历史字节。
+
+Windows入口代码与语法、实际PowerShell身份函数8例和回执函数19例在本机验证；不能替代Windows原生入口／进程退出验收。9.29.1仅勾选macOS组件，9.29、9.1.4、跨状态根保留清理、其他目标环境、固定宿主自然语言派发和完整V1仍开放。候选未发布，插件仍固定source48快照。[证据 / Evidence](evidence/task-bound-entry-candidate-20261009.json)。
+
+```mermaid
+flowchart LR
+  A["已有任务公开请求"] --> B["安装前核对原身份与启动描述"]
+  B -->|"一致"| C["核验原Python回执及完整载荷"]
+  C --> D["当前只读派发校验器"]
+  D --> E["重读原状态与完整快照"]
+  E --> F["原Python／控制器／runtimeHome"]
+  B -->|"缺失或损坏"| G["保全现场，拒绝续写和重建"]
+  C -->|"不一致"| G
+  E -->|"不一致"| G
+  F --> H["返回原退出状态，不回落安装"]
+```

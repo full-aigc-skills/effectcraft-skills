@@ -33,6 +33,7 @@ class PythonReceiptTests(unittest.TestCase):
             fields=[self.key,'3.13.16',entry['url'],self.archive_sha,executable,'fixture.tsv',entry['integritySha256'],'0.0']
             (self.skill/'python-platforms.tsv').write_text('\t'.join(fields)+'\n',encoding='utf-8')
             self.argv=['/bin/sh',str(self.skill/'launch.sh'),'--python-version']
+        shutil.copyfile(SOURCE/('task_entry.ps1' if self.windows else 'task_entry.sh'),self.skill/('task_entry.ps1' if self.windows else 'task_entry.sh'))
         self.env={**os.environ,'CRAFT_PYTHON_HOME':str(self.base)};self.receipt=self.destination/'installation.json'
         self.receipt.write_text(json.dumps(self.identity),encoding='utf-8')
 

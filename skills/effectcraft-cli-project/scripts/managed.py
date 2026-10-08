@@ -358,11 +358,7 @@ def review(store, task, criteria, judge=None, runtime_home=None):
     return load('review_ledger').review(store,task,criteria,judge,runtime_home)
 
 
-def main():
-    # 固定重定向输出编码，Windows默认代码页也能返回中文帮助和回执。
-    import sys
-    for stream in (sys.stdout,sys.stderr):
-        if hasattr(stream,"reconfigure"):stream.reconfigure(encoding="utf-8")
+def parser():
     parser=argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--runtime-home',type=Path,default=Path(os.environ.get('CRAFT_RUNTIME_HOME',str(Path.home()/'.local/share/craft-runtimes'))))
     parser.add_argument('--state-root',type=Path,default=Path(os.environ.get('CRAFT_STATE_HOME',str(Path.home()/'.local/share/craft-tasks/effectcraft'))))
@@ -376,7 +372,15 @@ def main():
     for name in ('inspect','reconcile','resume','cancel','_worker','review'):
         p=sub.add_parser(name);p.add_argument('--task',required=True)
         if name=='review':p.add_argument('--criteria',type=Path,required=True);p.add_argument('--judge',type=Path)
-    args=parser.parse_args();store=load('task_store').Store(args.state_root)
+    return parser
+
+
+def main():
+    # 固定重定向输出编码，Windows默认代码页也能返回中文帮助和回执。
+    import sys
+    for stream in (sys.stdout,sys.stderr):
+        if hasattr(stream,"reconfigure"):stream.reconfigure(encoding="utf-8")
+    args=parser().parse_args();store=load('task_store').Store(args.state_root)
     try:
         if args.action in ('resume','revise','reconcile','review','_worker'):
             load('runtime_binding').handoff(store,args,Path(__file__))

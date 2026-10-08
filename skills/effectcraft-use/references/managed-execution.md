@@ -14,11 +14,29 @@
 | review | `--task ID --criteria FILE [--judge RECEIPT]`，实际解码与宿主评价 |
 | revise | `--task ID --plan FILE --output NEW_DIR`，范围、版本、预算均校验 |
 
-全局参数 `--state-root`、`--runtime-home` 放在操作前。环境变量 `CRAFT_STATE_HOME`、`CRAFT_RUNTIME_HOME`、`CRAFT_PYTHON_HOME` 可隔离不同安装。固定离线 Python 包使用 `CRAFT_PYTHON_ARCHIVE`；EffectCraft 的原始安装器支持 `--archive`，仍必须匹配锁定摘要。
+全局参数 `--state-root`、`--runtime-home` 放在操作前。环境变量 `CRAFT_STATE_HOME`、`CRAFT_RUNTIME_HOME`、`CRAFT_PYTHON_HOME` 可隔离不同安装。固定离线 Python 包使用 `CRAFT_PYTHON_ARCHIVE`，EffectCraft 原生包使用 `CRAFT_RUNTIME_ARCHIVE`；公开 `run` 自动消费两者，无需先安装 Python 或手工调用另一安装器。原生安装器／兼容 CLI 的显式 `--archive` 优先于环境变量。离线制品仍必须匹配当前平台锁定摘要；缺失、损坏或安装失败会停止，不回落联网下载。完整已安装版本先核验复用，无需读取待用归档。路径建议使用绝对路径，可含空格；缓存放在用户可写目录，技能目录可以只读。
 
 `workflow` 计划沿用原生合成格式；`commands` / `desktop` 沿用 `craft-command-plan/v1`。不得把未解析的自然语言直接当作原生参数。输入通过 `--input name=/absolute/file` 指定；已有工程通过 `--source DELIVERY --expectedProjectSha256` 对应计划字段核对（摘要写在计划，非命令行参数）。
 
 任务记录使用内部 `effectcraft-managed-task/v2`，公共 `craft-task/v1`、`craft-artifact/v1` 所有权不变。旧交付可以复核；旧 v1 状态可检查但不可恢复执行；缺少版本化状态的历史任务不能自动转成可执行任务。运行时改变时原任务拒绝切换，应保留原技能快照与旧缓存执行诊断。
+
+POSIX 离线首用（制品须预先准备，版本与平台以技能内锁为准）：
+
+```sh
+export CRAFT_PYTHON_ARCHIVE="/absolute/offline artifacts/python.tar.gz"
+export CRAFT_RUNTIME_ARCHIVE="/absolute/offline artifacts/effectcraft.zip"
+sh "$SKILL_DIR/scripts/launch.sh" run --plan PLAN.json --output "/absolute/new result"
+```
+
+Windows PowerShell：
+
+```powershell
+$env:CRAFT_PYTHON_ARCHIVE='C:\offline artifacts\python.zip'
+$env:CRAFT_RUNTIME_ARCHIVE='C:\offline artifacts\effectcraft.zip'
+& "$SKILL_DIR/scripts/launch.ps1" run --plan PLAN.json --output 'C:\new result'
+```
+
+原生桌面制品另有锁与安装入口；这两个环境变量准备 Python／headless CLI，不冒用桌面安装验收。网络完全不可用时，离线创作与评估所需素材、字体及媒体解码器也须已具备；缺少解码器的技术评价保持 `NOT_RUN`。
 
 ## 宿主 Judge 与有限修订
 

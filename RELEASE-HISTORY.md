@@ -1,5 +1,26 @@
 # Version-bound release records
 
+## dev.49 — 2026-10-09
+
+Source dev.49 / plugin dev.51: trusted v2 task dispatch before current Python preparation, plus CRAFT_RUNTIME_ARCHIVE offline native artifact selection without network fallback. Legacy v1 inspection remains compatible. Current macOS native reopen/decode revalidated; native Windows, fixed-host and full V1 remain open.
+
+### Previous README status checkpoints
+
+Unpublished task-entry candidate: trusted v2 tasks select and verify the original Python before any current-Python preparation. Actual macOS isolated3.13.15/native0.3.1 resume, project reopen and12-frame decode pass with an empty current cache, bad archive and corrupt current Python lock. Missing/tampered evidence rejects without repair. Source48/plugin50 snapshots are unchanged; nativeWindows entry and full9.29 remain open. [Evidence](docs/evidence/task-bound-entry-candidate-20261009.json).
+
+Development source dev.48 / plugin dev.50 includes installation-receipt protection and bounded macOS isolated Python/native upgrade evidence: 490 regressions (452 passes / 38 conditional skips), plus 19 local PowerShell function cases. Native Windows and fixed-host acceptance remain open. A new-Python bootstrap failure still blocks old-task recovery (OpenSpec 9.29); 75 tasks and full V1 remain open. [Evidence](docs/evidence/isolated-python-upgrade-candidate-20261009.json).
+
+Previous native-upgrade component validates installation receipts and actual macOS active-task isolation across official0.3.1→0.4.0;486 regressions (448 passes/38 conditional skips). Old tasks retain their original controller and external Python3.13.5 executable; new tasks use isolated Python3.13.16 and native0.4.0. External Python is not isolated-stdlib proof. Fixed source47/plugin49 excludes this installer increment; cleanup across state roots, other targets/hosts and fullV1 remain open. [Evidence](docs/evidence/runtime-upgrade-component-candidate-20261009.json).
+
+Working-tree execution-binding candidate: task-private snapshots and original-controller recovery pass24 targeted tests and482 regressions (444 passes/38 conditional skips), plus bounded actual macOS recovery. Published source45/plugin47 excludes this candidate;74 implementation tasks and full V1 remain open. [Evidence](docs/evidence/task-execution-binding-candidate-20261009.json).
+
+Development source45 completes readonly doctor/catalog task9.2.1: explicit verified native discovery, executable recovery argv and offline differences.420 regression passes/38 conditional skips;15 readonly single-skill probes and15 no-Python diagnostics pass. Development source47/plugin49 includes this increment;74 implementation tasks and full V1 remain open. [Evidence](docs/evidence/doctor-capabilities-candidate-20261008.json).
+
+Segmented first-use guidance now matches native acceptance of fixed Film40 / Effect38 / Art117, including HD full frames, revision, recovery and relocation. Installation qualification of this new guide snapshot is recorded separately. [Evidence](docs/evidence/craft-fixed-segmented-hd-refresh-20261008.json).
+
+> **Development release dev.48 (2026-10-09):** source dev.48 adds strict Python and CLI installation-receipt checks. Bounded native upgrade evidence is recorded; complete V1 and other platform/host qualification remain open.
+
+
 ## dev.48 — 2026-10-09
 
 新增严格 Python／CLI 安装回执校验，15 个独立技能资源同步。490 项回归：452 通过／38 条件跳过；PowerShell 本机函数19例通过，macOS 完整隔离发行升级与原生工程／12帧解码通过。任务9.26–9.28为限定组件证据；9.29旧任务入口缺陷、75项开放任务、其他平台／宿主与完整V1未完成。

@@ -53,6 +53,13 @@ class RuntimeBindingTests(unittest.TestCase):
         self.create('new',plan={'different':True},binding=binding);self.m.freeze(self.store,'new',self.source,manifest)
         self.assertEqual((old/'scripts/managed.py').read_bytes(),old_bytes);self.m.resolve(self.store,'task');self.m.resolve(self.store,'new')
 
+    def test_v1_binding_remains_readable_without_implicit_v2_upgrade(self):
+        binding=copy.deepcopy(self.binding);binding['schema']='effectcraft-execution-binding/v1';binding.pop('entrySha256')
+        self.create(binding=binding);self.m.freeze(self.store,'task',self.source,self.manifest)
+        before=self.store.path('task').read_bytes();self.m.resolve(self.store,'task')
+        self.assertEqual(self.store.path('task').read_bytes(),before)
+        self.assertFalse((self.store.path('task').parent/'execution/entry.tsv').exists())
+
     def test_unknown_work_cannot_bypass_identity_with_new_executor_binding(self):
         self.frozen();self.store.start('task');self.store.begin_step('task','edit',{})
         self.store.fail('task','unknown',unknown=True)

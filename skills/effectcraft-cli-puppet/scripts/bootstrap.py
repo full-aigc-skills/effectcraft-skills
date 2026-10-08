@@ -175,6 +175,9 @@ def install(lock, runtime_home, archive=None, platform_key=None):
     with guard.exclusive_lock(parent / '.install.lock', LOCK_WAIT_SECONDS):
         if destination.exists() or destination.is_symlink():
             return inspect_install(destination, artifact, expected, version, key)
+        # 单技能受管理调用无需额外安装步骤；显式参数优先，离线失败不回落下载。
+        if archive is None:
+            archive = os.environ.get('CRAFT_RUNTIME_ARCHIVE') or None
         with tempfile.TemporaryDirectory(prefix='.install-', dir=parent) as temporary:
             stage = Path(temporary)
             package = Path(archive) if archive else stage / 'release.zip'

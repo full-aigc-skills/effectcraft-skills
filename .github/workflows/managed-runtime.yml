@@ -27,7 +27,9 @@ jobs:
           python -m unittest discover -s tests -p test_command_resources.py -v
           python -m unittest discover -s tests -p test_command_catalog_diff.py -v
           python -m unittest discover -s tests -p test_runtime_binding.py -v
+          python -m unittest discover -s tests -p 'test_task_entry*.py' -v
           python -m unittest discover -s tests -p test_runtime_upgrade.py -v
+          python -m unittest discover -s tests -p test_runtime_offline.py -v
           python -m unittest discover -s tests -p test_python_receipt.py -v
           python -m unittest discover -s tests -p test_judge_contract_v2.py -v
           python -m unittest discover -s tests -p test_review_rejection_cli.py -v
