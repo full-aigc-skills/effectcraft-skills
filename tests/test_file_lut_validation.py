@@ -113,6 +113,6 @@ class FileLutRelocationTests(unittest.TestCase):
    self.assertEqual(module.inspect(moved,'scene.ecproj',declared=inventory),inventory)
  def test_relocation_cannot_borrow_wrong_project_declaration_or_content(self):
   with tempfile.TemporaryDirectory() as tmp:
-   root=Path(tmp);(root/'look.cube').write_text(CUBE);(root/'scene.ecproj').write_text(json.dumps(native([lut('/missing/original/look.cube')])))
+   root=Path(tmp);(root/'look.cube').write_text(CUBE);(root/'scene.ecproj').write_text(json.dumps(native([lut(str(root/'missing'/'original'/'look.cube'))])))
    module=load('native_resources');inventory=module.inspect(root,'scene.ecproj');resource=inventory['luts'][0];resource.update(packaged=True,path='look.cube',sha256='a'*64,bytes=len(CUBE));resource.pop('missingReason')
    with self.assertRaisesRegex(ValueError,'native_resources'):module.inspect(root,'scene.ecproj',declared=inventory)

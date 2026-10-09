@@ -2,12 +2,12 @@
 
 从文字、图形和素材创建可编辑 `.ecproj` 工程、依赖和媒体。当前为开发版，完整 V1 未完成；已发布版本与本地文档候选分别记录。
 
-当前技能源：`0.1.0-dev.66`；消费插件：`0.1.0-dev.68`；15 个独立技能。
+当前技能源：`0.1.0-dev.67`；消费插件：`0.1.0-dev.69`；15 个独立技能。
 
 | Field | Value |
 | --- | --- |
-| Metadata version | 0.1.0-dev.66 |
-| Skills source | effectcraft-skills / v0.1.0-dev.66 |
+| Metadata version | 0.1.0-dev.67 |
+| Skills source | effectcraft-skills / v0.1.0-dev.67 |
 | Acceptance | Development; full V1 OPEN |
 
 
@@ -130,3 +130,6 @@ source60／plugin62 发行分发真实强杀恢复增量及严格进程归属校
 
 
 Source dev.66 / plugin dev.68 correct current release identity documentation. Execution payloads and test files are byte-identical to source65; immutable source65/plugin67 tags are retained. See [release binding](docs/evidence/file-lut-release66-20261009.json).
+
+
+Source dev.67 / plugin dev.69 correct a Windows absolute-path test fixture without changing execution resources. Source65/66 Windows CI failed that fixture; prior tags are retained. The original content-rejection assertion is preserved and all15 file-LUT tests pass locally. [Release binding](docs/evidence/file-lut-release67-20261009.json).
