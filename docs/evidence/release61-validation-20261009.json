@@ -1,0 +1,39 @@
+{
+  "schema": "effectcraft-source-release-validation/v1",
+  "observedAt": "2026-10-09T00:05:54.155550+00:00",
+  "sourceVersion": "0.1.0-dev.61",
+  "pluginVersion": "0.1.0-dev.63",
+  "status": "PASS_BOUNDED_VALIDATION",
+  "productionResourcesUnchangedFromSource60": true,
+  "regression": {
+    "total": 684,
+    "passed": 621,
+    "skipped": 63,
+    "logSha256": "7c205dc8c693e666d2d0f89e8368b7baec09f3cdb3ae1381c79d5ff6b82c7cb4"
+  },
+  "nativeCases": 10,
+  "nativeEvidence": {
+    "native-family-cancellation-candidate-20261009.json": "4fd186c260ad92030309c005a41395b70f049a4555ad09c0ae012bb70f3878b2",
+    "technical-gate-acceptance-20261009.json": "a87db8423a0df7002a7d6922241bcfa3fe5b5601c7b293223b7a9e7286066491"
+  },
+  "completedTasks": [
+    "9.36",
+    "9.4.1"
+  ],
+  "fullV1": "NOT_RUN",
+  "openImplementationTasks": 69,
+  "marketplaceEligible": false,
+  "currentReleaseCI": "NOT_RUN",
+  "checks": {
+    "generatedSuite": "PASS",
+    "commandCoverage": "PASS",
+    "scenarioCatalog": "PASS",
+    "diffWhitespace": "PASS",
+    "currentSourceAndNativeTestHashes": "PASS"
+  },
+  "limits": [
+    "macOS arm64 native evidence with verified caches; other native targets and complete host qualification remain open",
+    "63 opt-in/environment cases skipped in default suite;10 native cases independently passed and bound by hashes",
+    "candidate evidence retains observation-time unpublished status; publication identity and CI belong to final release sidecar"
+  ]
+}

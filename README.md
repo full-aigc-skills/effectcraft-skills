@@ -2,12 +2,12 @@
 
 Create editable `.ecproj` projects, dependencies and media from text, graphics and footage. This is a development release; full V1 remains open. Published releases and local documentation candidates have separate evidence.
 
-Current source: `0.1.0-dev.60`; consuming plugin: `0.1.0-dev.62`; 15 independent skills.
+Current source: `0.1.0-dev.61`; consuming plugin: `0.1.0-dev.63`; 15 independent skills.
 
 | Field | Value |
 | --- | --- |
-| Metadata version | 0.1.0-dev.60 |
-| Skills source | effectcraft-skills / v0.1.0-dev.60 |
+| Metadata version | 0.1.0-dev.61 |
+| Skills source | effectcraft-skills / v0.1.0-dev.61 |
 | Acceptance | Development; full V1 OPEN |
 
 
@@ -101,3 +101,10 @@ Source59 / plugin61 development release includes atomic desktop conflict reconci
 Historical unpublished [real worker crash candidate](docs/evidence/command-completion-crash-candidate-20261009.json): commands and owned desktop cover SIGKILL before the proof, between proof and reference, and after both are durable. Only a complete original proof permits delivery registration after owned-process stop, isolated native reopen and actual PNG decode; missing or orphan proofs stay unknown and repeated resume does not replay edits. Malformed ownership returns structured failure without treating corruption as absence. Source59/plugin61 remain unchanged; full 9.3.3/9.3.4, other native platforms and fixed-host gates remain open.
 
 Source60 / plugin62 release distributes the real worker crash increment and strict ownership validation. Candidate reports retain their original unpublished observation context; release binding is recorded in `docs/evidence/release60-validation-20261009.json`. Full V1 remains open (70 tasks).
+
+Local native family cancellation acceptance (9.36): commands and owned desktop cover normal ancestor cancellation and supervisor SIGKILL after durable intent. Original frozen public entries reconcile the child before the parent; the unrecorded save response stays unknown. Native files/media, successful receipts, deadlines/revision budgets, shared resources and unrelated processes are preserved. Four native cases and 27 cancellation contracts pass; four native cases skip by default. [Evidence](docs/evidence/native-family-cancellation-candidate-20261009.json) preserves fixture corrections and limits: registered undispatched parent, reused cache, Python3.13.5 and macOS arm64 only. Production code and published source60/plugin62 snapshots are unchanged; new tests/evidence remain unpublished candidates. Full9.3.4 and 70 V1 tasks stay open.
+
+Technical gate9.4.1 accepted: [evidence](docs/evidence/technical-gate-acceptance-20261009.json). Asset-bearing MP4, ordinary transparent and segmented sequences complete public plan/run/review/resume from one readonly independent skill, including native save/reopen and actual decoding. Isolated real-delivery mutants with invalid video, missing assets or invalid project fail; a high-score receipt cannot override technical failure. Six native positive/negative cases pass; targeted regression72 pass/6 conditional skip (78 total). Engineering, media technical, creative and user acceptance remain separate; the latter two are NOT_RUN. Acceptance is macOS arm64 with isolated Python3.13.16 and reused verified caches; other targets, model dispatch and all-command output qualification remain open. V1 has69 open tasks. Published source60/plugin62 production snapshots are unchanged; new acceptance is unpublished.
+
+
+This release: source dev.61 / plugin dev.63 publishes the9.36 native family-cancellation and9.4.1 technical-gate tests and evidence. Earlier unpublished statements describe their observation checkpoints. Skill execution resources remain byte-identical to source60;69 V1 tasks and marketplace qualification remain open.
