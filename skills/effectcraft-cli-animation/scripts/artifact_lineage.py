@@ -108,7 +108,7 @@ def record(root,manifest,bound):
     version_payload={'binding':bound,'files':files,'sourceProjectSha256':manifest.get('sourceProjectSha256')}
     resources=manifest.get('nativeResources')
     if 'nativeResources' in manifest:
-        if resources!=load('native_resources').inspect(root,'project.ecproj'):fail('native_resources_changed')
+        if resources!=load('native_resources').inspect(root,'project.ecproj',declared=resources):fail('native_resources_changed')
         version_payload['nativeResources']=resources
     version=digest(version_payload)
     native_sha=files['project.ecproj']

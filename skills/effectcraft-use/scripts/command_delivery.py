@@ -317,6 +317,14 @@ def inspect(store,task,runtime_home,proof=None):
     except (ValueError,OSError,KeyError,TypeError) as error:
         report['engineering']['reason']=str(error);return report
     report['engineering']=verify_projects(output,data['projects'],installed['executable'],timeout=max(.1,min(120,state['deadline']-time.time())))
+    if resources is not None and report['engineering']['status']=='PASS':
+        adapter=load('resource_validation')
+        try:
+            report['resourceValidation']=adapter.commands(output,data,installed['executable'],timeout=max(.1,min(120,state['deadline']-time.time())),before_render=adapter.budget_hook(store,task))
+        except (ValueError,OSError,KeyError,TypeError,RuntimeError,subprocess.SubprocessError) as error:
+            report['resourceValidation']={'schema':'effectcraft-file-lut-review/v1','status':'FAIL','reason':str(error)}
+        if report['resourceValidation']['status']=='FAIL':report['engineering'].update(status='FAIL',fresh=False,reason='file_lut_validation_failed')
+        elif report['resourceValidation']['status']=='NOT_RUN' and report['resourceValidation'].get('projects'):report['engineering'].update(status='NOT_RUN',fresh=False,reason='file_lut_validation_incomplete')
     try:document(store,task,proof)
     except (ValueError,OSError,KeyError,TypeError) as error:
         report['technical'].update(status='FAIL',reason=str(error));report['engineering'].update(status='FAIL',fresh=False,reason=str(error))

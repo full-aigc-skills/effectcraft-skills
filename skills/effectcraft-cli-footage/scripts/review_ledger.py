@@ -109,8 +109,12 @@ def _review(store, task, criteria, judge, report, runtime_home):
     report.update(quality.inspect_delivery(state['output'],runtime_home) if state['identity']['mode']!='workflow' else quality.inspect_delivery(state['output']))
     with store.lock():store.allowed(store.read(task))
     if report.get('binding') and state['identity']['mode']=='workflow':
+        kwargs={}
+        if any(r['source']=='file' for r in report.get('nativeResources',{}).get('luts',[])):
+            kwargs['before_render']=load('resource_validation').budget_hook(store,task)
         report['engineering']=load('engineering_review').verify(state['output'],runtime_home,
-            state['identity']['runtimeSha256'],timeout=max(.1,min(120,state['deadline']-time.time())))
+            state['identity']['runtimeSha256'],timeout=max(.1,min(120,state['deadline']-time.time())),**kwargs)
+        if 'resourceValidation' in report['engineering']:report['resourceValidation']=report['engineering']['resourceValidation']
     response=managed.read(judge) if judge else None
     criteria_hash=tasks.digest(criteria)
     with store.lock():

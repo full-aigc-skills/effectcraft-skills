@@ -15,9 +15,11 @@ def runtime_lock():
     return load('quality_review').read(Path(__file__).with_name('runtime.lock.json'))
 
 
-def verify(root, runtime_home, runtime_sha, timeout=120):
+def verify(root, runtime_home, runtime_sha, timeout=120, before_render=None):
     """只读安装检查及原生副本重开；不下载、不保存、不重放编辑。"""
     report={'schema':'effectcraft-engineering-review/v1','status':'NOT_RUN','fresh':False}
+    import time
+    deadline=time.monotonic()+timeout
     quality=load('quality_review');root=Path(root)
     try:
         if runtime_home is None:raise ValueError('engineering_runtime_location_missing')
@@ -62,6 +64,10 @@ def verify(root, runtime_home, runtime_sha, timeout=120):
         report.update(status='PASS',fresh=True,projectSha256=bound['projectSha256'],runtimeSha256=runtime_sha,
             nativeSnapshotHash=load('task_store').digest(native),verifiedAssets=len(manifest.get('assets',{})),
             method='isolated native open, footage check and exact composition/layer comparison')
+        if 'nativeResources' in manifest:
+            report['resourceValidation']=load('resource_validation').workflow(root,installed['executable'],timeout=deadline-time.monotonic(),before_render=before_render)
+            if report['resourceValidation']['status']=='FAIL':report.update(status='FAIL',fresh=False,reason='file_lut_validation_failed')
+            elif report['resourceValidation']['status']=='NOT_RUN' and report['resourceValidation'].get('projects'):report.update(status='NOT_RUN',fresh=False,reason='file_lut_validation_incomplete')
     except (TimeoutError,subprocess.TimeoutExpired) as error:
         report.update(status='NOT_RUN',reason=str(error))
     except (ValueError,OSError,KeyError,TypeError,RuntimeError,subprocess.SubprocessError) as error:

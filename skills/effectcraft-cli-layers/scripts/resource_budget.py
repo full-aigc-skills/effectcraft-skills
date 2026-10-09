@@ -15,7 +15,7 @@ def validate(value):
     for task,entry in value['entries'].items():
         if not isinstance(task,str) or not re.fullmatch(r'[a-zA-Z0-9][a-zA-Z0-9_-]{0,95}',task):
             raise ValueError('resource_budget_invalid')
-        if (not isinstance(entry,dict) or set(entry)-{'segmentAttempts','commandFrames'}!= {'frames','decodedBytes','encodedBytes','bindingHash'}
+        if (not isinstance(entry,dict) or set(entry)-{'segmentAttempts','commandFrames','reviewFrames'}!= {'frames','decodedBytes','encodedBytes','bindingHash'}
                 or not isinstance(entry['bindingHash'],str) or not re.fullmatch('[a-f0-9]{64}',entry['bindingHash'])
                 or any(type(entry[k]) is not int or entry[k]<0 for k in LIMITS)):
             raise ValueError('resource_budget_invalid')
@@ -26,6 +26,10 @@ def validate(value):
                     or not isinstance(row,dict) or set(row)!={'frames','decodedBytes'}
                     or type(row['frames']) is not int or row['frames']!=1
                     or type(row['decodedBytes']) is not int or row['decodedBytes']<=0):raise ValueError('resource_budget_invalid')
+        reviews=entry.get('reviewFrames',{})
+        if not isinstance(reviews,dict):raise ValueError('resource_budget_invalid')
+        for attempt,row in reviews.items():
+            if (not isinstance(attempt,str) or not re.fullmatch('[a-f0-9]{64}',attempt) or not isinstance(row,dict) or set(row)!={'frames','decodedBytes'} or type(row['frames']) is not int or row['frames']!=1 or type(row['decodedBytes']) is not int or row['decodedBytes']<=0):raise ValueError('resource_budget_invalid')
         attempts=entry.get('segmentAttempts',{})
         if not isinstance(attempts,dict):raise ValueError('resource_budget_invalid')
         identities=set()
@@ -59,6 +63,8 @@ def usage(value):
     for entry in value['entries'].values():
         for key in ('frames','decodedBytes'):
             used[key]+=max(0,sum(row[key] for row in entry.get('commandFrames',{}).values())-entry[key])
+        for row in entry.get('reviewFrames',{}).values():
+            for key in ('frames','decodedBytes'):used[key]+=row[key]
         for rows in entry.get('segmentAttempts',{}).values():
             for row in rows[1:]:
                 for key in ('frames','decodedBytes'):used[key]+=row[key]
@@ -169,3 +175,17 @@ def observe_locked(store, state, encoded_bytes):
     store.save(root) # 越界事实先落盘；重启或删除产物不能重新取得预算。
     check(value)
     return value
+
+
+def reserve_review(store,task,attempt,decoded_bytes):
+    """原生审阅的实际渲染追加到根任务族预算，越界事实不撤销。"""
+    if not isinstance(attempt,str) or not re.fullmatch('[a-f0-9]{64}',attempt) or type(decoded_bytes) is not int or decoded_bytes<=0:raise ValueError('resource_attempt_invalid')
+    row={'frames':1,'decodedBytes':decoded_bytes}
+    with store.lock():
+        state=store.read(task);store.allowed(state);root=store.lineage(state)[-1];value=root['resources'];entry=value['entries'].get(task)
+        if entry is None:raise ValueError('resource_reservation_missing')
+        records=entry.setdefault('reviewFrames',{})
+        if attempt in records:
+            if records[attempt]!=row:raise ValueError('resource_attempt_conflict')
+            check(value);return value
+        records[attempt]=row;validate(value);store.save(root);check(value);return value

@@ -25,7 +25,7 @@ def closure(inventories):
             'scope':'static declared dependency containment only; visual fidelity NOT_RUN'}
 
 
-def inspect(root,project):
+def inspect(root,project,*,declared=None):
     """扫描固定schema1的全部合成属性、字符样式和关键帧；不读取包外文件。"""
     root=Path(root);lineage=load('artifact_lineage');path=lineage.file(root,project)
     if path.stat().st_size>64*1024*1024:fail('project_too_large')
@@ -34,6 +34,12 @@ def inspect(root,project):
         if not isinstance(data,dict) or data.get('schema')!=1 or not isinstance(data.get('items'),dict):fail('unsupported_native_schema')
         result={'schema':'effectcraft-native-resources/v1','project':project,'projectSha256':lineage.sha(path),
                 'fonts':[],'luts':[],'dynamic':[],'fidelity':'NOT_RUN'}
+        declared_luts={}
+        if declared is not None:
+            if not isinstance(declared,dict) or declared.get('schema')!=result['schema'] or declared.get('project')!=project or declared.get('projectSha256')!=result['projectSha256'] or not isinstance(declared.get('luts'),list):fail('relocation_binding_invalid')
+            for resource in declared['luts']:
+                if not isinstance(resource,dict) or not isinstance(resource.get('pointer'),str) or resource['pointer'] in declared_luts:fail('relocation_binding_invalid')
+                declared_luts[resource['pointer']]=resource
         stack=[]
         for key,item in data['items'].items():
             if not isinstance(item,dict) or not isinstance(item.get('kind'),dict):fail('item_invalid')
@@ -80,7 +86,7 @@ def inspect(root,project):
                 if is_lut and value.get('t')=='Str':
                     source=value.get('v')
                     if not isinstance(source,str):fail('lut_value_invalid')
-                    if source.strip():result['luts'].append(lut_record(root,path,source,where))
+                    if source.strip():result['luts'].append(lut_record(root,path,source,where,declared_luts.get(where)))
             expression=node.get('expr')
             if expression is not None:
                 if not isinstance(expression,dict):fail('expression_invalid')
@@ -93,7 +99,7 @@ def inspect(root,project):
         fail(str(error))
 
 
-def lut_record(root,project,source,pointer):
+def lut_record(root,project,source,pointer,declared=None):
     """内联内容摘要不等同LUT有效性；路径资源不猜测引擎CWD或搬迁保真。"""
     if len(source.encode('utf-8'))>16*1024*1024:fail('lut_value_too_large')
     result={'pointer':pointer,'source':'inline' if '\n' in source or 'LUT_' in source else 'file','packaged':False,'fidelity':'NOT_RUN'}
@@ -109,6 +115,12 @@ def lut_record(root,project,source,pointer):
         name=candidate.as_posix();payload=load('artifact_lineage').file(root,name)
         result.update(packaged=True,path=name,sha256=load('artifact_lineage').sha(payload),bytes=payload.stat().st_size)
     except (ValueError,OSError):result['missingReason']='LUT file missing, linked, unsafe or outside package; not read or copied.'
+    if not result['packaged'] and declared and declared.get('packaged') and Path(source.strip()).is_absolute():
+        # 只从绑定工程的相同属性声明重关联包内相对文件；不读取旧绝对地址。
+        if declared.get('source')!='file' or declared.get('declarationSha256')!=result['declarationSha256']:fail('relocation_declaration_changed')
+        payload=load('artifact_lineage').file(root,declared.get('path'))
+        if load('artifact_lineage').sha(payload)!=declared.get('sha256') or payload.stat().st_size!=declared.get('bytes'):fail('relocation_content_changed')
+        result.pop('missingReason',None);result.update(packaged=True,path=declared['path'],sha256=declared['sha256'],bytes=declared['bytes'])
     return result
 
 

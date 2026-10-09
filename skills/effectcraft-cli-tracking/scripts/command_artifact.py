@@ -53,7 +53,7 @@ def source_refs(store,state):
     return result
 
 
-def compile_map(output,files,bound,context,*,resources=False):
+def compile_map(output,files,bound,context,*,resources=False,declared=None):
     """绑定整包与原观察；登记身份不声明工程、媒体、字体或创作已验收。"""
     output=Path(output);lineage=load('artifact_lineage')
     if (not isinstance(bound,dict) or set(bound)!={'schema','producer','planHash','runtimeSha256','filesHash','receiptSha256','observationsHash','sourceRefs'}
@@ -74,7 +74,7 @@ def compile_map(output,files,bound,context,*,resources=False):
     for name,value in parents.items():lineage.reference(value)
     artifacts=[];known=set();unmatched=[]
     frame_sources={f['path']:[] for f in context['frames']}
-    inventories=[load('native_resources').inspect(output,p['path']) for p in context['projects']] if resources else None
+    inventories=[load('native_resources').inspect(output,p['path'],declared=next((i for i in declared or [] if i.get('project')==p['path']),None)) for p in context['projects']] if resources else None
     version_payload={'binding':bound,'contexts':context,'files':files}
     if resources:version_payload['nativeResources']=inventories
     version=digest(version_payload)
@@ -139,7 +139,7 @@ def build(store,state,data):
 def validate(output,mapping):
     """输出和映射一起搬迁后核对相对引用；不查询PID、不发送原生编辑。"""
     try:
-        expected=compile_map(output,mapping['files'],mapping['binding'],mapping['contexts'],resources='nativeResources' in mapping)
+        expected=compile_map(output,mapping['files'],mapping['binding'],mapping['contexts'],resources='nativeResources' in mapping,declared=mapping.get('nativeResources'))
         if expected!=mapping:fail('map_or_version_changed')
         return expected['artifacts']
     except (ValueError,OSError,KeyError,TypeError) as error:

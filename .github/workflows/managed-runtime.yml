@@ -38,6 +38,7 @@ jobs:
           python -m unittest discover -s tests -p test_source_producer_guard.py -v
           python -m unittest discover -s tests -p test_command_artifact_lineage.py -v
           python -m unittest discover -s tests -p test_native_resources.py -v
+          python -m unittest discover -s tests -p test_file_lut_validation.py -v
           python -m unittest discover -s tests -p 'test_task_entry*.py' -v
           python -m unittest discover -s tests -p test_runtime_upgrade.py -v
           python -m unittest discover -s tests -p test_runtime_offline.py -v

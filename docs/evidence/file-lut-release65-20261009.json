@@ -1,0 +1,377 @@
+{
+  "schema": "effectcraft-file-lut-release-validation/v1",
+  "observedAt": "2026-10-09T02:43:46.990556+00:00",
+  "release": {
+    "source": "v0.1.0-dev.65",
+    "plugin": "v0.1.0-dev.67"
+  },
+  "candidateEvidence": {
+    "path": "file-lut-validation-candidate-20261009.json",
+    "sha256": "b8bcd0e1fd2a1f321b3ed2b158872c233be6e3e1c0639a21f81c75084e5fbea0"
+  },
+  "status": "PASS_COMPONENT",
+  "sourceSkillFiles": {
+    "SKILL.md": "eaefb4165f35271922237575e7f6d9ae9479e0d895c8ab8746193f60334616d2",
+    "agents/openai.yaml": "8fe0093ba521c032e6b243bf5c2e3d9d2303cf1ae78f76fe8365e414b7da57b7",
+    "examples/brand-intro.json": "430aa74e69a3195f70fdfe53ae9b8939fc888df1b58e01d76fd76ccdfe3edd80",
+    "examples/camera-scene-create.json": "bdced8cc3a735793852bf67140ff62ec79544c938c61d733c372f6f4a61d0946",
+    "examples/camera-scene-reopen.json": "7f1ade6f23c628045941d7168c822d0372e79a63c4ff05cfbd375a03c376b4ee",
+    "examples/camera-scene-revise.json": "2cca564a10133b56d2d8d20b0feb5cafb627a3e082ce2303fe073567af8bd00f",
+    "examples/commands-advanced.json": "e2def610996d594575136e357cab0d9ee355ce51cf782817d323b37e8227941b",
+    "examples/commands-revision-create.json": "03d3d7796210dfd4ff27f6cde0e1ba10b4376b0243dc4938d87103ca991f5f61",
+    "examples/commands-revision.json": "d54bfa78c48b674136b56a8e0c7e36e4c1c475a5907ba46ae450b2ac86e17d1e",
+    "examples/desktop-first-use.json": "0d1dbf9c43e8d5ce790443577b5398c2aa7af317fc15a328dc85c62813527d84",
+    "examples/expression-parent-create.json": "fca2b95312130f735c884e354ce4fede48bc67ca0a3c740b4b17a79967c20d4d",
+    "examples/expression-parent-revise.json": "8076203648de8834c0681149e557ea4ffed35e0863c2e7a2dec2b4001e3ca22f",
+    "examples/layer-mask.json": "61efc2abc7274b45224659ab4aae7e847486af3f3660161a03b83b978ec7a8bc",
+    "examples/native-workflow.json": "0ba62e8bd042dacb028b14c84c18cb2ee10c77e54dbd13efcd7090c8fa9fae16",
+    "examples/puppet-create.json": "405a5b98b410d2db642eec0a9d0ec8cf48c622c9f1632f36e2c2be3f01ff8560",
+    "examples/puppet-record-follow-create.json": "ac59e9682a32efbe12a6bdeacb5136508c120413b3ae3bdf5efda4b6602e7ed9",
+    "examples/puppet-record-follow-reopen.json": "b722ee0ea4681556ae42eb58da21b293180081add09f23bb416d23ff368ae611",
+    "examples/puppet-record-follow-revise.json": "448b635cf49567dc359a3d9ff385fe73afe4b4a32ec280ba5f8cab93ceb00a76",
+    "examples/puppet-reopen.json": "bd05b66c9480cedaf60cbfe2fb6352dff8a6e573cd27a1fb1be43097bda58b62",
+    "examples/tracking-create.json": "14d6c8654cb81c1b2b578eea021039b38c5179bd9459b7ec41528999d7f53d0d",
+    "examples/tracking-reopen.json": "0b393fda8bd68c6819e25ac8f8101381dc175220ca3c8c1c3b8c35637e49ce7b",
+    "references/bridge-tools.json": "1a9c5431674b0e563e83ae3e5aebf9e4c25a95c4a55c53125dccb6dc3ae60859",
+    "references/business-scenes.md": "fa6dde18bb5ea19d15de3c6be5d0fc2cdbf4f4e2cf3170a624600b2d3c4e556b",
+    "references/camera-scene.md": "19bcbf1dce86e32974f59bfd5785ab0c7664df69ce75fd3130f6e4ec5a1e30c9",
+    "references/capability-diff.json": "201b27776325f0b49a3e93c7fcfb8651bfbdf53843a9083ec2bdfc875c5c8959",
+    "references/codex-judge.md": "e4cd12c1942fdf49d4186c8e1552e83a6b7191e66b8d1ee4e2e156180dd3cfea",
+    "references/command-coverage.json": "613f7a5fceff44bf5d7ac9f4a3521b849617ae5420be243d80ea21f1f7be7e76",
+    "references/command-reference.md": "aa978528c9b9c490d9390d79928d2258d62f87b83ace02823b7a76a349c233ba",
+    "references/command-usage.md": "5fbf285a45eeebc6fefe6f0c85004c031d52b27a82dec08ac2fbcdd207546aab",
+    "references/commands.json": "f4a4bd1bb063ffe89b0ab0f71dca12d0b1a92eec3e73306756ebf0a93bb3eeb7",
+    "references/desktop-install.md": "db2db151b0eff30a3381a03ae377fb23ac09b2b4a919859740bd9343e7f14887",
+    "references/exchange-loss.md": "eee665f62b77274ca8ce0efc4117012ade85978905cdfd40ab488af64297b8ae",
+    "references/expression-parent.md": "c67e09b82b9740bbbc603b2ec48c0aeba42c3703f775b7c234473935a355080c",
+    "references/first-use-failures.md": "ce2a8d1a8ca6b8a29a084d52d105d510476de88d40b439d6c2ff79212581d61d",
+    "references/installation-concurrency.md": "69067acebcd47f1924a8d6aa9d8a4ce6f44ad0756d44888a21eb224bcdb1c215",
+    "references/managed-execution.md": "b455f4617d0a0b5fb56589373d43faf083e5117d5acf4d6f49d4be6bdd9690c4",
+    "references/motion-tracking.md": "dcb4d2ea69f503e45692bbd3f2d2383546f892bd2cb5d163b7811a310af5d194",
+    "references/native-command-snapshot.json": "043d3e4bcc4e03fd15df178cfcf8cfd2e81679308a48da8ff289d802b4204b74",
+    "references/native-workflow.md": "42fee416c66a69f6f3802abe1be6f002963cf109e7e22a4d6297b6dcaf62b8e9",
+    "references/output-execution.md": "1e185e63d8e20fdc54537feacdfb6e7a140474f5e61e2932747699d751671b36",
+    "references/puppet-scene.md": "ce185ef007e86e1189210330049b80cc3a4418015826686ff3b143d81810e55f",
+    "references/segmented-render.md": "d4a500643465eafad7b96f4491086f203e121bd782d69e208095de36717a71b7",
+    "references/tracking-scene.md": "2e699e1ab62f47a1c40405fc6dd48e15474f130295f33fdcd4e80efcad3e4be9",
+    "references/workflow.md": "09a885345734d8d13cd36466841c28441125caa4863472d2a5b9ed4278cc5cdc",
+    "scripts/additional-platforms.lock.json": "d72653f778b07bb61eed795d49ffc3e7214ad39e74c64e76959818187567dce6",
+    "scripts/additional_platforms.py": "1a4ffc9f04e240374269a9869d0383f9f833082cf066203fddba117f247f48d9",
+    "scripts/artifact_lineage.py": "24c9d53c3270255351046173adfb32e5337846dcbf879c5ffafb7827586e5842",
+    "scripts/bootstrap.py": "1eca0f59586609ae4314c77b4d5adb3886fe5443178fb2b300abb25cb75ae99b",
+    "scripts/cancellation.py": "db22d93fe4a9eafc06460c62de9f2be3193bd1750a707c2a352ebb09502a971c",
+    "scripts/cli.py": "9303ae8ae30009fa706d5d56603032485ad81416aee1d0af523ce902e3f28165",
+    "scripts/command_artifact.py": "9e2f99ade41367422e4e576cf92d443c8f975e7c4561e05bf4addb22eb439640",
+    "scripts/command_catalog.py": "ee88018a7139455125009f8d6a31f97b7e0f062a994f7d4377d910ba2001b7f7",
+    "scripts/command_completion.py": "8b96eb56194ab6732141a37d4f365af634209424038910d2a336138289ee3707",
+    "scripts/command_delivery.py": "5fca630d1b6bc78394518627e6bb7ec25d3f1e798ef6e73affc709d4c4b49002",
+    "scripts/command_judge.py": "1d9617f42edcd4dd730b0781fc55b330c40f8774db0063ff7cb53fa7af4e83f0",
+    "scripts/command_revision.py": "0bf2629997ab92ce8454cde14b0033753b431f53e25139537850d1cf5c6a58c1",
+    "scripts/commands.py": "7a7bf479698a48d9f4c5e6e94577108dbd230da312c21e04c168ae7e7491f610",
+    "scripts/desktop-platforms.lock.json": "3b4b56b144ef102f1ab2e5fbf4f374b22292dbce6a51a01e9bea466f9ed09b92",
+    "scripts/desktop.lock.json": "d2af78ee474b8e19ff3c26c792bb27ad180622ffe6dbed5a402bcb7aa7167311",
+    "scripts/desktop.py": "802de3eef9ed9fca3ad09a2f5f6f204f6bbba5a09450efe6ae062e7159409553",
+    "scripts/desktop_revision.py": "7611c7fd9377c3ff3f8401865e36f3130769216c8b8bece9d4124e1dd6ba8dea",
+    "scripts/desktop_session.py": "55f45cc1ad27e242573705fb021c37e81d7140002bd1b8e667953f575ff691ff",
+    "scripts/engineering_review.py": "66012483343628d5e7105b3b896258a1d1f40b55667ea5dcfed123db20b7ea68",
+    "scripts/entry_identity.awk": "5d4b4432e043568509d05303e34357e8e8fa056f0fc5394b80f6f4d8a20cbcbe",
+    "scripts/exchange_loss.py": "8871bc2d4e2e6bedd0b1d2852a06ccdbd43b0339d67afc53e6029fb3539c8c4f",
+    "scripts/image_sequence.py": "f67d0e565d8c99abd519bfaabe44599d25606450ca4f98df1ea227619ab2fff0",
+    "scripts/judge_contract.py": "58e1e4fad0e296cbf185a4e6e5cf5bd3f2db6482b34dbfcb622b814639469480",
+    "scripts/launch.ps1": "eaed943345d51f44b2490bdcd6d92b5f85121d4b4f47576c19ad56512c81b9b6",
+    "scripts/launch.sh": "31bf2cef53d4d1b6a229d74389729cf24572209c48125c1dec8800df99c6431f",
+    "scripts/managed.py": "52cdc7e2eca686dcc122b01a9baca26471c961b0765c7f1d6313e56945165682",
+    "scripts/mcp_session.py": "dd6df96dc1734cd7e43c4b820661d2e2c8c713dc8849fc89ab06a3720d99619b",
+    "scripts/native_diagnostics.py": "0c352d047edde58a35151ba2b03c001b2a6b591bb8032307e80573d115912389",
+    "scripts/native_resources.py": "82ebcb7a33886d13c05a5ce1989ab2e7cbb31e2426c6f94fb4b72468cfbe6b42",
+    "scripts/native_workflow.py": "0db0471f8d849db9c3ffaeaac1c7bc40bf0cd500a638f7b681ecdeb934960bdd",
+    "scripts/orphan_segments.py": "244059948ca6b783c64cdd5942e91f3e6268dfd71f3c48c300595ccbcb2584b9",
+    "scripts/output_guard.py": "018c5c27217c11ec7b45ded52a1e13d7c42b34a3a53df21566e26f192143302b",
+    "scripts/parameter-contract.json": "dd1bde23fb12e26774f412f0aacc93e8102eaed79d4255709b5717c112daa762",
+    "scripts/platform_support.py": "d6a133dc25b81570f585f473f2fe290e181e78bc24032a05ae83be6f0a45aed8",
+    "scripts/png_inspection.py": "0e3c50907c66c6dcc45256d045920da346ad77892e47401de3103c8f6232938d",
+    "scripts/posix_group_lease.py": "23593ea54ff78457eb7d873a979aa1e1d4da601ea459dc288a4b7a8b975c6155",
+    "scripts/preserved_stage.py": "64199df3ee6af2901a859a5aac401fd27ca2f0c6ba9238e6f72c3563f681ad63",
+    "scripts/process_guard.py": "8ddf5881adeec3d224ef57821d3c83bd4319cf2d1f9efb5ed0f1dab846446f4f",
+    "scripts/project_claims.py": "017a73e72eda2a9e25d355ba8d76b6753994360c99c99144113234c5a9fcca85",
+    "scripts/python-integrity/darwin-arm64.tsv": "8f9c3aaf79cd0ff1867ac5d3c937d6ca0c60ccf1ab2b321a2b7a8454209d6fdd",
+    "scripts/python-integrity/darwin-x86_64.tsv": "53196035ea5ca246ef60da5b248d02a91964a269c6ec7397eedc0f28a72694ca",
+    "scripts/python-integrity/linux-aarch64.tsv": "6b639cbaa8c4e691d226447b747fde28fb0f9e337fe828d46b2ceba80ad325f7",
+    "scripts/python-integrity/linux-x86_64.tsv": "f81e6ac6a770f895b5b1a89838da856f21e9c827f4fc320ed1562645783c0c55",
+    "scripts/python-integrity/windows-arm64.tsv": "625a22a5086fd7d312bc156cde8e3f4443ceb2079e2ff91457c6de0cadd5df4d",
+    "scripts/python-integrity/windows-x86.tsv": "551536440722a4fc82e578f4af5a11ef72a9736b3be4b08621982f0f767cc981",
+    "scripts/python-integrity/windows-x86_64.tsv": "e1e98775d10bcb9fbf55e482a31d9efdb91a8d61d80718998f66f7c9b195e5f3",
+    "scripts/python-platforms.tsv": "3836b670271e8f8327ea386510b18dea6a867ece27be5e74f4165eaa38ad8c65",
+    "scripts/python.lock.json": "e877b3fe406a2a210ebe5d7f660aa1d0483def44454a54dbe7429bfdba1c9f3f",
+    "scripts/quality_review.py": "a05ee79378e8f2b228d797af8fc2cd84e88eca1144d21a49c94f23d65c648ef8",
+    "scripts/render_recovery.py": "6baf8f315f20d5e6b9115423502d66e9e51e33dc2398adc6bbff85b6b68b1e31",
+    "scripts/resource_budget.py": "c4ccf8f7b2fcbc0a5cea9550f1e37ada29d900cc9752f393a2e9ceec5fe8d018",
+    "scripts/resource_meter.py": "a62257919fd22cfa6eb616be285122978a6732c0b888893fd8b4440396b8993f",
+    "scripts/resource_validation.py": "09cdb02556757429a30b83adaa833a556110bbfeea5890a7fb3193ec02a9422b",
+    "scripts/review_ledger.py": "324ebf417d223ec6031738df77862d78bf12f807b93828a43ab39f3e486172ea",
+    "scripts/revision.py": "546214f38430c14f354b6c0aa8feff8928d3267b9dee1b7ea708933bc3633590",
+    "scripts/runtime-integrity/darwin-arm64.json": "c7eb5424dbb14940624e3ae6a494078a41dfa0c6738b7779d5d9ceb40f7e2220",
+    "scripts/runtime-integrity/darwin-x86_64.json": "c7eb5424dbb14940624e3ae6a494078a41dfa0c6738b7779d5d9ceb40f7e2220",
+    "scripts/runtime-integrity/linux-aarch64.json": "b1c0b809c03fbf7d3d018f7418250fce3e56bd7e816781df5242c2cea08370fb",
+    "scripts/runtime-integrity/linux-x86_64.json": "0700c5bcadaa68ec96ac723504c6ffd3212999bfc1c4f7ec1e27ab47e6a564a8",
+    "scripts/runtime-integrity/windows-arm64.json": "edb91da2b4bb474de49cbb705d5c1ff3c6700eb84eea8efc2ec65c208df40572",
+    "scripts/runtime-integrity/windows-x86.json": "ebe596ae6de96e0ddebbe5ca171b3b65337cf33e2c40c5f99631aff6b71d02c4",
+    "scripts/runtime-integrity/windows-x86_64.json": "33e0714f70aee024ec182148933a536d721c5321f0b7efa1470a21e4d85c21a0",
+    "scripts/runtime.lock.json": "b427c71c77e1a217c72f7c19ac872b19df28e07150f4e7f6319defe7f5d9acc0",
+    "scripts/runtime_binding.py": "06799b6f1004052c02efc73d238c38b0f27d626c087a010cef74e3440dc5186a",
+    "scripts/segmented_sequence.py": "f0b078e72211c245267c22514a7b4202099a47cc42a5e9c8243bdd7b0dc473e9",
+    "scripts/task_entry.ps1": "530d74a89c51f0ea55df332d11f9df92c9b545de56ca562b777181b959f8092f",
+    "scripts/task_entry.py": "a45fe452696b53d95e58142bd94bff50627034522f490c9241da5b9f39dcbff2",
+    "scripts/task_entry.sh": "efd4e8903592721a1ca63c6967c08e82d06474cc097dd614fa089d0763670779",
+    "scripts/task_store.py": "a50d62dae2184d66e6a13ea7638d02443b19e17e29cab17df8854dcac8511e6e",
+    "scripts/web_adapter.mjs": "081a816b285a512ebed8cc47dc87e5a16aa0502344c83b25036d3cee8b5c6f78",
+    "scripts/workflow.py": "0fbf618d378e2cb9dc3503e4ed158f7ffd7c6eb787ec095f3ca5ba6066c7e104"
+  },
+  "tests": {
+    "tests/test_file_lut_validation.py": "6be7a11afc95e34d6440ef28a790b6421fc7ce9ad9ea434c7fd7e4bbdbd5e546",
+    "tests/test_file_lut_validation_native.py": "26d4e1fe41d2c2c7337856eece4864ffaf1bcf141726b121778e5bbb4a46c04b",
+    "tests/test_command_completion.py": "2a6fad6bc0831dac9d4bf612d4e6d6e3edccb302f386a62175f720e4dfb8790a"
+  },
+  "fullRegression": {
+    "total": 751,
+    "passed": 679,
+    "skipped": 72,
+    "seconds": 300.761,
+    "logSha256": "f392555414e12c44d77c510a1c61233191f38560708a36ab30eedfa30f8eee01"
+  },
+  "native": {
+    "platform": "darwin-arm64",
+    "cases": [
+      {
+        "schema": "effectcraft-file-lut-native-acceptance/v1",
+        "mode": "commands",
+        "platform": "darwin-arm64",
+        "status": "PASS_COMPONENT",
+        "testSha256": "26d4e1fe41d2c2c7337856eece4864ffaf1bcf141726b121778e5bbb4a46c04b",
+        "publicReview": {
+          "schema": "effectcraft-file-lut-review/v1",
+          "status": "PASS",
+          "projects": [
+            {
+              "schema": "effectcraft-file-lut-validation/v1",
+              "status": "PASS",
+              "scope": "listed static file LUTs and decoded sample frames only; font/creative/temporal fidelity NOT_RUN",
+              "verifiedFrames": 1,
+              "verifiedLuts": 1,
+              "samples": [
+                {
+                  "path": "frame.png",
+                  "composition": 1,
+                  "seconds": 0,
+                  "rgbaSha256": "2c7cab6c463de3e2efef1a1a32a02b9ab1de07b7b690fad8f6b0fac03c8f59f5",
+                  "width": 64,
+                  "height": 48
+                }
+              ],
+              "originalsPreserved": true,
+              "projectSha256": "45e1b87d0336a469d72ed0ea5d1c20dc2407d326d91eba8e64422e4798525f7f",
+              "remappedProperties": [
+                "/items/1/kind/layers/0/props/children/2/children/0/children/0/value"
+              ],
+              "nonTargetPropertiesPreserved": true,
+              "project": "scene.ecproj"
+            }
+          ],
+          "scope": "listed static file LUTs and sampled frames only; no font, complete temporal or creative qualification"
+        },
+        "movedReview": {
+          "schema": "effectcraft-file-lut-review/v1",
+          "status": "PASS",
+          "projects": [
+            {
+              "schema": "effectcraft-file-lut-validation/v1",
+              "status": "PASS",
+              "scope": "listed static file LUTs and decoded sample frames only; font/creative/temporal fidelity NOT_RUN",
+              "verifiedFrames": 1,
+              "verifiedLuts": 1,
+              "samples": [
+                {
+                  "path": "frame.png",
+                  "composition": 1,
+                  "seconds": 0,
+                  "rgbaSha256": "2c7cab6c463de3e2efef1a1a32a02b9ab1de07b7b690fad8f6b0fac03c8f59f5",
+                  "width": 64,
+                  "height": 48
+                }
+              ],
+              "originalsPreserved": true,
+              "projectSha256": "45e1b87d0336a469d72ed0ea5d1c20dc2407d326d91eba8e64422e4798525f7f",
+              "remappedProperties": [
+                "/items/1/kind/layers/0/props/children/2/children/0/children/0/value"
+              ],
+              "nonTargetPropertiesPreserved": true,
+              "project": "scene.ecproj"
+            }
+          ],
+          "scope": "listed static file LUTs and sampled frames only; no font, complete temporal or creative qualification"
+        },
+        "originalInputRemovedDuringMovedReview": true,
+        "nativeProjectAndOutputsUnchanged": true,
+        "installedResourcesUnchanged": true,
+        "nativeWorkerStopped": true,
+        "fileLutAppliedPixel": [
+          0,
+          102,
+          255,
+          255
+        ],
+        "reviewBudgetDelta": {
+          "frames": 1,
+          "decodedBytes": 12288
+        },
+        "actions": [
+          {
+            "action": "plan",
+            "returncode": 0
+          },
+          {
+            "action": "run",
+            "returncode": 0
+          },
+          {
+            "action": "review",
+            "returncode": 0
+          },
+          {
+            "action": "resume",
+            "returncode": 0
+          }
+        ],
+        "coldInstall": "NOT_RUN",
+        "workflowNative": "NOT_RUN",
+        "creative": "NOT_RUN",
+        "hostDispatch": "NOT_RUN",
+        "fullV1": "NOT_RUN",
+        "proofSha256": "1d22966e5fa065767886216f4e6668d2fe38d3e30c40712d10e959f4a168d269"
+      },
+      {
+        "schema": "effectcraft-file-lut-native-acceptance/v1",
+        "mode": "desktop",
+        "platform": "darwin-arm64",
+        "status": "PASS_COMPONENT",
+        "testSha256": "26d4e1fe41d2c2c7337856eece4864ffaf1bcf141726b121778e5bbb4a46c04b",
+        "publicReview": {
+          "schema": "effectcraft-file-lut-review/v1",
+          "status": "PASS",
+          "projects": [
+            {
+              "schema": "effectcraft-file-lut-validation/v1",
+              "status": "PASS",
+              "scope": "listed static file LUTs and decoded sample frames only; font/creative/temporal fidelity NOT_RUN",
+              "verifiedFrames": 1,
+              "verifiedLuts": 1,
+              "samples": [
+                {
+                  "path": "frame.png",
+                  "composition": 1,
+                  "seconds": 0,
+                  "rgbaSha256": "2c7cab6c463de3e2efef1a1a32a02b9ab1de07b7b690fad8f6b0fac03c8f59f5",
+                  "width": 64,
+                  "height": 48
+                }
+              ],
+              "originalsPreserved": true,
+              "projectSha256": "26608cec23abd2e2f91ce7a1c4c2128484661b8a06bf5724356e7512917d3412",
+              "remappedProperties": [
+                "/items/1/kind/layers/0/props/children/2/children/0/children/0/value"
+              ],
+              "nonTargetPropertiesPreserved": true,
+              "project": "scene.ecproj"
+            }
+          ],
+          "scope": "listed static file LUTs and sampled frames only; no font, complete temporal or creative qualification"
+        },
+        "movedReview": {
+          "schema": "effectcraft-file-lut-review/v1",
+          "status": "PASS",
+          "projects": [
+            {
+              "schema": "effectcraft-file-lut-validation/v1",
+              "status": "PASS",
+              "scope": "listed static file LUTs and decoded sample frames only; font/creative/temporal fidelity NOT_RUN",
+              "verifiedFrames": 1,
+              "verifiedLuts": 1,
+              "samples": [
+                {
+                  "path": "frame.png",
+                  "composition": 1,
+                  "seconds": 0,
+                  "rgbaSha256": "2c7cab6c463de3e2efef1a1a32a02b9ab1de07b7b690fad8f6b0fac03c8f59f5",
+                  "width": 64,
+                  "height": 48
+                }
+              ],
+              "originalsPreserved": true,
+              "projectSha256": "26608cec23abd2e2f91ce7a1c4c2128484661b8a06bf5724356e7512917d3412",
+              "remappedProperties": [
+                "/items/1/kind/layers/0/props/children/2/children/0/children/0/value"
+              ],
+              "nonTargetPropertiesPreserved": true,
+              "project": "scene.ecproj"
+            }
+          ],
+          "scope": "listed static file LUTs and sampled frames only; no font, complete temporal or creative qualification"
+        },
+        "originalInputRemovedDuringMovedReview": true,
+        "nativeProjectAndOutputsUnchanged": true,
+        "installedResourcesUnchanged": true,
+        "nativeWorkerStopped": true,
+        "fileLutAppliedPixel": [
+          0,
+          102,
+          255,
+          255
+        ],
+        "reviewBudgetDelta": {
+          "frames": 1,
+          "decodedBytes": 12288
+        },
+        "actions": [
+          {
+            "action": "plan",
+            "returncode": 0
+          },
+          {
+            "action": "run",
+            "returncode": 0
+          },
+          {
+            "action": "review",
+            "returncode": 0
+          },
+          {
+            "action": "resume",
+            "returncode": 0
+          }
+        ],
+        "coldInstall": "NOT_RUN",
+        "workflowNative": "NOT_RUN",
+        "creative": "NOT_RUN",
+        "hostDispatch": "NOT_RUN",
+        "fullV1": "NOT_RUN",
+        "proofSha256": "823667f4d304b6d45c0e6e67caf6d251df2f8b2c40a7b3f68af78bdcdbb1c439"
+      }
+    ],
+    "cacheReused": true,
+    "coldInstall": "NOT_RUN",
+    "workflowFileLutNative": "NOT_RUN"
+  },
+  "limits": [
+    "Workflow native file-LUT creation and public review acceptance OPEN; only routing and failure gate tested",
+    "Font binary, fallback and licence packaging NOT_RUN",
+    "Sampling is not complete temporal or general creative fidelity",
+    "Other media/LUT combinations need native acceptance; only current samples qualified",
+    "Review interruption/cancellation process ownership and full crash/GUI matrix remain OPEN",
+    "Other native platforms, browser, FreeBSD, cold install and fixed-host natural-language dispatch NOT_RUN",
+    "Published source64/plugin66 CI and historical native reports do not validate candidate execution payloads"
+  ],
+  "openImplementationTasks": 69,
+  "fullV1": "NOT_RUN",
+  "marketplaceEligible": false,
+  "note": "Candidate report retains its original unpublished observation context; this release distributes those exact skill and test bytes. Publication and CI verified separately."
+}
