@@ -2,12 +2,12 @@
 
 从文字、图形和素材创建可编辑 `.ecproj` 工程、依赖和媒体。当前为开发版，完整 V1 未完成；已发布版本与本地文档候选分别记录。
 
-当前技能源：`0.1.0-dev.64`；消费插件：`0.1.0-dev.66`；15 个独立技能。
+当前技能源：`0.1.0-dev.66`；消费插件：`0.1.0-dev.68`；15 个独立技能。
 
 | Field | Value |
 | --- | --- |
-| Metadata version | 0.1.0-dev.64 |
-| Skills source | effectcraft-skills / v0.1.0-dev.64 |
+| Metadata version | 0.1.0-dev.66 |
+| Skills source | effectcraft-skills / v0.1.0-dev.66 |
 | Acceptance | Development; full V1 OPEN |
 
 
@@ -127,3 +127,6 @@ source60／plugin62 发行分发真实强杀恢复增量及严格进程归属校
 
 
 技能源 dev.65 / 插件 dev.67 发布文件 LUT 隔离核验、绑定交付包迁移重关联与持久化审核渲染预算。历史候选报告保留当时观察状态；当前回归679项通过、72项条件跳过，macOS arm64两项原生用例通过。工作流文件 LUT 原生验收、字体、完整时序与创作评价、其他原生平台及宿主门禁继续开放。[发布证据](docs/evidence/file-lut-release65-20261009.json)。5.1–5.3及69项V1任务仍未完成。
+
+
+Source dev.66 / plugin dev.68 correct current release identity documentation. Execution payloads and test files are byte-identical to source65; immutable source65/plugin67 tags are retained. See [release binding](docs/evidence/file-lut-release66-20261009.json).
