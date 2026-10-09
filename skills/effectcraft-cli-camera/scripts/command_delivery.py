@@ -191,8 +191,10 @@ def finalize(store,task):
           'receiptSha256':sha(output/'success.json'),'files':inventory(output),'observations':observations,
           'projects':[v for v in current.values() if v['kind']=='project'],
           'frames':[v for v in current.values() if v['kind']=='frame']}
+    data['artifactMap']=load('command_artifact').build(store,state,data)
     load('review_ledger').immutable(base/'delivery.json',data)
-    return {'receiptSha256':data['receiptSha256'],'commandDeliverySha256':sha(base/'delivery.json'),'engineeringReopen':'NOT_RUN'}
+    return {'receiptSha256':data['receiptSha256'],'commandDeliverySha256':sha(base/'delivery.json'),'engineeringReopen':'NOT_RUN',
+            'commandArtifacts':load('command_artifact').reference(data['artifactMap'])}
 
 
 def document(store,task,proof=None):
@@ -212,6 +214,9 @@ def document(store,task,proof=None):
     if inventory(output)!=data['files']:raise ValueError('command_artifact_changed')
     for project in data['projects']:
         if dependencies(output,project['path'])!=project['dependencies']:raise ValueError('command_dependency_changed')
+    if 'artifactMap' in data:
+        adapter=load('command_artifact');adapter.verify_document(store,state,data)
+        if proof.get('commandArtifacts')!=adapter.reference(data['artifactMap']):raise ValueError('command_artifact_reference_changed')
     return data
 
 
@@ -270,6 +275,7 @@ def inspect(store,task,runtime_home,proof=None):
     try:
         proof=proof if proof is not None else state.get('delivery') or {}
         data=document(store,task,proof)
+        if 'artifactMap' in data:report['commandArtifacts']=data['artifactMap']
         report['binding']={'commandDeliverySha256':proof['commandDeliverySha256'],
                            'receiptSha256':data['receiptSha256'],'filesHash':load('task_store').digest(data['files'])}
         known={p['path'] for p in data['projects']}

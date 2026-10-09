@@ -1,5 +1,9 @@
 # Version-bound release records
 
+## dev.63 — 2026-10-09
+
+Source dev.63 / plugin dev.65 distributes source-producer guards and public artifacts for commands and owned desktop sessions: separate projects retain actual task identity, immutable package versions, native projects, matching PNGs and media dependencies. Legacy delivery remains readable. Portable mapping does not replace technical, creative or user acceptance. Prior candidates retain their observation-time scope; see [release validation](docs/evidence/release63-validation-20261009.json). Font/LUT discovery, complete fault matrices, other native platforms and fixed-host dispatch remain open;5.1–5.3 remain unchecked and V1 has69 unfinished tasks.
+
 ## dev.62 — 2026-10-09
 
 工作流 craft-artifact/v1 血缘、不可变整包版本、源工程包授权与逐步写入检查；15份独立技能资源一致。回归697项633通过／64跳过；macOS arm64三个真实交付通过，其他平台和宿主验收仍开放。插件锁定已发行技能源dev.62；V1仍有69项开放。

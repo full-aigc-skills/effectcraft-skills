@@ -2,12 +2,12 @@
 
 Create editable `.ecproj` projects, dependencies and media from text, graphics and footage. This is a development release; full V1 remains open. Published releases and local documentation candidates have separate evidence.
 
-Current source: `0.1.0-dev.62`; consuming plugin: `0.1.0-dev.64`; 15 independent skills.
+Current source: `0.1.0-dev.63`; consuming plugin: `0.1.0-dev.65`; 15 independent skills.
 
 | Field | Value |
 | --- | --- |
-| Metadata version | 0.1.0-dev.62 |
-| Skills source | effectcraft-skills / v0.1.0-dev.62 |
+| Metadata version | 0.1.0-dev.63 |
+| Skills source | effectcraft-skills / v0.1.0-dev.63 |
 | Acceptance | Development; full V1 OPEN |
 
 
@@ -113,3 +113,8 @@ This release: source dev.61 / plugin dev.63 publishes the9.36 native family-canc
 Local artifact-lineage candidate (EC-AR-001;5.1–5.3 in progress): workflows add the ArtCraft-owned craft-artifact/v1 object to the compatible manifest, binding logical identity, immutable whole-package version, actual task, parent version, native project, renditions and collected media. Review and moved-source revision verify every bound file; same-name replacement, stale versions, reference mismatches and links are rejected. Source-package binding persists in task authorization and is checked before subsequent edits and delivery. Direct CLI execution explicitly uses standalone identity; legacy packages contribute content-verifiable native references without invented task provenance. This is unpublished source work; the plugin remains pinned to released source61. Command/desktop public artifact mapping, font/LUT discovery and complete fixed-release protocol qualification remain open;5.1–5.3 are not checked off. [Evidence / 证据](docs/evidence/workflow-artifact-lineage-candidate-20261009.json).
 
 Current release: source dev.62 / plugin dev.64 distributes workflow artifact lineage and source-package guards. Candidate evidence retains its observation checkpoint; release bindings are in release62-validation-20261009.json. Regression: 697 tests, 633 passed, 64 conditional skips; three macOS arm64 native deliveries bind current execution resources. Command/desktop public mapping, font/LUT discovery, other native targets and host acceptance remain open;5.1–5.3 remain unchecked and V1 has69 open tasks.
+
+
+Unpublished source-producer guard: copying/moving a managed workflow package or changing state roots still requires original task, operation receipts, durable delivery digest and stopped-process evidence. A private user-level locator is not completion proof; each edit intent and delivery rechecks the persisted source binding. Ten targeted tests and708 regression cases pass (643 passed,65 conditional skips). Native SIGKILL after package completion but before ledger delivery confirms public cross-store plan/run refusal, original reconcile/resume without replay, and confirmed moved-source revision with native reopen/PNG checks. The first native fixture ordering failure is retained. macOS arm64 and reused caches only; full9.3.3, legacy/command/desktop matrices, other platforms and hosts remain open, with69 tasks unfinished. Plugin stays pinned to source62/plugin64. [Evidence / 证据](docs/evidence/source-producer-guard-candidate-20261009.json).
+
+Source dev.63 / plugin dev.65 distributes source-producer guards and public artifacts for commands and owned desktop sessions: separate projects retain actual task identity, immutable package versions, native projects, matching PNGs and media dependencies. Legacy delivery remains readable. Portable mapping does not replace technical, creative or user acceptance. Prior candidates retain their observation-time scope; see [release validation](docs/evidence/release63-validation-20261009.json). Font/LUT discovery, complete fault matrices, other native platforms and fixed-host dispatch remain open;5.1–5.3 remain unchecked and V1 has69 unfinished tasks.

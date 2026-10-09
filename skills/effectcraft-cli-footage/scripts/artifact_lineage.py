@@ -159,3 +159,95 @@ def verify(root,manifest):
     except (KeyError,TypeError,OSError,ValueError) as error:
         if isinstance(error,ValueError) and str(error).startswith('artifact_lineage:'):raise
         fail('invalid_package: '+type(error).__name__)
+
+
+def producer_root():
+    """私有定位记录跨state-root稳定；公共产物不包含本机账本路径。"""
+    return Path.home()/'.local/share/craft-tasks/effectcraft-artifact-producers'
+
+
+def producer_owner(store,state):
+    return {'stateRoot':str(store.root),'taskId':state['taskId'],'identityHash':state['identityHash']}
+
+
+def producer_locator(identity,task):
+    if not isinstance(identity,str) or not HEX.fullmatch(identity):raise ValueError('source_producer_identity_invalid')
+    if not isinstance(task,str) or not re.fullmatch(r'[a-zA-Z0-9][a-zA-Z0-9_-]{0,95}',task):raise ValueError('source_producer_task_invalid')
+    return producer_root()/(digest({'taskId':task,'identityHash':identity})+'.json')
+
+
+def read_producer_locator(identity,task):
+    path=producer_locator(identity,task)
+    try:
+        if producer_root().is_symlink() or path.is_symlink() or not path.is_file() or path.stat().st_size>1024*1024:raise ValueError('shape')
+        value=read(path);owner=value['owner']
+        if (set(value)!={'schema','owner'} or value['schema']!='effectcraft-artifact-producer/v1'
+                or set(owner)!={'stateRoot','taskId','identityHash'} or owner['identityHash']!=identity or owner['taskId']!=task
+                or not isinstance(owner['stateRoot'],str) or not Path(owner['stateRoot']).is_absolute()
+                or not isinstance(owner['taskId'],str)):raise ValueError('shape')
+        return value
+    except (OSError,ValueError,TypeError,KeyError):raise ValueError('source_producer_locator_invalid') from None
+
+
+def register_producer(store,task):
+    """先持久定位再发布包；原任务仍须单独证明交付及进程停止。"""
+    if producer_root().is_symlink():raise ValueError('source_producer_locator_invalid')
+    with load('platform_support').exclusive_lock(producer_root()/'producers.lock'):
+        with store.lock():
+            state=store.read(task);owner=producer_owner(store,state);path=producer_locator(state['identityHash'],task)
+            expected={'schema':'effectcraft-artifact-producer/v1','owner':owner}
+            if path.exists() or path.is_symlink():
+                if read_producer_locator(state['identityHash'],task)!=expected:raise ValueError('source_producer_locator_conflict')
+            else:
+                if 'artifactProducerLocator' in state:raise ValueError('source_producer_locator_missing')
+                load('task_store').atomic_json(path,expected)
+            reference={'schema':'effectcraft-producer-locator/v1','sha256':sha(path)}
+            if state.get('artifactProducerLocator',reference)!=reference:raise ValueError('source_producer_locator_conflict')
+            if 'artifactProducerLocator' not in state:
+                state['artifactProducerLocator']=reference;store.save(state)
+            return {'producerTaskId':task,'taskIdentityHash':state['identityHash'],'mode':'managed'}
+
+
+def verify_producer(bound):
+    """逐操作核对来源，不按PID、完整包或定位记录推断编辑完成。"""
+    try:
+        if (not isinstance(bound,dict) or set(bound)!={'schema','owner','manifestSha256','projectSha256','locatorSha256'}
+                or bound['schema']!='effectcraft-source-producer/v1'):raise ValueError('binding')
+        owner=bound['owner']
+        if (not isinstance(owner,dict) or set(owner)!={'stateRoot','taskId','identityHash'}
+                or not isinstance(owner['stateRoot'],str) or not Path(owner['stateRoot']).is_absolute()
+                or not isinstance(owner['identityHash'],str) or not HEX.fullmatch(owner['identityHash'])
+                or any(not isinstance(bound[k],str) or not HEX.fullmatch(bound[k]) for k in ('manifestSha256','projectSha256'))):raise ValueError('binding')
+        tasks=load('task_store');original=tasks.Store(owner['stateRoot']);state=original.read(owner['taskId'])
+        if state['schema']!='effectcraft-managed-task/v2' or state['identityHash']!=owner['identityHash']:raise ValueError('identity')
+        if bound['locatorSha256'] is not None:
+            if (read_producer_locator(owner['identityHash'],owner['taskId'])!={'schema':'effectcraft-artifact-producer/v1','owner':owner}
+                    or sha(producer_locator(owner['identityHash'],owner['taskId']))!=bound['locatorSha256']
+                    or state.get('artifactProducerLocator')!={'schema':'effectcraft-producer-locator/v1','sha256':bound['locatorSha256']}):raise ValueError('locator')
+        elif 'artifactProducerLocator' in state:raise ValueError('locator_missing')
+        delivery=state.get('delivery')
+        if (state['state'] not in ('review_ready','completed') or state.get('cancellationRequestedAt')
+                or any(step['state']!='succeeded' for step in state['steps'])
+                or not isinstance(delivery,dict) or delivery.get('manifestSha256')!=bound['manifestSha256']
+                or delivery.get('projectSha256')!=bound['projectSha256'] or delivery.get('engineeringReopen')!='PASS'):
+            raise ValueError('delivery_unconfirmed')
+        stopped=read(original.lifecycle_path(state))
+        if stopped.get('schema')!='effectcraft-process-lifecycle/v1' or stopped.get('status')!='stopped':raise ValueError('stop_unconfirmed')
+        tasks.exit_evidence(stopped.get('returncode'),stopped.get('ownership'))
+    except (OSError,ValueError,TypeError,KeyError):raise ValueError('source_producer_unconfirmed; reconcile original task') from None
+
+
+def producer_binding(store,root):
+    """保留受管理身份的源包必须绑定可核对的原任务；旧包只读规则独立。"""
+    manifest=validate_source(root);producer=manifest.get('artifactBinding',{}).get('producer')
+    if not producer or producer['mode']=='standalone':return None
+    identity=producer['taskIdentityHash'];task=producer['producerTaskId'];path=producer_locator(identity,task);locator=None
+    if path.exists() or path.is_symlink():
+        owner=read_producer_locator(identity,task)['owner'];locator=sha(path)
+    else:
+        # 旧发行仅可在调用者已有原账本时核对；不扫描用户目录或写入补造定位记录。
+        owner={'stateRoot':str(store.root),'taskId':producer['producerTaskId'],'identityHash':identity}
+    if owner['taskId']!=producer['producerTaskId']:raise ValueError('source_producer_identity_mismatch')
+    bound={'schema':'effectcraft-source-producer/v1','owner':owner,'manifestSha256':sha(file(Path(root),'manifest.json')),
+           'projectSha256':manifest['files']['project.ecproj'],'locatorSha256':locator}
+    verify_producer(bound);return bound

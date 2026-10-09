@@ -70,7 +70,7 @@ def doctor(runtime_home,probe_native=False,compare_catalog=None):
     return result
 
 
-def preflight(plan, output, mode, inputs=None, source=None, revision_scope=None):
+def preflight(plan, output, mode, inputs=None, source=None, revision_scope=None, store=None):
     inputs=inputs or {}
     if revision_scope is not None:
         if mode=='workflow':raise ValueError('revision_scope_mode')
@@ -87,15 +87,17 @@ def preflight(plan, output, mode, inputs=None, source=None, revision_scope=None)
         actual=load('task_store').file_sha(item['path'])
         if actual!=item['sha256']:raise ValueError('asset_digest_mismatch')
         hashes[name]=actual
-    source_package=None
+    source_package=None;source_producer=None
     if source:
         source_package=load('artifact_lineage').source_binding(source)
+        if store is not None:source_producer=load('artifact_lineage').producer_binding(store,source)
         manifest=load('artifact_lineage').validate_source(source); project=Path(source)/'project.ecproj'
         if load('task_store').file_sha(project)!=manifest['files']['project.ecproj'] or plan.get('expectedProjectSha256')!=manifest['files']['project.ecproj']:
             raise ValueError('revision_conflict')
     return {'result':'VALID','planHash':load('task_store').digest(plan),'inputHashes':hashes,
             'mode':mode,'output':str(output),'source':str(source) if source else None,
-            **({'sourcePackage':source_package} if source_package else {})}
+            **({'sourcePackage':source_package} if source_package else {}),
+            **({'sourceProducer':source_producer} if source_producer else {})}
 
 
 class Hooks:
@@ -104,8 +106,7 @@ class Hooks:
         self.store=store;self.task=task
 
     def artifact_identity(self):
-        state=self.store.read(self.task)
-        return {'producerTaskId':self.task,'taskIdentityHash':state['identityHash'],'mode':'managed'}
+        return load('artifact_lineage').register_producer(self.store,self.task)
 
     def before(self, name, arguments):
         return self.store.begin_step(self.task,name,arguments)
@@ -193,7 +194,7 @@ def worker(store, task, runtime_home):
                 hashes.update({name:load('task_store').file_sha(asset['path']) for name,asset in plan.get('assets',{}).items()})
                 current={'inputHashes':hashes}
             else:
-                current=preflight(plan,output,state['identity']['mode'],request['inputs'],request.get('source'),request.get('revisionScope'))
+                current=preflight(plan,output,state['identity']['mode'],request['inputs'],request.get('source'),request.get('revisionScope'),store=store)
             if request.get('revisionScope')!=state['identity']['authorization'].get('revisionScope'):
                 raise ValueError('revision_scope_changed')
             if current['inputHashes']!=state['identity']['inputHashes']:
@@ -297,7 +298,7 @@ def supervise(store, task, runtime_home, recover=False):
 
 
 def run(store, plan, output, runtime_home, mode='workflow', inputs=None, source=None, task=None, parent=None, revision_scope=None):
-    inputs=inputs or {};check=preflight(plan,output,mode,inputs,source,revision_scope)
+    inputs=inputs or {};check=preflight(plan,output,mode,inputs,source,revision_scope,store=store)
     if source and not parent:
         for prior in store.all():
             if Path(prior['output']).resolve()==Path(source).resolve():
@@ -308,6 +309,7 @@ def run(store, plan, output, runtime_home, mode='workflow', inputs=None, source=
     request={'inputs':inputs,'source':str(source) if source else None}
     authorization={'writeRoot':str(Path(output).absolute()),'inputs':inputs}
     if check.get('sourcePackage'):authorization['sourcePackage']=check['sourcePackage']
+    if check.get('sourceProducer'):authorization['sourceProducer']=check['sourceProducer']
     if revision_scope is not None:
         request['revisionScope']=revision_scope;authorization['revisionScope']=revision_scope
     authorization['requestHash']=load('task_store').digest(request)
@@ -440,7 +442,7 @@ def main():
                 inputs[name]=str(Path(value).absolute())
             plan=read(args.plan)
             scope=read(args.revision_scope) if getattr(args,'revision_scope',None) else None
-            if args.action=='plan':result=preflight(plan,args.output,args.mode,inputs,args.source,scope)
+            if args.action=='plan':result=preflight(plan,args.output,args.mode,inputs,args.source,scope,store=store)
             elif args.action=='revise':result=load('revision').revise(store,args.task,plan,args.output,args.runtime_home)
             else:result=run(store,plan,args.output,args.runtime_home,args.mode,inputs,args.source,args.task,revision_scope=scope)
         print(json.dumps(result,ensure_ascii=False,allow_nan=False))

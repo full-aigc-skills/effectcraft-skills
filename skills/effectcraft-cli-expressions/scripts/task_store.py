@@ -285,6 +285,8 @@ class Store:
                 if current!=bound:raise ValueError('source_package_changed')
             except (ValueError,OSError,KeyError,TypeError):
                 raise ValueError('source_package_changed') from None
+        producer=state['identity']['authorization'].get('sourceProducer')
+        if producer is not None:load('artifact_lineage').verify_producer(producer)
         load('project_claims').verify(self,state)
 
     def start(self, task):
