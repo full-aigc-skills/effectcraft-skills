@@ -1,5 +1,11 @@
 # 版本绑定的历史发行记录
 
+## dev.62 — 2026-10-09
+
+工作流 craft-artifact/v1 血缘、不可变整包版本、源工程包授权与逐步写入检查；15份独立技能资源一致。回归697项633通过／64跳过；macOS arm64三个真实交付通过，其他平台和宿主验收仍开放。插件锁定已发行技能源dev.62；V1仍有69项开放。
+
+Workflow artifact lineage and source-package integrity guards; partial EC-AR-001 implementation. [Evidence](docs/evidence/workflow-artifact-lineage-candidate-20261009.json).
+
 ## dev.59 — 2026-10-09
 
 桌面原子冲突逐操作核对及命令完成证明恢复；15份独立资源同步。恢复只登记已核验的原交付，不重发编辑。当前证据见 [发行验证](docs/evidence/release59-validation-20261009.json)。完整V1与目标平台／宿主验收仍开放。

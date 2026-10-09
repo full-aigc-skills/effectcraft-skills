@@ -34,6 +34,7 @@ jobs:
           python -m unittest discover -s tests -p test_command_completion.py -v
           python -m unittest discover -s tests -p test_command_catalog_diff.py -v
           python -m unittest discover -s tests -p test_runtime_binding.py -v
+          python -m unittest discover -s tests -p test_workflow_artifact_lineage.py -v
           python -m unittest discover -s tests -p 'test_task_entry*.py' -v
           python -m unittest discover -s tests -p test_runtime_upgrade.py -v
           python -m unittest discover -s tests -p test_runtime_offline.py -v

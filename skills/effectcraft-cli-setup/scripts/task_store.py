@@ -278,6 +278,13 @@ class Store:
             raise ValueError('revision_conflict') from None
         if actual != state['identity']['projectRevision']:
             raise ValueError('revision_conflict')
+        bound=state['identity']['authorization'].get('sourcePackage')
+        if bound is not None:
+            try:
+                current=load('artifact_lineage').source_binding(Path(source).parent)
+                if current!=bound:raise ValueError('source_package_changed')
+            except (ValueError,OSError,KeyError,TypeError):
+                raise ValueError('source_package_changed') from None
         load('project_claims').verify(self,state)
 
     def start(self, task):

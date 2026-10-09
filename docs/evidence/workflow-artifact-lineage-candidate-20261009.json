@@ -1,0 +1,730 @@
+{
+  "schema": "effectcraft-workflow-artifact-lineage-candidate/v1",
+  "observedAt": "2026-10-09T00:37:52.440040+00:00",
+  "status": "PASS_WORKFLOW_COMPONENT",
+  "requirements": [
+    "EC-AR-001"
+  ],
+  "tasksInProgress": [
+    "5.1",
+    "5.2",
+    "5.3"
+  ],
+  "published": false,
+  "sourceBase": "649fb3d98e7a17e4c2f483da8202a9fa4dab6cd7",
+  "pluginBase": "1e184e53c14edb6d7ef5791ada9288373e0c0c2b",
+  "sourceSkillFiles": {
+    "SKILL.md": "eaefb4165f35271922237575e7f6d9ae9479e0d895c8ab8746193f60334616d2",
+    "agents/openai.yaml": "8fe0093ba521c032e6b243bf5c2e3d9d2303cf1ae78f76fe8365e414b7da57b7",
+    "examples/brand-intro.json": "430aa74e69a3195f70fdfe53ae9b8939fc888df1b58e01d76fd76ccdfe3edd80",
+    "examples/camera-scene-create.json": "bdced8cc3a735793852bf67140ff62ec79544c938c61d733c372f6f4a61d0946",
+    "examples/camera-scene-reopen.json": "7f1ade6f23c628045941d7168c822d0372e79a63c4ff05cfbd375a03c376b4ee",
+    "examples/camera-scene-revise.json": "2cca564a10133b56d2d8d20b0feb5cafb627a3e082ce2303fe073567af8bd00f",
+    "examples/commands-advanced.json": "e2def610996d594575136e357cab0d9ee355ce51cf782817d323b37e8227941b",
+    "examples/commands-revision-create.json": "03d3d7796210dfd4ff27f6cde0e1ba10b4376b0243dc4938d87103ca991f5f61",
+    "examples/commands-revision.json": "d54bfa78c48b674136b56a8e0c7e36e4c1c475a5907ba46ae450b2ac86e17d1e",
+    "examples/desktop-first-use.json": "0d1dbf9c43e8d5ce790443577b5398c2aa7af317fc15a328dc85c62813527d84",
+    "examples/expression-parent-create.json": "fca2b95312130f735c884e354ce4fede48bc67ca0a3c740b4b17a79967c20d4d",
+    "examples/expression-parent-revise.json": "8076203648de8834c0681149e557ea4ffed35e0863c2e7a2dec2b4001e3ca22f",
+    "examples/layer-mask.json": "61efc2abc7274b45224659ab4aae7e847486af3f3660161a03b83b978ec7a8bc",
+    "examples/native-workflow.json": "0ba62e8bd042dacb028b14c84c18cb2ee10c77e54dbd13efcd7090c8fa9fae16",
+    "examples/puppet-create.json": "405a5b98b410d2db642eec0a9d0ec8cf48c622c9f1632f36e2c2be3f01ff8560",
+    "examples/puppet-record-follow-create.json": "ac59e9682a32efbe12a6bdeacb5136508c120413b3ae3bdf5efda4b6602e7ed9",
+    "examples/puppet-record-follow-reopen.json": "b722ee0ea4681556ae42eb58da21b293180081add09f23bb416d23ff368ae611",
+    "examples/puppet-record-follow-revise.json": "448b635cf49567dc359a3d9ff385fe73afe4b4a32ec280ba5f8cab93ceb00a76",
+    "examples/puppet-reopen.json": "bd05b66c9480cedaf60cbfe2fb6352dff8a6e573cd27a1fb1be43097bda58b62",
+    "examples/tracking-create.json": "14d6c8654cb81c1b2b578eea021039b38c5179bd9459b7ec41528999d7f53d0d",
+    "examples/tracking-reopen.json": "0b393fda8bd68c6819e25ac8f8101381dc175220ca3c8c1c3b8c35637e49ce7b",
+    "references/bridge-tools.json": "1a9c5431674b0e563e83ae3e5aebf9e4c25a95c4a55c53125dccb6dc3ae60859",
+    "references/business-scenes.md": "fa6dde18bb5ea19d15de3c6be5d0fc2cdbf4f4e2cf3170a624600b2d3c4e556b",
+    "references/camera-scene.md": "19bcbf1dce86e32974f59bfd5785ab0c7664df69ce75fd3130f6e4ec5a1e30c9",
+    "references/capability-diff.json": "201b27776325f0b49a3e93c7fcfb8651bfbdf53843a9083ec2bdfc875c5c8959",
+    "references/codex-judge.md": "e4cd12c1942fdf49d4186c8e1552e83a6b7191e66b8d1ee4e2e156180dd3cfea",
+    "references/command-coverage.json": "613f7a5fceff44bf5d7ac9f4a3521b849617ae5420be243d80ea21f1f7be7e76",
+    "references/command-reference.md": "aa978528c9b9c490d9390d79928d2258d62f87b83ace02823b7a76a349c233ba",
+    "references/command-usage.md": "5fbf285a45eeebc6fefe6f0c85004c031d52b27a82dec08ac2fbcdd207546aab",
+    "references/commands.json": "f4a4bd1bb063ffe89b0ab0f71dca12d0b1a92eec3e73306756ebf0a93bb3eeb7",
+    "references/desktop-install.md": "db2db151b0eff30a3381a03ae377fb23ac09b2b4a919859740bd9343e7f14887",
+    "references/exchange-loss.md": "eee665f62b77274ca8ce0efc4117012ade85978905cdfd40ab488af64297b8ae",
+    "references/expression-parent.md": "c67e09b82b9740bbbc603b2ec48c0aeba42c3703f775b7c234473935a355080c",
+    "references/first-use-failures.md": "ce2a8d1a8ca6b8a29a084d52d105d510476de88d40b439d6c2ff79212581d61d",
+    "references/installation-concurrency.md": "69067acebcd47f1924a8d6aa9d8a4ce6f44ad0756d44888a21eb224bcdb1c215",
+    "references/managed-execution.md": "b455f4617d0a0b5fb56589373d43faf083e5117d5acf4d6f49d4be6bdd9690c4",
+    "references/motion-tracking.md": "dcb4d2ea69f503e45692bbd3f2d2383546f892bd2cb5d163b7811a310af5d194",
+    "references/native-command-snapshot.json": "043d3e4bcc4e03fd15df178cfcf8cfd2e81679308a48da8ff289d802b4204b74",
+    "references/native-workflow.md": "42fee416c66a69f6f3802abe1be6f002963cf109e7e22a4d6297b6dcaf62b8e9",
+    "references/output-execution.md": "1e185e63d8e20fdc54537feacdfb6e7a140474f5e61e2932747699d751671b36",
+    "references/puppet-scene.md": "ce185ef007e86e1189210330049b80cc3a4418015826686ff3b143d81810e55f",
+    "references/segmented-render.md": "d4a500643465eafad7b96f4491086f203e121bd782d69e208095de36717a71b7",
+    "references/tracking-scene.md": "2e699e1ab62f47a1c40405fc6dd48e15474f130295f33fdcd4e80efcad3e4be9",
+    "references/workflow.md": "09a885345734d8d13cd36466841c28441125caa4863472d2a5b9ed4278cc5cdc",
+    "scripts/additional-platforms.lock.json": "d72653f778b07bb61eed795d49ffc3e7214ad39e74c64e76959818187567dce6",
+    "scripts/additional_platforms.py": "1a4ffc9f04e240374269a9869d0383f9f833082cf066203fddba117f247f48d9",
+    "scripts/artifact_lineage.py": "19aede443f46de0494fc7397f4e7085e2e305f9824aba2fdeee14ea63967b56a",
+    "scripts/bootstrap.py": "1eca0f59586609ae4314c77b4d5adb3886fe5443178fb2b300abb25cb75ae99b",
+    "scripts/cancellation.py": "db22d93fe4a9eafc06460c62de9f2be3193bd1750a707c2a352ebb09502a971c",
+    "scripts/cli.py": "9303ae8ae30009fa706d5d56603032485ad81416aee1d0af523ce902e3f28165",
+    "scripts/command_catalog.py": "ee88018a7139455125009f8d6a31f97b7e0f062a994f7d4377d910ba2001b7f7",
+    "scripts/command_completion.py": "8b96eb56194ab6732141a37d4f365af634209424038910d2a336138289ee3707",
+    "scripts/command_delivery.py": "8454dccc71750a62ddb2dcca7323d0b242da3fe12bcacf2b029e3bf9ab12ef66",
+    "scripts/command_judge.py": "1d9617f42edcd4dd730b0781fc55b330c40f8774db0063ff7cb53fa7af4e83f0",
+    "scripts/command_revision.py": "0bf2629997ab92ce8454cde14b0033753b431f53e25139537850d1cf5c6a58c1",
+    "scripts/commands.py": "7a7bf479698a48d9f4c5e6e94577108dbd230da312c21e04c168ae7e7491f610",
+    "scripts/desktop-platforms.lock.json": "3b4b56b144ef102f1ab2e5fbf4f374b22292dbce6a51a01e9bea466f9ed09b92",
+    "scripts/desktop.lock.json": "d2af78ee474b8e19ff3c26c792bb27ad180622ffe6dbed5a402bcb7aa7167311",
+    "scripts/desktop.py": "802de3eef9ed9fca3ad09a2f5f6f204f6bbba5a09450efe6ae062e7159409553",
+    "scripts/desktop_revision.py": "7611c7fd9377c3ff3f8401865e36f3130769216c8b8bece9d4124e1dd6ba8dea",
+    "scripts/desktop_session.py": "55f45cc1ad27e242573705fb021c37e81d7140002bd1b8e667953f575ff691ff",
+    "scripts/engineering_review.py": "8a06516198de09b49d43cec4bff51aeded085bec9d352567055ef9edca29ec53",
+    "scripts/entry_identity.awk": "5d4b4432e043568509d05303e34357e8e8fa056f0fc5394b80f6f4d8a20cbcbe",
+    "scripts/exchange_loss.py": "8871bc2d4e2e6bedd0b1d2852a06ccdbd43b0339d67afc53e6029fb3539c8c4f",
+    "scripts/image_sequence.py": "f67d0e565d8c99abd519bfaabe44599d25606450ca4f98df1ea227619ab2fff0",
+    "scripts/judge_contract.py": "58e1e4fad0e296cbf185a4e6e5cf5bd3f2db6482b34dbfcb622b814639469480",
+    "scripts/launch.ps1": "eaed943345d51f44b2490bdcd6d92b5f85121d4b4f47576c19ad56512c81b9b6",
+    "scripts/launch.sh": "31bf2cef53d4d1b6a229d74389729cf24572209c48125c1dec8800df99c6431f",
+    "scripts/managed.py": "580adf0fbe53bcc9ef2931252c17712530923b4a06f1efe6e71b9b179e0a6ed7",
+    "scripts/mcp_session.py": "dd6df96dc1734cd7e43c4b820661d2e2c8c713dc8849fc89ab06a3720d99619b",
+    "scripts/native_diagnostics.py": "0c352d047edde58a35151ba2b03c001b2a6b591bb8032307e80573d115912389",
+    "scripts/native_workflow.py": "0db0471f8d849db9c3ffaeaac1c7bc40bf0cd500a638f7b681ecdeb934960bdd",
+    "scripts/orphan_segments.py": "244059948ca6b783c64cdd5942e91f3e6268dfd71f3c48c300595ccbcb2584b9",
+    "scripts/output_guard.py": "018c5c27217c11ec7b45ded52a1e13d7c42b34a3a53df21566e26f192143302b",
+    "scripts/parameter-contract.json": "dd1bde23fb12e26774f412f0aacc93e8102eaed79d4255709b5717c112daa762",
+    "scripts/platform_support.py": "d6a133dc25b81570f585f473f2fe290e181e78bc24032a05ae83be6f0a45aed8",
+    "scripts/png_inspection.py": "0e3c50907c66c6dcc45256d045920da346ad77892e47401de3103c8f6232938d",
+    "scripts/posix_group_lease.py": "23593ea54ff78457eb7d873a979aa1e1d4da601ea459dc288a4b7a8b975c6155",
+    "scripts/preserved_stage.py": "64199df3ee6af2901a859a5aac401fd27ca2f0c6ba9238e6f72c3563f681ad63",
+    "scripts/process_guard.py": "8ddf5881adeec3d224ef57821d3c83bd4319cf2d1f9efb5ed0f1dab846446f4f",
+    "scripts/project_claims.py": "017a73e72eda2a9e25d355ba8d76b6753994360c99c99144113234c5a9fcca85",
+    "scripts/python-integrity/darwin-arm64.tsv": "8f9c3aaf79cd0ff1867ac5d3c937d6ca0c60ccf1ab2b321a2b7a8454209d6fdd",
+    "scripts/python-integrity/darwin-x86_64.tsv": "53196035ea5ca246ef60da5b248d02a91964a269c6ec7397eedc0f28a72694ca",
+    "scripts/python-integrity/linux-aarch64.tsv": "6b639cbaa8c4e691d226447b747fde28fb0f9e337fe828d46b2ceba80ad325f7",
+    "scripts/python-integrity/linux-x86_64.tsv": "f81e6ac6a770f895b5b1a89838da856f21e9c827f4fc320ed1562645783c0c55",
+    "scripts/python-integrity/windows-arm64.tsv": "625a22a5086fd7d312bc156cde8e3f4443ceb2079e2ff91457c6de0cadd5df4d",
+    "scripts/python-integrity/windows-x86.tsv": "551536440722a4fc82e578f4af5a11ef72a9736b3be4b08621982f0f767cc981",
+    "scripts/python-integrity/windows-x86_64.tsv": "e1e98775d10bcb9fbf55e482a31d9efdb91a8d61d80718998f66f7c9b195e5f3",
+    "scripts/python-platforms.tsv": "3836b670271e8f8327ea386510b18dea6a867ece27be5e74f4165eaa38ad8c65",
+    "scripts/python.lock.json": "e877b3fe406a2a210ebe5d7f660aa1d0483def44454a54dbe7429bfdba1c9f3f",
+    "scripts/quality_review.py": "c3ed5e536cae0df4a13b83f1722cd497f993e80182c9a06ad3c9b22a9da35325",
+    "scripts/render_recovery.py": "6baf8f315f20d5e6b9115423502d66e9e51e33dc2398adc6bbff85b6b68b1e31",
+    "scripts/resource_budget.py": "97b4f4b4ac77b65df113c7eccf2ad2d4559cb849a9fe2c20d5eb8c4e7121be30",
+    "scripts/resource_meter.py": "a62257919fd22cfa6eb616be285122978a6732c0b888893fd8b4440396b8993f",
+    "scripts/review_ledger.py": "4931523dd1c76eb15037faaf28aaa7c85b7c85c6dfd447455925dd5a3ae9c512",
+    "scripts/revision.py": "546214f38430c14f354b6c0aa8feff8928d3267b9dee1b7ea708933bc3633590",
+    "scripts/runtime-integrity/darwin-arm64.json": "c7eb5424dbb14940624e3ae6a494078a41dfa0c6738b7779d5d9ceb40f7e2220",
+    "scripts/runtime-integrity/darwin-x86_64.json": "c7eb5424dbb14940624e3ae6a494078a41dfa0c6738b7779d5d9ceb40f7e2220",
+    "scripts/runtime-integrity/linux-aarch64.json": "b1c0b809c03fbf7d3d018f7418250fce3e56bd7e816781df5242c2cea08370fb",
+    "scripts/runtime-integrity/linux-x86_64.json": "0700c5bcadaa68ec96ac723504c6ffd3212999bfc1c4f7ec1e27ab47e6a564a8",
+    "scripts/runtime-integrity/windows-arm64.json": "edb91da2b4bb474de49cbb705d5c1ff3c6700eb84eea8efc2ec65c208df40572",
+    "scripts/runtime-integrity/windows-x86.json": "ebe596ae6de96e0ddebbe5ca171b3b65337cf33e2c40c5f99631aff6b71d02c4",
+    "scripts/runtime-integrity/windows-x86_64.json": "33e0714f70aee024ec182148933a536d721c5321f0b7efa1470a21e4d85c21a0",
+    "scripts/runtime.lock.json": "b427c71c77e1a217c72f7c19ac872b19df28e07150f4e7f6319defe7f5d9acc0",
+    "scripts/runtime_binding.py": "06799b6f1004052c02efc73d238c38b0f27d626c087a010cef74e3440dc5186a",
+    "scripts/segmented_sequence.py": "f0b078e72211c245267c22514a7b4202099a47cc42a5e9c8243bdd7b0dc473e9",
+    "scripts/task_entry.ps1": "530d74a89c51f0ea55df332d11f9df92c9b545de56ca562b777181b959f8092f",
+    "scripts/task_entry.py": "a45fe452696b53d95e58142bd94bff50627034522f490c9241da5b9f39dcbff2",
+    "scripts/task_entry.sh": "efd4e8903592721a1ca63c6967c08e82d06474cc097dd614fa089d0763670779",
+    "scripts/task_store.py": "101f5dd3bd8f5fe77ebc850cca26e1d7086661152b47fdef7425dae7c65bfdf7",
+    "scripts/web_adapter.mjs": "081a816b285a512ebed8cc47dc87e5a16aa0502344c83b25036d3cee8b5c6f78",
+    "scripts/workflow.py": "0fbf618d378e2cb9dc3503e4ed158f7ffd7c6eb787ec095f3ca5ba6066c7e104"
+  },
+  "tests": {
+    "tests/test_workflow_artifact_lineage.py": "e7e8056f9fbc0c375c0a878f786ddde8c0e314bdffafd741c846eedc02f2e09f",
+    "tests/test_workflow_artifact_lineage_native.py": "731563cb9139e7c322dc0ba6b5d04324b61cfe3c3f95258f1875a275f21b7688",
+    "tests/test_managed_render_resume.py": "83079fec306d157a626bd5e752980e40b6016beb171f137df26c5f57326dee13"
+  },
+  "publicProtocolOwner": {
+    "repository": "full-aigc-plugins/artcraft-plugin",
+    "sha": "09d4ac5b8ff82f8fe819189e4be487b45ab2472b",
+    "tag": "v0.1.0-dev.109",
+    "path": "schemas/craft-artifact-v1.json",
+    "sha256": "c3385db540db71fccfdb049f79f05a9adba55ec008958579eab6fac46dd6ea5d",
+    "actualGeneratedObjectsValidated": 3
+  },
+  "tdd": {
+    "red": [
+      {
+        "logSha256": "be301901304e0d4c0e7c22e1c2201e8cf7ee20fa2bde09ba760a28c60fb17582",
+        "testCountAtObservation": 8,
+        "targetFailure": "missing public artifact / immutable package identity / pre-edit source integrity",
+        "testFileSnapshotAtRed": "not separately archived; current fixture changes recorded below"
+      },
+      {
+        "logSha256": "7bc67abfbb0f9800811f5a9ad39755ae1f0b89da1fe0f8cb437fb88f06a75478",
+        "testCountAtObservation": 10,
+        "targetFailure": "overlong reference ID and unsafe JSON timebase",
+        "testFileSnapshotAtRed": "not separately archived; current fixture changes recorded below"
+      },
+      {
+        "logSha256": "388ae172b2c63a68ee689e60a045d24cd6652790a6e8bdec67d681e9d232fba4",
+        "testCountAtObservation": 11,
+        "targetFailure": "source package was not bound at preflight",
+        "testFileSnapshotAtRed": "not separately archived; current fixture changes recorded below"
+      },
+      {
+        "logSha256": "23a4c4b2533b5dab247ca00e769763ef391bb8b041297ab8b85fc2a42959384a",
+        "testCountAtObservation": 12,
+        "targetFailure": "Windows relative path representation mismatched public file inventory",
+        "testFileSnapshotAtRed": "not separately archived; current fixture changes recorded below"
+      }
+    ],
+    "currentUnit": {
+      "sha256": "8dbf67d428c2fe389660e5587fa8a5b3c78fccd867226f8003b8e431de78e852",
+      "total": 12,
+      "passed": 12
+    },
+    "baselineBeforeImplementation": "source61",
+    "fixtureCorrections": [
+      "initial legacy fixture native digest updated after replacing fake project with valid JSON",
+      "source mutation subcases isolated in distinct package copies and an isolated claims home; original shared-source fixture correctly hit project_resource_busy",
+      "existing empty-export fixture changed from arbitrary bytes to native schema1 JSON; no production bypass for fake projects"
+    ],
+    "historicalNativeRuns": [
+      {
+        "logSha256": "48b7cd0d5425bcae6f5c043239445f03be0f2f40bc851b0894055812d6b87637",
+        "scope": "three deliveries before contract/source-package fixes; superseded"
+      },
+      {
+        "logSha256": "9bef9edd35cbc8ecb7f040b62aea73be7a52afba54eebbeef223cccef7d051ba",
+        "scope": "three deliveries before portable path serialization fix; superseded"
+      }
+    ]
+  },
+  "fullRegression": {
+    "sha256": "a2ede24d0c7467f13ed87eb54fe51c51182eeb6b728c78267fbdfc705aa60512",
+    "total": 697,
+    "passed": 633,
+    "skipped": 64
+  },
+  "native": {
+    "platform": "darwin-arm64",
+    "log": {
+      "sha256": "bb2dfb28264b7f8068e5be1b861c4dfd0c1bbc0bbd815a9e02d805dc2c3b7ae1",
+      "total": 1,
+      "passed": 1,
+      "actualNativeDeliveries": 3
+    },
+    "cases": [
+      {
+        "taskId": "lineage-original",
+        "format": "mp4",
+        "artifact": {
+          "protocolVersion": "craft-artifact/v1",
+          "assetId": "effectcraft:4b83cdbbdf36b78a9def0d9de89ce89c15619aa4d929a834a22957468e9ad420",
+          "version": "2976c862efd022b4ff8d9b9aa94f66d64c47023f2b492c840bb93e14afdbd5de",
+          "sha256": "20d678172d0ff4403e1391f66bbd78a3d604dccec8591d1e0862e58a2c42ffc5",
+          "bytes": 18460,
+          "mediaType": "application/vnd.effectcraft.project+json",
+          "producerTaskId": "lineage-original",
+          "sourceRefs": [],
+          "nativeProjectRef": {
+            "assetId": "effectcraft:4b83cdbbdf36b78a9def0d9de89ce89c15619aa4d929a834a22957468e9ad420",
+            "version": "2976c862efd022b4ff8d9b9aa94f66d64c47023f2b492c840bb93e14afdbd5de",
+            "sha256": "20d678172d0ff4403e1391f66bbd78a3d604dccec8591d1e0862e58a2c42ffc5",
+            "location": "project.ecproj"
+          },
+          "renditions": [
+            {
+              "assetId": "effectcraft-rendition:66e75fd02b20c3501d9b055dc274384acc713b7ffa47bb36954e85d93ce0a884",
+              "version": "86658580f85f95a8534b219d11757cf29be76afe43fed514e9ac3269fec6fd2d",
+              "sha256": "86658580f85f95a8534b219d11757cf29be76afe43fed514e9ac3269fec6fd2d",
+              "location": "frame-0000.png"
+            },
+            {
+              "assetId": "effectcraft-rendition:b32c809e7384df7929b990163180559ea3d1ac5959ae31dd9d408e316a3f67c4",
+              "version": "86658580f85f95a8534b219d11757cf29be76afe43fed514e9ac3269fec6fd2d",
+              "sha256": "86658580f85f95a8534b219d11757cf29be76afe43fed514e9ac3269fec6fd2d",
+              "location": "frame-0001.png"
+            },
+            {
+              "assetId": "effectcraft-rendition:771afde9a1bd15ac1397b01f769b30c6f90fe59e4a1a2e1eafa19f76a4cfe874",
+              "version": "ca018534fbbcc4abdb82599da0d941fac4e10672458442e4582df9f1cb07e2e4",
+              "sha256": "ca018534fbbcc4abdb82599da0d941fac4e10672458442e4582df9f1cb07e2e4",
+              "location": "intro.mp4"
+            }
+          ],
+          "dependencies": [
+            {
+              "assetRef": {
+                "assetId": "effectcraft-media:ac068d7fc49804664d4bae6e98c6c5db49b3fd0a27154bb36b66bccf1567720b",
+                "version": "a5d600fb9143014a6eef16f1512efd22d08111f02d840ac1519492279f2f4f1e",
+                "sha256": "a5d600fb9143014a6eef16f1512efd22d08111f02d840ac1519492279f2f4f1e"
+              },
+              "kind": "media",
+              "packaged": true,
+              "missingReason": null
+            }
+          ],
+          "technicalMetadata": {
+            "width": 64,
+            "height": 48,
+            "frameRate": {
+              "num": 4,
+              "den": 1
+            },
+            "durationTicks": "1",
+            "timeBase": {
+              "num": 1,
+              "den": 1
+            },
+            "colorSpace": "unknown"
+          },
+          "lossReportRef": {
+            "assetId": "effectcraft-rendition:0b6633425bb191c25b1eeed919d645fd5d23f57409de72e0133df00c5fafa732",
+            "version": "9e1fac5caf89528ff130f40244aa92302ad1d378423c9cc6cb5419fb31cf3edc",
+            "sha256": "9e1fac5caf89528ff130f40244aa92302ad1d378423c9cc6cb5419fb31cf3edc",
+            "location": "exchange-loss.json"
+          },
+          "evidenceRefs": [
+            {
+              "assetId": "effectcraft-rendition:de3f3c36b7e4d0027a721a5d8ff9e6f19f9672a4d4c53c9567c65225f4afc0af",
+              "version": "938a72a37e2715d4974e6a480168e4f85e9d89a9673cfe825bbd70d1dc6ef4e6",
+              "sha256": "938a72a37e2715d4974e6a480168e4f85e9d89a9673cfe825bbd70d1dc6ef4e6",
+              "location": "native.json"
+            },
+            {
+              "assetId": "effectcraft-rendition:c60fcdc72d64f0fa9b0223428fae0fd13df343a9c000fd93b0eb0c9201d6b60d",
+              "version": "de7d79608f4b5efda19098bd4db745222dbbaff8d7e3e463f51387283a93a353",
+              "sha256": "de7d79608f4b5efda19098bd4db745222dbbaff8d7e3e463f51387283a93a353",
+              "location": "operations.json"
+            }
+          ],
+          "location": "project.ecproj"
+        },
+        "binding": {
+          "schema": "effectcraft-artifact-binding/v1",
+          "producer": {
+            "producerTaskId": "lineage-original",
+            "taskIdentityHash": "f01681cad9a582db5d5fa4f0e12b280e2e59ff3fa280c23ec7a896a640cbb2a1",
+            "mode": "managed"
+          },
+          "planSha256": "6288e8a1e39944e1242c33475f20bca973d35fc58f560253e8ea0f9717a3138c",
+          "runtimeSha256": "c1717eb87e5b57b3ed88c6a78047268a5afa566beb36104fdcc05dc8634a01c1",
+          "sourceRef": null
+        },
+        "manifestSha256": "301de4a7c24d3e0bed4d14f6698aa901af6d1560365644c0e0fd02aa10585933",
+        "nativeOutputs": {
+          "(Footage)/fixture.png": "a5d600fb9143014a6eef16f1512efd22d08111f02d840ac1519492279f2f4f1e",
+          "exchange-loss.json": "9e1fac5caf89528ff130f40244aa92302ad1d378423c9cc6cb5419fb31cf3edc",
+          "frame-0000.png": "86658580f85f95a8534b219d11757cf29be76afe43fed514e9ac3269fec6fd2d",
+          "frame-0001.png": "86658580f85f95a8534b219d11757cf29be76afe43fed514e9ac3269fec6fd2d",
+          "intro.mp4": "ca018534fbbcc4abdb82599da0d941fac4e10672458442e4582df9f1cb07e2e4",
+          "manifest.json": "301de4a7c24d3e0bed4d14f6698aa901af6d1560365644c0e0fd02aa10585933",
+          "native.json": "938a72a37e2715d4974e6a480168e4f85e9d89a9673cfe825bbd70d1dc6ef4e6",
+          "operations.json": "de7d79608f4b5efda19098bd4db745222dbbaff8d7e3e463f51387283a93a353",
+          "plan.json": "c6712d4b4b1f1cbd051a861db55e1571ca6c4e1a42ea3d6d7af9b09ad5d76077",
+          "project.ecproj": "20d678172d0ff4403e1391f66bbd78a3d604dccec8591d1e0862e58a2c42ffc5"
+        },
+        "installedResourcesMatchFrozen": true,
+        "frozenResourceCount": 72,
+        "engineering": "PASS",
+        "technical": "PASS",
+        "creative": "NOT_RUN",
+        "userAcceptance": "NOT_RUN",
+        "verifiedAssets": 1,
+        "decodedFrames": 4,
+        "steps": 14,
+        "workerReturncode": 0,
+        "lifecycleSha256": "99aede63e532c02984017f94c4a53824c8488041eaef76dd8fc89d954aea5eb4",
+        "filesAndReceiptsPreservedOnResume": true,
+        "sourcePackageAuthorizationBound": false,
+        "ownerSchema": "PASS"
+      },
+      {
+        "taskId": "lineage-revision",
+        "format": "png-sequence",
+        "artifact": {
+          "protocolVersion": "craft-artifact/v1",
+          "assetId": "effectcraft:4b83cdbbdf36b78a9def0d9de89ce89c15619aa4d929a834a22957468e9ad420",
+          "version": "c70f35af85b45d8e102ecd76721c3d727f274b7656a42af38ac1e77cf9eecb1e",
+          "sha256": "6e234e9d78cb8b1fe1bbb018798db2ce8b3e06e4369a2847b425da05ba9623f9",
+          "bytes": 18458,
+          "mediaType": "application/vnd.effectcraft.project+json",
+          "producerTaskId": "lineage-revision",
+          "sourceRefs": [
+            {
+              "assetId": "effectcraft:4b83cdbbdf36b78a9def0d9de89ce89c15619aa4d929a834a22957468e9ad420",
+              "version": "2976c862efd022b4ff8d9b9aa94f66d64c47023f2b492c840bb93e14afdbd5de",
+              "sha256": "20d678172d0ff4403e1391f66bbd78a3d604dccec8591d1e0862e58a2c42ffc5"
+            }
+          ],
+          "nativeProjectRef": {
+            "assetId": "effectcraft:4b83cdbbdf36b78a9def0d9de89ce89c15619aa4d929a834a22957468e9ad420",
+            "version": "c70f35af85b45d8e102ecd76721c3d727f274b7656a42af38ac1e77cf9eecb1e",
+            "sha256": "6e234e9d78cb8b1fe1bbb018798db2ce8b3e06e4369a2847b425da05ba9623f9",
+            "location": "project.ecproj"
+          },
+          "renditions": [
+            {
+              "assetId": "effectcraft-rendition:66e75fd02b20c3501d9b055dc274384acc713b7ffa47bb36954e85d93ce0a884",
+              "version": "0e70b59d743417ce9b302d6101571f0565a12401ba8bcf1e0be056b811fcdc60",
+              "sha256": "0e70b59d743417ce9b302d6101571f0565a12401ba8bcf1e0be056b811fcdc60",
+              "location": "frame-0000.png"
+            },
+            {
+              "assetId": "effectcraft-rendition:b32c809e7384df7929b990163180559ea3d1ac5959ae31dd9d408e316a3f67c4",
+              "version": "0e70b59d743417ce9b302d6101571f0565a12401ba8bcf1e0be056b811fcdc60",
+              "sha256": "0e70b59d743417ce9b302d6101571f0565a12401ba8bcf1e0be056b811fcdc60",
+              "location": "frame-0001.png"
+            },
+            {
+              "assetId": "effectcraft-rendition:5d0d74e76c4f56a967271ef3507bc08402404e0cdafedc55f46d8f28cc8186b1",
+              "version": "0e70b59d743417ce9b302d6101571f0565a12401ba8bcf1e0be056b811fcdc60",
+              "sha256": "0e70b59d743417ce9b302d6101571f0565a12401ba8bcf1e0be056b811fcdc60",
+              "location": "rgba-sequence/frame_00000.png"
+            },
+            {
+              "assetId": "effectcraft-rendition:0082129f14326831fdbccf4e9a4be1a65941c833ed80d48f53f3a46688ac3ee3",
+              "version": "0e70b59d743417ce9b302d6101571f0565a12401ba8bcf1e0be056b811fcdc60",
+              "sha256": "0e70b59d743417ce9b302d6101571f0565a12401ba8bcf1e0be056b811fcdc60",
+              "location": "rgba-sequence/frame_00001.png"
+            },
+            {
+              "assetId": "effectcraft-rendition:e09b065a0df96286a265da049e7b84ffca7989939f4b8c441c39050536f53629",
+              "version": "0e70b59d743417ce9b302d6101571f0565a12401ba8bcf1e0be056b811fcdc60",
+              "sha256": "0e70b59d743417ce9b302d6101571f0565a12401ba8bcf1e0be056b811fcdc60",
+              "location": "rgba-sequence/frame_00002.png"
+            },
+            {
+              "assetId": "effectcraft-rendition:d6b297bcf9098377ca5dda7aa0adbbf000fa2c090c8cccc4b8f0934048cb31df",
+              "version": "0e70b59d743417ce9b302d6101571f0565a12401ba8bcf1e0be056b811fcdc60",
+              "sha256": "0e70b59d743417ce9b302d6101571f0565a12401ba8bcf1e0be056b811fcdc60",
+              "location": "rgba-sequence/frame_00003.png"
+            },
+            {
+              "assetId": "effectcraft-rendition:496e4f36bdf29bdf3ea9938772cb2c561b6ede537a4fa62249b38cb830117ef5",
+              "version": "c8515c719bf06e71ea1c0c6022b583ea40de3da606be06ac4841538acde928ab",
+              "sha256": "c8515c719bf06e71ea1c0c6022b583ea40de3da606be06ac4841538acde928ab",
+              "location": "rgba-sequence/sequence.json"
+            }
+          ],
+          "dependencies": [
+            {
+              "assetRef": {
+                "assetId": "effectcraft-media:ac068d7fc49804664d4bae6e98c6c5db49b3fd0a27154bb36b66bccf1567720b",
+                "version": "a5d600fb9143014a6eef16f1512efd22d08111f02d840ac1519492279f2f4f1e",
+                "sha256": "a5d600fb9143014a6eef16f1512efd22d08111f02d840ac1519492279f2f4f1e"
+              },
+              "kind": "media",
+              "packaged": true,
+              "missingReason": null
+            }
+          ],
+          "technicalMetadata": {
+            "width": 64,
+            "height": 48,
+            "frameRate": {
+              "num": 4,
+              "den": 1
+            },
+            "durationTicks": "1",
+            "timeBase": {
+              "num": 1,
+              "den": 1
+            },
+            "colorSpace": "unknown"
+          },
+          "lossReportRef": {
+            "assetId": "effectcraft-rendition:0b6633425bb191c25b1eeed919d645fd5d23f57409de72e0133df00c5fafa732",
+            "version": "44870717946e8024c4d4c47f8c1f2aabb16ba0bce1315f5dcda65048f0e8744c",
+            "sha256": "44870717946e8024c4d4c47f8c1f2aabb16ba0bce1315f5dcda65048f0e8744c",
+            "location": "exchange-loss.json"
+          },
+          "evidenceRefs": [
+            {
+              "assetId": "effectcraft-rendition:de3f3c36b7e4d0027a721a5d8ff9e6f19f9672a4d4c53c9567c65225f4afc0af",
+              "version": "6b262a71d2f86665f43b340d1b251968c9d9bf817ba096909fc5e5d0c187f9e3",
+              "sha256": "6b262a71d2f86665f43b340d1b251968c9d9bf817ba096909fc5e5d0c187f9e3",
+              "location": "native.json"
+            },
+            {
+              "assetId": "effectcraft-rendition:c60fcdc72d64f0fa9b0223428fae0fd13df343a9c000fd93b0eb0c9201d6b60d",
+              "version": "90ce16fe24824004fd30b75f603a49be7fd9852776907f4b54997fd8f14dcc32",
+              "sha256": "90ce16fe24824004fd30b75f603a49be7fd9852776907f4b54997fd8f14dcc32",
+              "location": "operations.json"
+            }
+          ],
+          "location": "project.ecproj"
+        },
+        "binding": {
+          "schema": "effectcraft-artifact-binding/v1",
+          "producer": {
+            "producerTaskId": "lineage-revision",
+            "taskIdentityHash": "e52d2e0daecea3603934a679d0ae5ac22affa1189f5b2e424496c7d224a37038",
+            "mode": "managed"
+          },
+          "planSha256": "fceef15aeb21fbc75e0abfdbfd0c8e1a239d1521f461c425e8647ffb736457c9",
+          "runtimeSha256": "c1717eb87e5b57b3ed88c6a78047268a5afa566beb36104fdcc05dc8634a01c1",
+          "sourceRef": {
+            "assetId": "effectcraft:4b83cdbbdf36b78a9def0d9de89ce89c15619aa4d929a834a22957468e9ad420",
+            "version": "2976c862efd022b4ff8d9b9aa94f66d64c47023f2b492c840bb93e14afdbd5de",
+            "sha256": "20d678172d0ff4403e1391f66bbd78a3d604dccec8591d1e0862e58a2c42ffc5"
+          }
+        },
+        "manifestSha256": "5f8532cfb9b415e6c9b8b2e2643676b94b3f2747024b69cc9fb6ad9b9ad7dbbc",
+        "nativeOutputs": {
+          "(Footage)/fixture.png": "a5d600fb9143014a6eef16f1512efd22d08111f02d840ac1519492279f2f4f1e",
+          "exchange-loss.json": "44870717946e8024c4d4c47f8c1f2aabb16ba0bce1315f5dcda65048f0e8744c",
+          "frame-0000.png": "0e70b59d743417ce9b302d6101571f0565a12401ba8bcf1e0be056b811fcdc60",
+          "frame-0001.png": "0e70b59d743417ce9b302d6101571f0565a12401ba8bcf1e0be056b811fcdc60",
+          "manifest.json": "5f8532cfb9b415e6c9b8b2e2643676b94b3f2747024b69cc9fb6ad9b9ad7dbbc",
+          "native.json": "6b262a71d2f86665f43b340d1b251968c9d9bf817ba096909fc5e5d0c187f9e3",
+          "operations.json": "90ce16fe24824004fd30b75f603a49be7fd9852776907f4b54997fd8f14dcc32",
+          "plan.json": "31e2eff0d595a5160ee2c120512792ae00831058af44531aafbae866f56971ec",
+          "project.ecproj": "6e234e9d78cb8b1fe1bbb018798db2ce8b3e06e4369a2847b425da05ba9623f9",
+          "rgba-sequence/frame_00000.png": "0e70b59d743417ce9b302d6101571f0565a12401ba8bcf1e0be056b811fcdc60",
+          "rgba-sequence/frame_00001.png": "0e70b59d743417ce9b302d6101571f0565a12401ba8bcf1e0be056b811fcdc60",
+          "rgba-sequence/frame_00002.png": "0e70b59d743417ce9b302d6101571f0565a12401ba8bcf1e0be056b811fcdc60",
+          "rgba-sequence/frame_00003.png": "0e70b59d743417ce9b302d6101571f0565a12401ba8bcf1e0be056b811fcdc60",
+          "rgba-sequence/sequence.json": "c8515c719bf06e71ea1c0c6022b583ea40de3da606be06ac4841538acde928ab"
+        },
+        "installedResourcesMatchFrozen": true,
+        "frozenResourceCount": 72,
+        "engineering": "PASS",
+        "technical": "PASS",
+        "creative": "NOT_RUN",
+        "userAcceptance": "NOT_RUN",
+        "verifiedAssets": 1,
+        "decodedFrames": 4,
+        "steps": 14,
+        "workerReturncode": 0,
+        "lifecycleSha256": "efa161beeb1d9b66f46f062970474ef2b6f88ab10f1f86b523a74abfeb183064",
+        "filesAndReceiptsPreservedOnResume": true,
+        "sourcePackageAuthorizationBound": true,
+        "ownerSchema": "PASS"
+      },
+      {
+        "taskId": "lineage-legacy-revision",
+        "format": "png-segmented",
+        "artifact": {
+          "protocolVersion": "craft-artifact/v1",
+          "assetId": "legacy-project:20d678172d0ff4403e1391f66bbd78a3d604dccec8591d1e0862e58a2c42ffc5",
+          "version": "e5df56d67de5a5301483a2ac323b49d0dfc7f6b13cdb95f09ef70aa5816d71f8",
+          "sha256": "255891bac60294fe8e17a6461b01c7486a02b6485536652ee245a679ea5cacb9",
+          "bytes": 18465,
+          "mediaType": "application/vnd.effectcraft.project+json",
+          "producerTaskId": "lineage-legacy-revision",
+          "sourceRefs": [
+            {
+              "assetId": "legacy-project:20d678172d0ff4403e1391f66bbd78a3d604dccec8591d1e0862e58a2c42ffc5",
+              "version": "20d678172d0ff4403e1391f66bbd78a3d604dccec8591d1e0862e58a2c42ffc5",
+              "sha256": "20d678172d0ff4403e1391f66bbd78a3d604dccec8591d1e0862e58a2c42ffc5"
+            }
+          ],
+          "nativeProjectRef": {
+            "assetId": "legacy-project:20d678172d0ff4403e1391f66bbd78a3d604dccec8591d1e0862e58a2c42ffc5",
+            "version": "e5df56d67de5a5301483a2ac323b49d0dfc7f6b13cdb95f09ef70aa5816d71f8",
+            "sha256": "255891bac60294fe8e17a6461b01c7486a02b6485536652ee245a679ea5cacb9",
+            "location": "project.ecproj"
+          },
+          "renditions": [
+            {
+              "assetId": "effectcraft-rendition:39b06d616b99d73a361f4be7900c6406d12143d1b7ab6dc90a8f7d6687c6c5f7",
+              "version": "4319082357dd4bccf259e3149ea58911643986bb4503ea56e2010c0419e0e4c1",
+              "sha256": "4319082357dd4bccf259e3149ea58911643986bb4503ea56e2010c0419e0e4c1",
+              "location": "frame-0000.png"
+            },
+            {
+              "assetId": "effectcraft-rendition:bf4c79b284584589c719263e908475b13e3c97160c4bebb5250f8722b7d646a5",
+              "version": "4319082357dd4bccf259e3149ea58911643986bb4503ea56e2010c0419e0e4c1",
+              "sha256": "4319082357dd4bccf259e3149ea58911643986bb4503ea56e2010c0419e0e4c1",
+              "location": "frame-0001.png"
+            },
+            {
+              "assetId": "effectcraft-rendition:4f8f957a3b057c8e1b30b10a949fcb8c01fe4734f2fec877bfc11afa7a1cdae0",
+              "version": "4319082357dd4bccf259e3149ea58911643986bb4503ea56e2010c0419e0e4c1",
+              "sha256": "4319082357dd4bccf259e3149ea58911643986bb4503ea56e2010c0419e0e4c1",
+              "location": "rgba-segments/segment_00000/frame_00000.png"
+            },
+            {
+              "assetId": "effectcraft-rendition:cc06f483ced46e1f62441d319f831cdbac3300a7c026a0f37c423c8a0e38c84b",
+              "version": "4319082357dd4bccf259e3149ea58911643986bb4503ea56e2010c0419e0e4c1",
+              "sha256": "4319082357dd4bccf259e3149ea58911643986bb4503ea56e2010c0419e0e4c1",
+              "location": "rgba-segments/segment_00000/frame_00001.png"
+            },
+            {
+              "assetId": "effectcraft-rendition:54a0cbfb4151519def9e62df12b0e5db426ad92fc5a8ac1c92e614471b9040ff",
+              "version": "4319082357dd4bccf259e3149ea58911643986bb4503ea56e2010c0419e0e4c1",
+              "sha256": "4319082357dd4bccf259e3149ea58911643986bb4503ea56e2010c0419e0e4c1",
+              "location": "rgba-segments/segment_00001/frame_00000.png"
+            },
+            {
+              "assetId": "effectcraft-rendition:b9fb912baf73dbcfac2ecf961863f1f76df58f40729d057b0776f0070eca79cb",
+              "version": "4319082357dd4bccf259e3149ea58911643986bb4503ea56e2010c0419e0e4c1",
+              "sha256": "4319082357dd4bccf259e3149ea58911643986bb4503ea56e2010c0419e0e4c1",
+              "location": "rgba-segments/segment_00001/frame_00001.png"
+            },
+            {
+              "assetId": "effectcraft-rendition:7a8997b80affed9f563f300ef49031ad8d63af15fca8d23006d9b580b62dbaae",
+              "version": "5095347d265840c213db0940cda7fdfc11989592c16466fb7a9f3ab98bc72c19",
+              "sha256": "5095347d265840c213db0940cda7fdfc11989592c16466fb7a9f3ab98bc72c19",
+              "location": "rgba-segments/segments.json"
+            }
+          ],
+          "dependencies": [
+            {
+              "assetRef": {
+                "assetId": "effectcraft-media:74fa98ea4cd1b2c79374ddee2219cbcf980e25a0ba0942512dc1067bc0fa7439",
+                "version": "a5d600fb9143014a6eef16f1512efd22d08111f02d840ac1519492279f2f4f1e",
+                "sha256": "a5d600fb9143014a6eef16f1512efd22d08111f02d840ac1519492279f2f4f1e"
+              },
+              "kind": "media",
+              "packaged": true,
+              "missingReason": null
+            }
+          ],
+          "technicalMetadata": {
+            "width": 64,
+            "height": 48,
+            "frameRate": {
+              "num": 4,
+              "den": 1
+            },
+            "durationTicks": "1",
+            "timeBase": {
+              "num": 1,
+              "den": 1
+            },
+            "colorSpace": "unknown"
+          },
+          "lossReportRef": {
+            "assetId": "effectcraft-rendition:17ebe85ef3c77e565757af69f66358d28b12546c0d9835b143818102a0e20979",
+            "version": "75763d434000abcefcc3a61bc6c1d3d254bbf9131b293c99d4d8f09d43cff7ac",
+            "sha256": "75763d434000abcefcc3a61bc6c1d3d254bbf9131b293c99d4d8f09d43cff7ac",
+            "location": "exchange-loss.json"
+          },
+          "evidenceRefs": [
+            {
+              "assetId": "effectcraft-rendition:2a7fc746f8281171123ca85dd1163a11cbcd88a69d5b84b747b99cf8b42f71dc",
+              "version": "6746ed1133dd199ae3b57194bce572ca587102e669d57b594c8070d98222252a",
+              "sha256": "6746ed1133dd199ae3b57194bce572ca587102e669d57b594c8070d98222252a",
+              "location": "native.json"
+            },
+            {
+              "assetId": "effectcraft-rendition:4b5b0fd254db0ceb9edde22f03c8f68798847ec4ce1ec5f205117d084352a214",
+              "version": "6143608ddca44dbce18708f73711d5da23fed48dd51ad1844649b4d075ae099e",
+              "sha256": "6143608ddca44dbce18708f73711d5da23fed48dd51ad1844649b4d075ae099e",
+              "location": "operations.json"
+            }
+          ],
+          "location": "project.ecproj"
+        },
+        "binding": {
+          "schema": "effectcraft-artifact-binding/v1",
+          "producer": {
+            "producerTaskId": "lineage-legacy-revision",
+            "taskIdentityHash": "e56e85aa8120e36724d82de99d5618d390534550fb3ba581b63278db8751ce84",
+            "mode": "managed"
+          },
+          "planSha256": "71d98bde0fd399de2421c111b612a38bf2acf729e160dc88a70a16afd9578be6",
+          "runtimeSha256": "c1717eb87e5b57b3ed88c6a78047268a5afa566beb36104fdcc05dc8634a01c1",
+          "sourceRef": {
+            "assetId": "legacy-project:20d678172d0ff4403e1391f66bbd78a3d604dccec8591d1e0862e58a2c42ffc5",
+            "version": "20d678172d0ff4403e1391f66bbd78a3d604dccec8591d1e0862e58a2c42ffc5",
+            "sha256": "20d678172d0ff4403e1391f66bbd78a3d604dccec8591d1e0862e58a2c42ffc5"
+          }
+        },
+        "manifestSha256": "40441e4b4db780d299abcc5eb04c312308da33f7febff2335ea7fc71954dd187",
+        "nativeOutputs": {
+          "(Footage)/fixture.png": "a5d600fb9143014a6eef16f1512efd22d08111f02d840ac1519492279f2f4f1e",
+          "exchange-loss.json": "75763d434000abcefcc3a61bc6c1d3d254bbf9131b293c99d4d8f09d43cff7ac",
+          "frame-0000.png": "4319082357dd4bccf259e3149ea58911643986bb4503ea56e2010c0419e0e4c1",
+          "frame-0001.png": "4319082357dd4bccf259e3149ea58911643986bb4503ea56e2010c0419e0e4c1",
+          "manifest.json": "40441e4b4db780d299abcc5eb04c312308da33f7febff2335ea7fc71954dd187",
+          "native.json": "6746ed1133dd199ae3b57194bce572ca587102e669d57b594c8070d98222252a",
+          "operations.json": "6143608ddca44dbce18708f73711d5da23fed48dd51ad1844649b4d075ae099e",
+          "plan.json": "fdb374256684116db42e7f710a76a3259acbd661644a338e550527dba5a223a4",
+          "project.ecproj": "255891bac60294fe8e17a6461b01c7486a02b6485536652ee245a679ea5cacb9",
+          "rgba-segments/checkpoint.json": "fedba731f91c13096c66e537dd2d44f5a3ce1a23a109d8ae36d87e3527883b5c",
+          "rgba-segments/render.lock": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "rgba-segments/segment_00000/frame_00000.png": "4319082357dd4bccf259e3149ea58911643986bb4503ea56e2010c0419e0e4c1",
+          "rgba-segments/segment_00000/frame_00001.png": "4319082357dd4bccf259e3149ea58911643986bb4503ea56e2010c0419e0e4c1",
+          "rgba-segments/segment_00000/sequence.json": "3f7fbccec0bc9818c42c41523b3d97fdfc267a71dc66a41841c8c84bcc14357c",
+          "rgba-segments/segment_00001/frame_00000.png": "4319082357dd4bccf259e3149ea58911643986bb4503ea56e2010c0419e0e4c1",
+          "rgba-segments/segment_00001/frame_00001.png": "4319082357dd4bccf259e3149ea58911643986bb4503ea56e2010c0419e0e4c1",
+          "rgba-segments/segment_00001/sequence.json": "3f7fbccec0bc9818c42c41523b3d97fdfc267a71dc66a41841c8c84bcc14357c",
+          "rgba-segments/segments.json": "5095347d265840c213db0940cda7fdfc11989592c16466fb7a9f3ab98bc72c19",
+          "rgba-segments/verified.json": "aefb49f632305671296c84fe1ce8a78a52647382f7a5f89fe46a203527e0d1e8"
+        },
+        "installedResourcesMatchFrozen": true,
+        "frozenResourceCount": 72,
+        "engineering": "PASS",
+        "technical": "PASS",
+        "creative": "NOT_RUN",
+        "userAcceptance": "NOT_RUN",
+        "verifiedAssets": 1,
+        "decodedFrames": 4,
+        "steps": 14,
+        "workerReturncode": 0,
+        "lifecycleSha256": "343825bc541da8323f7f277dec8e7627f254cd0ca3995b9998ce5dec20198430",
+        "filesAndReceiptsPreservedOnResume": true,
+        "sourcePackageAuthorizationBound": true,
+        "ownerSchema": "PASS"
+      }
+    ],
+    "checks": {
+      "movedWholePackagePreserved": true,
+      "legacySourcePreserved": true,
+      "tamperedSourceBlockedBeforeTaskRegistration": true,
+      "nonTargetNativeContentPreserved": true,
+      "installedSkillPreserved": true
+    },
+    "testSha256": "731563cb9139e7c322dc0ba6b5d04324b61cfe3c3f95258f1875a275f21b7688",
+    "python": {
+      "version": "3.13.16",
+      "mode": "locked"
+    },
+    "runtimeVersion": "0.4.0",
+    "cachesReused": true,
+    "modelDispatch": "NOT_RUN",
+    "creative": "NOT_RUN",
+    "userAcceptance": "NOT_RUN",
+    "currentInstalledAndFrozenResources": "PASS",
+    "originalReportSha256": "beb335e2d7d2539fbe9e97197c2648cfa43f92e74ceb0cd9e5cd5e9f38f3c49f"
+  },
+  "platformContract": {
+    "portablePathSerialization": "PASS_WINDOWS_PATH_VALUE_TEST_ONLY",
+    "windowsNative": "NOT_RUN",
+    "otherNativeTargets": "NOT_RUN"
+  },
+  "pluginSnapshot": {
+    "sourceRef": "v0.1.0-dev.61",
+    "sourceSha": "649fb3d98e7a17e4c2f483da8202a9fa4dab6cd7",
+    "skillsLockSha256": "c4631d0e8eebbc2ec1827748f80e4662544b648e7f81dc9c5b8a67b737c1442f",
+    "unchanged": true
+  },
+  "fullV1": "NOT_RUN",
+  "openImplementationTasks": 69,
+  "candidateCI": "NOT_RUN",
+  "limits": [
+    "workflow only; command/desktop multi-project public artifact mapping remains open",
+    "only collected media dependencies covered; full font/LUT dependency discovery remains open",
+    "legacy fixture strips the new lineage record deliberately; no old task identity or unknown-edit replay is reconstructed",
+    "explicit new source revisions; not automatic budgeted revise or model-dispatch qualification",
+    "actual native acceptance is macOS arm64 with reused verified isolated caches, not cold install or other target platforms",
+    "technical/native evidence does not imply creative/user acceptance or color/font/effect fidelity",
+    "new source changes/tests/evidence are unpublished; current plugin continues consuming immutable source61",
+    "original5.1/5.2/5.3 remain in progress; no full protocol or V1 closure"
+  ],
+  "candidateExecutionCodeChanged": true,
+  "releasedPayloadUnchanged": true,
+  "pluginValidation": {
+    "tests": {
+      "total": 24,
+      "passed": 24,
+      "logSha256": "d5b5303be59513c078c3a2a934315ca8a380a958cbd5347835df7691d15f0766"
+    },
+    "documents": {
+      "status": "passed",
+      "scope": "documentation structure, local links, status honesty and spec/task traceability only",
+      "markdownFiles": 408,
+      "capabilities": 7,
+      "requirements": 26,
+      "scenarios": 159,
+      "openImplementationTasks": 69,
+      "errors": []
+    },
+    "strictOpenSpec": "PASS",
+    "offlinePublishedSnapshotCheck": "PASS",
+    "candidateVendored": false
+  }
+}

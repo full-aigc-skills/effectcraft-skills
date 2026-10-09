@@ -172,8 +172,10 @@ def _execute(plan, output, runtime_home, source, owned, task_hooks=None):
     source_project, source_hash = None, None
     bindings = {}
     inherited = {}
+    source_artifact = None
     if source:
         source = Path(source).resolve()
+        source_artifact = load_module('artifact_lineage').source_ref(source)
         source_project = source / 'project.ecproj'
         if source_project.is_symlink():
             raise ValueError('invalid_source')
@@ -315,7 +317,7 @@ def _execute(plan, output, runtime_home, source, owned, task_hooks=None):
                     target = output / '(Footage)' / Path(asset['staging']).name
                     if not target.is_file() or sha(target) != asset['sha256']:
                         raise ValueError('collected_asset_mismatch')
-                    asset['path'] = str(target.relative_to(output))
+                    asset['path'] = target.relative_to(output).as_posix()
                 stage = output
             call('open_project', {'path': str(project)})
             comp = call('get_comp', {'comp': bindings['composition']['comp']})
@@ -339,6 +341,8 @@ def _execute(plan, output, runtime_home, source, owned, task_hooks=None):
             'sourceProject':str(source_project) if source_project else None,'sourceHash':source_hash,
             'comp':comp,'layers':layers,'frames':frames,'bindings':bindings,'assets':assets,'receipts':receipts,
             'cli':str(cli),'runtimeSha256':installed['binarySha256'],'executionIdentity':execution_identity}
+        context['sourceArtifact']=source_artifact
+        context['artifactProducer']=task_hooks.artifact_identity() if task_hooks and hasattr(task_hooks,'artifact_identity') else load_module('artifact_lineage').standalone(context)
         return finish_export(context,task_hooks)
 
 
@@ -396,12 +400,13 @@ def _finish_export(context, task_hooks=None, export_operation=None):
             raise RuntimeError('render_failed: ' + rendered.stdout[-1000:] + rendered.stderr[-1000:])
     if source_project and sha(source_project) != source_hash:
         raise ValueError('revision_conflict')
-    exchange_report(stage,[frame['path'] for frame in frames]+(['intro.mp4'] if output_format == 'mp4' else [])+([str(f.relative_to(stage)) for f in sorted((stage/Path(sequence['path']).parent).rglob('*.png'))] if sequence else []),{})
+    exchange_report(stage,[frame['path'] for frame in frames]+(['intro.mp4'] if output_format == 'mp4' else [])+([f.relative_to(stage).as_posix() for f in sorted((stage/Path(sequence['path']).parent).rglob('*.png'))] if sequence else []),{})
     manifest = {'schema': 'effectcraft-delivery/v1', 'sourceProjectSha256': source_hash,
                 'runtimeSha256': context['runtimeSha256'], 'bindings': bindings, 'frames': frames, 'assets': assets,
                 'video': {'path': 'intro.mp4', 'alpha': False} if output_format == 'mp4' else None,
                 'imageSequence': sequence,
-                'files': {str(f.relative_to(stage)): sha(f) for f in stage.rglob('*') if f.is_file() and f!=stage/'manifest.json'}, 'lossReport': {'path':'exchange-loss.json','sha256':sha(stage/'exchange-loss.json')}, 'acceptance': 'requires-domain-and-visual-review'}
+                'files': {f.relative_to(stage).as_posix(): sha(f) for f in stage.rglob('*') if f.is_file() and f!=stage/'manifest.json'}, 'lossReport': {'path':'exchange-loss.json','sha256':sha(stage/'exchange-loss.json')}, 'acceptance': 'requires-domain-and-visual-review'}
+    load_module('artifact_lineage').attach(stage,manifest,context)
     (stage / 'manifest.json').write_text(json.dumps(manifest, ensure_ascii=False, indent=2) + '\n', encoding='utf-8', newline='\n')
     if stage != output:
         if output.exists() or output.is_symlink():

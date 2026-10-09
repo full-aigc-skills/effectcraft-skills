@@ -36,6 +36,7 @@ def contained(root, relative):
 def binding(root):
     root=Path(root)
     manifest=read(root/'manifest.json')
+    if 'artifact' in manifest or 'artifactBinding' in manifest:load('artifact_lineage').verify(root,manifest)
     if not isinstance(manifest.get('files'),dict) or not manifest['files']:
         raise ValueError('artifact_manifest_invalid')
     for name,expected in manifest['files'].items():

@@ -2,12 +2,12 @@
 
 从文字、图形和素材创建可编辑 `.ecproj` 工程、依赖和媒体。当前为开发版，完整 V1 未完成；已发布版本与本地文档候选分别记录。
 
-当前技能源：`0.1.0-dev.61`；消费插件：`0.1.0-dev.63`；15 个独立技能。
+当前技能源：`0.1.0-dev.62`；消费插件：`0.1.0-dev.64`；15 个独立技能。
 
 | Field | Value |
 | --- | --- |
-| Metadata version | 0.1.0-dev.61 |
-| Skills source | effectcraft-skills / v0.1.0-dev.61 |
+| Metadata version | 0.1.0-dev.62 |
+| Skills source | effectcraft-skills / v0.1.0-dev.62 |
 | Acceptance | Development; full V1 OPEN |
 
 
@@ -108,3 +108,8 @@ source60／plugin62 发行分发真实强杀恢复增量及严格进程归属校
 
 
 本次发行：技能源 dev.61／插件 dev.63 纳入9.36原生父子取消与9.4.1技术门禁验收测试及证据；此前“未发布”描述保留各自检查点时态。技能执行资源与source60完全相同，69项V1任务仍开放，市场资格未变。
+
+
+本地血缘候选（EC-AR-001，5.1–5.3进行中）：工作流在兼容的manifest中生成ArtCraft持有的craft-artifact/v1，绑定逻辑身份、不可变整包版本、实际任务、源版本、原生工程、派生引用和已收集媒体依赖。review和移动源包修订重验完整文件表；同名内容替换、旧版本复用、引用错配及链接拒绝。源包完整绑定写入任务授权，登记后清单／依赖变化在下一次编辑和交付前阻止。独立CLI显式standalone，旧包引用只登记可验证的legacy工程内容。当前为未发布技能源候选，插件仍锁定已发布source61；命令／桌面公共产物映射、字体／LUT依赖发现、固定发行和完整协议原生验收尚未完成，5.1–5.3不提前勾选。 [Evidence / 证据](docs/evidence/workflow-artifact-lineage-candidate-20261009.json).
+
+本次发行：技能源 dev.62／插件 dev.64 分发工作流产物血缘与源工程包保护。原候选证据保留采集时点，发行快照绑定另见 release62-validation-20261009.json。697项回归633通过／64条件跳过；macOS arm64三个原生交付与当前执行资源一致。命令／桌面公共产物映射、字体／LUT发现、其他原生平台与宿主验收保持开放；5.1–5.3未勾选，V1仍有69项开放。

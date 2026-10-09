@@ -15,7 +15,7 @@ def managed_module():
 
 class RenderResumeTests(unittest.TestCase):
     def test_explicit_empty_exports_keeps_public_workflow_compatible(self):
-        output=self.root/'empty-export';output.mkdir();(output/'project.ecproj').write_bytes(b'project')
+        output=self.root/'empty-export';output.mkdir();(output/'project.ecproj').write_text(json.dumps({'schema':1,'items':{}}))
         plan=dict(self.plan,exports=[])
         store=self.tasks.Store(self.root/'empty-state')
         store.create('empty',plan=plan,output=str(output),runtime_sha=self.tasks.file_sha(self.cli),

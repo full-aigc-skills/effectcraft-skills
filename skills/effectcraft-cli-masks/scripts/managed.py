@@ -87,18 +87,25 @@ def preflight(plan, output, mode, inputs=None, source=None, revision_scope=None)
         actual=load('task_store').file_sha(item['path'])
         if actual!=item['sha256']:raise ValueError('asset_digest_mismatch')
         hashes[name]=actual
+    source_package=None
     if source:
-        manifest=read(Path(source)/'manifest.json'); project=Path(source)/'project.ecproj'
+        source_package=load('artifact_lineage').source_binding(source)
+        manifest=load('artifact_lineage').validate_source(source); project=Path(source)/'project.ecproj'
         if load('task_store').file_sha(project)!=manifest['files']['project.ecproj'] or plan.get('expectedProjectSha256')!=manifest['files']['project.ecproj']:
             raise ValueError('revision_conflict')
     return {'result':'VALID','planHash':load('task_store').digest(plan),'inputHashes':hashes,
-            'mode':mode,'output':str(output),'source':str(source) if source else None}
+            'mode':mode,'output':str(output),'source':str(source) if source else None,
+            **({'sourcePackage':source_package} if source_package else {})}
 
 
 class Hooks:
     """在真实 MCP 副作用前登记操作；合法返回后才能结算。"""
     def __init__(self, store, task):
         self.store=store;self.task=task
+
+    def artifact_identity(self):
+        state=self.store.read(self.task)
+        return {'producerTaskId':self.task,'taskIdentityHash':state['identityHash'],'mode':'managed'}
 
     def before(self, name, arguments):
         return self.store.begin_step(self.task,name,arguments)
@@ -300,6 +307,7 @@ def run(store, plan, output, runtime_home, mode='workflow', inputs=None, source=
     task=task or uuid.uuid4().hex
     request={'inputs':inputs,'source':str(source) if source else None}
     authorization={'writeRoot':str(Path(output).absolute()),'inputs':inputs}
+    if check.get('sourcePackage'):authorization['sourcePackage']=check['sourcePackage']
     if revision_scope is not None:
         request['revisionScope']=revision_scope;authorization['revisionScope']=revision_scope
     authorization['requestHash']=load('task_store').digest(request)

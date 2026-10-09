@@ -2,12 +2,12 @@
 
 Create editable `.ecproj` projects, dependencies and media from text, graphics and footage. This is a development release; full V1 remains open. Published releases and local documentation candidates have separate evidence.
 
-Current source: `0.1.0-dev.61`; consuming plugin: `0.1.0-dev.63`; 15 independent skills.
+Current source: `0.1.0-dev.62`; consuming plugin: `0.1.0-dev.64`; 15 independent skills.
 
 | Field | Value |
 | --- | --- |
-| Metadata version | 0.1.0-dev.61 |
-| Skills source | effectcraft-skills / v0.1.0-dev.61 |
+| Metadata version | 0.1.0-dev.62 |
+| Skills source | effectcraft-skills / v0.1.0-dev.62 |
 | Acceptance | Development; full V1 OPEN |
 
 
@@ -108,3 +108,8 @@ Technical gate9.4.1 accepted: [evidence](docs/evidence/technical-gate-acceptance
 
 
 This release: source dev.61 / plugin dev.63 publishes the9.36 native family-cancellation and9.4.1 technical-gate tests and evidence. Earlier unpublished statements describe their observation checkpoints. Skill execution resources remain byte-identical to source60;69 V1 tasks and marketplace qualification remain open.
+
+
+Local artifact-lineage candidate (EC-AR-001;5.1–5.3 in progress): workflows add the ArtCraft-owned craft-artifact/v1 object to the compatible manifest, binding logical identity, immutable whole-package version, actual task, parent version, native project, renditions and collected media. Review and moved-source revision verify every bound file; same-name replacement, stale versions, reference mismatches and links are rejected. Source-package binding persists in task authorization and is checked before subsequent edits and delivery. Direct CLI execution explicitly uses standalone identity; legacy packages contribute content-verifiable native references without invented task provenance. This is unpublished source work; the plugin remains pinned to released source61. Command/desktop public artifact mapping, font/LUT discovery and complete fixed-release protocol qualification remain open;5.1–5.3 are not checked off. [Evidence / 证据](docs/evidence/workflow-artifact-lineage-candidate-20261009.json).
+
+Current release: source dev.62 / plugin dev.64 distributes workflow artifact lineage and source-package guards. Candidate evidence retains its observation checkpoint; release bindings are in release62-validation-20261009.json. Regression: 697 tests, 633 passed, 64 conditional skips; three macOS arm64 native deliveries bind current execution resources. Command/desktop public mapping, font/LUT discovery, other native targets and host acceptance remain open;5.1–5.3 remain unchecked and V1 has69 open tasks.
