@@ -98,7 +98,7 @@ class CommandRevisionFlowTests(unittest.TestCase):
         state['identityHash']=f.tasks.digest(state['identity']);state['workKey']=f.tasks.digest({k:v for k,v in state['identity'].items() if k not in ('authorization','runtimeSha256')});state['resources']['entries']['case']['bindingHash']=state['identity']['planHash'];state['resourceReservation']['bindingHash']=state['identity']['planHash'];self.store.save(state)
         f.session.comps[1].update(frameRate=1,duration=1);f.session.layers['3']['properties'][0]['uid']=9
         f.steps=[{'index':0,'command':'comp.new','tool':None,'params':{},'state':'succeeded','result':{'comp':1}},{'index':1,'command':'layer.newText','tool':None,'params':{},'state':'succeeded','result':{'layer':3}}]
-        raw={'savedBy':'0.4.0','schema':1,'settings':{},'items':{'1':{'id':1,'kind':{'type':'Comp','layers':[{'id':3,'props':{'uid':4,'children':[{'node':'Prop','uid':9,'value':{'t':'Text','v':'before'}}]}}]}}},'next_id':10}
+        raw={'savedBy':'0.4.0','schema':1,'settings':{},'items':{'1':{'id':1,'kind':{'type':'Comp','layers':[{'id':3,'props':{'uid':4,'children':[{'node':'Prop','uid':9,'value':{'t':'Text','v':{'text':'before','font':'Inter','style':'Regular'}}}]}}]}}},'next_id':10}
         rec={'index':2,'command':None,'tool':'save_project','params':{'path':str(f.output/'scene.ecproj')},'state':'started'}
         f.observer(f.session,rec,'before');(f.output/'scene.ecproj').write_text(__import__('json').dumps(raw));rec.update(state='succeeded',result={});f.observer(f.session,rec,'after');f.steps.append(rec)
         f.frame();f.finish();self.criteria={'goal':'short readable title'}
@@ -204,7 +204,7 @@ class CommandRevisionFlowTests(unittest.TestCase):
         module=self.f.module;session=copy.deepcopy(self.f.session)
         session.layers['3']['properties'][0]['value']='Short'
         observer=module.Observer(self.store,child['taskId']);steps=[]
-        native=json.loads((self.output/'scene.ecproj').read_text());native['items']['1']['kind']['layers'][0]['props']['children'][0]['value']['v']='Short'
+        native=json.loads((self.output/'scene.ecproj').read_text());native['items']['1']['kind']['layers'][0]['props']['children'][0]['value']['v']['text']='Short'
         for index,op in enumerate(child['plan']['operations']):
             params=copy.deepcopy(op['params'])
             if isinstance(params.get('path'),dict):params['path']=str(out/params['path']['$output'])

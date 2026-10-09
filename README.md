@@ -2,12 +2,12 @@
 
 Create editable `.ecproj` projects, dependencies and media from text, graphics and footage. This is a development release; full V1 remains open. Published releases and local documentation candidates have separate evidence.
 
-Current source: `0.1.0-dev.63`; consuming plugin: `0.1.0-dev.65`; 15 independent skills.
+Current source: `0.1.0-dev.64`; consuming plugin: `0.1.0-dev.66`; 15 independent skills.
 
 | Field | Value |
 | --- | --- |
-| Metadata version | 0.1.0-dev.63 |
-| Skills source | effectcraft-skills / v0.1.0-dev.63 |
+| Metadata version | 0.1.0-dev.64 |
+| Skills source | effectcraft-skills / v0.1.0-dev.64 |
 | Acceptance | Development; full V1 OPEN |
 
 
@@ -118,3 +118,6 @@ Current release: source dev.62 / plugin dev.64 distributes workflow artifact lin
 Unpublished source-producer guard: copying/moving a managed workflow package or changing state roots still requires original task, operation receipts, durable delivery digest and stopped-process evidence. A private user-level locator is not completion proof; each edit intent and delivery rechecks the persisted source binding. Ten targeted tests and708 regression cases pass (643 passed,65 conditional skips). Native SIGKILL after package completion but before ledger delivery confirms public cross-store plan/run refusal, original reconcile/resume without replay, and confirmed moved-source revision with native reopen/PNG checks. The first native fixture ordering failure is retained. macOS arm64 and reused caches only; full9.3.3, legacy/command/desktop matrices, other platforms and hosts remain open, with69 tasks unfinished. Plugin stays pinned to source62/plugin64. [Evidence / 证据](docs/evidence/source-producer-guard-candidate-20261009.json).
 
 Source dev.63 / plugin dev.65 distributes source-producer guards and public artifacts for commands and owned desktop sessions: separate projects retain actual task identity, immutable package versions, native projects, matching PNGs and media dependencies. Legacy delivery remains readable. Portable mapping does not replace technical, creative or user acceptance. Prior candidates retain their observation-time scope; see [release validation](docs/evidence/release63-validation-20261009.json). Font/LUT discovery, complete fault matrices, other native platforms and fixed-host dispatch remain open;5.1–5.3 remain unchecked and V1 has69 unfinished tasks.
+
+
+Source dev.64 / plugin dev.66 adds native font and LUT resource observations across saved text styles, character runs, keyframes and supported LUT properties. Only actual LUT bytes receive content hashes; font names never stand in for font files. Font resolution, dynamic values, file-LUT runtime paths and visual fidelity retain separate NOT_RUN states. Legacy delivery identities are not upgraded on read. See [current release evidence](docs/evidence/native-resources-release64-20261009.json). Tasks5.1–5.3 and69 V1 tasks remain open; the change is not archived.

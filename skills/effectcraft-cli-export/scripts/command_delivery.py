@@ -276,9 +276,14 @@ def inspect(store,task,runtime_home,proof=None):
         proof=proof if proof is not None else state.get('delivery') or {}
         data=document(store,task,proof)
         if 'artifactMap' in data:report['commandArtifacts']=data['artifactMap']
+        resources=data.get('artifactMap',{}).get('nativeResources')
+        if resources is not None:
+            report['nativeResources']=resources;report['dependencyClosure']=load('native_resources').closure(resources)
         report['binding']={'commandDeliverySha256':proof['commandDeliverySha256'],
                            'receiptSha256':data['receiptSha256'],'filesHash':load('task_store').digest(data['files'])}
         known={p['path'] for p in data['projects']}
+        if resources is not None:
+            known.update(r['path'] for i in resources for r in i['luts'] if r.get('packaged') and r.get('path'))
         for project in data['projects']:known.update(asset['path'] for asset in project['dependencies'].values())
         unmatched=[]
         for frame in data['frames']:

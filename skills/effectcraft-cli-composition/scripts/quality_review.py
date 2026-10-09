@@ -101,6 +101,8 @@ def inspect_delivery(root, timeout=120):
     try:
         result['binding']=binding(root)
         manifest=read(root/'manifest.json'); technical=result['technical']; media=technical['media']
+        if 'nativeResources' in manifest:
+            result['nativeResources']=manifest['nativeResources'];result['dependencyClosure']=load('native_resources').closure([manifest['nativeResources']])
         for frame in manifest.get('frames',[]):
             path=contained(root,frame['path'])
             facts=load('image_sequence').rgba_facts(path) if frame.get('requestedAlpha') else load('png_inspection').inspect_png(path)

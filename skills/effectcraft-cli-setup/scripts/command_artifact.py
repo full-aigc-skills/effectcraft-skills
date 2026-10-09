@@ -53,7 +53,7 @@ def source_refs(store,state):
     return result
 
 
-def compile_map(output,files,bound,context):
+def compile_map(output,files,bound,context,*,resources=False):
     """绑定整包与原观察；登记身份不声明工程、媒体、字体或创作已验收。"""
     output=Path(output);lineage=load('artifact_lineage')
     if (not isinstance(bound,dict) or set(bound)!={'schema','producer','planHash','runtimeSha256','filesHash','receiptSha256','observationsHash','sourceRefs'}
@@ -74,7 +74,10 @@ def compile_map(output,files,bound,context):
     for name,value in parents.items():lineage.reference(value)
     artifacts=[];known=set();unmatched=[]
     frame_sources={f['path']:[] for f in context['frames']}
-    version=digest({'binding':bound,'contexts':context,'files':files})
+    inventories=[load('native_resources').inspect(output,p['path']) for p in context['projects']] if resources else None
+    version_payload={'binding':bound,'contexts':context,'files':files}
+    if resources:version_payload['nativeResources']=inventories
+    version=digest(version_payload)
     def ref(name,logical):
         if name not in files and name!='success.json':fail('unlisted_reference')
         content=bound['receiptSha256'] if name=='success.json' else files[name]
@@ -92,6 +95,10 @@ def compile_map(output,files,bound,context):
             lineage.file(output,asset['path']);known.add(asset['path'])
             dependencies.append({'assetRef':{k:v for k,v in ref(asset['path'],'effectcraft-media:'+digest({'assetId':logical,'item':item})).items() if k!='location'},
                                  'kind':'media','packaged':True,'missingReason':None})
+        if resources:
+            inventory=next(i for i in inventories if i['project']==name)
+            dependencies.extend(load('native_resources').public_dependencies(inventory))
+            known.update(r['path'] for r in inventory['luts'] if r.get('packaged') and r.get('path'))
         renditions=[]
         for frame in context['frames']:
             if all(project[k]==frame[k] for k in ('snapshot','nativeVersion','dependencies')):
@@ -110,9 +117,11 @@ def compile_map(output,files,bound,context):
         for item in frame.get('inlineCopies',[]):
             if files.get(item['path'])!=frame['sha256'] or item['sha256']!=frame['sha256']:fail('inline_copy_changed')
             known.add(item['path'])
-    return {'schema':'effectcraft-command-artifact-map/v1','binding':copy.deepcopy(bound),'files':copy.deepcopy(files),
+    result={'schema':'effectcraft-command-artifact-map/v1','binding':copy.deepcopy(bound),'files':copy.deepcopy(files),
             'contexts':copy.deepcopy(context),'artifacts':artifacts,'unmatchedFrames':sorted(unmatched),
             'unreviewed':sorted(set(files)-known),'exchangeLoss':'NOT_RUN','qualification':'registration only; quality remains independently evaluated'}
+    if resources:result['nativeResources']=inventories
+    return result
 
 
 def build(store,state,data):
@@ -121,7 +130,7 @@ def build(store,state,data):
         bound={'schema':'effectcraft-command-artifact-binding/v1','producer':{'taskId':state['taskId'],'identityHash':state['identityHash']},
                'planHash':state['identity']['planHash'],'runtimeSha256':state['identity']['runtimeSha256'],'filesHash':digest(data['files']),
                'receiptSha256':data['receiptSha256'],'observationsHash':digest(data['observations']),'sourceRefs':source_refs(store,state)}
-        return compile_map(state['output'],data['files'],bound,contexts(data))
+        return compile_map(state['output'],data['files'],bound,contexts(data),resources=True)
     except (ValueError,OSError,KeyError,TypeError) as error:
         if isinstance(error,ValueError) and str(error).startswith('command_artifact:'):raise
         fail(str(error))
@@ -130,7 +139,7 @@ def build(store,state,data):
 def validate(output,mapping):
     """输出和映射一起搬迁后核对相对引用；不查询PID、不发送原生编辑。"""
     try:
-        expected=compile_map(output,mapping['files'],mapping['binding'],mapping['contexts'])
+        expected=compile_map(output,mapping['files'],mapping['binding'],mapping['contexts'],resources='nativeResources' in mapping)
         if expected!=mapping:fail('map_or_version_changed')
         return expected['artifacts']
     except (ValueError,OSError,KeyError,TypeError) as error:

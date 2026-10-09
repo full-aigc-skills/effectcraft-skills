@@ -105,7 +105,12 @@ def record(root,manifest,bound):
     parent=reference(bound['sourceRef']) if bound['sourceRef'] is not None else None
     if (parent['sha256'] if parent else None)!=manifest.get('sourceProjectSha256'):fail('source_project_changed')
     asset_id=parent['assetId'] if parent else 'effectcraft:'+digest(producer)
-    version=digest({'binding':bound,'files':files,'sourceProjectSha256':manifest.get('sourceProjectSha256')})
+    version_payload={'binding':bound,'files':files,'sourceProjectSha256':manifest.get('sourceProjectSha256')}
+    resources=manifest.get('nativeResources')
+    if 'nativeResources' in manifest:
+        if resources!=load('native_resources').inspect(root,'project.ecproj'):fail('native_resources_changed')
+        version_payload['nativeResources']=resources
+    version=digest(version_payload)
     native_sha=files['project.ecproj']
     def ref(name,logical=None):
         if name not in files:fail('unlisted_reference')
@@ -119,6 +124,7 @@ def record(root,manifest,bound):
         name=asset['path'];file(root,name);asset_paths.add(name)
         dependencies.append({'assetRef':{k:v for k,v in ref(name,'effectcraft-media:'+digest({'assetId':asset_id,'alias':alias})).items() if k!='location'},
             'kind':'media','packaged':True,'missingReason':None})
+    if resources is not None:dependencies.extend(load('native_resources').public_dependencies(resources))
     names={frame['path'] for frame in manifest.get('frames',[])}
     if manifest.get('video'):names.add(manifest['video']['path'])
     if manifest.get('imageSequence'):
@@ -145,6 +151,7 @@ def record(root,manifest,bound):
 def attach(root,manifest,context):
     """生成新包记录；生产身份随导出上下文持久化，恢复不创建新任务。"""
     try:
+        manifest['nativeResources']=load('native_resources').inspect(Path(root),'project.ecproj')
         bound=binding(context);manifest['artifactBinding']=bound;manifest['artifact']=record(Path(root),manifest,bound)
     except (KeyError,TypeError,OSError,ValueError) as error:
         if isinstance(error,ValueError) and str(error).startswith('artifact_lineage:'):raise

@@ -2,12 +2,12 @@
 
 从文字、图形和素材创建可编辑 `.ecproj` 工程、依赖和媒体。当前为开发版，完整 V1 未完成；已发布版本与本地文档候选分别记录。
 
-当前技能源：`0.1.0-dev.63`；消费插件：`0.1.0-dev.65`；15 个独立技能。
+当前技能源：`0.1.0-dev.64`；消费插件：`0.1.0-dev.66`；15 个独立技能。
 
 | Field | Value |
 | --- | --- |
-| Metadata version | 0.1.0-dev.63 |
-| Skills source | effectcraft-skills / v0.1.0-dev.63 |
+| Metadata version | 0.1.0-dev.64 |
+| Skills source | effectcraft-skills / v0.1.0-dev.64 |
 | Acceptance | Development; full V1 OPEN |
 
 
@@ -118,3 +118,6 @@ source60／plugin62 发行分发真实强杀恢复增量及严格进程归属校
 未发布来源生产任务保护候选：完整包复制／移动或换state-root后，受管理来源仍核对原任务、逐操作回执、持久交付摘要及所属进程停止证明。用户级定位记录只指向原账本，不能证明完成；新任务持久绑定来源，并在每次编辑意图／交付前重核对。10项定向测试、708项回归（643通过／65条件跳过）和真实worker完成包后、账本交付前SIGKILL案例通过；公开plan/run跨账本拒绝未知副本，原reconcile/resume不重放，已确认交付移动后的跨账本修订与原生重开／实际PNG检查通过。首轮原生夹具顺序错误留证。仅macOS arm64及缓存复用；完整9.3.3、旧包／命令／桌面矩阵、其他平台和宿主保持开放，当前69项未完成。插件继续锁定source62／plugin64。 [Evidence / 证据](docs/evidence/source-producer-guard-candidate-20261009.json).
 
 本次发行 source dev.63／plugin dev.65 包含来源生产任务保护及 commands／自有桌面的公共产物映射：多工程分别登记真实任务、不可变包版本、原生工程、匹配PNG和媒体依赖；旧交付只读兼容。映射可随整包移动重验，不能替代技术、创作或用户验收。原候选报告保留观察时范围；当前发行证据见 [发行验证](docs/evidence/release63-validation-20261009.json)。字体／LUT发现、完整故障矩阵、其他原生平台与固定宿主派发继续开放；5.1–5.3不勾选，V1仍有69项未完成，不归档。
+
+
+本次发行 source dev.64／plugin dev.66 新增原生字体与 LUT 资源观察，覆盖保存工程的文字样式、字符样式、关键帧及支持的 LUT 属性。只为实际取得的 LUT 字节登记摘要；字体名称不会冒充字体文件。未知字体、动态资源、文件 LUT 的运行路径和视觉保真分别保留 NOT_RUN；旧交付不自动升级身份。验证范围见 [本次发行证据](docs/evidence/native-resources-release64-20261009.json)。5.1–5.3及69项V1任务继续开放，不归档。
