@@ -80,7 +80,7 @@ class WorkflowArtifactLineageTests(unittest.TestCase):
         (self.root/'frame.png').write_bytes(b'replaced same path')
         plan={'operations':[],'expectedProjectSha256':m['files']['project.ecproj']}
         managed=load('managed')
-        with patch.object(self.workflow,'load_module',side_effect=lambda name:load(name) if name=='artifact_lineage' else (_ for _ in ()).throw(AssertionError('installer must not run'))):
+        with patch.object(self.workflow,'load_module',side_effect=lambda name:load(name) if name in ('artifact_lineage','composition_contract') else (_ for _ in ()).throw(AssertionError('installer must not run'))):
             with self.assertRaisesRegex(ValueError,'artifact_lineage'):self.workflow._execute(plan,self.root/'new','unused',self.root,None)
         with self.assertRaisesRegex(ValueError,'artifact_lineage'):managed.preflight(plan,self.root/'new','workflow',source=self.root)
         self.assertFalse((self.root/'new').exists())

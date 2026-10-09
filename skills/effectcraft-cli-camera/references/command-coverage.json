@@ -4,8 +4,8 @@
   "runtimeSha256": "c1717eb87e5b57b3ed88c6a78047268a5afa566beb36104fdcc05dc8634a01c1",
   "upstreamCommit": "f5ebe5f6c5e887dddda4a2be1fcb47154e959b81",
   "scope": "complete documentation and native-session route; not complete native acceptance",
-  "workflowOperationCount": 22,
-  "workflowNativeCommandCount": 19,
+  "workflowOperationCount": 23,
+  "workflowNativeCommandCount": 20,
   "nativeTools": [
     "list_commands",
     "describe_command",
@@ -2226,7 +2226,7 @@
       "ownerSkill": "effectcraft-cli-composition",
       "ownerInstall": "npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-composition",
       "nativeUsage": "commands.py describe comp.workArea; commands.py run PLAN.json --output NEW_DIRECTORY",
-      "workflowMapped": false,
+      "workflowMapped": true,
       "usageRecipes": [],
       "observedEmptySession": {
         "enabled": false,

@@ -2,12 +2,12 @@
 
 从文字、图形和素材创建可编辑 `.ecproj` 工程、依赖和媒体。当前为开发版，完整 V1 未完成；已发布版本与本地文档候选分别记录。
 
-当前技能源：`0.1.0-dev.67`；消费插件：`0.1.0-dev.69`；15 个独立技能。
+当前技能源：`0.1.0-dev.68`；消费插件：`0.1.0-dev.70`；15 个独立技能。
 
 | Field | Value |
 | --- | --- |
-| Metadata version | 0.1.0-dev.67 |
-| Skills source | effectcraft-skills / v0.1.0-dev.67 |
+| Metadata version | 0.1.0-dev.68 |
+| Skills source | effectcraft-skills / v0.1.0-dev.68 |
 | Acceptance | Development; full V1 OPEN |
 
 
@@ -133,3 +133,9 @@ Source dev.66 / plugin dev.68 correct current release identity documentation. Ex
 
 
 Source dev.67 / plugin dev.69 correct a Windows absolute-path test fixture without changing execution resources. Source65/66 Windows CI failed that fixture; prior tags are retained. The original content-rejection assertion is preserved and all15 file-LUT tests pass locally. [Release binding](docs/evidence/file-lut-release67-20261009.json).
+
+
+未发布停止观察候选：POSIX守护仅在原5秒停止窗口内重查瞬态成员查询失败，并把剩余时间传给查询；空表／畸形表不作为停止证明。持续失败仍unknown，业务结果与强制组停止分开。基线100次真实macOS沙箱取消复现1次失败，修复后100次通过。完整故障／平台／宿主门禁继续开放，插件保持source67／plugin69固定快照。[候选证据](docs/evidence/stop-observation-candidate-20261009.json)。
+
+
+技能源 dev.68／插件 dev.70 发布 POSIX 有限停止状态核验与工作流合成配置门禁。显式映射固定0.4.0的当前时间tick及帧吸附，保留原生工作区快捷操作。此前候选段落保留其观察时范围。[本次发布证据](docs/evidence/release68-validation-20261009.json)。完整领域、目标平台及宿主门禁仍开放，当前为开发版。

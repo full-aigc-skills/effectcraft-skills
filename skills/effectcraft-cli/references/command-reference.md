@@ -930,7 +930,7 @@ Set Work Area
 
 - 技能 / Owner: `effectcraft-cli-composition`。
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-composition`。
-- 当前工作流映射 / Workflow mapped: false。
+- 当前工作流映射 / Workflow mapped: true。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe comp.workArea`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。

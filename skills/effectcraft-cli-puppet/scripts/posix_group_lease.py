@@ -122,9 +122,24 @@ def guard(command,receipt,lease,grace,group_alive):
                     except ValueError:
                         if not (closed.is_set() and not released and not reader.data and child.returncode<0):raise
                 if not reader.ended:raise ValueError('owned_worker_result_missing')
-            deadline=time.monotonic()+5
-            while group_alive(child.pid) and time.monotonic()<deadline:time.sleep(.05)
-            if group_alive(child.pid):raise ValueError('owned_processes_still_running')
+            deadline=time.monotonic()+5;observation_error=None
+            while True:
+                remaining=deadline-time.monotonic()
+                if remaining<=0:
+                    if observation_error is not None:raise observation_error
+                    raise ValueError('owned_processes_still_running')
+                try:
+                    if not group_alive(child.pid,timeout=remaining):break
+                    observation_error=None
+                except ValueError as error:
+                    # 查询异常不是停止证明；仅在原截止窗口内等待一次有效观察。
+                    if str(error)!='process_tree_inspection_failed':raise
+                    observation_error=error
+                remaining=deadline-time.monotonic()
+                if remaining<=0:
+                    if observation_error is not None:raise observation_error
+                    raise ValueError('owned_processes_still_running')
+                time.sleep(min(.05,remaining))
             # 组持有者可能因排空被KILL；业务结果来自独立管道，不以该退出码代替。
             code=reader.code
             if code is None:

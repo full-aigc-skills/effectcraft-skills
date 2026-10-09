@@ -49,7 +49,7 @@ class GroupOwnershipTests(unittest.TestCase):
                 while not ready.exists() and child.poll() is None and time.monotonic()<deadline:time.sleep(.02)
                 self.assertTrue(ready.exists());child.stdin.close();child.wait(timeout=10)
                 self.assertNotEqual(child.returncode,0)
-                record=json.loads(receipt.read_text());self.assertEqual(record['status'],'stopped');self.assertLess(record['returncode'],0)
+                record=json.loads(receipt.read_text());self.assertEqual(record['status'],'stopped',record);self.assertLess(record['returncode'],0)
                 self.assertFalse(record['ownership']['workerResultVerified']);self.assertIsNone(record['ownership']['workerReturncode'])
                 self.assertEqual(record['ownership']['exitCodeSource'],'group-holder-forced-stop')
             finally:

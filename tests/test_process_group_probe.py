@@ -21,6 +21,14 @@ class GroupProbeTests(unittest.TestCase):
         with patch.object(m.os,'killpg',side_effect=ProcessLookupError) as probe,patch.object(m.subprocess,'run',side_effect=PermissionError('sandbox ps denied')) as ps:
             self.assertFalse(m.group_alive(98765));probe.assert_called_once_with(98765,0);ps.assert_not_called()
 
+    def test_member_query_respects_remaining_stop_deadline(self):
+        m=load()
+        with patch.object(m.os,'killpg'),patch.object(m.subprocess,'run',side_effect=subprocess.TimeoutExpired('ps',.125)) as ps:
+            try:
+                with self.assertRaisesRegex(ValueError,'process_tree_inspection_failed'):m.group_alive(98765,timeout=.125)
+            except TypeError as error:self.fail('remaining stop deadline is not propagated: '+str(error))
+            self.assertEqual(ps.call_args.kwargs['timeout'],.125)
+
     def test_permission_denied_probe_never_claims_stopped(self):
         m=load()
         with patch.object(m.os,'killpg',side_effect=PermissionError('kernel denied')),patch.object(m.subprocess,'run',side_effect=PermissionError('ps denied')) as ps:
@@ -44,6 +52,12 @@ class GroupProbeTests(unittest.TestCase):
             with self.subTest(group=group),patch.object(m.os,'killpg') as probe,patch.object(m.subprocess,'run') as ps:
                 with self.assertRaises(ValueError):m.group_alive(group)
                 probe.assert_not_called();ps.assert_not_called()
+
+    def test_malformed_member_table_never_proves_group_stopped(self):
+        m=load()
+        for rows in ('','\n','malformed\n','98765\n','not-a-group S\n','98765 S extra\n'):
+            with self.subTest(rows=rows),patch.object(m.os,'killpg'),patch.object(m.subprocess,'run',return_value=subprocess.CompletedProcess([],0,rows,'')):
+                with self.assertRaisesRegex(ValueError,'process_tree_inspection_failed'):m.group_alive(98765)
 
     def test_existing_group_retains_live_and_zombie_discrimination(self):
         m=load()

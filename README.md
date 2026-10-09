@@ -2,12 +2,12 @@
 
 Create editable `.ecproj` projects, dependencies and media from text, graphics and footage. This is a development release; full V1 remains open. Published releases and local documentation candidates have separate evidence.
 
-Current source: `0.1.0-dev.67`; consuming plugin: `0.1.0-dev.69`; 15 independent skills.
+Current source: `0.1.0-dev.68`; consuming plugin: `0.1.0-dev.70`; 15 independent skills.
 
 | Field | Value |
 | --- | --- |
-| Metadata version | 0.1.0-dev.67 |
-| Skills source | effectcraft-skills / v0.1.0-dev.67 |
+| Metadata version | 0.1.0-dev.68 |
+| Skills source | effectcraft-skills / v0.1.0-dev.68 |
 | Acceptance | Development; full V1 OPEN |
 
 
@@ -133,3 +133,9 @@ Source dev.66 / plugin dev.68 correct current release identity documentation. Ex
 
 
 Source dev.67 / plugin dev.69 correct a Windows absolute-path test fixture without changing execution resources. Source65/66 Windows CI failed that fixture; prior tags are retained. The original content-rejection assertion is preserved and all15 file-LUT tests pass locally. [Release binding](docs/evidence/file-lut-release67-20261009.json).
+
+
+Unpublished stop-observation candidate: POSIX guardians retry transient member-query failures only within the original five-second stop window, propagate remaining time to the query, and reject empty/malformed member tables as stop evidence. Persistent failures remain unknown; business results and forced-stop outcomes stay distinct. 100 real macOS sandbox cancellations pass after a 1/100 baseline failure was reproduced. Full fault/platform/host gates remain open; the plugin stays pinned to source67/plugin69. [Candidate evidence](docs/evidence/stop-observation-candidate-20261009.json).
+
+
+Source dev.68 / plugin dev.70 releases bounded POSIX stop observation and workflow composition configuration checks. Native 0.4.0 current-time ticks and frame snapping are mapped explicitly; work-area shortcuts remain supported. Earlier candidate notes retain their historical scope. See [release evidence](docs/evidence/release68-validation-20261009.json). Full domain, platform and host gates remain open; this is a development release.

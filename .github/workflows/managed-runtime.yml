@@ -23,6 +23,8 @@ jobs:
           python -m unittest discover -s tests -p test_platform_support.py -v
           python -m unittest discover -s tests -p 'test_process*.py' -v
           python -m unittest discover -s tests -p test_posix_group_lease.py -v
+          python -m unittest discover -s tests -p test_posix_stop_observation.py -v
+          python -m unittest discover -s tests -p test_composition_contract.py -v
           python -m unittest discover -s tests -p test_generator_encoding.py -v
           python -m unittest discover -s tests -p test_capability_matrix.py -v
           python -m unittest discover -s tests -p 'test_managed_*.py' -v

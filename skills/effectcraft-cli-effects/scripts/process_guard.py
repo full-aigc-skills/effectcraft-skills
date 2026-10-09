@@ -63,7 +63,7 @@ class WindowsJob:
         if self.handle:self.api.CloseHandle(self.handle);self.handle=None
 
 
-def group_alive(group):
+def group_alive(group,*,timeout=5):
     """僵尸不再执行或写入；查询失败不能被当作进程已停止。"""
     if type(group) is not int or group<=0:raise ValueError('owned_process_group_invalid')
     try:
@@ -77,14 +77,15 @@ def group_alive(group):
     except OSError as error:
         raise ValueError('process_tree_inspection_failed') from error
     try:
-        result=subprocess.run(['ps','-axo','pgid=,stat='],capture_output=True,text=True,timeout=5)
+        result=subprocess.run(['ps','-axo','pgid=,stat='],capture_output=True,text=True,timeout=timeout)
     except (OSError,subprocess.SubprocessError,UnicodeError) as error:
         raise ValueError('process_tree_inspection_failed') from error
     if result.returncode:raise ValueError('process_tree_inspection_failed')
-    for line in result.stdout.splitlines():
-        fields=line.split()
-        if len(fields)>=2 and fields[0]==str(group) and not fields[1].startswith('Z'):return True
-    return False
+    rows=[line.split() for line in result.stdout.splitlines() if line.strip()]
+    # 成员表损坏或空输出不能证明组已停止；必须先核对完整表的结构。
+    if not rows or any(len(fields)!=2 or not fields[0].isdigit() for fields in rows):
+        raise ValueError('process_tree_inspection_failed')
+    return any(fields[0]==str(group) and not fields[1].startswith('Z') for fields in rows)
 
 
 def guard(command,receipt,lease,grace=2):

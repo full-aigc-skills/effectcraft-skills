@@ -1,8 +1,8 @@
 # 原生合成计划 / Native composition plans
 
-`workflow.py` 首次调用安装器，然后在持续 MCP 会话中创建或修改合成。它保存原生 `.ecproj`、重新打开检查属性，并调用原生渲染器输出透明 PNG 和可选 H.264 视频。需要 Python 3.11+；当前运行时锁仅支持 macOS arm64。
+`workflow.py` 首次调用安装器，然后在持续 MCP 会话中创建或修改合成。它保存原生 `.ecproj`、重新打开检查属性，并调用原生渲染器输出透明 PNG 和可选 H.264 视频。公开 launch.sh／launch.ps1 入口准备锁定的隔离 Python；平台制品以 runtime.lock.json 为准，原生任务验收按平台独立记录。
 
-The helper bootstraps the pinned runtime, executes a bounded plan in a persistent MCP session, saves and reopens the native project, then renders transparent PNG frames and optional H.264 video. Runtime support currently covers macOS arm64 only.
+The helper bootstraps the pinned runtime, executes a bounded plan in a persistent MCP session, saves and reopens the native project, then renders transparent PNG frames and optional H.264 video. Public launchers prepare pinned isolated Python; runtime.lock.json defines platform artifacts, while native acceptance remains platform-specific.
 
 以下 `SKILL_DIR` 沿用本技能 `SKILL.md` 的实际加载目录，脚本和示例均来自同一技能。
 
@@ -92,3 +92,9 @@ The current source workflow accepts the explicit png-segmented format and option
 先用本技能 `commands.py` 的新会话执行打开／检查计划，并显式登记恢复工程作为 `--input project=原暂存工程绝对路径`；按真实对象状态建立新的修改计划。`failure.json` 不是交付 manifest，不能把失败输出直接传给 `workflow.py --source`。成功保存、重开、依赖收集及派生输出检查后才形成新的交付。诊断写入权限不足时仍保留暂存并返回原异常，不能假定失败输出目录一定存在。
 
 After staged failure, retain both the output recovery record and its original sibling stage. Verify all file hashes and the last submitted attempt; an unknown reply may follow a successful native operation. Open/inspect the retained project in a fresh commands.py session before an explicit new revision. Do not replay the original plan, move the stage or pass the failed directory as a successful workflow source package.
+
+## 合成配置门禁 / Composition configuration gate
+
+`workArea: [start, end]` 使用秒，必须在有效时长内且至少包含一帧。新合成默认显式设置完整工作区；修订默认保留来源范围。锁定上游使用254016000000 ticks/秒，标准帧率与整帧时长按原生规则归一化。工作流在保存前和重开后核对宽、高、帧率、时长、工作区；差异返回 `composition_config_mismatch` 并停止渲染。成功交付增加 `composition-validation.json`，保留有效预期与原生观察值。原生命令 `comp.workArea` 的当前时间快捷方式及边界裁剪继续支持；原始 commands/desktop 入口的完整领域计划验收保持开放。
+
+`workArea` uses seconds. New compositions explicitly use the complete effective range by default; revisions preserve the source range. The workflow checks dimensions, frame rate, duration and work area before saving and after reopening. Differences stop rendering. `composition-validation.json` records normalized expectations and actual observations. Native work-area shortcuts remain supported. Complete domain qualification for raw command/desktop plans remains open.

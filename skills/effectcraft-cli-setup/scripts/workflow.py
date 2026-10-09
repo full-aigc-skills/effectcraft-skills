@@ -21,7 +21,7 @@ def exchange_report(root,outputs,warnings):
 ALLOWED = {'native.command', 'asset.import', 'asset.replace', 'layer.addItem', 'layer.newText', 'layer.newShape', 'layer.newSolid', 'layer.setText',
            'layer.select', 'layer.setParent', 'prop.set', 'prop.addKey',
            'keys.select', 'keys.easyEase', 'keys.interpolation', 'mask.new', 'mask.setVertex', 'mask.remove',
-           'effect.apply', 'effect.remove', 'effect.toggle', 'comp.settings'}
+           'effect.apply', 'effect.remove', 'effect.toggle', 'comp.settings', 'comp.workArea'}
 
 PARAMETER_COMMANDS = {'effect.apply', 'effect.remove', 'effect.toggle', 'mask.new', 'mask.setVertex', 'mask.remove'}
 
@@ -156,6 +156,11 @@ def validate(plan):
         for field, limit in [('frameRate', 240), ('duration', 3600)]:
             if type(doc.get(field)) not in (int, float) or not 0 < doc[field] <= limit:
                 raise ValueError('invalid_document_timing')
+    contract_module=load_module('composition_contract')
+    if 'workArea' in plan and plan['workArea'] is None:raise ValueError('invalid_work_area')
+    if 'document' in plan:contract_module.document(plan['document'],plan.get('workArea'))
+    elif 'workArea' in plan:
+        if not isinstance(plan['workArea'],list) or len(plan['workArea'])!=2 or not all(contract_module.number(v) for v in plan['workArea']) or not 0<=plan['workArea'][0]<plan['workArea'][1]:raise ValueError('invalid_work_area')
     return schemas
 
 
@@ -189,6 +194,9 @@ def _execute(plan, output, runtime_home, source, owned, task_hooks=None):
         inherited = prior.get('assets', {})
     elif 'document' not in plan:
         raise ValueError('document_required')
+    composition_contract=load_module('composition_contract')
+    expected_composition=(composition_contract.observed(json.loads((source/'native.json').read_text(encoding='utf-8'))['composition']) if source_project else composition_contract.document(plan['document']))
+    if 'workArea' in plan:expected_composition['workArea']=composition_contract.area(plan['workArea'],expected_composition)
     # 输入失败须在安装、输出占用及保留暂存前返回；复制后仍复核以发现并发变化。
     for alias, asset in inherited.items():
         path = (source / asset['path']).resolve()
@@ -255,13 +263,23 @@ def _execute(plan, output, runtime_home, source, owned, task_hooks=None):
             verify_parameter_contracts(call, schemas)
             if source_project:
                 call('open_project', {'path': str(source_project)})
+                baseline=call('get_comp',{'comp':bindings['composition']['comp']})
+                composition_contract.verify(composition_contract.observed(json.loads((source/'native.json').read_text(encoding='utf-8'))['composition']),baseline)
                 for asset in assets.values():
                     if 'item' in asset:
                         call('execute_command', {'command': 'file.replaceFootage', 'params': {'item': asset['item'], 'path': asset['staging']}})
             else:
                 bindings['composition'] = call('execute_command', {'command': 'comp.new', 'params': plan['document']})
+            if not source_project:
+                call('execute_command',{'command':'comp.workArea','params':{'comp':bindings['composition']['comp'],'start':0,'end':expected_composition['duration']}})
             for operation in plan['operations']:
                 params = resolve(operation.get('params', {}), bindings)
+                configuration_command=params['command'] if operation['command']=='native.command' else operation['command']
+                configuration_params=params['params'] if operation['command']=='native.command' else params
+                current_time=None
+                if configuration_command=='comp.workArea' and configuration_params.get('set') in ('begin','end'):
+                    current_time=composition_contract.current_time(call('get_state',{}))
+                expected_composition=composition_contract.updated(expected_composition,configuration_command,configuration_params,bindings['composition']['comp'],current_time=current_time)
                 if operation['command'] == 'native.command':
                     result = native_module().execute(session, params, owned, receipts, stage)
                 elif operation['command'] == 'asset.import':
@@ -290,7 +308,11 @@ def _execute(plan, output, runtime_home, source, owned, task_hooks=None):
                     if operation['as'] in bindings:
                         raise ValueError('alias_already_exists')
                     bindings[operation['as']] = result
+            if 'workArea' in plan:
+                expected_composition['workArea']=composition_contract.area(plan['workArea'],expected_composition)
+                call('execute_command',{'command':'comp.workArea','params':{'comp':bindings['composition']['comp'],'start':expected_composition['workArea'][0],'end':expected_composition['workArea'][1]}})
             comp = call('get_comp', {'comp': bindings['composition']['comp']})
+            composition_validation=composition_contract.verify(expected_composition,comp)
             if plan.get('exports'):
                 overview = call('get_project', {})
                 if sum(item.get('name') == comp['name'] for item in overview['items']) != 1:
@@ -321,6 +343,7 @@ def _execute(plan, output, runtime_home, source, owned, task_hooks=None):
                 stage = output
             call('open_project', {'path': str(project)})
             comp = call('get_comp', {'comp': bindings['composition']['comp']})
+            composition_validation=composition_contract.verify(expected_composition,comp)
             layers = {str(layer['id']): call('get_layer', {'comp': comp['id'], 'layer': layer['id']}) for layer in comp['layers']}
             if task_hooks:
                 task_hooks.reserve_render(comp,plan);task_hooks.watch_render(stage,output)
@@ -339,7 +362,7 @@ def _execute(plan, output, runtime_home, source, owned, task_hooks=None):
         context={'schema':'effectcraft-export-context/v1','plan':plan,'output':str(output),
             'stage':str(stage),'working':str(working),'project':str(project),
             'sourceProject':str(source_project) if source_project else None,'sourceHash':source_hash,
-            'comp':comp,'layers':layers,'frames':frames,'bindings':bindings,'assets':assets,'receipts':receipts,
+            'compositionValidation':composition_validation,'comp':comp,'layers':layers,'frames':frames,'bindings':bindings,'assets':assets,'receipts':receipts,
             'cli':str(cli),'runtimeSha256':installed['binarySha256'],'executionIdentity':execution_identity}
         context['sourceArtifact']=source_artifact
         context['artifactProducer']=task_hooks.artifact_identity() if task_hooks and hasattr(task_hooks,'artifact_identity') else load_module('artifact_lineage').standalone(context)
@@ -377,6 +400,8 @@ def _finish_export(context, task_hooks=None, export_operation=None):
     if initial: (stage / 'operations.json').write_text(serialized + '\n', encoding='utf-8', newline='\n')
     for name, value in [('native.json', {'composition': comp, 'layers': layers}), ('plan.json', plan)]:
         if initial: (stage / name).write_text(json.dumps(value, ensure_ascii=False, indent=2) + '\n', encoding='utf-8', newline='\n')
+    if initial and context.get('compositionValidation'):
+        (stage/'composition-validation.json').write_text(json.dumps(context['compositionValidation'],ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
     if task_hooks and initial:
         export_operation=task_hooks.before('render_and_deliver',{'project':str(project),'exports':plan.get('exports',[])})
         if (plan.get('exports') or [{}])[0].get('format')=='png-segmented':
