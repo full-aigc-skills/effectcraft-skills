@@ -11,7 +11,7 @@ from types import SimpleNamespace
 import unittest
 from unittest.mock import patch
 
-HERE=Path(__file__).resolve().parents[1]/'skills/effectcraft-use/scripts'
+HERE=Path(__file__).resolve().parents[1]/'skills/effectcraft-harness/scripts'
 def load(name):
     spec=importlib.util.spec_from_file_location('completion_test_'+name,HERE/(name+'.py'))
     value=importlib.util.module_from_spec(spec);spec.loader.exec_module(value);return value

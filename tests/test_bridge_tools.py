@@ -2,7 +2,7 @@ import importlib.util,json,tempfile,unittest
 from pathlib import Path
 ROOT=Path(__file__).resolve().parents[1]
 def load():
- p=ROOT/'skills/effectcraft-use/scripts/commands.py';spec=importlib.util.spec_from_file_location('bridge_gateway',p);m=importlib.util.module_from_spec(spec);spec.loader.exec_module(m);return m
+ p=ROOT/'skills/effectcraft-harness/scripts/commands.py';spec=importlib.util.spec_from_file_location('bridge_gateway',p);m=importlib.util.module_from_spec(spec);spec.loader.exec_module(m);return m
 class BridgeToolsTests(unittest.TestCase):
  def test_ui_inspect_allowed_only_in_bridge_preflight(self):
   m=load();plan={'schema':'craft-command-plan/v1','operations':[{'tool':'ui_inspect','params':{}}]};m.validate(plan,mode='bridge')
@@ -15,7 +15,7 @@ class BridgeToolsTests(unittest.TestCase):
   m=load()
   from unittest.mock import patch
   with tempfile.TemporaryDirectory() as td:
-   root=Path(td);(root/'references').mkdir();(root/'scripts').mkdir();original=ROOT/'skills/effectcraft-use'
+   root=Path(td);(root/'references').mkdir();(root/'scripts').mkdir();original=ROOT/'skills/effectcraft-harness'
    for name in ['native-command-snapshot.json','bridge-tools.json']:(root/'references'/name).write_bytes((original/'references'/name).read_bytes())
    (root/'scripts/desktop.lock.json').write_bytes((original/'scripts/desktop.lock.json').read_bytes());p=root/'references/bridge-tools.json';x=json.loads(p.read_text());x['runtimeSha256']='0'*64;p.write_text(json.dumps(x))
    with patch.object(m,'ROOT',root),self.assertRaisesRegex(ValueError,'bridge_tools_identity'):m.bridge_tools()

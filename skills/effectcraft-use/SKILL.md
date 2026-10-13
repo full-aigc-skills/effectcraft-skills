@@ -10,26 +10,28 @@ license: Apache-2.0
 
 ## 默认受管理入口
 
+执行实现收敛在内置的 **effectcraft-harness** 技能（随插件捆绑安装；单独安装用 `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-harness`）。将 `HARNESS_DIR` 设置为该技能实际加载目录（绝对路径）；本技能的 `SKILL_DIR` 只用于读取自身的 `examples/` 与 `references/`。
+
 从宿主实际加载的技能目录设置 `SKILL_DIR`。**创作写入默认使用 `launch.sh` / `launch.ps1`**，自动准备用户目录内的固定 Python 与 EffectCraft，不改全局 PATH。下文原始 Python/CLI 示例保留兼容与诊断用途，不能绕过任务恢复账本。完整操作合同见 [任务控制、评估与修订](references/managed-execution.md)。
 
 ```sh
-/bin/sh "$SKILL_DIR/scripts/launch.sh" plan --mode workflow --plan PLAN.json --output /absolute/new-result
-/bin/sh "$SKILL_DIR/scripts/launch.sh" run --mode workflow --plan PLAN.json --output /absolute/new-result
+/bin/sh "$HARNESS_DIR/scripts/launch.sh" plan --mode workflow --plan PLAN.json --output /absolute/new-result
+/bin/sh "$HARNESS_DIR/scripts/launch.sh" run --mode workflow --plan PLAN.json --output /absolute/new-result
 ```
 
-Windows PowerShell：`& "$SKILL_DIR/scripts/launch.ps1" run --mode workflow --plan PLAN.json --output "C:\Users\me\result"`。
+Windows PowerShell：`& "$HARNESS_DIR/scripts/launch.ps1" run --mode workflow --plan PLAN.json --output "C:\Users\me\result"`。
 原生命令计划追加 `--mode commands`，自有桌面会话使用 `--mode desktop`。交付后必须 `review` 并实际查看媒体；只有技术验证与创作评估都通过才报告可验收，用户接受状态独立保留。需要自动修订时，在首次计划中声明 `revisionScope`；默认最多 2 轮、父子任务共用 30 分钟。未知任务只 inspect/reconcile，不换任务 ID 重做。
 
 ## 首次使用
 
-1. 定位本 `SKILL.md` 的实际目录。无需预装 Python；启动器准备锁定的隔离 Python 3.13.16；使用该目录下的 `scripts/bootstrap.py`，不要假设当前工作目录就是技能目录。
+1. 定位本 `SKILL.md` 的实际目录。无需预装 Python；启动器准备锁定的隔离 Python 3.13.16；使用 effectcraft-harness 技能目录（`HARNESS_DIR`）下的 `scripts/bootstrap.py`，不要假设当前工作目录就是技能目录。
 2. 用户已要求安装或完成创作且现有授权涵盖必要依赖时，直接运行安装入口；安装范围是用户数据目录，不需要 sudo。下载固定官方制品并校验摘要，失败即停止，不删除隔离属性、不改 shell 配置。
 
 将 `SKILL_DIR` 设置为宿主实际加载的本 `SKILL.md` 所在目录（绝对路径）。用户级安装可能位于 `~/.agents/skills/effectcraft-use`，项目级可能位于 `.agents/skills/effectcraft-use`，插件可能位于其 `skills/effectcraft-use` 或宿主缓存目录；以实际加载路径为准，不按当前工作目录猜测，也不搜索后随意选择重复版本。技能目录与 CLI 的用户数据安装目录是两个独立位置。
 
 ```bash
 : "${SKILL_DIR:?请先设置为本 SKILL.md 的实际所在目录}"
-python3 -I -B "$SKILL_DIR/scripts/bootstrap.py"
+python3 -I -B "$HARNESS_DIR/scripts/bootstrap.py"
 ```
 
 安装器返回 JSON `executable`，后续将其作为 argv 的第一个元素。当前锁定七种原生系统/架构；目标平台运行验收以有效证据为准；未支持的平台返回 `unsupported_platform`，不要安装别的平台制品。
@@ -40,7 +42,7 @@ python3 -I -B "$SKILL_DIR/scripts/bootstrap.py"
 
 ## 可执行工作流
 
-通过受管理入口执行 [原生合成计划](references/workflow.md)，内部复用 `scripts/workflow.py`。它自动安装 CLI、保存并重新打开工程、输出预览和可选视频，支持基于工程摘要的局部修订。外部文件用 `--asset 名称=绝对路径` 注册，由 `asset.import`、`layer.addItem` 导入合成；`asset.replace` 保留项目项 ID 和图层动画，原生收集器打包依赖。移动交付后用 `--source` 核验并重新链接素材。示例 `examples/brand-intro.json` 可以直接运行。
+通过受管理入口执行 [原生合成计划](references/workflow.md)，内部复用 effectcraft-harness 技能的 `scripts/workflow.py`。它自动安装 CLI、保存并重新打开工程、输出预览和可选视频，支持基于工程摘要的局部修订。外部文件用 `--asset 名称=绝对路径` 注册，由 `asset.import`、`layer.addItem` 导入合成；`asset.replace` 保留项目项 ID 和图层动画，原生收集器打包依赖。移动交付后用 `--source` 核验并重新链接素材。示例 `examples/brand-intro.json` 可以直接运行。
 
 ## 编辑流程
 
@@ -80,24 +82,24 @@ python3 -I -B "$SKILL_DIR/scripts/bootstrap.py"
 
 | **effectcraft-cli-tracking** | 使用 EffectCraft 跟踪、稳定镜头或将标题与图形附着到运动主体；首次使用安装固定 CLI。 |
 
-缺少技能：`npx skills add full-aigc-skills/effectcraft-skills --skill <skill-name>`。每项自带安装与执行资源；直接执行本技能 `scripts/cli.py` 也可查询当前 CLI，不依赖兄弟路径。
+缺少技能：`npx skills add full-aigc-skills/effectcraft-skills --skill <skill-name>`。安装与执行资源由 effectcraft-harness 技能统一提供；直接执行该技能的 `scripts/cli.py` 也可查询当前 CLI，不依赖兄弟路径。
 
 工作区分段生产候选见 [分段渲染](references/segmented-render.md)。公开 png-segmented 工作流及有界 Film／Art 候选消费已接入；尚未进入当前固定发布，HD 长序列和固定安装验收开放，不能用不完整检查点代替完整素材交付。
 
 ## 完整原生命令使用
 
-下面的查询示例需要已有Python；未准备解释器时先用受管理启动器 `doctor` 诊断。写入示例通过启动器自动准备隔离依赖；Windows用 `& "$SKILL_DIR/scripts/launch.ps1"` 替换 `/bin/sh "$SKILL_DIR/scripts/launch.sh"`，保留相同模式和参数。当前技能自带完整目录的参数说明与同会话入口，不受创作模板白名单限制。读取 [完整使用指南](references/command-usage.md)，按需查询 [命令参考](references/command-reference.md)；每条指令有技能路由、前置观察及验收状态。
+下面的查询示例需要已有Python；未准备解释器时先用受管理启动器 `doctor` 诊断。写入示例通过启动器自动准备隔离依赖；Windows用 `& "$HARNESS_DIR/scripts/launch.ps1"` 替换 `/bin/sh "$HARNESS_DIR/scripts/launch.sh"`，保留相同模式和参数。当前技能自带完整目录的参数说明与同会话入口，不受创作模板白名单限制。读取 [完整使用指南](references/command-usage.md)，按需查询 [命令参考](references/command-reference.md)；每条指令有技能路由、前置观察及验收状态。
 
 ```bash
-python3 -I -B "$SKILL_DIR/scripts/commands.py" list --filter QUERY
-python3 -I -B "$SKILL_DIR/scripts/commands.py" describe COMMAND_ID
-/bin/sh "$SKILL_DIR/scripts/launch.sh" run --mode commands --plan "$SKILL_DIR/examples/commands-advanced.json" --output /absolute/new-command-result
-/bin/sh "$SKILL_DIR/scripts/launch.sh" run --mode desktop --plan "$SKILL_DIR/examples/desktop-first-use.json" --output /absolute/new-desktop-result
+python3 -I -B "$HARNESS_DIR/scripts/commands.py" list --filter QUERY
+python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe COMMAND_ID
+/bin/sh "$HARNESS_DIR/scripts/launch.sh" run --mode commands --plan "$SKILL_DIR/examples/commands-advanced.json" --output /absolute/new-command-result
+/bin/sh "$HARNESS_DIR/scripts/launch.sh" run --mode desktop --plan "$SKILL_DIR/examples/desktop-first-use.json" --output /absolute/new-desktop-result
 ```
 
 新入口执行前检查真实注册表与当前可执行状态，保留返回值引用和逐步回执；语义错误或超时不冒充成功。目录覆盖与直接原生使用不等于所有指令、GUI、交付或 Art 编排已验收。
 
-完整工作流命令网关见 [使用说明](references/native-workflow.md)。固定 CLI 的版本与制品摘要以本技能自带 `scripts/runtime.lock.json` 为准；技能包版本以对应发布标签为准。独立安装复验与全量逐命令验收分别记录，不以发布替代验收。
+完整工作流命令网关见 [使用说明](references/native-workflow.md)。固定 CLI 的版本与制品摘要以 effectcraft-harness 技能的 `scripts/runtime.lock.json` 为准；技能包版本以对应发布标签为准。独立安装复验与全量逐命令验收分别记录，不以发布替代验收。
 
 父子图层、属性表达式、动态预览与源工程返工：使用当前技能的 [表达式父级指南](references/expression-parent.md)。
 

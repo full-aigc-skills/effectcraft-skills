@@ -24,11 +24,11 @@ Describe each command before constructing a plan. Returned IDs identify created 
 ## 查询、执行与交付 / Query, execute and deliver
 
 ```bash
-python3 -I -B "$SKILL_DIR/scripts/commands.py" list --filter puppet.
-python3 -I -B "$SKILL_DIR/scripts/commands.py" describe puppet.addPin
-python3 -I -B "$SKILL_DIR/scripts/commands.py" describe puppet.recordPin
-python3 -I -B "$SKILL_DIR/scripts/commands.py" check /absolute/puppet-plan.json
-python3 -I -B "$SKILL_DIR/scripts/commands.py" run /absolute/puppet-plan.json --output /absolute/new-puppet-result
+python3 -I -B "$HARNESS_DIR/scripts/commands.py" list --filter puppet.
+python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe puppet.addPin
+python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe puppet.recordPin
+python3 -I -B "$HARNESS_DIR/scripts/commands.py" check /absolute/puppet-plan.json
+python3 -I -B "$HARNESS_DIR/scripts/commands.py" run /absolute/puppet-plan.json --output /absolute/new-puppet-result
 ```
 
 使用本技能command-usage.md的计划合同；创建针脚返回值通过$ref连接下一步，同会话保存.ecproj。交付原生工程、素材、参数记录和需要的透明或视频渲染。重开后检查原始针脚ID、关键帧及目标时刻的实际渲染；局部返工保留锚定针与其他动画。禁用项先核对活动合成、选择和针脚状态；未知结果先检查原任务，不重复录制或删除。
@@ -53,10 +53,10 @@ This self-contained fixture proves a rendered change and native reopening identi
 本技能自带三个无需外部素材的命令计划。创建实例建立 96×64、12 fps、2 秒合成，蓝色可变形主体和绿色非目标控制图层；建立 Position 锚点与运动针、Advanced 跟随针和临时 Starch 针。所有创建后操作用实际返回的 layer、mesh、pin ID。删除临时针前保存 rigged.ecproj；位置编辑后保存 moved.ecproj。
 
 ```bash
-python3 -I -B "$SKILL_DIR/scripts/commands.py" check "$SKILL_DIR/examples/puppet-record-follow-create.json"
-python3 -I -B "$SKILL_DIR/scripts/commands.py" run "$SKILL_DIR/examples/puppet-record-follow-create.json" --output /absolute/new-puppet-create
-python3 -I -B "$SKILL_DIR/scripts/commands.py" run "$SKILL_DIR/examples/puppet-record-follow-reopen.json" --input project=/absolute/new-puppet-create/project.ecproj --output /absolute/new-puppet-reopen
-python3 -I -B "$SKILL_DIR/scripts/commands.py" run "$SKILL_DIR/examples/puppet-record-follow-revise.json" --input project=/absolute/new-puppet-create/project.ecproj --output /absolute/new-puppet-revision
+python3 -I -B "$HARNESS_DIR/scripts/commands.py" check "$SKILL_DIR/examples/puppet-record-follow-create.json"
+python3 -I -B "$HARNESS_DIR/scripts/commands.py" run "$SKILL_DIR/examples/puppet-record-follow-create.json" --output /absolute/new-puppet-create
+python3 -I -B "$HARNESS_DIR/scripts/commands.py" run "$SKILL_DIR/examples/puppet-record-follow-reopen.json" --input project=/absolute/new-puppet-create/project.ecproj --output /absolute/new-puppet-reopen
+python3 -I -B "$HARNESS_DIR/scripts/commands.py" run "$SKILL_DIR/examples/puppet-record-follow-revise.json" --input project=/absolute/new-puppet-create/project.ecproj --output /absolute/new-puppet-revision
 ```
 
 创建实例的 samples 为 [[0,48,24],[0.25,48,12],[0.5,48,24]]；时间为录制相对秒，start=0 为合成起点。speed=100%、smoothing=0，0.5 秒按 12 fps 生成含两端的 7 个关键帧，间隔 1/12 秒。跟随配置 delay=1/12 秒、amount=50%、cascade=false。在 1/3 秒，运动针位于 [48,16]，跟随针位于 [32,18]，锚点保持 [16,24]。验收原生 info 的表达式求值、属性关键帧和实际渲染，不能只看回执成功。

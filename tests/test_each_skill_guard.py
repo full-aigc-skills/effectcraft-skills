@@ -1,4 +1,4 @@
-"""逐技能单独复制后，公开失败入口必须保留完整进程停止证据。"""
+"""执行实现单独复制后，公开失败入口必须保留完整进程停止证据。"""
 import importlib.util
 import os
 from pathlib import Path
@@ -11,11 +11,10 @@ ROOT = Path(__file__).resolve().parents[1]
 
 
 class IndependentGuardTests(unittest.TestCase):
-    def test_every_skill_preserves_guarded_failure_without_siblings(self):
+    def test_harness_preserves_guarded_failure_without_siblings(self):
         override = os.environ.get('CRAFT_GUARD_SKILL_ROOT')
-        sources = [Path(override)] if override else [
-            entry.parent for entry in sorted((ROOT / 'skills').glob('*/SKILL.md'))]
-        self.assertEqual(len(sources), 1 if override else 15)
+        harness = ROOT / 'skills' / 'effectcraft-harness'
+        sources = [Path(override)] if override else [harness]
         for source in sources:
             with self.subTest(skill=source.name), tempfile.TemporaryDirectory(prefix='独立 守护技能 ') as directory:
                 copied = Path(directory) / '.agents' / 'skills' / source.name

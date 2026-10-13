@@ -2,30 +2,30 @@
 
 从文字、图形和素材创建可编辑 `.ecproj` 工程、依赖和媒体。当前为开发版，完整 V1 未完成；已发布版本与本地文档候选分别记录。
 
-当前技能源：`0.1.0-dev.68`；消费插件：`0.1.0-dev.70`；15 个独立技能。
+当前技能源：`0.1.0-dev.69`；消费插件：`0.1.0-dev.70`；16 个独立技能（15 领域技能 + 1 内置执行 harness）。
 
 | Field | Value |
 | --- | --- |
-| Metadata version | 0.1.0-dev.68 |
-| Skills source | effectcraft-skills / v0.1.0-dev.68 |
+| Metadata version | 0.1.0-dev.69 |
+| Skills source | effectcraft-skills / v0.1.0-dev.69 |
 | Acceptance | Development; full V1 OPEN |
 
 
 ## 首次使用
 
-在宿主中请求 **`effectcraft-use`**。直接调用时，将 `SKILL_DIR` 设为宿主实际加载的 `SKILL.md` 所在绝对目录。启动入口在用户数据目录准备并校验固定 Python 和 EffectCraft，不修改系统 Python、全局 PATH 或只读技能目录。离线运行须预备锁定官方制品或已有完整缓存。
+在宿主中请求 **`effectcraft-use`**。所有执行经由内置的 **effectcraft-harness** 技能：将 `HARNESS_DIR` 设为该技能实际加载的绝对目录，`SKILL_DIR` 设为领域技能（如 effectcraft-use）实际加载的绝对目录。启动入口在用户数据目录准备并校验固定 Python 和 EffectCraft，不修改系统 Python、全局 PATH 或只读技能目录。离线运行须预备锁定官方制品或已有完整缓存。
 
 <!-- CRAFT_FIRST_USE_START -->
 ```bash
-: "${SKILL_DIR:?Set to the actual loaded skill directory}"
-sh "$SKILL_DIR/scripts/launch.sh" doctor
-sh "$SKILL_DIR/scripts/launch.sh" run --plan "$SKILL_DIR/examples/brand-intro.json" --output "$PWD/effectcraft-result"
+: "${HARNESS_DIR:?Set to the actually loaded effectcraft-harness skill directory}"
+sh "$HARNESS_DIR/scripts/launch.sh" doctor
+sh "$HARNESS_DIR/scripts/launch.sh" run --plan "$SKILL_DIR/examples/brand-intro.json" --output "$PWD/effectcraft-result"
 ```
 <!-- CRAFT_FIRST_USE_END -->
 
 ```powershell
-$env:SKILL_DIR = "<actual loaded skill directory>"
-& (Join-Path $env:SKILL_DIR "scripts/launch.ps1") doctor
+$env:HARNESS_DIR = "<actually loaded effectcraft-harness skill directory>"
+& (Join-Path $env:HARNESS_DIR "scripts/launch.ps1") doctor
 ```
 
 [工作流和交付说明](skills/effectcraft-use/references/workflow.md) · [安装与环境诊断](skills/effectcraft-cli-setup/SKILL.md)。通用 Skills CLI 安装、固定宿主自然语言自动派发仍须独立验收。
@@ -43,6 +43,7 @@ source53／plugin55 的[15 技能报告](docs/evidence/native-smoke-source53-202
 | Skill | 用途 |
 | --- | --- |
 | [effectcraft-use](skills/effectcraft-use/SKILL.md) | 完整任务路由 |
+| [effectcraft-harness](skills/effectcraft-harness/SKILL.md) | 内置执行 harness（全部领域技能的统一执行通道） |
 | [effectcraft-cli](skills/effectcraft-cli/SKILL.md) | CLI 公共操作 |
 | [effectcraft-cli-setup](skills/effectcraft-cli-setup/SKILL.md) | CLI 安装诊断 |
 | [effectcraft-cli-project](skills/effectcraft-cli-project/SKILL.md) | 工程与素材管理 |
@@ -69,6 +70,8 @@ source53／plugin55 的[15 技能报告](docs/evidence/native-smoke-source53-202
 
 
 ## 维护与版本历史
+
+技能源 dev.69 将 15 个领域技能的重复执行实现收敛为内置 **effectcraft-harness** 技能：共享脚本与六个入口（launch.sh／launch.ps1／cli.py／commands.py／workflow.py／bootstrap.py）只保留一份，删除未被引用的 additional_platforms.py，领域技能瘦身为文档与示例并按名称路由到 harness 执行。本仓库测试与同步脚本按新布局更新；行为合同由既有测试守护，目标平台与宿主验收仍开放，当前为开发版。
 
 技能源维护执行代码，插件消费固定标签、提交及完整技能摘要。唯一增量规格为插件的 `openspec/changes/establish-v1-plugin`；未完成门禁不归档。公共 `craft-task/v1` 和 `craft-artifact/v1` 的所有者保持 ArtCraft，本仓仅消费。
 

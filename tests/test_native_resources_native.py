@@ -18,7 +18,7 @@ class NativeResourceAcceptance(unittest.TestCase):
  def test_desktop(self):self.exercise('desktop')
  def exercise(self,mode):
   base=Path(os.environ['CRAFT_NATIVE_RESOURCES_ROOT']);root=base/mode;root.mkdir(parents=True);self.assertFalse(any(root.iterdir()))
-  skill=root/'single readonly skill';shutil.copytree(ROOT/'skills/effectcraft-use',skill,ignore=shutil.ignore_patterns('__pycache__','*.pyc'))
+  skill=root/'single readonly skill';shutil.copytree(ROOT/'skills/effectcraft-harness',skill,ignore=shutil.ignore_patterns('__pycache__','*.pyc'))
   for f in skill.rglob('*'):f.chmod(0o555 if f.is_dir() else 0o444)
   skill.chmod(0o555);installed=files(skill);env=dict(os.environ,CRAFT_RUNTIME_HOME=os.environ['CRAFT_NATIVE_RESOURCES_RUNTIME'],PATH='/opt/homebrew/bin:/usr/bin:/bin');state=root/'state';output=root/'delivery';actions=[]
   cube='LUT_3D_SIZE 2\n'+''.join(f'{b} {g} {r}\n' for b in range(2) for g in range(2) for r in range(2))

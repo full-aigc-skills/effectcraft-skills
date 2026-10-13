@@ -5,7 +5,7 @@ import unittest
 from unittest.mock import patch
 import tempfile
 
-SOURCE = Path(__file__).resolve().parents[1] / 'skills/effectcraft-use/scripts/workflow.py'
+SOURCE = Path(__file__).resolve().parents[1] / 'skills/effectcraft-harness/scripts/workflow.py'
 
 class WorkflowTests(unittest.TestCase):
     def test_bad_asset_digest_fails_before_install_or_output_claim(self):

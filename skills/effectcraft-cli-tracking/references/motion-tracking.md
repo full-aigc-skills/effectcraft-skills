@@ -6,7 +6,7 @@ Check actual source pixels before configuring a tracker. Native 0.2.0 has passed
 
 ## 输入与预览 / Input and preview
 
-使用当前技能的 `scripts/cli.py`，首次调用自动安装锁定 CLI。用 `file.import` 回执取得素材 item，再通过 `layer.addItem` 回执取得源 layer。检查 `info` 的宽高、帧率、时长、合成和图层，渲染至少两个已知时间点，核对源纹理、位置和尺寸。不能只检查图片非空或“有颜色”：已有图形透过缺失的视频图层出现时会误报成功。已有独立解码工具可提供参考帧，但其成功不能替代原生预览。
+使用 effectcraft-harness 技能的 `scripts/cli.py`，首次调用自动安装锁定 CLI。用 `file.import` 回执取得素材 item，再通过 `layer.addItem` 回执取得源 layer。检查 `info` 的宽高、帧率、时长、合成和图层，渲染至少两个已知时间点，核对源纹理、位置和尺寸。不能只检查图片非空或“有颜色”：已有图形透过缺失的视频图层出现时会误报成功。已有独立解码工具可提供参考帧，但其成功不能替代原生预览。
 
 Use this skill's own launcher and actual native receipt IDs. Inspect footage and render at least two known times. Compare the expected source texture, placement and dimensions; a colored picture may show unrelated layers beneath an undecoded video. An independently decoded reference cannot replace the native preview.
 

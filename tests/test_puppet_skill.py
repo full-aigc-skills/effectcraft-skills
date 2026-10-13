@@ -6,8 +6,12 @@ class PuppetSkillTests(unittest.TestCase):
  def test_puppet_family_has_independent_local_resources(self):
   name='effectcraft-cli-puppet';suite=json.loads((ROOT/'skill-suite.json').read_text());skills={x['name']:x for x in suite['skills']};self.assertIn(name,skills);self.assertEqual(skills[name]['kind'],'scenario')
   rows=json.loads((ROOT/'skills/effectcraft-use/references/command-coverage.json').read_text())['commands'];family=[x for x in rows if x['id'].startswith('puppet.')];self.assertEqual(len(family),10);self.assertTrue(all(x['ownerSkill']==name for x in family))
-  for item in ['SKILL.md','scripts/bootstrap.py','scripts/commands.py','scripts/runtime.lock.json','references/puppet-scene.md']:
+  for item in ['SKILL.md','references/puppet-scene.md']:
    self.assertTrue((ROOT/'skills'/name/item).is_file(),item)
+  harness=ROOT/'skills/effectcraft-harness'
+  for item in ['scripts/bootstrap.py','scripts/commands.py','scripts/runtime.lock.json']:
+   self.assertTrue((harness/item).is_file(),item)
+  self.assertFalse((ROOT/'skills'/name/'scripts').exists(),'领域技能不再自带执行实现')
  def test_record_follow_recipe_covers_each_puppet_command_and_revision(self):
   base=ROOT/'skills/effectcraft-use'
   create=json.loads((base/'examples/puppet-record-follow-create.json').read_text())

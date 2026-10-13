@@ -7,7 +7,7 @@ import shutil
 import subprocess
 import unittest
 
-ROOT=Path(__file__).resolve().parents[1]/'skills/effectcraft-use/scripts'
+ROOT=Path(__file__).resolve().parents[1]/'skills/effectcraft-harness/scripts'
 ENGINE=shutil.which('powershell.exe') or shutil.which('pwsh')
 @unittest.skipUnless(ENGINE,'PowerShell unavailable; platform gate remains open')
 class PowerShellEntryTests(unittest.TestCase):

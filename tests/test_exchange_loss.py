@@ -5,7 +5,7 @@ from pathlib import Path
 import tempfile
 import unittest
 
-SOURCE=Path(__file__).resolve().parents[1]/'skills/effectcraft-use/scripts/exchange_loss.py'
+SOURCE=Path(__file__).resolve().parents[1]/'skills/effectcraft-harness/scripts/exchange_loss.py'
 class ExchangeLossTests(unittest.TestCase):
  def module(self):
   spec=importlib.util.spec_from_file_location('exchange_loss',SOURCE);m=importlib.util.module_from_spec(spec);spec.loader.exec_module(m);return m

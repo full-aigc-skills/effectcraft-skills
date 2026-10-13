@@ -10,7 +10,7 @@ from types import SimpleNamespace
 import unittest
 from unittest.mock import patch
 
-ROOT=Path(__file__).resolve().parents[1];BASE=ROOT/'skills/effectcraft-use'
+ROOT=Path(__file__).resolve().parents[1];BASE=ROOT/'skills/effectcraft-harness'
 def load(name):
     spec=importlib.util.spec_from_file_location('binding_test_'+name,BASE/'scripts'/(name+'.py'))
     result=importlib.util.module_from_spec(spec);spec.loader.exec_module(result);return result
@@ -40,10 +40,13 @@ class RuntimeBindingTests(unittest.TestCase):
         self.assertEqual(result['script'],str(frozen/'scripts/managed.py'));self.assertEqual((frozen/'scripts/managed.py').read_bytes(),before)
         self.assertEqual(result['runtimeHome'],str(self.home))
 
-    def test_snapshot_contains_parameter_and_additional_platform_contracts(self):
+    def test_snapshot_contains_parameter_and_platform_contracts(self):
         frozen=self.frozen()
-        for name in ('parameter-contract.json','additional-platforms.lock.json','web_adapter.mjs'):
+        # 无引用的 additional_platforms 载荷已在收敛中删除，不再进入执行快照。
+        for name in ('parameter-contract.json','web_adapter.mjs'):
             self.assertEqual((frozen/'scripts'/name).read_bytes(),(self.source/'scripts'/name).read_bytes())
+        self.assertFalse((frozen/'scripts/additional-platforms.lock.json').exists())
+        self.assertFalse((frozen/'scripts/additional_platforms.py').exists())
 
     def test_new_task_uses_changed_source_without_mutating_old_snapshot(self):
         old=self.frozen();old_bytes=(old/'scripts/managed.py').read_bytes()
@@ -103,17 +106,15 @@ class RuntimeBindingTests(unittest.TestCase):
         self.assertEqual(self.store.path('task').read_bytes(),before);self.assertTrue(partial[0].exists())
 
     def test_all_independent_skill_entries_freeze_before_any_native_call(self):
-        suite=json.loads((ROOT/'skill-suite.json').read_text(encoding='utf-8'))
-        for row in suite['skills']:
-            name=row['name'];path=ROOT/'skills'/name/'scripts/managed.py'
-            # 每项独立技能核验后释放本测试的冻结副本，避免同时保留15份导致ENOSPC。
-            with self.subTest(skill=name),tempfile.TemporaryDirectory(dir=self.root) as case:
-                spec=importlib.util.spec_from_file_location('independent_'+name,path);managed=importlib.util.module_from_spec(spec);spec.loader.exec_module(managed)
-                store=managed.load('task_store').Store(Path(case)/'standalone state'/name)
-                plan=json.loads((BASE/'examples/brand-intro.json').read_text(encoding='utf-8'))
-                with patch.object(managed,'supervise',side_effect=lambda s,t,h:s.read(t)):
-                    state=managed.run(store,plan,self.root/'outputs'/name,self.home,task='registered')
-                self.m.resolve(store,'registered');self.assertEqual(state['state'],'planned')
+        # 执行实现唯一收敛在 harness：对 harness 独立冻结核验；领域技能不再携带脚本。
+        name='effectcraft-harness';path=ROOT/'skills'/name/'scripts/managed.py'
+        with self.subTest(skill=name),tempfile.TemporaryDirectory(dir=self.root) as case:
+            spec=importlib.util.spec_from_file_location('independent_'+name,path);managed=importlib.util.module_from_spec(spec);spec.loader.exec_module(managed)
+            store=managed.load('task_store').Store(Path(case)/'standalone state'/name)
+            plan=json.loads((ROOT/'skills/effectcraft-use/examples/brand-intro.json').read_text(encoding='utf-8'))
+            with patch.object(managed,'supervise',side_effect=lambda s,t,h:s.read(t)):
+                state=managed.run(store,plan,self.root/'outputs'/name,self.home,task='registered')
+            self.m.resolve(store,'registered');self.assertEqual(state['state'],'planned')
         self.assertFalse(self.home.exists());self.assertFalse((self.root/'outputs').exists())
 
     def test_source_symlink_is_not_copied(self):
@@ -189,7 +190,7 @@ class RuntimeBindingTests(unittest.TestCase):
             self.m.handoff(self.store,args,frozen/'scripts/managed.py');execute.assert_not_called();bridge.assert_not_called()
 
     def test_public_run_registers_complete_snapshot_before_supervision(self):
-        managed=load('managed');plan=json.loads((BASE/'examples/brand-intro.json').read_text(encoding='utf-8'))
+        managed=load('managed');plan=json.loads((ROOT/'skills/effectcraft-use/examples/brand-intro.json').read_text(encoding='utf-8'))
         with patch.object(managed,'HERE',self.source/'scripts'),patch.object(managed,'supervise',side_effect=lambda s,t,h:s.read(t)):
             state=managed.run(self.store,plan,self.root/'delivery',self.home,task='registered')
         self.assertEqual(state['state'],'planned');bound=self.m.resolve(self.store,'registered')

@@ -7,7 +7,7 @@ import unittest
 import zlib
 
 ROOT = Path(__file__).resolve().parents[1]
-spec = importlib.util.spec_from_file_location('sequence', ROOT/'skills/effectcraft-use/scripts/image_sequence.py')
+spec = importlib.util.spec_from_file_location('sequence', ROOT/'skills/effectcraft-harness/scripts/image_sequence.py')
 sequence = importlib.util.module_from_spec(spec); spec.loader.exec_module(sequence)
 
 

@@ -7,7 +7,7 @@ import tempfile
 import unittest
 from unittest.mock import patch
 
-HERE=Path(__file__).resolve().parents[1]/'skills/effectcraft-use/scripts'
+HERE=Path(__file__).resolve().parents[1]/'skills/effectcraft-harness/scripts'
 def load_store():
  spec=importlib.util.spec_from_file_location('shared_project_store',HERE/'task_store.py');value=importlib.util.module_from_spec(spec);spec.loader.exec_module(value);return value
 class ManagedProjectClaimTests(unittest.TestCase):

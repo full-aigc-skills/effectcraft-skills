@@ -8,7 +8,7 @@ class NativeCompositionTests(unittest.TestCase):
  def test_public_readonly_single_skill_and_work_area_shortcuts(self):
   root=Path(os.environ.get('CRAFT_COMPOSITION_ROOT') or tempfile.mkdtemp(prefix='composition contract '));root.mkdir(parents=True,exist_ok=True)
   self.assertFalse(any(root.iterdir()),'preserve evidence')
-  skill=root/'single readonly skill';shutil.copytree(ROOT/'skills/effectcraft-use',skill,ignore=shutil.ignore_patterns('__pycache__','*.pyc'))
+  skill=root/'single readonly skill';shutil.copytree(ROOT/'skills/effectcraft-harness',skill,ignore=shutil.ignore_patterns('__pycache__','*.pyc'))
   for p in skill.rglob('*'):p.chmod(0o555 if p.is_dir() else 0o444)
   skill.chmod(0o555)
   def files(path):return {str(p.relative_to(path)):hashlib.sha256(p.read_bytes()).hexdigest() for p in path.rglob('*') if p.is_file()}

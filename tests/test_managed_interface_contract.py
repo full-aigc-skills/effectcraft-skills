@@ -8,14 +8,14 @@ import subprocess
 import sys
 import tempfile
 import unittest
-BASE=Path(__file__).resolve().parents[1]/'skills/effectcraft-use'
+BASE=Path(__file__).resolve().parents[1]/'skills/effectcraft-use';HARNESS=Path(__file__).resolve().parents[1]/'skills/effectcraft-harness'
 class PublicInterfaceContractTests(unittest.TestCase):
  def setUp(self):
   self.tmp=tempfile.TemporaryDirectory();self.addCleanup(self.tmp.cleanup);self.root=Path(self.tmp.name)
-  spec=importlib.util.spec_from_file_location('interface_contract_store',BASE/'scripts/task_store.py');self.tasks=importlib.util.module_from_spec(spec);spec.loader.exec_module(self.tasks)
+  spec=importlib.util.spec_from_file_location('interface_contract_store',HARNESS/'scripts/task_store.py');self.tasks=importlib.util.module_from_spec(spec);spec.loader.exec_module(self.tasks)
  def inventory(self):return {p.relative_to(self.root).as_posix():hashlib.sha256(p.read_bytes()).hexdigest() for p in self.root.rglob('*') if p.is_file()}
  def invoke(self,state,*args):
-  r=subprocess.run([sys.executable,'-I','-B',str(BASE/'scripts/managed.py'),'--state-root',str(state),'--runtime-home',str(self.root/'absent runtime'),*map(str,args)],capture_output=True,text=True,encoding='utf-8',timeout=40)
+  r=subprocess.run([sys.executable,'-I','-B',str(HARNESS/'scripts/managed.py'),'--state-root',str(state),'--runtime-home',str(self.root/'absent runtime'),*map(str,args)],capture_output=True,text=True,encoding='utf-8',timeout=40)
   self.assertNotIn('Traceback',r.stderr);return r,json.loads(r.stdout)
  def plans(self):return [('workflow','brand-intro.json'),('commands','commands-revision-create.json'),('desktop','desktop-first-use.json')]
  def test_public_preflight_all_modes_and_input_digest_is_readonly(self):

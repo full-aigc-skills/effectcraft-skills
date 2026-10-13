@@ -6,7 +6,7 @@ import tempfile
 import unittest
 from unittest.mock import patch
 
-SCRIPT=Path(__file__).resolve().parents[1]/'skills/effectcraft-use/scripts/engineering_review.py'
+SCRIPT=Path(__file__).resolve().parents[1]/'skills/effectcraft-harness/scripts/engineering_review.py'
 
 class EngineeringReviewTests(unittest.TestCase):
     def setUp(self):

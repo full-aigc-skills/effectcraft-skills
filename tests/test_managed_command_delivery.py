@@ -11,7 +11,7 @@ import zlib
 from unittest.mock import patch
 
 ROOT=Path(__file__).resolve().parents[1]
-SCRIPT=ROOT/'skills/effectcraft-use/scripts/command_delivery.py'
+SCRIPT=ROOT/'skills/effectcraft-harness/scripts/command_delivery.py'
 
 
 def png(width=2,height=2,alpha=True):

@@ -7,7 +7,7 @@ import sys
 import tempfile
 import unittest
 
-SCRIPT=Path(__file__).resolve().parents[1]/'skills/effectcraft-use/scripts/managed.py'
+SCRIPT=Path(__file__).resolve().parents[1]/'skills/effectcraft-harness/scripts/managed.py'
 
 
 class ManagedEntryTests(unittest.TestCase):

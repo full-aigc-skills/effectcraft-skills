@@ -41,7 +41,8 @@ class TaskSkillFirstUseTests(unittest.TestCase):
         cls.fixture_directory = tempfile.TemporaryDirectory(prefix='effectcraft-task-fixture-')
         cls.fixture = Path(cls.fixture_directory.name)
         source = ROOT / 'skills/effectcraft-use'
-        spec = importlib.util.spec_from_file_location('effect_task_fixture', source / 'scripts/workflow.py')
+        harness = ROOT / 'skills/effectcraft-harness'
+        spec = importlib.util.spec_from_file_location('effect_task_fixture', harness / 'scripts/workflow.py')
         workflow = importlib.util.module_from_spec(spec)
         spec.loader.exec_module(workflow)
         cls.base = cls.fixture / 'base'

@@ -1,5 +1,11 @@
 # Version-bound release records
 
+## dev.69 — 2026-10-13
+
+收敛重复执行实现：新增内置 effectcraft-harness 技能承载唯一脚本载荷（六个入口＋执行契约 JSON），15 个领域技能删除各自 scripts/ 并在文档中按名称路由到 harness；删除无引用的 additional_platforms.py 及其测试；同步与能力矩阵脚本按新布局更新。本仓库回归按新布局维护；目标平台与宿主验收仍开放。
+
+Converged duplicated execution payloads into one built-in effectcraft-harness skill (six documented entries plus execution-contract JSON); 15 domain skills dropped their scripts/ and route by name; removed unreferenced additional_platforms.py; sync and capability generators updated. Target-platform and host acceptance remain open.
+
 ## dev.63 — 2026-10-09
 
 Source dev.63 / plugin dev.65 distributes source-producer guards and public artifacts for commands and owned desktop sessions: separate projects retain actual task identity, immutable package versions, native projects, matching PNGs and media dependencies. Legacy delivery remains readable. Portable mapping does not replace technical, creative or user acceptance. Prior candidates retain their observation-time scope; see [release validation](docs/evidence/release63-validation-20261009.json). Font/LUT discovery, complete fault matrices, other native platforms and fixed-host dispatch remain open;5.1–5.3 remain unchecked and V1 has69 unfinished tasks.

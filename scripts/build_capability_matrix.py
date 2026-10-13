@@ -59,8 +59,9 @@ def bound_evidence(base, runtime, python):
         return {},reference
 
 def build(check=False):
-    base=ROOT/'skills/effectcraft-use';runtime=json.loads((base/'scripts/runtime.lock.json').read_text(encoding='utf-8'))
-    python=json.loads((base/'scripts/python.lock.json').read_text(encoding='utf-8'))
+    harness=ROOT/'skills/effectcraft-harness';base=ROOT/'skills/effectcraft-use'
+    runtime=json.loads((harness/'scripts/runtime.lock.json').read_text(encoding='utf-8'))
+    python=json.loads((harness/'scripts/python.lock.json').read_text(encoding='utf-8'))
     evidence,binding=bound_evidence(base,runtime,python);rows=[]
     for key,artifact in runtime['artifacts'].items():
         proof=evidence.get(key,{})

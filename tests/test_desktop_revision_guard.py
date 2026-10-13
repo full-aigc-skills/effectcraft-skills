@@ -6,7 +6,7 @@ import re
 import tempfile
 import unittest
 
-HERE=Path(__file__).resolve().parents[1]/'skills/effectcraft-use/scripts'
+HERE=Path(__file__).resolve().parents[1]/'skills/effectcraft-harness/scripts'
 def load(name):
  path=HERE/(name+'.py');assert path.is_file(),'desktop revision guard is missing'
  spec=importlib.util.spec_from_file_location('guard_test_'+name,path);value=importlib.util.module_from_spec(spec);spec.loader.exec_module(value);return value

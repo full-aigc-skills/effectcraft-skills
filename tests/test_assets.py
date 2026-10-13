@@ -9,7 +9,7 @@ import unittest
 import zlib
 
 ROOT = Path(__file__).resolve().parents[1]
-spec = importlib.util.spec_from_file_location('workflow', ROOT / 'skills/effectcraft-use/scripts/workflow.py')
+spec = importlib.util.spec_from_file_location('workflow', ROOT / 'skills/effectcraft-harness/scripts/workflow.py')
 workflow = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(workflow)
 

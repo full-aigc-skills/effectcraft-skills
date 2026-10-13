@@ -8,7 +8,7 @@ import tempfile
 import unittest
 import zlib
 
-SCRIPT=Path(__file__).resolve().parents[1]/'skills/effectcraft-use/scripts/quality_review.py'
+SCRIPT=Path(__file__).resolve().parents[1]/'skills/effectcraft-harness/scripts/quality_review.py'
 
 class JudgeV2Tests(unittest.TestCase):
     def setUp(self):

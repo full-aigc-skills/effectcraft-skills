@@ -10,7 +10,7 @@ import tempfile
 import unittest
 from unittest.mock import patch
 
-SCRIPT=Path(__file__).resolve().parents[1]/'skills/effectcraft-use/scripts/process_guard.py'
+SCRIPT=Path(__file__).resolve().parents[1]/'skills/effectcraft-harness/scripts/process_guard.py'
 def load():
     spec=importlib.util.spec_from_file_location('probe_guard',SCRIPT);m=importlib.util.module_from_spec(spec);spec.loader.exec_module(m);return m
 

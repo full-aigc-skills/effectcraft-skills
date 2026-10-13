@@ -39,7 +39,7 @@ class CommandCompletionNativeCrashTests(unittest.TestCase):
         base=Path(os.environ.get('CRAFT_COMPLETION_CRASH_ROOT') or tempfile.mkdtemp(prefix='effectcraft completion crash '))
         case=base/(mode+'-'+point);case.mkdir(parents=True,exist_ok=True)
         self.assertFalse(any(case.iterdir()),'preserve previous evidence; select a fresh acceptance root')
-        skill=case/'only readonly skill';shutil.copytree(ROOT/'skills/effectcraft-use',skill,ignore=shutil.ignore_patterns('__pycache__','*.pyc'))
+        skill=case/'only readonly skill';shutil.copytree(ROOT/'skills/effectcraft-harness',skill,ignore=shutil.ignore_patterns('__pycache__','*.pyc'))
         for path in skill.rglob('*'):path.chmod(0o555 if path.is_dir() else 0o444)
         skill.chmod(0o555);installed=files(skill)
         managed=load(skill/'scripts/managed.py');tasks=managed.load('task_store');store=tasks.Store(case/'state')

@@ -4,7 +4,7 @@ from unittest.mock import patch
 from pathlib import Path
 ROOT=Path(__file__).resolve().parents[1]
 def managed():
- s=importlib.util.spec_from_file_location('cancel_family_test',ROOT/'skills/effectcraft-use/scripts/managed.py');m=importlib.util.module_from_spec(s);s.loader.exec_module(m);return m
+ s=importlib.util.spec_from_file_location('cancel_family_test',ROOT/'skills/effectcraft-harness/scripts/managed.py');m=importlib.util.module_from_spec(s);s.loader.exec_module(m);return m
 class CancelFamilyTests(unittest.TestCase):
  def setUp(self):
   self.tmp=tempfile.TemporaryDirectory();self.addCleanup(self.tmp.cleanup);self.root=Path(self.tmp.name);self.m=managed();self.store=self.m.load('task_store').Store(self.root/'state');self.create('root')

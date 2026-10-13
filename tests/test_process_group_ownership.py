@@ -1,7 +1,7 @@
 """真实POSIX后代清理和归属持有；沙箱禁用ps不允许漏掉已经成为孤儿的成员。"""
 import json,os,signal,shutil,subprocess,sys,tempfile,time,unittest
 from pathlib import Path
-SCRIPT=Path(__file__).resolve().parents[1]/'skills/effectcraft-use/scripts/process_guard.py'
+SCRIPT=Path(__file__).resolve().parents[1]/'skills/effectcraft-harness/scripts/process_guard.py'
 @unittest.skipUnless(sys.platform=='darwin' and shutil.which('sandbox-exec'),'actual macOS sandbox; other native targets remain open')
 class GroupOwnershipTests(unittest.TestCase):
     def fixture(self,root):

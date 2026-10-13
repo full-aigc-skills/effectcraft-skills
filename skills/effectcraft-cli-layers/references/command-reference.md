@@ -14,7 +14,7 @@ New Project
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-project`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe file.newProject`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe file.newProject`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -32,7 +32,7 @@ Open Demo Project
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-project`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe file.openDemoProject`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe file.openDemoProject`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -50,7 +50,7 @@ Open Project...
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-project`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe file.open`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe file.open`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -68,7 +68,7 @@ Save
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-project`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe file.save`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe file.save`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -86,7 +86,7 @@ Save As...
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-project`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe file.saveAs`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe file.saveAs`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -104,7 +104,7 @@ Increment and Save
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-project`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: the project has not been saved yet。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe file.incrementAndSave`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe file.incrementAndSave`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -122,7 +122,7 @@ Revert
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-project`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: the project has not been saved yet。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe file.revert`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe file.revert`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -140,7 +140,7 @@ File...
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-project`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe file.import`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe file.import`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -158,7 +158,7 @@ Project Settings...
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-project`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe file.projectSettings`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe file.projectSettings`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -176,7 +176,7 @@ Cycle Project Bit Depth
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-project`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe file.cycleBitDepth`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe file.cycleBitDepth`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -194,7 +194,7 @@ Video Rendering and Effects
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-export`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe render.backend`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe render.backend`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -212,7 +212,7 @@ Roto Brush Models
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-masks`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe roto.models`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe roto.models`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -230,7 +230,7 @@ Use Roto Brush Model
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-masks`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe roto.model.select`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe roto.model.select`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -248,7 +248,7 @@ Install Roto Brush Model
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-masks`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe roto.model.install`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe roto.model.install`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -266,7 +266,7 @@ Download Roto Brush Model
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-masks`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe roto.model.download`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe roto.model.download`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -284,7 +284,7 @@ Remove Roto Brush Model
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-masks`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe roto.model.remove`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe roto.model.remove`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -302,7 +302,7 @@ Face Tracking Models
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe face.models`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe face.models`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -320,7 +320,7 @@ Use Face Tracking Model
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe face.model.select`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe face.model.select`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -338,7 +338,7 @@ Install Face Tracking Model
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe face.model.install`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe face.model.install`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -356,7 +356,7 @@ Download Face Tracking Model
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe face.model.download`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe face.model.download`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -374,7 +374,7 @@ Remove Face Tracking Model
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe face.model.remove`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe face.model.remove`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -392,7 +392,7 @@ Undo
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: nothing to undo。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe edit.undo`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe edit.undo`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -410,7 +410,7 @@ Redo
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: nothing to redo。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe edit.redo`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe edit.redo`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -428,7 +428,7 @@ Cut
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe edit.cut`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe edit.cut`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -446,7 +446,7 @@ Copy
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe edit.copy`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe edit.copy`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -464,7 +464,7 @@ Copy with Property Links
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe edit.copyWithPropertyLinks`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe edit.copyWithPropertyLinks`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -482,7 +482,7 @@ Copy with Relative Property Links
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe edit.copyWithRelativePropertyLinks`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe edit.copyWithRelativePropertyLinks`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -500,7 +500,7 @@ Copy Expression Only
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe edit.copyExpressionOnly`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe edit.copyExpressionOnly`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -518,7 +518,7 @@ Paste
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe edit.paste`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe edit.paste`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -536,7 +536,7 @@ Paste Reversed Keyframes
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe edit.pasteReversedKeyframes`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe edit.pasteReversedKeyframes`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -554,7 +554,7 @@ Clear
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe edit.clear`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe edit.clear`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -572,7 +572,7 @@ Duplicate
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe edit.duplicate`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe edit.duplicate`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -590,7 +590,7 @@ Split Layer
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe edit.splitLayer`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe edit.splitLayer`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -608,7 +608,7 @@ Lift Work Area
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe edit.liftWorkArea`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe edit.liftWorkArea`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -626,7 +626,7 @@ Extract Work Area
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe edit.extractWorkArea`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe edit.extractWorkArea`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -644,7 +644,7 @@ Select All
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe edit.selectAll`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe edit.selectAll`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -662,7 +662,7 @@ Deselect All
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe edit.deselectAll`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe edit.deselectAll`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -680,7 +680,7 @@ Label
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe edit.label`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe edit.label`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -698,7 +698,7 @@ Select Label Group
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: select layers or project items first。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe edit.selectLabelGroup`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe edit.selectLabelGroup`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -716,7 +716,7 @@ Undo
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe edit.purgeUndo`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe edit.purgeUndo`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -734,7 +734,7 @@ Purge
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe edit.purge`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe edit.purge`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -752,7 +752,7 @@ Disk Cache Statistics
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe cache.diskStats`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe cache.diskStats`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -770,7 +770,7 @@ Edit Original...
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: select a footage item or layer。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe edit.editOriginal`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe edit.editOriginal`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -788,7 +788,7 @@ History
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe edit.history.list`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe edit.history.list`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -806,7 +806,7 @@ Go to History State
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe edit.history.goto`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe edit.history.goto`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -824,7 +824,7 @@ New Composition...
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-composition`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe comp.new`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe comp.new`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -842,7 +842,7 @@ Composition Settings...
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-composition`。
 - 当前工作流映射 / Workflow mapped: true。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe comp.settings`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe comp.settings`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -860,7 +860,7 @@ Set Poster Time
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-composition`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe comp.setPosterTime`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe comp.setPosterTime`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -878,7 +878,7 @@ Trim Comp to Work Area
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-composition`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe comp.trimToWorkArea`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe comp.trimToWorkArea`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -896,7 +896,7 @@ Open Composition
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-composition`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe comp.open`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe comp.open`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -914,7 +914,7 @@ Close Composition
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-composition`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe comp.close`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe comp.close`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -932,7 +932,7 @@ Set Work Area
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-composition`。
 - 当前工作流映射 / Workflow mapped: true。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe comp.workArea`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe comp.workArea`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -950,7 +950,7 @@ Composition Switch
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-composition`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe comp.setSwitch`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe comp.setSwitch`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -968,7 +968,7 @@ Add Marker
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-composition`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe comp.addMarker`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe comp.addMarker`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -986,7 +986,7 @@ Text
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-layers`。
 - 当前工作流映射 / Workflow mapped: true。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.newText`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layer.newText`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -1004,7 +1004,7 @@ Solid...
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-layers`。
 - 当前工作流映射 / Workflow mapped: true。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.newSolid`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layer.newSolid`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -1022,7 +1022,7 @@ Null Object
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-layers`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.newNull`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layer.newNull`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -1042,7 +1042,7 @@ Shape Layer
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-layers`。
 - 当前工作流映射 / Workflow mapped: true。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.newShape`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layer.newShape`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -1062,7 +1062,7 @@ Adjustment Layer
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-layers`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.newAdjustment`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layer.newAdjustment`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -1080,7 +1080,7 @@ Layer Settings...
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-layers`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.settings`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layer.settings`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -1098,7 +1098,7 @@ Add Footage to Comp
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-layers`。
 - 当前工作流映射 / Workflow mapped: true。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.addItem`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layer.addItem`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -1116,7 +1116,7 @@ Select Layers
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-layers`。
 - 当前工作流映射 / Workflow mapped: true。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.select`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layer.select`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -1136,7 +1136,7 @@ Select Next Layer
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-layers`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.selectNext`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layer.selectNext`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -1154,7 +1154,7 @@ Select Previous Layer
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-layers`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.selectPrevious`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layer.selectPrevious`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -1172,7 +1172,7 @@ Layer Switch
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-camera`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.setSwitch`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layer.setSwitch`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -1190,7 +1190,7 @@ Rename
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-layers`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.rename`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layer.rename`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -1208,7 +1208,7 @@ Layer Comment
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-layers`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.setComment`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layer.setComment`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -1226,7 +1226,7 @@ Blending Mode
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-layers`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.setBlendMode`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layer.setBlendMode`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -1244,7 +1244,7 @@ Track Matte
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-layers`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.setTrackMatte`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layer.setTrackMatte`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -1262,7 +1262,7 @@ Parent
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-layers`。
 - 当前工作流映射 / Workflow mapped: true。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.setParent`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layer.setParent`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -1282,7 +1282,7 @@ Layer Timing
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-layers`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.timing`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layer.timing`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -1300,7 +1300,7 @@ Slip Edit
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-layers`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.slip`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layer.slip`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -1318,7 +1318,7 @@ Slip Edit 1 Frame Earlier
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-layers`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.slipBack`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layer.slipBack`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -1336,7 +1336,7 @@ Slip Edit 1 Frame Later
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-layers`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.slipForward`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layer.slipForward`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -1354,7 +1354,7 @@ Arrange
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-layers`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.arrange`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layer.arrange`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -1372,7 +1372,7 @@ Pre-compose...
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-layers`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.precompose`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layer.precompose`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -1390,7 +1390,7 @@ New Mask
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-layers`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.addMask`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layer.addMask`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -1408,7 +1408,7 @@ Mask Mode
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-layers`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.setMask`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layer.setMask`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -1426,7 +1426,7 @@ Add (Shape)
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-layers`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.addShapeItem`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layer.addShapeItem`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -1444,7 +1444,7 @@ Edit Text
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-layers`。
 - 当前工作流映射 / Workflow mapped: true。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.setText`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layer.setText`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -1462,7 +1462,7 @@ Transform
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-layers`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.transform`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layer.transform`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -1480,7 +1480,7 @@ Convert to Editable Styles
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-layers`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.style.convertToEditable`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layer.style.convertToEditable`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -1498,7 +1498,7 @@ Show All
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-layers`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.style.showAll`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layer.style.showAll`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -1516,7 +1516,7 @@ Remove All
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-layers`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.style.removeAll`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layer.style.removeAll`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -1534,7 +1534,7 @@ Drop Shadow
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-layers`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.style.dropShadow`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layer.style.dropShadow`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -1552,7 +1552,7 @@ Inner Shadow
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-layers`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.style.innerShadow`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layer.style.innerShadow`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -1570,7 +1570,7 @@ Outer Glow
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-layers`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.style.outerGlow`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layer.style.outerGlow`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -1588,7 +1588,7 @@ Inner Glow
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-layers`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.style.innerGlow`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layer.style.innerGlow`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -1606,7 +1606,7 @@ Bevel and Emboss
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-layers`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.style.bevelEmboss`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layer.style.bevelEmboss`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -1624,7 +1624,7 @@ Satin
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-layers`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.style.satin`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layer.style.satin`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -1642,7 +1642,7 @@ Color Overlay
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-layers`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.style.colorOverlay`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layer.style.colorOverlay`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -1660,7 +1660,7 @@ Gradient Overlay
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-layers`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.style.gradientOverlay`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layer.style.gradientOverlay`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -1678,7 +1678,7 @@ Stroke
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-layers`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.style.stroke`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layer.style.stroke`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -1696,7 +1696,7 @@ Add Layer Style
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-layers`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.style.add`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layer.style.add`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -1714,7 +1714,7 @@ Remove Layer Style
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-layers`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.style.remove`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layer.style.remove`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -1732,7 +1732,7 @@ Toggle Layer Style
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-layers`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.style.toggle`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layer.style.toggle`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -1750,7 +1750,7 @@ Global Light
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-layers`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.style.globalLight`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layer.style.globalLight`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -1768,7 +1768,7 @@ List Layer Styles
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-layers`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.style.list`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layer.style.list`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -1786,7 +1786,7 @@ Auto-Orient...
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-layers`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.autoOrient`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layer.autoOrient`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -1804,7 +1804,7 @@ Light...
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-camera`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.newLight`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layer.newLight`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -1822,7 +1822,7 @@ Camera...
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-camera`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.newCamera`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layer.newCamera`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -1840,7 +1840,7 @@ Camera Settings...
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-camera`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.cameraSettings`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layer.cameraSettings`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -1858,7 +1858,7 @@ Light Settings...
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-layers`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.lightSettings`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layer.lightSettings`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -1876,7 +1876,7 @@ Switch 3D View
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-camera`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe view.set3DView`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe view.set3DView`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -1894,7 +1894,7 @@ Active Camera
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-camera`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe view.3d.activeCamera`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe view.3d.activeCamera`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -1912,7 +1912,7 @@ Default
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-camera`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe view.3d.default`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe view.3d.default`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -1930,7 +1930,7 @@ Front
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-camera`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe view.3d.front`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe view.3d.front`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -1948,7 +1948,7 @@ Left
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-camera`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe view.3d.left`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe view.3d.left`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -1966,7 +1966,7 @@ Top
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-camera`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe view.3d.top`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe view.3d.top`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -1984,7 +1984,7 @@ Back
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-camera`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe view.3d.back`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe view.3d.back`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -2002,7 +2002,7 @@ Right
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-camera`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe view.3d.right`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe view.3d.right`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -2020,7 +2020,7 @@ Bottom
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-camera`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe view.3d.bottom`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe view.3d.bottom`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -2038,7 +2038,7 @@ Custom View 1
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-camera`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe view.3d.custom1`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe view.3d.custom1`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -2056,7 +2056,7 @@ Custom View 2
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-camera`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe view.3d.custom2`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe view.3d.custom2`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -2074,7 +2074,7 @@ Custom View 3
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-camera`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe view.3d.custom3`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe view.3d.custom3`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -2092,7 +2092,7 @@ Switch to Last 3D View
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-camera`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe view.3d.last`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe view.3d.last`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -2110,7 +2110,7 @@ Look at Selected Layers
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe view.lookAtSelected`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe view.lookAtSelected`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -2128,7 +2128,7 @@ Look at All Layers
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe view.lookAtAll`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe view.lookAtAll`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -2146,7 +2146,7 @@ Create Camera from 3D View
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-camera`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe camera.fromView`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe camera.fromView`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -2164,7 +2164,7 @@ Reset 3D View
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-camera`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe view.reset3DView`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe view.reset3DView`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -2182,7 +2182,7 @@ Set 3D View Camera
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-camera`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe view.set3DViewCamera`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe view.set3DViewCamera`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -2200,7 +2200,7 @@ Orbit Camera
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-camera`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe camera.orbit`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe camera.orbit`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -2218,7 +2218,7 @@ Pan Camera
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-camera`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe camera.pan`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe camera.pan`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -2236,7 +2236,7 @@ Dolly Camera
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-camera`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe camera.dolly`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe camera.dolly`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -2254,7 +2254,7 @@ Dolly Camera
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-camera`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe view.get3D`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe view.get3D`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -2272,7 +2272,7 @@ Dolly Camera
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-layers`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.newModel`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layer.newModel`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -2290,7 +2290,7 @@ Dolly Camera
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-camera`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.new3dPrimitive`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layer.new3dPrimitive`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -2308,7 +2308,7 @@ New 3D Primitive
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-layers`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.newPrimitive`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layer.newPrimitive`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -2326,7 +2326,7 @@ Renderer
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-composition`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe comp.renderer`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe comp.renderer`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -2344,7 +2344,7 @@ Environment Layer
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-layers`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.environment`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layer.environment`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -2362,7 +2362,7 @@ Material Options
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-camera`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe material.set`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe material.set`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -2380,7 +2380,7 @@ Reveal Material Source in Project
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-camera`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe material.revealSource`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe material.revealSource`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -2398,7 +2398,7 @@ Reset Material
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-camera`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe material.reset`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe material.reset`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -2416,7 +2416,7 @@ Duplicate and Assign Material
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-camera`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe material.duplicateAssign`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe material.duplicateAssign`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -2434,7 +2434,7 @@ Create Stereo 3D Rig
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-camera`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe camera.stereoRig`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe camera.stereoRig`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -2452,7 +2452,7 @@ Create Orbit Null
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-camera`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe camera.orbitNull`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe camera.orbitNull`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -2470,7 +2470,7 @@ Create Cameras from 3D Model
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-camera`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe camera.fromModel`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe camera.fromModel`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -2488,7 +2488,7 @@ Create Lights from 3D Model
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-camera`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe light.fromModel`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe light.fromModel`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -2506,7 +2506,7 @@ Control Light with Camera
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-camera`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe light.controlWithCamera`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe light.controlWithCamera`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -2524,7 +2524,7 @@ Create Environment Light Background Layer
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-camera`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe light.environmentBackground`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe light.environmentBackground`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -2542,7 +2542,7 @@ Animate Text
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-layers`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.addTextAnimator`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layer.addTextAnimator`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -2560,7 +2560,7 @@ Add Property
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-layers`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.addTextAnimatorProperty`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layer.addTextAnimatorProperty`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -2578,7 +2578,7 @@ Add Text Selector
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-layers`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.addTextSelector`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layer.addTextSelector`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -2596,7 +2596,7 @@ Enable Per-character 3D
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-layers`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.enablePerChar3D`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layer.enablePerChar3D`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -2614,7 +2614,7 @@ Apply Text Animation Preset
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-layers`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.applyTextPreset`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layer.applyTextPreset`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -2632,7 +2632,7 @@ Variable Font Axes
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-layers`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe text.animatorFontAxes`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe text.animatorFontAxes`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -2650,7 +2650,7 @@ Text Animation Presets
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-layers`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe text.presets`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe text.presets`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -2668,7 +2668,7 @@ Text Animator Properties
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-layers`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe text.animatorProperties`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe text.animatorProperties`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -2686,7 +2686,7 @@ Edit Text
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-layers`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe text.edit`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe text.edit`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -2704,7 +2704,7 @@ Exit Text Editing
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-layers`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe text.endEdit`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe text.endEdit`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -2722,7 +2722,7 @@ OpenType Features
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-layers`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe text.fontFeatures`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe text.fontFeatures`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -2740,7 +2740,7 @@ List Fonts
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-layers`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe text.fonts`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe text.fonts`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -2758,7 +2758,7 @@ Set Text Selection
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-layers`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe text.setSelection`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe text.setSelection`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -2776,7 +2776,7 @@ Move Text Caret
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-layers`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: not editing text。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe text.moveCaret`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe text.moveCaret`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -2794,7 +2794,7 @@ Type Text
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-layers`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe text.insert`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe text.insert`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -2812,7 +2812,7 @@ Delete Text
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-layers`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe text.delete`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe text.delete`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -2830,7 +2830,7 @@ Paste Text and Match Formatting
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe edit.pasteTextMatchFormatting`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe edit.pasteTextMatchFormatting`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -2848,7 +2848,7 @@ Paste Text Formatting Only
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe edit.pasteTextFormattingOnly`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe edit.pasteTextFormattingOnly`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -2866,7 +2866,7 @@ Time Stretch...
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-layers`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.timeStretch`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layer.timeStretch`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -2884,7 +2884,7 @@ Time-Reverse Layer
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-layers`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.timeReverse`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layer.timeReverse`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -2902,7 +2902,7 @@ Enable Time Remapping
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-layers`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.enableTimeRemap`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layer.enableTimeRemap`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -2920,7 +2920,7 @@ Freeze Frame
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-layers`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.freezeFrame`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layer.freezeFrame`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -2938,7 +2938,7 @@ Freeze On Last Frame
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-layers`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.freezeOnLastFrame`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layer.freezeOnLastFrame`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -2956,7 +2956,7 @@ Get Property
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-animation`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe prop.get`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe prop.get`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -2974,7 +2974,7 @@ Set Property Value
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-animation`。
 - 当前工作流映射 / Workflow mapped: true。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe prop.set`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe prop.set`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -2994,7 +2994,7 @@ Toggle Stopwatch
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-animation`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe prop.toggleAnimation`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe prop.toggleAnimation`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -3012,7 +3012,7 @@ Add Keyframe
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-animation`。
 - 当前工作流映射 / Workflow mapped: true。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe prop.addKey`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe prop.addKey`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -3030,7 +3030,7 @@ Add or Remove Keyframe at Current Time
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-animation`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe prop.toggleKey`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe prop.toggleKey`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -3048,7 +3048,7 @@ Add or Remove Transform Keyframe
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-animation`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe keys.toggleTransform`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe keys.toggleTransform`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -3066,7 +3066,7 @@ Add Expression
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-expressions`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe prop.setExpression`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe prop.setExpression`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -3086,7 +3086,7 @@ Reset Property
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-animation`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe prop.reset`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe prop.reset`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -3104,7 +3104,7 @@ Select Property
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-animation`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe prop.select`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe prop.select`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -3122,7 +3122,7 @@ Convert Expression to Keyframes
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-expressions`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe prop.convertExpressionToKeyframes`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe prop.convertExpressionToKeyframes`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -3140,7 +3140,7 @@ Select Keyframes
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-animation`。
 - 当前工作流映射 / Workflow mapped: true。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe keys.select`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe keys.select`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -3158,7 +3158,7 @@ Move Keyframes
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-animation`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe keys.move`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe keys.move`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -3176,7 +3176,7 @@ Delete Keyframes
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-animation`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe keys.delete`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe keys.delete`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -3194,7 +3194,7 @@ Easy Ease
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-animation`。
 - 当前工作流映射 / Workflow mapped: true。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe keys.easyEase`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe keys.easyEase`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -3212,7 +3212,7 @@ Easy Ease In
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-animation`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe keys.easyEaseIn`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe keys.easyEaseIn`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -3230,7 +3230,7 @@ Easy Ease Out
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-animation`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe keys.easyEaseOut`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe keys.easyEaseOut`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -3248,7 +3248,7 @@ Toggle Hold Keyframe
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-animation`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe keys.toggleHold`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe keys.toggleHold`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -3266,7 +3266,7 @@ Keyframe Interpolation...
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-animation`。
 - 当前工作流映射 / Workflow mapped: true。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe keys.interpolation`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe keys.interpolation`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -3284,7 +3284,7 @@ Keyframe Velocity...
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-animation`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe keys.velocity`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe keys.velocity`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -3302,7 +3302,7 @@ Rename Property Group
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-animation`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe prop.renameGroup`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe prop.renameGroup`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -3320,7 +3320,7 @@ Enable Property Group
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-animation`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe prop.setGroupEnabled`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe prop.setGroupEnabled`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -3338,7 +3338,7 @@ Delete Property Group
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-animation`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe prop.removeGroup`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe prop.removeGroup`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -3356,7 +3356,7 @@ Duplicate Property Group
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-animation`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe prop.duplicateGroup`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe prop.duplicateGroup`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -3374,7 +3374,7 @@ Reorder Property Group
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-animation`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe prop.moveGroup`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe prop.moveGroup`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -3392,7 +3392,7 @@ Select Project Items
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-project`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe project.select`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe project.select`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -3410,7 +3410,7 @@ Rename Item
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-project`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe project.rename`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe project.rename`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -3428,7 +3428,7 @@ Move to Folder
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-project`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe project.move`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe project.move`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -3446,7 +3446,7 @@ Item Label
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-project`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe project.setLabel`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe project.setLabel`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -3464,7 +3464,7 @@ Item Comment
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-project`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe project.setComment`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe project.setComment`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -3482,7 +3482,7 @@ Delete Project Items
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-project`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe project.delete`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe project.delete`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -3500,7 +3500,7 @@ Project Item Usage
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-project`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe project.usage`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe project.usage`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -3518,7 +3518,7 @@ Duplicate Project Items
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-project`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe project.duplicate`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe project.duplicate`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -3536,7 +3536,7 @@ Copy Keyframes
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-animation`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe keys.copy`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe keys.copy`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -3554,7 +3554,7 @@ Paste Keyframes
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-animation`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe keys.paste`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe keys.paste`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -3572,7 +3572,7 @@ Select All Keyframes
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-animation`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe keys.selectAll`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe keys.selectAll`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -3590,7 +3590,7 @@ Nudge Keyframes
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-animation`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe keys.nudge`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe keys.nudge`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -3608,7 +3608,7 @@ Move Keyframes 1 Frame Later
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-animation`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe keys.nudgeForward`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe keys.nudgeForward`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -3626,7 +3626,7 @@ Move Keyframes 1 Frame Earlier
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-animation`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe keys.nudgeBackward`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe keys.nudgeBackward`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -3644,7 +3644,7 @@ Move Keyframes 10 Frames Later
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-animation`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe keys.nudgeForward10`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe keys.nudgeForward10`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -3662,7 +3662,7 @@ Move Keyframes 10 Frames Earlier
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-animation`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe keys.nudgeBackward10`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe keys.nudgeBackward10`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -3680,7 +3680,7 @@ Edit Keyframe
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-animation`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe keys.set`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe keys.set`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -3698,7 +3698,7 @@ Select Equal Keyframes
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-animation`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe keys.selectEqual`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe keys.selectEqual`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -3716,7 +3716,7 @@ Select Previous Keyframes
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-animation`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe keys.selectPrevious`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe keys.selectPrevious`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -3734,7 +3734,7 @@ Select Following Keyframes
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-animation`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe keys.selectFollowing`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe keys.selectFollowing`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -3752,7 +3752,7 @@ Set Keyframe Ease
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-animation`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe keys.setEase`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe keys.setEase`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -3770,7 +3770,7 @@ Time-Reverse Keyframes
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-animation`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe keys.timeReverse`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe keys.timeReverse`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -3788,7 +3788,7 @@ Keyframe Info
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-animation`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe keys.info`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe keys.info`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -3806,7 +3806,7 @@ Wiggler
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-animation`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe keys.wiggle`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe keys.wiggle`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -3824,7 +3824,7 @@ Smoother
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-animation`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe keys.smooth`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe keys.smooth`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -3842,7 +3842,7 @@ Motion Sketch
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe motion.sketch`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe motion.sketch`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -3860,7 +3860,7 @@ Separate Dimensions
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-animation`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe prop.separateDimensions`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe prop.separateDimensions`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -3878,7 +3878,7 @@ Pick Whip (Link Property)
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-animation`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe prop.pickWhip`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe prop.pickWhip`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -3896,7 +3896,7 @@ List Markers
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe markers.list`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe markers.list`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -3914,7 +3914,7 @@ Nested Comp Markers
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe markers.nested`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe markers.nested`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -3932,7 +3932,7 @@ Marker Settings
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe markers.set`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe markers.set`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -3950,7 +3950,7 @@ Delete Marker
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe markers.delete`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe markers.delete`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -3968,7 +3968,7 @@ Convert Marker
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe markers.convert`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe markers.convert`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -3986,7 +3986,7 @@ Update Markers From Source
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-layers`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.updateMarkersFromSource`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layer.updateMarkersFromSource`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -4004,7 +4004,7 @@ New Mask from Points
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-masks`。
 - 当前工作流映射 / Workflow mapped: true。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe mask.new`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe mask.new`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -4022,7 +4022,7 @@ Add Mask Vertex
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-masks`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe mask.addVertex`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe mask.addVertex`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -4040,7 +4040,7 @@ Set Mask Vertex
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-masks`。
 - 当前工作流映射 / Workflow mapped: true。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe mask.setVertex`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe mask.setVertex`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -4058,7 +4058,7 @@ Closed
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-masks`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe mask.setClosed`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe mask.setClosed`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -4076,7 +4076,7 @@ Select Mask Vertices
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-masks`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe mask.selectVertices`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe mask.selectVertices`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -4094,7 +4094,7 @@ Move Mask Vertices
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-masks`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe mask.moveVertices`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe mask.moveVertices`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -4112,7 +4112,7 @@ Delete Mask Vertices
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-masks`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe mask.deleteVertices`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe mask.deleteVertices`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -4130,7 +4130,7 @@ Convert Vertex
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-masks`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe mask.convertVertex`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe mask.convertVertex`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -4148,7 +4148,7 @@ Add Vertex
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-masks`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe mask.insertVertex`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe mask.insertVertex`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -4166,7 +4166,7 @@ Add Mask Feather Point
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-masks`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe mask.featherPoint.add`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe mask.featherPoint.add`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -4184,7 +4184,7 @@ Move Mask Feather Point
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-masks`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe mask.featherPoint.set`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe mask.featherPoint.set`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -4202,7 +4202,7 @@ Delete Mask Feather Point
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-masks`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe mask.featherPoint.remove`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe mask.featherPoint.remove`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -4220,7 +4220,7 @@ Mask Feather Points
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-masks`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe mask.featherPoint.list`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe mask.featherPoint.list`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -4238,7 +4238,7 @@ Remove Mask
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-masks`。
 - 当前工作流映射 / Workflow mapped: true。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe mask.remove`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe mask.remove`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -4256,7 +4256,7 @@ Remove All Masks
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-masks`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe mask.removeAll`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe mask.removeAll`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -4274,7 +4274,7 @@ RotoBezier
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-masks`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe path.rotoBezier`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe path.rotoBezier`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -4292,7 +4292,7 @@ Convert To Bezier Path
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-masks`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe path.convertToBezier`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe path.convertToBezier`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -4310,7 +4310,7 @@ Group Shapes
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-masks`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe path.groupShapes`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe path.groupShapes`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -4328,7 +4328,7 @@ Ungroup Shapes
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-masks`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe path.ungroupShapes`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe path.ungroupShapes`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -4346,7 +4346,7 @@ Set First Vertex
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-masks`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe path.setFirstVertex`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe path.setFirstVertex`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -4364,7 +4364,7 @@ Free Transform Points
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-masks`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe path.freeTransform`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe path.freeTransform`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -4382,7 +4382,7 @@ Motion Blur
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-layers`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.mask.motionBlur`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layer.mask.motionBlur`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -4400,7 +4400,7 @@ Feather Falloff
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-layers`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.mask.featherFalloff`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layer.mask.featherFalloff`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -4418,7 +4418,7 @@ Hide Locked Masks
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-layers`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.mask.hideLocked`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layer.mask.hideLocked`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -4436,7 +4436,7 @@ Apply Effect
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-effects`。
 - 当前工作流映射 / Workflow mapped: true。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe effect.apply`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe effect.apply`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -4454,7 +4454,7 @@ Pick Effect Colour
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-effects`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe effect.pickColor`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe effect.pickColor`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -4472,7 +4472,7 @@ Last Effect
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-effects`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe effect.applyLast`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe effect.applyLast`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -4490,7 +4490,7 @@ Remove All
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-effects`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe effect.removeAll`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe effect.removeAll`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -4508,7 +4508,7 @@ Remove Effect
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-effects`。
 - 当前工作流映射 / Workflow mapped: true。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe effect.remove`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe effect.remove`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -4526,7 +4526,7 @@ Toggle Effect
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-effects`。
 - 当前工作流映射 / Workflow mapped: true。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe effect.toggle`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe effect.toggle`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -4544,7 +4544,7 @@ Reorder Effect
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-effects`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe effect.reorder`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe effect.reorder`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -4562,7 +4562,7 @@ Duplicate Effect
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-effects`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe effect.duplicate`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe effect.duplicate`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -4580,7 +4580,7 @@ Copy Effects
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-effects`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe effect.copy`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe effect.copy`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -4598,7 +4598,7 @@ Paste Effects
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-effects`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe effect.paste`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe effect.paste`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -4616,7 +4616,7 @@ Reset Effect
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-effects`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe effect.reset`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe effect.reset`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -4634,7 +4634,7 @@ List Effects
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-effects`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe effect.list`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe effect.list`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -4652,7 +4652,7 @@ List Effect Plug-ins
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-effects`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe effect.plugins.list`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe effect.plugins.list`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -4670,7 +4670,7 @@ Load Effect Plug-in...
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-effects`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe effect.plugins.load`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe effect.plugins.load`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -4688,7 +4688,7 @@ Go to Time...
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-composition`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe time.set`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe time.set`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -4706,7 +4706,7 @@ Next Frame
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-composition`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe time.nextFrame`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe time.nextFrame`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -4724,7 +4724,7 @@ Previous Frame
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-composition`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe time.previousFrame`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe time.previousFrame`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -4742,7 +4742,7 @@ Forward 10 Frames
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-composition`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe time.forward10`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe time.forward10`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -4760,7 +4760,7 @@ Back 10 Frames
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-composition`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe time.back10`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe time.back10`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -4778,7 +4778,7 @@ Step Frames
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-composition`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe time.step`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe time.step`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -4796,7 +4796,7 @@ Go to Start
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-composition`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe time.start`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe time.start`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -4814,7 +4814,7 @@ Go to End
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-composition`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe time.end`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe time.end`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -4832,7 +4832,7 @@ Go to Layer In Point
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-composition`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe time.layerIn`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe time.layerIn`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -4850,7 +4850,7 @@ Go to Layer Out Point
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-composition`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe time.layerOut`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe time.layerOut`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -4868,7 +4868,7 @@ Go to Next Keyframe or Marker
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-composition`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe time.nextKey`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe time.nextKey`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -4886,7 +4886,7 @@ Go to Previous Keyframe or Marker
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-composition`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe time.previousKey`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe time.previousKey`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -4904,7 +4904,7 @@ Go To
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-composition`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe time.go`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe time.go`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -4922,7 +4922,7 @@ Add to Render Queue
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-export`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: select or open a composition。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe renderQueue.add`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe renderQueue.add`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -4940,7 +4940,7 @@ Remove from Render Queue
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-export`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: the render queue is empty。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe renderQueue.remove`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe renderQueue.remove`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -4958,7 +4958,7 @@ Render Queue: Render Checkbox
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-export`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: the render queue is empty。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe renderQueue.setRender`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe renderQueue.setRender`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -4976,7 +4976,7 @@ Render Settings...
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-export`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: the render queue is empty。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe renderQueue.setRenderSettings`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe renderQueue.setRenderSettings`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -4994,7 +4994,7 @@ Output Module Settings...
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-export`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: the render queue is empty。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe renderQueue.setOutputModule`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe renderQueue.setOutputModule`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -5012,7 +5012,7 @@ Output To...
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-export`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: the render queue is empty。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe renderQueue.setOutput`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe renderQueue.setOutput`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -5030,7 +5030,7 @@ Add Output Module
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-export`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: the render queue is empty。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe render.addOutputModule`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe render.addOutputModule`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -5048,7 +5048,7 @@ Pre-render...
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-export`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: select or open a composition。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe render.preRender`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe render.preRender`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -5066,7 +5066,7 @@ Save Current Preview...
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-export`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe render.saveCurrentPreview`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe render.saveCurrentPreview`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -5084,7 +5084,7 @@ Move in Render Queue
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-export`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: the render queue is empty。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe renderQueue.move`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe renderQueue.move`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -5102,7 +5102,7 @@ Duplicate Render Item
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-export`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: the render queue is empty。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe renderQueue.duplicate`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe renderQueue.duplicate`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -5120,7 +5120,7 @@ Render
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-export`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: nothing is queued。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe renderQueue.render`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe renderQueue.render`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -5138,7 +5138,7 @@ Stop Rendering
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-export`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: not rendering。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe renderQueue.stop`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe renderQueue.stop`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -5156,7 +5156,7 @@ Render Queue Items
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-export`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe renderQueue.list`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe renderQueue.list`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -5174,7 +5174,7 @@ Render Templates
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-export`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe renderQueue.templates`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe renderQueue.templates`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -5192,7 +5192,7 @@ Save Template...
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-export`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe renderQueue.saveTemplate`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe renderQueue.saveTemplate`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -5210,7 +5210,7 @@ Delete Template
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-export`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe renderQueue.deleteTemplate`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe renderQueue.deleteTemplate`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -5228,7 +5228,7 @@ Set Template Default
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-export`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe renderQueue.setTemplateDefault`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe renderQueue.setTemplateDefault`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -5246,7 +5246,7 @@ Apply Template
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-export`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: the render queue is empty。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe renderQueue.applyTemplate`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe renderQueue.applyTemplate`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -5264,7 +5264,7 @@ Render Queue: Log
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-export`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: the render queue is empty。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe renderQueue.setLog`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe renderQueue.setLog`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -5282,7 +5282,7 @@ Notify When Done
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-export`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe renderQueue.setNotify`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe renderQueue.setNotify`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -5300,7 +5300,7 @@ Storage Overflow Folders
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-export`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe renderQueue.setOverflowFolders`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe renderQueue.setOverflowFolders`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -5318,7 +5318,7 @@ Output Formats
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-export`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe renderQueue.formats`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe renderQueue.formats`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -5336,7 +5336,7 @@ EffectCraft Help...
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe help.docs`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe help.docs`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -5354,7 +5354,7 @@ Join the ArtCraft Discord...
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe help.discord`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe help.discord`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -5372,7 +5372,7 @@ ArtCraft Website
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe help.website`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe help.website`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -5390,7 +5390,7 @@ EffectCraft Home Page
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe help.appPage`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe help.appPage`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -5408,7 +5408,7 @@ EffectCraft on GitHub
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe help.github`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe help.github`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -5426,7 +5426,7 @@ Online Tutorials...
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe help.onlineTutorials`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe help.onlineTutorials`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -5444,7 +5444,7 @@ In-App Tutorials...
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe help.inAppTutorials`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe help.inAppTutorials`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -5462,7 +5462,7 @@ Provide Feedback...
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe help.reportIssue`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe help.reportIssue`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -5480,7 +5480,7 @@ Other ArtCraft Apps
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe help.sibling`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe help.sibling`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -5498,7 +5498,7 @@ List Commands
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe command.list`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe command.list`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -5516,7 +5516,7 @@ Describe Command
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe command.describe`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe command.describe`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -5534,7 +5534,7 @@ App Capabilities
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe app.capabilities`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe app.capabilities`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -5552,7 +5552,7 @@ Project Summary
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-project`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe project.summary`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe project.summary`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -5570,7 +5570,7 @@ Composition Info
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-composition`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe comp.info`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe comp.info`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -5588,7 +5588,7 @@ Layer Property Tree
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-layers`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.tree`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layer.tree`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -5606,7 +5606,7 @@ Editor State
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe editor.state`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe editor.state`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -5624,7 +5624,7 @@ Run Commands (Batch)
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe engine.batch`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe engine.batch`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -5642,7 +5642,7 @@ Quality
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-layers`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.quality`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layer.quality`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -5660,7 +5660,7 @@ Sampling
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-layers`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.sampling`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layer.sampling`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -5678,7 +5678,7 @@ Frame Blending
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-layers`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.frameBlending`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layer.frameBlending`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -5696,7 +5696,7 @@ Hide Other Video
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-layers`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.hideOtherVideo`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layer.hideOtherVideo`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -5714,7 +5714,7 @@ Show All Video
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-layers`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.showAllVideo`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layer.showAllVideo`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -5732,7 +5732,7 @@ Unlock All Layers
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-layers`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.unlockAll`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layer.unlockAll`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -5750,7 +5750,7 @@ Enable/Disable Expressions
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-layers`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.expressions`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layer.expressions`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -5770,7 +5770,7 @@ Transform Value
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-layers`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.setTransform`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layer.setTransform`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -5788,7 +5788,7 @@ Center Anchor Point in Layer Content
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-layers`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.centerAnchor`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layer.centerAnchor`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -5806,7 +5806,7 @@ Mask Shape...
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-layers`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.mask.shape`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layer.mask.shape`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -5824,7 +5824,7 @@ Mask Settings
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-layers`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.mask.set`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layer.mask.set`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -5842,7 +5842,7 @@ Reset Mask
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-layers`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.mask.reset`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layer.mask.reset`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -5860,7 +5860,7 @@ Remove Mask
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-layers`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.mask.remove`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layer.mask.remove`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -5878,7 +5878,7 @@ Remove All Masks
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-layers`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.mask.removeAll`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layer.mask.removeAll`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -5896,7 +5896,7 @@ Mask Mode
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-layers`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.mask.mode`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layer.mask.mode`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -5914,7 +5914,7 @@ Inverted
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-layers`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.mask.invert`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layer.mask.invert`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -5932,7 +5932,7 @@ Locked
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-layers`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.mask.lock`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layer.mask.lock`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -5950,7 +5950,7 @@ Unlock All Masks
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-layers`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.mask.unlockAll`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layer.mask.unlockAll`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -5968,7 +5968,7 @@ Lock Other Masks
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-layers`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.mask.lockOthers`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layer.mask.lockOthers`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -5986,7 +5986,7 @@ Add Marker
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-layers`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.addMarker`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layer.addMarker`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -6004,7 +6004,7 @@ Lock Markers
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-layers`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.markersLock`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layer.markersLock`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -6022,7 +6022,7 @@ Delete All Markers
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-layers`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.deleteAllMarkers`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layer.deleteAllMarkers`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -6040,7 +6040,7 @@ Track Matte
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-layers`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.trackMatte`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layer.trackMatte`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -6058,7 +6058,7 @@ Open Layer Source
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-layers`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.openSource`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layer.openSource`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -6076,7 +6076,7 @@ Reveal in Finder
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-layers`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.revealInFinder`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layer.revealInFinder`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -6094,7 +6094,7 @@ Reveal Layer Source in Project
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-layers`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.revealSource`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layer.revealSource`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -6112,7 +6112,7 @@ Reveal Composition in Project
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-composition`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe comp.revealInProject`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe comp.revealInProject`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -6130,7 +6130,7 @@ Reveal Expression Errors
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-layers`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.revealExpressionErrors`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layer.revealExpressionErrors`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -6148,7 +6148,7 @@ Sequence Layers...
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-layers`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.sequence`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layer.sequence`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -6166,7 +6166,7 @@ Create
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-layers`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.create`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layer.create`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -6184,7 +6184,7 @@ Save Animation Preset...
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-animation`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe anim.savePreset`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe anim.savePreset`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -6202,7 +6202,7 @@ Apply Animation Preset...
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-animation`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe anim.applyPreset`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe anim.applyPreset`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -6220,7 +6220,7 @@ Add Keyframe
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-animation`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe anim.addKeyframe`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe anim.addKeyframe`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -6238,7 +6238,7 @@ Exponential Scale
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-animation`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe keys.exponentialScale`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe keys.exponentialScale`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -6256,7 +6256,7 @@ Add Text Selector
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-layers`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe text.addSelector`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe text.addSelector`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -6274,7 +6274,7 @@ Remove All Text Animators
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-layers`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe text.removeAllAnimators`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe text.removeAllAnimators`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -6292,7 +6292,7 @@ Reveal Properties
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-animation`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe anim.reveal`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe anim.reveal`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -6310,7 +6310,7 @@ Add Guide...
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe view.addGuide`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe view.addGuide`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -6328,7 +6328,7 @@ Clear Guides
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe view.clearGuides`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe view.clearGuides`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -6346,7 +6346,7 @@ Import Guides...
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe view.importGuides`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe view.importGuides`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -6364,7 +6364,7 @@ Export Guides...
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe view.exportGuides`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe view.exportGuides`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -6382,7 +6382,7 @@ Switch View Layout
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe view.layout`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe view.layout`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -6400,7 +6400,7 @@ Share View Options
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe view.shareViewOptions`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe view.shareViewOptions`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -6418,7 +6418,7 @@ Extended Viewer
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe view.extendedViewer`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe view.extendedViewer`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -6436,7 +6436,7 @@ Region of Interest
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe view.setRegionOfInterest`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe view.setRegionOfInterest`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -6454,7 +6454,7 @@ Snapping
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe view.snapping`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe view.snapping`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -6472,7 +6472,7 @@ Use Display Color Management
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe view.displayColorManagement`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe view.displayColorManagement`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -6490,7 +6490,7 @@ Simulate Output
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe view.simulateOutput`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe view.simulateOutput`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -6508,7 +6508,7 @@ My Custom RGB...
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe view.customRgb`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe view.customRgb`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -6526,7 +6526,7 @@ Split with New Locked Viewer
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe view.splitLockedViewer`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe view.splitLockedViewer`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -6544,7 +6544,7 @@ Close Locked Viewer
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no locked viewer。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe view.closeLockedViewer`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe view.closeLockedViewer`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -6562,7 +6562,7 @@ Viewer Color State
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe view.displayColor`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe view.displayColor`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -6580,7 +6580,7 @@ Show Channel
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe view.channel`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe view.channel`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -6598,7 +6598,7 @@ Adjust Exposure
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe view.exposure`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe view.exposure`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -6616,7 +6616,7 @@ Reset Exposure
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe view.resetExposure`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe view.resetExposure`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -6634,7 +6634,7 @@ Take Snapshot
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe view.takeSnapshot`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe view.takeSnapshot`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -6652,7 +6652,7 @@ Show Snapshot
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: take a snapshot first (Shift+F5)。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe view.showSnapshot`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe view.showSnapshot`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -6670,7 +6670,7 @@ Fast Previews
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe view.fastPreviewMode`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe view.fastPreviewMode`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -6688,7 +6688,7 @@ Move Guide
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe view.moveGuide`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe view.moveGuide`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -6706,7 +6706,7 @@ Remove Guide
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe view.removeGuide`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe view.removeGuide`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -6724,7 +6724,7 @@ Pen Tool (Shape Path)
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-layers`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe shape.newPath`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe shape.newPath`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -6742,7 +6742,7 @@ Add Dash or Gap
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-layers`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe shape.dashes.add`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe shape.dashes.add`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -6760,7 +6760,7 @@ Remove Dash or Gap
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-layers`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe shape.dashes.remove`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe shape.dashes.remove`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -6778,7 +6778,7 @@ Stroke Taper
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-layers`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe shape.stroke.taper`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe shape.stroke.taper`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -6796,7 +6796,7 @@ Stroke Wave
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-layers`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe shape.stroke.wave`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe shape.stroke.wave`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -6814,7 +6814,7 @@ Link Focus Distance to Point of Interest
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-camera`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe camera.linkFocusToPoi`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe camera.linkFocusToPoi`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -6832,7 +6832,7 @@ Link Focus Distance to Layer
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-camera`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe camera.linkFocusToLayer`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe camera.linkFocusToLayer`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -6850,7 +6850,7 @@ Set Focus Distance to Layer
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-camera`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe camera.setFocusToLayer`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe camera.setFocusToLayer`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -6868,7 +6868,7 @@ Keyframe Label
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-animation`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe keys.setLabel`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe keys.setLabel`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -6886,7 +6886,7 @@ Select Keyframe Label Group
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-animation`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe keys.selectLabelGroup`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe keys.selectLabelGroup`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -6904,7 +6904,7 @@ Transform Keyframes
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-animation`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe keys.transform`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe keys.transform`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -6922,7 +6922,7 @@ Edit Spatial Tangents
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-animation`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe keys.setSpatialTangents`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe keys.setSpatialTangents`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -6940,7 +6940,7 @@ New Folder
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-project`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe project.newFolder`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe project.newFolder`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -6958,7 +6958,7 @@ Close
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-project`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe file.close`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe file.close`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -6976,7 +6976,7 @@ Close Project
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-project`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe file.closeProject`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe file.closeProject`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -6994,7 +6994,7 @@ Save a Copy...
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-project`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe file.saveCopy`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe file.saveCopy`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -7012,7 +7012,7 @@ Multiple Files...
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-project`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe file.importMultiple`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe file.importMultiple`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -7030,7 +7030,7 @@ Placeholder...
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-project`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe file.importPlaceholder`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe file.importPlaceholder`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -7048,7 +7048,7 @@ Solid...
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-project`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe file.importSolid`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe file.importSolid`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -7066,7 +7066,7 @@ New Comp from Selection...
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-project`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: select an item in the Project panel first。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe file.newCompFromSelection`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe file.newCompFromSelection`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -7084,7 +7084,7 @@ Collect Files...
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-project`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: the project is empty。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe file.collectFiles`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe file.collectFiles`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -7102,7 +7102,7 @@ Consolidate All Footage
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-project`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: the project is empty。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe file.consolidateFootage`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe file.consolidateFootage`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -7120,7 +7120,7 @@ Remove Unused Footage
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-project`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: the project is empty。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe file.removeUnusedFootage`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe file.removeUnusedFootage`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -7138,7 +7138,7 @@ Reduce Project
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-project`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: select compositions in the Project panel。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe file.reduceProject`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe file.reduceProject`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -7156,7 +7156,7 @@ Find Missing
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-project`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: the project is empty。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe file.findMissing`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe file.findMissing`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -7174,7 +7174,7 @@ Check Footage
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-footage`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: the project is empty。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe footage.check`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe footage.check`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -7192,7 +7192,7 @@ Run Script File...
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-project`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe file.runScript`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe file.runScript`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -7210,7 +7210,7 @@ Run Script
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe script.run`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe script.run`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -7228,7 +7228,7 @@ Main...
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-project`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: select footage in the Project panel。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe file.interpretFootage`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe file.interpretFootage`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -7246,7 +7246,7 @@ Remember Interpretation
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-project`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: select footage in the Project panel。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe file.rememberInterpretation`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe file.rememberInterpretation`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -7264,7 +7264,7 @@ Apply Interpretation
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-project`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: select footage in the Project panel。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe file.applyInterpretation`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe file.applyInterpretation`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -7282,7 +7282,7 @@ File...
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-project`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: select footage in the Project panel。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe file.replaceFootage`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe file.replaceFootage`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -7300,7 +7300,7 @@ Placeholder...
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-project`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: select footage in the Project panel。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe file.replaceWithPlaceholder`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe file.replaceWithPlaceholder`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -7318,7 +7318,7 @@ Solid...
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-project`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: select footage in the Project panel。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe file.replaceWithSolid`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe file.replaceWithSolid`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -7336,7 +7336,7 @@ Reload Footage
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-project`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: select footage in the Project panel。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe file.reloadFootage`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe file.reloadFootage`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -7354,7 +7354,7 @@ Reveal in Finder
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-project`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: select footage in the Project panel。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe file.revealInFinder`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe file.revealInFinder`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -7372,7 +7372,7 @@ Lottie JSON...
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-export`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe file.exportLottie`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe file.exportLottie`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -7390,7 +7390,7 @@ Lottie...
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-project`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe file.importLottie`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe file.importLottie`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -7408,7 +7408,7 @@ Adobe Premiere Pro Project...
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-project`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe file.importTimeline`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe file.importTimeline`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -7426,7 +7426,7 @@ Adobe Premiere Pro Project...
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-export`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe file.exportTimeline`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe file.exportTimeline`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -7444,7 +7444,7 @@ Timeline Interchange Formats
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-project`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe file.timelineFormats`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe file.timelineFormats`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -7462,7 +7462,7 @@ Crop Comp to Region of Interest
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-composition`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe comp.cropToRegionOfInterest`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe comp.cropToRegionOfInterest`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -7480,7 +7480,7 @@ Crop Comp to Selected Layer(s) Bounds
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-composition`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe comp.cropToLayerBounds`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe comp.cropToLayerBounds`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -7498,7 +7498,7 @@ File...
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-composition`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe comp.saveFrameAs`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe comp.saveFrameAs`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -7516,7 +7516,7 @@ Responsive Design — Time
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-composition`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe comp.responsiveTime`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe comp.responsiveTime`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -7534,7 +7534,7 @@ Photoshop Layers...
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-composition`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe comp.saveFrameAsPsd`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe comp.saveFrameAsPsd`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -7552,7 +7552,7 @@ ProEXR...
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-composition`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe comp.saveFrameAsExr`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe comp.saveFrameAsExr`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -7570,7 +7570,7 @@ Watch Folder...
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-project`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe file.watchFolder`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe file.watchFolder`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -7588,7 +7588,7 @@ Poll Watch Folder
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-project`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no folder is being watched。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe file.watchFolder.poll`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe file.watchFolder.poll`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -7606,7 +7606,7 @@ Vanishing Point (.vpe)...
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-project`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: Vanishing Point Exchange (.vpe) files can't be imported: the format has no public specification, and EffectCraft only implements documented formats。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe file.importVanishingPoint`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe file.importVanishingPoint`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -7624,7 +7624,7 @@ Points Follow Nulls
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe paths.pointsFollowNulls`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe paths.pointsFollowNulls`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -7642,7 +7642,7 @@ Nulls Follow Points
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe paths.nullsFollowPoints`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe paths.nullsFollowPoints`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -7660,7 +7660,7 @@ Trace Path
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe paths.tracePath`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe paths.tracePath`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -7678,7 +7678,7 @@ VR Environments
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-composition`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe comp.vr.environments`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe comp.vr.environments`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -7696,7 +7696,7 @@ VR View Orientation
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-composition`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe comp.vr.setView`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe comp.vr.setView`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -7714,7 +7714,7 @@ About EffectCraft...
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe app.about`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe app.about`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -7732,7 +7732,7 @@ Layer Style Options...
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-layers`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.style.options`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layer.style.options`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -7750,7 +7750,7 @@ Settings...
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe app.settings`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe app.settings`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -7768,7 +7768,7 @@ GPU Information...
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe app.gpuInfo`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe app.gpuInfo`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -7786,7 +7786,7 @@ Hide EffectCraft
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe app.hide`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe app.hide`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -7804,7 +7804,7 @@ Hide Others
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe app.hideOthers`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe app.hideOthers`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -7822,7 +7822,7 @@ Show All
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe app.showAll`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe app.showAll`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -7840,7 +7840,7 @@ Quit EffectCraft
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe app.quit`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe app.quit`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -7858,7 +7858,7 @@ Quick Apply...
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe app.commandPalette`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe app.commandPalette`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -7876,7 +7876,7 @@ Keyboard Shortcuts
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe app.keyboardShortcuts`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe app.keyboardShortcuts`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -7894,7 +7894,7 @@ Templates
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe app.templates`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe app.templates`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -7912,7 +7912,7 @@ Find
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe app.find`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe app.find`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -7930,7 +7930,7 @@ Play Current Preview
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe playback.toggle`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe playback.toggle`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -7948,7 +7948,7 @@ Cache Frames When Idle
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe playback.cacheWhenIdle`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe playback.cacheWhenIdle`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -7966,7 +7966,7 @@ Audio
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe playback.audio`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe playback.audio`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -7984,7 +7984,7 @@ Scrub Audio
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe playback.scrubAudio`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe playback.scrubAudio`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -8002,7 +8002,7 @@ Zoom In
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe view.zoomIn`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe view.zoomIn`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -8020,7 +8020,7 @@ Zoom Out
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe view.zoomOut`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe view.zoomOut`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -8038,7 +8038,7 @@ Full
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe view.res.full`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe view.res.full`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -8056,7 +8056,7 @@ Half
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe view.res.half`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe view.res.half`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -8074,7 +8074,7 @@ Third
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe view.res.third`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe view.res.third`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -8092,7 +8092,7 @@ Quarter
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe view.res.quarter`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe view.res.quarter`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -8110,7 +8110,7 @@ Custom...
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe view.res.custom`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe view.res.custom`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -8128,7 +8128,7 @@ Show Rulers
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe view.rulers`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe view.rulers`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -8146,7 +8146,7 @@ Panel Background Color
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe view.panelBackground`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe view.panelBackground`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -8164,7 +8164,7 @@ Show Guides
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe view.guides`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe view.guides`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -8182,7 +8182,7 @@ Snap to Guides
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe view.snapToGuides`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe view.snapToGuides`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -8200,7 +8200,7 @@ Lock Guides
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe view.lockGuides`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe view.lockGuides`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -8218,7 +8218,7 @@ Show Grid
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe view.grid`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe view.grid`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -8236,7 +8236,7 @@ Snap to Grid
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe view.snapToGrid`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe view.snapToGrid`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -8254,7 +8254,7 @@ View Options...
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe view.options`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe view.options`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -8272,7 +8272,7 @@ Show Layer Controls
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe view.layerControls`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe view.layerControls`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -8290,7 +8290,7 @@ Enter Full Screen
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe view.fullScreen`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe view.fullScreen`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -8308,7 +8308,7 @@ New Viewer
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe view.newViewer`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe view.newViewer`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -8326,7 +8326,7 @@ Show Panel
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe window.panel`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe window.panel`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -8344,7 +8344,7 @@ Workspace
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe window.workspace`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe window.workspace`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -8362,7 +8362,7 @@ Save Changes to this Workspace
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe window.saveWorkspace`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe window.saveWorkspace`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -8380,7 +8380,7 @@ Save as New Workspace...
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe window.saveWorkspaceAs`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe window.saveWorkspaceAs`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -8398,7 +8398,7 @@ Edit Workspaces...
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe window.editWorkspaces`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe window.editWorkspaces`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -8416,7 +8416,7 @@ Reset to Saved Layout
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe window.resetWorkspace`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe window.resetWorkspace`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -8434,7 +8434,7 @@ Composition Flowchart
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-composition`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe comp.flowchart`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe comp.flowchart`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -8452,7 +8452,7 @@ Composition Mini-Flowchart
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-composition`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe comp.miniFlowchart`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe comp.miniFlowchart`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -8470,7 +8470,7 @@ Open Layer
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-layers`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.openLayer`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layer.openLayer`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -8488,7 +8488,7 @@ Manage Effects...
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-effects`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe effect.manage`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe effect.manage`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -8506,7 +8506,7 @@ Browse Presets...
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-animation`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe anim.browsePresets`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe anim.browsePresets`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -8524,7 +8524,7 @@ Track Motion
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-tracking`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe track.motion`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe track.motion`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -8542,7 +8542,7 @@ Stabilize Motion
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-tracking`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe track.stabilize`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe track.stabilize`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -8560,7 +8560,7 @@ New Tracker
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-tracking`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe track.new`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe track.new`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -8578,7 +8578,7 @@ Track this Property
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-tracking`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe track.property`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe track.property`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -8596,7 +8596,7 @@ Current Track
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-tracking`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe track.select`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe track.select`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -8614,7 +8614,7 @@ Track Type
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-tracking`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no active composition。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe track.setType`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe track.setType`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -8632,7 +8632,7 @@ Edit Target
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-tracking`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no active composition。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe track.setTarget`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe track.setTarget`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -8650,7 +8650,7 @@ Motion Tracker Options
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-tracking`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no active composition。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe track.options`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe track.options`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -8668,7 +8668,7 @@ Move Track Point
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-tracking`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no active composition。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe track.setPoint`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe track.setPoint`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -8686,7 +8686,7 @@ Analyze
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-tracking`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no active composition。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe track.analyze`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe track.analyze`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -8704,7 +8704,7 @@ Stop Analysis
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-tracking`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no track analysis is running。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe track.stop`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe track.stop`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -8722,7 +8722,7 @@ Apply
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-tracking`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no active composition。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe track.apply`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe track.apply`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -8740,7 +8740,7 @@ Reset
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-tracking`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no active composition。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe track.reset`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe track.reset`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -8758,7 +8758,7 @@ Delete Tracker
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-tracking`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no active composition。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe track.delete`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe track.delete`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -8776,7 +8776,7 @@ Edit Target...
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-tracking`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no active composition。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe track.editTargetDialog`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe track.editTargetDialog`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -8794,7 +8794,7 @@ Options...
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-tracking`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no active composition。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe track.optionsDialog`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe track.optionsDialog`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -8812,7 +8812,7 @@ Tracker Status
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-tracking`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe track.status`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe track.status`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -8830,7 +8830,7 @@ Track Mask
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-tracking`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe track.mask`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe track.mask`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -8848,7 +8848,7 @@ Mask Tracking Method
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-tracking`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe track.maskMethod`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe track.maskMethod`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -8866,7 +8866,7 @@ Extract & Copy Face Measurements
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-tracking`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe track.extractFaceMeasurements`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe track.extractFaceMeasurements`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -8884,7 +8884,7 @@ Apply Mask Interpolation
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-masks`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe mask.interpolate`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe mask.interpolate`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -8902,7 +8902,7 @@ Mask Interpolation Options
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-masks`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe mask.interpolationOptions`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe mask.interpolationOptions`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -8920,7 +8920,7 @@ Warp Stabilizer VFX
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-tracking`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe track.warpStabilizer`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe track.warpStabilizer`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -8938,7 +8938,7 @@ Analyze
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe warp.analyze`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe warp.analyze`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -8956,7 +8956,7 @@ Cancel
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no Warp Stabilizer analysis is running。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe warp.cancel`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe warp.cancel`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -8974,7 +8974,7 @@ Warp Stabilizer Status
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe warp.status`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe warp.status`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -8992,7 +8992,7 @@ Track Camera
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-tracking`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe track.camera`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe track.camera`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -9010,7 +9010,7 @@ Analyze
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-camera`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe camera.analyze`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe camera.analyze`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -9028,7 +9028,7 @@ Cancel
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-camera`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no 3D Camera Tracker analysis is running。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe camera.cancel`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe camera.cancel`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -9046,7 +9046,7 @@ Cancel
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-camera`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe camera.solveStatus`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe camera.solveStatus`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -9064,7 +9064,7 @@ Cancel
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-camera`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe camera.points`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe camera.points`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -9082,7 +9082,7 @@ Select Track Points
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-camera`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe camera.selectPoints`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe camera.selectPoints`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -9100,7 +9100,7 @@ Create from Camera Solve
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-camera`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe camera.createFromSolve`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe camera.createFromSolve`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -9118,7 +9118,7 @@ Create Camera
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-camera`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe camera.create`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe camera.create`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -9136,7 +9136,7 @@ Set Ground Plane and Origin
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-camera`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe camera.setGroundPlane`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe camera.setGroundPlane`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -9154,7 +9154,7 @@ Delete Selected Points
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-camera`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe camera.deletePoints`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe camera.deletePoints`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -9172,7 +9172,7 @@ Roto Brush Stroke
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-masks`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe roto.stroke`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe roto.stroke`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -9190,7 +9190,7 @@ Propagate Roto Brush
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-masks`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe roto.propagate`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe roto.propagate`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -9208,7 +9208,7 @@ Set Segmentation Span
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-masks`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe roto.span`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe roto.span`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -9226,7 +9226,7 @@ Freeze
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-masks`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe roto.freeze`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe roto.freeze`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -9244,7 +9244,7 @@ Unfreeze
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-masks`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe roto.unfreeze`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe roto.unfreeze`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -9262,7 +9262,7 @@ Remove Roto Brush Strokes
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-masks`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe roto.clearStrokes`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe roto.clearStrokes`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -9280,7 +9280,7 @@ Stop Roto Brush
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-masks`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no Roto Brush job is running。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe roto.cancel`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe roto.cancel`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -9298,7 +9298,7 @@ Roto Brush Options
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-masks`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe roto.options`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe roto.options`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -9316,7 +9316,7 @@ Roto Brush Status
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-masks`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe roto.status`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe roto.status`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -9334,7 +9334,7 @@ Paint Stroke
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe paint.stroke`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe paint.stroke`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -9352,7 +9352,7 @@ Paint Options
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe paint.options`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe paint.options`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -9370,7 +9370,7 @@ Brush Preset
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe paint.brushPreset`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe paint.brushPreset`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -9388,7 +9388,7 @@ Set Clone Source
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe paint.setCloneSource`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe paint.setCloneSource`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -9406,7 +9406,7 @@ Delete Paint Stroke
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe paint.removeStroke`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe paint.removeStroke`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -9424,7 +9424,7 @@ Brush Presets
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe paint.presets`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe paint.presets`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -9442,7 +9442,7 @@ Add Puppet Pin
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-puppet`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe puppet.addPin`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe puppet.addPin`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -9460,7 +9460,7 @@ Move Puppet Pin
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-puppet`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe puppet.movePin`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe puppet.movePin`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -9478,7 +9478,7 @@ Edit Puppet Pin
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-puppet`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe puppet.setPin`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe puppet.setPin`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -9496,7 +9496,7 @@ Delete Puppet Pin
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-puppet`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe puppet.removePin`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe puppet.removePin`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -9514,7 +9514,7 @@ Select Puppet Pins
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-puppet`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe puppet.selectPins`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe puppet.selectPins`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -9532,7 +9532,7 @@ Puppet Mesh Options
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-puppet`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe puppet.mesh`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe puppet.mesh`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -9550,7 +9550,7 @@ Puppet Mesh Info
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-puppet`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe puppet.info`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe puppet.info`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -9568,7 +9568,7 @@ Record Puppet Pin
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-puppet`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe puppet.recordPin`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe puppet.recordPin`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -9586,7 +9586,7 @@ Follow-Through...
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-puppet`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe puppet.follow`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe puppet.follow`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -9604,7 +9604,7 @@ Record Options...
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-puppet`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe puppet.recordOptions`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe puppet.recordOptions`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -9622,7 +9622,7 @@ Liquify Stroke
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe liquify.stroke`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe liquify.stroke`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -9640,7 +9640,7 @@ Clear Liquify Mesh
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe liquify.clear`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe liquify.clear`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -9658,7 +9658,7 @@ Get Setting
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe prefs.get`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe prefs.get`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -9676,7 +9676,7 @@ Change Setting
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe prefs.set`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe prefs.set`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -9694,7 +9694,7 @@ Reset Settings
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe prefs.reset`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe prefs.reset`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -9712,7 +9712,7 @@ Open Settings
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe prefs.open`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe prefs.open`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -9730,7 +9730,7 @@ Settings Pages
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe prefs.pages`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe prefs.pages`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -9748,7 +9748,7 @@ List Keyboard Shortcuts
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe shortcuts.list`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe shortcuts.list`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -9766,7 +9766,7 @@ Set Keyboard Shortcut
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe shortcuts.set`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe shortcuts.set`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -9784,7 +9784,7 @@ Reset Keyboard Shortcuts
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe shortcuts.reset`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe shortcuts.reset`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -9802,7 +9802,7 @@ Keyboard Shortcut Preset
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe shortcuts.preset`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe shortcuts.preset`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -9820,7 +9820,7 @@ Export Keyboard Shortcuts
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe shortcuts.export`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe shortcuts.export`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -9838,7 +9838,7 @@ Import Keyboard Shortcuts
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe shortcuts.import`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe shortcuts.import`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -9856,7 +9856,7 @@ Keyboard Shortcut Conflicts
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe shortcuts.conflicts`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe shortcuts.conflicts`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -9874,7 +9874,7 @@ Open Recent
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-project`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no recent projects。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe file.openRecent`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe file.openRecent`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -9892,7 +9892,7 @@ Clear Recent Projects
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-project`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no recent projects。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe file.clearRecent`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe file.clearRecent`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -9910,7 +9910,7 @@ Auto-Save Now
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-project`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe file.autoSave`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe file.autoSave`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -9928,7 +9928,7 @@ Auto-Save Status
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-project`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe file.recoveryInfo`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe file.recoveryInfo`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -9946,7 +9946,7 @@ History
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: nothing to undo。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe edit.history`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe edit.history`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -9964,7 +9964,7 @@ Import Recent Footage
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-project`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no recent footage。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe file.importRecent`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe file.importRecent`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -9982,7 +9982,7 @@ Clear Recent Footage
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-project`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no recent footage。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe file.clearRecentFootage`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe file.clearRecentFootage`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -10000,7 +10000,7 @@ Recent Animation Presets
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-animation`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe anim.applyRecentPreset`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe anim.applyRecentPreset`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -10018,7 +10018,7 @@ Clear Recent Presets
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-animation`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no recent animation presets。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe anim.clearRecentPresets`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe anim.clearRecentPresets`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -10036,7 +10036,7 @@ Save a Copy As XML...
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-project`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe file.saveCopyAsXml`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe file.saveCopyAsXml`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -10054,7 +10054,7 @@ With Layered Comp
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-project`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: select an item in the Project panel first。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe file.replaceWithLayeredComp`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe file.replaceWithLayeredComp`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -10072,7 +10072,7 @@ Execute File
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-project`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe file.executeFile`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe file.executeFile`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -10090,7 +10090,7 @@ Assign Shortcut to 3D View
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe view.assign3dShortcut`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe view.assign3dShortcut`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -10108,7 +10108,7 @@ Assign Shortcut to Workspace
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe window.assignWorkspaceShortcut`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe window.assignWorkspaceShortcut`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -10126,7 +10126,7 @@ Enable Logging
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe help.enableLogging`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe help.enableLogging`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -10144,7 +10144,7 @@ Reveal Logging File
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe help.revealLogFile`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe help.revealLogFile`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -10162,7 +10162,7 @@ System Compatibility Report...
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe help.systemReport`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe help.systemReport`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -10180,7 +10180,7 @@ Create VR Environment...
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-composition`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe comp.vr.createEnvironment`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe comp.vr.createEnvironment`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -10198,7 +10198,7 @@ Extract Cubemap...
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-composition`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe comp.vr.extractCubemap`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe comp.vr.extractCubemap`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -10216,7 +10216,7 @@ System Information
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe help.systemInfo`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe help.systemInfo`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -10234,7 +10234,7 @@ Convert Audio to Keyframes
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-animation`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe keys.audioToKeyframes`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe keys.audioToKeyframes`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -10252,7 +10252,7 @@ RPF Camera Import
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-animation`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe keys.rpfCameraImport`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe keys.rpfCameraImport`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -10270,7 +10270,7 @@ Primary Composition
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe essential.setPrimary`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe essential.setPrimary`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -10288,7 +10288,7 @@ Essential Graphics Name
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe essential.setName`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe essential.setName`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -10306,7 +10306,7 @@ Add Property to Essential Graphics
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe essential.addProperty`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe essential.addProperty`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -10324,7 +10324,7 @@ Add Mirror
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe essential.addMirror`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe essential.addMirror`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -10342,7 +10342,7 @@ Link Property to Control
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe essential.linkProperty`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe essential.linkProperty`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -10360,7 +10360,7 @@ Unlink Property
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe essential.unlinkProperty`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe essential.unlinkProperty`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -10378,7 +10378,7 @@ Add Media Replacement
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe essential.addMedia`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe essential.addMedia`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -10396,7 +10396,7 @@ Add Group
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe essential.addGroup`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe essential.addGroup`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -10414,7 +10414,7 @@ Add Comment
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe essential.addComment`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe essential.addComment`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -10432,7 +10432,7 @@ Rename Control
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe essential.rename`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe essential.rename`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -10450,7 +10450,7 @@ Remove Control
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe essential.remove`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe essential.remove`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -10468,7 +10468,7 @@ Move Control
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe essential.move`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe essential.move`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -10486,7 +10486,7 @@ Solo Supported Properties
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe essential.soloSupported`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe essential.soloSupported`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -10504,7 +10504,7 @@ Essential Graphics Template...
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe essential.exportTemplate`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe essential.exportTemplate`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -10522,7 +10522,7 @@ Essential Graphics Template...
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe essential.importTemplate`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe essential.importTemplate`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -10540,7 +10540,7 @@ Set Essential Property
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe essential.set`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe essential.set`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -10558,7 +10558,7 @@ Push Override Values to Source
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe essential.pushToComp`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe essential.pushToComp`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -10576,7 +10576,7 @@ Revert
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe essential.revert`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe essential.revert`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -10594,7 +10594,7 @@ Edit Dropdown Menu
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-effects`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe effect.editDropdown`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe effect.editDropdown`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -10612,7 +10612,7 @@ Essential Graphics controls
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe essential.list`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe essential.list`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -10630,7 +10630,7 @@ Can Add Property to Essential Graphics
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe essential.canAdd`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe essential.canAdd`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -10648,7 +10648,7 @@ Open in Essential Graphics
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-composition`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe comp.openInEssentialGraphics`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe comp.openInEssentialGraphics`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -10666,7 +10666,7 @@ Essential Properties of a precomp layer
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe essential.instance`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe essential.instance`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -10684,7 +10684,7 @@ Read a template's manifest
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe essential.templateInfo`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe essential.templateInfo`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -10702,7 +10702,7 @@ Expression errors (the error bar)
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-expressions`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe expr.errors`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe expr.errors`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -10720,7 +10720,7 @@ Expression Language menu
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-expressions`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe expr.languageMenu`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe expr.languageMenu`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -10738,7 +10738,7 @@ Create Proxy
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-project`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: select a composition。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe file.createProxy`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe file.createProxy`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -10756,7 +10756,7 @@ File...
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-project`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: select an item in the Project panel first。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe file.setProxy`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe file.setProxy`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -10774,7 +10774,7 @@ None
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-project`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: select an item in the Project panel first。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe file.setProxyNone`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe file.setProxyNone`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -10792,7 +10792,7 @@ Use Proxy
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-project`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: select an item in the Project panel first。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe file.useProxy`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe file.useProxy`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -10810,7 +10810,7 @@ Proxy...
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-project`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: select an item in the Project panel first。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe file.interpretProxy`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe file.interpretProxy`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -10828,7 +10828,7 @@ Install Script File...
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-project`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe file.installScript`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe file.installScript`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -10846,7 +10846,7 @@ Install ScriptUI Panel...
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-project`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe file.installScriptUIPanel`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe file.installScriptUIPanel`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -10864,7 +10864,7 @@ Uninstall Script
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-project`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe file.uninstallScript`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe file.uninstallScript`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -10882,7 +10882,7 @@ List Scripts
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-project`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe file.scripts.list`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe file.scripts.list`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -10900,7 +10900,7 @@ ScriptUI Panel
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe window.scriptPanel`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe window.scriptPanel`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -10918,7 +10918,7 @@ List Script Windows
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe scriptui.list`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe scriptui.list`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -10936,7 +10936,7 @@ Script Window Controls
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe scriptui.get`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe scriptui.get`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -10954,7 +10954,7 @@ Click Script Window Control
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe scriptui.click`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe scriptui.click`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -10972,7 +10972,7 @@ Set Script Window Control
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe scriptui.set`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe scriptui.set`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -10990,7 +10990,7 @@ Close Script Window
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe scriptui.close`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe scriptui.close`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -11008,7 +11008,7 @@ Background Jobs
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe jobs.list`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe jobs.list`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -11026,7 +11026,7 @@ Cancel Job
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe jobs.cancel`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe jobs.cancel`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -11044,7 +11044,7 @@ Wait for Background Jobs
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe jobs.wait`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe jobs.wait`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -11062,7 +11062,7 @@ List Folder
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-footage`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe mediaBrowser.list`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe mediaBrowser.list`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -11080,7 +11080,7 @@ Go to Folder
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-footage`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe mediaBrowser.go`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe mediaBrowser.go`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -11098,7 +11098,7 @@ Add to Favorites
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-footage`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe mediaBrowser.addFavorite`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe mediaBrowser.addFavorite`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -11116,7 +11116,7 @@ Remove from Favorites
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-footage`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe mediaBrowser.removeFavorite`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe mediaBrowser.removeFavorite`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -11134,7 +11134,7 @@ Import
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-footage`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe mediaBrowser.import`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe mediaBrowser.import`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -11152,7 +11152,7 @@ Media Browser Action
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-footage`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe mediaBrowser.action`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe mediaBrowser.action`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -11170,7 +11170,7 @@ File Info
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-footage`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe mediaBrowser.fileInfo`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe mediaBrowser.fileInfo`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -11188,7 +11188,7 @@ Metadata
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe item.metadata`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe item.metadata`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -11206,7 +11206,7 @@ Project Comment
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-project`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe project.setProjectComment`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe project.setProjectComment`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -11224,7 +11224,7 @@ Lumetri Scopes
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe scopes.analyze`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe scopes.analyze`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -11242,7 +11242,7 @@ Open in Footage Panel
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-footage`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe footage.open`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe footage.open`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -11260,7 +11260,7 @@ Footage Panel State
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-footage`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe footage.info`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe footage.info`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -11278,7 +11278,7 @@ Footage Panel Time
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-footage`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: open footage in the Footage panel first。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe footage.setTime`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe footage.setTime`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -11296,7 +11296,7 @@ Set In Point
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-footage`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: open footage in the Footage panel first。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe footage.setIn`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe footage.setIn`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -11314,7 +11314,7 @@ Set Out Point
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-footage`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: open footage in the Footage panel first。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe footage.setOut`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe footage.setOut`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -11332,7 +11332,7 @@ Clear In and Out
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-footage`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: open footage in the Footage panel first。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe footage.clearInOut`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe footage.clearInOut`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -11350,7 +11350,7 @@ Overlay Edit
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-footage`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: open footage in the Footage panel first。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe footage.overlayEdit`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe footage.overlayEdit`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -11368,7 +11368,7 @@ Ripple Insert Edit
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-footage`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: open footage in the Footage panel first。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe footage.rippleInsertEdit`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe footage.rippleInsertEdit`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -11386,7 +11386,7 @@ Auto-trace...
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-layers`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.autoTrace`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layer.autoTrace`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -11404,7 +11404,7 @@ Scene Edit Detection...
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-layers`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.sceneEditDetection`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layer.sceneEditDetection`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -11422,7 +11422,7 @@ Align Video to Data
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-layers`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.alignVideoToData`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layer.alignVideoToData`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -11440,7 +11440,7 @@ Align Layers
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-layers`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.align`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layer.align`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -11458,7 +11458,7 @@ Distribute Layers
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-layers`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.distribute`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layer.distribute`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -11476,7 +11476,7 @@ Content-Aware Fill Settings
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe contentFill.set`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe contentFill.set`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -11494,7 +11494,7 @@ Generate Fill Layer
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: no composition is open。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe contentFill.generate`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe contentFill.generate`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -11512,7 +11512,7 @@ Content-Aware Fill Layer...
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-layers`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.newContentAwareFill`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layer.newContentAwareFill`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -11530,7 +11530,7 @@ Browser Storage
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe storage.info`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe storage.info`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -11548,7 +11548,7 @@ Request Persistent Storage
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: browser storage is only managed in the web app。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe storage.persist`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe storage.persist`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -11566,7 +11566,7 @@ Clear Browser Storage
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: browser storage is only managed in the web app。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe storage.clear`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe storage.clear`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -11584,7 +11584,7 @@ Learn Tutorials
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe learn.list`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe learn.list`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -11602,7 +11602,7 @@ Tutorial State
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe learn.state`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe learn.state`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -11620,7 +11620,7 @@ Start Tutorial
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe learn.start`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe learn.start`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -11638,7 +11638,7 @@ Tutorial Step
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe learn.step`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe learn.step`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -11656,7 +11656,7 @@ Close Tutorial
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe learn.stop`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe learn.stop`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -11674,7 +11674,7 @@ Project Templates
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe templates.list`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe templates.list`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -11692,7 +11692,7 @@ Template Thumbnail
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe templates.thumbnail`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe templates.thumbnail`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -11710,7 +11710,7 @@ New Project from Template
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe templates.create`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe templates.create`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -11728,7 +11728,7 @@ Save as Template...
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: the project has no compositions。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe templates.saveAs`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe templates.saveAs`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -11746,7 +11746,7 @@ Delete Template
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe templates.delete`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe templates.delete`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -11764,7 +11764,7 @@ New Project from Template...
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli-project`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe file.newFromTemplate`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe file.newFromTemplate`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -11782,7 +11782,7 @@ Preview Settings
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe playback.settings.get`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe playback.settings.get`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
@@ -11800,7 +11800,7 @@ Change Preview Settings
 - 安装 / Install: `npx skills add full-aigc-skills/effectcraft-skills --skill effectcraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe playback.settings.set`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe playback.settings.set`；按原生参数构造计划后执行 run。
 - 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 

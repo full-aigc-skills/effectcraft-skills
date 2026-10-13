@@ -9,7 +9,7 @@ import unittest
 
 ROOT=Path(__file__).resolve().parents[1]
 DOMAIN=json.loads((ROOT/'skill-suite.json').read_text())['pluginId']
-SCRIPT=ROOT/'skills'/(DOMAIN+'-use')/'scripts/commands.py'
+SCRIPT=ROOT/'skills'/(DOMAIN+'-harness')/'scripts/commands.py'
 
 class CommandPlanJsonTests(unittest.TestCase):
  def test_duplicate_keys_are_rejected_by_isolated_public_check(self):
@@ -34,25 +34,24 @@ class CommandPlanJsonTests(unittest.TestCase):
       self.assertEqual(json.loads(result.stdout)['error'],'duplicate_json_key')
       self.assertFalse(output.exists())
       self.assertFalse(runtime.exists())
- def test_each_standalone_skill_rejects_duplicate_keys_before_install(self):
-  suite=json.loads((ROOT/'skill-suite.json').read_text())
-  for entry in suite['skills']:
-   with self.subTest(skill=entry['name']),tempfile.TemporaryDirectory() as temporary:
-    root=Path(temporary);skill=root/entry['name']
-    shutil.copytree(ROOT/'skills'/entry['name'],skill,ignore=shutil.ignore_patterns('__pycache__','*.pyc'))
-    script=skill/'scripts/commands.py'
-    identifier=json.loads((skill/'references/command-coverage.json').read_text())['commands'][0]['id']
-    plan=root/'plan.json';output=root/'output';runtime=root/'runtime'
-    plan.write_text('{"schema":"craft-command-plan/v1","operations":[{"command":'+json.dumps(identifier)+',"params":{"value":1,"value":2}}]}')
-    rejected=subprocess.run([sys.executable,'-I','-B',str(script),'run',str(plan),'--output',str(output),'--runtime-home',str(runtime)],capture_output=True,text=True)
-    self.assertEqual(rejected.returncode,1,rejected.stdout+rejected.stderr)
-    self.assertEqual(json.loads(rejected.stdout)['error'],'duplicate_json_key')
-    self.assertFalse(output.exists());self.assertFalse(runtime.exists())
-    plan.write_text(json.dumps({'schema':'craft-command-plan/v1','operations':[{'command':identifier,'params':{}}]}))
-    accepted=subprocess.run([sys.executable,'-I','-B',str(script),'check',str(plan)],capture_output=True,text=True)
-    self.assertEqual(accepted.returncode,0,accepted.stdout+accepted.stderr)
-    self.assertEqual(json.loads(accepted.stdout)['nativeExecution'],'NOT_RUN')
-    self.assertFalse(any(skill.rglob('*.pyc')))
+ def test_standalone_harness_rejects_duplicate_keys_before_install(self):
+  # 执行实现收敛在 harness：单独复制 harness 后，公开入口仍拒绝重复键。
+  with tempfile.TemporaryDirectory() as temporary:
+   root=Path(temporary);skill=root/(DOMAIN+'-harness')
+   shutil.copytree(ROOT/'skills'/(DOMAIN+'-harness'),skill,ignore=shutil.ignore_patterns('__pycache__','*.pyc'))
+   script=skill/'scripts/commands.py'
+   identifier=json.loads((skill/'references/command-coverage.json').read_text())['commands'][0]['id']
+   plan=root/'plan.json';output=root/'output';runtime=root/'runtime'
+   plan.write_text('{"schema":"craft-command-plan/v1","operations":[{"command":'+json.dumps(identifier)+',"params":{"value":1,"value":2}}]}')
+   rejected=subprocess.run([sys.executable,'-I','-B',str(script),'run',str(plan),'--output',str(output),'--runtime-home',str(runtime)],capture_output=True,text=True)
+   self.assertEqual(rejected.returncode,1,rejected.stdout+rejected.stderr)
+   self.assertEqual(json.loads(rejected.stdout)['error'],'duplicate_json_key')
+   self.assertFalse(output.exists());self.assertFalse(runtime.exists())
+   plan.write_text(json.dumps({'schema':'craft-command-plan/v1','operations':[{'command':identifier,'params':{}}]}))
+   accepted=subprocess.run([sys.executable,'-I','-B',str(script),'check',str(plan)],capture_output=True,text=True)
+   self.assertEqual(accepted.returncode,0,accepted.stdout+accepted.stderr)
+   self.assertEqual(json.loads(accepted.stdout)['nativeExecution'],'NOT_RUN')
+   self.assertFalse(any(skill.rglob('*.pyc')))
 
  def test_valid_unique_plan_remains_checkable(self):
   identifier=json.loads((SCRIPT.parent.parent/'references/command-coverage.json').read_text())['commands'][0]['id']

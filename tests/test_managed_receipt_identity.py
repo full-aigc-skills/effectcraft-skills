@@ -5,7 +5,7 @@ from pathlib import Path
 import tempfile
 import unittest
 from unittest.mock import patch
-BASE=Path(__file__).resolve().parents[1]/'skills/effectcraft-use/scripts'
+BASE=Path(__file__).resolve().parents[1]/'skills/effectcraft-harness/scripts'
 def load():
  s=importlib.util.spec_from_file_location('receipt_identity',BASE/'task_store.py');m=importlib.util.module_from_spec(s);s.loader.exec_module(m);return m
 class ReceiptIdentityTests(unittest.TestCase):

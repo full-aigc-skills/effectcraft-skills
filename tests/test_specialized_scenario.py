@@ -9,6 +9,10 @@ class SpecializedScenarioTests(unittest.TestCase):
   self.assertIn(name,skills);self.assertEqual(skills[name]['kind'],'scenario')
   rows=json.loads((ROOT/'skills'/(domain+'-use')/'references/command-coverage.json').read_text())['commands'];family=[r for r in rows if r['id'].startswith(prefix)]
   self.assertTrue(family);self.assertTrue(all(r['ownerSkill']==name for r in family))
-  for relative in ['SKILL.md','scripts/bootstrap.py','scripts/commands.py','scripts/runtime.lock.json']:
+  for relative in ['SKILL.md']:
    self.assertTrue((ROOT/'skills'/name/relative).is_file(),relative)
+  harness=ROOT/'skills/effectcraft-harness'
+  for relative in ['scripts/bootstrap.py','scripts/commands.py','scripts/runtime.lock.json']:
+   self.assertTrue((harness/relative).is_file(),relative)
+  self.assertFalse((ROOT/'skills'/name/'scripts').exists(),'领域技能不再自带执行实现')
 if __name__=='__main__':unittest.main()

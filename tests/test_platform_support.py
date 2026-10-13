@@ -6,7 +6,7 @@ import sys
 import tempfile
 import unittest
 
-SCRIPT = Path(__file__).resolve().parents[1] / 'skills/effectcraft-use/scripts/platform_support.py'
+SCRIPT = Path(__file__).resolve().parents[1] / 'skills/effectcraft-harness/scripts/platform_support.py'
 
 
 class PlatformSupportTests(unittest.TestCase):

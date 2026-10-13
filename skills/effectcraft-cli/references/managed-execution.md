@@ -1,6 +1,6 @@
 # 受管理任务 / Managed execution
 
-从当前技能实际加载目录调用 `scripts/launch.sh`（macOS/Linux）或 `scripts/launch.ps1`（Windows）。启动器仅在用户缓存准备锁定 Python；脚本、工程与输出均不得写入技能目录。七个平台制品可用不等于七个平台已通过原生验收。
+从 effectcraft-harness 技能实际加载目录调用 `scripts/launch.sh`（macOS/Linux）或 `scripts/launch.ps1`（Windows）。启动器仅在用户缓存准备锁定 Python；脚本、工程与输出均不得写入技能目录。七个平台制品可用不等于七个平台已通过原生验收。
 
 | 操作 | 参数与行为 |
 | --- | --- |
@@ -23,15 +23,15 @@
 `workflow` 是默认模式，仅接收原生合成计划（例如 `brand-intro.json`）；`craft-command-plan/v1` 必须显式选择 `commands` 或自有桌面 `desktop`，不能交给默认 workflow。桌面模式会准备固定桌面制品并启动本任务拥有的会话，不连接或关闭用户已有桌面。
 
 ```sh
-sh "$SKILL_DIR/scripts/launch.sh" plan --mode workflow --plan "$SKILL_DIR/examples/brand-intro.json" --output "/absolute/new workflow"
-sh "$SKILL_DIR/scripts/launch.sh" run --mode commands --plan "$SKILL_DIR/examples/commands-advanced.json" --output "/absolute/new commands"
-sh "$SKILL_DIR/scripts/launch.sh" run --mode desktop --plan "$SKILL_DIR/examples/desktop-first-use.json" --output "/absolute/new desktop"
+sh "$HARNESS_DIR/scripts/launch.sh" plan --mode workflow --plan "$SKILL_DIR/examples/brand-intro.json" --output "/absolute/new workflow"
+sh "$HARNESS_DIR/scripts/launch.sh" run --mode commands --plan "$SKILL_DIR/examples/commands-advanced.json" --output "/absolute/new commands"
+sh "$HARNESS_DIR/scripts/launch.sh" run --mode desktop --plan "$SKILL_DIR/examples/desktop-first-use.json" --output "/absolute/new desktop"
 ```
 
 ```powershell
-& "$SKILL_DIR/scripts/launch.ps1" plan --mode workflow --plan "$SKILL_DIR/examples/brand-intro.json" --output 'C:\new workflow'
-& "$SKILL_DIR/scripts/launch.ps1" run --mode commands --plan "$SKILL_DIR/examples/commands-advanced.json" --output 'C:\new commands'
-& "$SKILL_DIR/scripts/launch.ps1" run --mode desktop --plan "$SKILL_DIR/examples/desktop-first-use.json" --output 'C:\new desktop'
+& "$HARNESS_DIR/scripts/launch.ps1" plan --mode workflow --plan "$SKILL_DIR/examples/brand-intro.json" --output 'C:\new workflow'
+& "$HARNESS_DIR/scripts/launch.ps1" run --mode commands --plan "$SKILL_DIR/examples/commands-advanced.json" --output 'C:\new commands'
+& "$HARNESS_DIR/scripts/launch.ps1" run --mode desktop --plan "$SKILL_DIR/examples/desktop-first-use.json" --output 'C:\new desktop'
 ```
 
 原始 `commands.py run PLAN --output DIR`、`desktop.py run PLAN --output DIR` 和 `cli.py -- ARGV` 保留公开兼容契约，供明确指定的兼容调用使用；技能默认创作不直接调用它们。已有未知任务只用原任务的inspect/reconcile/resume核对，不能借兼容入口另做一遍。
@@ -43,7 +43,7 @@ POSIX 离线首用（制品须预先准备，版本与平台以技能内锁为�
 ```sh
 export CRAFT_PYTHON_ARCHIVE="/absolute/offline artifacts/python.tar.gz"
 export CRAFT_RUNTIME_ARCHIVE="/absolute/offline artifacts/effectcraft.zip"
-sh "$SKILL_DIR/scripts/launch.sh" run --plan PLAN.json --output "/absolute/new result"
+sh "$HARNESS_DIR/scripts/launch.sh" run --plan PLAN.json --output "/absolute/new result"
 ```
 
 Windows PowerShell：
@@ -51,7 +51,7 @@ Windows PowerShell：
 ```powershell
 $env:CRAFT_PYTHON_ARCHIVE='C:\offline artifacts\python.zip'
 $env:CRAFT_RUNTIME_ARCHIVE='C:\offline artifacts\effectcraft.zip'
-& "$SKILL_DIR/scripts/launch.ps1" run --plan PLAN.json --output 'C:\new result'
+& "$HARNESS_DIR/scripts/launch.ps1" run --plan PLAN.json --output 'C:\new result'
 ```
 
 原生桌面制品另有锁与安装入口；这两个环境变量准备 Python／headless CLI，不冒用桌面安装验收。网络完全不可用时，离线创作与评估所需素材、字体及媒体解码器也须已具备；缺少解码器的技术评价保持 `NOT_RUN`。
@@ -156,9 +156,9 @@ Current candidate named-PNG modes account for original and child frames/native d
 ### 只读诊断与实际能力 / Readonly diagnostic and actual capability discovery
 
 ```bash
-sh "$SKILL_DIR/scripts/launch.sh" doctor
-sh "$SKILL_DIR/scripts/launch.sh" doctor --probe-native
-sh "$SKILL_DIR/scripts/launch.sh" doctor --compare-catalog /absolute/previous-command-coverage.json
+sh "$HARNESS_DIR/scripts/launch.sh" doctor
+sh "$HARNESS_DIR/scripts/launch.sh" doctor --probe-native
+sh "$HARNESS_DIR/scripts/launch.sh" doctor --compare-catalog /absolute/previous-command-coverage.json
 ```
 
 默认doctor只核验平台、锁、当前Python、已安装CLI完整性及固定目录，返回实际可调用的恢复argv，不执行恢复动作。没有Python时Shell／PowerShell入口仍只读返回缺失信息，不自动下载；直接Python入口也不创建运行时或任务目录。显式`--probe-native`仅在CLI完整性、最低系统条件均通过后查询`--version`及自有`--empty mcp`的`tools/list`／`list_commands`，限时、不重试，不连接已有桌面，不编辑／渲染，也不恢复未知任务。探测PASS仅表示版本／注册身份／工具schema一致，创作、原生平台整体和宿主验收仍NOT_RUN。

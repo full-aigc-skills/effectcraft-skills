@@ -2,30 +2,30 @@
 
 Create editable `.ecproj` projects, dependencies and media from text, graphics and footage. This is a development release; full V1 remains open. Published releases and local documentation candidates have separate evidence.
 
-Current source: `0.1.0-dev.68`; consuming plugin: `0.1.0-dev.70`; 15 independent skills.
+Current source: `0.1.0-dev.69`; consuming plugin: `0.1.0-dev.70`; 16 independent skills (15 domain skills + 1 built-in execution harness).
 
 | Field | Value |
 | --- | --- |
-| Metadata version | 0.1.0-dev.68 |
-| Skills source | effectcraft-skills / v0.1.0-dev.68 |
+| Metadata version | 0.1.0-dev.69 |
+| Skills source | effectcraft-skills / v0.1.0-dev.69 |
 | Acceptance | Development; full V1 OPEN |
 
 
 ## First use
 
-Invoke **`effectcraft-use`** in the host. For direct invocation, set `SKILL_DIR` to the absolute directory containing the actually loaded `SKILL.md`. Launchers prepare and verify pinned Python and EffectCraft in user data; system Python, global PATH and readonly skill files are preserved. Offline use requires pinned official archives or an intact verified cache.
+Invoke **`effectcraft-use`** in the host. All execution goes through the built-in **effectcraft-harness** skill: set `HARNESS_DIR` to its actually loaded absolute directory, and `SKILL_DIR` to the domain skill directory (for example effectcraft-use). Launchers prepare and verify pinned Python and EffectCraft in user data; system Python, global PATH and readonly skill files are preserved. Offline use requires pinned official archives or an intact verified cache.
 
 <!-- CRAFT_FIRST_USE_START -->
 ```bash
-: "${SKILL_DIR:?Set to the actual loaded skill directory}"
-sh "$SKILL_DIR/scripts/launch.sh" doctor
-sh "$SKILL_DIR/scripts/launch.sh" run --plan "$SKILL_DIR/examples/brand-intro.json" --output "$PWD/effectcraft-result"
+: "${HARNESS_DIR:?Set to the actually loaded effectcraft-harness skill directory}"
+sh "$HARNESS_DIR/scripts/launch.sh" doctor
+sh "$HARNESS_DIR/scripts/launch.sh" run --plan "$SKILL_DIR/examples/brand-intro.json" --output "$PWD/effectcraft-result"
 ```
 <!-- CRAFT_FIRST_USE_END -->
 
 ```powershell
-$env:SKILL_DIR = "<actual loaded skill directory>"
-& (Join-Path $env:SKILL_DIR "scripts/launch.ps1") doctor
+$env:HARNESS_DIR = "<actually loaded effectcraft-harness skill directory>"
+& (Join-Path $env:HARNESS_DIR "scripts/launch.ps1") doctor
 ```
 
 [Workflow and delivery](skills/effectcraft-use/references/workflow.md) · [Setup and diagnostics](skills/effectcraft-cli-setup/SKILL.md). Generic Skills CLI installation and fixed-host natural-language dispatch retain separate acceptance gates.
@@ -43,6 +43,7 @@ The source53/plugin55 [15-skill report](docs/evidence/native-smoke-source53-2026
 | Skill | Purpose |
 | --- | --- |
 | [effectcraft-use](skills/effectcraft-use/SKILL.md) | Task routing and delivery |
+| [effectcraft-harness](skills/effectcraft-harness/SKILL.md) | Built-in execution harness shared by all domain skills |
 | [effectcraft-cli](skills/effectcraft-cli/SKILL.md) | General command planning |
 | [effectcraft-cli-setup](skills/effectcraft-cli-setup/SKILL.md) | Runtime setup and diagnostics |
 | [effectcraft-cli-project](skills/effectcraft-cli-project/SKILL.md) | Projects and native save/reopen |
@@ -58,7 +59,7 @@ The source53/plugin55 [15-skill report](docs/evidence/native-smoke-source53-2026
 | [effectcraft-cli-tracking](skills/effectcraft-cli-tracking/SKILL.md) | Tracking |
 | [effectcraft-cli-puppet](skills/effectcraft-cli-puppet/SKILL.md) | Puppet pins and recording |
 
-Each skill includes its own runtime resources and installs independently. Bundled references describe parameters, ownership and modes for 655 commands; catalog coverage does not prove every command was executed.
+Execution resources live once in effectcraft-harness; domain skills are thin documentation skills that route through it and still install independently. Bundled references describe parameters, ownership and modes for 655 commands; catalog coverage does not prove every command was executed.
 
 
 ## Inspect, recover and cancel
@@ -69,6 +70,8 @@ Use `inspect` for the original task, `reconcile` to verify original receipts, an
 
 
 ## Maintenance and version history
+
+Source dev.69 converges the duplicated execution payload of 15 domain skills into a single built-in **effectcraft-harness** skill: the shared scripts (six documented entry points) now exist once, the unreferenced additional_platforms.py is removed, and domain skills become thin documentation that routes execution to the harness by skill name. Repository tests and the sync script are updated for the new layout; target-platform and host acceptance remain open; this is a development release.
 
 The skill source owns execution code; the plugin consumes pinned tags, commits and whole-skill digests. The incremental authority is plugin `openspec/changes/establish-v1-plugin`; incomplete gates prevent archival. ArtCraft owns public `craft-task/v1` and `craft-artifact/v1`; EffectCraft consumes them.
 

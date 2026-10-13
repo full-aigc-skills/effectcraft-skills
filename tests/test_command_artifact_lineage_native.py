@@ -19,7 +19,7 @@ class CommandArtifactNativeTests(unittest.TestCase):
     def exercise(self,mode):
         base=Path(os.environ.get('CRAFT_COMMAND_ARTIFACT_ROOT') or tempfile.mkdtemp(prefix='command artifact native '));root=base/mode;root.mkdir(parents=True,exist_ok=True)
         self.assertFalse(any(root.iterdir()),'preserve previous evidence')
-        skill=root/'single readonly skill';shutil.copytree(ROOT/'skills/effectcraft-use',skill,ignore=shutil.ignore_patterns('__pycache__','*.pyc'))
+        skill=root/'single readonly skill';shutil.copytree(ROOT/'skills/effectcraft-harness',skill,ignore=shutil.ignore_patterns('__pycache__','*.pyc'))
         for p in skill.rglob('*'):p.chmod(0o555 if p.is_dir() else 0o444)
         skill.chmod(0o555);installed=files(skill)
         runtime=Path(os.environ['CRAFT_COMMAND_ARTIFACT_RUNTIME_HOME']);env=dict(os.environ,CRAFT_RUNTIME_HOME=str(runtime),PATH='/opt/homebrew/bin:/usr/bin:/bin')

@@ -45,7 +45,7 @@ class SegmentedHdFirstUse(unittest.TestCase):
             environment.pop('CRAFT_NATIVE_ARCHIVE_DIRECTORY', None)
             started = time.monotonic()
             print('HD Effect public cold workflow started', flush=True)
-            result = subprocess.run([sys.executable,'-I','-B',str(effect/'scripts/workflow.py'),str(plan_path),
+            result = subprocess.run([sys.executable,'-I','-B',str(ROOT/'skills/effectcraft-harness/scripts/workflow.py'),str(plan_path),
                 '--output',str(root/'effect'),'--runtime-home',str(runtime)],
                 capture_output=True,text=True,timeout=600,env=environment)
             self.assertEqual(result.returncode,0,result.stdout+result.stderr)

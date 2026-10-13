@@ -43,7 +43,7 @@ class AnimationTemporalTests(unittest.TestCase):
             skill = root / '.agents/skills/effectcraft-cli-animation'
             shutil.copytree(original, skill)
             self.assertEqual(tree_hash(skill), original_hash)
-            spec = importlib.util.spec_from_file_location('effect_temporal_workflow', skill / 'scripts/workflow.py')
+            spec = importlib.util.spec_from_file_location('effect_temporal_workflow', ROOT / 'skills/effectcraft-harness/scripts/workflow.py')
             workflow = importlib.util.module_from_spec(spec)
             spec.loader.exec_module(workflow)
             runtime = root / 'empty-runtime'

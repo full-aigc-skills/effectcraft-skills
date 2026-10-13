@@ -22,12 +22,13 @@ class SegmentFirstUse(unittest.TestCase):
         original=ROOT/'skills/effectcraft-cli-export';before=hashes(original)
         with tempfile.TemporaryDirectory(prefix='effect-segment-first-use-') as temp:
             root=Path(temp).resolve();skill=root/'.agents/skills/effectcraft-cli-export';shutil.copytree(original,skill);copied=hashes(skill);runtime=root/'empty-runtime'
-            workflow=load('segment_workflow',skill/'scripts/workflow.py');segments=load('segment_producer',skill/'scripts/segmented_sequence.py')
+            executor=root/'.agents/skills/effectcraft-harness';shutil.copytree(ROOT/'skills/effectcraft-harness',executor)
+            workflow=load('segment_workflow',executor/'scripts/workflow.py');segments=load('segment_producer',executor/'scripts/segmented_sequence.py')
             plan=json.loads((skill/'examples/brand-intro.json').read_text());plan['exports']=[{'format':'png-sequence'}]
             self.assertFalse(runtime.exists())
             delivered=workflow.execute(plan,root/'baseline',runtime_home=runtime)
             baseline=root/'baseline';source_hashes=hashes(baseline)
-            installed=segments.module('bootstrap').install(json.loads((skill/'scripts/runtime.lock.json').read_text()),runtime)
+            installed=segments.module('bootstrap').install(json.loads((executor/'scripts/runtime.lock.json').read_text()),runtime)
             comp=json.loads((baseline/'native.json').read_text())['composition'];out=root/'segmented';calls=[];native=segments.render_segment
             def tracked(cli,project,composition,directory,part):
                 calls.append(part['firstFrame']);return native(cli,project,composition,directory,part)
@@ -48,7 +49,7 @@ class SegmentFirstUse(unittest.TestCase):
                 self.assertEqual(calls,[0,4,8,4]);self.assertEqual(repaired,report);self.assertEqual(hashes(out/'segment_00000'),immutable)
             composition=root/'composition.json';composition.write_text(json.dumps(comp))
             fresh=root/'public-cli-runtime';public=root/'public-cli';self.assertFalse(fresh.exists())
-            command=[sys.executable,'-I','-B',str(skill/'scripts/segmented_sequence.py'),'--project',str(baseline/'project.ecproj'),'--composition',str(composition),'--output',str(public),'--chunk-frames','4','--runtime-home',str(fresh)]
+            command=[sys.executable,'-I','-B',str(executor/'scripts/segmented_sequence.py'),'--project',str(baseline/'project.ecproj'),'--composition',str(composition),'--output',str(public),'--chunk-frames','4','--runtime-home',str(fresh)]
             environment=dict(os.environ,PATH='/usr/bin:/bin:/usr/sbin:/sbin');environment.pop('CRAFT_NATIVE_ARCHIVE_DIRECTORY',None);environment.pop('CRAFT_BUNDLE_DIRECTORY',None)
             first=subprocess.run(command,capture_output=True,text=True,timeout=180,env=environment);self.assertEqual(first.returncode,0,first.stdout+first.stderr)
             self.assertEqual(json.loads(first.stdout),{'state':'verified','frameCount':12,'segments':3})

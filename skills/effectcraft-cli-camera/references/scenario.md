@@ -41,7 +41,7 @@
 以下 `SKILL_DIR` 沿用本技能 `SKILL.md` 的实际加载目录，脚本和示例均来自同一技能。
 
 ```bash
-python3 "$SKILL_DIR/scripts/cli.py" -- run \
+python3 "$HARNESS_DIR/scripts/cli.py" -- run \
   layer.newCamera '{"name":"Primary camera","position":[160,90,-400],"poi":[160,90,0]}' \
   view.set3DView '{"view":"activeCamera"}' \
   camera.dolly '{"amount":50}' \

@@ -25,7 +25,7 @@ class SequenceFirstUseTests(unittest.TestCase):
         with tempfile.TemporaryDirectory(prefix='effect-sequence-first-use-') as temporary:
             root = Path(temporary); skill = root/'.agents/skills/effectcraft-cli-export'
             shutil.copytree(original, skill); copied = hashes(skill); runtime = root/'empty-runtime'
-            spec = importlib.util.spec_from_file_location('sequence_workflow', skill/'scripts/workflow.py')
+            spec = importlib.util.spec_from_file_location('sequence_workflow', ROOT/'skills/effectcraft-harness/scripts/workflow.py')
             workflow = importlib.util.module_from_spec(spec); spec.loader.exec_module(workflow)
             self.assertFalse(runtime.exists())
             plan = json.loads((skill/'examples/brand-intro.json').read_text()); plan['exports'] = [{'format': 'png-sequence'}]

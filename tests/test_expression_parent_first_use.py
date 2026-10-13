@@ -7,7 +7,7 @@ class RecipeContract(unittest.TestCase):
  def test_every_skill_contains_command_bound_recipe_and_guide(self):
   rows={r['id']:r for r in json.loads((ROOT/'skills/effectcraft-use/references/command-coverage.json').read_text())['commands']}
   for skill in (ROOT/'skills').iterdir():
-   if not (skill/'SKILL.md').is_file():continue
+   if not (skill/'SKILL.md').is_file() or skill.name=='effectcraft-harness':continue
    for name in ['expression-parent-create.json','expression-parent-revise.json']:
     plan=json.loads((skill/'examples'/name).read_text())
     for op in plan['operations']:
@@ -20,8 +20,9 @@ class ExpressionNativeFirstUse(unittest.TestCase):
   original=Path(os.environ.get('CRAFT_EFFECT_EXPRESSION_SKILL',ROOT/'skills/effectcraft-cli-expressions'));before=hashes(original)
   with tempfile.TemporaryDirectory() as temporary:
    root=Path(temporary);skill=root/'.agents/skills'/original.name;shutil.copytree(original,skill,ignore=shutil.ignore_patterns('__pycache__'));copied=hashes(skill);runtime=root/'empty-runtime';self.assertFalse(runtime.exists())
+   workflow=ROOT/'skills/effectcraft-harness/scripts/workflow.py'
    def run(plan,destination,source=None,success=True):
-    p=root/(destination.name+'.json');p.write_text(json.dumps(plan));args=[sys.executable,'-I','-B',str(skill/'scripts/workflow.py'),str(p),'--output',str(destination),'--runtime-home',str(runtime)]
+    p=root/(destination.name+'.json');p.write_text(json.dumps(plan));args=[sys.executable,'-I','-B',str(workflow),str(p),'--output',str(destination),'--runtime-home',str(runtime)]
     if source:args+=['--source',str(source)]
     r=subprocess.run(args,capture_output=True,text=True,env=dict(os.environ,PATH='/usr/bin:/bin'),timeout=600)
     if not success:self.assertNotEqual(r.returncode,0);self.assertIn('cycle',r.stdout+r.stderr);self.assertFalse((destination/'manifest.json').exists());return

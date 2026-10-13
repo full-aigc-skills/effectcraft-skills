@@ -28,7 +28,7 @@ class ManagedSegmentNativeTests(unittest.TestCase):
     def test_public_resume_reuses_verified_segment_without_replaying_edits(self):
         with tempfile.TemporaryDirectory(prefix='managed segment recovery ') as temporary:
             root=Path(temporary).resolve();skill=root/'single skill'
-            shutil.copytree(ROOT/'skills/effectcraft-use',skill,ignore=shutil.ignore_patterns('__pycache__','*.pyc'))
+            shutil.copytree(ROOT/'skills/effectcraft-harness',skill,ignore=shutil.ignore_patterns('__pycache__','*.pyc'))
             before=hashes(skill);managed=load(skill/'scripts/managed.py');tasks=managed.load('task_store')
             store=tasks.Store(root/'state');output=root/'delivery';runtime=root/'runtime'
             plan=json.loads((skill/'examples/brand-intro.json').read_text());plan['exports']=[{'format':'png-segmented','chunkFrames':4}]

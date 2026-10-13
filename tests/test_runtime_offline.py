@@ -10,7 +10,7 @@ import unittest
 from unittest.mock import patch
 import zipfile
 
-BASE=Path(__file__).resolve().parents[1]/'skills/effectcraft-use/scripts'
+BASE=Path(__file__).resolve().parents[1]/'skills/effectcraft-harness/scripts'
 def load():
     spec=importlib.util.spec_from_file_location('offline_boot',BASE/'bootstrap.py');m=importlib.util.module_from_spec(spec);spec.loader.exec_module(m);return m
 

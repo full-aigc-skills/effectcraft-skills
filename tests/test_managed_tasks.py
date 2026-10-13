@@ -5,7 +5,7 @@ from pathlib import Path
 import tempfile
 import unittest
 
-SCRIPT = Path(__file__).resolve().parents[1]/'skills/effectcraft-use/scripts/task_store.py'
+SCRIPT = Path(__file__).resolve().parents[1]/'skills/effectcraft-harness/scripts/task_store.py'
 
 
 class ManagedTaskTests(unittest.TestCase):

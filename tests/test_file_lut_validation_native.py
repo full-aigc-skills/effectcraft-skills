@@ -9,7 +9,7 @@ class FileLutNativeTests(unittest.TestCase):
  def test_commands(self):self.exercise('commands')
  def test_desktop(self):self.exercise('desktop')
  def exercise(self,mode):
-  root=Path(os.environ['CRAFT_FILE_LUT_ROOT'])/mode;root.mkdir(parents=True);skill=root/'single readonly skill';shutil.copytree(ROOT/'skills/effectcraft-use',skill,ignore=shutil.ignore_patterns('__pycache__','*.pyc'))
+  root=Path(os.environ['CRAFT_FILE_LUT_ROOT'])/mode;root.mkdir(parents=True);skill=root/'single readonly skill';shutil.copytree(ROOT/'skills/effectcraft-harness',skill,ignore=shutil.ignore_patterns('__pycache__','*.pyc'))
   for f in skill.rglob('*'):f.chmod(0o555 if f.is_dir() else 0o444)
   skill.chmod(0o555);installed=files(skill);output=root/'delivery';state=root/'state';cube='LUT_3D_SIZE 2\n'+''.join(f'{b} {g} {r}\n' for b in range(2) for g in range(2) for r in range(2));source=root/'look.cube';source.write_text(cube)
   ops=[{'command':'comp.new','params':{'name':'File LUT sample','width':64,'height':48,'frameRate':2,'duration':1},'as':'composition'},

@@ -14,7 +14,7 @@ ROOT=Path(__file__).resolve().parents[1]
 
 class GeneratorEncodingTests(unittest.TestCase):
     def test_cli_help_survives_redirected_windows_codepage(self):
-        script=ROOT/'skills/effectcraft-use/scripts/cli.py'
+        script=ROOT/'skills/effectcraft-harness/scripts/cli.py'
         code="import sys,runpy;sys.stdout.reconfigure(encoding='cp1252');sys.stderr.reconfigure(encoding='cp1252');runpy.run_path(sys.argv.pop(1),run_name='__main__')"
         result=subprocess.run([sys.executable,'-I','-B','-c',code,str(script),'--help'],capture_output=True)
         self.assertEqual(result.returncode,0,result.stderr.decode('utf-8',errors='replace'))
@@ -27,7 +27,7 @@ class GeneratorEncodingTests(unittest.TestCase):
         def windows_write(path,data,encoding=None,errors=None,**kwargs):
             return write(path,data,encoding=encoding or 'cp1252',errors=errors,**kwargs)
         with patch.object(Path,'read_text',windows_read),patch.object(Path,'write_text',windows_write),tempfile.TemporaryDirectory() as directory:
-            spec=importlib.util.spec_from_file_location('utf8_commands',ROOT/'skills/effectcraft-use/scripts/commands.py')
+            spec=importlib.util.spec_from_file_location('utf8_commands',ROOT/'skills/effectcraft-harness/scripts/commands.py')
             module=importlib.util.module_from_spec(spec);spec.loader.exec_module(module)
             self.assertTrue(module.catalog()['commands'])
             path=Path(directory)/'receipt.json';module.write(path,{'text':'中文作品'})

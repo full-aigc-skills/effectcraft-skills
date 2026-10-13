@@ -4,7 +4,7 @@ import importlib.util
 from pathlib import Path
 import unittest
 
-SCRIPT=Path(__file__).resolve().parents[1]/'skills/effectcraft-use/scripts/revision.py'
+SCRIPT=Path(__file__).resolve().parents[1]/'skills/effectcraft-harness/scripts/revision.py'
 
 
 class RevisionScopeTests(unittest.TestCase):

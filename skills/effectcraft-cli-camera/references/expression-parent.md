@@ -3,7 +3,7 @@
 当前技能包含独立的 `examples/expression-parent-create.json` 与 `examples/expression-parent-revise.json`，从实际 `.agents/skills` 或插件缓存目录使用本技能脚本，首次会安装摘要锁定的原生CLI。
 
 ```bash
-python3 -I -B "$SKILL_DIR/scripts/workflow.py" "$SKILL_DIR/examples/expression-parent-create.json" --output "$DELIVERY_DIR" --runtime-home "$RUNTIME_HOME"
+python3 -I -B "$HARNESS_DIR/scripts/workflow.py" "$SKILL_DIR/examples/expression-parent-create.json" --output "$DELIVERY_DIR" --runtime-home "$RUNTIME_HOME"
 ```
 
 设置SKILL_DIR为当前实际技能目录，DELIVERY_DIR和RUNTIME_HOME为用户自己的输出及运行时目录。创建合成128×64、12fps、一秒；两个预览时间为0和0.5**秒**，不是帧号。绿色控制图层与红色目标分离，目标挂在零位置Null父级下，透明度表达式50+time*50。Native gateway保持原生参数，先选择目标图层再执行依赖选择的命令。

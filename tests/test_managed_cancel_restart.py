@@ -5,7 +5,7 @@ from unittest.mock import patch
 from pathlib import Path
 ROOT=Path(__file__).resolve().parents[1]
 def managed():
- spec=importlib.util.spec_from_file_location('cancel_restart',ROOT/'skills/effectcraft-use/scripts/managed.py');m=importlib.util.module_from_spec(spec);spec.loader.exec_module(m);return m
+ spec=importlib.util.spec_from_file_location('cancel_restart',ROOT/'skills/effectcraft-harness/scripts/managed.py');m=importlib.util.module_from_spec(spec);spec.loader.exec_module(m);return m
 class CancelRestartTests(unittest.TestCase):
  def setUp(self):
   self.tmp=tempfile.TemporaryDirectory();self.addCleanup(self.tmp.cleanup);self.root=Path(self.tmp.name);self.m=managed();self.store=self.m.load('task_store').Store(self.root/'state');self.create('task')
@@ -55,7 +55,7 @@ class CancelRestartTests(unittest.TestCase):
  def test_supervisor_keeps_unreceived_business_exit_unknown_after_forced_stop(self):
   marker=self.root/'worker-ready';driver=self.root/'worker.py'
   driver.write_text('import importlib.util,signal,time\nfrom pathlib import Path\n'
-   +f's=importlib.util.spec_from_file_location("store",{str(ROOT/"skills/effectcraft-use/scripts/task_store.py")!r})\n'
+   +f's=importlib.util.spec_from_file_location("store",{str(ROOT/"skills/effectcraft-harness/scripts/task_store.py")!r})\n'
    +'m=importlib.util.module_from_spec(s);s.loader.exec_module(m)\n'
    +f'store=m.Store(Path({str(self.store.root)!r}));store.start("task")\n'
    +'signal.signal(signal.SIGTERM,signal.SIG_IGN)\n'
@@ -70,7 +70,7 @@ class CancelRestartTests(unittest.TestCase):
     self.store.cancel('task')
    except BaseException as e:errors.append(e)
   watcher=threading.Thread(target=cancel);watcher.start();original=self.m.load
-  binding=SimpleNamespace(resolve=lambda *args:{'python':sys.executable,'guard':str(ROOT/'skills/effectcraft-use/scripts/process_guard.py'),'script':str(driver),'runtimeHome':str(self.root/'runtime')})
+  binding=SimpleNamespace(resolve=lambda *args:{'python':sys.executable,'guard':str(ROOT/'skills/effectcraft-harness/scripts/process_guard.py'),'script':str(driver),'runtimeHome':str(self.root/'runtime')})
   try:
    with patch.object(self.m,'load',side_effect=lambda name:binding if name=='runtime_binding' else original(name)):
     result=self.m.supervise(self.store,'task',self.root/'runtime')

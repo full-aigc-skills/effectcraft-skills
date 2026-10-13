@@ -7,7 +7,7 @@ import unittest
 from unittest.mock import patch
 from types import SimpleNamespace
 
-HERE=Path(__file__).resolve().parents[1]/'skills/effectcraft-use/scripts'
+HERE=Path(__file__).resolve().parents[1]/'skills/effectcraft-harness/scripts'
 def module(name):
  spec=importlib.util.spec_from_file_location('source_conflict_'+name,HERE/(name+'.py'))
  value=importlib.util.module_from_spec(spec);spec.loader.exec_module(value);return value

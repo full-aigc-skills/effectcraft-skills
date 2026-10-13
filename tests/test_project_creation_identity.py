@@ -8,7 +8,7 @@ from types import SimpleNamespace
 import unittest
 from unittest.mock import patch,Mock
 
-HERE=Path(__file__).resolve().parents[1]/'skills/effectcraft-use/scripts'
+HERE=Path(__file__).resolve().parents[1]/'skills/effectcraft-harness/scripts'
 def load():
  spec=importlib.util.spec_from_file_location('creation_claims',HERE/'project_claims.py');value=importlib.util.module_from_spec(spec);spec.loader.exec_module(value);return value
 

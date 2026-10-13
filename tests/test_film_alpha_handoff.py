@@ -15,7 +15,8 @@ TICKS = 254016000000
 
 
 def load_workflow(skill, name):
-    spec = importlib.util.spec_from_file_location(name, skill / 'scripts/workflow.py')
+    # effect 侧执行实现收敛在 effectcraft-harness；film 侧技能仍自带脚本。
+    spec = importlib.util.spec_from_file_location(name, (ROOT / 'skills/effectcraft-harness' if name.startswith('effect') else skill) / 'scripts/workflow.py')
     module = importlib.util.module_from_spec(spec)
     spec.loader.exec_module(module)
     return module

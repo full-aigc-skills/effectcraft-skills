@@ -29,7 +29,7 @@ class ManagedThreeModeNativeTests(unittest.TestCase):
         root.mkdir(parents=True,exist_ok=True)
         self.assertFalse(any(root.iterdir()),'preserve previous acceptance tasks; use a fresh test root')
         skill=root/'only readonly skill'
-        shutil.copytree(ROOT/'skills/effectcraft-use',skill,ignore=shutil.ignore_patterns('__pycache__','*.pyc'))
+        shutil.copytree(ROOT/'skills/effectcraft-harness',skill,ignore=shutil.ignore_patterns('__pycache__','*.pyc'))
         for p in skill.rglob('*'):p.chmod(0o555 if p.is_dir() else 0o444)
         skill.chmod(0o555);original=inventory(skill)
         runtime=Path(os.environ.get('CRAFT_MANAGED_COMPOSITION_RUNTIME_HOME') or base/'native runtime');env=dict(os.environ,CRAFT_RUNTIME_HOME=str(runtime),PATH='/opt/homebrew/bin:/usr/bin:/bin')

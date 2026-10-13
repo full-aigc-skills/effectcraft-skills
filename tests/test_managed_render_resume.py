@@ -9,7 +9,7 @@ ROOT=Path(__file__).resolve().parents[1]
 
 
 def managed_module():
-    spec=importlib.util.spec_from_file_location('managed_resume_test',ROOT/'skills/effectcraft-use/scripts/managed.py')
+    spec=importlib.util.spec_from_file_location('managed_resume_test',ROOT/'skills/effectcraft-harness/scripts/managed.py')
     value=importlib.util.module_from_spec(spec);spec.loader.exec_module(value);return value
 
 

@@ -13,7 +13,7 @@ from types import SimpleNamespace
 import unittest
 from unittest.mock import patch,Mock
 
-ROOT=Path(__file__).resolve().parents[1];BASE=ROOT/'skills/effectcraft-use'
+ROOT=Path(__file__).resolve().parents[1];BASE=ROOT/'skills/effectcraft-harness'
 def module(name):
     path=BASE/'scripts'/(name+'.py');spec=importlib.util.spec_from_file_location('doctor_test_'+name,path)
     result=importlib.util.module_from_spec(spec);spec.loader.exec_module(result);return result

@@ -8,7 +8,7 @@ import sys
 import tempfile
 import unittest
 from unittest.mock import patch
-ROOT=Path(__file__).resolve().parents[1];BASE=ROOT/'skills/effectcraft-use';SCRIPT=BASE/'scripts/managed.py'
+ROOT=Path(__file__).resolve().parents[1];BASE=ROOT/'skills/effectcraft-use';HARNESS=ROOT/'skills/effectcraft-harness';SCRIPT=HARNESS/'scripts/managed.py'
 def load():
  spec=importlib.util.spec_from_file_location('interface_managed',SCRIPT);m=importlib.util.module_from_spec(spec);spec.loader.exec_module(m);return m
 class ManagedInterfaceGuardTests(unittest.TestCase):

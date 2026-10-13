@@ -17,7 +17,7 @@ class SourceProducerNativeTests(unittest.TestCase):
     def test_unknown_copy_is_refused_and_confirmed_cross_store_revision_succeeds(self):
         root=Path(os.environ.get('CRAFT_SOURCE_PRODUCER_ROOT') or tempfile.mkdtemp(prefix='source producer native '));root.mkdir(parents=True,exist_ok=True)
         self.assertFalse(any(root.iterdir()),'preserve prior native evidence')
-        skill=root/'single readonly skill';shutil.copytree(ROOT/'skills/effectcraft-use',skill,ignore=shutil.ignore_patterns('__pycache__','*.pyc'))
+        skill=root/'single readonly skill';shutil.copytree(ROOT/'skills/effectcraft-harness',skill,ignore=shutil.ignore_patterns('__pycache__','*.pyc'))
         for p in skill.rglob('*'):p.chmod(0o555 if p.is_dir() else 0o444)
         skill.chmod(0o555);installed=files(skill)
         env=dict(os.environ,HOME=str(root/'private user'),CRAFT_RUNTIME_HOME=os.environ['CRAFT_SOURCE_PRODUCER_RUNTIME_HOME'],PATH='/opt/homebrew/bin:/usr/bin:/bin')

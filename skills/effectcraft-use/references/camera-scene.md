@@ -2,7 +2,7 @@
 
 ## 首次使用与输入 / First use and inputs
 
-从当前宿主加载的 SKILL.md 确定 SKILL_DIR，使用本技能 scripts/bootstrap.py 安装固定官方 CLI。输入包括合成、目标图形或模型、摄像机、灯光、时间范围和允许修改对象。三维坐标用 [x,y,z] 合成像素，旋转用度，时间用秒。先查询实际参数及 enabled；连续创建在同会话中使用返回 layer ID，不猜 ID。
+从当前宿主加载的 SKILL.md 确定 SKILL_DIR，使用 effectcraft-harness 技能（HARNESS_DIR）的 scripts/bootstrap.py 安装固定官方 CLI。输入包括合成、目标图形或模型、摄像机、灯光、时间范围和允许修改对象。三维坐标用 [x,y,z] 合成像素，旋转用度，时间用秒。先查询实际参数及 enabled；连续创建在同会话中使用返回 layer ID，不猜 ID。
 
 ## 分类与使用场景 / Command families
 
@@ -25,11 +25,11 @@ These families cover all 46 owned commands. Use describe for exact parameters. A
 ## 自包含实例 / Self-contained example
 
 ```bash
-python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.newCamera
-python3 -I -B "$SKILL_DIR/scripts/commands.py" check "$SKILL_DIR/examples/camera-scene-create.json"
-python3 -I -B "$SKILL_DIR/scripts/commands.py" run "$SKILL_DIR/examples/camera-scene-create.json" --output /absolute/new-camera-create
-python3 -I -B "$SKILL_DIR/scripts/commands.py" run "$SKILL_DIR/examples/camera-scene-reopen.json" --input project=/absolute/new-camera-create/project.ecproj --output /absolute/new-camera-reopen
-python3 -I -B "$SKILL_DIR/scripts/commands.py" run "$SKILL_DIR/examples/camera-scene-revise.json" --input project=/absolute/new-camera-create/project.ecproj --output /absolute/new-camera-revision
+python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layer.newCamera
+python3 -I -B "$HARNESS_DIR/scripts/commands.py" check "$SKILL_DIR/examples/camera-scene-create.json"
+python3 -I -B "$HARNESS_DIR/scripts/commands.py" run "$SKILL_DIR/examples/camera-scene-create.json" --output /absolute/new-camera-create
+python3 -I -B "$HARNESS_DIR/scripts/commands.py" run "$SKILL_DIR/examples/camera-scene-reopen.json" --input project=/absolute/new-camera-create/project.ecproj --output /absolute/new-camera-reopen
+python3 -I -B "$HARNESS_DIR/scripts/commands.py" run "$SKILL_DIR/examples/camera-scene-revise.json" --input project=/absolute/new-camera-create/project.ecproj --output /absolute/new-camera-revision
 ```
 
 实例建立 128×96、12 fps、一秒合成，Advanced 3D 渲染器，36 像素立方体、Ambient 灯、twoNode 摄像机和二维绿色对照图层。先执行 orbit 与 pan，再显式重置镜头；保留 focus-to-POI 表达式，dof=false。摄像机从 [64,48,-250] 前进 50 到 [64,48,-200]，兴趣点从 [64,48,0] 到 [64,48,50]；实际红色投影由 40×40 变成 50×50。

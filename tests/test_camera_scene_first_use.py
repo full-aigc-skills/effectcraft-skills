@@ -34,7 +34,7 @@ class CameraSceneFirstUseTests(unittest.TestCase):
   skill=root/'项目 空格/.agents/skills/effectcraft-cli-camera';shutil.copytree(source,skill,ignore=shutil.ignore_patterns('__pycache__'))
   before=tree(skill);source_before=tree(source);self.assertEqual({p.name for p in skill.parent.iterdir()},{skill.name})
   runtime=root/'runtime 空缓存';self.assertFalse(runtime.exists())
-  spec=importlib.util.spec_from_file_location('camera_commands',skill/'scripts/commands.py');commands=importlib.util.module_from_spec(spec);spec.loader.exec_module(commands)
+  spec=importlib.util.spec_from_file_location('camera_commands',ROOT/'skills/effectcraft-harness/scripts/commands.py');commands=importlib.util.module_from_spec(spec);spec.loader.exec_module(commands)
   env={k:v for k,v in os.environ.items() if not k.startswith('CRAFT_')};env['PATH']='/usr/bin:/bin';receipts={}
   def run(name,project=None,output=None):
    plan=json.loads((skill/f'examples/camera-scene-{name}.json').read_text());inputs={} if project is None else {'project':str(project)};commands.validate(plan,inputs)

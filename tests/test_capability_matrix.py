@@ -8,10 +8,10 @@ import unittest
 ROOT=Path(__file__).resolve().parents[1]
 class CapabilityMatrixTests(unittest.TestCase):
  def setUp(self):
-  self.tmp=tempfile.TemporaryDirectory();self.addCleanup(self.tmp.cleanup);self.root=Path(self.tmp.name);self.base=self.root/'skills/effectcraft-use';self.scripts=self.base/'scripts';self.scripts.mkdir(parents=True);(self.root/'docs/evidence').mkdir(parents=True)
+  self.tmp=tempfile.TemporaryDirectory();self.addCleanup(self.tmp.cleanup);self.root=Path(self.tmp.name);self.base=self.root/'skills/effectcraft-use';self.scripts=self.base/'scripts';self.scripts.mkdir(parents=True);self.harness=self.root/'skills/effectcraft-harness';self.hscripts=self.harness/'scripts';self.hscripts.mkdir(parents=True);(self.root/'docs/evidence').mkdir(parents=True)
   spec=importlib.util.spec_from_file_location('cap_matrix',ROOT/'scripts/build_capability_matrix.py');self.m=importlib.util.module_from_spec(spec);spec.loader.exec_module(self.m);self.m.ROOT=self.root
   self.runtime={'resolvedVersion':'0.4.0','artifacts':{'darwin-arm64':{'binarySha256':'a'*64,'archiveSha256':'e'*64},'linux-x86_64':{'binarySha256':'b'*64,'archiveSha256':'f'*64}}};self.python={'version':'3.13.16','artifacts':{key:{'archiveSha256':'c'*64} for key in self.runtime['artifacts']}}
-  self.write(self.scripts/'runtime.lock.json',self.runtime);self.write(self.scripts/'python.lock.json',self.python);(self.scripts/'managed.py').write_text('operation = 1\n')
+  self.write(self.hscripts/'runtime.lock.json',self.runtime);self.write(self.hscripts/'python.lock.json',self.python);(self.scripts/'managed.py').write_text('operation = 1\n')
   self.report={'schema':'effectcraft-independent-offline15/v1','status':'PASS','platform':'darwin-arm64','pythonArchiveSha256':'c'*64,'nativeArchiveSha256':'e'*64,'cases':[{'skill':'effectcraft-use','status':'PASS','engineering':'PASS','technical':'PASS','creative':'NOT_RUN'}]};self.report_path=self.root/'docs/evidence/native-report.json';self.report['cases'][0].update(installedFilesAndModesUnchanged=True,installedInventorySha256=hashlib.sha256(json.dumps({k:{'sha256':v,'mode':0o444} for k,v in self.inventory().items()},sort_keys=True,separators=(',',':')).encode()).hexdigest());self.write(self.report_path,self.report)
   self.proof={'schema':'effectcraft-capability-evidence/v1','runtimeVersion':'0.4.0','pythonVersion':'3.13.16','baseSkillFiles':self.inventory(),'platforms':{'darwin-arm64':{'runtimeSha256':'a'*64,'pythonArchiveSha256':'c'*64,'nativeRepresentative':'PASS'}},'reportFile':'docs/evidence/native-report.json','reportSha256':self.sha(self.report_path),'webInstallation':'PASS'}
   self.persist()
@@ -35,9 +35,9 @@ class CapabilityMatrixTests(unittest.TestCase):
     self.assertEqual(self.status(),'NOT_RUN')
     (self.scripts/'new.py').unlink(missing_ok=True);(self.scripts/'managed.py').write_text('operation = 1\n')
  def test_python_identity_must_match(self):
-  self.python['version']='3.13.17';self.write(self.scripts/'python.lock.json',self.python);self.proof['baseSkillFiles']=self.inventory();self.persist();self.assertEqual(self.status(),'NOT_RUN')
+  self.python['version']='3.13.17';self.write(self.hscripts/'python.lock.json',self.python);self.proof['baseSkillFiles']=self.inventory();self.persist();self.assertEqual(self.status(),'NOT_RUN')
  def test_python_archive_must_match_even_with_refreshed_files(self):
-  self.python['artifacts']['darwin-arm64']['archiveSha256']='d'*64;self.write(self.scripts/'python.lock.json',self.python);self.proof['baseSkillFiles']=self.inventory();self.persist();self.assertEqual(self.status(),'NOT_RUN')
+  self.python['artifacts']['darwin-arm64']['archiveSha256']='d'*64;self.write(self.hscripts/'python.lock.json',self.python);self.proof['baseSkillFiles']=self.inventory();self.persist();self.assertEqual(self.status(),'NOT_RUN')
  def test_changed_raw_report_cannot_keep_pass(self):
   self.report['status']='FAIL';self.write(self.report_path,self.report);self.assertEqual(self.status(),'NOT_RUN')
  def test_matching_report_digest_cannot_promote_failed_report(self):

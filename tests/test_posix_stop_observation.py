@@ -1,7 +1,7 @@
 """真实POSIX守护进程只在有效停止观察后结算；瞬态查询错误有界重查。"""
 import json,os,subprocess,sys,tempfile,time,unittest
 from pathlib import Path
-SCRIPT=Path(__file__).resolve().parents[1]/'skills/effectcraft-use/scripts'
+SCRIPT=Path(__file__).resolve().parents[1]/'skills/effectcraft-harness/scripts'
 
 @unittest.skipIf(os.name=='nt','POSIX observation; Windows Job semantics unchanged')
 class StopObservationTests(unittest.TestCase):

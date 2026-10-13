@@ -13,62 +13,63 @@ class SkillSuiteTests(unittest.TestCase):
  def test_suite_contains_separate_cli_setup_and_task_skills(self):
   suite=json.loads((ROOT/'skill-suite.json').read_text(encoding='utf-8'))
   names={entry['name'] for entry in suite['skills']}
-  domain=suite['pluginId']
-  for entry in suite['skills']:
-   lock=json.loads((ROOT/'skills'/entry['name']/'scripts/runtime.lock.json').read_text(encoding='utf-8'))
-   self.assertEqual(suite['runtimeVersion'],lock['resolvedVersion'])
+  domain=suite['pluginId'];harness=domain+'-harness'
+  self.assertIn(harness,names)
+  lock=json.loads((ROOT/'skills'/harness/'scripts/runtime.lock.json').read_text(encoding='utf-8'))
+  self.assertEqual(suite['runtimeVersion'],lock['resolvedVersion'])
   self.assertTrue({domain+'-use',domain+'-cli',domain+'-cli-setup'}.issubset(names))
   self.assertGreater(len(names),3)
+  # 执行实现只收敛在 harness；领域技能不再自带脚本目录。
   for name in names:
-   with tempfile.TemporaryDirectory() as temporary:
-    isolated=Path(temporary)/'only-skill';shutil.copytree(ROOT/'skills'/name,isolated,ignore=shutil.ignore_patterns('__pycache__'))
-    result=subprocess.run([sys.executable,'-I','-B',str(isolated/'scripts/cli.py'),'--help'],capture_output=True,text=True,encoding="utf-8")
-    self.assertEqual(result.returncode,0,result.stderr)
-    self.assertFalse(any(isolated.rglob('*.pyc')))
+   self.assertEqual((ROOT/'skills'/name/'scripts').exists(),name==harness)
+  with tempfile.TemporaryDirectory() as temporary:
+   isolated=Path(temporary)/'only-skill';shutil.copytree(ROOT/'skills'/harness,isolated,ignore=shutil.ignore_patterns('__pycache__'))
+   result=subprocess.run([sys.executable,'-I','-B',str(isolated/'scripts/cli.py'),'--help'],capture_output=True,text=True,encoding="utf-8")
+   self.assertEqual(result.returncode,0,result.stderr)
+   self.assertFalse(any(isolated.rglob('*.pyc')))
  def test_unknown_command_is_refused_before_installation(self):
   suite=json.loads((ROOT/'skill-suite.json').read_text(encoding='utf-8'))
-  for entry in suite['skills']:
-   with tempfile.TemporaryDirectory() as temporary:
-    isolated=Path(temporary)/'only-skill';shutil.copytree(ROOT/'skills'/entry['name'],isolated,ignore=shutil.ignore_patterns('__pycache__'))
-    runtime=Path(temporary)/'runtime'
-    result=subprocess.run([sys.executable,'-I','-B',str(isolated/'scripts/cli.py'),'--runtime-home',str(runtime),'--','invented-subcommand'],capture_output=True,text=True,encoding="utf-8")
-    self.assertNotEqual(result.returncode,0)
-    self.assertFalse(runtime.exists())
+  harness=ROOT/'skills'/(suite['pluginId']+'-harness')
+  with tempfile.TemporaryDirectory() as temporary:
+   isolated=Path(temporary)/'only-skill';shutil.copytree(harness,isolated,ignore=shutil.ignore_patterns('__pycache__'))
+   runtime=Path(temporary)/'runtime'
+   result=subprocess.run([sys.executable,'-I','-B',str(isolated/'scripts/cli.py'),'--runtime-home',str(runtime),'--','invented-subcommand'],capture_output=True,text=True,encoding="utf-8")
+   self.assertNotEqual(result.returncode,0)
+   self.assertFalse(runtime.exists())
 
- def test_every_single_skill_rejects_later_invalid_effect_field_before_installation(self):
+ def test_workflow_rejects_later_invalid_effect_field_before_installation(self):
   suite=json.loads((ROOT/'skill-suite.json').read_text(encoding='utf-8'))
-  for entry in suite['skills']:
-   with self.subTest(skill=entry['name']),tempfile.TemporaryDirectory() as temporary:
-    root=Path(temporary);isolated=root/'only-skill'
-    shutil.copytree(ROOT/'skills'/entry['name'],isolated,ignore=shutil.ignore_patterns('__pycache__'))
-    before={p.relative_to(isolated):p.read_bytes() for p in isolated.rglob('*') if p.is_file()}
-    plan=root/'plan.json';plan.write_text(json.dumps({'operations':[
-     {'command':'layer.newSolid','params':{}},
-     {'command':'effect.apply','params':{'effect':'Gaussian Blur','blurriness':12}}]}))
-    result=subprocess.run([sys.executable,'-I','-B',str(isolated/'scripts/workflow.py'),str(plan),
-     '--output',str(root/'output'),'--runtime-home',str(root/'runtime')],capture_output=True,text=True,encoding="utf-8",timeout=30)
-    self.assertEqual(result.returncode,1,result.stdout+result.stderr)
-    self.assertIn('unsupported_mapping: effect.apply',json.loads(result.stdout)['error'])
-    self.assertFalse((root/'runtime').exists());self.assertFalse((root/'output').exists())
-    self.assertEqual({p.relative_to(isolated):p.read_bytes() for p in isolated.rglob('*') if p.is_file()},before)
+  harness=ROOT/'skills'/(suite['pluginId']+'-harness')
+  with tempfile.TemporaryDirectory() as temporary:
+   root=Path(temporary);isolated=root/'only-skill'
+   shutil.copytree(harness,isolated,ignore=shutil.ignore_patterns('__pycache__'))
+   before={p.relative_to(isolated):p.read_bytes() for p in isolated.rglob('*') if p.is_file()}
+   plan=root/'plan.json';plan.write_text(json.dumps({'operations':[
+    {'command':'layer.newSolid','params':{}},
+    {'command':'effect.apply','params':{'effect':'Gaussian Blur','blurriness':12}}]}))
+   result=subprocess.run([sys.executable,'-I','-B',str(isolated/'scripts/workflow.py'),str(plan),
+    '--output',str(root/'output'),'--runtime-home',str(root/'runtime')],capture_output=True,text=True,encoding="utf-8",timeout=30)
+   self.assertEqual(result.returncode,1,result.stdout+result.stderr)
+   self.assertIn('unsupported_mapping: effect.apply',json.loads(result.stdout)['error'])
+   self.assertFalse((root/'runtime').exists());self.assertFalse((root/'output').exists())
+   self.assertEqual({p.relative_to(isolated):p.read_bytes() for p in isolated.rglob('*') if p.is_file()},before)
 
 @unittest.skipUnless(os.environ.get('CRAFT_LIVE_SUITE')=='1','requires declared native CLI platform and live runtime')
 class LiveSkillSuiteTests(unittest.TestCase):
- def test_every_single_skill_discovers_pinned_runtime_and_commands(self):
+ def test_harness_discovers_pinned_runtime_and_commands(self):
   suite=json.loads((ROOT/'skill-suite.json').read_text(encoding='utf-8'));domain=suite['pluginId']
   runtime=Path(os.environ.get('CRAFT_RUNTIME_HOME',str(Path.home()/'.local/share/craft-runtimes')))
-  for entry in suite['skills']:
-   with self.subTest(skill=entry['name']),tempfile.TemporaryDirectory() as temporary:
-    isolated=Path(temporary)/'only-skill';shutil.copytree(ROOT/'skills'/entry['name'],isolated,ignore=shutil.ignore_patterns('__pycache__'))
-    def run(*args):
-     result=subprocess.run([sys.executable,'-I','-B',str(isolated/'scripts/cli.py'),'--runtime-home',str(runtime),'--',*args],capture_output=True,text=True,encoding="utf-8",timeout=600)
-     self.assertEqual(result.returncode,0,result.stdout+result.stderr);return result.stdout
-    version=run('--version');self.assertIn('0.1.0-dev.7' if domain=='artcraft' else '0.4.0',version)
-    if domain=='artcraft':
-     self.assertIn('verify-package',run('--help'))
-    else:
-     rows=json.loads(run('commands',*(['--json'] if domain!='vectorcraft' else [])));ids={row['id'] for row in rows}
-     contract=json.loads((isolated/'references/commands.json').read_text(encoding='utf-8'))
-     self.assertTrue({row['id'] for row in contract['commands']}.issubset(ids))
-    self.assertFalse(any(isolated.rglob('*.pyc')))
+  with tempfile.TemporaryDirectory() as temporary:
+   isolated=Path(temporary)/'only-skill';shutil.copytree(ROOT/'skills'/(domain+'-harness'),isolated,ignore=shutil.ignore_patterns('__pycache__'))
+   def run(*args):
+    result=subprocess.run([sys.executable,'-I','-B',str(isolated/'scripts/cli.py'),'--runtime-home',str(runtime),'--',*args],capture_output=True,text=True,encoding="utf-8",timeout=600)
+    self.assertEqual(result.returncode,0,result.stdout+result.stderr);return result.stdout
+   version=run('--version');self.assertIn('0.1.0-dev.7' if domain=='artcraft' else '0.4.0',version)
+   if domain=='artcraft':
+    self.assertIn('verify-package',run('--help'))
+   else:
+    rows=json.loads(run('commands',*(['--json'] if domain!='vectorcraft' else [])));ids={row['id'] for row in rows}
+    contract=json.loads((isolated/'references/commands.json').read_text(encoding='utf-8'))
+    self.assertTrue({row['id'] for row in contract['commands']}.issubset(ids))
+   self.assertFalse(any(isolated.rglob('*.pyc')))
 if __name__=='__main__':unittest.main()

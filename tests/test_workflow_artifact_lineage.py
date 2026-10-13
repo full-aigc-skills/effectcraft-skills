@@ -9,7 +9,7 @@ import unittest
 from unittest.mock import patch
 import test_managed_review as fixtures
 
-BASE=Path(__file__).resolve().parents[1]/'skills/effectcraft-use/scripts'
+BASE=Path(__file__).resolve().parents[1]/'skills/effectcraft-harness/scripts'
 def load(name):
     spec=importlib.util.spec_from_file_location('lineage_test_'+name,BASE/(name+'.py'))
     value=importlib.util.module_from_spec(spec);spec.loader.exec_module(value);return value

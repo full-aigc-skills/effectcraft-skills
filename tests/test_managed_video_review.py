@@ -7,7 +7,7 @@ import subprocess
 import tempfile
 import unittest
 
-SCRIPT=Path(__file__).resolve().parents[1]/'skills/effectcraft-use/scripts/quality_review.py'
+SCRIPT=Path(__file__).resolve().parents[1]/'skills/effectcraft-harness/scripts/quality_review.py'
 
 @unittest.skipUnless(shutil.which('ffmpeg') and shutil.which('ffprobe'),'actual ffmpeg/ffprobe required')
 class VideoReviewTests(unittest.TestCase):

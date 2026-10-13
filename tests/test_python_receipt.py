@@ -9,7 +9,7 @@ import subprocess
 import tempfile
 import unittest
 
-SOURCE=Path(__file__).resolve().parents[1]/'skills/effectcraft-use/scripts'
+SOURCE=Path(__file__).resolve().parents[1]/'skills/effectcraft-harness/scripts'
 
 class PythonReceiptTests(unittest.TestCase):
     def setUp(self):

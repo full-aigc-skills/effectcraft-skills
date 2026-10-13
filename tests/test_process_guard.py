@@ -9,7 +9,7 @@ import tempfile
 import time
 import unittest
 
-SCRIPT = Path(__file__).resolve().parents[1]/'skills/effectcraft-use/scripts/process_guard.py'
+SCRIPT = Path(__file__).resolve().parents[1]/'skills/effectcraft-harness/scripts/process_guard.py'
 
 
 @unittest.skipIf(os.name == 'nt', 'POSIX process evidence; Windows Job requires native runner')

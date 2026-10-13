@@ -58,7 +58,7 @@ class PuppetRecordFollowFirstUseTests(unittest.TestCase):
         self.assertEqual({p.name for p in skill.parent.iterdir()}, {skill.name})
         runtime = work/'runtime 空缓存'
         self.assertFalse(runtime.exists())
-        spec = importlib.util.spec_from_file_location('puppet_commands', skill/'scripts/commands.py')
+        spec = importlib.util.spec_from_file_location('puppet_commands', ROOT/'skills/effectcraft-harness/scripts/commands.py')
         commands = importlib.util.module_from_spec(spec)
         spec.loader.exec_module(commands)
         from unittest.mock import patch

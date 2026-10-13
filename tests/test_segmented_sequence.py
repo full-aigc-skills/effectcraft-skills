@@ -9,7 +9,7 @@ from test_image_sequence import png
 ROOT=Path(__file__).resolve().parents[1]
 class SegmentTests(unittest.TestCase):
     def module(self):
-        spec=importlib.util.spec_from_file_location('segments',ROOT/'skills/effectcraft-use/scripts/segmented_sequence.py')
+        spec=importlib.util.spec_from_file_location('segments',ROOT/'skills/effectcraft-harness/scripts/segmented_sequence.py')
         module=importlib.util.module_from_spec(spec);spec.loader.exec_module(module);return module
 
     def test_hd_and_fractional_ranges_have_no_gap(self):

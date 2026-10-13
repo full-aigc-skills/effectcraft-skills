@@ -3,7 +3,7 @@ import importlib.util,json,os,subprocess,unittest
 from pathlib import Path
 from types import SimpleNamespace
 from unittest.mock import patch
-SCRIPT=Path(__file__).resolve().parents[1]/'skills/effectcraft-use/scripts/posix_group_lease.py'
+SCRIPT=Path(__file__).resolve().parents[1]/'skills/effectcraft-harness/scripts/posix_group_lease.py'
 def load():
     s=importlib.util.spec_from_file_location('lease_tests',SCRIPT);m=importlib.util.module_from_spec(s);s.loader.exec_module(m);return m
 class WorkerResultTests(unittest.TestCase):

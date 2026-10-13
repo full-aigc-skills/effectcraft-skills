@@ -9,7 +9,7 @@ import tempfile
 import unittest
 
 ROOT=Path(__file__).resolve().parents[1]
-SCRIPT=ROOT/'skills/effectcraft-use/scripts/command_catalog.py'
+SCRIPT=ROOT/'skills/effectcraft-harness/scripts/command_catalog.py'
 
 class CommandCatalogDiffTests(unittest.TestCase):
     def setUp(self):
@@ -112,7 +112,7 @@ class CommandCatalogDiffTests(unittest.TestCase):
             root=Path(name);baseline=root/'baseline.json'
             baseline.write_text(json.dumps(self.before,ensure_ascii=False),encoding='utf-8')
             before=baseline.read_bytes()
-            result=subprocess.run([sys.executable,'-I','-B',str(ROOT/'skills/effectcraft-use/scripts/commands.py'),'diff',str(baseline)],capture_output=True)
+            result=subprocess.run([sys.executable,'-I','-B',str(ROOT/'skills/effectcraft-harness/scripts/commands.py'),'diff',str(baseline)],capture_output=True)
             self.assertEqual(result.returncode,0,result.stderr.decode('utf-8',errors='replace'))
             self.assertEqual(json.loads(result.stdout)['executionAcceptance'],'NOT_RUN')
             self.assertEqual(sorted(p.name for p in root.iterdir()),['baseline.json']);self.assertEqual(baseline.read_bytes(),before)
@@ -120,7 +120,7 @@ class CommandCatalogDiffTests(unittest.TestCase):
     def test_public_diff_rejects_ambiguous_json(self):
         with tempfile.TemporaryDirectory() as name:
             path=Path(name)/'baseline.json';path.write_text('{"schema":1,"schema":2}',encoding='utf-8')
-            result=subprocess.run([sys.executable,'-I','-B',str(ROOT/'skills/effectcraft-use/scripts/commands.py'),'diff',str(path)],capture_output=True)
+            result=subprocess.run([sys.executable,'-I','-B',str(ROOT/'skills/effectcraft-harness/scripts/commands.py'),'diff',str(path)],capture_output=True)
             self.assertEqual(result.returncode,1);self.assertEqual(json.loads(result.stdout)['result'],'FAIL')
 
 if __name__=='__main__':unittest.main()

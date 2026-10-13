@@ -13,8 +13,8 @@ Default creative writes use the managed launcher with explicit commands/desktop 
 SKILL_DIR 必须是宿主实际加载本 SKILL.md 的目录；支持用户／项目 .agents/skills、插件 skills 和宿主缓存。任何本领域单技能均包含此入口、目录和示例，不读取兄弟目录。
 
 ```bash
-python3 -I -B "$SKILL_DIR/scripts/commands.py" list --filter layer
-python3 -I -B "$SKILL_DIR/scripts/commands.py" describe COMMAND_ID
+python3 -I -B "$HARNESS_DIR/scripts/commands.py" list --filter layer
+python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe COMMAND_ID
 ```
 
 查询无需安装或下载。参数说明是原生语法文本，不能将其直接作为 JSON，也不能把它冒称为正式 JSON Schema。先核对目标对象、工程、选择状态、素材、范围、单位及当前版本。命令目录存在不证明默认空会话能执行。
@@ -24,7 +24,7 @@ Queries require no installation. Parameter documentation is native syntax, not e
 ### 固定目录升级差异 / Pinned catalog upgrade diff
 
 ```bash
-python3 -I -B "$SKILL_DIR/scripts/commands.py" diff /absolute/previous-command-coverage.json
+python3 -I -B "$HARNESS_DIR/scripts/commands.py" diff /absolute/previous-command-coverage.json
 ```
 
 离线比较旧版覆盖目录与本技能的固定目录：报告新增、移除、参数／技能归属／映射／运行模式变化，以及原生工具schema变化。输出为内部版本化诊断 `effectcraft-command-diff/v1`，不改变公共craft协议，不安装、不启动原生进程、不写任务或工程。重复身份、不同领域、未知schema及歧义JSON直接拒绝。
@@ -60,8 +60,8 @@ Inputs are copied and hash-checked via --input NAME=FILE and referenced as NAME.
 ## 3. 预检与执行 / Check and execute
 
 ```bash
-python3 -I -B "$SKILL_DIR/scripts/commands.py" check "$SKILL_DIR/examples/commands-advanced.json"
-python3 -I -B "$SKILL_DIR/scripts/commands.py" run "$SKILL_DIR/examples/commands-advanced.json" --output /absolute/new-command-result
+python3 -I -B "$HARNESS_DIR/scripts/commands.py" check "$SKILL_DIR/examples/commands-advanced.json"
+python3 -I -B "$HARNESS_DIR/scripts/commands.py" run "$SKILL_DIR/examples/commands-advanced.json" --output /absolute/new-command-result
 ```
 
 check 检查完整计划的命令／工具身份、字段、JSON 数值及引用，不安装、不编辑。run 首次自动安装并校验固定 CLI；输出目录必须不存在。它检查实际 tools/list、完整注册表及每条命令的当前 enabled 状态。禁用立即停止并报告 why；不移除原生守卫、不自动选中另一对象、不忽略参数错误。原生 MCP 错误和返回对象中的 error 都算失败，包括表达式保存后被禁用的情况。
@@ -93,8 +93,8 @@ A complete command acceptance binds runtime identity, real prerequisites, inputs
 先运行下面的创建示例，再从它的原生工程返工。两次输出目录均须不存在；工程扩展名依本领域为 .fcproj／.ecproj／.pcraft／.vectorcraft。
 
 ```bash
-python3 -I -B "$SKILL_DIR/scripts/commands.py" run "$SKILL_DIR/examples/commands-revision-create.json" --output /absolute/new-original
-python3 -I -B "$SKILL_DIR/scripts/commands.py" run "$SKILL_DIR/examples/commands-revision.json" --input project=/absolute/new-original/project.EXT --output /absolute/new-revision
+python3 -I -B "$HARNESS_DIR/scripts/commands.py" run "$SKILL_DIR/examples/commands-revision-create.json" --output /absolute/new-original
+python3 -I -B "$HARNESS_DIR/scripts/commands.py" run "$SKILL_DIR/examples/commands-revision.json" --input project=/absolute/new-original/project.EXT --output /absolute/new-revision
 ```
 
 将 EXT 替换为本领域原生扩展名；路径替换为真实新目录。这个返工计划只适用于对应创建示例的对象与顺序；真实用户工程必须先检查并按实际对象重新构造引用，不能照搬数组下标。
@@ -124,7 +124,7 @@ Keep the failed directory and inspect its receipts and any native file. When a t
 需要 GUI 上下文而尚未运行桌面应用时，读取本技能自带 [桌面安装与执行指南](desktop-install.md)。使用独立入口安装固定桌面与 CLI，在同一拥有的桌面会话执行真实命令，并在结束时关闭本次启动的进程：
 
 ```bash
-python3 -I -B "$SKILL_DIR/scripts/desktop.py" run "$SKILL_DIR/examples/desktop-first-use.json" --output /absolute/new-desktop-result
+python3 -I -B "$HARNESS_DIR/scripts/desktop.py" run "$SKILL_DIR/examples/desktop-first-use.json" --output /absolute/new-desktop-result
 ```
 
 该入口采用相同 craft-command-plan/v1 格式；先用 commands.py describe 查阅命令及前置状态，再组织真实计划。desktop-session.json 记录桌面身份、监听进程身份和会话退出结果，逐步命令结果仍在 journal.json、success.json 或 failure.json。固定桌面安装不等于所有 GUI 指令可在空工程运行；禁用项须根据原生原因建立所需文档、对象、选择或界面状态，不能绕过检查。
@@ -136,9 +136,9 @@ For GUI prerequisites, use the skill-owned desktop.py entry and its pinned insta
 固定 Effect CLI 的 headless 目录为21个MCP工具；实际bridge目录为30个，额外9项的真实参数schema在本技能自带 [bridge-tools.json](bridge-tools.json)。这些工具需要运行中的桌面，不能作为headless能力。
 
 ```bash
-python3 -I -B "$SKILL_DIR/scripts/commands.py" list --tools --mode bridge
-python3 -I -B "$SKILL_DIR/scripts/commands.py" describe ui_inspect --tool --mode bridge
-python3 -I -B "$SKILL_DIR/scripts/commands.py" check /absolute/plan.json --mode bridge
+python3 -I -B "$HARNESS_DIR/scripts/commands.py" list --tools --mode bridge
+python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe ui_inspect --tool --mode bridge
+python3 -I -B "$HARNESS_DIR/scripts/commands.py" check /absolute/plan.json --mode bridge
 ```
 
 使用desktop.py run自动拥有桌面会话，或明确使用commands.py run --mode bridge --connect连接已授权会话。计划以tool字段调用ui_inspect、ui_elements等实际工具；先查询真实元素ID和几何位置再组织点击或输入，不能猜测ID。执行前核对被使用的bridge工具实时参数schema，漂移则拒绝UI调用。screenshot只证明界面截图；render_frame输出才用于合成渲染检查。control为原生控制透传，必须限定到用户授权操作；入口不宣称把所有原生副作用沙箱化。

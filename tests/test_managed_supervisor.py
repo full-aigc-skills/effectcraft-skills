@@ -11,7 +11,7 @@ from unittest.mock import patch
 from types import SimpleNamespace
 
 
-SCRIPT = Path(__file__).resolve().parents[1] / 'skills/effectcraft-use/scripts/managed.py'
+SCRIPT = Path(__file__).resolve().parents[1] / 'skills/effectcraft-harness/scripts/managed.py'
 
 
 class ManagedSupervisorTests(unittest.TestCase):

@@ -4,7 +4,7 @@ from pathlib import Path
 from unittest.mock import patch
 ROOT=Path(__file__).resolve().parents[1]
 def load():
- d=next(p for p in (ROOT/'skills').iterdir() if p.name.endswith('-use'));s=importlib.util.spec_from_file_location('desktop_session',d/'scripts/desktop_session.py');m=importlib.util.module_from_spec(s);s.loader.exec_module(m);return m
+ d=ROOT/'skills/effectcraft-harness';s=importlib.util.spec_from_file_location('desktop_session',d/'scripts/desktop_session.py');m=importlib.util.module_from_spec(s);s.loader.exec_module(m);return m
 class DesktopSessionTests(unittest.TestCase):
  def test_invalid_plan_does_not_create_output_or_install(self):
   m=load()

@@ -5,7 +5,7 @@ import subprocess
 import tempfile
 import unittest
 
-ROOT = Path(__file__).resolve().parents[1]/'skills/effectcraft-use/scripts'
+ROOT = Path(__file__).resolve().parents[1]/'skills/effectcraft-harness/scripts'
 
 
 class PythonLauncherTests(unittest.TestCase):

@@ -13,7 +13,8 @@ import unittest
 
 ROOT = Path(__file__).resolve().parents[1]
 SKILL = Path(os.environ['CRAFT_INSTALLED_SKILL_ROOT']).resolve() if os.environ.get('CRAFT_INSTALLED_SKILL_ROOT') else ROOT / 'skills/effectcraft-use'
-spec = importlib.util.spec_from_file_location('workflow', SKILL / 'scripts/workflow.py')
+HARNESS = ROOT / 'skills/effectcraft-harness'
+spec = importlib.util.spec_from_file_location('workflow', HARNESS / 'scripts/workflow.py')
 workflow = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(workflow)
 

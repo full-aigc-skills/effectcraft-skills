@@ -11,7 +11,7 @@ from unittest.mock import patch
 import zipfile
 
 ROOT=Path(__file__).resolve().parents[1]
-SOURCE=ROOT/'skills/effectcraft-use/scripts/bootstrap.py'
+SOURCE=ROOT/'skills/effectcraft-harness/scripts/bootstrap.py'
 
 class RuntimeUpgradeTests(unittest.TestCase):
     def setUp(self):

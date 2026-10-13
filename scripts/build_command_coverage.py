@@ -11,12 +11,14 @@ import sys
 ROOT = Path(__file__).resolve().parents[1]
 DOMAIN = json.loads((ROOT / "skill-suite.json").read_text(encoding='utf-8'))["pluginId"]
 BASE = ROOT / "skills" / (DOMAIN + "-use")
+# 执行实现唯一收敛在 harness；反射与 AST 读取走 harness，文档产物仍落在 use 参考目录。
+EXEC = ROOT / "skills" / (DOMAIN + "-harness")
 
 def capture():
     def load(name):
-        spec = importlib.util.spec_from_file_location("capture_" + name, BASE / "scripts" / (name + ".py"))
+        spec = importlib.util.spec_from_file_location("capture_" + name, EXEC / "scripts" / (name + ".py"))
         value = importlib.util.module_from_spec(spec); spec.loader.exec_module(value); return value
-    lock = json.loads((BASE / "scripts/runtime.lock.json").read_text(encoding='utf-8'))
+    lock = json.loads((EXEC / "scripts/runtime.lock.json").read_text(encoding='utf-8'))
     installed = load("bootstrap").install(lock, Path.home() / ".local/share/craft-runtimes")
     argv = [installed["executable"], "mcp"] + (["--headless"] if DOMAIN == "vectorcraft" else [])
     if DOMAIN == "effectcraft":
@@ -45,7 +47,7 @@ def build(check=False):
             or set(reflected_ids) != set(native_ids)):
         raise ValueError("native_registry_drift: missing, added or duplicate command identities")
     current = {r["id"]:r for r in snapshot["commands"]}
-    node = ast.parse((BASE / "scripts/workflow.py").read_text(encoding='utf-8'))
+    node = ast.parse((EXEC / "scripts/workflow.py").read_text(encoding='utf-8'))
     mapped = set()
     for entry in node.body:
         if isinstance(entry, ast.Assign) and any(isinstance(t, ast.Name) and t.id == "ALLOWED" for t in entry.targets):
@@ -99,7 +101,7 @@ def build(check=False):
                   "- 当前工作流映射 / Workflow mapped: " + str(row["workflowMapped"]).lower() + "。",
                   "- 空会话观察 / Empty-session observation: " + str(native.get("enabled")).lower()
                   + "；禁用原因 / reason: " + str(native.get("why", "目录未提供具体原因；执行时重新查询 / query live state")) + "。",
-                  "- 调用 / Invocation: `python3 -I -B \"$SKILL_DIR/scripts/commands.py\" describe " + row["id"] + "`；按原生参数构造计划后执行 run。",
+                  "- 调用 / Invocation: `python3 -I -B \"$HARNESS_DIR/scripts/commands.py\" describe " + row["id"] + "`；按原生参数构造计划后执行 run。",
                   "- 运行模式路由 / Mode routes: headless / owned desktop; live availability required, each NOT_RUN。",
                   "- 完整逐命令验收 / Full command acceptance: NOT_RUN。", "",
                   "原生参数原文 / Verbatim native parameters:", "", "```text", row["params"] or "{} (no parameter documentation in snapshot)", "```", ""]

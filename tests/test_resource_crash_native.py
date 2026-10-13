@@ -23,7 +23,7 @@ class ResourceCrashNativeTests(unittest.TestCase):
     def test_preview_response_loss_accounts_owned_stage_without_replay(self):
         with tempfile.TemporaryDirectory(prefix='resource preview crash ') as temporary:
             root=Path(temporary).resolve();skill=root/'single skill'
-            shutil.copytree(ROOT/'skills/effectcraft-use',skill,ignore=shutil.ignore_patterns('__pycache__','*.pyc'))
+            shutil.copytree(ROOT/'skills/effectcraft-harness',skill,ignore=shutil.ignore_patterns('__pycache__','*.pyc'))
             before={p.relative_to(skill).as_posix():hashlib.sha256(p.read_bytes()).hexdigest() for p in skill.rglob('*') if p.is_file()}
             managed=load(skill/'scripts/managed.py');tasks=managed.load('task_store');store=tasks.Store(root/'state')
             plan=managed.read(skill/'examples/brand-intro.json');key=managed.load('platform_support').platform_key()

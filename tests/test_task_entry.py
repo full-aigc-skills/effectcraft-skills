@@ -9,7 +9,7 @@ import sys
 import tempfile
 import unittest
 
-ROOT=Path(__file__).resolve().parents[1];BASE=ROOT/'skills/effectcraft-use'
+ROOT=Path(__file__).resolve().parents[1];BASE=ROOT/'skills/effectcraft-harness'
 def load(name):
     spec=importlib.util.spec_from_file_location('entry_test_'+name,BASE/'scripts'/(name+'.py'));m=importlib.util.module_from_spec(spec);spec.loader.exec_module(m);return m
 
