@@ -142,3 +142,7 @@ Source dev.67 / plugin dev.69 correct a Windows absolute-path test fixture witho
 
 
 技能源 dev.68／插件 dev.70 发布 POSIX 有限停止状态核验与工作流合成配置门禁。显式映射固定0.4.0的当前时间tick及帧吸附，保留原生工作区快捷操作。此前候选段落保留其观察时范围。[本次发布证据](docs/evidence/release68-validation-20261009.json)。完整领域、目标平台及宿主门禁仍开放，当前为开发版。
+
+## 场景技能开发候选
+
+已增加 6 个领域场景技能及 1 个内嵌编辑器入口。详见 [场景目录](docs/scene-skills.md)。本地未发布候选，不代表全部场景的创作质量已验收。
