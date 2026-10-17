@@ -155,3 +155,5 @@ Source dev.68 / plugin dev.70 releases bounded POSIX stop observation and workfl
 - [effectcraft-chapter-card](skills/effectcraft-chapter-card/SKILL.md)
 - [effectcraft-countdown-intro](skills/effectcraft-countdown-intro/SKILL.md)
 - [effectcraft-credits-roll](skills/effectcraft-credits-roll/SKILL.md)
+
+The lower-thirds skill includes an original three-layer interview plate plan with paragraph text boxes, opacity entrance/hold/exit and sampled-frame checks. Native macOS standard/long-name fixtures passed; Windows and host-editor acceptance remain pending.

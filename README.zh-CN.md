@@ -155,3 +155,5 @@ Source dev.67 / plugin dev.69 correct a Windows absolute-path test fixture witho
 - [effectcraft-chapter-card](skills/effectcraft-chapter-card/SKILL.md)
 - [effectcraft-countdown-intro](skills/effectcraft-countdown-intro/SKILL.md)
 - [effectcraft-credits-roll](skills/effectcraft-credits-roll/SKILL.md)
+
+人物条技能新增底板、段落姓名职位框及透明入退场计划，提供真实CLI/MCP参数、长姓名试排与采样检查。macOS标准及长姓名夹具通过；Windows和宿主界面验收待完成。
