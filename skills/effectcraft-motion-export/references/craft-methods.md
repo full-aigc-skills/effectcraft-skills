@@ -24,7 +24,19 @@ effectcraft-cli run --project input.ecproj prop.set '{"path":"transform/opacity"
 
 先渲染短片段，完整输出后独立检查时长、帧率、音频与alpha。
 
-边界：真正视频输出用CLI render --out ... --start ... --end ...；保存工程成功不等于渲染完成。
+### 可直接执行的序列帧导出
+
+先建立一个新的 `output` 目录，在现有合成中执行上表三个方法并确认 `output/motion.ecproj` 已保存。将 `craft-steps.json` 的 `cliExport` 中 argv 数组逐项作为参数传给同一官方 CLI：
+
+```text
+effectcraft-cli render --project output/motion.ecproj --out output/motion-frames --format png --work-area --resolution quarter --channels rgba --audio off
+```
+
+此例以已有3秒、25fps的工作区间生成75张 `motion-frames_*.png`，输出尺寸是原合成的1/4；按帧号排序，全部解码并检查首、中、尾画面。实际任务先读取帧率、合成尺寸与workArea，计算预期帧数；不要强套75帧。`--out` 是序列文件前缀，不是一个PNG文件。PNG序列没有音轨，不能作为含音频视频交付。正式尺寸使用 `--resolution full`；先检查短区间，再按用户要求编码成片，并独立检查视频和音频。
+
+在已打开的宿主编辑器内，先用当前会话保存目标工程，再针对这个已保存副本调用CLI导出；该新进程不会回写编辑器，也不证明界面同步。不要另建headless工程冒充当前编辑器作品。
+
+边界：此处仅验证PNG序列，视频编码、音轨与真实镜头的最终效果须另验收。
 
 保存可编辑工程后由新进程或重新打开的同一宿主会话核对；导出格式单独解码/查看。方法存在和零退出不代表本场景已经完成。
 

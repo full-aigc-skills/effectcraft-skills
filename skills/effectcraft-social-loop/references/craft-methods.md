@@ -20,6 +20,8 @@ CLI 语法（下面是展示用写法，实际跨平台执行用argv避免shell�
 
 effectcraft-cli run --project input.ecproj prop.set '{"path":"transform/opacity","value":90}' --save-as output.ecproj。多个 id JSON 成对放同一批次；新工程显式 --empty，避免默认demo。
 
+在时长为3秒、30fps的例子中，3.0秒是关键帧端点，不是有效输出帧；最后一张有效帧为2.966667秒。用 `get Loop Dot transform/position --time 3 --project output.ecproj --json` 核对端点，但渲染/播放只检查 `[0,3)`。首尾位置相同也不能证明速度连续，本例线性往返会在折返点改变运动方向；无缝且平滑的需求须另行调整缓动或运动曲线。
+
 ## 参数核对与完成标准
 
 先查 [当前版本观察目录](craft-command-evidence.json) 中对应方法的完整参数，再按实际运行时查询更新。结构化步骤见 [craft-steps.json](craft-steps.json)。
