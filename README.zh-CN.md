@@ -146,3 +146,12 @@ Source dev.67 / plugin dev.69 correct a Windows absolute-path test fixture witho
 ## 场景技能开发候选
 
 已增加 6 个领域场景技能及 1 个内嵌编辑器入口。详见 [场景目录](docs/scene-skills.md)。本地未发布候选，不代表全部场景的创作质量已验收。
+
+
+## 片头片尾场景候选 / Intro and outro scene candidates
+
+新增章节标题卡、3–2–1开场倒数、片尾滚动署名三个独立技能。每项含原生CLI与同会话MCP方法、明确参数、时间单位、输入替换和输出检查。源于固定GitHub流程事实的原创适配，不复制模板代码。原生合成样本验证与真实成片、宿主同步分开记录；冻结基础技能版本与运行时不变。
+
+- [effectcraft-chapter-card](skills/effectcraft-chapter-card/SKILL.md)
+- [effectcraft-countdown-intro](skills/effectcraft-countdown-intro/SKILL.md)
+- [effectcraft-credits-roll](skills/effectcraft-credits-roll/SKILL.md)
