@@ -44,8 +44,8 @@ subprocess.run(args + ["--save-as", "<新的工程路径>.ecproj", "--json"], ch
 
 分别执行`render-frame --project <工程> --time <秒> --max-side 960 --transparent --out <新PNG路径>`，采样0、0.2、0.4、5.4、5.96秒。检查首尾alpha为0，中间态可见但未全显，停留画面一致；背景以外应保留透明，不是烘焙黑底。PNG查看器以黑色显示透明背景不代表文件没有alpha。
 
-停留帧逐字检查姓名职位，文字应位于底板内且左右留白。图像像素检查可以发现越界和缺失，但不能证明未知语言的字形正确。透明叠加交付优先PNG序列：`render --project <工程> --out <新前缀>.png --format png --start 0 --end 6 --fps 25 --channels rgba`，然后核对实际文件数与解码alpha；H.264不是透明交付格式。序列导出尚需本场景单独验收，不能以采样帧成功代替完整序列通过。
+停留帧逐字检查姓名职位，文字应位于底板内且左右留白。图像像素检查可以发现越界和缺失，但不能证明未知语言的字形正确。透明叠加交付优先PNG序列：`render --project <工程> --out <新前缀>.png --format png --start 0 --end 6 --fps 25 --resolution half --channels rgba`，然后核对实际文件数与解码alpha；H.264不是透明交付格式。标准样稿已实际导出150帧序列，逐个核对文件编号及RGBA编码，并对0/5/10/135/149帧核对alpha与单帧采样一致；不据此推断任意文字或其他格式。
 
-已验证原生EffectCraft0.10.0 macOS的标准及长姓名两版，48次CLI调用覆盖保存重开、三层文字分配、关键帧与五个采样帧。尚未验证Windows、实际人物视频叠加和真实宿主界面同步。本计划保持独立开发候选身份。
+已验证原生EffectCraft0.10.0 macOS的标准及长姓名两版，49次CLI调用覆盖保存重开、三层文字分配、关键帧与五个采样帧。尚未验证Windows、实际人物视频叠加和真实宿主界面同步。本计划保持独立开发候选身份。
 
 GitHub工作流事实及许可记录见[来源](animated-workflow-sources.json)。代码、JSX和模板素材未复制，参数计划与本文原创适配。
