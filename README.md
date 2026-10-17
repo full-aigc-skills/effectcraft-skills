@@ -142,3 +142,7 @@ Unpublished stop-observation candidate: POSIX guardians retry transient member-q
 
 
 Source dev.68 / plugin dev.70 releases bounded POSIX stop observation and workflow composition configuration checks. Native 0.4.0 current-time ticks and frame snapping are mapped explicitly; work-area shortcuts remain supported. Earlier candidate notes retain their historical scope. See [release evidence](docs/evidence/release68-validation-20261009.json). Full domain, platform and host gates remain open; this is a development release.
+
+## 场景技能开发候选
+
+已增加 6 个领域场景技能及 1 个内嵌编辑器入口。详见 [场景目录](docs/scene-skills.md)。本地未发布候选，不代表全部场景的创作质量已验收。
