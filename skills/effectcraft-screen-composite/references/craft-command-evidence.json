@@ -30,7 +30,25 @@
       "enabled": true,
       "id": "project.summary",
       "label": "Project Summary"
+    },
+    "layer.addMask": {
+      "enabled": false,
+      "id": "layer.addMask",
+      "label": "New Mask",
+      "menu": [
+        "Layer",
+        "Mask"
+      ],
+      "params": "{layer?, shape?: rect|ellipse|rounded|polygon|star, rect? [x,y,w,h] (layer space; a polygon or star fits its width), mode?}",
+      "shortcut": "Cmd+Shift+N",
+      "why": "no composition is open"
     }
   },
-  "sceneAcceptance": "NOT_RUN"
+  "sceneAcceptance": "NOT_RUN",
+  "additionalObservation": {
+    "platform": "darwin",
+    "version": "0.10.0",
+    "method": "layer.addMask",
+    "scope": "official native CLI command catalog; Web host not inferred"
+  }
 }

@@ -5,8 +5,8 @@
   "execution": "COMMAND_MAPPED_NOT_SCENE_ACCEPTED",
   "steps": [
     {
-      "purpose": "在已导入的屏幕内容层建立区域遮罩",
-      "command": "layer.mask.shape",
+      "purpose": "在已导入且已选择的屏幕内容层创建矩形遮罩",
+      "command": "layer.addMask",
       "params": {
         "rect": [
           100,
