@@ -21,7 +21,7 @@
 
 ## 原生CLI执行
 
-用当前实际CLI的commands目录核对方法。下例把本技能内计划作为同一run进程内的有序命令，不需要启动另一个Agent，也不依赖同级技能文件：
+先用[本次实际命令目录](animated-command-evidence.json)核对结构，再用当前实际CLI的commands目录复核；空工程中enabled=false不代表创建合成后仍不可执行。下例把本技能内计划作为同一run进程内的有序命令，不需要启动另一个Agent，也不依赖同级技能文件：
 
 ```python
 import json, subprocess
